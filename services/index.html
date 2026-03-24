@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Adoption Services — Radar, Pilot, Scale & Fractional Leadership | Human–AI Systems</title>
+    <meta name="description" content="Structured AI adoption services for organisations of any size. From a focused diagnostic to full operating model transformation — practical, measurable and built to last.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Human–AI Systems",
+        "url": "https://human-ai-systems.com/",
+        "description": "AI adoption consultancy helping organisations move from experimentation to operational adoption through structured programmes, governance and workflow design.",
+        "founder": {
+            "@type": "Person",
+            "name": "Mike McKeown",
+            "url": "https://www.linkedin.com/in/mikesmckeown/"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Adoption Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI Adoption Radar",
+                        "description": "Structured discovery and assessment that maps where AI creates genuine value in your organisation."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pilot Programmes",
+                        "description": "Structured AI pilots inside real operations with clear success measures and governance controls."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Scale & Operating Model",
+                        "description": "Redesign how the organisation works so AI becomes a reliable part of operations."
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fractional AI Leadership",
+                        "description": "Experienced senior AI oversight on a retained basis — board credibility, governance discipline, programme direction."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            width: auto;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 18ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 14px; font-size: 1.05rem; }
+
+        .center-intro {
+            max-width: 720px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .center-intro h2, .center-intro p, .center-intro .lead {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Service cards ── */
+        .service-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: start;
+            padding: 64px 0;
+            border-bottom: var(--border);
+        }
+
+        .service-block:first-of-type { padding-top: 0; }
+        .service-block:last-of-type { border-bottom: none; }
+
+        .service-block.reverse { direction: rtl; }
+        .service-block.reverse > * { direction: ltr; }
+
+        .service-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(31, 58, 95, 0.08);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--soft);
+            color: var(--teal);
+            border: var(--border);
+            margin-bottom: 20px;
+        }
+
+        .service-problem {
+            font-size: 1.12rem;
+            color: var(--steel);
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 18px;
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        .service-detail {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .service-image {
+            width: 100%;
+            border-radius: var(--radius);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            aspect-ratio: 3/2;
+            object-fit: cover;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: var(--border);
+        }
+
+        .detail-item strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--steel);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .detail-item p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: var(--graphite);
+        }
+
+        .deliverables {
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .deliverables li {
+            font-size: 0.98rem;
+            padding: 8px 0 8px 22px;
+            position: relative;
+            border-bottom: var(--border);
+            color: var(--graphite);
+        }
+
+        .deliverables li:last-child { border-bottom: none; }
+
+        .deliverables li::before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            color: var(--aqua);
+            font-weight: 700;
+        }
+
+        /* ── Engagement duration section ── */
+        .duration-section {
+            background: var(--soft);
+        }
+
+        .duration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .duration-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .duration-card h3 {
+            color: var(--blue);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .duration-card p {
+            color: var(--steel);
+            font-size: 1rem;
+            margin: 0 0 16px;
+        }
+
+        .duration-card p:last-child { margin-bottom: 0; }
+
+        .duration-examples {
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .duration-examples li {
+            font-size: 0.95rem;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            color: var(--graphite);
+        }
+
+        .duration-examples li::before {
+            content: "\2192";
+            position: absolute;
+            left: 0;
+            color: var(--aqua);
+            font-weight: 700;
+        }
+
+        /* ── Use cases section ── */
+        .use-cases-section {
+            background: var(--white);
+        }
+
+        .outcome-group {
+            margin-bottom: 48px;
+        }
+
+        .outcome-group:last-child { margin-bottom: 0; }
+
+        .outcome-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--aqua);
+        }
+
+        .outcome-header h3 {
+            font-size: 1.2rem;
+            color: var(--blue);
+            margin: 0;
+        }
+
+        .outcome-header p {
+            font-size: 0.98rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .use-case-grid.three-col {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .use-case-card {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .use-case-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--graphite);
+            margin: 0 0 8px;
+            line-height: 1.25;
+        }
+
+        .use-case-card p {
+            font-size: 0.95rem;
+            color: var(--steel);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .use-case-card .evidence-tag {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-top: 10px;
+        }
+
+        @media (max-width: 760px) {
+            .use-case-grid,
+            .use-case-grid.three-col {
+                grid-template-columns: 1fr;
+            }
+            .outcome-header {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        /* ── Evidence bar ── */
+        .evidence-bar {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            padding: 56px 0;
+        }
+
+        .evidence-bar h2, .evidence-bar p { color: var(--white); }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .evidence-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+        }
+
+        .evidence-item b {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .evidence-item span {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.4;
+        }
+
+        .evidence-note {
+            margin-top: 24px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        /* ── Engagement note ── */
+        .engagement-note {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 18px;
+            padding: 36px;
+            box-shadow: var(--shadow);
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .engagement-note h3 { color: var(--blue); margin-bottom: 14px; font-size: 1.4rem; }
+        .engagement-note p { color: var(--steel); font-size: 1.05rem; margin: 0; }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--blue);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        /* ── Reveal animation ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+
+            .service-block, .service-block.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .detail-row { grid-template-columns: 1fr; }
+            .evidence-grid { grid-template-columns: 1fr 1fr; }
+            .duration-grid { grid-template-columns: 1fr; }
+
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: 290px; }
+        }
+
+        @media (max-width: 480px) {
+            .evidence-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="AI Adoption Services — Radar, Pilot, Scale & Fractional Leadership | Human–AI Systems">
+    <meta property="og:description" content="Structured AI adoption services for organisations of any size. From a focused diagnostic to full operating model transformation — practical, measurable and built to last.">
+    <meta property="og:url" content="https://human-ai-systems.com/services/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Adoption Services — Radar, Pilot, Scale & Fractional Leadership | Human–AI Systems">
+    <meta name="twitter:description" content="Structured AI adoption services for organisations of any size. From a focused diagnostic to full operating model transformation — practical, measurable and built to last.">
+    <link rel="canonical" href="https://human-ai-systems.com/services/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/" class="active">Services</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Services</div>
+                <h1>AI adoption that fits your organisation.</h1>
+                <p class="lead">Whether you need a focused diagnostic or a full operating model transformation, every engagement is shaped around where you are today and what you need next. The work is practical, measurable and built to last.</p>
+            </div>
+        </section>
+
+
+        <!-- Services -->
+        <section>
+            <div class="container">
+
+                <!-- Service 1: Radar -->
+                <div class="service-block reveal">
+                    <div>
+                        <div class="service-number">01</div>
+                        <span class="service-tag">Discovery &amp; Assessment</span>
+                        <h2>AI Adoption Radar</h2>
+                        <p class="service-problem">"Most AI discussions start with the technology. The right question is: where in your operations will AI actually create value — and where might it create risk you haven't accounted for?"</p>
+                        <p>The Radar is a structured discovery process that maps how your organisation actually works — workflows, decision points, data flows, governance boundaries — and identifies where AI can create genuine, measurable value.</p>
+                        <p>It surfaces realistic opportunities, not aspirational ones. It identifies governance requirements before you've committed to anything. And it gives you a clear, prioritised recommendation on where to start — including, where appropriate, an AI Vision, Strategy and Execution Plan to align leadership around a coherent direction.</p>
+                        <p>Most engagements begin here. The output becomes the foundation for everything that follows — whether that's a pilot programme, a board briefing, or a decision not to proceed.</p>
+                    </div>
+                    <div>
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS AI Transformation workshop.webp" type="image/webp">
+                            <img class="service-image" src="/images/hero/HAIS AI Transformation workshop.png" alt="AI transformation workshop with team reviewing workflow redesign and pilot mapping on whiteboard" loading="lazy" width="768" height="512">
+                        </picture>
+                        <div class="service-detail">
+                            <h3>What you get</h3>
+                            <ul class="deliverables">
+                                <li>Workflow opportunity map — where AI creates real value, ranked by impact and feasibility</li>
+                                <li>Governance risk assessment — oversight, accountability and compliance requirements</li>
+                                <li>AI maturity assessment — an honest picture of where you are today</li>
+                                <li>Prioritised pilot recommendation — a clear starting point with rationale</li>
+                                <li>Responsible AI Policy — clear, compliant and ethical guidelines for AI use across the organisation</li>
+                                <li>AI Vision, Strategy &amp; Execution Plan — where appropriate, a leadership-aligned roadmap for AI adoption</li>
+                                <li>Executive briefing — board or leadership-ready summary of findings</li>
+                            </ul>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <strong>Who it's for</strong>
+                                    <p>Organisations exploring AI adoption and wanting evidence before commitment — from a single-team assessment to a full enterprise diagnostic.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Pilot -->
+                <div class="service-block reverse reveal">
+                    <div>
+                        <div class="service-number">02</div>
+                        <span class="service-tag">Structured Testing</span>
+                        <h2>Pilot Programmes</h2>
+                        <p class="service-problem">"Buying an AI tool is easy. Getting it to change how work actually happens is not."</p>
+                        <p>A Pilot Programme takes a specific workflow and tests AI properly inside real operations. Not a proof of concept in isolation — a live test with real work, real people and real accountability.</p>
+                        <p>Every pilot is designed with clear success measures from day one. It includes workflow redesign, governance controls appropriate to the context, and structured learning throughout. At the end, you have evidence — not anecdote.</p>
+                        <p>Where the solution can be delivered using enterprise AI platforms — ChatGPT Business or Enterprise, Claude for Teams or Enterprise, Microsoft Copilot 365, including customisations such as Custom GPTs, custom skills, Copilot Studio, and standard connector integrations — we build and deliver the working solution directly. Where requirements are more complex and need purpose-built AI agents or workflows, we can work with specialist AI delivery partners, or produce a detailed solution design and procurement specification to help you choose the right supplier, oversee their delivery, and ensure the result meets your operational and governance requirements.</p>
+                        <p>Pilots can focus on a single workflow or span a team. They are always designed with scaling in mind: the question isn't just "does this work?" but "could this work across the organisation?"</p>
+                    </div>
+                    <div>
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Human + AI collaboration workstation.webp" type="image/webp">
+                            <img class="service-image" src="/images/hero/HAIS Human + AI collaboration workstation.png" alt="Two professionals collaborating at a workstation with AI process automation dashboard" loading="lazy" width="768" height="512">
+                        </picture>
+                        <div class="service-detail">
+                            <h3>What you get</h3>
+                            <ul class="deliverables">
+                                <li>Pilot blueprint — scope, workflow integration plan, success measures, governance controls</li>
+                                <li>Baseline and outcome measurement — documented before and after</li>
+                                <li>Workflow redesign — how the work changes when AI is part of it</li>
+                                <li>Governance framework — oversight, accountability, escalation paths</li>
+                                <li>End-user training — practical guidance so teams get the most from the AI solution from day one</li>
+                                <li>Scaling recommendation — evidence-based case for what comes next</li>
+                            </ul>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <strong>Who it's for</strong>
+                                    <p>Organisations with a clear AI opportunity — identified through a Radar or already on the agenda — who want to test it properly before committing further.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Scale -->
+                <div class="service-block reveal">
+                    <div>
+                        <div class="service-number">03</div>
+                        <span class="service-tag">Operating Model Change</span>
+                        <h2>Scale &amp; Operating Model</h2>
+                        <p class="service-problem">"A successful pilot is not the same as a transformed organisation."</p>
+                        <p>When pilots work, the question becomes: how do we make this permanent? Scaling AI isn't about rolling out more tools. It's about redesigning how the organisation works — workflows, accountability structures, capability and governance — so AI becomes a reliable part of operations, not a parallel experiment.</p>
+                        <p>This is the hardest part of AI adoption. It requires genuine operating model change: leaders who understand human-AI collaboration, teams who are capable and confident, and governance that is rigorous without being obstructive.</p>
+                        <p>As with pilots, where the solution uses enterprise AI platforms we deliver the working implementation directly. Where specialist AI development is needed, we design the solution, help you select the right delivery partner, and oversee their work through to operational handover.</p>
+                        <p>Scale engagements are typically built on the foundation of a completed pilot, though they can also work from existing internal evidence. The goal is a redesigned way of working that is sustainable without ongoing consultancy support.</p>
+                    </div>
+                    <div>
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Governance and Hybrid Workforce Control Room.webp" type="image/webp">
+                            <img class="service-image" src="/images/hero/HAIS Governance and Hybrid Workforce Control Room.png" alt="AI governance and hybrid workforce control room showing human-AI workflow monitoring dashboard" loading="lazy" width="768" height="512">
+                        </picture>
+                        <div class="service-detail">
+                            <h3>What you get</h3>
+                            <ul class="deliverables">
+                                <li>AI operating model — target state for how AI sits within the organisation's workflows</li>
+                                <li>Governance framework — human oversight, accountability, escalation, review cycles</li>
+                                <li>Redesigned workflows — AI roles clearly defined, human judgement preserved</li>
+                                <li>Capability programme — end-user training, adoption champions to drive engagement across teams, and business and technical owner training on how to evolve, refine and extend the AI solution over time</li>
+                                <li>Leadership toolkit — how to manage, measure and develop AI-augmented teams</li>
+                            </ul>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <strong>Who it's for</strong>
+                                    <p>Organisations ready to move beyond pilots and embed AI into how they permanently operate — whether across a department or the entire business.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Fractional -->
+                <div class="service-block reverse reveal">
+                    <div>
+                        <div class="service-number">04</div>
+                        <span class="service-tag">Senior Advisory</span>
+                        <h2>Fractional AI Leadership</h2>
+                        <p class="service-problem">"Not every organisation needs a full-time Chief AI Officer. Most benefit from senior AI leadership — board credibility, governance discipline, someone who's done this before."</p>
+                        <p>Fractional AI Leadership provides experienced senior oversight for your AI programme on a retained basis. This means working alongside your executive team, attending board sessions where AI is on the agenda, providing governance oversight, and helping you navigate the decisions that matter most.</p>
+                        <p>Organisations at the most critical stages of AI adoption — when pilots are proving out, when the board needs a credible briefing, when governance frameworks need to hold up to scrutiny — benefit most from this kind of sustained, senior involvement.</p>
+                        <p>Engagements are shaped to what the organisation needs. Some are board-advisory only. Others involve deeper programme oversight and executive team support.</p>
+                    </div>
+                    <div>
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS AI-executive-boardroom-analytics_v1..webp" type="image/webp">
+                            <img class="service-image" src="/images/hero/HAIS AI-executive-boardroom-analytics_v1..png" alt="Senior executive reviewing AI analytics dashboard in corporate boardroom" loading="lazy" width="768" height="512">
+                        </picture>
+                        <div class="service-detail">
+                            <h3>What you get</h3>
+                            <ul class="deliverables">
+                                <li>Senior AI leadership — typically 1–3 days per month, shaped to your programme</li>
+                                <li>Board-ready reporting — clear, credible AI programme updates for executive audiences</li>
+                                <li>Governance oversight — ensuring controls, accountability and review structures hold</li>
+                                <li>Programme direction — strategic decisions on scope, pace and priority</li>
+                                <li>Leadership advisory — supporting executives managing AI-augmented teams for the first time</li>
+                            </ul>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <strong>Who it's for</strong>
+                                    <p>Organisations running AI programmes who want experienced senior oversight without a full-time appointment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Where AI Creates Value -->
+        <section class="use-cases-section">
+            <div class="container">
+                <div class="center-intro">
+                    <div class="eyebrow">Where AI Creates Value</div>
+                    <h2>The business outcomes AI can deliver</h2>
+                    <p class="lead">AI adoption isn't about technology for its own sake. It's about what it makes possible — growing revenue, improving efficiency, delivering better services, making sharper decisions and building an organisation that's genuinely more capable. These are the kinds of outcomes our clients are working towards.</p>
+                </div>
+
+                <!-- 1. Grow Revenue -->
+                <div class="outcome-group reveal">
+                    <div class="outcome-header">
+                        <h3>Grow revenue</h3>
+                        <p>Win more work, sell smarter and enhance what you offer.</p>
+                    </div>
+                    <div class="use-case-grid three-col">
+                        <div class="use-case-card">
+                            <h4>Customer and pipeline intelligence</h4>
+                            <p>Customer behaviour, deal progression and market signals analysed to surface risks, identify opportunities and inform how you advise and serve clients.</p>
+                            <span class="evidence-tag">~10% win-rate improvement at Verimatrix</span>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>AI-enhanced products and services</h4>
+                            <p>AI capabilities embedded directly into your own products or service delivery — smarter recommendations, automated analysis, intelligent features — so your customers benefit from AI without adopting it themselves.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>AI-assisted bid, grant and funding writing</h4>
+                            <p>Proposals, grant applications and funding submissions drafted faster with AI that understands requirements, evaluation criteria and organisational context.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Improve Efficiency -->
+                <div class="outcome-group reveal">
+                    <div class="outcome-header">
+                        <h3>Improve efficiency</h3>
+                        <p>Free people from repetitive, time-consuming work so they can focus on what actually needs their judgement.</p>
+                    </div>
+                    <div class="use-case-grid three-col">
+                        <div class="use-case-card">
+                            <h4>AI-assisted document drafting</h4>
+                            <p>Reports, briefs, policy documents and correspondence produced in a fraction of the time, with consistent quality and tone.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Automated first-line support triage</h4>
+                            <p>Incoming queries classified, routed and where appropriate resolved automatically, freeing teams for the cases that need human expertise.</p>
+                            <span class="evidence-tag">~30% reduction in low-complexity tickets at Verimatrix</span>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>End-to-end process automation</h4>
+                            <p>Entire workflows — intake, validation, processing, notification, reporting — handled by AI with human oversight at the decision points that matter, not at every step.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Deliver Better Services -->
+                <div class="outcome-group reveal">
+                    <div class="outcome-header">
+                        <h3>Deliver better services</h3>
+                        <p>Faster, more consistent, more personal — whether you're serving customers, clients or citizens.</p>
+                    </div>
+                    <div class="use-case-grid three-col">
+                        <div class="use-case-card">
+                            <h4>Personalised client and citizen communications</h4>
+                            <p>Outbound correspondence, updates and responses tailored to context and history, at scale, without losing the human touch.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Intelligent self-service</h4>
+                            <p>Customers or citizens guided through processes, forms and queries by AI that understands the organisation's services and policies.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Planning and casework analysis</h4>
+                            <p>Complex applications, cases or submissions analysed against policy criteria, with key issues surfaced for human review. Relevant across local government, legal and financial services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Make Better Decisions -->
+                <div class="outcome-group reveal">
+                    <div class="outcome-header">
+                        <h3>Make better decisions</h3>
+                        <p>Give leaders and teams better information, faster, so decisions are grounded in evidence.</p>
+                    </div>
+                    <div class="use-case-grid three-col">
+                        <div class="use-case-card">
+                            <h4>AI-augmented research and analysis</h4>
+                            <p>Large volumes of data, documents or market intelligence synthesised into structured summaries so leaders can act on evidence rather than intuition.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Knowledge base and policy lookup</h4>
+                            <p>Staff get instant, accurate answers from internal documents, policies and procedures instead of searching or asking colleagues.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Regulatory and policy compliance checking</h4>
+                            <p>Documents, processes or decisions checked against regulatory requirements — EU AI Act, GDPR, DORA, sector-specific rules — before they go live.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Build Organisational Capability -->
+                <div class="outcome-group reveal">
+                    <div class="outcome-header">
+                        <h3>Build organisational capability</h3>
+                        <p>Make the whole organisation more capable and competitive — not just individual tasks.</p>
+                    </div>
+                    <div class="use-case-grid three-col">
+                        <div class="use-case-card">
+                            <h4>Engineering and developer productivity</h4>
+                            <p>Code review, documentation, test generation and debugging accelerated through AI assistants integrated into development workflows.</p>
+                            <span class="evidence-tag">~£1M annualised productivity gain at Verimatrix</span>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>AI as your operating system</h4>
+                            <p>For smaller organisations, AI becomes the backbone of how the business runs — a virtual team handling marketing, operations, finance and client delivery, so a small team operates with the capacity of a much larger one.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <h4>Responsible AI governance</h4>
+                            <p>Ongoing monitoring of AI usage, risk classification and board-ready reporting — so the organisation scales AI adoption with confidence and accountability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; color: var(--steel); font-size: 0.98rem; margin-top: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">These are starting points, not a fixed menu. The right use cases for your organisation emerge from a structured Radar — and they're often not the ones you'd expect.</p>
+
+            </div>
+        </section>
+
+
+        <!-- How Engagements Work — Duration & Flexibility -->
+        <section class="duration-section">
+            <div class="container">
+                <div class="center-intro">
+                    <div class="eyebrow">Engagement Flexibility</div>
+                    <h2>Shaped to your organisation, not a fixed template</h2>
+                    <p class="lead">Duration and scope vary depending on the size of your organisation, the complexity of the challenge, and how much ground you want to cover. Two common patterns:</p>
+                </div>
+
+                <div class="duration-grid">
+                    <div class="duration-card reveal">
+                        <h3>Focused &amp; Fast-Track</h3>
+                        <p>For smaller organisations, single-team challenges, or leaders who need clarity quickly. Engagements are tightly scoped and move fast — in some cases, pilot and scale are a single continuous implementation.</p>
+                        <ul class="duration-examples">
+                            <li>Radar diagnostic in a few days</li>
+                            <li>Pilot through to working solution in a few weeks</li>
+                            <li>Lightweight operating model and governance design</li>
+                            <li>Advisory on a specific AI decision</li>
+                        </ul>
+                    </div>
+                    <div class="duration-card reveal">
+                        <h3>Comprehensive</h3>
+                        <p>For larger organisations, multi-department programmes, or regulated environments where governance and stakeholder alignment take time.</p>
+                        <ul class="duration-examples">
+                            <li>Enterprise-wide Radar over 2–4 weeks</li>
+                            <li>Multi-workflow pilot over 6–12 weeks</li>
+                            <li>Full operating model transformation over 3–6 months</li>
+                            <li>Fractional AI leadership on 3–12 month retainer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Evidence Bar -->
+        <section class="evidence-bar">
+            <div class="container">
+                <div class="center-intro" style="margin-bottom: 0;">
+                    <h2 style="color: white;">Outcomes from the work</h2>
+                    <p class="lead" style="color: rgba(255,255,255,0.78); max-width: 38rem; margin: 0 auto;">These are not projections. They are outcomes from AI transformation programmes that Mike has led directly.</p>
+                </div>
+                <div class="evidence-grid">
+                    <div class="evidence-item">
+                        <b>~£1M</b>
+                        <span>Engineering productivity improvement from AI transformation at Verimatrix</span>
+                    </div>
+                    <div class="evidence-item">
+                        <b>~£3M</b>
+                        <span>Revenue impact attributed to the AI programme at Verimatrix</span>
+                    </div>
+                    <div class="evidence-item">
+                        <b>~250</b>
+                        <span>Officers and elected members onboarded to Microsoft Copilot at Cotswold District Council</span>
+                    </div>
+                    <div class="evidence-item">
+                        <b>Board</b>
+                        <span>AI governance framework designed, built and approved at board level in a listed company</span>
+                    </div>
+                </div>
+                <p class="evidence-note">Figures relate to AI transformation programmes led by Mike McKeown prior to founding Human–AI Systems.</p>
+            </div>
+        </section>
+
+
+        <!-- Engagement note -->
+        <section class="soft">
+            <div class="container">
+                <div class="engagement-note reveal">
+                    <h3>Every engagement starts with a conversation</h3>
+                    <p>There's no standard package and no pressure to commit to a large programme. The first step is always a conversation about where you are, what you're trying to achieve, and whether there's a genuine fit. From there, we scope something that makes sense — often smaller than you'd expect.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Start with a conversation</h2>
+                    <p class="lead">Most engagements begin with a 30-minute call. No agenda beyond understanding your situation and whether there's a genuine fit.</p>
+                    <div class="actions">
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" class="btn btn-primary">Book 30 minutes</a>
+                        <a href="/about/" class="btn btn-secondary">About Mike McKeown</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <div class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 18px;">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+</body>
+</html>

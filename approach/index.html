@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Approach to AI Adoption | Human–AI Systems</title>
+    <meta name="description" content="A structured approach to AI adoption: Radar, Pilot, Scale. Human–AI Systems helps organisations move from experimentation to operational value through disciplined programmes, governance and workflow redesign.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://human-ai-systems.com/approach/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Our Approach to AI Adoption | Human–AI Systems">
+    <meta property="og:description" content="A structured approach to AI adoption: Radar, Pilot, Scale. Moving organisations from AI experimentation to operational value through disciplined programmes and governance.">
+    <meta property="og:url" content="https://human-ai-systems.com/approach/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Approach to AI Adoption | Human–AI Systems">
+    <meta name="twitter:description" content="A structured approach to AI adoption: Radar, Pilot, Scale. Moving organisations from AI experimentation to operational value through disciplined programmes and governance.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Our Approach to AI Adoption",
+        "description": "Human–AI Systems uses a structured methodology — Radar, Pilot, Scale — to help organisations move from AI experimentation to operational adoption.",
+        "url": "https://human-ai-systems.com/approach/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Human–AI Systems",
+            "url": "https://human-ai-systems.com/"
+        },
+        "provider": {
+            "@type": "ProfessionalService",
+            "name": "Human–AI Systems",
+            "founder": {
+                "@type": "Person",
+                "name": "Mike McKeown"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            width: auto;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 20ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 14px; font-size: 1.05rem; }
+
+        .center-intro {
+            max-width: 720px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+
+        .center-intro h2, .center-intro p, .center-intro .lead {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Split layout ── */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .split.reverse { direction: rtl; }
+        .split.reverse > * { direction: ltr; }
+
+        .split-text p {
+            color: var(--steel);
+            line-height: 1.6;
+        }
+
+        /* ── Framework stages ── */
+        .framework-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 34px;
+        }
+
+        .framework-stage {
+            position: relative;
+            background: var(--white);
+            border: var(--border);
+            border-radius: 18px;
+            padding: 26px;
+            box-shadow: var(--shadow);
+            min-height: 220px;
+        }
+
+        .framework-stage .stage-tag {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+            color: var(--steel);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .framework-stage:nth-child(1) { border-top: 4px solid var(--steel); }
+        .framework-stage:nth-child(2) { border-top: 4px solid var(--teal); }
+        .framework-stage:nth-child(3) { border-top: 4px solid var(--blue); }
+
+        .stage-arrow {
+            position: absolute;
+            top: calc(50% - 10px);
+            right: -16px;
+            width: 32px;
+            height: 20px;
+            background: linear-gradient(90deg, transparent, var(--aqua));
+            clip-path: polygon(0 40%, 76% 40%, 76% 0, 100% 50%, 76% 100%, 76% 60%, 0 60%);
+        }
+
+        .framework-stage:last-child .stage-arrow { display: none; }
+
+        /* ── Detail blocks ── */
+        .detail-block {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 18px;
+            padding: 34px;
+            box-shadow: var(--shadow);
+        }
+
+        .detail-block h3 {
+            color: var(--blue);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .detail-block .tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--teal);
+            margin-bottom: 14px;
+        }
+
+        .detail-block p {
+            color: var(--steel);
+            line-height: 1.6;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 18px 0 0;
+        }
+
+        .detail-list li {
+            position: relative;
+            padding: 8px 0 8px 22px;
+            color: var(--steel);
+            font-size: 1.02rem;
+            line-height: 1.5;
+        }
+
+        .detail-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--aqua);
+        }
+
+        /* ── Cards ── */
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(31, 58, 95, 0.10);
+            border-color: rgba(42, 111, 116, 0.18);
+        }
+
+        .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 18px;
+            background: var(--soft);
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .muted { color: var(--steel); }
+
+        /* ── Image panels ── */
+        .image-panel {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--soft);
+        }
+
+        .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-panel picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-panel picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ── Principle row ── */
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .principle {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .principle h3 {
+            color: var(--blue);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .principle p {
+            color: var(--steel);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-band h2 { color: white; text-align: center; margin: 0 auto 18px; max-width: 18ch; }
+        .cta-band .lead { color: rgba(255,255,255,0.82); text-align: center; margin: 0 auto 28px; max-width: 36rem; }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--blue);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover { background: rgba(255,255,255,0.9); color: var(--blue); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.12);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+        section:not(.cta-band) .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        section:not(.cta-band) .btn-primary:hover {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        /* ── Blockquote ── */
+        .insight-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 22px 28px;
+            margin: 32px 0;
+            background: var(--soft);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .insight-quote p {
+            font-size: 1.15rem;
+            color: var(--blue);
+            font-weight: 500;
+            line-height: 1.55;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        /* ── Reveal animation ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+
+            .split, .split.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+
+            .framework-row { grid-template-columns: 1fr; }
+            .framework-stage { min-height: auto; }
+            .stage-arrow { display: none; }
+
+            .three-col { grid-template-columns: 1fr; }
+            .principle-grid { grid-template-columns: 1fr; }
+
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: 290px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/approach/" class="active">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Approach</div>
+                <h1>AI adoption is an organisational transformation, not a technology project.</h1>
+                <p class="lead">Most organisations are experimenting with AI. Far fewer are redesigning how work happens. Human–AI Systems brings a structured methodology that connects strategy to operational change — identifying where AI creates value, testing it in real workflows, and scaling what works.</p>
+            </div>
+        </section>
+
+        <!-- The core premise -->
+        <section>
+            <div class="container">
+                <div class="split reveal">
+                    <div class="split-text">
+                        <div class="eyebrow">The challenge</div>
+                        <h2>Why most AI programmes stall</h2>
+                        <p>Organisations invest in pilots, run experiments and build proof-of-concept prototypes. Many of these work well technically. But they rarely make the transition into how the organisation actually operates.</p>
+                        <p>The problem is not the technology. It is the gap between a successful experiment and a changed operating model. Workflows remain unchanged. Governance is unclear. Managers are not prepared to lead teams where humans and AI work alongside each other.</p>
+                        <p>The result is an ever-growing collection of pilots that never scale — and an organisation that feels busy with AI without seeing material impact.</p>
+                    </div>
+                    <div class="image-panel" style="height: 380px;">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Professional analysing complex information.webp" type="image/webp">
+                            <img src="/images/hero/HAIS Professional analysing complex information.png" alt="Executive reviewing AI analytics dashboard in a boardroom setting">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Radar → Pilot → Scale -->
+        <section class="soft">
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Methodology</div>
+                    <h2>Radar → Pilot → Scale</h2>
+                    <p class="lead">A structured pathway that takes organisations from opportunity identification through validated testing to operational deployment. Each stage builds the evidence and confidence needed for the next.</p>
+                </div>
+
+                <div class="framework-row reveal">
+                    <div class="framework-stage">
+                        <span class="stage-tag">Stage 1</span>
+                        <h3>Radar</h3>
+                        <p class="muted">Review workflows, surface opportunities, assess risks and prioritise realistic pilot candidates. The goal is a small number of high-impact opportunities rather than a long list of speculative ideas.</p>
+                        <div class="stage-arrow"></div>
+                    </div>
+                    <div class="framework-stage">
+                        <span class="stage-tag">Stage 2</span>
+                        <h3>Pilot</h3>
+                        <p class="muted">Introduce AI into real processes with defined success measures, governance controls and end-user involvement. Not just technical validation — understanding how the workflow needs to change.</p>
+                        <div class="stage-arrow"></div>
+                    </div>
+                    <div class="framework-stage">
+                        <span class="stage-tag">Stage 3</span>
+                        <h3>Scale</h3>
+                        <p class="muted">Embed successful patterns into the operating model. Define ownership, governance, performance monitoring and the management practices needed to sustain AI-enabled workflows.</p>
+                        <div class="stage-arrow"></div>
+                    </div>
+                </div>
+
+                <!-- Expanded detail for each stage -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 48px;">
+
+                    <div class="detail-block reveal">
+                        <span class="tag">Radar — Identify opportunities</span>
+                        <h3>See where AI creates real value</h3>
+                        <p>Radar is a diagnostic engagement. It examines operational workflows, customer and citizen interactions, knowledge-intensive processes and decision points — looking for where AI can deliver measurable improvement rather than marginal convenience.</p>
+                        <p>The output is a prioritised opportunity portfolio with value and feasibility assessments, governance considerations and recommended pilot candidates. It gives leadership a clear, evidence-based view of where to focus.</p>
+                        <ul class="detail-list">
+                            <li>Workflow and process review across departments</li>
+                            <li>Opportunity identification and value assessment</li>
+                            <li>Risk, governance and compliance analysis</li>
+                            <li>Prioritised pilot candidates with business case</li>
+                        </ul>
+                    </div>
+
+                    <div class="split reveal" style="gap: 28px;">
+                        <div class="detail-block">
+                            <span class="tag">Pilot — Test and validate</span>
+                            <h3>Learn what changes when AI enters a workflow</h3>
+                            <p>A structured pilot is not just a technology test. It defines success metrics, builds governance controls, involves end users and examines how the workflow itself needs to adapt.</p>
+                            <p>Pilots produce evidence — not just about whether the AI works, but about how roles, decisions and oversight need to change for the organisation to operate differently.</p>
+                            <ul class="detail-list">
+                                <li>Clearly scoped pilot with success metrics</li>
+                                <li>Governance and compliance controls from day one</li>
+                                <li>End-user involvement and feedback loops</li>
+                                <li>Workflow redesign insights and scaling readiness assessment</li>
+                            </ul>
+                        </div>
+                        <div class="image-panel" style="min-height: 340px;">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS AI Transformation workshop.webp" type="image/webp">
+                                <img src="/images/hero/HAIS AI Transformation workshop.png" alt="AI transformation workshop with diverse professionals reviewing workflow redesign">
+                            </picture>
+                        </div>
+                    </div>
+
+                    <div class="detail-block reveal">
+                        <span class="tag">Scale — Operational deployment</span>
+                        <h3>Move from experiment to operating model</h3>
+                        <p>Scaling is where most organisations falter. Successful pilots remain isolated experiments because the organisation has not prepared for the structural changes needed to embed AI into everyday operations.</p>
+                        <p>Scale involves defining operational ownership, embedding AI within workflows, establishing governance oversight, implementing performance monitoring and building the management capability to lead hybrid teams. This is where AI becomes part of how the organisation works — not something it experiments with.</p>
+                        <ul class="detail-list">
+                            <li>Operational ownership and accountability structures</li>
+                            <li>Workflow integration and process redesign</li>
+                            <li>Governance framework and compliance monitoring</li>
+                            <li>Performance metrics and continuous improvement</li>
+                            <li>Capability development for hybrid team leadership</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool → Assistant → Worker -->
+        <section>
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Capability evolution</div>
+                    <h2>Tool → Assistant → Worker</h2>
+                    <p class="lead">AI capability inside organisations follows a natural progression. Understanding where you are on this path shapes how you plan adoption, manage risk and prepare your people.</p>
+                </div>
+
+                <div class="three-col reveal">
+                    <div class="card">
+                        <div class="icon">T</div>
+                        <h3>Tool</h3>
+                        <p class="muted">AI enhances existing software — writing assistance, summarisation, predictive suggestions. Productivity improves, but organisational structure does not significantly change. This is where most organisations are today.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">A</div>
+                        <h3>Assistant</h3>
+                        <p class="muted">AI performs discrete tasks under human direction — drafting reports, analysing datasets, assisting customer support. Humans remain responsible for directing and reviewing work. This is the current focus of most enterprise adoption.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">W</div>
+                        <h3>Worker</h3>
+                        <p class="muted">AI operates inside defined workflows with human oversight rather than constant direction. Automated case triage, document analysis pipelines, operational decision support. This introduces new challenges in supervision, accountability and governance.</p>
+                    </div>
+                </div>
+
+                <div class="insight-quote reveal">
+                    <p>The greatest organisational impact occurs at the Worker stage. Managers will increasingly lead hybrid teams — requiring new practices for workflow design, quality oversight and accountability for AI-supported decisions.</p>
+                </div>
+
+                <div class="split reveal" style="margin-top: 48px;">
+                    <div class="split-text">
+                        <h2>Why this matters for your organisation</h2>
+                        <p>Each stage of AI capability brings different implications for workflow design, governance and management practice. An organisation deploying AI tools needs different structures from one embedding AI workers into operational processes.</p>
+                        <p>Understanding this progression helps leaders plan adoption realistically — investing in the right governance, capability and change management at each stage rather than trying to leap from experimentation to full automation.</p>
+                    </div>
+                    <div class="image-panel" style="height: 320px;">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Human + AI collaboration workstation.webp" type="image/webp">
+                            <img src="/images/hero/HAIS Human + AI collaboration workstation.png" alt="Two professionals collaborating at an AI-enabled workstation">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hybrid Workforce Leadership -->
+        <section class="soft">
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Hybrid workforce</div>
+                    <h2>Leading teams where humans and AI work together</h2>
+                    <p class="lead">As AI moves from tool to worker, organisations need new management practices. Hybrid Workforce Leadership addresses the practical reality of humans and AI operating together inside the same workflows.</p>
+                </div>
+
+                <div class="principle-grid reveal">
+                    <div class="principle">
+                        <h3>Workflow design</h3>
+                        <p>Defining which tasks AI performs, where human oversight is required and how work flows between human and AI contributors. Clear workflow design ensures AI augments operations rather than creating confusion.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Governance and accountability</h3>
+                        <p>Transparency, data protection, regulatory compliance and auditability of decisions. AI systems must operate within organisational and regulatory boundaries — particularly in regulated sectors.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Capability development</h3>
+                        <p>Employees need new skills: supervising AI outputs, understanding AI limitations, managing AI-supported workflows. The shift is from using tools to managing AI-enabled processes.</p>
+                    </div>
+                    <div class="principle">
+                        <h3>Continuous adaptation</h3>
+                        <p>AI evolves rapidly. Organisations need a continuous learning model that allows workflows, governance and training to evolve alongside technology — not a one-off transformation programme.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 48px;" class="reveal">
+                    <div class="image-panel" style="height: 360px;">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Executive team AI strategy meeting.webp" type="image/webp">
+                            <img src="/images/hero/HAIS Executive team AI strategy meeting.png" alt="Diverse executive team discussing AI strategy in a boardroom">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What makes this different -->
+        <section>
+            <div class="container">
+                <div class="split reveal">
+                    <div class="image-panel" style="height: 380px;">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Systems Thinking.webp" type="image/webp">
+                            <img src="/images/hero/HAIS Systems Thinking.png" alt="Abstract systems thinking network diagram representing connected organisational intelligence">
+                        </picture>
+                    </div>
+                    <div class="split-text">
+                        <div class="eyebrow">What makes this different</div>
+                        <h2>Organisational transformation, not technology consulting</h2>
+                        <p>Strategy consultancies plan. Technical agencies build. Human–AI Systems bridges the gap — helping organisations translate AI strategy into operational adoption.</p>
+                        <p>The focus is on the organisational dimension: how AI becomes part of the workforce, how it is governed responsibly and how it delivers measurable operational value. This is not about selecting vendors or writing code. It is about redesigning how work happens.</p>
+                        <p>Every engagement is grounded in practical experience of leading AI transformation inside complex organisations — not theoretical frameworks applied from the outside.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-band">
+            <div class="container">
+                <h2 class="reveal">Ready to move beyond experimentation?</h2>
+                <p class="lead reveal">Most engagements begin with a 30-minute conversation. No agenda beyond understanding your situation and whether there is a genuine fit.</p>
+                <div class="actions reveal">
+                    <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes</a>
+                    <a href="/services/" class="btn btn-secondary">View services</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+                <div class="footer-nav">
+                    <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+</body>
+</html>

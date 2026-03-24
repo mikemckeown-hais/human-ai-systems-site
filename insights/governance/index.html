@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Governance That Actually Works | Enabling Adoption, Not Blocking It | Human–AI Systems</title>
+  <meta name="description" content="AI governance isn't a throttle — it's a permission structure. How to design governance that enables scaling rather than obstructing it. From board-level AI governance experience at a listed company.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://human-ai-systems.com/insights/governance/">
+  <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Human–AI Systems">
+  <meta property="og:title" content="AI Governance That Actually Works | Human–AI Systems">
+  <meta property="og:description" content="AI governance isn't a throttle — it's a permission structure. How to design governance that enables scaling rather than obstructing it.">
+  <meta property="og:url" content="https://human-ai-systems.com/insights/governance/">
+  <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Governance That Actually Works | Human–AI Systems">
+  <meta name="twitter:description" content="AI governance isn't a throttle — it's a permission structure. How to design governance that enables scaling rather than obstructing it.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI governance that actually works",
+    "description": "AI governance isn't a throttle — it's a permission structure. How to design governance that enables scaling rather than obstructing it.",
+    "author": {"@type": "Person", "name": "Mike McKeown", "url": "https://human-ai-systems.com/about/"},
+    "publisher": {"@type": "Organization", "name": "Human–AI Systems", "url": "https://human-ai-systems.com/"},
+    "datePublished": "2026-03-01",
+    "url": "https://human-ai-systems.com/insights/governance/"
+  }
+  </script>
+
+  <style>
+    :root{--blue:#1F3A5F;--teal:#2A6F74;--aqua:#3EC1C9;--graphite:#2B2B2B;--steel:#6B7C8F;--soft:#F3F5F7;--white:#FFFFFF;--max:1200px;--radius:14px;--shadow:0 10px 30px rgba(31,58,95,0.08);--border:1px solid rgba(31,58,95,0.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;color:var(--graphite);background:var(--white);line-height:1.6}
+    body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:100;background:#36527A;border-bottom:1px solid rgba(255,255,255,0.10);box-shadow:0 10px 28px rgba(16,28,46,0.18)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;min-height:84px}
+    .brand{display:flex;align-items:center;padding-top:6px;flex:0 0 auto}
+    .brand-mark{width:274px;height:auto;display:block}.brand-mark.footer-mark{width:360px;height:auto}
+    .nav{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex:1 1 auto;color:#fff;font-size:1rem;font-weight:500;white-space:nowrap}
+    .nav a:not(.nav-cta){color:#fff!important;opacity:0.98;display:inline-flex;align-items:center;padding:4px 2px}
+    .nav a.active{opacity:1;border-bottom:2px solid var(--aqua);padding-bottom:2px}
+    .nav a:not(.nav-cta):hover{opacity:1}
+    .nav-cta{padding:12px 20px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600;box-shadow:0 10px 26px rgba(15,25,40,0.18);margin-left:6px}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);color:var(--white);cursor:pointer;flex:0 0 auto}
+    .menu-toggle:hover{background:rgba(255,255,255,0.14)}
+    .menu-toggle-line{width:20px;height:2px;background:currentColor;border-radius:999px;position:relative;transition:transform 220ms ease,opacity 220ms ease}
+    .menu-toggle-line::before,.menu-toggle-line::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;border-radius:999px;transition:transform 220ms ease,top 220ms ease,bottom 220ms ease}
+    .menu-toggle-line::before{top:-6px}.menu-toggle-line::after{bottom:-6px}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line{background:transparent}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::before{top:0;transform:rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::after{bottom:0;transform:rotate(-45deg)}
+    .mobile-menu{display:none}
+    .article-header{background:linear-gradient(160deg,#1F3A5F 0%,#2A4468 60%,#2A6F74 100%);color:var(--white);padding:72px 0 84px}
+    .article-header-inner{max-width:720px}
+    .article-eyebrow{font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--aqua);margin-bottom:18px}
+    .article-header h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin:0 0 22px;color:white}
+    .article-meta{font-size:0.92rem;color:rgba(255,255,255,0.7);margin-bottom:24px;display:flex;gap:20px;flex-wrap:wrap}
+    .article-lead{font-size:1.18rem;line-height:1.6;color:rgba(255,255,255,0.88);max-width:38rem;margin:0}
+    .article-body{max-width:720px;margin:0 auto;padding:64px 24px}
+    .article-body p{margin-bottom:24px;line-height:1.7;font-size:1.05rem}
+    .article-body h2{font-size:1.5rem;font-weight:600;margin-top:48px;margin-bottom:20px;color:var(--blue);line-height:1.2}
+    .article-body h2:first-child{margin-top:0}
+    .article-body h3{font-size:1.15rem;font-weight:600;margin-top:32px;margin-bottom:16px;color:var(--teal)}
+    .pull-quote{border-left:4px solid var(--aqua);padding:24px;margin:40px 0;background:var(--soft);font-size:1.12rem;font-weight:500;line-height:1.65;color:var(--blue);font-style:italic;border-radius:0 var(--radius) var(--radius) 0}
+    .related-section{background:var(--soft);padding:72px 0}
+    .related-inner{max-width:var(--max);margin:0 auto}
+    .related-section h2{font-size:clamp(1.6rem,2.5vw,2rem);font-weight:600;margin-bottom:36px;color:var(--blue)}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .related-card{background:var(--white);padding:28px;border-radius:var(--radius);border:var(--border);box-shadow:var(--shadow);transition:transform 240ms ease,box-shadow 240ms ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(31,58,95,0.10)}
+    .related-card-tag{font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+    .related-card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--blue);line-height:1.35}
+    .related-card p{font-size:0.95rem;color:var(--steel);line-height:1.55;margin:0}
+    .cta-band{background:linear-gradient(135deg,var(--blue),#23466f 52%,var(--teal));color:var(--white);overflow:hidden;padding:88px 0}
+    .cta-inner{text-align:center;max-width:640px;margin:0 auto}
+    .cta-inner h2{color:var(--white);font-size:clamp(1.8rem,2.5vw,2.4rem);margin-bottom:16px;text-align:center}
+    .cta-inner .lead{color:rgba(255,255,255,0.82);font-size:1.18rem;text-align:center;line-height:1.55;margin:0 0 24px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:1rem;transition:transform 220ms ease,background 220ms ease;border:1px solid transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--white);color:var(--blue);box-shadow:var(--shadow)}
+    .btn-primary:hover{background:var(--soft)}
+    .btn-secondary{background:transparent;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.35)}
+    .btn-secondary:hover{background:rgba(255,255,255,0.1)}
+    .site-footer{padding:36px 0 48px;background:#1c2632;color:rgba(255,255,255,0.82)}
+    .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+    .footer-nav{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-nav a{color:rgba(255,255,255,0.82);display:inline-flex;align-items:center;gap:7px}
+    .footer-nav a:hover{color:#fff}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:860px){
+      .nav{display:none}.menu-toggle{display:inline-flex}
+      .mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height 260ms ease;border-top:1px solid rgba(255,255,255,0.10)}
+      .mobile-menu.is-open{max-height:480px}
+      .mobile-menu-inner{padding:14px 0 18px;display:grid;gap:10px}
+      .mobile-menu a{color:#fff;padding:10px 0;font-size:1rem;font-weight:500}
+      .mobile-menu .mobile-start{margin-top:6px;display:inline-flex;align-items:center;justify-content:center;width:fit-content;padding:12px 18px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600}
+      .mobile-contact-row{display:flex;gap:14px;flex-wrap:wrap;padding-top:8px;color:rgba(255,255,255,0.82);font-size:0.92rem}
+      .brand-mark{width:220px}.brand-mark.footer-mark{width:290px}
+      .related-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:760px){.container{width:min(var(--max),calc(100% - 28px))}.article-header{padding:56px 0 64px}.article-body{padding:48px 16px}}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Human–AI Systems home">
+        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo"><g transform="translate(40,30)"><line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/><line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/><circle cx="95" cy="22" r="24" fill="#FFFFFF"/><circle cx="36" cy="92" r="24" fill="#72D0D5"/><circle cx="148" cy="104" r="24" fill="#3EC1C9"/><g transform="translate(175,0)"><text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text><text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text></g></g></svg>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/approach/">Approach</a><a href="/services/">Services</a><a href="/sectors/">Sectors</a><a href="/insights/" class="active">Insights</a><a href="/about/">About</a><a href="/start/" class="nav-cta">Start</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span class="menu-toggle-line"></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="container"><div class="mobile-menu-inner">
+      <a href="/approach/">Approach</a><a href="/services/">Services</a><a href="/sectors/">Sectors</a><a href="/insights/">Insights</a><a href="/about/">About</a>
+      <div class="mobile-contact-row"><a href="mailto:mike.mckeown@human-ai-systems.com">Email</a><a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+      <a href="/start/" class="mobile-start">Start</a>
+    </div></div>
+  </div>
+</header>
+
+<main>
+  <section class="article-header">
+    <div class="container"><div class="article-header-inner">
+      <div class="article-eyebrow">Insight</div>
+      <h1>AI governance that actually works</h1>
+      <div class="article-meta"><span>Mike McKeown</span><span>March 2026</span><span>5 min read</span></div>
+      <p class="article-lead">When AI governance is mentioned in boardrooms, the mood often darkens. It sounds like regulation. Control. The opposite of innovation. That's almost entirely wrong. Governance is what makes scaling possible at all.</p>
+    </div></div>
+  </section>
+
+  <div class="article-body">
+    <h2>What governance actually is</h2>
+
+    <p>Governance is a framework for decision-making authority and accountability. It answers three questions: who decides? On what basis? How do we know if we were right? These aren't throttles. They're permissions.</p>
+
+    <p>When you have governance in place, you know which decisions can be made by which people, at which levels. You know what information they need. You know what happens if something goes wrong. You know how to learn from it. That clarity is what makes fast movement possible. Without it, every decision becomes a conversation.</p>
+
+    <p>Organisations without governance don't move faster. They move recklessly. Someone makes a decision under uncertainty. It either works or it doesn't. If it works, there's no systematic way to understand why, so the next person has to figure it out again from scratch. If it doesn't work, there's no clear accountability, so the learning doesn't happen. You get short bursts of progress followed by longer periods of recovery.</p>
+
+    <h2>The fear underneath</h2>
+
+    <p>What organisations are really trying to avoid when they worry about governance is not "moving slowly." It's catastrophic decisions made in conditions of uncertainty. A pilot that proves something works at small scale. Then the same thing deployed at scale without thinking about second-order effects. Then it breaks and someone is responsible.</p>
+
+    <p>Governance is the tool for making decisions under uncertainty. Not by removing the uncertainty — you can't remove it — but by being clear about who is deciding, what they know and don't know, and what happens if they're wrong.</p>
+
+    <div class="pull-quote">Without governance, pilots succeed but scale fails. The moment you go beyond a handful of expert users, the lack of governance becomes visible — and scaling stops.</div>
+
+    <h2>Why weak governance kills scaling</h2>
+
+    <p>In a pilot, everything is visible. A small group of engaged people are using the AI. They understand its limitations. They're checking outputs. They're feeding back when it fails. If something goes wrong, it's caught immediately and fixed.</p>
+
+    <p>When you scale beyond that, those conditions disappear. More people means less engagement. Some of them don't understand the limitations. Some of them are checking outputs, some aren't. If something goes wrong, it might not be caught immediately. It might not be caught at all until it's in production and has affected customers.</p>
+
+    <p>The moment you go beyond a handful of expert users, the lack of governance becomes visible. Then scaling stops. Something went wrong and no one knows whose job it was to prevent it. No one knows what the threshold was supposed to be. No one knows what should have happened next. The conversation about "why did this fail?" turns into "who is responsible?" and never gets resolved because responsibility was never clear.</p>
+
+    <h2>What good governance looks like</h2>
+
+    <p>It's not voluminous. A good governance framework sits on top of clear principles. These are usually permanent: What kinds of decisions can AI inform? Which kinds must it not? When do humans stay in the loop? When can it run autonomously? Who reviews failures? How do we learn from them?</p>
+
+    <p>Those are hard questions. But once answered, they are mostly permanent. You don't revisit them for every use case. You apply them consistently. That's what makes scaling possible — not by removing friction but by making friction predictable.</p>
+
+    <p>A good framework usually has three layers. First, decision architecture: the types of decisions AI can be involved in, and how. What kinds of outputs can inform decisions? What kinds of decisions have to stay entirely human? Second, training and certification: so people know what they're signing up for. If you're going to deploy AI in your process, you need to understand what it can and can't do, what you're responsible for, what to look for if something is going wrong.</p>
+
+    <p>Third, a monitoring and learning loop: so that things that go wrong get fixed, not hidden. When an AI system makes a bad decision, you need to know about it. You need to understand why it happened. You need to change the system so it doesn't happen again. Most organisations skip this layer. That's usually where scaling breaks.</p>
+
+    <h2>Why boards get this backwards</h2>
+
+    <p>Boards are trained to control risk through restriction. Put guardrails in place. Monitor adherence. Document exceptions. That thinking makes sense for financial controls or compliance. But for AI adoption, it's often backwards.</p>
+
+    <p>What boards should be doing is building decision-making authority at the operating layer — and then ensuring that people have the training, the access to information, and the accountability structure to use that authority well. That's harder to oversee. It requires trusting people to make decisions you can't see in real time. But it's the only way to scale.</p>
+
+    <p>The board's job is not to make AI adoption slow. It's to make it durable. To understand where the real risks are, and to build the structures that let people move fast in low-risk areas while being careful in high-risk areas. That's governance done right.</p>
+
+    <h2>The practical implementation</h2>
+
+    <p>Start with decision architecture. This is usually the work of a month with the right people in the room. Legal, compliance, technology, operations, the people who do the work. You're answering: which decisions is this AI allowed to inform? Which is it not? When does a human have to approve? When can it run autonomously? You're also building the language — the shared vocabulary for talking about what's happening.</p>
+
+    <p>Then training and certification. This is not a one-day course. It's a clear set of expectations. If you're a department head who wants to deploy AI in your process, you need to understand what it does, what it doesn't, what you're responsible for, what to watch for. There's a difference between an organisation where this is clear and one where it's not.</p>
+
+    <p>Then the monitoring and learning loop. This is usually the hardest part because it requires admitting when something doesn't work. You need visibility into where the AI is failing. You need a process for understanding why. You need a pathway for improving it — or for deciding that it's not worth using. Most organisations get this wrong because they don't want to know where the failures are. That's when scaling stops.</p>
+
+    <h2>The closing question</h2>
+
+    <p>Governance is not the opposite of agility. Governance is what makes agility durable. Without it, you get short-term wins and long-term losses. The path to scale is usually through governance, not around it. The board's job is not to slow things down. It's to make sure you're fast in the right places and careful in the right places. That's what governance does.</p>
+  </div>
+
+  <section class="related-section">
+    <div class="container related-inner">
+      <h2>Related insights</h2>
+      <div class="related-grid">
+        <a href="/insights/why-pilots-fail/" class="related-card reveal"><div class="related-card-tag">Insight</div><h3>Why most AI pilots fail to scale</h3><p>Most AI pilots succeed. Most don't scale. The difference is not the AI — it's workflow design, operating discipline and governance.</p></a>
+        <a href="/insights/tool-assistant-worker/" class="related-card reveal"><div class="related-card-tag">Framework</div><h3>Tool, Assistant, Worker: understanding AI capability maturity</h3><p>A practical framework for understanding how AI capability matures inside organisations — and what leadership has to change at each stage.</p></a>
+        <a href="/insights/local-government/" class="related-card reveal"><div class="related-card-tag">Sector</div><h3>AI in local government: from policy to practice</h3><p>Insights from co-authoring an AI policy for a council and rolling out Copilot to 250+ officers. What works. What doesn't. Why governance matters.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container"><div class="cta-inner">
+      <h2>Ready to talk about your situation?</h2>
+      <p class="lead">Building governance that enables rather than restricts. A 30-minute conversation is a good place to start.</p>
+      <div class="actions"><a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book 30 minutes</a><a href="/services/" class="btn btn-secondary">Explore services</a></div>
+    </div></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+      <div class="footer-nav">
+        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="/approach/">Approach</a>
+      <a href="/services/">Services</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const observer=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const mt=document.querySelector('.menu-toggle'),mm=document.querySelector('#mobile-menu');
+  function closeMM(){mt.setAttribute('aria-expanded','false');mt.setAttribute('aria-label','Open menu');mm.classList.remove('is-open');mm.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open')}
+  mt.addEventListener('click',()=>{const o=mt.getAttribute('aria-expanded')==='true';if(o){closeMM()}else{mt.setAttribute('aria-expanded','true');mt.setAttribute('aria-label','Close menu');mm.classList.add('is-open');mm.setAttribute('aria-hidden','false');document.body.classList.add('menu-open')}});
+  mm.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMM));
+  window.addEventListener('resize',()=>{if(window.innerWidth>860)closeMM()});
+</script>
+</body>
+</html>

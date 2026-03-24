@@ -1,0 +1,17 @@
+<svg width="420" height="420" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#1F3A5F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- left worker -->
+    <circle cx="26" cy="46" r="10"/>
+    <path d="M8 86 C12 70, 20 64, 26 64 C32 64, 40 70, 44 86"/>
+
+    <!-- centre worker (larger) -->
+    <circle cx="64" cy="42" r="14"/>
+    <path d="M32 96 C38 72, 50 64, 64 64 C78 64, 90 72, 96 96"/>
+
+    <!-- right worker -->
+    <circle cx="102" cy="46" r="10"/>
+    <path d="M84 86 C88 70, 96 64, 102 64 C108 64, 116 70, 120 86"/>
+
+  </g>
+</svg>

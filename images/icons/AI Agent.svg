@@ -1,0 +1,33 @@
+<svg width="420" height="420" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#1F3A5F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- central agent container -->
+    <rect x="44" y="44" width="40" height="40" rx="10"/>
+
+    <!-- agent motif: centred action nodes between core and outer ring -->
+    <!-- outer autonomy ring -->
+    <circle cx="64" cy="64" r="11"/>
+
+    <!-- action nodes (larger and centred on ring) -->
+    <circle cx="64" cy="53" r="3" fill="#1F3A5F" stroke="none"/>
+    <circle cx="74" cy="69" r="3" fill="#1F3A5F" stroke="none"/>
+    <circle cx="54" cy="69" r="3" fill="#1F3A5F" stroke="none"/>
+
+    <!-- connectors from core to action nodes -->
+    <line x1="64" y1="59" x2="64" y2="56"/>
+    <line x1="69.5" y1="66.5" x2="72.5" y2="68.5"/>
+    <line x1="58.5" y1="66.5" x2="55.5" y2="68.5"/>
+
+    <!-- centre core drawn last so lines terminate cleanly at the edge -->
+    <circle cx="64" cy="64" r="5"/>
+
+    <!-- outer system nodes -->
+    <circle cx="108" cy="64" r="6"/>
+    <circle cx="20" cy="64" r="6"/>
+
+    <!-- connectors (left and right only to emphasise agent interaction) -->
+    <line x1="102" y1="64" x2="84" y2="64"/>
+    <line x1="26" y1="64" x2="44" y2="64"/>
+
+  </g>
+</svg>
