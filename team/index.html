@@ -305,6 +305,17 @@
             width: 100%;
         }
 
+        .team-photo {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            margin-bottom: 18px;
+            width: 100%;
+            background: var(--soft);
+        }
+
+        .team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
         .team-card h3 { margin: 0 0 8px; font-size: 1.1rem; color: var(--blue); }
 
         .team-card .role {
@@ -628,7 +639,10 @@
                 <h2>Human leadership</h2>
                 <div class="mike-grid reveal">
                     <div class="mike-photo">
-                        <img src="/images/headshots/Mike McKeown - Professional.png" alt="Mike McKeown, founder of Human–AI Systems">
+                        <picture>
+                            <source srcset="/images/headshots/webp/Mike McKeown - Professional.webp" type="image/webp">
+                            <img src="/images/headshots/Mike McKeown - Professional.png" alt="Mike McKeown, founder of Human–AI Systems">
+                        </picture>
                     </div>
                     <div>
                         <div class="role-badge">Founder &amp; Director</div>
@@ -652,8 +666,12 @@
 
                 <div class="team-grid">
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">A</div>
-                        <!-- Photo: AI-generated portrait of Ada Lovelace to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Ada.webp" type="image/webp">
+                                <img src="/images/headshots/Ada.png" alt="Ada, Chief Marketing Officer at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Ada</h3>
                         <div class="role">Chief Marketing Officer</div>
                         <div class="badge">Named after Ada Lovelace</div>
@@ -662,8 +680,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">V</div>
-                        <!-- Photo: AI-generated portrait of Vint Cerf to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Vint.webp" type="image/webp">
+                                <img src="/images/headshots/Vint.png" alt="Vint, Chief Revenue Officer at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Vint</h3>
                         <div class="role">Chief Revenue Officer</div>
                         <div class="badge">Named after Vint Cerf</div>
@@ -672,8 +694,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">G</div>
-                        <!-- Photo: AI-generated portrait of Grace Hopper to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Grace.webp" type="image/webp">
+                                <img src="/images/headshots/Grace.png" alt="Grace, Chief Operating Officer at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Grace</h3>
                         <div class="role">Chief Operating Officer</div>
                         <div class="badge">Named after Grace Hopper</div>
@@ -682,8 +708,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">B</div>
-                        <!-- Photo: AI-generated portrait of Blaise Pascal to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Blaise.webp" type="image/webp">
+                                <img src="/images/headshots/Blaise.png" alt="Blaise, Chief Financial Officer at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Blaise</h3>
                         <div class="role">Chief Financial Officer</div>
                         <div class="badge">Named after Blaise Pascal</div>
@@ -692,8 +722,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">L</div>
-                        <!-- Photo: AI-generated portrait of Linus Torvalds to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Linus.webp" type="image/webp">
+                                <img src="/images/headshots/Linus.png" alt="Linus, Chief Technology Officer at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Linus</h3>
                         <div class="role">Chief Technology Officer</div>
                         <div class="badge">Named after Linus Torvalds</div>
@@ -702,8 +736,12 @@
                     </div>
 
                     <div class="team-card coming-soon reveal">
-                        <div class="team-photo-placeholder">N</div>
-                        <!-- Photo: AI-generated portrait of Norbert Wiener to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Norbert.webp" type="image/webp">
+                                <img src="/images/headshots/Norbert.png" alt="Norbert, General Counsel at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Norbert</h3>
                         <div class="role">General Counsel</div>
                         <div class="badge">Named after Norbert Wiener</div>
@@ -722,10 +760,14 @@
                 <h2>Delivery team</h2>
                 <p class="section-intro">The delivery team supports client engagements directly — from discovery through to transformation. Each worker maps to a specific phase of the Human–AI Systems methodology.</p>
 
-                <div class="team-grid" style="grid-template-columns:repeat(2,1fr)">
+                <div class="team-grid" style="grid-template-columns:repeat(3,1fr)">
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">A</div>
-                        <!-- Photo: AI-generated portrait of Alan Turing to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Alan.webp" type="image/webp">
+                                <img src="/images/headshots/Alan.png" alt="Alan, Discovery Consultant at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Alan</h3>
                         <div class="role">Discovery Consultant (Radar)</div>
                         <div class="badge">Named after Alan Turing</div>
@@ -734,8 +776,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">M</div>
-                        <!-- Photo: AI-generated portrait of Margaret Hamilton to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Margaret.webp" type="image/webp">
+                                <img src="/images/headshots/Margaret.png" alt="Margaret, Proposals Manager at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Margaret</h3>
                         <div class="role">Proposals Manager</div>
                         <div class="badge">Named after Margaret Hamilton</div>
@@ -744,8 +790,12 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">K</div>
-                        <!-- Photo: AI-generated portrait of Katherine Johnson to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Katherine.webp" type="image/webp">
+                                <img src="/images/headshots/Katherine.png" alt="Katherine, Engagement Manager at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Katherine</h3>
                         <div class="role">Engagement Manager (Pilot)</div>
                         <div class="badge">Named after Katherine Johnson</div>
@@ -754,13 +804,31 @@
                     </div>
 
                     <div class="team-card reveal">
-                        <div class="team-photo-placeholder">T</div>
-                        <!-- Photo: AI-generated portrait of Tim Berners-Lee to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Tim.webp" type="image/webp">
+                                <img src="/images/headshots/Tim.png" alt="Tim, Transformation Director at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Tim</h3>
                         <div class="role">Transformation Director (Scale)</div>
                         <div class="badge">Named after Tim Berners-Lee</div>
                         <div class="why">Took something from zero to global transformation. The definition of scale.</div>
                         <div class="does">Leads the Scale and Operating Model phase — expansion roadmaps, AI operating model design, and scaling programme reviews.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Gladys.webp" type="image/webp">
+                                <img src="/images/headshots/Gladys.png" alt="Gladys, Storyteller at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Gladys</h3>
+                        <div class="role">Storyteller</div>
+                        <div class="badge">Named after Gladys West</div>
+                        <div class="why">The mathematician whose modelling of the Earth's shape made GPS possible. She helped people find where they are.</div>
+                        <div class="does">Creates master narratives and story derivatives for specific media, prospect conversations, and client engagements — helping audiences find themselves in the story.</div>
                     </div>
                 </div>
             </div>
@@ -775,8 +843,12 @@
 
                 <div class="extended-grid reveal">
                     <div class="sophie-card">
-                        <div class="team-photo-placeholder">S</div>
-                        <!-- Photo: AI-generated portrait of Sophie Wilson to be added -->
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Sophie.webp" type="image/webp">
+                                <img src="/images/headshots/Sophie.png" alt="Sophie, Executive Assistant at Human–AI Systems">
+                            </picture>
+                        </div>
                         <h3>Sophie</h3>
                         <div class="role">Executive Assistant</div>
                         <div class="badge">Named after Sophie Wilson</div>
