@@ -1690,6 +1690,132 @@
         font-size: 0.92rem;
       }
     }
+
+    /* ── Stories carousel ── */
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 480ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    .story-card {
+      flex: 0 0 calc(33.333% - 16px);
+      background: var(--white);
+      border: var(--border);
+      border-radius: 20px;
+      padding: 32px 28px 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+    .story-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(31,58,95,0.12);
+    }
+    .story-sector {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(42,111,116,0.08);
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .story-card h3 {
+      font-size: 1.18rem;
+      line-height: 1.3;
+      color: var(--blue);
+      margin: 0 0 14px;
+      font-weight: 600;
+    }
+    .story-card p {
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--steel);
+      margin: 0 0 12px;
+    }
+    .story-result {
+      margin-top: auto !important;
+      padding-top: 14px;
+      border-top: 1px solid rgba(31,58,95,0.07);
+      font-size: 0.95rem !important;
+      color: var(--graphite) !important;
+      font-weight: 500;
+    }
+    .story-close {
+      font-size: 0.92rem !important;
+      font-style: italic;
+      color: var(--teal) !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Carousel navigation */
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .carousel-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: var(--border);
+      background: var(--white);
+      color: var(--blue);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      transition: background 200ms ease, color 200ms ease;
+    }
+    .carousel-btn:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(31,58,95,0.15);
+      border: none;
+      cursor: pointer;
+      transition: background 200ms ease, transform 200ms ease;
+      padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--teal);
+      transform: scale(1.25);
+    }
+
+    /* Responsive: 2 cards on tablet */
+    @media (max-width: 960px) {
+      .story-card {
+        flex: 0 0 calc(50% - 12px);
+      }
+    }
+    /* Responsive: 1 card on mobile */
+    @media (max-width: 620px) {
+      .story-card {
+        flex: 0 0 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1878,6 +2004,92 @@
 
         <div class="actions reveal" style="justify-content:center; margin-top:34px;">
           <a class="btn btn-primary" href="/services/">View all services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stories carousel ── -->
+    <section id="stories">
+      <div class="container">
+        <div class="center-intro reveal">
+          <div class="eyebrow">What it looks like</div>
+          <h2>AI adoption through the eyes of the people doing the work.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">Real operational narratives. Different sectors, different functions — the same pattern: when you redesign how work happens, the numbers follow.</p>
+        </div>
+
+        <div class="carousel-wrapper reveal">
+          <div class="carousel-track" id="storyTrack">
+
+            <!-- Card 1 — Sales -->
+            <div class="story-card">
+              <div class="story-sector">Sales &amp; Revenue</div>
+              <h3>Your best people are buried in bid admin instead of talking to customers.</h3>
+              <p>The proposals take five days. The CRM data is three days stale. Reps prep for discovery calls in the twenty minutes before the call starts. Everyone knows the work should be sharper — but there's no time to make it so.</p>
+              <p class="story-result">One mid-market technology company changed how its entire deal cycle operated. Win rate improved roughly 10%. Revenue impact: around £3M.</p>
+              <p class="story-close">The tools were already there. What changed was how the work moved between people.</p>
+            </div>
+
+            <!-- Card 2 — Support -->
+            <div class="story-card">
+              <div class="story-sector">Customer Support</div>
+              <h3>The queue never gets shorter, no matter how hard the team works.</h3>
+              <p>Half the tickets are variations on solved problems. The answers exist — somewhere in a knowledge base with four hundred articles, or in a Slack thread that got buried last Tuesday. The best engineer spends her mornings answering colleagues' questions instead of the hard cases.</p>
+              <p class="story-result">A SaaS company redesigned how support actually operated. Low-complexity tickets dropped 30%. Resolution times fell by a quarter. Churn linked to support experience dropped measurably.</p>
+              <p class="story-close">They didn't hire more people. They changed how knowledge reached the point of work.</p>
+            </div>
+
+            <!-- Card 3 — Finance -->
+            <div class="story-card">
+              <div class="story-sector">Finance &amp; Operations</div>
+              <h3>The numbers arrive too late for anyone to act on them.</h3>
+              <p>The close takes twelve days. The board gets figures prefaced with "assuming these are still roughly right." The FP&amp;A analyst — hired to do forecasting — spends 80% of her time collecting data and formatting reports.</p>
+              <p class="story-result">A multi-site organisation redesigned how financial data was collected, reconciled, and reported. The close dropped from twelve days to under five. A single pricing decision preserved £200K in margin.</p>
+              <p class="story-close">Finance went from reporting factory to the team that could answer any question the business asked.</p>
+            </div>
+
+            <!-- Card 4 — Legal / Financial Services -->
+            <div class="story-card">
+              <div class="story-sector">Legal &amp; Compliance</div>
+              <h3>The obligation register is permanently three weeks behind.</h3>
+              <p>The FCA published over a hundred documents last year. Consumer Duty raised the bar across every client-facing process. Contract review takes twelve days for routine agreements. One person is the bottleneck for everything that needs legal sign-off.</p>
+              <p class="story-result">A wealth management firm changed how regulatory change, contract review, and audit preparation flowed. The register reached currency. Contract turnaround halved. The next FCA visit produced zero findings on policy currency.</p>
+              <p class="story-close">The compliance team went back to doing compliance work instead of compliance admin.</p>
+            </div>
+
+            <!-- Card 5 — Public Sector -->
+            <div class="story-card">
+              <div class="story-sector">Public Sector</div>
+              <h3>Five councils merging into one — and five broken front doors becoming one bigger broken front door.</h3>
+              <p>Five councils, each running fragmented 9-to-5 services. Officers drowning in admin. Non-English speakers facing barriers at every interaction. A £12M budget gap in year one.</p>
+              <p class="story-result">The new authority used AI in the planning of the organisation, not just the running of it. On vesting day, residents experienced one council that worked. Services became accessible in any language, through any channel, at any hour. Trust went up, not down.</p>
+              <p class="story-close">They published exactly what AI was doing and invited scrutiny. Satisfaction improved.</p>
+            </div>
+
+            <!-- Card 6 — SME -->
+            <div class="story-card">
+              <div class="story-sector">Small &amp; Medium Organisations</div>
+              <h3>The MD built the business. Now the business runs the MD.</h3>
+              <p>Quoting, chasing, scheduling, firefighting. Three hundred and forty unread emails. A move into heat pumps stalling because the survey-to-quote process can't keep pace with demand. The MD hasn't had headspace to think about where the business goes next in over a year.</p>
+              <p class="story-result">A fifteen-person heating company changed how the whole operation flowed. Revenue grew 35%. Heat pumps went from 10% to 40% of the business. Cash collection time halved.</p>
+              <p class="story-close">He got something back he hadn't had in years: time to think about where the business goes next.</p>
+            </div>
+
+          </div>
+
+          <!-- Navigation -->
+          <div class="carousel-nav">
+            <button class="carousel-btn carousel-prev" aria-label="Previous story" id="storyPrev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="storyDots"></div>
+            <button class="carousel-btn carousel-next" aria-label="Next story" id="storyNext">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="actions reveal" style="justify-content:center; margin-top:34px;">
+          <a class="btn btn-primary" href="/start/">If any of this sounds familiar, let's talk</a>
         </div>
       </div>
     </section>
@@ -2113,6 +2325,127 @@
         }
       });
     }
+
+    /* ── Stories carousel ── */
+    (function() {
+      var track = document.getElementById('storyTrack');
+      var prevBtn = document.getElementById('storyPrev');
+      var nextBtn = document.getElementById('storyNext');
+      var dotsWrap = document.getElementById('storyDots');
+      if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+      var cards = track.querySelectorAll('.story-card');
+      var total = cards.length;
+      var current = 0;
+      var autoTimer = null;
+      var autoDelay = 6000;
+
+      function getVisible() {
+        var w = window.innerWidth;
+        if (w <= 620) return 1;
+        if (w <= 960) return 2;
+        return 3;
+      }
+
+      function getMaxIndex() {
+        return Math.max(0, total - getVisible());
+      }
+
+      function buildDots() {
+        dotsWrap.innerHTML = '';
+        var max = getMaxIndex();
+        for (var i = 0; i <= max; i++) {
+          var dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to story ' + (i + 1));
+          dot.dataset.index = i;
+          dot.addEventListener('click', function() {
+            goTo(parseInt(this.dataset.index));
+            resetAuto();
+          });
+          dotsWrap.appendChild(dot);
+        }
+      }
+
+      function updateDots() {
+        var dots = dotsWrap.querySelectorAll('.carousel-dot');
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function goTo(index) {
+        var max = getMaxIndex();
+        current = Math.max(0, Math.min(index, max));
+        var gap = 24;
+        var vis = getVisible();
+        var cardWidth = (track.parentElement.offsetWidth - gap * (vis - 1)) / vis;
+        track.style.transform = 'translateX(' + (-(cardWidth + gap) * current) + 'px)';
+        updateDots();
+      }
+
+      function next() {
+        var max = getMaxIndex();
+        goTo(current >= max ? 0 : current + 1);
+      }
+
+      function prev() {
+        var max = getMaxIndex();
+        goTo(current <= 0 ? max : current - 1);
+      }
+
+      function startAuto() {
+        stopAuto();
+        autoTimer = setInterval(next, autoDelay);
+      }
+
+      function stopAuto() {
+        if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      }
+
+      function resetAuto() {
+        stopAuto();
+        startAuto();
+      }
+
+      prevBtn.addEventListener('click', function() { prev(); resetAuto(); });
+      nextBtn.addEventListener('click', function() { next(); resetAuto(); });
+
+      /* Pause on hover */
+      track.addEventListener('mouseenter', stopAuto);
+      track.addEventListener('mouseleave', startAuto);
+
+      /* Touch swipe */
+      var touchStartX = 0;
+      var touchEndX = 0;
+      track.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAuto();
+      }, { passive: true });
+      track.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) next(); else prev();
+        }
+        startAuto();
+      }, { passive: true });
+
+      /* Recalc on resize */
+      var resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          if (current > getMaxIndex()) current = getMaxIndex();
+          buildDots();
+          goTo(current);
+        }, 150);
+      });
+
+      buildDots();
+      goTo(0);
+      startAuto();
+    })();
   </script>
 </body>
 </html>
