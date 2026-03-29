@@ -387,6 +387,53 @@
             font-weight: 700;
         }
 
+        /* ── Story vignettes ── */
+        .story-vignette {
+            border-left: 4px solid var(--teal);
+            background: linear-gradient(135deg, rgba(42,111,116,0.04), rgba(62,193,201,0.03));
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 28px 32px;
+            margin: 32px 0 0;
+            grid-column: 1 / -1;
+        }
+
+        .story-vignette-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--teal);
+            margin-bottom: 12px;
+        }
+
+        .story-vignette-scene {
+            font-size: 1.05rem;
+            color: var(--graphite);
+            line-height: 1.6;
+            margin: 0 0 14px;
+        }
+
+        .story-vignette-outcome {
+            font-size: 0.98rem;
+            color: var(--blue);
+            font-weight: 600;
+            margin: 0 0 8px;
+        }
+
+        .story-vignette-close {
+            font-size: 0.92rem;
+            color: var(--steel);
+            font-style: italic;
+            margin: 0;
+        }
+
+        @media(max-width:760px) {
+            .story-vignette {
+                padding: 22px 20px;
+                margin: 24px 0 0;
+            }
+        }
+
         /* ── Engagement duration section ── */
         .duration-section {
             background: var(--soft);
@@ -867,6 +914,13 @@
                     </div>
                 </div>
 
+                <div class="story-vignette reveal">
+                    <div class="story-vignette-label">What Radar surfaces — Finance &amp; Operations</div>
+                    <p class="story-vignette-scene">The FP&amp;A analyst was hired to do forecasting. She spends 80% of her time collecting data and formatting reports. The month-end close takes twelve days. The board gets figures prefaced with "assuming these are still roughly right." Everyone knows the finance function should be answering questions, not assembling spreadsheets — but the process hasn't changed in years.</p>
+                    <p class="story-vignette-outcome">The close dropped from twelve days to under five. A single pricing decision preserved £200K in margin.</p>
+                    <p class="story-vignette-close">Finance went from reporting factory to the team that could answer any question the business asked.</p>
+                </div>
+
                 <!-- Service 2: Pilot -->
                 <div class="service-block reverse reveal">
                     <div>
@@ -902,6 +956,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="story-vignette reveal">
+                    <div class="story-vignette-label">What a Pilot proves — Customer Support</div>
+                    <p class="story-vignette-scene">Half the tickets were variations on solved problems. The answers existed — somewhere in a knowledge base with four hundred articles, or in a Slack thread that got buried last Tuesday. The best engineer spent her mornings answering colleagues' questions instead of the hard cases. Every agent had their own workarounds. Nothing connected.</p>
+                    <p class="story-vignette-outcome">Low-complexity tickets dropped 30%. Resolution times fell by a quarter. Churn linked to support experience dropped measurably.</p>
+                    <p class="story-vignette-close">They didn't hire more people. They changed how knowledge reached the point of work.</p>
                 </div>
 
                 <!-- Service 3: Scale -->
@@ -940,6 +1001,13 @@
                     </div>
                 </div>
 
+                <div class="story-vignette reveal">
+                    <div class="story-vignette-label">What Scale transforms — Sales &amp; Revenue</div>
+                    <p class="story-vignette-scene">Proposals took most of a week — the account executive became a project manager, chasing presales, compliance, and legal for every bid. The CRM was three days stale. Reps prepped for discovery calls in the twenty minutes before they started. Everyone had individual workarounds. Nothing fed back into the systems the business relied on.</p>
+                    <p class="story-vignette-outcome">Win rate improved roughly 10%. Revenue impact: around £3M. The same team, winning more — because the work moved differently.</p>
+                    <p class="story-vignette-close">The tools were already there. What changed was how the work moved between people.</p>
+                </div>
+
                 <!-- Service 4: Fractional -->
                 <div class="service-block reverse reveal">
                     <div>
@@ -973,6 +1041,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="story-vignette reveal">
+                    <div class="story-vignette-label">Where leadership changes the game — Legal &amp; Compliance</div>
+                    <p class="story-vignette-scene">The FCA published over a hundred documents last year. The obligation register was permanently three weeks behind. Contract review took twelve days for routine agreements. One person was the bottleneck for everything that needed legal sign-off. The Chief Risk Officer couldn't tell the board with full confidence that the firm's obligations were being met.</p>
+                    <p class="story-vignette-outcome">The register reached currency. Contract turnaround halved. The next FCA visit produced zero findings on policy currency.</p>
+                    <p class="story-vignette-close">The compliance team went back to doing compliance work instead of compliance admin.</p>
                 </div>
 
             </div>

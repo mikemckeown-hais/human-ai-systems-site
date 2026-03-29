@@ -336,6 +336,76 @@
             line-height: 1.6;
         }
 
+        /* ── Story cards ── */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .story-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 32px 28px 28px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            min-height: 340px;
+            transition: transform 240ms ease, box-shadow 240ms ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 48px rgba(31,58,95,0.12);
+        }
+
+        .story-sector {
+            display: inline-block;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(42,111,116,0.08);
+            color: var(--teal);
+            margin-bottom: 16px;
+        }
+
+        .story-card h3 {
+            font-size: 1.18rem;
+            line-height: 1.3;
+            color: var(--blue);
+            margin: 0 0 14px;
+            font-weight: 600;
+        }
+
+        .story-card p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .story-result {
+            margin-top: auto !important;
+            padding-top: 14px;
+            border-top: 1px solid rgba(31,58,95,0.07);
+            font-size: 0.95rem !important;
+            color: var(--graphite) !important;
+            font-weight: 500;
+        }
+
+        .story-close {
+            font-size: 0.92rem !important;
+            font-style: italic;
+            color: var(--teal) !important;
+            margin-bottom: 0 !important;
+        }
+
         /* ── Philosophy section ── */
         .philosophy-grid {
             display: grid;
@@ -499,6 +569,7 @@
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .portrait { position: static; aspect-ratio: 4/3; order: -1; }
             .philosophy-grid { grid-template-columns: 1fr; }
+            .stories-grid { grid-template-columns: 1fr; }
 
             .brand-mark { width: 220px; }
             .brand-mark.footer-mark { width: 290px; }
@@ -590,6 +661,9 @@
                             <div class="pull-quote">
                                 <p>"I work with organisations that are serious about adoption, not just experimentation. That usually means starting with an honest diagnosis of where AI can genuinely create value — and designing programmes that are measurable, governable, and built to last."</p>
                             </div>
+
+                            <p>Human–AI Systems is itself built and run on AI — a Chief Marketing Officer, a COO, a CTO, a CFO, all operating as AI roles within a shared organisational context. Mike has written about what that actually looks like: what works, what doesn't, and what it revealed about AI adoption that advising alone wouldn't have taught him.</p>
+                            <p><a href="/insights/running-a-business-on-ai/" style="color:var(--teal);font-weight:600;">Read: What happens when you actually run a business on AI →</a></p>
                         </div>
 
                         <div class="story-block reveal">
@@ -641,6 +715,49 @@
                                 <img src="/images/headshots/Mike%20McKeown%20-%20Professional.png" alt="Mike McKeown, founder of Human–AI Systems">
                             </picture>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- What this looks like -->
+        <section>
+            <div class="container">
+                <div style="max-width: 720px; margin: 0 auto 48px; text-align: center;" class="reveal">
+                    <div class="eyebrow">What this looks like</div>
+                    <h2>AI adoption through the eyes of the people doing the work</h2>
+                    <p class="lead" style="text-align: center; max-width: 38rem; margin: 0 auto;">These are the kinds of problems that get solved when you stop adding tools and start redesigning how work actually happens.</p>
+                </div>
+
+                <div class="stories-grid">
+
+                    <!-- Sales -->
+                    <div class="story-card reveal">
+                        <div class="story-sector">Sales &amp; Revenue</div>
+                        <h3>Your best people are buried in bid admin instead of talking to customers.</h3>
+                        <p>The proposals take five days. The CRM data is three days stale. Reps prep for discovery calls in the twenty minutes before the call starts. Everyone knows the work should be sharper — but there's no time to make it so.</p>
+                        <p class="story-result">One mid-market technology company changed how its entire deal cycle operated. Win rate improved roughly 10%. Revenue impact: around £3M.</p>
+                        <p class="story-close">The tools were already there. What changed was how the work moved between people.</p>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="story-card reveal">
+                        <div class="story-sector">Customer Support</div>
+                        <h3>The queue never gets shorter, no matter how hard the team works.</h3>
+                        <p>Half the tickets are variations on solved problems. The answers exist — somewhere in a knowledge base with four hundred articles, or in a Slack thread that got buried last Tuesday. The best engineer spends her mornings answering colleagues' questions instead of the hard cases.</p>
+                        <p class="story-result">A SaaS company redesigned how support actually operated. Low-complexity tickets dropped 30%. Resolution times fell by a quarter. Churn linked to support experience dropped measurably.</p>
+                        <p class="story-close">They didn't hire more people. They changed how knowledge reached the point of work.</p>
+                    </div>
+
+                    <!-- Engineering -->
+                    <div class="story-card reveal">
+                        <div class="story-sector">Engineering &amp; Product</div>
+                        <h3>Every engineer has Copilot. Nothing ships any faster.</h3>
+                        <p>Individual developers are faster, but cycle times are flat. Tech debt is growing. Nobody can answer whether AI-generated code in production carries copyright risk. The roadmap is slipping and the competitors aren't waiting.</p>
+                        <p class="story-result">A SaaS company redesigned how engineering work flowed — from code review to architecture decisions. Feature velocity improved 25%. Engineering productivity gained roughly an hour per developer per day.</p>
+                        <p class="story-close">They stopped adding tools and started redesigning how the team worked.</p>
                     </div>
 
                 </div>

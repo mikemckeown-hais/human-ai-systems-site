@@ -153,6 +153,11 @@
       .two-col{grid-template-columns:1fr;gap:24px}
       .stat-grid{grid-template-columns:1fr 1fr}
     }
+    .story-block{border-left:5px solid var(--aqua);padding:28px 28px 24px;background:linear-gradient(135deg, rgba(62,193,201,0.04), rgba(31,58,95,0.03));border:var(--border);border-left:5px solid var(--aqua);border-radius:var(--radius);margin:0}
+    .story-block h3{font-size:1.15rem;line-height:1.3;color:var(--blue);margin:0 0 14px;font-weight:600}
+    .story-block p{font-size:0.98rem;line-height:1.55;color:var(--steel);margin:0 0 12px}
+    .story-block .story-result{border-top:1px solid rgba(31,58,95,0.07);padding-top:14px;margin-top:16px;color:var(--graphite);font-weight:500}
+    .story-block .story-close{font-size:0.92rem;font-style:italic;color:var(--teal);margin-bottom:0}
   </style>
 </head>
 <body>
@@ -350,6 +355,22 @@
         <h3>Platform strategy and internal productivity</h3>
         <p>Enterprise AI workspace design, knowledge assistants, meeting summarisation, document drafting, tool rationalisation. Reducing shadow AI through governed enterprise platforms that give people better tools with proper controls — often saving significant licence costs in the process.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY: What this looks like -->
+<section>
+  <div class="container">
+    <div class="center-intro reveal">
+      <div class="eyebrow">What this looks like</div>
+      <h2>What happens when engineering actually ships faster — not just codes faster.</h2>
+    </div>
+    <div class="story-block reveal">
+      <h3>Engineers individually faster with AI tools. Team throughput flat. Cycle times stuck. Tech debt mounting. No audit trail for any of it.</h3>
+      <p>A mid-market SaaS company — three hundred engineers across multiple product lines — had done what most technology companies do: let engineers adopt AI tools individually. The tools worked. Individual productivity went up. But cycle times hadn't moved. Code reviews were still the bottleneck. Documentation was still the thing nobody did. And nobody could tell the board how much of the codebase had AI-assisted elements, or whether any of it created IP risk.</p>
+      <p class="story-result">The company changed how engineering workflows operated — not the tools, but the structure around them. Productivity improved by roughly an hour per developer per day, worth about £1.2M in annual capacity. Feature cycle times dropped 25%. Thirty-one percent of merged code had AI-assisted elements — every line tracked, cleared, and documented. Zero IP incidents.</p>
+      <p class="story-close">The engineers were already faster. What changed was how the team shipped.</p>
     </div>
   </div>
 </section>

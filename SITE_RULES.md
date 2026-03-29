@@ -102,6 +102,7 @@ Primary nav: **Approach** (`/approach/`) · **Services** (`/services/`) · **Sec
 | `insights/hybrid-workflows/` | `/insights/hybrid-workflows/` |
 | `insights/operating-model/` | `/insights/operating-model/` |
 | `insights/local-government/` | `/insights/local-government/` |
+| `insights/running-a-business-on-ai/` | `/insights/running-a-business-on-ai/` |
 
 ---
 
@@ -162,3 +163,9 @@ Consult `06 Marketing/Brand/image-library.md` in the workspace before selecting 
 - Do not refactor unless explicitly requested
 - Stage specific files only — no `git add .`
 - Write concise, imperative commit messages: `Add services page`, `Fix mobile nav`
+
+## Deployment Rules
+
+- **Always push to both branches.** Whether the instruction is "push to production" or "push to dev", always push to both `main` and `dev` so they never diverge. Dev should always be at least as far ahead as main.
+- **Use the git helper script** for all git operations — never raw `git` commands. Script: `06 Marketing/Website/git_push.py`. Handles the index.lock issue on the mounted filesystem automatically.
+- **Deployment triggers:** pushing to `main` triggers auto-deploy to production (human-ai-systems.com) via Cloudflare Pages. Pushing to `dev` deploys a preview at a hash-based URL on `has-site.pages.dev`.
