@@ -574,6 +574,128 @@
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
+        /* ── Story asides (methodology) ── */
+        .story-aside {
+            border-left: 5px solid var(--aqua);
+            padding: 24px 28px 20px;
+            background: linear-gradient(135deg, rgba(62,193,201,0.04), rgba(31,58,95,0.03));
+            border: var(--border);
+            border-left: 5px solid var(--aqua);
+            border-radius: var(--radius);
+            margin-top: 18px;
+        }
+
+        .story-aside .story-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .story-aside p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--steel);
+            margin: 0 0 10px;
+        }
+
+        .story-aside p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-aside .story-result {
+            border-top: 1px solid rgba(31,58,95,0.07);
+            padding-top: 12px;
+            margin-top: 14px;
+            color: var(--graphite);
+            font-weight: 500;
+        }
+
+        .story-aside .story-close {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        /* ── Story block (standalone) ── */
+        .story-block {
+            border-left: 5px solid var(--aqua);
+            padding: 28px 28px 24px;
+            background: linear-gradient(135deg, rgba(62,193,201,0.04), rgba(31,58,95,0.03));
+            border: var(--border);
+            border-left: 5px solid var(--aqua);
+            border-radius: var(--radius);
+            margin: 0;
+        }
+
+        .story-block h3 {
+            font-size: 1.15rem;
+            line-height: 1.3;
+            color: var(--blue);
+            margin: 0 0 14px;
+            font-weight: 600;
+        }
+
+        .story-block p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .story-block .story-result {
+            border-top: 1px solid rgba(31,58,95,0.07);
+            padding-top: 14px;
+            margin-top: 16px;
+            color: var(--graphite);
+            font-weight: 500;
+        }
+
+        .story-block .story-close {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: var(--teal);
+            margin-bottom: 0;
+        }
+
+        /* ── Credential card ── */
+        .credential-card {
+            border-left: 5px solid var(--teal);
+            padding: 24px;
+            background: white;
+            border: var(--border);
+            border-left: 5px solid var(--teal);
+            border-radius: var(--radius);
+            margin-top: 32px;
+        }
+
+        .credential-card p {
+            color: var(--steel);
+            line-height: 1.55;
+            margin: 0 0 10px;
+        }
+
+        .credential-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .credential-card strong {
+            color: var(--blue);
+        }
+
+        .credential-card a {
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .credential-card a:hover {
+            color: var(--blue);
+        }
+
         /* ── Responsive ── */
         @media (max-width: 860px) {
             .nav { display: none; }
@@ -777,6 +899,11 @@
                             <li>Risk, governance and compliance analysis</li>
                             <li>Prioritised pilot candidates with business case</li>
                         </ul>
+                        <div class="story-aside reveal">
+                            <div class="story-label">What this looked like</div>
+                            <p>An account executive at a mid-size technology company was spending more time assembling bids and updating systems than actually selling. A Radar review of the sales workflow revealed the bottleneck wasn't skill or effort — it was how work moved between people across the deal cycle. Research, meeting capture, CRM updates and bid assembly were all improvised individually. The opportunities were clear once someone looked at the whole flow rather than the individual tools.</p>
+                            <p class="story-close">The problems were visible to everyone. The pattern connecting them wasn't — until someone mapped it.</p>
+                        </div>
                     </div>
 
                     <div class="split reveal" style="gap: 28px;">
@@ -791,6 +918,12 @@
                                 <li>End-user involvement and feedback loops</li>
                                 <li>Workflow redesign insights and scaling readiness assessment</li>
                             </ul>
+                            <div class="story-aside reveal">
+                                <div class="story-label">What this looked like</div>
+                                <p>A SaaS company's support team was drowning in ticket volume — half the cases were variations on solved problems, but the answers were scattered across a knowledge base, Slack threads and one senior engineer's head. The pilot restructured how tickets were triaged, how knowledge was surfaced and how responses were drafted. Not a chatbot bolted on — a redesign of how support actually operated, with defined metrics and governance from day one.</p>
+                                <p class="story-result">Low-complexity tickets dropped 30%. Resolution times fell by a quarter. Customer churn linked to support experience dropped measurably.</p>
+                                <p class="story-close">The team didn't get bigger. The work got smarter.</p>
+                            </div>
                         </div>
                         <div class="image-panel" style="min-height: 340px;">
                             <picture>
@@ -812,6 +945,12 @@
                             <li>Performance metrics and continuous improvement</li>
                             <li>Capability development for hybrid team leadership</li>
                         </ul>
+                        <div class="story-aside reveal">
+                            <div class="story-label">What this looked like</div>
+                            <p>A twelve-hundred-person organisation's finance team was spending the first half of every month closing the last one — chasing data from business units, reconciling manually across systems, assembling reports that arrived too late to inform decisions. The organisation embedded AI into the financial workflow at every stage where it could carry weight: continuous reconciliation, intelligent invoice matching, automated reporting with human review. Not a new system. A new operating model for the finance function.</p>
+                            <p class="story-result">The close cycle dropped from twelve working days to under five. The board got numbers they trusted. A single pricing decision, made possible by timely data, preserved £200K in margin.</p>
+                            <p class="story-close">Finance went from reporting factory to the team that could answer any question the business asked.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -846,6 +985,14 @@
 
                 <div class="insight-quote reveal">
                     <p>The greatest organisational impact occurs at the Worker stage. Managers will increasingly lead hybrid teams — requiring new practices for workflow design, quality oversight and accountability for AI-supported decisions.</p>
+                </div>
+
+                <div class="story-block reveal" style="margin-top: 36px;">
+                    <h3>An engineering team lived this progression — and it changed how the whole company shipped software.</h3>
+                    <p>A SaaS company's engineers were individually experimenting with AI coding tools, but nothing had changed at the team level. Cycle times were flat. Tech debt was growing. Nobody could answer whether AI-generated code in production carried copyright risk. The tools were there. The workflow wasn't.</p>
+                    <p>The company stopped adding tools and started redesigning how engineering work actually flowed. AI moved from individual autocomplete (<strong>Tool</strong>) to structured code review, documentation and test generation (<strong>Assistant</strong>) to an embedded part of how architecture decisions were researched, code was audited and sprints were planned (<strong>Worker</strong>).</p>
+                    <p class="story-result">Features shipped 25% faster. Engineering productivity improved by roughly an hour per developer per day. Infrastructure costs dropped 18%. And every line of AI-assisted code had a full audit trail.</p>
+                    <p class="story-close">The tools were already there. What changed was how the work moved through the team.</p>
                 </div>
 
                 <div class="split reveal" style="margin-top: 48px;">
@@ -920,6 +1067,10 @@
                         <p>The focus is on the organisational dimension: how AI becomes part of the workforce, how it is governed responsibly and how it delivers measurable operational value. This is not about selecting vendors or writing code. It is about redesigning how work happens.</p>
                         <p>Every engagement is grounded in practical experience of leading AI transformation inside complex organisations — not theoretical frameworks applied from the outside.</p>
                     </div>
+                </div>
+                <div class="credential-card reveal" style="margin-top: 48px;">
+                    <p><strong>This isn't theory.</strong> The founder of Human–AI Systems built this consultancy on its own methodology — an AI operating model where AI fills the roles that would normally require a team of people. Marketing, operations, finance, business development: all run as human-AI workflows, governed by the same frameworks used with clients.</p>
+                    <p>The approach page you're reading exists because this works in practice, not just in proposals. <a href="/insights/running-a-business-on-ai/">Read the full story →</a></p>
                 </div>
             </div>
         </section>

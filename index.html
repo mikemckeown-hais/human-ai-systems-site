@@ -15,12 +15,12 @@
   <meta property="og:title" content="AI Adoption Consultancy | Human–AI Systems" />
   <meta property="og:description" content="Human–AI Systems helps organisations move from AI experimentation to real operational adoption through structured programmes, governance and workflow design." />
   <meta property="og:url" content="https://human-ai-systems.com/" />
-  <meta property="og:image" content="https://human-ai-systems.com/assets/og/human-ai-systems-og.jpg" />
+  <meta property="og:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AI Adoption Consultancy | Human–AI Systems" />
   <meta name="twitter:description" content="Human–AI Systems helps organisations move from AI experimentation to real operational adoption through structured programmes, governance and workflow design." />
-  <meta name="twitter:image" content="https://human-ai-systems.com/assets/og/human-ai-systems-og.jpg" />
+  <meta name="twitter:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,836 +46,12 @@
 
   <noscript>
     <style>
-    :root {
-      --blue: #1F3A5F;
-      --teal: #2A6F74;
-      --aqua: #3EC1C9;
-      --graphite: #2B2B2B;
-      --steel: #6B7C8F;
-      --soft: #F3F5F7;
-      --white: #FFFFFF;
-      --max: 1200px;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
-      --border: 1px solid rgba(31, 58, 95, 0.10);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
-      color: var(--graphite);
-      background: var(--white);
-      line-height: 1.45;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #36527A;
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 10px 0 10px;
-      min-height: 84px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: auto;
-      padding-top: 6px;
-      flex: 0 0 auto;
-    }
-
-    .brand-mark {
-      width: 274px;
-      height: auto;
-      display: block;
-    }
-
-    .brand-mark.footer-mark {
-      width: 360px;
-      height: auto;
-    }
-
-    .brand-wordmark {
-      display: none;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 18px;
-      flex: 1 1 auto;
-      min-width: 0;
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 500;
-      overflow: visible;
-      white-space: nowrap;
-    }
-
-    .nav a:not(.nav-cta) {
-      color: #ffffff !important;
-      opacity: 0.98;
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 2px;
-      visibility: visible;
-    }
-
-    .nav a:not(.nav-cta):hover {
-      opacity: 1;
-    }
-
-    .nav-cta {
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--blue);
-      font-weight: 600;
-      box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
-      opacity: 1;
-      margin-left: 6px;
-    }
-
-    .menu-toggle {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      cursor: pointer;
-      flex: 0 0 auto;
-    }
-
-    .menu-toggle:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    .menu-toggle-line {
-      width: 20px;
-      height: 2px;
-      background: currentColor;
-      border-radius: 999px;
-      position: relative;
-      transition: transform 220ms ease, opacity 220ms ease;
-    }
-
-    .menu-toggle-line::before,
-    .menu-toggle-line::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 20px;
-      height: 2px;
-      background: currentColor;
-      border-radius: 999px;
-      transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
-    }
-
-    .menu-toggle-line::before { top: -6px; }
-    .menu-toggle-line::after { bottom: -6px; }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-line {
-      background: transparent;
-    }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-line::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] .menu-toggle-line::after {
-      bottom: 0;
-      transform: rotate(-45deg);
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    section {
-      padding: 92px 0;
-      position: relative;
-    }
-
-    .hero-section {
-      background: linear-gradient(180deg, #1F3A5F 0%, #2A4468 42%, #EEF2F6 100%);
-      padding-top: 32px;
-      color: white;
-    }
-
-    .soft { background: var(--soft); }
-
-    .eyebrow {
-      font-size: 1.28rem;
-      letter-spacing: 0.01em;
-      text-transform: none;
-      color: var(--teal);
-      font-weight: 600;
-      margin-bottom: 22px;
-      text-align: center;
-    }
-
-    .hero-section .eyebrow {
-      color: #F3F5F7;
-      text-align: left;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 16px;
-      line-height: 1.08;
-      color: var(--blue);
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 5vw, 4.15rem);
-      max-width: 9.5ch;
-      color: white;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      max-width: 14ch;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h3 {
-      font-size: 1.35rem;
-      color: var(--graphite);
-    }
-
-    p.lead {
-      font-size: 1.22rem;
-      color: var(--steel);
-      max-width: 36rem;
-      margin: 0 0 28px;
-    }
-
-    .hero-section .lead {
-      color: rgba(255,255,255,0.85);
-    }
-
-    p {
-      margin: 0 0 14px;
-      font-size: 1.05rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: center;
-      min-height: calc(100vh - 110px);
-      padding: 34px 0 18px;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 1;
-      padding-top: 14px;
-    }
-
-    .hero-sub {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 28px 0 32px;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.95);
-      background: rgba(31, 58, 95, 0.45);
-      border: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .pill:hover {
-      background: rgba(31, 58, 95, 0.6);
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 20px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: transform 220ms ease, background 220ms ease, color 220ms ease, border-color 220ms ease;
-      border: 1px solid transparent;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
-      background: var(--blue);
-      color: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-section .btn-primary {
-      background: var(--white);
-      color: var(--blue);
-    }
-
-    .btn-primary:hover { background: var(--teal); color: var(--white); }
-    .hero-section .btn-primary:hover { background: rgba(255,255,255,0.9); color: var(--blue); }
-
-    .btn-secondary {
-      background: rgba(31, 58, 95, 0.45);
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(31, 58, 95, 0.6);
-      color: #ffffff;
-    }
-
-    .about-box .btn-secondary,
-    .soft .btn-secondary,
-    .card .btn-secondary,
-    section:not(.hero-section):not(.cta-band) .btn-secondary {
-      background: var(--white);
-      color: var(--blue);
-      border: 1px solid rgba(31,58,95,0.18);
-    }
-
-    .about-box .btn-secondary:hover,
-    .soft .btn-secondary:hover,
-    .card .btn-secondary:hover,
-    section:not(.hero-section):not(.cta-band) .btn-secondary:hover {
-      background: var(--soft);
-      color: var(--blue);
-    }
-
-    .hero-note {
-      color: rgba(31,58,95,0.72);
-      font-size: 0.98rem;
-      max-width: 38rem;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 520px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-content: center;
-    }
-
-    .panel {
-      margin-top: 28px;
-      width: 100%;
-      max-width: 520px;
-      padding: 28px;
-      background: linear-gradient(180deg, rgba(243,245,247,0.76), rgba(255,255,255,0.96));
-      border: var(--border);
-      box-shadow: var(--shadow);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(62,193,201,0.18), transparent 30%),
-        linear-gradient(135deg, rgba(31,58,95,0.03), transparent 50%);
-      pointer-events: none;
-    }
-
-    .panel-title {
-      position: relative;
-      color: var(--steel);
-      font-size: 0.96rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .framework {
-      display: grid;
-      gap: 18px;
-      position: relative;
-    }
-
-    .node {
-      position: relative;
-      z-index: 1;
-      padding: 20px 22px;
-      border-radius: 16px;
-      background: var(--white);
-      border: var(--border);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      box-shadow: 0 8px 24px rgba(31, 58, 95, 0.05);
-      opacity: 0;
-      transform: translateY(16px);
-      animation: revealUp 600ms ease forwards;
-    }
-
-    .node:nth-child(1) { animation-delay: 120ms; }
-    .node:nth-child(2) { animation-delay: 300ms; }
-    .node:nth-child(3) { animation-delay: 480ms; }
-
-    .node:nth-child(1) { border-left: 4px solid var(--steel); }
-    .node:nth-child(2) { border-left: 4px solid var(--teal); }
-    .node:nth-child(3) { border-left: 4px solid var(--blue); }
-
-    .node strong {
-      display: block;
-      color: var(--blue);
-      margin-bottom: 6px;
-      font-size: 1.08rem;
-    }
-
-    .node small {
-      display: block;
-      color: var(--steel);
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    .step {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: var(--white);
-      flex: 0 0 auto;
-      margin-top: 2px;
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-    }
-
-    .node + .node::before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      height: 16px;
-      background: var(--aqua);
-      left: 42px;
-      top: -18px;
-      opacity: 0.8;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 22px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat {
-      padding: 14px;
-      background: rgba(255,255,255,0.82);
-      border: var(--border);
-      border-radius: 14px;
-    }
-
-    .stat b {
-      display: block;
-      color: var(--blue);
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--steel);
-      font-size: 0.9rem;
-    }
-
-    .center-intro {
-      max-width: 760px;
-      margin: 0 auto 44px;
-      text-align: center;
-    }
-
-    .center-intro h2,
-    .center-intro p,
-    .center-intro .lead {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .three-col, .four-col {
-      display: grid;
-      gap: 24px;
-    }
-
-    .three-col { grid-template-columns: repeat(3, 1fr); }
-    .four-col { grid-template-columns: repeat(4, 1fr); }
-
-    .card {
-      background: var(--white);
-      border: var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(31, 58, 95, 0.10);
-      border-color: rgba(42, 111, 116, 0.18);
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 18px;
-      background: var(--soft);
-      color: var(--teal);
-      font-weight: 700;
-    }
-
-    .muted {
-      color: var(--steel);
-    }
-
-    .framework-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 34px;
-    }
-
-    .framework-stage {
-      position: relative;
-      background: var(--white);
-      border: var(--border);
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-      min-height: 220px;
-    }
-
-    .framework-stage .stage-tag {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-size: 0.9rem;
-      color: var(--steel);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .framework-stage:nth-child(1) { border-top: 4px solid var(--steel); }
-    .framework-stage:nth-child(2) { border-top: 4px solid var(--teal); }
-    .framework-stage:nth-child(3) { border-top: 4px solid var(--blue); }
-
-    .stage-arrow {
-      position: absolute;
-      top: calc(50% - 10px);
-      right: -16px;
-      width: 32px;
-      height: 20px;
-      background: linear-gradient(90deg, transparent, var(--aqua));
-      clip-path: polygon(0 40%, 76% 40%, 76% 0, 100% 50%, 76% 100%, 76% 60%, 0 60%);
-    }
-
-    .framework-stage:last-child .stage-arrow { display: none; }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: stretch;
-    }
-
-    .about-box, .cta-box {
-      background: var(--white);
-      border: var(--border);
-      border-radius: 18px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-      height: 100%;
-    }
-
-    .portrait {
-      min-height: 420px;
-      border-radius: 18px;
-      border: var(--border);
-      overflow: hidden;
-      position: relative;
-      background: #dbe4ee;
-      box-shadow: var(--shadow);
-    }
-
-    .image-panel {
-      border: var(--border);
-      border-radius: 20px;
-      min-height: 320px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-      background: #dbe4ee;
-    }
-
-    .hero-image {
-      min-height: 280px;
-      border: var(--border);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-      background: #dbe4ee;
-    }
-
-    .hero-image img,
-    .image-panel img,
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .image-panel::after,
-    .hero-image::after,
-    .portrait::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(31,58,95,0.06), rgba(31,58,95,0.18));
-      pointer-events: none;
-    }
-
-    .mini-caption {
-      color: var(--steel);
-      font-size: 0.95rem;
-      font-weight: 400;
-      display: block;
-      margin-top: 6px;
-    }
-
-    .insight-meta {
-      color: var(--teal);
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .cta-band {
-      background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    .cta-band h2,
-    .cta-band h3,
-    .cta-band p,
-    .cta-band .eyebrow { color: var(--white); }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 34px;
-    }
-
-    .cta-panel {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 18px;
-      padding: 28px;
-      backdrop-filter: blur(8px);
-    }
-
-    .cta-panel .btn-primary {
-      background: var(--white);
-      color: var(--blue);
-    }
-
-    .cta-panel .btn-primary:hover {
-      background: var(--soft);
-      color: var(--blue);
-    }
-
-    .site-footer {
-      padding: 36px 0 48px;
-      background: #1c2632;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: rgba(255,255,255,0.72);
-    }
-
-    .footer-nav a {
-      color: rgba(255,255,255,0.82);
-    }
-
-    .footer-nav a:hover {
-      color: #ffffff;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 600ms ease, transform 600ms ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes revealUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 860px) {
-      .nav { display: none; }
-      .menu-toggle { display: inline-flex; }
-      .mobile-menu {
-        display: block;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 260ms ease;
-        border-top: 1px solid rgba(255,255,255,0.10);
-      }
-      .mobile-menu.is-open {
-        max-height: 420px;
-      }
-      .mobile-menu-inner {
-        padding: 14px 0 18px;
-        display: grid;
-        gap: 10px;
-      }
-      .mobile-menu a {
-        color: #ffffff;
-        padding: 10px 0;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-      .mobile-menu .mobile-start {
-        margin-top: 6px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        padding: 12px 18px;
-        border-radius: 999px;
-        background: var(--white);
-        color: var(--blue);
-        font-weight: 600;
-      }
-      .mobile-contact-row {
-        display: flex;
-        gap: 14px;
-        flex-wrap: wrap;
-        padding-top: 8px;
-        color: rgba(255,255,255,0.82);
-        font-size: 0.92rem;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
-      .hero-grid,
-      .split,
-      .cta-grid,
-      .three-col,
-      .four-col,
-      .framework-row {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        min-height: auto;
-        padding: 12px 0 0;
-      }
-
-      .hero-visual { min-height: auto; }
-      .stage-arrow { display: none; }
-      section { padding: 72px 0; }
-      .brand-mark { width: 220px; }
-      .brand-mark.footer-mark { width: 290px; }
-      .eyebrow { font-size: 1.14rem; }
-      .hero-section .eyebrow { text-align: left; }
-      .header-inner { padding: 10px 0; gap: 14px; min-height: 76px; }
-      h1 { font-size: 2.5rem; }
-      p.lead { font-size: 1.1rem; }
-      .panel, .card, .about-box, .cta-box, .cta-panel { padding: 22px; }
-      .stats { grid-template-columns: 1fr; }
-      .actions { gap: 12px; }
-      .btn { width: 100%; }
-    }
-  </style>
+    /* No-JS fallback: make all reveal elements visible and disable animations */
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .node { opacity: 1 !important; transform: none !important; animation: none !important; }
+    </style>
   </noscript>
+  <!-- old noscript CSS removed — fallback handled by noscript block above -->
 
   <style>
     :root {
@@ -912,7 +88,7 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
       background: #36527A;
       border-bottom: 1px solid rgba(255,255,255,0.10);
       box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
@@ -1082,7 +258,7 @@
 
     h1 {
       font-size: clamp(2.8rem, 5vw, 4.15rem);
-      max-width: 9.5ch;
+      max-width: 18ch;
       color: white;
     }
 
@@ -1146,14 +322,6 @@
   color: rgba(255,255,255,0.95);
   background: rgba(31, 58, 95, 0.45);
   border: 1px solid rgba(255,255,255,0.35);
-}
-
-.pill:hover {
-  background: rgba(31, 58, 95, 0.6);
-}
-
-.pill:hover {
-  background: rgba(15, 35, 60, 0.7);
 }
 
 .pill:hover {
@@ -1872,7 +1040,7 @@
         <div class="hero-copy reveal visible">
           <div class="eyebrow">Operational AI adoption</div>
           <h1>Most organisations are experimenting with AI. Far fewer are redesigning how work actually happens.</h1>
-          <p class="lead">Human–AI Systems is an AI adoption consultancy. The gap isn’t technology. It’s operational adoption — workflows, governance and how teams actually work with AI day to day.</p>
+          <p class="lead">The gap isn’t technology. It’s operational adoption — workflows, governance and how teams actually work with AI day to day.</p>
 
           <div class="hero-sub">
             <span class="pill">Radar → Pilot → Scale</span>
@@ -1930,7 +1098,10 @@
             </div>
           </div>
           <div class="hero-image">
-            <img src="/images/hero/HAIS Group of younger diverse professionals Option B.png" alt="Team reviewing AI insights and dashboards in a modern meeting space" />
+            <picture>
+              <source srcset="/images/hero/webp/HAIS Group of younger diverse professionals Option B.webp" type="image/webp">
+              <img src="/images/hero/HAIS Group of younger diverse professionals Option B.png" alt="Team reviewing AI insights and dashboards in a modern meeting space" />
+            </picture>
           </div>
         </div>
       </div>
@@ -1980,22 +1151,22 @@
         </div>
 
         <div class="four-col">
-          <a href="/services/" class="card reveal" style="text-decoration:none; color:inherit;">
+          <a href="/services/#radar" class="card reveal" style="text-decoration:none; color:inherit;">
             <div class="icon">01</div>
             <h3>AI Adoption Radar</h3>
             <p class="muted">Identify real workflow opportunities, define governance boundaries and prioritise where to start.</p>
           </a>
-          <a href="/services/" class="card reveal" style="text-decoration:none; color:inherit;">
+          <a href="/services/#pilot-programmes" class="card reveal" style="text-decoration:none; color:inherit;">
             <div class="icon">02</div>
             <h3>Pilot Programmes</h3>
             <p class="muted">Test AI in real operational workflows, measure impact and build evidence for scaling.</p>
           </a>
-          <a href="/services/" class="card reveal" style="text-decoration:none; color:inherit;">
+          <a href="/services/#scale" class="card reveal" style="text-decoration:none; color:inherit;">
             <div class="icon">03</div>
             <h3>Scale &amp; Operating Model</h3>
             <p class="muted">Embed AI into workflows and teams, define governance and redesign how work happens.</p>
           </a>
-          <a href="/services/" class="card reveal" style="text-decoration:none; color:inherit;">
+          <a href="/services/#fractional-leadership" class="card reveal" style="text-decoration:none; color:inherit;">
             <div class="icon">04</div>
             <h3>Fractional AI Leadership</h3>
             <p class="muted">Provide senior oversight, board-level advisory and governance discipline during adoption.</p>
@@ -2145,7 +1316,7 @@
         </div>
         <div class="about-box reveal">
           <div class="eyebrow">About</div>
-          <h2>Consultancy-first, expert-led.</h2>
+          <h2>Built on delivery, not theory.</h2>
           <p>Human–AI Systems is led by Mike McKeown, a senior technology and transformation leader with experience across enterprise SaaS, cybersecurity and public sector digital leadership.</p>
           <p class="muted">His work includes delivering AI-driven productivity improvements in engineering teams, establishing board-level AI governance in a publicly listed company, and leading digital and climate strategy as a Cabinet Member in local government.</p>
           <p class="muted">That combination of commercial, operational and public-sector experience shapes a practical approach to AI adoption focused on how organisations actually work, not just what technology can do.</p>
@@ -2243,7 +1414,7 @@
             </g>
           </svg>
         </div>
-        <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+        <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">From experimentation to operational adoption</div>
         <div class="footer-nav">
           <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
