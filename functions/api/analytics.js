@@ -4,7 +4,7 @@
 
 const CF_TOKEN   = 'cfat_Mw5vMBQ0NLB2g0mbgMVFSXMBlSEIaYsV0sptwrM6ebbe1e97';
 const ACCOUNT_ID = '3614369217d7b85560ee32bbf8437012';
-const SITE_TAG   = 'ba48e49bd1aa46fd8ad64700c508b081';
+// No siteTag filter — account has one domain, capture all RUM data
 const GQL_URL    = 'https://api.cloudflare.com/client/v4/graphql';
 
 export async function onRequestGet(context) {
@@ -21,7 +21,7 @@ export async function onRequestGet(context) {
   const startISO = start.toISOString().split('T')[0] + 'T00:00:00Z';
   const endISO   = end.toISOString().split('T')[0] + 'T23:59:59Z';
 
-  const filter = `{AND: [{datetime_geq: "${startISO}"}, {datetime_leq: "${endISO}"}, {siteTag: "${SITE_TAG}"}]}`;
+  const filter = `{AND: [{datetime_geq: "${startISO}"}, {datetime_leq: "${endISO}"}]}`;
   const timeGranularity = safeDays <= 1 ? 'datetimeHour' : 'date';
 
   const query = `{
