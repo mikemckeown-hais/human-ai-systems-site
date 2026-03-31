@@ -395,38 +395,13 @@
 
   <script>
     // ─── Config ───────────────────────────────────────────────
-    const CF_TOKEN   = 'cfat_Mw5vMBQ0NLB2g0mbgMVFSXMBlSEIaYsV0sptwrM6ebbe1e97';
-    const ACCOUNT_ID = '3614369217d7b85560ee32bbf8437012';
-    const SITE_TAG   = 'ba48e49bd1aa46fd8ad64700c508b081';
-    const GQL_URL    = 'https://api.cloudflare.com/client/v4/graphql';
+    // Data fetched via server-side Pages Function at /api/analytics
+    // API token stays server-side — no secrets in the browser
 
     // ─── State ────────────────────────────────────────────────
     let currentDays = 7;
 
     // ─── Helpers ──────────────────────────────────────────────
-    function isoDate(d) { return d.toISOString().split('T')[0] + 'T00:00:00Z'; }
-    function isoEnd(d)  { return d.toISOString().split('T')[0] + 'T23:59:59Z'; }
-    function dateRange(days) {
-      const end = new Date();
-      const start = new Date();
-      start.setDate(start.getDate() - days);
-      return { start: isoDate(start), end: isoEnd(end) };
-    }
-
-    async function gql(query) {
-      const res = await fetch(GQL_URL, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${CF_TOKEN}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ query })
-      });
-      const json = await res.json();
-      if (json.errors) { console.error('GQL error', json.errors); return null; }
-      return json.data.viewer.accounts[0];
-    }
-
     function friendlyPath(p) {
       if (p === '/' || p === '') return 'Home';
       return p.replace(/^\/|\/$/g, '').replace(/\//g, ' / ').replace(/-/g, ' ')
@@ -435,44 +410,15 @@
 
     // ─── Data fetchers ────────────────────────────────────────
     async function fetchAll(days) {
-      const { start, end } = dateRange(days);
-      const filter = `{AND: [{datetime_geq: "${start}"}, {datetime_leq: "${end}"}, {siteTag: "${SITE_TAG}"}]}`;
-
-      const timeGranularity = days <= 1 ? 'datetimeHour' : 'date';
-
-      const query = `{
-        viewer {
-          accounts(filter: {accountTag: "${ACCOUNT_ID}"}) {
-
-            timeline: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 200, orderBy: [${timeGranularity}_ASC]
-            ) { count dimensions { ${timeGranularity} } }
-
-            pages: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 20, orderBy: [count_DESC]
-            ) { count dimensions { requestPath } }
-
-            referrers: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 20, orderBy: [count_DESC]
-            ) { count dimensions { refererHost } }
-
-            countries: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 15, orderBy: [count_DESC]
-            ) { count dimensions { countryName } }
-
-            devices: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 15, orderBy: [count_DESC]
-            ) { count dimensions { deviceType userAgentBrowser } }
-
-            visits: rumPageloadEventsAdaptiveGroups(
-              filter: ${filter}, limit: 1
-            ) { count sum { visits } }
-
-          }
-        }
-      }`;
-
-      return gql(query);
+      try {
+        const res = await fetch(`/api/analytics?days=${days}`);
+        const json = await res.json();
+        if (json.errors) { console.error('API error', json.errors); return null; }
+        return json.data.viewer.accounts[0];
+      } catch (err) {
+        console.error('Fetch error', err);
+        return null;
+      }
     }
 
     // ─── Renderers ────────────────────────────────────────────
