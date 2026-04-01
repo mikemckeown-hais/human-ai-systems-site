@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Analytics | Human–AI Systems</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAS — Operations Dashboard</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    /* ── Brand tokens — matches human-ai-systems.com ── */
     :root {
-      --blue: #1F3A5F;
-      --teal: #2A6F74;
-      --aqua: #3EC1C9;
+      --blue:     #1F3A5F;
+      --teal:     #2A6F74;
+      --aqua:     #3EC1C9;
       --graphite: #2B2B2B;
-      --steel: #6B7C8F;
-      --soft: #F3F5F7;
-      --white: #FFFFFF;
-      --max: 1200px;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
-      --border: 1px solid rgba(31, 58, 95, 0.10);
+      --steel:    #6B7C8F;
+      --soft:     #F3F5F7;
+      --white:    #FFFFFF;
+      --amber:    #D97706;
+      --red:      #C0392B;
+      --max:      1240px;
+      --radius:   14px;
+      --shadow:   0 10px 30px rgba(31,58,95,0.08);
+      --border:   1px solid rgba(31,58,95,0.10);
     }
 
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
       color: var(--graphite);
-      background: var(--white);
-      line-height: 1.45;
+      background: var(--soft);
+      font-size: 15px;
+      line-height: 1.5;
     }
-
     a { color: inherit; text-decoration: none; }
 
     .container {
@@ -42,167 +42,284 @@
       margin: 0 auto;
     }
 
-    /* Header — matches main site */
-    .site-header {
+    /* ── Top bar ── */
+    .top-bar {
       background: #36527A;
       border-bottom: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+      box-shadow: 0 10px 28px rgba(16,28,46,0.18);
     }
-    .header-inner {
+    .top-bar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 6px 0;
-    }
-    .brand-mark { width: 274px; height: auto; display: block; }
-    .nav { display: flex; align-items: center; gap: 18px; color: #fff; font-size: 1rem; font-weight: 500; }
-    .nav a { color: #fff !important; opacity: 0.85; padding: 4px 2px; }
-    .nav a:hover { opacity: 1; }
-
-    /* Dashboard layout */
-    .dashboard-hero {
-      background: linear-gradient(180deg, #1F3A5F 0%, #2A4468 100%);
-      padding: 48px 0 36px;
-      color: #fff;
-    }
-    .dashboard-hero h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 8px;
-      line-height: 1.1;
-    }
-    .dashboard-hero p {
-      color: rgba(255,255,255,0.7);
-      font-size: 1.1rem;
-      margin: 0;
-    }
-    .hero-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .period-select {
-      display: flex;
-      gap: 6px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 999px;
-      padding: 4px;
-    }
-    .period-btn {
-      padding: 8px 18px;
-      border: none;
-      border-radius: 999px;
-      background: transparent;
-      color: rgba(255,255,255,0.7);
-      font-family: inherit;
-      font-size: 0.92rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 180ms ease;
-    }
-    .period-btn.active, .period-btn:hover {
-      background: rgba(255,255,255,0.18);
-      color: #fff;
-    }
-
-    /* KPI cards */
-    .kpi-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 8px 0;
       gap: 20px;
-      padding: 32px 0 0;
     }
-    .kpi-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      box-shadow: var(--shadow);
-      border: var(--border);
+    .brand-name {
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
     }
-    .kpi-label {
+    .brand-name .dash-label {
+      opacity: 0.55;
+      font-weight: 400;
+      margin-left: 8px;
+      font-size: 0.9rem;
+    }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .internal-badge {
+      display: inline-block;
+      background: rgba(62,193,201,0.18);
+      color: var(--aqua);
+      border: 1px solid rgba(62,193,201,0.28);
+      border-radius: 4px;
+      padding: 2px 9px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .updated-label {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+    }
+
+    /* ── Sticky section nav ── */
+    .section-nav {
+      background: white;
+      border-bottom: 1px solid rgba(31,58,95,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(31,58,95,0.06);
+    }
+    .section-nav-inner {
+      display: flex;
+      align-items: center;
+    }
+    .nav-link {
+      padding: 13px 22px;
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--steel);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 140ms ease;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--blue); border-bottom-color: rgba(62,193,201,0.4); }
+    .nav-link.active { color: var(--blue); border-bottom-color: var(--aqua); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(180deg, #1F3A5F 0%, #2A4468 100%);
+      padding: 40px 0 0;
+      color: white;
+    }
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+    }
+    .period-select {
+      display: flex;
+      gap: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 4px;
+      align-self: flex-start;
+    }
+    .period-btn {
+      padding: 7px 16px;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 140ms ease;
+    }
+    .period-btn:hover, .period-btn.active {
+      background: rgba(255,255,255,0.18);
+      color: white;
+    }
+
+    /* KPI cards — overlap out of hero */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 16px;
+      transform: translateY(24px);
+    }
+    .kpi-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow);
+      border: var(--border);
+    }
+    .kpi-card.kc-web  { border-top: 3px solid var(--aqua); }
+    .kpi-card.kc-biz  { border-top: 3px solid var(--teal); }
+    .kpi-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--steel);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       margin-bottom: 8px;
     }
     .kpi-value {
-      font-size: 2.4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--blue);
       line-height: 1;
     }
+    .kpi-value.kv-amber  { color: var(--amber); }
+    .kpi-value.kv-muted  { color: #C0C8D2; }
+    .kpi-value.kv-teal   { color: var(--teal); }
+    .kpi-value.kv-loading { font-size: 1.2rem; color: var(--steel); }
     .kpi-sub {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--steel);
       margin-top: 6px;
     }
 
-    /* Chart section */
-    .chart-section {
-      padding: 40px 0;
+    /* ── Sections ── */
+    .main-content { padding-top: 48px; } /* offset kpi overlap */
+
+    .section {
+      padding: 44px 0;
     }
-    .chart-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 32px;
-      box-shadow: var(--shadow);
-      border: var(--border);
+    .section.bg-white { background: white; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-    .chart-card h2 {
-      font-size: 1.2rem;
-      font-weight: 600;
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--blue);
-      margin: 0 0 24px;
-    }
-    .chart-container {
-      width: 100%;
-      height: 320px;
-      position: relative;
     }
 
-    /* Table styles */
-    .table-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    /* ── Cards ── */
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: var(--border);
+      overflow: hidden;
     }
-    .table-card {
-      background: var(--white);
+    .card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+    .card-body { padding: 20px 24px; }
+
+    /* ── Pill badges ── */
+    .pill {
+      display: inline-block;
+      font-size: 0.77rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .p-blue   { background: rgba(31,58,95,0.08);  color: var(--blue); }
+    .p-teal   { background: rgba(42,111,116,0.10); color: var(--teal); }
+    .p-aqua   { background: rgba(62,193,201,0.12); color: #1a8b92; }
+    .p-amber  { background: #FFFBEB; color: #92400E; }
+    .p-red    { background: #FEF2F2; color: #991B1B; }
+    .p-green  { background: #ECFDF5; color: #065F46; }
+    .p-grey   { background: var(--soft); color: var(--steel); }
+    .p-purple { background: #F5F3FF; color: #5B21B6; }
+    .p-yellow { background: #FEF9C3; color: #713F12; }
+
+    /* ── Analytics section ── */
+    .chart-card {
+      background: white;
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
       border: var(--border);
+      margin-bottom: 20px;
     }
-    .table-card h3 {
-      font-size: 1.1rem;
+    .chart-card h3 {
+      font-size: 1rem;
       font-weight: 600;
       color: var(--blue);
-      margin: 0 0 16px;
+      margin-bottom: 20px;
     }
-    .data-table {
+    .chart-container {
       width: 100%;
-      border-collapse: collapse;
+      height: 260px;
+      position: relative;
     }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .table-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: var(--border);
+    }
+    .table-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .data-table { width: 100%; border-collapse: collapse; }
     .data-table th {
       text-align: left;
-      font-size: 0.8rem;
+      font-size: 0.77rem;
       font-weight: 600;
       color: var(--steel);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      padding: 8px 0;
+      padding: 6px 0;
       border-bottom: 2px solid var(--soft);
     }
     .data-table td {
-      padding: 10px 0;
-      font-size: 0.95rem;
+      padding: 9px 0;
+      font-size: 0.88rem;
       border-bottom: 1px solid var(--soft);
     }
     .data-table td:last-child {
@@ -212,350 +329,1120 @@
     }
     .data-table tr:last-child td { border-bottom: none; }
 
-    .bar-cell {
+    .bar-cell { display: flex; align-items: center; gap: 10px; }
+    .bar-label { min-width: 90px; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
+    .bar-track { flex: 1; height: 5px; background: var(--soft); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--teal), var(--aqua)); transition: width 500ms ease; }
+
+    .loading-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      color: var(--steel);
+      font-size: 0.92rem;
+      gap: 12px;
+    }
+    .spinner {
+      width: 22px; height: 22px;
+      border: 3px solid var(--soft);
+      border-top-color: var(--aqua);
+      border-radius: 50%;
+      animation: spin 700ms linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .analytics-fallback {
+      text-align: center;
+      padding: 32px 20px;
+    }
+    .analytics-fallback p {
+      font-size: 0.9rem;
+      color: var(--steel);
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 150ms;
+    }
+    .btn-primary:hover { background: #2A4C78; }
+
+    /* ── Pipeline ── */
+    .pipeline-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .p-stat {
+      background: white;
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      border: var(--border);
+      text-align: center;
+    }
+    .p-stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .p-stat-value.amber { color: var(--amber); }
+    .p-stat-label { font-size: 0.78rem; color: var(--steel); margin-top: 5px; font-weight: 500; }
+
+    .pipeline-table { width: 100%; border-collapse: collapse; }
+    .pipeline-table th {
+      text-align: left;
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: var(--steel);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 8px 14px 10px 0;
+      border-bottom: 2px solid var(--soft);
+    }
+    .pipeline-table td {
+      padding: 14px 14px 14px 0;
+      border-bottom: 1px solid var(--soft);
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+    .pipeline-table tr:last-child td { border-bottom: none; }
+
+    .org-name    { font-weight: 700; color: var(--blue); font-size: 0.92rem; }
+    .org-contact { font-size: 0.8rem; color: var(--steel); margin-top: 2px; line-height: 1.4; }
+    .org-id      { font-size: 0.72rem; color: #C0C8D2; margin-top: 4px; }
+
+    .stage-pill {
+      display: inline-block;
+      font-size: 0.77rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .s-lead     { background: var(--soft); color: var(--steel); }
+    .s-proposal { background: #EDE9FE; color: #5B21B6; }
+    .s-deferred { background: #FEF9C3; color: #713F12; }
+
+    .deal-val      { font-weight: 700; color: var(--blue); font-size: 0.92rem; }
+    .deal-val-note { font-size: 0.8rem; color: var(--steel); margin-top: 1px; }
+
+    .next-action { font-size: 0.86rem; color: var(--graphite); line-height: 1.45; max-width: 250px; }
+    .due-urgent  { font-size: 0.78rem; color: var(--red); font-weight: 700; margin-top: 4px; }
+    .due-normal  { font-size: 0.78rem; color: var(--steel); margin-top: 4px; }
+
+    /* Tony leads grid */
+    .leads-section-header {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--steel);
+      margin: 20px 0 12px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .bar-track {
-      flex: 1;
-      height: 6px;
-      background: var(--soft);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--aqua));
-      transition: width 600ms ease;
-    }
-
-    /* Loading state */
-    .loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 200px;
-      color: var(--steel);
-      font-size: 1rem;
-    }
-    .loading::after {
+    .leads-section-header::after {
       content: "";
-      width: 24px;
-      height: 24px;
-      border: 3px solid var(--soft);
-      border-top-color: var(--aqua);
-      border-radius: 50%;
-      animation: spin 800ms linear infinite;
-      margin-left: 12px;
+      flex: 1;
+      height: 1px;
+      background: var(--soft);
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px;
+    }
+    .lead-chip {
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 12px 14px;
+      border: 1px solid rgba(31,58,95,0.07);
+    }
+    .lead-chip-name    { font-weight: 600; font-size: 0.88rem; color: var(--blue); }
+    .lead-chip-contact { font-size: 0.78rem; color: var(--steel); margin-top: 2px; }
+    .lead-chip-note    { font-size: 0.75rem; color: #A0AABB; margin-top: 5px; }
 
-    /* Footer */
-    .site-footer {
+    /* ── Tasks ── */
+    .tasks-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .task-group-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--steel);
+      margin-bottom: 10px;
+    }
+    .task-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--soft);
+    }
+    .task-item:last-child { border-bottom: none; }
+    .task-icon { font-size: 13px; margin-top: 2px; flex-shrink: 0; width: 18px; }
+    .task-title { font-size: 0.9rem; font-weight: 500; color: var(--graphite); }
+    .task-meta  { font-size: 0.78rem; color: var(--steel); margin-top: 2px; line-height: 1.4; }
+    .t-area {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 1px 7px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+    .ta-bizdev  { background: #EEF2FF; color: #4338CA; }
+    .ta-content { background: #FDF4FF; color: #7E22CE; }
+    .ta-ops     { background: #F0FDF4; color: #166534; }
+    .ta-li      { background: #EFF6FF; color: #1D4ED8; }
+    .ta-personal{ background: #FFF7ED; color: #9A3412; }
+
+    .divider { height: 1px; background: var(--soft); margin: 14px 0; }
+
+    /* ── Finance + Deadlines ── */
+    .finance-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .finance-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--soft);
+    }
+    .finance-row:last-child { border-bottom: none; }
+    .finance-label       { font-size: 0.9rem; color: var(--graphite); }
+    .finance-label small { display: block; font-size: 0.77rem; color: var(--steel); margin-top: 1px; }
+    .finance-value       { font-size: 1rem; font-weight: 700; color: var(--blue); }
+    .fv-amber { color: var(--amber); }
+    .fv-muted { color: #C0C8D2; }
+    .fv-teal  { color: var(--teal); }
+
+    .callout {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      border-left: 3px solid;
+    }
+    .callout-amber { background: #FFFBEB; border-color: var(--amber); color: #78350F; }
+
+    .deadline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--soft);
+    }
+    .deadline-item:last-child { border-bottom: none; }
+    .dtag {
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: white;
+      border-radius: 6px;
+      padding: 4px 9px;
+      min-width: 50px;
+      text-align: center;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .dt-red    { background: var(--red); }
+    .dt-amber  { background: var(--amber); }
+    .dt-teal   { background: var(--teal); }
+    .dt-grey   { background: var(--steel); }
+    .deadline-text { font-size: 0.87rem; color: var(--graphite); line-height: 1.45; }
+
+    /* ── Footer ── */
+    .footer {
       background: var(--blue);
-      color: rgba(255,255,255,0.6);
-      padding: 32px 0;
-      font-size: 0.88rem;
+      color: rgba(255,255,255,0.45);
+      padding: 28px 0;
+      font-size: 0.82rem;
       text-align: center;
     }
-    .site-footer a { color: var(--aqua); }
+    .footer a { color: var(--aqua); }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .table-grid { grid-template-columns: 1fr; }
-      .dashboard-hero h1 { font-size: 1.7rem; }
-      .kpi-value { font-size: 1.8rem; }
-      .chart-container { height: 240px; }
-      .hero-row { flex-direction: column; align-items: flex-start; }
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .analytics-grid, .tasks-cols, .finance-cols { grid-template-columns: 1fr; }
+      .pipeline-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .hero-top { flex-direction: column; }
+      .pipeline-stats { grid-template-columns: repeat(2, 1fr); }
+      .container { width: calc(100% - 32px); }
+      .nav-link { padding: 12px 14px; font-size: 0.82rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="brand" aria-label="Human–AI Systems home">
-        <img src="/images/Logo Light.svg" alt="Human–AI Systems" class="brand-mark" />
-      </a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/insights/">Insights</a>
-        <a href="/about/">About</a>
-      </nav>
+<!-- ── Top bar ── -->
+<header class="top-bar">
+  <div class="container top-bar-inner">
+    <span class="brand-name">
+      Human-AI Systems
+      <span class="dash-label">Operations Dashboard</span>
+    </span>
+    <div class="top-bar-right">
+      <span class="internal-badge">Strictly Internal</span>
+      <span class="updated-label">Updated: 1 April 2026</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Hero -->
-  <section class="dashboard-hero">
-    <div class="container">
-      <div class="hero-row">
-        <div>
-          <h1>Site Analytics</h1>
-          <p>human-ai-systems.com — Cloudflare Web Analytics</p>
-        </div>
-        <div class="period-select">
-          <button class="period-btn" data-days="1">24h</button>
-          <button class="period-btn active" data-days="7">7 days</button>
-          <button class="period-btn" data-days="30">30 days</button>
-          <button class="period-btn" data-days="90">90 days</button>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ── Section nav ── -->
+<nav class="section-nav">
+  <div class="container section-nav-inner">
+    <a class="nav-link active" href="#website">Website</a>
+    <a class="nav-link" href="#pipeline">Pipeline</a>
+    <a class="nav-link" href="#tasks">Tasks</a>
+    <a class="nav-link" href="#finance">Finance</a>
+  </div>
+</nav>
 
-  <!-- KPIs -->
+<!-- ── Hero with KPI overlap ── -->
+<section class="hero">
   <div class="container">
+    <div class="hero-top">
+      <div>
+        <h1 class="hero-title">Operations Dashboard</h1>
+        <p class="hero-sub">human-ai-systems.com — Live analytics + business overview</p>
+      </div>
+      <div class="period-select" id="period-select">
+        <button class="period-btn"        data-days="1">24h</button>
+        <button class="period-btn active" data-days="7">7 days</button>
+        <button class="period-btn"        data-days="30">30 days</button>
+        <button class="period-btn"        data-days="90">90 days</button>
+      </div>
+    </div>
+
+    <!-- KPI row — web analytics + business pulse -->
     <div class="kpi-row">
-      <div class="kpi-card">
-        <div class="kpi-label">Total Page Views</div>
-        <div class="kpi-value" id="kpi-views">—</div>
-        <div class="kpi-sub" id="kpi-views-sub"></div>
+      <div class="kpi-card kc-web">
+        <div class="kpi-label">Page Views</div>
+        <div class="kpi-value kv-loading" id="kpi-views">
+          <span class="spinner" style="display:inline-block;width:18px;height:18px;border-width:2px;margin-right:6px;vertical-align:middle;"></span>
+        </div>
+        <div class="kpi-sub" id="kpi-views-sub">Loading…</div>
       </div>
-      <div class="kpi-card">
+      <div class="kpi-card kc-web">
         <div class="kpi-label">Unique Visitors</div>
-        <div class="kpi-value" id="kpi-visitors">—</div>
-        <div class="kpi-sub" id="kpi-visitors-sub"></div>
+        <div class="kpi-value kv-loading" id="kpi-visitors">
+          <span class="spinner" style="display:inline-block;width:18px;height:18px;border-width:2px;margin-right:6px;vertical-align:middle;"></span>
+        </div>
+        <div class="kpi-sub" id="kpi-visitors-sub">Loading…</div>
       </div>
-      <div class="kpi-card">
+      <div class="kpi-card kc-web">
         <div class="kpi-label">Top Page</div>
-        <div class="kpi-value" id="kpi-top-page" style="font-size:1.4rem;">—</div>
+        <div class="kpi-value kv-loading" id="kpi-top-page">—</div>
         <div class="kpi-sub" id="kpi-top-page-sub"></div>
       </div>
-      <div class="kpi-card">
+      <div class="kpi-card kc-web">
         <div class="kpi-label">Top Referrer</div>
-        <div class="kpi-value" id="kpi-referrer" style="font-size:1.4rem;">—</div>
+        <div class="kpi-value kv-loading" id="kpi-referrer">—</div>
         <div class="kpi-sub" id="kpi-referrer-sub"></div>
+      </div>
+      <div class="kpi-card kc-biz">
+        <div class="kpi-label">Pipeline Deals</div>
+        <div class="kpi-value">13</div>
+        <div class="kpi-sub">3 priority · 10 Tony leads</div>
+      </div>
+      <div class="kpi-card kc-biz">
+        <div class="kpi-label">Est. Pipeline Value</div>
+        <div class="kpi-value kv-amber">£11k+</div>
+        <div class="kpi-sub">Priority deals only</div>
+      </div>
+      <div class="kpi-card kc-biz">
+        <div class="kpi-label">Invoiced</div>
+        <div class="kpi-value kv-amber">£938</div>
+        <div class="kpi-sub">INV-002 Sent · Due 26 Apr</div>
+      </div>
+      <div class="kpi-card kc-biz">
+        <div class="kpi-label">Open Tasks</div>
+        <div class="kpi-value">18</div>
+        <div class="kpi-sub">3 urgent · 15 up next</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Charts -->
-  <section class="chart-section">
-    <div class="container">
+<div class="main-content">
 
-      <!-- Views over time -->
-      <div class="chart-card">
-        <h2>Page Views Over Time</h2>
-        <div class="chart-container" id="chart-timeline">
-          <div class="loading">Loading analytics</div>
+<!-- ══════════════════════════════════════════════════════════
+     § WEBSITE ANALYTICS
+══════════════════════════════════════════════════════════ -->
+<section class="section bg-white" id="website">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Website Analytics</h2>
+      <span class="pill p-green">Live — human-ai-systems.com</span>
+    </div>
+
+    <!-- Timeline chart -->
+    <div class="chart-card">
+      <h3>Page Views Over Time</h3>
+      <div class="chart-container" id="chart-timeline">
+        <div class="loading-state"><div class="spinner"></div> Loading analytics…</div>
+      </div>
+    </div>
+
+    <!-- Tables grid -->
+    <div class="analytics-grid">
+      <div class="table-card">
+        <h3>Top Pages</h3>
+        <table class="data-table" id="table-pages">
+          <thead><tr><th>Page</th><th>Views</th></tr></thead>
+          <tbody><tr><td colspan="2"><div class="loading-state" style="min-height:80px"><div class="spinner"></div></div></td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-card">
+        <h3>Traffic Sources</h3>
+        <table class="data-table" id="table-referrers">
+          <thead><tr><th>Source</th><th>Views</th></tr></thead>
+          <tbody><tr><td colspan="2"><div class="loading-state" style="min-height:80px"><div class="spinner"></div></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+
+    <div class="analytics-grid">
+      <div class="table-card">
+        <h3>Countries</h3>
+        <table class="data-table" id="table-countries">
+          <thead><tr><th>Country</th><th>Views</th></tr></thead>
+          <tbody><tr><td colspan="2"><div class="loading-state" style="min-height:80px"><div class="spinner"></div></div></td></tr></tbody>
+        </table>
+      </div>
+      <div class="table-card">
+        <h3>Devices &amp; Browsers</h3>
+        <table class="data-table" id="table-devices">
+          <thead><tr><th>Device / Browser</th><th>Views</th></tr></thead>
+          <tbody><tr><td colspan="2"><div class="loading-state" style="min-height:80px"><div class="spinner"></div></div></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     § PIPELINE
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="pipeline">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Pipeline</h2>
+      <span class="pill p-amber">13 active · Pre-revenue</span>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="pipeline-stats">
+      <div class="p-stat">
+        <div class="p-stat-value">13</div>
+        <div class="p-stat-label">Active deals</div>
+      </div>
+      <div class="p-stat">
+        <div class="p-stat-value amber">£11k+</div>
+        <div class="p-stat-label">Priority deal value</div>
+      </div>
+      <div class="p-stat">
+        <div class="p-stat-value">3</div>
+        <div class="p-stat-label">Priority deals</div>
+      </div>
+      <div class="p-stat">
+        <div class="p-stat-value">0</div>
+        <div class="p-stat-label">Delivering</div>
+      </div>
+    </div>
+
+    <!-- Priority deals -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Priority Deals</span>
+        <span class="pill p-blue">Needs action this week</span>
+      </div>
+      <div style="padding: 0 24px;">
+        <table class="pipeline-table">
+          <thead>
+            <tr>
+              <th style="width:26%">Organisation</th>
+              <th style="width:15%">Stage</th>
+              <th style="width:18%">Value</th>
+              <th>Next Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="org-name">Roz Savage MP</div>
+                <div class="org-contact">Roz Savage · Isaac Tucker<br>Connie Gilles · Claire Wardell</div>
+                <div class="org-id">ORG-001</div>
+              </td>
+              <td><span class="stage-pill s-deferred">Deferred</span></td>
+              <td>
+                <div class="deal-val">Sub-£1k chunks</div>
+                <div class="deal-val-note">Post-Easter scope</div>
+                <div class="deal-val-note">Ph2 TBD</div>
+              </td>
+              <td>
+                <div class="next-action">INV-002 (£937.50) sent. Call held 27 Mar with Connie & Claire. Re-engage mid-April when Roz returns. Revised scope: Claude training / RAP draft / half-day skill build. Option B: Copilot 365 if IPSA approve.</div>
+                <div class="due-normal">Re-engage: mid-April</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="org-name">Xenomorph Software Ltd</div>
+                <div class="org-contact">David Winson (champion)<br>Ron Zeghibe (CEO)</div>
+                <div class="org-id">ORG-005</div>
+              </td>
+              <td><span class="stage-pill s-lead">Lead</span></td>
+              <td>
+                <div class="deal-val">£2,500–4,000</div>
+                <div class="deal-val-note">Radar engagement</div>
+                <div class="deal-val-note">Pilot TBD</div>
+              </td>
+              <td>
+                <div class="next-action">Follow up David Winson — arrange introductory call. Interest confirmed 21–22 Mar. Overdue action.</div>
+                <div class="due-urgent">⚠ Overdue — action now</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="org-name">Verimatrix</div>
+                <div class="org-contact">Frederike (Fred) — Compliance<br>Sabine (HR) approval needed</div>
+                <div class="org-id">ORG-009</div>
+              </td>
+              <td><span class="stage-pill s-lead">Lead</span></td>
+              <td>
+                <div class="deal-val">£8,000–15,000</div>
+                <div class="deal-val-note">Compliance AI + Trust Centre</div>
+              </td>
+              <td>
+                <div class="next-action">Follow-up email sent to Fred 26 Mar. Awaiting Sabine (HR) sign-off on external engagement. Be ready to produce SOW immediately on green light.</div>
+                <div class="due-urgent">⚠ Chase Fred if no reply by 2 Apr</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tony Dale leads -->
+    <div class="card" style="margin-top:20px;">
+      <div class="card-header">
+        <span class="card-title">Tony Dale Introductions</span>
+        <span class="pill p-grey">10 leads · Research &amp; pitch prep needed</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:0.88rem;color:var(--steel);margin-bottom:16px;line-height:1.5;">
+          All at Lead stage. Tony will make direct introductions once you've researched and prioritised. Target: select best 3–5, confirm contacts, prepare pitches w/c 31 Mar (now overdue — action this week).
+        </p>
+        <div class="leads-grid">
+          <div class="lead-chip">
+            <div class="lead-chip-name">St James's Place</div>
+            <div class="lead-chip-contact">Sarah Thomas</div>
+            <div class="lead-chip-note">ORG-010 · Await Tony intro</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">National Star</div>
+            <div class="lead-chip-contact">Andrew Stark (Head of Commercial)</div>
+            <div class="lead-chip-note">ORG-011 · AI awareness</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">AB Dynamics</div>
+            <div class="lead-chip-contact">Sarah Matthews-DeMers (CEO)</div>
+            <div class="lead-chip-note">ORG-012 · Confirm Tony contacts</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">Kinetrol</div>
+            <div class="lead-chip-contact">Richard Hudd (Group Sales Director)</div>
+            <div class="lead-chip-note">ORG-013 · Sales/ops AI</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">PRT Engineering</div>
+            <div class="lead-chip-contact">Tom Hall-Wilson (Director)</div>
+            <div class="lead-chip-note">ORG-014 · Savings angle</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">RM Technologies</div>
+            <div class="lead-chip-contact">Ian MacKinnon (MD)</div>
+            <div class="lead-chip-note">ORG-015 · Use Cisco history</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">Vertical Aerospace</div>
+            <div class="lead-chip-contact">CLO — name TBC</div>
+            <div class="lead-chip-note">ORG-016 · AI governance / aerospace</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">Screwfix</div>
+            <div class="lead-chip-contact">Kirsty Beaumont (Finance Director)</div>
+            <div class="lead-chip-note">ORG-017 · Long shot per Tony</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">UKRI Innovate UK</div>
+            <div class="lead-chip-contact">Guy ??? (COO) — surname TBC</div>
+            <div class="lead-chip-note">ORG-018 · Confirm via wife / MRC</div>
+          </div>
+          <div class="lead-chip">
+            <div class="lead-chip-name">Highland Spring</div>
+            <div class="lead-chip-contact">Nick Yates (Group Marketing Dir)</div>
+            <div class="lead-chip-note">ORG-019 · Local informal meeting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     § TASKS
+══════════════════════════════════════════════════════════ -->
+<section class="section bg-white" id="tasks">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Tasks</h2>
+      <span class="pill p-red">3 urgent · 15 up next</span>
+    </div>
+
+    <div class="tasks-cols">
+
+      <!-- Urgent this week -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">🔴 Urgent This Week</span>
+          <span class="pill p-red">3 actions</span>
+        </div>
+        <div class="card-body">
+
+          <div class="task-item">
+            <div class="task-icon">🔄</div>
+            <div>
+              <div class="task-title">Verimatrix — await Sabine HR approval</div>
+              <div class="task-meta">Follow-up sent to Fred 26 Mar. Chase if no reply by 2 Apr — be ready to produce SOW on green light.<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Update LinkedIn profile</div>
+              <div class="task-meta">New title and HAS focus — should have happened 31 Mar. Do today.<span class="t-area ta-li">LinkedIn</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Send thank-you to Tony Dale</div>
+              <div class="task-meta">Brief peer-to-peer message — warm, not effusive.<span class="t-area ta-bizdev">Ecosystem</span></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="task-group-label">🟡 Also this week</div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Decide 2026 day rate</div>
+              <div class="task-meta">Set baseline, volume discount, risk premium. Tony guidance: UK market £650–£1,500/day.<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Follow up Xenomorph — arrange intro call</div>
+              <div class="task-meta">Contact David Winson. Interest confirmed 21–22 Mar — overdue.<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">🔄</div>
+            <div>
+              <div class="task-title">Contact estate agent</div>
+              <div class="task-meta">Email sent 25 Mar · Awaiting reply<span class="t-area ta-personal">Personal</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Outreach to network — AI consulting (10–15 contacts)</div>
+              <div class="task-meta">Personalised emails · Ex-colleagues and warm contacts · Use CRO skill<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Tables row -->
-      <div class="table-grid">
-        <div class="table-card">
-          <h3>Pages</h3>
-          <table class="data-table" id="table-pages">
-            <thead><tr><th>Page</th><th>Views</th></tr></thead>
-            <tbody><tr><td colspan="2" class="loading">Loading</td></tr></tbody>
-          </table>
+      <!-- Up next -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">⬜ Up Next</span>
+          <span class="pill p-amber">Soon</span>
         </div>
+        <div class="card-body">
 
-        <div class="table-card">
-          <h3>Referrers</h3>
-          <table class="data-table" id="table-referrers">
-            <thead><tr><th>Source</th><th>Views</th></tr></thead>
-            <tbody><tr><td colspan="2" class="loading">Loading</td></tr></tbody>
-          </table>
-        </div>
-      </div>
+          <div class="task-group-label">Tony Dale pipeline — this week</div>
 
-      <div style="height:24px"></div>
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Research + prioritise Tony Dale intro list</div>
+              <div class="task-meta">Select best 3–5 from ORG-010 to ORG-019 · Prepare pitches · Coordinate introductions<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
 
-      <div class="table-grid">
-        <div class="table-card">
-          <h3>Countries</h3>
-          <table class="data-table" id="table-countries">
-            <thead><tr><th>Country</th><th>Views</th></tr></thead>
-            <tbody><tr><td colspan="2" class="loading">Loading</td></tr></tbody>
-          </table>
-        </div>
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Chase Tony intro list if not received by ~3 Apr</div>
+              <div class="task-meta">Tony committed to ~10 company introductions<span class="t-area ta-bizdev">Biz Dev</span></div>
+            </div>
+          </div>
 
-        <div class="table-card">
-          <h3>Devices &amp; Browsers</h3>
-          <table class="data-table" id="table-devices">
-            <thead><tr><th>Device / Browser</th><th>Views</th></tr></thead>
-            <tbody><tr><td colspan="2" class="loading">Loading</td></tr></tbody>
-          </table>
+          <div class="divider"></div>
+
+          <div class="task-group-label">Content</div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">LinkedIn article — "AI brain fry" (thought leadership)</div>
+              <div class="task-meta">Cognitive load of running parallel AI workstreams · HBR/BCG March 2026 research hook · Use CMO skill<span class="t-area ta-content">Content</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">LinkedIn post + video script — AI brain fry</div>
+              <div class="task-meta">Short punchy post + 60–90 sec talking head script<span class="t-area ta-content">Content</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Develop "Day in the Life" stories</div>
+              <div class="task-meta">Senior exec audience · Stories not use cases · Use CMO/Gladys · Show problem &amp; result<span class="t-area ta-content">Content</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Develop 6 thumbnail vignettes</div>
+              <div class="task-meta">3-sentence stories: revenue, cost, productivity, governance, CX, public sector · Drawn from Verimatrix &amp; CDC<span class="t-area ta-content">Content</span></div>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <div class="task-icon">⬜</div>
+            <div>
+              <div class="task-title">Create "Why Act on AI" short deck (10 slides)</div>
+              <div class="task-meta">For networking / incidental contacts · Surfaces the problem, not the solution · Tony's recommendation<span class="t-area ta-content">Content</span></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="task-group-label">Deferred</div>
+
+          <div class="task-item">
+            <div class="task-icon">⏸</div>
+            <div>
+              <div class="task-title">Re-engage Roz Savage MP post-Easter</div>
+              <div class="task-meta">Roz away 2 weeks · Claire on holiday · Re-engage mid-April · Revised scope agreed<span class="t-area" style="background:#FEF9C3;color:#713F12">Deferred</span></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>Internal dashboard — <a href="/">human-ai-systems.com</a></p>
+
+<!-- ══════════════════════════════════════════════════════════
+     § FINANCE + DEADLINES
+══════════════════════════════════════════════════════════ -->
+<section class="section" id="finance">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Finance &amp; Deadlines</h2>
+      <span class="pill p-grey">FY Apr 2025 – Mar 2026</span>
     </div>
-  </footer>
 
-  <script>
-    // ─── Config ───────────────────────────────────────────────
-    // Data fetched via server-side Pages Function at /api/analytics
-    // API token stays server-side — no secrets in the browser
+    <div class="finance-cols">
 
-    // ─── State ────────────────────────────────────────────────
-    let currentDays = 7;
+      <!-- Finance card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Financials</span>
+          <span class="pill p-teal">First trading year begins Apr 2026</span>
+        </div>
+        <div class="card-body">
 
-    // ─── Helpers ──────────────────────────────────────────────
-    function friendlyPath(p) {
-      if (p === '/' || p === '') return 'Home';
-      return p.replace(/^\/|\/$/g, '').replace(/\//g, ' / ').replace(/-/g, ' ')
-        .replace(/\b\w/g, l => l.toUpperCase());
-    }
+          <div class="finance-row">
+            <div class="finance-label">
+              Invoiced — INV-002
+              <small>Roz Savage MP · AI Discovery · Sent 27 Mar</small>
+            </div>
+            <div class="finance-value fv-amber">£937.50</div>
+          </div>
+          <div class="finance-row">
+            <div class="finance-label">
+              Cancelled — INV-001
+              <small>Roz Savage MP · Quick-Win Setup · Not progressed</small>
+            </div>
+            <div class="finance-value fv-muted">£3,500 ✕</div>
+          </div>
+          <div class="finance-row">
+            <div class="finance-label">Collected</div>
+            <div class="finance-value fv-muted">£0</div>
+          </div>
+          <div class="finance-row">
+            <div class="finance-label">Outstanding AR</div>
+            <div class="finance-value fv-amber">£937.50</div>
+          </div>
 
-    // ─── Data fetchers ────────────────────────────────────────
-    async function fetchAll(days) {
-      try {
-        const res = await fetch(`/api/analytics?days=${days}`);
-        const json = await res.json();
-        if (json.errors) { console.error('API error', json.errors); return null; }
-        return json.data.viewer.accounts[0];
-      } catch (err) {
-        console.error('Fetch error', err);
-        return null;
-      }
-    }
+          <div class="divider" style="margin:8px 0;"></div>
 
-    // ─── Renderers ────────────────────────────────────────────
-    function renderKPIs(data) {
-      // Total views
-      const totalViews = data.pages.reduce((s, r) => s + r.count, 0);
-      document.getElementById('kpi-views').textContent = totalViews.toLocaleString();
-      document.getElementById('kpi-views-sub').textContent = `Last ${currentDays} day${currentDays > 1 ? 's' : ''}`;
+          <div class="finance-row">
+            <div class="finance-label">
+              Expenses (logged)
+              <small>Otter.ai £99 · Claude sub · Google Workspace</small>
+            </div>
+            <div class="finance-value">£99+</div>
+          </div>
+          <div class="finance-row">
+            <div class="finance-label">Open invoices</div>
+            <div class="finance-value">1 (Sent)</div>
+          </div>
 
-      // Visitors
-      const totalVisits = data.visits.reduce((s, r) => s + (r.sum?.visits || 0), 0);
-      document.getElementById('kpi-visitors').textContent = totalVisits.toLocaleString();
-      document.getElementById('kpi-visitors-sub').textContent = `Unique sessions`;
+          <div class="callout callout-amber">
+            <strong>INV-002 due 26 April 2026</strong> — £937.50 for AI Discovery, Roz Savage MP. Confirm receipt once Connie / Claire acknowledges.
+          </div>
+        </div>
+      </div>
 
-      // Top page
-      if (data.pages.length) {
-        const top = data.pages[0];
-        document.getElementById('kpi-top-page').textContent = friendlyPath(top.dimensions.requestPath);
-        document.getElementById('kpi-top-page-sub').textContent = `${top.count} views`;
-      }
+      <!-- Deadlines card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Key Deadlines</span>
+          <span class="pill p-red">Immediate priorities</span>
+        </div>
+        <div class="card-body">
 
-      // Top referrer
-      const refs = data.referrers.filter(r => r.dimensions.refererHost && r.dimensions.refererHost !== '');
-      if (refs.length) {
-        document.getElementById('kpi-referrer').textContent = refs[0].dimensions.refererHost;
-        document.getElementById('kpi-referrer-sub').textContent = `${refs[0].count} views`;
-      } else {
-        document.getElementById('kpi-referrer').textContent = 'Direct';
-        document.getElementById('kpi-referrer-sub').textContent = 'Most traffic is direct';
-      }
-    }
+          <div class="deadline-item">
+            <div class="dtag dt-red">2 Apr</div>
+            <div class="deadline-text"><strong>Chase Fred — Verimatrix</strong><br>If no reply to 26 Mar email. SOW ready to go on green light.</div>
+          </div>
 
-    function renderTimeline(data) {
-      const container = document.getElementById('chart-timeline');
-      const timeKey = currentDays <= 1 ? 'datetimeHour' : 'date';
+          <div class="deadline-item">
+            <div class="dtag dt-red">Today</div>
+            <div class="deadline-text"><strong>Update LinkedIn profile</strong><br>New title + HAS focus. Should have happened 31 Mar — do now.</div>
+          </div>
 
-      // Aggregate by time bucket
-      const buckets = {};
-      data.timeline.forEach(r => {
-        const key = r.dimensions[timeKey];
-        buckets[key] = (buckets[key] || 0) + r.count;
-      });
+          <div class="deadline-item">
+            <div class="dtag dt-amber">~3 Apr</div>
+            <div class="deadline-text"><strong>Chase Tony Dale intro list</strong><br>If not received. Tony committed to ~10 company introductions.</div>
+          </div>
 
-      const labels = Object.keys(buckets).sort();
-      const values = labels.map(k => buckets[k]);
-      const maxVal = Math.max(...values, 1);
+          <div class="deadline-item">
+            <div class="dtag dt-amber">This week</div>
+            <div class="deadline-text"><strong>Research Tony leads + prioritise</strong><br>ORG-010 to ORG-019. Select 3–5, prep pitches, coordinate intros.</div>
+          </div>
 
-      if (labels.length === 0) {
-        container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--steel);">No data yet — check back in a few hours</div>';
-        return;
-      }
+          <div class="deadline-item">
+            <div class="dtag dt-teal">26 Apr</div>
+            <div class="deadline-text"><strong>INV-002 payment due</strong><br>£937.50 — Roz Savage MP AI Discovery</div>
+          </div>
 
-      // Build SVG chart
-      const w = container.clientWidth;
-      const h = container.clientHeight;
-      const padL = 50, padR = 20, padT = 20, padB = 50;
-      const chartW = w - padL - padR;
-      const chartH = h - padT - padB;
+          <div class="deadline-item">
+            <div class="dtag dt-grey">Mid-Apr</div>
+            <div class="deadline-text"><strong>Re-engage Roz Savage MP</strong><br>Post-Easter recess. Revised scope: sub-£1k chunks. Copilot 365 option.</div>
+          </div>
 
-      let svg = `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">`;
+          <div class="deadline-item">
+            <div class="dtag dt-grey">Ongoing</div>
+            <div class="deadline-text"><strong>Job search — parallel track</strong><br>Active search for senior AI roles alongside building HAS.</div>
+          </div>
 
-      // Grid lines
-      const gridLines = 4;
-      for (let i = 0; i <= gridLines; i++) {
-        const y = padT + (chartH / gridLines) * i;
-        const val = Math.round(maxVal * (1 - i / gridLines));
-        svg += `<line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="#E8ECF0" stroke-width="1"/>`;
-        svg += `<text x="${padL - 10}" y="${y + 4}" text-anchor="end" fill="#6B7C8F" font-size="12" font-family="Source Sans 3">${val}</text>`;
-      }
+        </div>
+      </div>
 
-      // Bars
-      const barGap = Math.max(2, chartW * 0.02);
-      const barW = Math.max(4, (chartW - barGap * (labels.length - 1)) / labels.length);
+    </div>
+  </div>
+</section>
 
-      labels.forEach((label, i) => {
-        const x = padL + i * (barW + barGap);
-        const barH = (values[i] / maxVal) * chartH;
-        const y = padT + chartH - barH;
+</div><!-- /main-content -->
 
-        // Gradient bar
-        svg += `<rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="3" fill="url(#barGrad)"/>`;
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <p>Human-AI Systems · Operations Dashboard · Strictly internal · 1 April 2026 · Updated by Claude AIOS on demand</p>
+    <p style="margin-top:6px;">Website live at <a href="https://human-ai-systems.com" target="_blank">human-ai-systems.com</a> · Analytics via Cloudflare Web Analytics</p>
+  </div>
+</footer>
 
-        // Value on top of bar
-        if (values[i] > 0 && barW > 20) {
-          svg += `<text x="${x + barW/2}" y="${y - 6}" text-anchor="middle" fill="#1F3A5F" font-size="11" font-weight="600" font-family="Source Sans 3">${values[i]}</text>`;
+
+<!-- ══════════════════════════════════════════════════════════
+     ANALYTICS JAVASCRIPT
+     Calls Cloudflare GraphQL API directly (read-only token)
+══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  const CF_TOKEN   = 'cfat_Mw5vMBQ0NLB2g0mbgMVFSXMBlSEIaYsV0sptwrM6ebbe1e97';
+  const ACCOUNT_ID = '3614369217d7b85560ee32bbf8437012';
+  const GQL_URL    = 'https://api.cloudflare.com/client/v4/graphql';
+
+  let currentDays = 7;
+
+  function friendlyPath(p) {
+    if (!p || p === '/' || p === '') return 'Home';
+    return p.replace(/^\/|\/$/g, '').replace(/\//g, ' / ').replace(/-/g, ' ')
+      .replace(/\b\w/g, l => l.toUpperCase());
+  }
+
+  async function fetchAnalytics(days) {
+    const end   = new Date();
+    const start = new Date();
+    start.setDate(start.getDate() - days);
+
+    const startISO = start.toISOString().split('T')[0] + 'T00:00:00Z';
+    const endISO   = end.toISOString().split('T')[0]   + 'T23:59:59Z';
+
+    const filter        = `{AND: [{datetime_geq: "${startISO}"}, {datetime_leq: "${endISO}"}]}`;
+    const timeGranularity = days <= 1 ? 'datetimeHour' : 'date';
+
+    const query = `{
+      viewer {
+        accounts(filter: {accountTag: "${ACCOUNT_ID}"}) {
+          timeline: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 200, orderBy: [${timeGranularity}_ASC]
+          ) { count dimensions { ${timeGranularity} } }
+          pages: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 20, orderBy: [count_DESC]
+          ) { count dimensions { requestPath } }
+          referrers: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 20, orderBy: [count_DESC]
+          ) { count dimensions { refererHost } }
+          countries: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 15, orderBy: [count_DESC]
+          ) { count dimensions { countryName } }
+          devices: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 15, orderBy: [count_DESC]
+          ) { count dimensions { deviceType userAgentBrowser } }
+          visits: rumPageloadEventsAdaptiveGroups(
+            filter: ${filter}, limit: 1
+          ) { count sum { visits } }
         }
+      }
+    }`;
 
-        // X-axis label
-        const displayLabel = currentDays <= 1
-          ? label.split('T')[1]?.slice(0, 5) || label
-          : label.slice(5, 10).replace('-', '/');
+    const res  = await fetch(GQL_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${CF_TOKEN}`,
+        'Content-Type':  'application/json'
+      },
+      body: JSON.stringify({ query })
+    });
 
-        if (labels.length <= 31 || i % Math.ceil(labels.length / 15) === 0) {
-          svg += `<text x="${x + barW/2}" y="${h - 8}" text-anchor="middle" fill="#6B7C8F" font-size="11" font-family="Source Sans 3">${displayLabel}</text>`;
-        }
-      });
+    const json = await res.json();
+    if (json.errors) throw new Error(json.errors[0]?.message || 'API error');
+    return json.data.viewer.accounts[0];
+  }
 
-      // Gradient definition
-      svg += `<defs><linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+  function renderKPIs(data, days) {
+    // Page views
+    const totalViews = data.pages.reduce((s, r) => s + r.count, 0);
+    document.getElementById('kpi-views').textContent    = totalViews.toLocaleString();
+    document.getElementById('kpi-views-sub').textContent = `Last ${days} day${days > 1 ? 's' : ''}`;
+    document.getElementById('kpi-views').className      = 'kpi-value';
+
+    // Visitors
+    const totalVisits = data.visits.reduce((s, r) => s + (r.sum?.visits || 0), 0);
+    document.getElementById('kpi-visitors').textContent    = totalVisits.toLocaleString();
+    document.getElementById('kpi-visitors-sub').textContent = 'Unique sessions';
+    document.getElementById('kpi-visitors').className      = 'kpi-value';
+
+    // Top page
+    if (data.pages.length) {
+      const top = data.pages[0];
+      document.getElementById('kpi-top-page').textContent    = friendlyPath(top.dimensions.requestPath);
+      document.getElementById('kpi-top-page-sub').textContent = `${top.count} views`;
+      document.getElementById('kpi-top-page').className      = 'kpi-value kv-loading';
+    }
+
+    // Top referrer
+    const refs = data.referrers.filter(r => r.dimensions.refererHost && r.dimensions.refererHost !== '');
+    if (refs.length) {
+      document.getElementById('kpi-referrer').textContent    = refs[0].dimensions.refererHost;
+      document.getElementById('kpi-referrer-sub').textContent = `${refs[0].count} views`;
+    } else {
+      document.getElementById('kpi-referrer').textContent    = 'Direct';
+      document.getElementById('kpi-referrer-sub').textContent = 'No tracked referrers';
+    }
+    document.getElementById('kpi-referrer').className = 'kpi-value kv-loading';
+  }
+
+  function renderTimeline(data, days) {
+    const container = document.getElementById('chart-timeline');
+    const timeKey   = days <= 1 ? 'datetimeHour' : 'date';
+
+    const buckets = {};
+    data.timeline.forEach(r => {
+      const key = r.dimensions[timeKey];
+      buckets[key] = (buckets[key] || 0) + r.count;
+    });
+
+    const labels = Object.keys(buckets).sort();
+    const values = labels.map(k => buckets[k]);
+    const maxVal = Math.max(...values, 1);
+
+    if (!labels.length) {
+      container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--steel);font-size:0.9rem;">No data yet — check back in a few hours</div>';
+      return;
+    }
+
+    const w = container.clientWidth || 800;
+    const h = container.clientHeight || 260;
+    const padL = 48, padR = 16, padT = 20, padB = 44;
+    const chartW = w - padL - padR;
+    const chartH = h - padT - padB;
+
+    let svg = `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">`;
+
+    // Grid + Y-axis labels
+    for (let i = 0; i <= 4; i++) {
+      const y   = padT + (chartH / 4) * i;
+      const val = Math.round(maxVal * (1 - i / 4));
+      svg += `<line x1="${padL}" y1="${y}" x2="${w - padR}" y2="${y}" stroke="#E8ECF2" stroke-width="1"/>`;
+      svg += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" fill="#6B7C8F" font-size="11" font-family="Source Sans 3">${val}</text>`;
+    }
+
+    // Bars
+    const barGap = Math.max(2, chartW * 0.015);
+    const barW   = Math.max(6, (chartW - barGap * (labels.length - 1)) / labels.length);
+
+    labels.forEach((label, i) => {
+      const x    = padL + i * (barW + barGap);
+      const barH = Math.max(2, (values[i] / maxVal) * chartH);
+      const y    = padT + chartH - barH;
+
+      svg += `<rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="3" fill="url(#barGrad)"/>`;
+
+      if (values[i] > 0 && barW > 22) {
+        svg += `<text x="${x + barW/2}" y="${y - 5}" text-anchor="middle" fill="#1F3A5F" font-size="10" font-weight="600" font-family="Source Sans 3">${values[i]}</text>`;
+      }
+
+      const displayLabel = days <= 1
+        ? (label.split('T')[1]?.slice(0, 5) || label)
+        : label.slice(5, 10).replace('-', '/');
+
+      if (labels.length <= 30 || i % Math.ceil(labels.length / 15) === 0) {
+        svg += `<text x="${x + barW/2}" y="${h - 8}" text-anchor="middle" fill="#6B7C8F" font-size="11" font-family="Source Sans 3">${displayLabel}</text>`;
+      }
+    });
+
+    svg += `<defs>
+      <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#3EC1C9"/>
         <stop offset="100%" stop-color="#2A6F74"/>
-      </linearGradient></defs>`;
+      </linearGradient>
+    </defs></svg>`;
 
-      svg += '</svg>';
-      container.innerHTML = svg;
+    container.innerHTML = svg;
+  }
+
+  function renderTable(tableId, rows, dimKey, labelFn) {
+    const tbody = document.querySelector(`#${tableId} tbody`);
+    if (!rows.length) {
+      tbody.innerHTML = '<tr><td colspan="2" style="color:var(--steel);padding:16px 0;font-size:0.88rem;">No data yet</td></tr>';
+      return;
     }
+    const maxCount = rows[0].count;
+    tbody.innerHTML = rows.map(r => {
+      const label = labelFn ? labelFn(r.dimensions) : (r.dimensions[dimKey] || 'Direct / Unknown');
+      const pct   = Math.round((r.count / maxCount) * 100);
+      return `<tr>
+        <td><div class="bar-cell">
+          <span class="bar-label" title="${label}">${label}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+        </div></td>
+        <td>${r.count}</td>
+      </tr>`;
+    }).join('');
+  }
 
-    function renderTable(tableId, rows, dimKey, labelFn) {
-      const tbody = document.querySelector(`#${tableId} tbody`);
-      if (!rows.length) {
-        tbody.innerHTML = '<tr><td colspan="2" style="color:var(--steel);padding:20px 0;">No data yet</td></tr>';
-        return;
-      }
-      const maxCount = rows[0].count;
-      tbody.innerHTML = rows.map(r => {
-        const label = labelFn ? labelFn(r.dimensions) : (r.dimensions[dimKey] || 'Direct / Unknown');
-        const pct = Math.round((r.count / maxCount) * 100);
-        return `<tr>
-          <td><div class="bar-cell">
-            <span style="min-width:120px">${label}</span>
-            <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
-          </div></td>
-          <td>${r.count}</td>
-        </tr>`;
-      }).join('');
-    }
+  function showAnalyticsError() {
+    // KPI fields
+    ['kpi-views', 'kpi-visitors', 'kpi-top-page', 'kpi-referrer'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.textContent = '—'; el.className = 'kpi-value kv-muted'; }
+    });
+    ['kpi-views-sub', 'kpi-visitors-sub'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = 'Analytics unavailable';
+    });
+    // Chart
+    document.getElementById('chart-timeline').innerHTML = `
+      <div class="analytics-fallback">
+        <p>Analytics couldn't load — this may be a CORS restriction when opening as a local file.<br>
+        View live analytics on the website, or open this file via a local web server.</p>
+        <a href="https://human-ai-systems.com/dashboard" target="_blank" class="btn-primary">View Live Analytics ↗</a>
+      </div>`;
+    // Tables
+    ['table-pages','table-referrers','table-countries','table-devices'].forEach(id => {
+      const tb = document.querySelector(`#${id} tbody`);
+      if (tb) tb.innerHTML = '<tr><td colspan="2" style="color:var(--steel);font-size:0.85rem;padding:14px 0;">—</td></tr>';
+    });
+  }
 
-    // ─── Main load ────────────────────────────────────────────
-    async function loadDashboard(days) {
-      currentDays = days;
-      const data = await fetchAll(days);
-      if (!data) return;
+  async function loadDashboard(days) {
+    currentDays = days;
 
-      renderKPIs(data);
-      renderTimeline(data);
+    // Reset chart loading state
+    document.getElementById('chart-timeline').innerHTML =
+      '<div class="loading-state"><div class="spinner"></div> Loading analytics…</div>';
 
-      // Aggregate pages by path
+    try {
+      const data = await fetchAnalytics(days);
+      renderKPIs(data, days);
+      renderTimeline(data, days);
+
+      // Pages
       const pageMap = {};
       data.pages.forEach(r => {
         const p = r.dimensions.requestPath;
@@ -563,8 +1450,7 @@
       });
       const pageRows = Object.entries(pageMap)
         .map(([p, c]) => ({ count: c, dimensions: { requestPath: p } }))
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 15);
+        .sort((a, b) => b.count - a.count).slice(0, 12);
       renderTable('table-pages', pageRows, 'requestPath', d => friendlyPath(d.requestPath));
 
       // Referrers
@@ -575,8 +1461,7 @@
       });
       const refRows = Object.entries(refMap)
         .map(([h, c]) => ({ count: c, dimensions: { refererHost: h } }))
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 10);
+        .sort((a, b) => b.count - a.count).slice(0, 10);
       renderTable('table-referrers', refRows, 'refererHost');
 
       // Countries
@@ -587,8 +1472,7 @@
       });
       const countryRows = Object.entries(countryMap)
         .map(([c, n]) => ({ count: n, dimensions: { countryName: c } }))
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 10);
+        .sort((a, b) => b.count - a.count).slice(0, 10);
       renderTable('table-countries', countryRows, 'countryName');
 
       // Devices
@@ -599,31 +1483,50 @@
       });
       const deviceRows = Object.entries(deviceMap)
         .map(([k, c]) => ({ count: c, dimensions: { label: k } }))
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 10);
+        .sort((a, b) => b.count - a.count).slice(0, 10);
       renderTable('table-devices', deviceRows, 'label');
+
+    } catch (err) {
+      console.warn('Analytics fetch failed:', err.message);
+      showAnalyticsError();
     }
+  }
 
-    // ─── Period buttons ───────────────────────────────────────
-    document.querySelectorAll('.period-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        loadDashboard(parseInt(btn.dataset.days));
-      });
+  // Period buttons
+  document.querySelectorAll('.period-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      loadDashboard(parseInt(btn.dataset.days));
     });
+  });
 
-    // ─── Init ─────────────────────────────────────────────────
-    loadDashboard(7);
-
-    // Resize chart on window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => loadDashboard(currentDays), 250);
+  // Section nav active state on scroll
+  const sections = ['website', 'pipeline', 'tasks', 'finance'];
+  const navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 100) current = id;
     });
-  </script>
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  });
 
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+  // Resize chart
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => loadDashboard(currentDays), 250);
+  });
+
+  // Init
+  loadDashboard(7);
+
+})();
+</script>
+
 </body>
 </html>
