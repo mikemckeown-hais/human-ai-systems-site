@@ -173,7 +173,5 @@ Consult `06 Marketing/Brand/image-library.md` in the workspace before selecting 
 - **Production:** push to `main` → auto-deploys to `human-ai-systems.com` / `www.human-ai-systems.com`
 - **Standard workflow:** push to `dev` first → check preview → sync to `main` for production
 - **Always keep branches in sync.** Dev should always be at least as far ahead as main. Use `git_push.py sync-to-main` to fast-forward main to dev.
-- **Use the git helper script** for all git operations — never raw `git` commands. Script: `06 Marketing/Website/git_push.py`.
-- **How the script works:** Uses the **GitHub REST API directly** — no local git subprocess calls. This bypasses all EPERM/index.lock issues on the Google Drive mounted filesystem. Local git state (`.git/`) is read-only (for the token only); it is never written to.
+- **Use the git helper script** for all git operations — never raw `git` commands. Script: `06 Marketing/Website/git_push.py`. Handles the index.lock issue on the mounted filesystem automatically.
 - **Available commands:** `status`, `add`, `commit`, `push`, `full` (atomic add+commit+push), `sync-to-main`, `log`
-- **Preferred command is `full`** — it detects all locally-changed files automatically, uploads them as blobs, creates a single commit, and updates the branch ref atomically. No risk of partial state.
