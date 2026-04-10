@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designing Hybrid Human–AI Workflows | Practical Guide | Human–AI Systems</title>
+  <meta name="description" content="How to design workflows where humans and AI amplify each other. Where human judgement sits, where AI helps, and how to create the right balance between speed and control. From enterprise AI transformation experience.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://human-ai-systems.com/insights/hybrid-workflows/">
+  <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Human–AI Systems">
+  <meta property="og:title" content="Designing Hybrid Human–AI Workflows | Human–AI Systems">
+  <meta property="og:description" content="How to design workflows where humans and AI amplify each other. Where human judgement sits, where AI helps, and the right balance between speed and control.">
+  <meta property="og:url" content="https://human-ai-systems.com/insights/hybrid-workflows/">
+  <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Designing Hybrid Human–AI Workflows | Human–AI Systems">
+  <meta name="twitter:description" content="How to design workflows where humans and AI amplify each other. Where human judgement sits, where AI helps, and the right balance between speed and control.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Designing hybrid human–AI workflows",
+    "description": "How to design workflows where humans and AI amplify each other. Where human judgement sits, where AI helps, and the right balance between speed and control.",
+    "author": {"@type": "Person", "name": "Mike McKeown", "url": "https://human-ai-systems.com/about/"},
+    "publisher": {"@type": "Organization", "name": "Human–AI Systems", "url": "https://human-ai-systems.com/"},
+    "datePublished": "2026-03-01",
+    "url": "https://human-ai-systems.com/insights/hybrid-workflows/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #1F3A5F;
+      --teal: #2A6F74;
+      --aqua: #3EC1C9;
+      --graphite: #2B2B2B;
+      --steel: #6B7C8F;
+      --soft: #F3F5F7;
+      --white: #FFFFFF;
+      --max: 1200px;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+      --border: 1px solid rgba(31, 58, 95, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+      color: var(--graphite);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #36527A;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 10px 0;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      padding-top: 6px;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark {
+      width: 274px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-mark.footer-mark {
+      width: 360px;
+      height: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex: 1 1 auto;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .nav a:not(.nav-cta) {
+      color: #fff !important;
+      opacity: 0.98;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 2px;
+      transition: opacity 200ms ease;
+    }
+
+    .nav a.active {
+      opacity: 1;
+      border-bottom: 2px solid var(--aqua);
+      padding-bottom: 2px;
+    }
+
+    .nav a:not(.nav-cta):hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 600;
+      box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+      margin-left: 6px;
+      transition: transform 200ms ease, background 200ms ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      background: #f8f9fa;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      cursor: pointer;
+      flex: 0 0 auto;
+      transition: background 200ms ease;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .menu-toggle-line {
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      position: relative;
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .menu-toggle-line::before,
+    .menu-toggle-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+    }
+
+    .menu-toggle-line::before {
+      top: -6px;
+    }
+
+    .menu-toggle-line::after {
+      bottom: -6px;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 260ms ease;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .mobile-menu.is-open {
+      max-height: 480px;
+    }
+
+    .mobile-menu-inner {
+      padding: 14px 0 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-menu a {
+      color: #fff;
+      padding: 10px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: opacity 200ms ease;
+    }
+
+    .mobile-menu a:hover {
+      opacity: 0.88;
+    }
+
+    .mobile-start {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 600;
+      transition: transform 200ms ease;
+    }
+
+    .mobile-start:hover {
+      transform: translateY(-2px);
+    }
+
+    .mobile-contact-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.92rem;
+    }
+
+    /* Article Header */
+    .article-header {
+      background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+      color: var(--white);
+      padding: 72px 0 84px;
+    }
+
+    .article-header-inner {
+      max-width: 720px;
+    }
+
+    .article-eyebrow {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 22px;
+      color: white;
+    }
+
+    .article-meta {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 24px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .article-lead {
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 38rem;
+      margin: 0;
+    }
+
+    /* Article Body */
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .article-body p {
+      margin-bottom: 24px;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+
+    .article-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: var(--teal);
+    }
+
+    .pull-quote {
+      border-left: 4px solid var(--aqua);
+      padding: 24px;
+      margin: 40px 0;
+      background: var(--soft);
+      font-size: 1.12rem;
+      font-weight: 500;
+      line-height: 1.65;
+      color: var(--blue);
+      font-style: italic;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Related Section */
+    .related-section {
+      background: var(--soft);
+      padding: 72px 0;
+    }
+
+    .related-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .related-section h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 600;
+      margin-bottom: 36px;
+      color: var(--blue);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .related-card {
+      background: var(--white);
+      padding: 28px;
+      border-radius: var(--radius);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(31, 58, 95, 0.10);
+    }
+
+    .related-card-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .related-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--blue);
+      line-height: 1.35;
+      margin-top: 0;
+    }
+
+    .related-card p {
+      font-size: 0.95rem;
+      color: var(--steel);
+      line-height: 1.55;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    /* CTA Band */
+    .cta-band {
+      background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+      color: var(--white);
+      overflow: hidden;
+      padding: 88px 0;
+    }
+
+    .cta-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-inner h2 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      margin-bottom: 16px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .cta-inner .lead {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.18rem;
+      text-align: center;
+      line-height: 1.55;
+      margin: 0 0 24px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--blue);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: #f8f9fa;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 36px 0 48px;
+      background: #1c2632;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.82);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: color 200ms ease;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .brand-mark {
+        width: 220px;
+      }
+
+      .brand-mark.footer-mark {
+        width: 290px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .article-header {
+        padding: 56px 0 64px;
+      }
+
+      .article-body {
+        padding: 48px 16px;
+      }
+
+      .article-body h2 {
+        font-size: 1.3rem;
+      }
+
+      .article-header h1 {
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      }
+
+      .article-lead {
+        font-size: 1.08rem;
+      }
+
+      .cta-band {
+        padding: 64px 0;
+      }
+
+      .cta-inner h2 {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Human–AI Systems home">
+        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/approach/">Approach</a>
+        <a href="/services/">Services</a>
+        <a href="/training/">Training</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/insights/" class="active">Insights</a>
+        <a href="/about/">About</a>
+        <a href="/start/" class="nav-cta">Start</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-toggle-line"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="container">
+      <div class="mobile-menu-inner">
+        <a href="/approach/">Approach</a>
+        <a href="/services/">Services</a>
+        <a href="/training/">Training</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/insights/">Insights</a>
+        <a href="/about/">About</a>
+        <div class="mobile-contact-row">
+          <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+          <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <a href="/start/" class="mobile-start">Start</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="article-header">
+    <div class="container">
+      <div class="article-header-inner">
+        <div class="article-eyebrow">Guide</div>
+        <h1>Designing hybrid human–AI workflows</h1>
+        <div class="article-meta">
+          <span>Mike McKeown</span>
+          <span>March 2026</span>
+          <span>6 min read</span>
+        </div>
+        <p class="article-lead">When you integrate AI into an existing workflow, the question isn't just "where can AI help?" You have to ask "what is the workflow supposed to do, and who does it now?" These are different questions — and the second one is usually harder.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <h2>The failure mode: task mapping</h2>
+
+    <p>The most common failure mode in AI adoption is simplistic task mapping. You find a task. You identify where humans spend effort. You deploy AI to do that bit. And it doesn't work — or it works in isolation but changes nothing about how the workflow actually operates.</p>
+
+    <p>A typical example: a claims team spends an hour reading a claim submission, extracting key facts, and creating a summary. You deploy an AI model to read the submission and create a summary. The model works. It's 80% accurate. But the workflow doesn't change. The claims adjudicator still reads the whole submission. They still create their own summary. They use the AI-generated summary as a reference, sometimes. The AI saves maybe 15 minutes of effort if the adjudicator is disciplined about using it. No actual change.</p>
+
+    <p>Why? Because the workflow isn't just about effort on a single task. It's about timing, handoff, decision points, loops, and coordination across different people or systems. When you look at just the task, you miss the workflow. And the workflow is usually where the constraint actually is.</p>
+
+    <h2>Where the real constraint lives</h2>
+
+    <p>It's rarely in the effort spent on a single task. It's usually in the time between tasks. The handoff. The approval step. The wait for information. The loop back when someone notices an error. These are where most delay lives.</p>
+
+    <p>In the claims example, the real constraint is usually not "reading takes an hour." It's "we can only process 20 claims a day because it takes a day for each claim to move from intake to assessment to approval to payment." The bottleneck is usually three days sitting in someone's inbox waiting for action. Task effort is a piece of it, but not the constraint.</p>
+
+    <p>When you design for human-AI integration, you have to map the whole workflow, not just the tasks. Where does work sit idle? What information is missing when someone needs to make a decision? What approval chains could be shorter? What parts of the workflow run in sequence that could run in parallel?</p>
+
+    <div class="pull-quote">Hybrid workflows are not a compromise. They are the actual target. The question isn't "how do we remove humans?" It's "how do we reorganise the work so that the human layer and the AI layer amplify each other?"</div>
+
+    <h2>The design questions that matter</h2>
+
+    <p>What needs to happen before AI can act? In the claims example, the AI needs the claim document. It needs to know what kind of claim it is. It might need context about the claimant. If any of that information is missing or ambiguous, the AI output will be poor. So the design question is: can we ensure that the AI always has what it needs before it acts? Or do we need a human to validate that first?</p>
+
+    <p>What happens immediately after it acts? If the AI summarises a claim, what happens next? Does the adjudicator assess it? Does it go to an approval queue? Does it trigger further investigation? The timing matters. If the adjudicator's work is piled up and the AI summary is just another thing on the pile, nothing has changed. If the AI summary can be assessed immediately and fed into the next step of the process, then you've shortened the total time.</p>
+
+    <p>Who makes the decision about whether the output is good enough to move forward? This is where most designs fail. If it's the human, and the human is checking every output, then you've just shifted effort, not reduced it. If it's the AI, and the AI is wrong, then you have a problem downstream that no one anticipated. The design has to make this decision boundary clear.</p>
+
+    <p>What happens if the output fails three months later? This is the question that almost no one asks during design. But it's critical. If the AI summarised a claim, and six months later the claimant appeals the decision because the summary missed something, who is responsible? The person who built the AI? The person who used it? The person who approved the claim? If you don't know, the workflow is not designed. It's just hoped.</p>
+
+    <h2>Common design mistakes</h2>
+
+    <h3>Trying to remove humans from the workflow entirely</h3>
+
+    <p>This usually fails because humans are in the loop not just for effort reasons but for judgement, oversight, and accountability. A claims adjudicator spends time on claims not just reading and summarising but assessing context, spotting fraud, making nuanced decisions about whether a claim is legitimate. AI can help with some of that. It doesn't replace the judgement layer. A workflow that removes it entirely will usually produce bad outcomes.</p>
+
+    <h3>Designing for the happy path only</h3>
+
+    <p>What happens when AI's output is unusual, wrong, or ambiguous? Most workflow designs don't answer this. They design for the case where the AI works perfectly. Then someone encounters the edge case and stops using the system or works around it, and the workflow goes back to manual. The design has to account for failure modes, not just success.</p>
+
+    <h3>Importing the old workflow's shape</h3>
+
+    <p>Just because humans did it a certain way doesn't mean that's how it should be done with AI. If you have a workflow where a junior person reads a document, summarises it, and passes it to a senior person who approves it, you might be able to eliminate the middle step entirely if the AI can do the reading and the senior person can do direct assessment of the AI output. But most organisations keep the same structure and just plug the AI in, missing the opportunity to actually change the workflow.</p>
+
+    <h2>The design that actually works</h2>
+
+    <p>Hybrid workflows are clearest when the decision boundary is clear. AI recommends, human decides. AI executes, human oversees. AI learns the pattern, human adjusts the threshold. You're not trying to remove the human. You're trying to reorganise the work so that humans do what humans are good at and AI does what it's good at.</p>
+
+    <p>In the claims example, a good hybrid workflow might look like: AI reads the claim, extracts key facts, and flags potential fraud indicators. Human decides whether to approve or request more information. If approved, AI schedules the payout and sends notifications. Human spot-checks a sample of AI-scheduled payouts monthly to make sure the decision boundary is holding. If it drifts, human adjusts the rules the AI is using.</p>
+
+    <p>That's very different from "AI reads the claim and automatically pays it." It's also very different from "AI helps the human read the claim, and the human still decides everything." It's a specific design that puts humans and AI in roles that amplify each other.</p>
+
+    <h2>Why operations matters</h2>
+
+    <p>A workflow lives in a social system. People, teams, incentives, information flow. You can design a perfect workflow on paper. But if the incentives don't support it, or the information doesn't flow right, or the people who use it don't understand why it's different, it won't survive. The design has to be tight enough to constrain behaviour but not so tight that it breaks when people improvise.</p>
+
+    <p>This is why workflow redesign is not a technology problem. It's an organisational design problem. You need operations leaders in the room with technology leaders. You need people who do the work to explain what actually happens, not what the process says happens. You need to think about incentives — if I redesign this workflow, what does that change about what people are paid for, or measured on, or promoted for?</p>
+
+    <p>A hybrid workflow that works is one that people will actually use because it's easier than the old way, and because they understand why it's different, and because no one is trying to use it in a way that it wasn't designed for.</p>
+
+    <h2>The closing question</h2>
+
+    <p>Hybrid workflows are not a compromise between full automation and full human judgement. They are the actual target. Full automation usually fails because it removes the human judgement layer when you actually need it. Full human judgement misses the actual gains you can get from AI. The design that works is the one that puts the right decision-maker at the right step — which is sometimes AI and sometimes human — and then builds the information flow and the accountability structure to support it. That's harder than it sounds. But it's where the real value lives.</p>
+  </div>
+
+  <section class="related-section">
+    <div class="container related-inner">
+      <h2>Related insights</h2>
+      <div class="related-grid">
+        <a href="/insights/why-pilots-fail/" class="related-card reveal">
+          <div class="related-card-tag">Insight</div>
+          <h3>Why most AI pilots fail to scale</h3>
+          <p>Most AI pilots succeed. Most don't scale. The difference is not the AI — it's workflow design, operating discipline and governance.</p>
+        </a>
+        <a href="/insights/operating-model/" class="related-card reveal">
+          <div class="related-card-tag">Insight</div>
+          <h3>The operating model question nobody is asking</h3>
+          <p>Most organisations treat AI adoption as a technology problem. It's not. It's about who decides what, who is accountable, and how information flows.</p>
+        </a>
+        <a href="/insights/local-government/" class="related-card reveal">
+          <div class="related-card-tag">Sector</div>
+          <h3>AI in local government: from policy to practice</h3>
+          <p>Insights from co-authoring an AI policy for a council and rolling out Copilot to 250+ officers. What works. What doesn't. Why operating model matters.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Ready to talk about your situation?</h2>
+        <p class="lead">If you're redesigning workflows to integrate AI, a conversation is a good place to start.</p>
+        <div class="actions">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a time</a>
+          <a href="/services/" class="btn btn-secondary">Explore services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+      <div class="footer-nav">
+        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="/approach/">Approach</a>
+      <a href="/services/">Services</a>
+      <a href="/training/">Training</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for lazy reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('#mobile-menu');
+
+  function closeMobileMenu() {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+    mobileMenu.classList.remove('is-open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close menu');
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('menu-open');
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  mobileMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close mobile menu on resize if viewport is wider than mobile
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) {
+      closeMobileMenu();
+    }
+  });
+</script>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

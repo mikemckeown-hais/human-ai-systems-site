@@ -1,0 +1,56 @@
+<svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+  <!-- node gradients -->
+  <radialGradient id="gradTop" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#2c4b78"/>
+    <stop offset="100%" stop-color="#1F3A5F"/>
+  </radialGradient>
+
+  <radialGradient id="gradLeft" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#3c8b90"/>
+    <stop offset="100%" stop-color="#2A6F74"/>
+  </radialGradient>
+
+  <radialGradient id="gradRight" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#55d1d7"/>
+    <stop offset="100%" stop-color="#3EC1C9"/>
+  </radialGradient>
+
+  <!-- connector gradients -->
+  <linearGradient id="connTopLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#1F3A5F"/>
+    <stop offset="100%" stop-color="#1F3A5F"/>
+  </linearGradient>
+
+  <linearGradient id="connTopRight" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#2A6F74"/>
+    <stop offset="100%" stop-color="#3EC1C9"/>
+  </linearGradient>
+
+  <linearGradient id="connBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2A6F74"/>
+    <stop offset="100%" stop-color="#3EC1C9"/>
+  </linearGradient>
+</defs>
+
+  <g transform="translate(20,20)">
+
+    <!-- connections -->
+    <line x1="36" y1="92" x2="95" y2="22"
+          stroke="url(#connTopLeft)" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="95" y1="22" x2="148" y2="104"
+          stroke="url(#connTopRight)" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="36" y1="92" x2="148" y2="104"
+          stroke="url(#connBottom)" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- nodes -->
+    <circle cx="95" cy="22" r="24" fill="url(#gradTop)"/>
+    <circle cx="36" cy="92" r="24" fill="url(#gradLeft)"/>
+    <circle cx="148" cy="104" r="24" fill="url(#gradRight)"/>
+
+  </g>
+
+</svg>

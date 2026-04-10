@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Human–AI Systems</title>
+    <meta name="description" content="Meet the Human–AI Systems team: Mike McKeown and an AI workforce named after computing pioneers. A practical demonstration of the human-AI Worker model in operation.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Our Team — Human–AI Systems",
+        "description": "Meet the Human–AI Systems team: Mike McKeown and an AI workforce named after computing pioneers.",
+        "url": "https://human-ai-systems.com/team/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Human–AI Systems",
+            "url": "https://human-ai-systems.com/"
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "Human–AI Systems",
+            "founder": {
+                "@type": "Person",
+                "name": "Mike McKeown",
+                "url": "https://www.linkedin.com/in/mikesmckeown/"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            width: auto;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 16ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 16px; font-size: 1.05rem; }
+
+        .section-intro {
+            font-size: 1.05rem;
+            color: var(--steel);
+            margin: 0 0 40px;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        /* ── Mike section ── */
+        .mike-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            margin-top: 48px;
+        }
+
+        .mike-photo {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-width: 340px;
+        }
+
+        .mike-photo img { width: 100%; height: auto; display: block; }
+
+        .role-badge {
+            display: inline-block;
+            background: var(--aqua);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .bio-text { color: var(--graphite); line-height: 1.7; }
+        .bio-text p { margin: 0 0 20px; }
+
+        /* ── Team grids ── */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            margin-top: 36px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            border: var(--border);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover { border-color: var(--aqua); box-shadow: var(--shadow); }
+
+        .team-photo-placeholder {
+            background: linear-gradient(135deg, #1F3A5F, #2A6F74);
+            border-radius: 16px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 18px;
+            width: 100%;
+        }
+
+        .team-photo {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            margin-bottom: 18px;
+            width: 100%;
+            background: var(--soft);
+        }
+
+        .team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .team-card h3 { margin: 0 0 8px; font-size: 1.1rem; color: var(--blue); }
+
+        .team-card .role {
+            font-size: 0.9rem;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-card .badge {
+            display: inline-block;
+            background: rgba(58, 193, 201, 0.1);
+            color: var(--teal);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+            border: 1px solid rgba(58, 193, 201, 0.3);
+        }
+
+        .team-card .why {
+            font-size: 0.9rem;
+            color: var(--steel);
+            font-style: italic;
+            margin: 14px 0;
+            line-height: 1.6;
+        }
+
+        .team-card .does {
+            font-size: 0.95rem;
+            color: var(--graphite);
+            line-height: 1.6;
+        }
+
+        .coming-soon { opacity: 0.7; text-align: center; }
+
+        .coming-soon .badge {
+            background: rgba(107, 124, 143, 0.2);
+            color: var(--steel);
+            border-color: rgba(107, 124, 143, 0.3);
+        }
+
+        /* ── Extended team section ── */
+        .extended-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            margin-top: 36px;
+        }
+
+        .sophie-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            border: var(--border);
+        }
+
+        .sophie-card .team-photo-placeholder { max-width: 100%; }
+
+        .sophie-badge {
+            display: inline-block;
+            background: rgba(31, 58, 95, 0.1);
+            color: var(--blue);
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin: 14px 0 0;
+            border: 1px solid rgba(31, 58, 95, 0.3);
+        }
+
+        .extended-text h3 { font-size: 1.15rem; margin: 0 0 16px; color: var(--blue); }
+        .extended-text p { color: var(--graphite); line-height: 1.7; margin: 0 0 16px; }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--blue);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        /* ── Reveal animation ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+            .page-header { padding: 48px 0 56px; }
+            .mike-grid { grid-template-columns: 1fr; gap: 36px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .extended-grid { grid-template-columns: 1fr; gap: 36px; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; }
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: 290px; }
+        }
+
+        @media (max-width: 1024px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .mike-grid { gap: 36px; }
+        }
+    </style>
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Our Team | Human–AI Systems">
+    <meta property="og:description" content="Meet the Human–AI Systems team: Mike McKeown and an AI workforce named after computing pioneers.">
+    <meta property="og:url" content="https://human-ai-systems.com/team/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Team | Human–AI Systems">
+    <meta name="twitter:description" content="Meet the Human–AI Systems team: Mike McKeown and an AI workforce named after computing pioneers.">
+
+    <link rel="canonical" href="https://human-ai-systems.com/team/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">The team</div>
+                <h1>We practise what we preach.</h1>
+                <p class="lead">Human–AI Systems doesn't just advise organisations on human-AI collaboration. It operates that way. This is what the Worker model looks like in practice — human leadership, AI workers in defined roles, governance built in from the start.</p>
+            </div>
+        </section>
+
+
+        <!-- Mike — Human leadership -->
+        <section>
+            <div class="container">
+                <h2>Human leadership</h2>
+                <div class="mike-grid reveal">
+                    <div class="mike-photo">
+                        <picture>
+                            <source srcset="/images/headshots/webp/Mike McKeown - Professional.webp" type="image/webp">
+                            <img src="/images/headshots/Mike McKeown - Professional.png" alt="Mike McKeown, founder of Human–AI Systems">
+                        </picture>
+                    </div>
+                    <div>
+                        <div class="role-badge">Founder &amp; Director</div>
+                        <h3 style="font-size:1.4rem;color:var(--blue);margin:0 0 24px">Mike McKeown</h3>
+                        <div class="bio-text">
+                            <p>Mike brings the human judgement, client relationships, domain expertise and ultimate accountability. He directs every engagement, sets strategic direction, and ensures the work meets the standard that Human–AI Systems exists to deliver. The AI team executes under his direction — not independently.</p>
+                            <p>Before founding Human–AI Systems, Mike led AI transformation programmes at Verimatrix (a listed cybersecurity company) and serves as a Cabinet Member at Cotswold District Council, where he co-authored the council's AI Policy and oversaw the Microsoft Copilot rollout to around 250 officers and members. At Cisco, he held responsibility for a £430M EMEA Public Sector P&amp;L.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- AI Workers — Management -->
+        <section class="soft">
+            <div class="container">
+                <div class="eyebrow">AI Workers — Management</div>
+                <h2>Business management</h2>
+                <p class="section-intro">The management team handles the operational and commercial running of Human–AI Systems. Each worker operates within a defined role, using structured skills and governed by clear boundaries on what they can and cannot do autonomously.</p>
+
+                <div class="team-grid">
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Ada.webp" type="image/webp">
+                                <img src="/images/headshots/Ada.png" alt="Ada, Chief Marketing Officer at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Ada</h3>
+                        <div class="role">Chief Marketing Officer</div>
+                        <div class="badge">Named after Ada Lovelace</div>
+                        <div class="why">Ada Lovelace articulated what computing could become before anyone else could see it. A visionary communicator.</div>
+                        <div class="does">Creates content, manages thought leadership, develops the brand, and ensures Human–AI Systems is visible to the right audiences.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Vint.webp" type="image/webp">
+                                <img src="/images/headshots/Vint.png" alt="Vint, Chief Revenue Officer at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Vint</h3>
+                        <div class="role">Chief Revenue Officer</div>
+                        <div class="badge">Named after Vint Cerf</div>
+                        <div class="why">Vint Cerf co-authored the foundational protocols of the internet and built its commercial infrastructure. He literally wrote the proposals.</div>
+                        <div class="does">Manages the pipeline, drafts outreach and proposals, prepares meeting briefs, and tracks commercial activity from first contact to signed engagement.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Grace.webp" type="image/webp">
+                                <img src="/images/headshots/Grace.png" alt="Grace, Chief Operating Officer at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Grace</h3>
+                        <div class="role">Chief Operating Officer</div>
+                        <div class="badge">Named after Grace Hopper</div>
+                        <div class="why">US Navy Admiral, pragmatist, made things work. Coined "it's easier to ask forgiveness than permission."</div>
+                        <div class="does">Runs the operational cadence — meeting notes, task tracking, weekly reviews, and engagement delivery oversight.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Blaise.webp" type="image/webp">
+                                <img src="/images/headshots/Blaise.png" alt="Blaise, Chief Financial Officer at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Blaise</h3>
+                        <div class="role">Chief Financial Officer</div>
+                        <div class="badge">Named after Blaise Pascal</div>
+                        <div class="why">Pascal invented the mechanical calculator. It had to be numbers.</div>
+                        <div class="does">Manages invoicing, records expenses, tracks financial position, and ensures the books are in order.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Linus.webp" type="image/webp">
+                                <img src="/images/headshots/Linus.png" alt="Linus, Chief Technology Officer at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Linus</h3>
+                        <div class="role">Chief Technology Officer</div>
+                        <div class="badge">Named after Linus Torvalds</div>
+                        <div class="why">Built Linux and created Git — the ultimate infrastructure builder.</div>
+                        <div class="does">Manages the website, GitHub workflow, Cloudflare deployment, and the technical architecture of the AI operating system itself.</div>
+                    </div>
+
+                    <div class="team-card coming-soon reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Norbert.webp" type="image/webp">
+                                <img src="/images/headshots/Norbert.png" alt="Norbert, General Counsel at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Norbert</h3>
+                        <div class="role">General Counsel</div>
+                        <div class="badge">Named after Norbert Wiener</div>
+                        <div style="font-size:0.85rem;color:var(--aqua);font-weight:600;margin:14px 0">Coming soon</div>
+                        <div class="why">Father of cybernetics and the first thinker to seriously engage with the ethical and societal implications of computing. Essentially asked: what are the rules around what machines should do?</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- AI Workers — Delivery -->
+        <section>
+            <div class="container">
+                <div class="eyebrow">AI Workers — Delivery</div>
+                <h2>Delivery team</h2>
+                <p class="section-intro">The delivery team supports client engagements directly — from discovery through to transformation. Each worker maps to a specific phase of the Human–AI Systems methodology.</p>
+
+                <div class="team-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Alan.webp" type="image/webp">
+                                <img src="/images/headshots/Alan.png" alt="Alan, Discovery Consultant at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Alan</h3>
+                        <div class="role">Discovery Consultant (Radar)</div>
+                        <div class="badge">Named after Alan Turing</div>
+                        <div class="why">The ultimate seeker of hidden truth. Cracked Enigma. Defined what machines could know.</div>
+                        <div class="does">Leads discovery engagements — preparing for client sessions, analysing AI maturity, mapping workflow opportunities, and producing the Radar output.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Margaret.webp" type="image/webp">
+                                <img src="/images/headshots/Margaret.png" alt="Margaret, Proposals Manager at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Margaret</h3>
+                        <div class="role">Proposals Manager</div>
+                        <div class="badge">Named after Margaret Hamilton</div>
+                        <div class="why">Coined "software engineering" and insisted on rigorous documentation for Apollo. Mission-critical specs under pressure.</div>
+                        <div class="does">Drafts engagement proposals, statements of work, and one-page summaries for client opportunities.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Katherine.webp" type="image/webp">
+                                <img src="/images/headshots/Katherine.png" alt="Katherine, Engagement Manager at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Katherine</h3>
+                        <div class="role">Engagement Manager (Pilot)</div>
+                        <div class="badge">Named after Katherine Johnson</div>
+                        <div class="why">Calculated the precise trajectories for the most critical missions. Precision delivery under pressure.</div>
+                        <div class="does">Designs and reviews pilot programmes — blueprint, mid-pilot check-ins, and end-of-pilot evaluation.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Tim.webp" type="image/webp">
+                                <img src="/images/headshots/Tim.png" alt="Tim, Transformation Director at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Tim</h3>
+                        <div class="role">Transformation Director (Scale)</div>
+                        <div class="badge">Named after Tim Berners-Lee</div>
+                        <div class="why">Took something from zero to global transformation. The definition of scale.</div>
+                        <div class="does">Leads the Scale and Operating Model phase — expansion roadmaps, AI operating model design, and scaling programme reviews.</div>
+                    </div>
+
+                    <div class="team-card reveal">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Gladys.webp" type="image/webp">
+                                <img src="/images/headshots/Gladys.png" alt="Gladys, Storyteller at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Gladys</h3>
+                        <div class="role">Storyteller</div>
+                        <div class="badge">Named after Gladys West</div>
+                        <div class="why">The mathematician whose modelling of the Earth's shape made GPS possible. She helped people find where they are.</div>
+                        <div class="does">Creates master narratives and story derivatives for specific media, prospect conversations, and client engagements — helping audiences find themselves in the story.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Extended team -->
+        <section class="soft">
+            <div class="container">
+                <div class="eyebrow">The wider picture</div>
+                <h2>Extended team</h2>
+
+                <div class="extended-grid reveal">
+                    <div class="sophie-card">
+                        <div class="team-photo">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Sophie.webp" type="image/webp">
+                                <img src="/images/headshots/Sophie.png" alt="Sophie, Executive Assistant at Human–AI Systems">
+                            </picture>
+                        </div>
+                        <h3>Sophie</h3>
+                        <div class="role">Executive Assistant</div>
+                        <div class="badge">Named after Sophie Wilson</div>
+                        <div class="sophie-badge">ChatGPT</div>
+                        <div class="why">Designed the ARM instruction set — the architecture inside virtually every mobile device. Efficient, invisible infrastructure.</div>
+                        <div class="does">General executive assistance tasks. Sophie runs on ChatGPT rather than Claude Cowork — a deliberate, model-agnostic choice that reflects a pragmatic approach to AI workforce design.</div>
+                    </div>
+
+                    <div class="extended-text">
+                        <h3>Why this matters</h3>
+                        <p>Human–AI Systems is built on the belief that AI adoption works when it's designed properly — with clear roles, defined boundaries, governance, and human oversight. This team is not a novelty. It's the same model we help clients build in their own organisations.</p>
+                        <p>Every AI worker here operates within a defined skill, receives structured direction, and works under Mike's oversight. None of them acts autonomously on decisions that require human judgement.</p>
+                        <p>That's what the Worker model looks like in practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Want to build something like this in your organisation?</h2>
+                    <p class="lead">The Worker model is what Human–AI Systems helps organisations design and implement. It starts with a conversation.</p>
+                    <div class="actions">
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" class="btn btn-primary">Book a time</a>
+                        <a href="/services/" class="btn btn-secondary">Explore services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <div class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 18px;">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

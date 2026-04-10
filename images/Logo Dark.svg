@@ -1,0 +1,37 @@
+<svg width="760" height="260" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+
+  <g transform="translate(40,30)">
+
+    <!-- connections -->
+    <line x1="36" y1="92" x2="95" y2="22"
+          stroke="#1F3A5F" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="95" y1="22" x2="148" y2="104"
+          stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="36" y1="92" x2="148" y2="104"
+          stroke="#2A6F74" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- nodes -->
+    <circle cx="95" cy="22" r="24" fill="#1F3A5F"/>
+    <circle cx="36" cy="92" r="24" fill="#2A6F74"/>
+    <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+
+    <!-- Text -->
+    <g transform="translate(175,0)">
+      <text x="0" y="70"
+        font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif"
+        font-size="42"
+        font-weight="600"
+        fill="#1F3A5F">Human–AI</text>
+
+      <text x="38" y="108"
+        font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif"
+        font-size="34"
+        font-weight="400"
+        fill="#6B7C8F">Systems</text>
+    </g>
+
+  </g>
+
+</svg>

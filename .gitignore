@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+.env
+*.log
+Thumbs.db
+.vscode/
+Archive/
+AI_OPERATING_MODEL.md
+.wrangler/

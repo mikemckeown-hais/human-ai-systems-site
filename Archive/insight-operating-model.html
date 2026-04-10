@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI adoption is an operating model question — Human–AI Systems</title>
+    <meta name="description" content="Most organisations treat AI adoption as a technology problem. It's not. It's a question about who decides what, who is accountable, and how information flows.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --header-bg: #36527A;
+        }
+
+        body {
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--graphite);
+            background: var(--white);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-mark {
+            height: 50px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        nav a.active {
+            color: var(--aqua);
+        }
+
+        .nav-cta {
+            background: var(--aqua);
+            color: var(--graphite) !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #34b0b8;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+            color: var(--white);
+            padding: 60px 24px;
+            text-align: left;
+        }
+
+        .article-header-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .article-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+        }
+
+        .article-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 28px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            gap: 4px;
+        }
+
+        .article-lead {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+        }
+
+        .article-body {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .article-body h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--blue);
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: var(--teal);
+        }
+
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 24px 24px;
+            margin: 40px 0;
+            background: var(--soft);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--blue);
+            font-style: italic;
+        }
+
+        .related-section {
+            background: var(--soft);
+            padding: 60px 24px;
+            margin-top: 60px;
+        }
+
+        .related-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .related-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: var(--blue);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .related-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 4px;
+            border: 1px solid rgba(31, 58, 95, 0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 12px;
+        }
+
+        .related-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--blue);
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            font-size: 14px;
+            color: var(--steel);
+            line-height: 1.6;
+        }
+
+        .cta-band {
+            background: var(--blue);
+            color: var(--white);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .cta-band-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--aqua);
+            color: var(--graphite);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #34b0b8;
+        }
+
+        footer {
+            background: var(--header-bg);
+            color: var(--white);
+            padding: 40px 24px;
+            margin-top: 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-mark {
+            height: 40px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 18px;
+            font-size: 13px;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .article-header h1 {
+                font-size: 28px;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .article-lead {
+                font-size: 16px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                <g transform="translate(40,30)">
+                    <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                    <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                    <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                    <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                    <g transform="translate(175,0)">
+                        <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                        <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+                    </g>
+                </g>
+            </svg>
+            <nav>
+                <a href="index.html#approach">Approach</a>
+                <a href="services.html">Services</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="insights.html" class="active">Insights</a>
+                <a href="about.html">About</a>
+                <a href="start.html" class="nav-cta">Start</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="article-header">
+        <div class="article-header-inner">
+            <div class="article-eyebrow">Leadership</div>
+            <h1>AI adoption is an operating model question</h1>
+            <div class="article-meta">
+                <span>Author: Mike McKeown</span>
+                <span>March 2026</span>
+                <span>5 min read</span>
+            </div>
+            <p class="article-lead">Most organisations treat AI adoption as a technology problem. It's not. It's a question about who decides what, who is accountable for what, and how information flows. If your operating model doesn't change, your AI adoption won't either.</p>
+        </div>
+    </div>
+
+    <div class="article-body">
+        <h2>What an operating model is</h2>
+
+        <p>An operating model is the set of structural decisions about how your organisation actually works. Who is accountable for what? Who has authority to make decisions? How does information flow between parts of the organisation? What metrics drive behaviour? It's how you're actually organised — not how the org chart says you're organised.</p>
+
+        <p>An operating model is rarely written down. It lives in practice. It's the result of years of habit, decisions, power structures, and cultural norms. When a new technology arrives, most organisations try to run it inside the existing operating model. That works for some technologies. It doesn't work for AI.</p>
+
+        <h2>Why AI changes the operating model</h2>
+
+        <p>AI shifts when decisions need to be made. A task that took three weeks now takes an hour. That seems good. But it means the decision point moves. The person who previously had a week to think about it now has an hour. Or the decision used to happen at the end of a three-week process; now it happens at the beginning. That changes who needs to be involved.</p>
+
+        <p>AI changes what information is needed before a decision. A process that used to require three weeks of back-and-forth with stakeholders to gather information now needs all the information upfront so the AI can act on it. That changes information flows.</p>
+
+        <p>AI creates new role boundaries. "This thing used to take three weeks and a team of five. Now it takes an hour and one person — but that one person needs visibility into new information, is responsible for new things they weren't responsible for before, and needs to understand what the AI is doing well enough to catch problems." Those aren't technology questions. Those are operating model questions.</p>
+
+        <div class="pull-quote">Technology scaling is straightforward. Operating model scaling is about changing how human beings relate to authority, decision-making, and accountability. That's why AI adoption is usually harder than AI implementation.</div>
+
+        <h2>What usually goes wrong</h2>
+
+        <p>Organisations add AI tools to an operating model designed for human decision-making. They don't change the approval chains. They don't change the metrics. They don't change the frequency of review. So people use the AI tool inside a workflow that was designed to route things through hierarchies and gate-keep decisions.</p>
+
+        <p>The result is predictable. The AI accelerates things to a bottleneck. The bottleneck gets more stressed. The person at the bottleneck becomes the constraint. If it was a senior person before (because decisions used to take time and required experience), now it's an even bigger bottleneck because everything is moving faster. People lose faith in the tool. "This accelerated our work to the point where it made things worse." They're right.</p>
+
+        <p>A second failure mode is decentralised decisions moving too far. Some organisations try to push decision-making down to front-line people without building the oversight structure or the information infrastructure to support it. You give a junior person access to an AI that makes important decisions, but you don't have monitoring in place, you don't have a feedback loop, you don't have clear escalation. Then someone makes a bad decision, and the organisation either pulls everything back or builds governance after the fact (which usually means rebuilding the workflow).</p>
+
+        <h2>What effective operating models have in common</h2>
+
+        <p><strong>Clear role definition for who operates AI and when.</strong> Not "everyone can use it if they want." Specific roles have responsibility for deploying AI in specific contexts. That doesn't mean it's centralised. It means it's clear. If you're a department head and you want to deploy AI in your team's workflow, here's the charter, here's what you're responsible for, here's the oversight structure.</p>
+
+        <p><strong>Faster feedback loops.</strong> Because when AI is involved, you find out if something is wrong faster. If a human took a week to process a claim and made an error, you might not find out for weeks. If an AI processes it in an hour and makes the same error, you find out in an hour. So the feedback loop needs to be tighter. You need monitoring. You need a process for surfacing problems quickly.</p>
+
+        <p><strong>Distributed decision rights.</strong> If every AI decision has to escalate to a board, scaling is impossible. Effective operating models distribute decision rights — but with clarity about how far they can go and what happens if they drift. A department can deploy AI in their process, but if it touches a certain threshold of customers or financial value, it escalates for review.</p>
+
+        <p><strong>Transparency about what AI is doing.</strong> So that stakeholders can see it. Not because they need to approve every decision, but because they need to understand what's happening and trust that it's being done well. Transparency isn't the opposite of speed. It's the foundation of trust at scale.</p>
+
+        <h2>The design question</h2>
+
+        <p>Organisations that get this right ask: "If this decision is made faster, what else has to change so that the outcome is still right?" Not "how do we make this faster with AI," but "if we make this faster, what are the second and third order consequences, and are we ready for them?"</p>
+
+        <p>Faster decisions might mean you need real-time monitoring instead of daily reviews. That means building dashboards. Faster decisions might mean you need escalation pathways that are clear and pre-agreed. That means mapping where decisions go wrong and where they have to be reviewed. Faster decisions might mean you need to change the skill profile of the role — less time on data collection and processing, more time on judgment and oversight. That might mean retraining people, or hiring different people.</p>
+
+        <p>The organisations that scale AI successfully don't just deploy the AI. They redesign the operating model to support it. That's what takes time. That's what's hard. That's also what actually works.</p>
+
+        <h2>The leadership skill</h2>
+
+        <p>This is about adaptive capacity. The ability to change how you operate as circumstances change. Not just the ability to deploy new tools. Most organisations can do that. Few can sustain it — because sustaining it requires that senior people give up power, or change their visibility into decisions, or accept that the chain of command is no longer the only chain of information.</p>
+
+        <p>Those are hard things. If decisions used to flow up the hierarchy and you were the person at the top who saw them all, and now decisions are distributed across the organisation with different people making them in different parts of the system, you have to get comfortable with that. You have to trust the oversight structures you've built. You have to be able to spot-check without micromanaging. You have to learn to lead by principle rather than by visibility.</p>
+
+        <p>That's the actual hard part of AI adoption. Not the technology. Not even the workflows. The hard part is changing how human beings relate to authority, decision-making, and accountability. That's an operating model question. And it's why AI adoption is usually harder than AI implementation.</p>
+    </div>
+
+    <div class="related-section">
+        <div class="related-inner">
+            <h2>Related insights</h2>
+            <div class="related-grid">
+                <a href="insight-governance.html" class="related-card">
+                    <div class="related-card-tag">Leadership</div>
+                    <h3>Governance is not a throttle; governance is a permission structure</h3>
+                    <p>The choice isn't between moving fast and governing well. Governance, done right, is what makes scaling possible at all.</p>
+                </a>
+                <a href="insight-hybrid-workflows.html" class="related-card">
+                    <div class="related-card-tag">Insight</div>
+                    <h3>Hybrid workflows: designing work for both human and AI</h3>
+                    <p>When you integrate AI into an existing workflow, you have to ask 'what is the workflow supposed to do?' These are different questions.</p>
+                </a>
+                <a href="insight-tool-assistant-worker.html" class="related-card">
+                    <div class="related-card-tag">Framework</div>
+                    <h3>Tool → Assistant → Worker: understanding AI capability maturity</h3>
+                    <p>A practical framework for understanding how AI capability matures inside organisations — and what leadership has to change at each stage.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-band">
+        <div class="cta-band-inner">
+            <p>Rethinking your operating model for AI. Let's discuss what needs to change in your organisation to make AI adoption sustainable.</p>
+            <a href="start.html" class="cta-button">Start a conversation</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <svg class="footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                <g transform="translate(40,30)">
+                    <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                    <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                    <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                    <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                    <g transform="translate(175,0)">
+                        <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                        <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+                    </g>
+                </g>
+            </svg>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Human–AI Systems. Transforming how organisations work with artificial intelligence.</p>
+            <nav class="footer-nav">
+                <a href="index.html#approach">Approach</a>
+                <a href="services.html">Services</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="insights.html">Insights</a>
+                <a href="about.html">About</a>
+                <a href="start.html">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="privacy.html">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Happens When You Actually Run a Business on AI | Human–AI Systems</title>
+  <meta name="description" content="I built Human–AI Systems on AI from day one — not as an experiment, but as the operating model. Here's what that actually looks like, what it taught me, and what most organisations are still missing.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://human-ai-systems.com/insights/running-a-business-on-ai/">
+  <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Human–AI Systems">
+  <meta property="og:title" content="What Happens When You Actually Run a Business on AI | Human–AI Systems">
+  <meta property="og:description" content="I built Human–AI Systems on AI from day one — not as an experiment, but as the operating model. Here's what that actually looks like, what it taught me, and what most organisations are still missing.">
+  <meta property="og:url" content="https://human-ai-systems.com/insights/running-a-business-on-ai/">
+  <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Happens When You Actually Run a Business on AI | Human–AI Systems">
+  <meta name="twitter:description" content="I built Human–AI Systems on AI from day one — not as an experiment, but as the operating model. Here's what that actually looks like, what it taught me, and what most organisations are still missing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What happens when you actually run a business on AI",
+    "description": "I built Human–AI Systems on AI from day one — not as an experiment, but as the operating model. Here's what that actually looks like, what it taught me, and what most organisations are still missing.",
+    "author": {
+      "@type": "Person",
+      "name": "Mike McKeown",
+      "url": "https://human-ai-systems.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Human–AI Systems",
+      "url": "https://human-ai-systems.com/"
+    },
+    "datePublished": "2026-03-28",
+    "url": "https://human-ai-systems.com/insights/running-a-business-on-ai/"
+  }
+  </script>
+
+  <style>
+    :root{--blue:#1F3A5F;--teal:#2A6F74;--aqua:#3EC1C9;--graphite:#2B2B2B;--steel:#6B7C8F;--soft:#F3F5F7;--white:#FFFFFF;--max:1200px;--radius:14px;--shadow:0 10px 30px rgba(31,58,95,0.08);--border:1px solid rgba(31,58,95,0.10)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;color:var(--graphite);background:var(--white);line-height:1.6}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:100;background:#36527A;border-bottom:1px solid rgba(255,255,255,0.10);box-shadow:0 10px 28px rgba(16,28,46,0.18)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;min-height:84px}
+    .brand{display:flex;align-items:center;padding-top:6px;flex:0 0 auto}
+    .brand-mark{width:274px;height:auto;display:block}
+    .brand-mark.footer-mark{width:360px;height:auto}
+    .nav{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex:1 1 auto;color:#fff;font-size:1rem;font-weight:500;white-space:nowrap}
+    .nav a:not(.nav-cta){color:#fff!important;opacity:0.98;display:inline-flex;align-items:center;padding:4px 2px}
+    .nav a.active{opacity:1;border-bottom:2px solid var(--aqua);padding-bottom:2px}
+    .nav a:not(.nav-cta):hover{opacity:1}
+    .nav-cta{padding:12px 20px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600;box-shadow:0 10px 26px rgba(15,25,40,0.18);margin-left:6px}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);color:var(--white);cursor:pointer;flex:0 0 auto}
+    .menu-toggle:hover{background:rgba(255,255,255,0.14)}
+    .menu-toggle-line{width:20px;height:2px;background:currentColor;border-radius:999px;position:relative;transition:transform 220ms ease,opacity 220ms ease}
+    .menu-toggle-line::before,.menu-toggle-line::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;border-radius:999px;transition:transform 220ms ease,top 220ms ease,bottom 220ms ease}
+    .menu-toggle-line::before{top:-6px}
+    .menu-toggle-line::after{bottom:-6px}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line{background:transparent}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::before{top:0;transform:rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::after{bottom:0;transform:rotate(-45deg)}
+    .mobile-menu{display:none}
+
+    /* Article header */
+    .article-header{background:linear-gradient(160deg,#1F3A5F 0%,#2A4468 60%,#2A6F74 100%);color:var(--white);padding:72px 0 84px}
+    .article-header-inner{max-width:720px}
+    .article-eyebrow{font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--aqua);margin-bottom:18px}
+    .article-header h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.15;margin:0 0 22px;color:white}
+    .article-meta{font-size:0.92rem;color:rgba(255,255,255,0.7);margin-bottom:24px;display:flex;gap:20px;flex-wrap:wrap}
+    .article-lead{font-size:1.18rem;line-height:1.6;color:rgba(255,255,255,0.88);max-width:38rem;margin:0}
+
+    /* Article body */
+    .article-body{max-width:720px;margin:0 auto;padding:64px 24px}
+    .article-body p{margin-bottom:24px;line-height:1.7;font-size:1.05rem}
+    .article-body h2{font-size:1.5rem;font-weight:600;margin-top:48px;margin-bottom:20px;color:var(--blue);line-height:1.2}
+    .article-body h2:first-child{margin-top:0}
+    .article-body h3{font-size:1.15rem;font-weight:600;margin-top:32px;margin-bottom:16px;color:var(--teal)}
+    .pull-quote{border-left:4px solid var(--aqua);padding:24px;margin:40px 0;background:var(--soft);font-size:1.12rem;font-weight:500;line-height:1.65;color:var(--blue);font-style:italic;border-radius:0 var(--radius) var(--radius) 0}
+
+    /* Related */
+    .related-section{background:var(--soft);padding:72px 0}
+    .related-inner{max-width:var(--max);margin:0 auto}
+    .related-section h2{font-size:clamp(1.6rem,2.5vw,2rem);font-weight:600;margin-bottom:36px;color:var(--blue)}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .related-card{background:var(--white);padding:28px;border-radius:var(--radius);border:var(--border);box-shadow:var(--shadow);transition:transform 240ms ease,box-shadow 240ms ease}
+    .related-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(31,58,95,0.10)}
+    .related-card-tag{font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+    .related-card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--blue);line-height:1.35}
+    .related-card p{font-size:0.95rem;color:var(--steel);line-height:1.55;margin:0}
+
+    /* CTA band */
+    .cta-band{background:linear-gradient(135deg,var(--blue),#23466f 52%,var(--teal));color:var(--white);overflow:hidden;padding:88px 0}
+    .cta-inner{text-align:center;max-width:640px;margin:0 auto}
+    .cta-inner h2{color:var(--white);font-size:clamp(1.8rem,2.5vw,2.4rem);margin-bottom:16px;text-align:center}
+    .cta-inner .lead{color:rgba(255,255,255,0.82);font-size:1.18rem;text-align:center;line-height:1.55;margin:0 0 24px}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:1rem;transition:transform 220ms ease,background 220ms ease;border:1px solid transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--white);color:var(--blue);box-shadow:var(--shadow)}
+    .btn-primary:hover{background:var(--soft)}
+    .btn-secondary{background:transparent;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.35)}
+    .btn-secondary:hover{background:rgba(255,255,255,0.1)}
+
+    /* Footer */
+    .site-footer{padding:36px 0 48px;background:#1c2632;color:rgba(255,255,255,0.82)}
+    .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+    .footer-nav{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-nav a{color:rgba(255,255,255,0.82);display:inline-flex;align-items:center;gap:7px}
+    .footer-nav a:hover{color:#fff}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media(max-width:860px){
+      .nav{display:none}
+      .menu-toggle{display:inline-flex}
+      .mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height 260ms ease;border-top:1px solid rgba(255,255,255,0.10)}
+      .mobile-menu.is-open{max-height:480px}
+      .mobile-menu-inner{padding:14px 0 18px;display:grid;gap:10px}
+      .mobile-menu a{color:#fff;padding:10px 0;font-size:1rem;font-weight:500}
+      .mobile-menu .mobile-start{margin-top:6px;display:inline-flex;align-items:center;justify-content:center;width:fit-content;padding:12px 18px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600}
+      .mobile-contact-row{display:flex;gap:14px;flex-wrap:wrap;padding-top:8px;color:rgba(255,255,255,0.82);font-size:0.92rem}
+      .brand-mark{width:220px}
+      .brand-mark.footer-mark{width:290px}
+      .related-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:760px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .article-header{padding:56px 0 64px}
+      .article-body{padding:48px 16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Human–AI Systems home">
+        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/approach/">Approach</a>
+        <a href="/services/">Services</a>
+        <a href="/training/">Training</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/insights/" class="active">Insights</a>
+        <a href="/about/">About</a>
+        <a href="/start/" class="nav-cta">Start</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span class="menu-toggle-line"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="container">
+      <div class="mobile-menu-inner">
+        <a href="/approach/">Approach</a>
+        <a href="/services/">Services</a>
+        <a href="/training/">Training</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/insights/">Insights</a>
+        <a href="/about/">About</a>
+        <div class="mobile-contact-row">
+          <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+          <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <a href="/start/" class="mobile-start">Start</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ARTICLE HEADER -->
+  <section class="article-header">
+    <div class="container">
+      <div class="article-header-inner">
+        <div class="article-eyebrow">Founder Story</div>
+        <h1>What happens when you actually run a business on AI</h1>
+        <div class="article-meta">
+          <span>Mike McKeown</span>
+          <span>March 2026</span>
+          <span>8 min read</span>
+        </div>
+        <p class="article-lead">I spent twenty-four years advising on technology. When I founded Human–AI Systems, I made a deliberate decision: build and run the business on AI from day one — not as an experiment, but as the operating model. Here is what that actually looks like.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+
+    <p>I spent twenty-four years at Cisco, working my way from Product Manager to Senior Director running a £430M EMEA business. Before and after Cisco, I led business transformation at organisations from Fortune 100 scale to fifty-person startups, across technology, cybersecurity, media, and the public sector. One phrase Cisco's CEO used constantly was "eat your own dog food." Use what you sell. Live what you advise. After that long, it stops being a principle and starts being instinct.</p>
+
+    <p>So when I decided to build an AI transformation consultancy — inspired by the conviction that AI's real potential lies in how organisations work, not just what tools they buy — the idea of not using AI to build and run it felt like a contradiction I couldn't live with. The question wasn't whether. It was how far to take it.</p>
+
+    <p>I'd built a consulting business once before, a few years ago, pre-AI. That experience gave me useful perspective. I remembered what it took to get a new venture off the ground when every deliverable, every email, every piece of positioning had to come from me or from people I was paying. The contrast with what's possible now is striking, and I'll come back to that.</p>
+
+    <h2>Two years of deepening use — and hitting the ceiling</h2>
+
+    <p>I've been using ChatGPT since it launched publicly. By the end of 2025, I was in the top 0.1% of users — thousands of conversations across a wide range of work. But the volume isn't the interesting part. What matters is how the way I worked with it kept evolving.</p>
+
+    <p>At Verimatrix, I was appointed by the CEO to lead enterprise AI transformation across a nine-country SaaS organisation. I built a board-approved Responsible AI governance framework, stood up an AI Steering Group across engineering, sales, support, and compliance, and started embedding AI into how the company actually operated — not as experiments, but as governed capability. I was building AI assistants for sales enablement, competitive intelligence, compliance workflows, and customer support using a mix of ChatGPT Projects, Custom GPTs, Microsoft Copilot Studio, and Claude on AWS Bedrock.</p>
+
+    <p>In parallel, as Cabinet Member for Digital Services at Cotswold District Council — a role equivalent to a non-executive director, with democratic accountability — I co-authored the council's AI Policy and Strategy, oversaw a Microsoft Copilot rollout to around 250 officers and members, and started building AI assistants for planning validation, resident advisory services, and climate policy.</p>
+
+    <p>I was also coaching cabinet members from councils across the UK through the UK100 Climate Leadership Academy, and mentoring on the public sector Stepping Up programme. I noticed the same thing in every conversation: AI had moved from a peripheral curiosity to a central question for organisations of every size. The question was everywhere.</p>
+
+    <p>Through all of this, my own use of AI was deepening. I'd moved well past the early stage of drafting emails and researching topics. I was building structured assistants with persistent context, creating reusable frameworks, designing systems I could run repeatedly. AI had become a genuine thinking partner. But each assistant sat in its own silo. Each conversation started without the context of the last. I was getting real value, but I could feel the ceiling.</p>
+
+    <h2>Designing the workforce before the tools</h2>
+
+    <p>When I started designing Human–AI Systems, the question sharpened. Could the business be built from day one with AI not as a productivity tool, but as part of the workforce? AI filling roles that would normally require people — not replacing people philosophically, but occupying functional positions in an organisation that didn't yet have anyone in them.</p>
+
+    <p>I'd developed frameworks for how organisations should adopt AI: a capability progression from Tool to Assistant to Worker, and a methodology I call Radar, Pilot, Scale. These weren't just things I planned to sell to clients. They became the design principles for the business itself.</p>
+
+    <p>I was already pushing towards worker-level AI with my Custom GPTs and Projects. They gave me something close — persistent context, memory across conversations, specialised behaviour. But there were limits. Each one operated in isolation. I couldn't connect them into a coherent operating model — a shared workspace where every role draws from the same organisational context and builds on what the others have done.</p>
+
+    <p>The timing was fortunate. A new generation of AI platforms was arriving — tools that could maintain a persistent workspace, execute code, integrate with external services, and operate across interconnected workflows. I evaluated several, including Claude Cowork and ClawBot. I chose Claude Cowork, partly because the integrated workspace matched the operating model I was designing, and partly because it's the kind of enterprise platform I'd expect clients to adopt. I kept ChatGPT for what it does well — I still use it daily for personal work, council responsibilities, and community energy projects. Different platforms for different operating contexts. That's not brand loyalty. That's the same fit-for-purpose thinking I'd advise any organisation to apply.</p>
+
+    <h2>Building it</h2>
+
+    <p>I designed the business the way you'd design any organisation: roles first, then recruitment. A Chief Marketing Officer, a Chief Revenue Officer, a Chief Operating Officer, a CFO, a CTO. A delivery team for client engagements. A storyteller for the narrative library. A business coach. Each role had defined responsibilities, quality standards, and access to the organisational context they needed.</p>
+
+    <p>I named them after computing pioneers. Not to pretend they're people — they're not — but because I've found it's a surprisingly effective mental model for applying good leadership practice. Clear roles and responsibilities. Defined competencies that get developed over time. Context, guidelines, and goals that shape behaviour. Critical work gets checked. Feedback improves performance. The parallels with managing a real team are closer than you'd expect.</p>
+
+    <p>Grace Hopper runs operations and delivers my morning briefing. Ada Lovelace handles marketing and content. Vint Cerf manages the pipeline. Blaise Pascal does the invoicing. The website — fifteen pages, designed and deployed within a week — was built through Linus Torvalds, without a developer or agency.</p>
+
+    <p>I used AI to research the market, stress-test the commercial model, develop the service architecture, create the brand identity and voice guidelines that keep every output consistent. Compare that to my previous consultancy, where each of those steps took weeks of my own time or a paid specialist. The difference isn't incremental. It's structural.</p>
+
+    <p>And I found I didn't need the usual stack of SaaS subscriptions. The AI handles CRM, action tracking, pipeline management, content planning, financial tracking, and website maintenance. Things that would normally require five or six separate platforms, each with their own cost and learning curve, are part of the operating model.</p>
+
+    <div class="pull-quote">The build was fast but not smooth. Early versions of the AI workers needed debugging. Outputs defaulted to generic consulting language until I built quality controls into every role. The AI team needed managing — in ways that felt surprisingly familiar.</div>
+
+    <p>The build was fast but not smooth. Early versions of the AI workers needed debugging. Context has limits. Outputs defaulted to generic consulting language until I built quality controls into every role. The AI team needed managing — setting expectations, correcting course, refining how things worked — in ways that felt surprisingly familiar. The imperfections were part of the learning, and they taught me things about AI adoption that I wouldn't have understood from advising on it.</p>
+
+    <p>Early client engagements were the real test. Discovery preparation, structured meeting notes, follow-up communications, and invoicing — all managed through the AI workforce. Not perfectly. But it worked, and it improved with each iteration.</p>
+
+    <h2>What it actually feels like</h2>
+
+    <p>My day starts with a briefing — what's outstanding, what's due, what happened yesterday. I'll review the pipeline, check content, sometimes have a story drafted for a prospect meeting or an article outlined for LinkedIn. If there's an invoice to raise, it gets handled.</p>
+
+    <p>But I want to be honest. This isn't autonomous. The AI generates first drafts and I provide direction. Some outputs need two or three rounds. Some miss the mark and I redirect from scratch. The constant work is quality control — making sure what goes out reflects real experience and sharp thinking, not fluent-sounding generality. Human judgement isn't optional. It's the thing that makes the system produce work worth using.</p>
+
+    <p>There's an observation I keep coming back to. I don't prompt — I brief. That distinction sounds small but it captures the entire shift. Prompting is commanding a tool. Briefing is directing a colleague. The difference between those two things is the difference between using AI and operating with AI.</p>
+
+    <p>I notice it most clearly because I still use ChatGPT every day for other work. It's a capable, valued thinking partner. Claude Cowork feels different — I give it a goal, and it works through multiple steps to get there, using tools and integrations, building and maintaining the business infrastructure. The daily business brief arrives without me asking. Market research gets flagged. LinkedIn posts are suggested. My business coach checks in. Both platforms are useful. They feel qualitatively different to work with.</p>
+
+    <h2>What I've learned that I couldn't have learned from advising</h2>
+
+    <p>The technology wasn't the hard part. Designing how the work should flow — which roles, which responsibilities, what quality standards, where human oversight sits — that was the real work. The same work, it turns out, that I help client organisations do.</p>
+
+    <p>AI doesn't replace judgement. It changes what you spend your judgement on. I spend less time drafting and more time directing. Less time on administration and more time deciding whether the output is good enough. That shift is more significant than it sounds.</p>
+
+    <p>The progression from using AI as a tool, to working with it as an assistant, to operating it as part of the workforce happened over two years. But the jump from assistant to worker didn't happen gradually. It required a deliberate design decision — thinking about the organisation first and the technology second. Better tools alone wouldn't have got me there.</p>
+
+    <p>That's what most organisations are missing. They're experimenting with AI. Many are getting real value. But very few have redesigned how work actually happens to make AI part of the operating model. That's where the real shift is, and it's not a technology problem.</p>
+
+    <p>I built this practice the way I believe organisations should adopt AI. Not by buying better tools, but by redesigning how the work gets done.</p>
+
+  </div>
+
+  <!-- RELATED INSIGHTS -->
+  <section class="related-section">
+    <div class="container related-inner">
+      <h2>Related insights</h2>
+      <div class="related-grid">
+        <a href="/insights/tool-assistant-worker/" class="related-card reveal">
+          <div class="related-card-tag">Framework</div>
+          <h3>Tool → Assistant → Worker: a practical guide</h3>
+          <p>A way to understand how AI capability matures inside organisations — and what leadership decisions need to change at each stage.</p>
+        </a>
+        <a href="/insights/operating-model/" class="related-card reveal">
+          <div class="related-card-tag">Insight</div>
+          <h3>The operating model question nobody is asking</h3>
+          <p>Organisations are asking "which AI tools should we adopt?" The more important question is how the operating model needs to change when AI becomes part of the workforce.</p>
+        </a>
+        <a href="/insights/why-pilots-fail/" class="related-card reveal">
+          <div class="related-card-tag">Insight</div>
+          <h3>Why most AI pilots fail to scale</h3>
+          <p>The issue is rarely the model. More often it's workflow design, operating discipline and governance — and whether the organisation was ever designed to adopt AI at scale.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Ready to talk about your situation?</h2>
+        <p class="lead">If your organisation is moving from AI experimentation towards operational adoption, a conversation is a good place to start.</p>
+        <div class="actions">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a time</a>
+          <a href="/about/" class="btn btn-secondary">About Mike</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+      <div class="footer-nav">
+        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <a href="/approach/">Approach</a>
+      <a href="/services/">Services</a>
+      <a href="/training/">Training</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const observer=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  const mt=document.querySelector('.menu-toggle'),mm=document.querySelector('#mobile-menu');
+  function closeMM(){mt.setAttribute('aria-expanded','false');mt.setAttribute('aria-label','Open menu');mm.classList.remove('is-open');mm.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open')}
+  mt.addEventListener('click',()=>{const o=mt.getAttribute('aria-expanded')==='true';if(o){closeMM()}else{mt.setAttribute('aria-expanded','true');mt.setAttribute('aria-label','Close menu');mm.classList.add('is-open');mm.setAttribute('aria-hidden','false');document.body.classList.add('menu-open')}});
+  mm.querySelectorAll('a').forEach(l=>l.addEventListener('click',closeMM));
+  window.addEventListener('resize',()=>{if(window.innerWidth>860)closeMM()});
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

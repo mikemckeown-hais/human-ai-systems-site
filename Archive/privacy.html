@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Privacy & Legal | Human–AI Systems</title>
+	<meta name="description" content="Privacy policy, cookie policy and website disclaimer for Human–AI Systems.">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Human–AI Systems">
+	<meta property="og:title" content="Privacy & Legal | Human–AI Systems">
+	<meta property="og:description" content="Privacy policy, cookie policy and website disclaimer for Human–AI Systems.">
+	<meta property="og:url" content="https://human-ai-systems.com/privacy.html">
+	<link rel="canonical" href="https://human-ai-systems.com/privacy.html">
+	<style>
+		:root{--blue:#1F3A5F;--teal:#2A6F74;--aqua:#3EC1C9;--graphite:#2B2B2B;--steel:#6B7C8F;--soft:#F3F5F7;--white:#FFFFFF;--max:1200px;--radius:14px;--shadow:0 10px 30px rgba(31,58,95,0.08);--border:1px solid rgba(31,58,95,0.10)}
+		*{box-sizing:border-box}html{scroll-behavior:smooth}
+		body{margin:0;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;color:var(--graphite);background:var(--white);line-height:1.6}
+		body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}
+		.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+
+		/* Header */
+		header{background:#36527A;color:white;padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+		header .container{display:flex;justify-content:space-between;align-items:center}
+		.brand-mark{width:160px;height:auto;display:block}
+		nav{display:flex;gap:32px;align-items:center;font-size:0.95rem}
+		nav a{transition:color 0.3s;position:relative}
+		nav a:hover{color:var(--aqua)}
+		.nav-cta{background:var(--aqua);color:var(--graphite);padding:10px 20px;border-radius:var(--radius);font-weight:600;transition:all 0.3s}
+		.nav-cta:hover{background:var(--white)}
+		.menu-toggle{display:none;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:8px}
+
+		/* Mobile menu */
+		.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;background:var(--blue);color:white;padding:32px;overflow-y:auto;z-index:99}
+		.mobile-menu nav{flex-direction:column;gap:20px}
+		.mobile-menu nav a{font-size:1.1rem}
+		.mobile-contact{margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1)}
+		.mobile-contact p{margin:12px 0;font-size:0.9rem}
+		.mobile-start{display:inline-block;background:var(--aqua);color:var(--graphite);padding:12px 24px;border-radius:var(--radius);font-weight:600;margin-top:24px}
+
+		/* Page header */
+		.page-header{background:linear-gradient(160deg,#1F3A5F 0%,#2A4468 60%,#2A6F74 100%);padding:72px 0 84px;color:white}
+		.page-header .eyebrow{font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--aqua);font-weight:600;margin-bottom:18px}
+		.page-header h1{font-size:clamp(2rem,3.5vw,2.8rem);max-width:16ch;color:white;line-height:1.1;margin:0 0 22px}
+		.page-header .lead{font-size:1.12rem;color:rgba(255,255,255,0.82);max-width:38rem;margin:0;line-height:1.55}
+
+		/* Anchor nav */
+		.anchor-nav{display:flex;gap:12px;margin:48px auto;justify-content:center;flex-wrap:wrap;max-width:760px}
+		.anchor-nav a{padding:10px 18px;background:var(--soft);color:var(--teal);border-radius:20px;font-size:0.9rem;font-weight:500;transition:all 0.3s;border:1px solid transparent}
+		.anchor-nav a:hover{background:var(--aqua);color:white}
+		.anchor-nav a.active{background:var(--aqua);color:white}
+
+		/* Content */
+		section{padding:72px 0}
+		.soft{background:var(--soft)}
+		.content-max{max-width:760px;margin:0 auto}
+
+		h2{font-size:clamp(1.8rem,2.5vw,2.2rem);color:var(--blue);margin:0 0 32px;line-height:1.2}
+		h3{font-size:1.3rem;color:var(--graphite);margin:32px 0 16px;line-height:1.3}
+		h3:first-child{margin-top:0}
+		p{margin:0 0 18px;color:var(--graphite);line-height:1.7}
+
+		.last-updated{font-size:0.85rem;color:var(--steel);margin-bottom:28px;font-style:italic}
+
+		/* Cookie table */
+		.cookie-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.95rem}
+		.cookie-table th{background:var(--soft);padding:16px;text-align:left;font-weight:600;color:var(--blue);border:var(--border)}
+		.cookie-table td{padding:14px 16px;border:var(--border)}
+		.cookie-table tr:last-child td{border-bottom:var(--border)}
+
+		/* Footer */
+		footer{background:var(--blue);color:white;padding:56px 0 40px}
+		footer .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:48px}
+		footer h4{font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 18px;color:var(--aqua)}
+		footer ul{list-style:none;padding:0;margin:0}
+		footer li{margin-bottom:12px}
+		footer a{transition:color 0.3s}
+		footer a:hover{color:var(--aqua)}
+		.footer-mark{width:140px}
+		.footer-nav{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;border-top:1px solid rgba(255,255,255,0.10);padding-top:18px}
+		.footer-nav a{font-size:0.9rem;transition:color 0.3s}
+		.footer-nav a:hover{color:var(--aqua)}
+
+		/* Responsive */
+		@media (max-width:768px){
+			nav{display:none}
+			.menu-toggle{display:block}
+			body.menu-open .mobile-menu{display:block}
+			.page-header{padding:48px 0 56px}
+			.page-header h1{font-size:1.8rem}
+			section{padding:48px 0}
+			.anchor-nav{margin:32px auto}
+			footer .container{grid-template-columns:1fr;gap:32px}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo"><g transform="translate(40,30)"><line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/><line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/><circle cx="95" cy="22" r="24" fill="#FFFFFF"/><circle cx="36" cy="92" r="24" fill="#72D0D5"/><circle cx="148" cy="104" r="24" fill="#3EC1C9"/><g transform="translate(175,0)"><text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text><text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text></g></g></svg>
+			<nav>
+				<a href="index.html#approach">Approach</a>
+				<a href="services.html">Services</a>
+				<a href="sectors.html">Sectors</a>
+				<a href="insights.html">Insights</a>
+				<a href="about.html">About</a>
+				<a href="start.html" class="nav-cta">Start</a>
+			</nav>
+			<button class="menu-toggle" aria-label="Menu">☰</button>
+		</div>
+	</header>
+
+	<div class="mobile-menu">
+		<nav>
+			<a href="index.html#approach">Approach</a>
+			<a href="services.html">Services</a>
+			<a href="sectors.html">Sectors</a>
+			<a href="insights.html">Insights</a>
+			<a href="about.html">About</a>
+			<a href="start.html">Start</a>
+		</nav>
+		<div class="mobile-contact">
+			<p><strong>Get in touch</strong></p>
+			<p><a href="mailto:mike.mckeown@human-ai-systems.com">mike.mckeown@human-ai-systems.com</a></p>
+			<p><a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank">LinkedIn /in/mikesmckeown/</a></p>
+			<p><a href="https://wa.me/447785362573" target="_blank">WhatsApp 447785362573</a></p>
+			<a href="start.html" class="mobile-start">Start</a>
+		</div>
+	</div>
+
+	<div class="page-header">
+		<div class="container">
+			<div class="eyebrow">Legal</div>
+			<h1>Privacy, cookies and legal information.</h1>
+			<p class="lead">This page sets out how Human–AI Systems handles personal data, what cookies the site uses, and the general legal terms that apply.</p>
+		</div>
+	</div>
+
+	<nav class="anchor-nav">
+		<a href="#privacy" class="anchor-link active">Privacy Policy</a>
+		<a href="#cookies" class="anchor-link">Cookie Policy</a>
+		<a href="#disclaimer" class="anchor-link">Website Disclaimer</a>
+	</nav>
+
+	<section id="privacy">
+		<div class="content-max">
+			<h2>Privacy Policy</h2>
+			<p class="last-updated">Last updated: March 2026</p>
+
+			<h3>Who We Are</h3>
+			<p>Human–AI Systems is an AI transformation consultancy operated by Mike McKeown. "Human–AI Systems", "we", "us" or "our" refers to Mike McKeown trading as Human–AI Systems. We are the data controller for personal data you provide when using this website or contacting us.</p>
+			<p><strong>Contact:</strong> <a href="mailto:mike.mckeown@human-ai-systems.com">mike.mckeown@human-ai-systems.com</a></p>
+
+			<h3>What Personal Data We Collect</h3>
+			<p>We collect personal data in two categories:</p>
+			<p><strong>Enquiries and contact:</strong> When you contact us through the website or by email, we collect your name, email address, phone number (if provided), organisation and job title (if provided), and the content of your message.</p>
+			<p><strong>Website usage:</strong> Our hosting provider (Cloudflare) may process technical data including IP address and browser type for security and performance.</p>
+
+			<h3>Lawful Basis for Processing</h3>
+			<p>We process data on the basis of:</p>
+			<ul style="margin:16px 0 18px;padding-left:20px;color:var(--graphite)">
+				<li style="margin-bottom:10px">Legitimate interests (responding to enquiries and conducting business)</li>
+				<li style="margin-bottom:10px">Contract (delivering consulting engagements)</li>
+				<li style="margin-bottom:10px">Legal obligation (maintaining records as required by law)</li>
+			</ul>
+
+			<h3>How We Use Your Data</h3>
+			<p>We use your data to:</p>
+			<ul style="margin:16px 0 18px;padding-left:20px;color:var(--graphite)">
+				<li style="margin-bottom:10px">Respond to your enquiry</li>
+				<li style="margin-bottom:10px">Conduct scoping conversations and prepare proposals</li>
+				<li style="margin-bottom:10px">Deliver consulting engagements</li>
+				<li style="margin-bottom:10px">Maintain records as required by law</li>
+			</ul>
+			<p>We do not use your data for marketing without your explicit consent.</p>
+
+			<h3>How Long We Keep Your Data</h3>
+			<p><strong>Enquiry data where no engagement follows:</strong> Up to two years.</p>
+			<p><strong>Data relating to a client engagement:</strong> Up to seven years from the end of the engagement, in accordance with legal and accounting obligations.</p>
+
+			<h3>Third-Party Services</h3>
+			<p>Google Workspace (email and document management) and Cloudflare (hosting and security) may process personal data on our behalf under appropriate contractual arrangements and data processing agreements.</p>
+
+			<h3>International Data Transfers</h3>
+			<p>Where data is transferred outside the United Kingdom, we ensure appropriate safeguards are in place, including Standard Contractual Clauses where applicable.</p>
+
+			<h3>Your Rights</h3>
+			<p>Under UK GDPR, you have the right to:</p>
+			<ul style="margin:16px 0 18px;padding-left:20px;color:var(--graphite)">
+				<li style="margin-bottom:10px">Access the personal data we hold about you</li>
+				<li style="margin-bottom:10px">Request correction of inaccurate data</li>
+				<li style="margin-bottom:10px">Request deletion of your data in certain circumstances</li>
+				<li style="margin-bottom:10px">Restrict or object to processing</li>
+				<li style="margin-bottom:10px">Data portability</li>
+			</ul>
+			<p>To exercise any of these rights, contact <a href="mailto:mike.mckeown@human-ai-systems.com">mike.mckeown@human-ai-systems.com</a>.</p>
+
+			<h3>Automated Decision-Making</h3>
+			<p>We do not use automated decision-making or profiling in connection with this website or our services.</p>
+
+			<h3>Right to Complain</h3>
+			<p>If you have concerns about how we handle your data, you have the right to complain to the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk/make-a-complaint" target="_blank">ico.org.uk/make-a-complaint</a>.</p>
+
+			<h3>Changes to This Policy</h3>
+			<p>This policy may be updated from time to time. The current version is always available at this page.</p>
+		</div>
+	</section>
+
+	<section class="soft" id="cookies">
+		<div class="content-max">
+			<h2>Cookie Policy</h2>
+			<p class="last-updated">Last updated: March 2026</p>
+
+			<h3>What Cookies Are</h3>
+			<p>Cookies are small text files placed on your device when you visit a website.</p>
+
+			<h3>How We Use Cookies</h3>
+			<p>This website uses only strictly necessary cookies. We do not use analytics, advertising, or tracking cookies. We do not use Google Analytics or any third-party tracking tools.</p>
+
+			<h3>The Cookies We Set</h3>
+			<table class="cookie-table">
+				<thead>
+					<tr>
+						<th>Cookie</th>
+						<th>Purpose</th>
+						<th>Duration</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>__cf_bm</code></td>
+						<td>Cloudflare bot management and security</td>
+						<td>30 minutes</td>
+					</tr>
+					<tr>
+						<td><code>_cfuvid</code></td>
+						<td>Cloudflare rate limiting</td>
+						<td>Session</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>Managing Cookies</h3>
+			<p>Strictly necessary cookies cannot be disabled as they are required for the site to function securely. You can manage other cookies through your browser settings.</p>
+
+			<h3>Changes</h3>
+			<p>This policy will be updated if we introduce new tools that require non-essential cookies.</p>
+		</div>
+	</section>
+
+	<section id="disclaimer">
+		<div class="content-max">
+			<h2>Website Disclaimer</h2>
+			<p class="last-updated">Last updated: March 2026</p>
+
+			<h3>General Information</h3>
+			<p>Content on this website is provided for general information purposes only. It does not constitute professional advice of any kind.</p>
+
+			<h3>Not a Substitute for Professional Advice</h3>
+			<p>Nothing on this website constitutes consulting, legal, financial or other professional advice. You should seek appropriate professional advice before taking any action based on information on this site.</p>
+
+			<h3>Limitation of Liability</h3>
+			<p>Human–AI Systems excludes all liability for any loss or damage arising from use of or reliance on content on this website, including errors, omissions, interruptions or any form of malware. This exclusion does not apply to liability for death or personal injury caused by our negligence, or for fraud or fraudulent misrepresentation.</p>
+
+			<h3>External Links</h3>
+			<p>This website may contain links to third-party websites. We have no control over the content of those sites and do not endorse them.</p>
+
+			<h3>Intellectual Property</h3>
+			<p>All content on this website is the intellectual property of Human–AI Systems. Reproduction for commercial purposes requires our written consent.</p>
+
+			<h3>Accuracy</h3>
+			<p>Content reflects our understanding at the time of publication. We do not undertake to keep all content current and reserve the right to change or remove content without notice.</p>
+
+			<h3>Governing Law</h3>
+			<p>This disclaimer is governed by the laws of England and Wales.</p>
+
+			<h3>Contact</h3>
+			<p><a href="mailto:mike.mckeown@human-ai-systems.com">mike.mckeown@human-ai-systems.com</a></p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container">
+			<div>
+				<svg class="footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems"><g transform="translate(40,30)"><line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/><line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/><line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/><circle cx="95" cy="22" r="24" fill="#FFFFFF"/><circle cx="36" cy="92" r="24" fill="#72D0D5"/><circle cx="148" cy="104" r="24" fill="#3EC1C9"/><g transform="translate(175,0)"><text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text><text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text></g></g></svg>
+				<p style="margin-top:18px;font-size:0.9rem;color:rgba(255,255,255,0.7)">AI transformation consultancy.</p>
+			</div>
+			<div>
+				<h4>Get in touch</h4>
+				<ul>
+					<li><a href="mailto:mike.mckeown@human-ai-systems.com">Email</a></li>
+					<li><a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank">LinkedIn</a></li>
+					<li><a href="https://wa.me/447785362573" target="_blank">WhatsApp</a></li>
+				</ul>
+			</div>
+		</div>
+		<nav class="footer-nav">
+			<a href="index.html#approach">Approach</a>
+			<a href="services.html">Services</a>
+			<a href="sectors.html">Sectors</a>
+			<a href="insights.html">Insights</a>
+			<a href="about.html">About</a>
+			<a href="start.html">Start</a>
+			<span style="color:rgba(255,255,255,0.3)">|</span>
+			<a href="privacy.html">Privacy &amp; Legal</a>
+		</nav>
+	</footer>
+
+	<script>
+		// Mobile menu toggle
+		const menuToggle = document.querySelector('.menu-toggle');
+		const mobileMenu = document.querySelector('.mobile-menu');
+		const body = document.body;
+
+		menuToggle.addEventListener('click', () => {
+			body.classList.toggle('menu-open');
+		});
+
+		// Close menu when clicking a link
+		document.querySelectorAll('.mobile-menu a').forEach(link => {
+			link.addEventListener('click', () => {
+				body.classList.remove('menu-open');
+			});
+		});
+
+		// Anchor nav active state
+		const anchorLinks = document.querySelectorAll('.anchor-link');
+		const sections = document.querySelectorAll('section[id]');
+
+		function updateActiveLink() {
+			let current = '';
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop;
+				if (scrollY >= sectionTop - 200) {
+					current = section.getAttribute('id');
+				}
+			});
+
+			anchorLinks.forEach(link => {
+				link.classList.remove('active');
+				if (link.getAttribute('href') === `#${current}`) {
+					link.classList.add('active');
+				}
+			});
+		}
+
+		window.addEventListener('scroll', updateActiveLink);
+		updateActiveLink();
+
+		// Smooth scroll for anchor links
+		anchorLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				const href = link.getAttribute('href');
+				const target = document.querySelector(href);
+				target.scrollIntoView({ behaviour: 'smooth' });
+			});
+		});
+	</script>
+</body>
+</html>

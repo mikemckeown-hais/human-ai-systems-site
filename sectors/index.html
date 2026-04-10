@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Adoption by Sector | Human–AI Systems</title>
+    <meta name="description" content="Sector-specific AI transformation consulting for local government, financial services, professional services and mid-market organisations. Practitioner-led adoption with governance built in.">
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: "Source Sans 3","Segoe UI",Arial,sans-serif; color: var(--graphite); background: var(--white); line-height: 1.45; }
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+        .site-header { position: sticky; top: 0; z-index: 100; background: #36527A; border-bottom: 1px solid rgba(255,255,255,0.10); box-shadow: 0 10px 28px rgba(16,28,46,0.18); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 10px 0; min-height: 84px; }
+        .brand { display: flex; align-items: center; padding-top: 6px; flex: 0 0 auto; }
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+        .brand-text-fallback { color: #fff; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; }
+        .brand-text-fallback .aqua { color: var(--aqua); }
+        .nav { display: flex; align-items: center; justify-content: flex-end; gap: 18px; flex: 1 1 auto; color: #fff; font-size: 1rem; font-weight: 500; white-space: nowrap; }
+        .nav a:not(.nav-cta) { color: #fff !important; opacity: 0.98; display: inline-flex; align-items: center; padding: 4px 2px; }
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+        .nav-cta { padding: 12px 20px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; box-shadow: 0 10px 26px rgba(15,25,40,0.18); margin-left: 6px; }
+        .menu-toggle { display: none; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); color: var(--white); cursor: pointer; flex: 0 0 auto; }
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+        .menu-toggle-line { width: 20px; height: 2px; background: currentColor; border-radius: 999px; position: relative; transition: transform 220ms ease, opacity 220ms ease; }
+        .menu-toggle-line::before, .menu-toggle-line::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; border-radius: 999px; transition: transform 220ms ease, top 220ms ease, bottom 220ms ease; }
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+        .mobile-menu { display: none; }
+        .page-header { background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); padding: 72px 0 84px; color: white; }
+        .page-header .eyebrow { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--aqua); font-weight: 600; margin-bottom: 18px; }
+        .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); max-width: 16ch; color: white; line-height: 1.1; margin: 0 0 22px; }
+        .page-header .lead { font-size: 1.18rem; color: rgba(255,255,255,0.82); max-width: 38rem; margin: 0; line-height: 1.55; }
+        section { padding: 88px 0; }
+        .soft { background: var(--soft); }
+        .eyebrow { font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 16px; }
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.25rem; }
+        p.lead { font-size: 1.18rem; color: var(--steel); margin: 0 0 24px; line-height: 1.55; }
+        p { margin: 0 0 14px; font-size: 1.05rem; }
+
+        /* Sector cards */
+        .sectors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .sector-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform 240ms ease, box-shadow 240ms ease;
+        }
+        .sector-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(31,58,95,0.12); }
+        .sector-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+        .sector-card.local-gov::before { background: linear-gradient(90deg, var(--blue), var(--teal)); }
+        .sector-card.financial::before { background: linear-gradient(90deg, var(--teal), var(--aqua)); }
+        .sector-card.professional::before { background: linear-gradient(90deg, #2A4468, var(--blue)); }
+        .sector-card.technology::before { background: linear-gradient(90deg, var(--aqua), var(--teal)); }
+        .sector-card.sme::before { background: linear-gradient(90deg, var(--steel), var(--teal)); }
+        .sector-card.public::before { background: linear-gradient(90deg, #3a5a82, var(--blue)); }
+        .sector-card-img { border-radius: 20px 20px 0 0; overflow: hidden; height: 200px; }
+        .sector-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .sector-card-body { padding: 28px 36px 36px; }
+        .sector-label { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--teal); margin-bottom: 12px; }
+        .sector-card h3 { font-size: 1.4rem; color: var(--blue); margin-bottom: 14px; }
+        .sector-card p { color: var(--steel); font-size: 1rem; line-height: 1.6; flex-grow: 1; margin: 0 0 24px; }
+        .sector-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--teal);
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(42,111,116,0.07);
+            border: 1px solid rgba(42,111,116,0.18);
+            width: fit-content;
+            transition: background 200ms ease, color 200ms ease;
+        }
+        .sector-link::after { content: "→"; }
+        .sector-link:hover { background: rgba(42,111,116,0.14); color: var(--blue); }
+        .story-evidence {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--teal);
+            border-top: 1px solid rgba(42,111,116,0.12);
+            padding-top: 12px;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            line-height: 1.45;
+        }
+
+        /* Common thread */
+        .common-thread { max-width: 760px; margin: 0 auto; }
+        .thread-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .thread-item { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 24px; }
+        .thread-item h4 { color: var(--blue); font-size: 1rem; font-weight: 700; margin: 0 0 10px; }
+        .thread-item p { color: var(--steel); font-size: 0.95rem; margin: 0; }
+
+        /* CTA */
+        .cta-band { background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal)); color: var(--white); overflow: hidden; }
+        .cta-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+        .cta-inner h2 { color: var(--white); font-size: clamp(1.8rem,2.5vw,2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); text-align: center; }
+        .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 1rem; transition: transform 220ms ease, background 220ms ease; border: 1px solid transparent; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-primary { background: var(--white); color: var(--blue); box-shadow: var(--shadow); }
+        .btn-primary:hover { background: var(--soft); }
+        .btn-secondary { background: transparent; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.35); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        /* Footer */
+        .site-footer { padding: 36px 0 48px; background: #1c2632; color: rgba(255,255,255,0.82); }
+        .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #fff; }
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 600ms ease, transform 600ms ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+            .mobile-menu { display: block; max-height: 0; overflow: hidden; transition: max-height 260ms ease; border-top: 1px solid rgba(255,255,255,0.10); }
+            .mobile-menu.is-open { max-height: 480px; }
+            .mobile-menu-inner { padding: 14px 0 18px; display: grid; gap: 10px; }
+            .mobile-menu a { color: #fff; padding: 10px 0; font-size: 1rem; font-weight: 500; }
+            .mobile-menu .mobile-start { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 12px 18px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; }
+            .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; color: rgba(255,255,255,0.82); font-size: 0.92rem; }
+            .thread-items { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 960px) {
+            .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+            .sectors-grid { grid-template-columns: 1fr; }
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: 290px; }
+        }
+    </style>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="AI Adoption by Sector | Human–AI Systems">
+    <meta property="og:description" content="Sector-specific AI transformation consulting for local government, financial services, professional services and mid-market organisations. Practitioner-led adoption with governance built in.">
+    <meta property="og:url" content="https://human-ai-systems.com/sectors/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Adoption by Sector | Human–AI Systems">
+    <meta name="twitter:description" content="Sector-specific AI transformation consulting for local government, financial services, professional services and mid-market organisations. Practitioner-led adoption with governance built in.">
+    <link rel="canonical" href="https://human-ai-systems.com/sectors/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "AI Adoption by Sector",
+      "description": "Sector-specific AI transformation consulting for local government, financial services, professional services and mid-market organisations.",
+      "url": "https://human-ai-systems.com/sectors/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Human-AI Systems",
+        "url": "https://human-ai-systems.com"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://human-ai-systems.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Sectors", "item": "https://human-ai-systems.com/sectors/" }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/" class="active">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu"><span class="menu-toggle-line"></span></button>
+            </div>
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Sectors</div>
+                <h1>Every sector has a different AI reality.</h1>
+                <p class="lead">The underlying challenge is often the same. But governance, pace of change, workforce readiness and accountability structures differ in every sector — and that shapes how the work gets done.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="sectors-grid">
+                    <div class="sector-card local-gov reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS Local Government Planner.webp" type="image/webp">
+                                <img src="/images/hero/HAIS Local Government Planner.png" alt="Local authority planner reviewing AI planning interface on a tablet at a housing development site" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Local Government</h3>
+                            <p>Democratic accountability, constrained budgets and a workforce spanning digitally confident to cautious. Governance isn't optional here — it's the starting point. Mike has led AI adoption at Cabinet Member level inside a council.</p>
+                            <p class="story-evidence">One new unitary authority redesigned citizen services from scratch. On vesting day, residents experienced one council that worked — not five sharing a name.</p>
+                            <a href="/sectors/local-government/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                    <div class="sector-card public reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS Governance and Hybrid Workforce Control Room.webp" type="image/webp">
+                                <img src="/images/hero/HAIS Governance and Hybrid Workforce Control Room.png" alt="Professionals monitoring an AI governance and hybrid workforce control room dashboard" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Central Government &amp; Public Services</h3>
+                            <p>NHS trusts, central government departments, police, housing associations and universities share the governance characteristics of local government — public accountability, procurement constraints, union considerations — at different scales and with different mandates. The AI opportunity is significant and largely untapped.</p>
+                            <p class="story-evidence">A public services organisation redesigned how citizens accessed services. Any language, any channel, any hour. Trust went up, not down.</p>
+                            <a href="/sectors/public-sector/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                    <div class="sector-card financial reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS AI-executive-boardroom-analytics_v1..webp" type="image/webp">
+                                <img src="/images/hero/HAIS AI-executive-boardroom-analytics_v1..png" alt="Senior executive reviewing AI analytics dashboard in a corporate boardroom" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Financial Services</h3>
+                            <p>Regulation means AI has to be embedded carefully — into controlled workflows, with auditability, and governance that satisfies FCA and model risk standards. The opportunity is significant. So is the cost of getting governance wrong after the fact.</p>
+                            <p class="story-evidence">A wealth management firm's compliance register went from permanently behind to fully current. The next FCA visit produced zero findings on policy currency.</p>
+                            <a href="/sectors/financial-services/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                    <div class="sector-card professional reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS Professional analysing complex information.webp" type="image/webp">
+                                <img src="/images/hero/HAIS Professional analysing complex information.png" alt="A professional analysing complex information at a modern workstation" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Professional Services</h3>
+                            <p>Law firms, consultancies and advisory practices face a particular challenge: AI changes the economics of knowledge work, but client confidentiality, professional liability and quality assurance add governance complexity that most AI programmes don't address.</p>
+                            <p class="story-evidence">A mid-size law firm's utilisation improved 15% and write-offs dropped 20% — because knowledge stopped being locked in partners' heads.</p>
+                            <a href="/sectors/professional-services/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                    <div class="sector-card technology reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS AI Operations.webp" type="image/webp">
+                                <img src="/images/hero/HAIS AI Operations.png" alt="Technology professionals working at an AI operations centre monitoring data pipelines" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Technology &amp; SaaS</h3>
+                            <p>Technology companies adopt AI tools faster than most — but fragmented adoption without a coherent operating model creates shadow AI, duplicated spend and governance gaps. Mike's Verimatrix transformation is a direct reference: engineering productivity, support automation and sales enablement delivered inside a global SaaS company.</p>
+                            <p class="story-evidence">A SaaS engineering team gained roughly an hour per developer per day. Cycle times dropped 25%. Zero IP incidents — because every AI-assisted line was tracked.</p>
+                            <a href="/sectors/technology/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                    <div class="sector-card sme reveal">
+                        <div class="sector-card-img">
+                            <picture>
+                                <source srcset="/images/hero/webp/HAIS Group of younger diverse professionals Option B.webp" type="image/webp">
+                                <img src="/images/hero/HAIS Group of younger diverse professionals Option B.png" alt="Diverse team of professionals collaborating around an AI insights dashboard" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="sector-card-body">
+                            <div class="sector-label">Sector</div>
+                            <h3>Small &amp; Medium Organisations</h3>
+                            <p>Smaller organisations often have clearer AI opportunities and fewer layers of complexity — but less capacity to pursue adoption properly. Engagements are right-sized: a focused diagnostic, a narrow pilot, or fractional AI leadership for a team that doesn't yet have that expertise in-house.</p>
+                            <p class="story-evidence">A fifteen-person company grew revenue 35% and expanded into a new market — because the operational bottleneck was removed, not just managed.</p>
+                            <a href="/sectors/sme/" class="sector-link">Explore this sector</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="soft">
+            <div class="container">
+                <div class="common-thread">
+                    <div class="eyebrow">The common thread</div>
+                    <h2>What stays the same across every sector</h2>
+                    <p class="lead">The sector context changes the constraints. The underlying work — identifying genuine opportunities, testing them in real operations, and embedding what works — stays the same.</p>
+                </div>
+                <div class="thread-items">
+                    <div class="thread-item reveal">
+                        <h4>Start with real workflows</h4>
+                        <p>AI adoption that isn't grounded in how work actually happens produces pilots that work and programmes that don't. Every sector has a different workflow reality.</p>
+                    </div>
+                    <div class="thread-item reveal">
+                        <h4>Governance is a design problem</h4>
+                        <p>Every sector has a different governance environment — FCA, democratic accountability, professional liability. Well-designed governance enables adoption in all of them.</p>
+                    </div>
+                    <div class="thread-item reveal">
+                        <h4>Evidence before commitment</h4>
+                        <p>The Radar model exists because organisations make better decisions when they start with honest assessment. That applies whether you're a council, a bank, or a ten-person firm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Not sure where you fit?</h2>
+                    <p class="lead">If you're not sure which sector framing applies to your organisation, that's a fine starting point for a conversation.</p>
+                    <div class="actions">
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a time</a>
+                        <a href="/services/" class="btn btn-secondary">Explore services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align:right;">
+                    <div style="margin-bottom:12px;font-weight:500;color:rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <nav class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top:28px;border-top:1px solid rgba(255,255,255,0.10);padding-top:18px;">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        function closeMobileMenu() { menuToggle.setAttribute('aria-expanded','false'); menuToggle.setAttribute('aria-label','Open menu'); mobileMenu.classList.remove('is-open'); mobileMenu.setAttribute('aria-hidden','true'); document.body.classList.remove('menu-open'); }
+        menuToggle.addEventListener('click', () => { const isOpen = menuToggle.getAttribute('aria-expanded') === 'true'; if (isOpen) { closeMobileMenu(); } else { menuToggle.setAttribute('aria-expanded','true'); menuToggle.setAttribute('aria-label','Close menu'); mobileMenu.classList.add('is-open'); mobileMenu.setAttribute('aria-hidden','false'); document.body.classList.add('menu-open'); } });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+        window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMobileMenu(); });
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike McKeown | AI Transformation Leadership</title>
+    <meta name="description" content="Mike McKeown — enterprise AI transformation leader. Available for senior AI roles (CAIO, AI Transformation Director) and consulting engagements.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://human-ai-systems.com/mike/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Mike McKeown | AI Transformation Leadership">
+    <meta property="og:description" content="Enterprise AI transformation leader. Available for senior AI roles and consulting engagements.">
+    <meta property="og:url" content="https://human-ai-systems.com/mike/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 20ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 16px; font-size: 1.05rem; }
+
+        /* ── Intro layout ── */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.55fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .portrait {
+            position: sticky;
+            top: 112px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: #dbe4ee;
+            aspect-ratio: 3/4;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── Impact cards ── */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .impact-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.92rem;
+            color: var(--steel);
+            line-height: 1.4;
+        }
+
+        /* ── Experience blocks ── */
+        .experience-block {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: var(--border);
+        }
+
+        .experience-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .experience-block .eyebrow { margin-bottom: 12px; }
+
+        .evidence-card {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--teal);
+        }
+
+        .evidence-card h4 {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .evidence-card p { margin: 0; font-size: 0.98rem; color: var(--graphite); }
+
+        .evidence-stat {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        /* ── How I work section ── */
+        .work-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .work-option {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow);
+        }
+
+        .work-option h3 {
+            color: var(--blue);
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .work-option p {
+            font-size: 1rem;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .work-option ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+
+        .work-option li {
+            padding: 6px 0;
+            font-size: 0.98rem;
+            color: var(--graphite);
+            border-bottom: 1px solid rgba(31, 58, 95, 0.06);
+        }
+
+        .work-option li:last-child { border-bottom: none; }
+
+        .work-option li::before {
+            content: "→ ";
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        /* ── Capability pills ── */
+        .capability-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .capability-pill {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-size: 0.92rem;
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        /* ── Pull quote ── */
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 18px 24px;
+            margin: 28px 0;
+            background: var(--soft);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.14rem;
+            color: var(--blue);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary { background: var(--white); color: var(--blue); box-shadow: var(--shadow); }
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        .btn-teal { background: var(--teal); color: var(--white); box-shadow: var(--shadow); }
+        .btn-teal:hover { background: #24616a; }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.72); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 320ms ease;
+                background: #36527A;
+            }
+
+            .mobile-menu.is-open {
+                max-height: 500px;
+            }
+
+            .mobile-menu-inner {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 0 22px;
+            }
+
+            .mobile-menu-inner a {
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding: 6px 0;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 18px;
+                padding-top: 10px;
+                border-top: 1px solid rgba(255,255,255,0.12);
+                margin-top: 6px;
+            }
+
+            .mobile-contact-row a { font-size: 0.95rem; opacity: 0.82; }
+
+            .mobile-start {
+                display: inline-block;
+                text-align: center;
+                background: var(--white);
+                color: var(--blue) !important;
+                font-weight: 600;
+                padding: 12px 0;
+                border-radius: 999px;
+                margin-top: 4px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .portrait {
+                position: static;
+                max-width: 320px;
+                order: -1;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .work-options {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-nav { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Available now</div>
+                <h1>I help organisations make AI actually work.</h1>
+                <p class="lead">Enterprise AI transformation leadership — from governance design to operational adoption. I've done this inside listed companies, in public sector governance, and at board level. Now I'm available to help your organisation do the same.</p>
+            </div>
+        </section>
+
+
+        <!-- Intro + Portrait -->
+        <section>
+            <div class="container">
+                <div class="intro-grid">
+
+                    <div>
+                        <div class="experience-block reveal">
+                            <div class="eyebrow">The short version</div>
+                            <h2>What I do</h2>
+                            <p>I help organisations move from AI experimentation to operational adoption. That means the hard parts most people skip: redesigning workflows, building governance that enables rather than blocks, embedding AI into how teams actually work, and measuring whether it's creating real value.</p>
+                            <p>I've led this work directly — not as an external advisor, but as the person accountable for making it happen inside the organisation. At Verimatrix (EU-listed cybersecurity SaaS), I was appointed by the CEO to architect and execute enterprise-wide AI transformation. At Cotswold District Council, I co-authored the AI Policy and oversaw the rollout of Microsoft Copilot to around 250 officers and elected members.</p>
+                            <p>Before that, I spent over two decades in enterprise technology leadership, including running a £430M EMEA Public Sector business at Cisco.</p>
+                        </div>
+
+                        <div class="experience-block reveal">
+                            <div class="eyebrow">How I can help</div>
+                            <h2>The delivery model is flexible</h2>
+                            <p>I work with organisations in whatever way makes sense for the situation. Some need a senior AI leader embedded in the business — a Chief AI Officer, AI Transformation Director, or VP AI. Others need an experienced practitioner working alongside their leadership team on a consulting or advisory basis.</p>
+                            <p>The work is the same either way: designing AI governance, building operating models, running structured adoption programmes, and making sure the organisation ends up more capable — not more dependent on external help.</p>
+                            <div style="margin-top: 24px;">
+                                <a href="/mike/Mike-McKeown-CV.pdf" class="btn btn-teal" target="_blank" rel="noopener noreferrer" style="display: inline-flex;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download CV (PDF)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portrait -->
+                    <div>
+                        <div class="portrait">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Mike%20McKeown%20-%20Professional.webp" type="image/webp">
+                                <img src="/images/headshots/Mike%20McKeown%20-%20Professional.png" alt="Mike McKeown" loading="lazy">
+                            </picture>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Impact Numbers -->
+        <section class="soft">
+            <div class="container">
+                <div style="max-width: 720px; margin: 0 auto 8px; text-align: center;">
+                    <div class="eyebrow">Track record</div>
+                    <h2>Measurable outcomes, not just advice</h2>
+                    <p class="lead" style="text-align: center; max-width: 38rem; margin: 0 auto;">Results from direct AI transformation leadership at Verimatrix and Cotswold District Council.</p>
+                </div>
+
+                <div class="impact-grid">
+                    <div class="impact-card reveal">
+                        <div class="impact-stat">~£1M</div>
+                        <div class="impact-label">Engineering productivity improvement (annualised)</div>
+                    </div>
+                    <div class="impact-card reveal">
+                        <div class="impact-stat">~£3M</div>
+                        <div class="impact-label">Revenue impact from AI-enabled commercial transformation</div>
+                    </div>
+                    <div class="impact-card reveal">
+                        <div class="impact-stat">~250</div>
+                        <div class="impact-label">Officers and elected members onboarded to Microsoft Copilot</div>
+                    </div>
+                    <div class="impact-card reveal">
+                        <div class="impact-stat">£430M</div>
+                        <div class="impact-label">EMEA Public Sector P&amp;L led at Cisco</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Experience Detail -->
+        <section>
+            <div class="container" style="max-width: 800px;">
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Verimatrix — EU-listed cybersecurity SaaS</div>
+                    <h2>Enterprise AI transformation</h2>
+                    <p>Appointed by the CEO to lead enterprise-wide AI transformation. Designed and delivered the company's Responsible AI governance framework — aligned to EU AI Act, GDPR, DORA and NIST AI RMF — and secured board approval. Established the AI Steering Group and operating model, embedding AI across engineering, sales, support, product and marketing.</p>
+
+                    <div class="evidence-card">
+                        <h4>Key outcomes</h4>
+                        <p><span class="evidence-stat">~1hr/day</span> engineering productivity uplift from governed AI-assisted development</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">~10%</span> SaaS win-rate improvement through AI-enabled proposal and sales processes</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">50–60%</span> reduction in proposal workload through AI-accelerated RFP responses</p>
+                        <p style="margin-top: 8px;">Board-approved Responsible AI governance institutionalised across a nine-country organisation</p>
+                    </div>
+
+                    <p>Positioned Verimatrix as a trusted AI integrator in regulated markets — governance became a competitive differentiator, not a compliance burden. Reseller partners reported Verimatrix AI-enabled sales support was "best in the industry".</p>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Cotswold District Council — Cabinet Member</div>
+                    <h2>Public sector AI governance</h2>
+                    <p>Elected Cabinet Member with democratic accountability for Digital Services and Climate policy. Co-authored the council's AI Policy, oversaw the enterprise rollout of Microsoft Copilot Business Chat to approximately 250 officers and elected members, and sponsored AI deployment within statutory consultation analysis — achieving around 85% officer time reduction in that workflow.</p>
+                    <p>AI adoption in local government involves genuine design constraints: political accountability, public trust, resource limitations, and a highly varied workforce. That experience directly complements the commercial transformation work — and vice versa.</p>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Cisco, Synamedia, Kaltura</div>
+                    <h2>Enterprise technology leadership</h2>
+                    <p>Over two decades leading large commercial technology organisations. At Cisco, held responsibility for a £430M EMEA Public Sector business with 20% revenue growth. Managed $1B strategic accounts and closed a $20M CDN deal with BT. Recognised on Cisco's Accelerated Development Programme.</p>
+                    <p>This is the business context within which the AI transformation work is grounded — not a background in research or theory, but in making technology work inside real organisations at scale.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Two ways to work together -->
+        <section class="soft">
+            <div class="container">
+                <div style="max-width: 720px; margin: 0 auto 8px; text-align: center;">
+                    <div class="eyebrow">Working together</div>
+                    <h2>Two ways I can help</h2>
+                    <p class="lead" style="text-align: center; max-width: 38rem; margin: 0 auto;">The same expertise, delivered in whatever way suits your organisation.</p>
+                </div>
+
+                <div class="work-options">
+                    <div class="work-option reveal">
+                        <h3>As a senior leader in your organisation</h3>
+                        <p>Embedded AI leadership for organisations that need a senior practitioner leading the transformation from inside.</p>
+                        <ul>
+                            <li>Chief AI Officer (CAIO)</li>
+                            <li>AI Transformation Director</li>
+                            <li>VP AI / Head of AI</li>
+                            <li>AI Governance &amp; Strategy Lead</li>
+                        </ul>
+                    </div>
+                    <div class="work-option reveal">
+                        <h3>As an external advisor or delivery partner</h3>
+                        <p>Consulting engagements for organisations that want experienced guidance without a permanent hire.</p>
+                        <ul>
+                            <li>AI readiness assessment and roadmap</li>
+                            <li>Governance framework design</li>
+                            <li>Structured pilot programmes</li>
+                            <li>Operating model design for AI at scale</li>
+                            <li><a href="/training/" style="color: var(--teal); text-decoration: underline;">Sector-tailored AI training workshops</a></li>
+                            <li>Keynotes and presentations on practical AI adoption</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Capabilities -->
+        <section>
+            <div class="container" style="max-width: 800px;">
+                <div class="eyebrow">Capabilities</div>
+                <h2>What I bring to the table</h2>
+                <p class="lead">Deep, practical expertise across the full AI transformation lifecycle.</p>
+
+                <div class="capability-grid reveal">
+                    <span class="capability-pill">AI Governance Design</span>
+                    <span class="capability-pill">EU AI Act Alignment</span>
+                    <span class="capability-pill">GDPR &amp; DORA</span>
+                    <span class="capability-pill">Responsible AI Policy</span>
+                    <span class="capability-pill">AI Operating Models</span>
+                    <span class="capability-pill">Workflow Redesign</span>
+                    <span class="capability-pill">Board-Level Communication</span>
+                    <span class="capability-pill">AI-Enabled Commercial Transformation</span>
+                    <span class="capability-pill">Enterprise AI Platforms</span>
+                    <span class="capability-pill">AI-Assisted SDLC</span>
+                    <span class="capability-pill">Change Management</span>
+                    <span class="capability-pill">Public Sector AI</span>
+                    <span class="capability-pill">Regulated-Sector Compliance</span>
+                    <span class="capability-pill">Financial Services AI Governance</span>
+                    <span class="capability-pill">P&amp;L Leadership</span>
+                    <span class="capability-pill">Partner Enablement</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Qualifications -->
+        <section class="soft">
+            <div class="container" style="max-width: 800px;">
+                <div class="eyebrow">Background</div>
+                <h2>Education and credentials</h2>
+                <p>BSc (Hons) Computer Science, Economics &amp; Psychology. Mini-MBA from INSEAD. Cisco Accelerated Development Programme. Over 25 years in enterprise technology and AI transformation leadership.</p>
+            </div>
+        </section>
+
+
+        <!-- Explore the site -->
+        <section>
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="reveal">
+                    <div class="eyebrow">Learn more</div>
+                    <h2>Explore the full picture</h2>
+                    <p class="lead" style="text-align: center; max-width: 38rem; margin: 0 auto 12px;">Everything on this site reflects the work I do — whether that's as a consultant or as a senior leader inside your organisation. The approach, the frameworks, and the sector expertise are the same.</p>
+                    <p style="color: var(--steel); max-width: 34rem; margin: 0 auto 36px;">Have a look around. It'll give you a much fuller sense of how I think about AI transformation and what a structured engagement looks like in practice.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+                        <a href="/approach/" class="btn btn-teal">How I approach AI adoption</a>
+                        <a href="/services/" class="btn" style="background: var(--soft); color: var(--blue); border: var(--border);">Services &amp; engagement model</a>
+                        <a href="/training/" class="btn" style="background: var(--soft); color: var(--blue); border: var(--border);">Training workshops</a>
+                        <a href="/sectors/" class="btn" style="background: var(--soft); color: var(--blue); border: var(--border);">Sector experience</a>
+                        <a href="/insights/" class="btn" style="background: var(--soft); color: var(--blue); border: var(--border);">Insights &amp; thinking</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Let's have a conversation</h2>
+                    <p class="lead">If your organisation is working through AI adoption — or you know someone who is — I'd welcome a conversation. Whether that leads to a consulting engagement, a senior role, or simply a useful exchange of ideas.</p>
+                    <div class="actions">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email Mike
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            Connect on LinkedIn
+                        </a>
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book a time</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+                    <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                        <g transform="translate(40,30)">
+                            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                            <g transform="translate(175,0)">
+                                <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                                <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+                <div class="footer-nav">
+                    <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

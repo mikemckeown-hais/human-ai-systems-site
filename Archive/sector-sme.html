@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Adoption for SMEs & Small Businesses | Human–AI Systems</title>
+  <meta name="description" content="Right-sized AI adoption for SMEs. Focused diagnostics, single-workflow pilots, and advisory support. Engagements scoped to what’s realistic for your organisation.">
+  <style>
+    :root{--blue:#1F3A5F;--teal:#2A6F74;--aqua:#3EC1C9;--graphite:#2B2B2B;--steel:#6B7C8F;--soft:#F3F5F7;--white:#FFFFFF;--max:1200px;--radius:14px;--shadow:0 10px 30px rgba(31,58,95,0.08);--border:1px solid rgba(31,58,95,0.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Source Sans 3","Segoe UI",Arial,sans-serif;color:var(--graphite);background:var(--white);line-height:1.45}
+    body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:100;background:#36527A;border-bottom:1px solid rgba(255,255,255,0.10);box-shadow:0 10px 28px rgba(16,28,46,0.18)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;min-height:84px}
+    .brand{display:flex;align-items:center;padding-top:6px;flex:0 0 auto}
+    .brand-text-fallback{color:#fff;font-size:1.4rem;font-weight:700;letter-spacing:-0.01em}
+    .brand-text-fallback .aqua{color:var(--aqua)}
+    .nav{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex:1 1 auto;color:#fff;font-size:1rem;font-weight:500;white-space:nowrap}
+    .nav a:not(.nav-cta){color:#fff!important;opacity:0.98;display:inline-flex;align-items:center;padding:4px 2px}
+    .nav a.active{opacity:1;border-bottom:2px solid var(--aqua);padding-bottom:2px}
+    .nav a:not(.nav-cta):hover{opacity:1}
+    .nav-cta{padding:12px 20px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600;box-shadow:0 10px 26px rgba(15,25,40,0.18);margin-left:6px}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);color:var(--white);cursor:pointer;flex:0 0 auto}
+    .menu-toggle:hover{background:rgba(255,255,255,0.14)}
+    .menu-toggle-line{width:20px;height:2px;background:currentColor;border-radius:999px;position:relative;transition:transform 220ms ease,opacity 220ms ease}
+    .menu-toggle-line::before,.menu-toggle-line::after{content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;border-radius:999px;transition:transform 220ms ease,top 220ms ease,bottom 220ms ease}
+    .menu-toggle-line::before{top:-6px}.menu-toggle-line::after{bottom:-6px}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line{background:transparent}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::before{top:0;transform:rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] .menu-toggle-line::after{bottom:0;transform:rotate(-45deg)}
+    .mobile-menu{display:none}
+    .page-header{background:linear-gradient(160deg,#1F3A5F 0%,#2A4468 60%,#2A6F74 100%);padding:72px 0 84px;color:white}
+    .page-header .eyebrow{font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--aqua);font-weight:600;margin-bottom:18px}
+    .page-header h1{font-size:clamp(2.2rem,4vw,3.2rem);max-width:16ch;color:white;line-height:1.1;margin:0 0 22px}
+    .page-header .lead{font-size:1.18rem;color:rgba(255,255,255,0.82);max-width:38rem;margin:0;line-height:1.55}
+    section{padding:88px 0}.soft{background:var(--soft)}
+    .eyebrow{font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:16px}
+    h2,h3{margin:0 0 16px;line-height:1.1;color:var(--blue);font-weight:600}
+    h2{font-size:clamp(1.8rem,2.8vw,2.5rem)}h3{font-size:1.3rem;color:var(--graphite)}
+    p.lead{font-size:1.18rem;color:var(--steel);margin:0 0 24px;line-height:1.55}
+    p{margin:0 0 14px;font-size:1.05rem}
+    .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .card{background:var(--white);border:var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .evidence-card{background:var(--soft);border:var(--border);border-radius:var(--radius);padding:24px;border-left:4px solid var(--teal);margin:24px 0}
+    .evidence-card h4{color:var(--blue);font-size:0.9rem;font-weight:700;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.04em}
+    .evidence-card p{margin:0 0 6px;font-size:0.98rem}
+    .evidence-stat{font-size:1.6rem;font-weight:700;color:var(--blue);line-height:1;margin-right:6px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .service-apply-item{padding:20px 0;border-bottom:var(--border)}
+    .service-apply-item:last-child{border-bottom:none}
+    .service-apply-item h4{color:var(--blue);font-size:1.05rem;font-weight:700;margin:0 0 8px}
+    .service-apply-item p{color:var(--steel);font-size:0.98rem;margin:0}
+    .pull-quote{border-left:4px solid var(--aqua);padding:18px 24px;margin:28px 0;background:var(--soft);border-radius:0 var(--radius) var(--radius) 0}
+    .pull-quote p{font-size:1.1rem;color:var(--blue);font-style:italic;margin:0;line-height:1.6}
+    .cta-band{background:linear-gradient(135deg,var(--blue),#23466f 52%,var(--teal));color:var(--white);overflow:hidden}
+    .cta-inner{text-align:center;max-width:640px;margin:0 auto}
+    .cta-inner h2{color:var(--white);font-size:clamp(1.8rem,2.5vw,2.4rem);margin-bottom:16px;text-align:center}
+    .cta-inner .lead{color:rgba(255,255,255,0.82);text-align:center}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:1rem;transition:transform 220ms ease,background 220ms ease;border:1px solid transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--white);color:var(--blue);box-shadow:var(--shadow)}.btn-primary:hover{background:var(--soft)}
+    .btn-secondary{background:transparent;color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.35)}.btn-secondary:hover{background:rgba(255,255,255,0.1)}
+    .site-footer{padding:36px 0 48px;background:#1c2632;color:rgba(255,255,255,0.82)}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    .footer-nav{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-nav a{color:rgba(255,255,255,0.82)}.footer-nav a:hover{color:#fff}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity 600ms ease,transform 600ms ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .sector-nav-strip{background:rgba(31,58,95,0.04);border-bottom:var(--border);padding:14px 0}
+    .sector-nav-strip .container{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .sector-nav-label{font-size:0.88rem;font-weight:600;color:var(--steel);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap}
+    .sector-nav-pill{font-size:0.88rem;font-weight:500;color:var(--blue);padding:5px 12px;border-radius:999px;border:var(--border);background:var(--white);transition:background 200ms}
+    .sector-nav-pill:hover{background:var(--soft)}
+    @media(max-width:860px){.nav{display:none}.menu-toggle{display:inline-flex}.mobile-menu{display:block;max-height:0;overflow:hidden;transition:max-height 260ms ease;border-top:1px solid rgba(255,255,255,0.10)}.mobile-menu.is-open{max-height:480px}.mobile-menu-inner{padding:14px 0 18px;display:grid;gap:10px}.mobile-menu a{color:#fff;padding:10px 0;font-size:1rem;font-weight:500}.mobile-menu .mobile-start{margin-top:6px;display:inline-flex;align-items:center;justify-content:center;width:fit-content;padding:12px 18px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600}.mobile-contact-row{display:flex;gap:14px;flex-wrap:wrap;padding-top:8px;color:rgba(255,255,255,0.82);font-size:0.92rem}.three-col{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}}
+    @media(max-width:760px){.container{width:min(var(--max),calc(100% - 28px))}section{padding:64px 0}.three-col{grid-template-columns:1fr}}
+  </style>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="AI Adoption for SMEs & Small Businesses | Human–AI Systems">
+    <meta property="og:description" content="Right-sized AI adoption for SMEs. Focused diagnostics, single-workflow pilots, and advisory support. Engagements scoped to what’s realistic for your organisation.">
+    <meta property="og:url" content="https://human-ai-systems.com/sector-sme.html">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Adoption for SMEs & Small Businesses | Human–AI Systems">
+    <meta name="twitter:description" content="Right-sized AI adoption for SMEs. Focused diagnostics, single-workflow pilots, and advisory support. Engagements scoped to what’s realistic for your organisation.">
+    <link rel="canonical" href="https://human-ai-systems.com/sector-sme.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="brand">
+        <!-- ★ LOGO: Paste the <svg class="brand-mark"> block from index.html here -->
+        <div class="brand-text-fallback">Human–AI <span class="aqua">Systems</span></div>
+      </div>
+      <nav class="nav">
+        <a href="index.html#approach">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="sectors.html" class="active">Sectors</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="start.html" class="nav-cta">Start</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+        <span class="menu-toggle-line"></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="container">
+      <div class="mobile-menu-inner">
+        <a href="index.html#approach">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="sectors.html" class="active">Sectors</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="start.html" class="mobile-start">Start</a>
+        <div class="mobile-contact-row">
+          <a href="mailto:hello@human-ai.systems">hello@human-ai.systems</a>
+          <a href="https://linkedin.com/company/human-ai-systems">LinkedIn</a>
+          <a href="https://wa.me/447xxx">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow">Small & Medium Organisations</div>
+    <h1>Smaller organisations often have the clearest AI opportunities. And the least capacity to pursue them without help.</h1>
+    <p class="lead">AI tools are available to everyone. But the workflow thinking, the governance design, and the operating model change that turn tools into real adoption — that requires expertise that most SMEs don't have in-house.</p>
+  </div>
+</section>
+
+<div class="sector-nav-strip">
+  <div class="container">
+    <span class="sector-nav-label">Other sectors</span>
+    <a href="sector-local-government.html" class="sector-nav-pill">Local Government</a>
+    <a href="sector-public-sector.html" class="sector-nav-pill">Central Government & Public Services</a>
+    <a href="sector-financial-services.html" class="sector-nav-pill">Financial Services</a>
+    <a href="sector-professional-services.html" class="sector-nav-pill">Professional Services & Technology</a>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="reveal">
+      <h2>What's different for smaller organisations</h2>
+      <p class="lead">Smaller organisations face different constraints and different opportunities than large enterprises.</p>
+      <p>Simpler workflows mean the AI opportunities are often clearer. A small marketing team knows exactly where it's losing time. A small operations team knows which processes are eating cycles. You don't have to do a six-week discovery to figure out where the value is.</p>
+      <p>Less governance infrastructure means less internal friction but also more risk of getting it wrong. You can move faster when the decision-making is simpler. But you also need to be careful not to deploy AI in a way that creates liability or breaks a process that customers depend on.</p>
+      <p>Less capacity is the binding constraint. You can't run a six-month transformation programme whilst also running the business. An engagement has to be focused and realistic about what your team can absorb.</p>
+      <p>Competitive pressure is real. Larger competitors are adopting AI and the productivity gap is growing. But smaller organisations also have an advantage — there's less politics, fewer layers of approval, and a leadership team that can make decisions quickly. That speed can be worth more than scale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="container">
+    <div class="reveal">
+      <h2>How engagements work for SMEs</h2>
+      <p class="lead">We size engagements to what's appropriate for the organisation. That means it's more compact and faster than for a large enterprise. It also means we're honest about what you actually need rather than pushing a standard package.</p>
+      <p>A Radar for an SME is typically tighter and faster than for a large organisation. You don't need a comprehensive ecosystem map. You need to understand which two or three workflows have the most AI potential and what would need to be true to pilot each. That often takes 1–2 weeks, not 4.</p>
+      <p>Pilot Programmes can be focused on a single workflow or a single team. You're testing whether the workflow redesign works, whether your people can adopt it, and whether it delivers the value you expected. You're also building confidence in how to do this kind of change in your organisation.</p>
+      <p>Fractional AI Leadership is particularly well-suited to SMEs whose leadership team doesn't yet have AI expertise and doesn't need (or want) a full-time hire. One to three days a month. The focus is on the decisions that matter: which workflows to tackle first, how to think about governance and risk, how to build the skills in your team, what needs to change in how you operate.</p>
+      <p>Engagements are scoped to what's realistic for your size. The starting point is always a conversation about what you actually need, not a standard package.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="reveal">
+      <h2>The most common starting points for SMEs</h2>
+      <p class="lead">Different SMEs start in different places depending on their maturity and their constraints.</p>
+      <div class="three-col">
+        <div class="card reveal">
+          <h3>The focused Radar</h3>
+          <p>Most SME engagements start with a compact version of the Radar: a structured 1–2 week diagnostic that identifies the two or three workflows where AI can create the most value, and what would need to be true to pilot each. The output is a clear, practical recommendation — not a strategy document.</p>
+        </div>
+        <div class="card reveal">
+          <h3>A single workflow pilot</h3>
+          <p>Testing AI in one specific part of the business, properly designed and measured. Not a tool evaluation — a genuine pilot with workflow redesign, governance controls, and a clear success measure.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Advisory only</h3>
+          <p>Some SME leaders just want a senior, experienced perspective — someone who has done this before and can help them think through the decisions without committing to a programme. This can be a single session or ongoing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="container">
+    <div class="pull-quote reveal">
+      <p>"The questions that come up in a 20-person firm are structurally the same as the ones that came up at Verimatrix. Which workflows change, who owns the output, how do you maintain quality, what does governance look like in practice. The answers are different. The questions aren't."</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2>Start with a conversation</h2>
+      <p class="lead">Whether you're just exploring whether AI makes sense for your organisation, or you already know which workflow to tackle first, let's start with a conversation about what would work for you.</p>
+      <div class="actions">
+        <a href="start.html" class="btn btn-primary">Get started</a>
+        <a href="mailto:hello@human-ai.systems" class="btn btn-secondary">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-text-fallback">Human–AI <span class="aqua">Systems</span></div>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#approach">Approach</a>
+        <a href="services.html">Services</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="start.html">Start</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const menuToggle=document.querySelector('.menu-toggle');
+const mobileMenu=document.querySelector('#mobile-menu');
+function closeMobileMenu(){menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open menu');mobileMenu.classList.remove('is-open');mobileMenu.setAttribute('aria-hidden','true');document.body.classList.remove('menu-open');}
+menuToggle.addEventListener('click',()=>{const isOpen=menuToggle.getAttribute('aria-expanded')==='true';if(isOpen){closeMobileMenu();}else{menuToggle.setAttribute('aria-expanded','true');menuToggle.setAttribute('aria-label','Close menu');mobileMenu.classList.add('is-open');mobileMenu.setAttribute('aria-hidden','false');document.body.classList.add('menu-open');}});
+mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMobileMenu));
+window.addEventListener('resize',()=>{if(window.innerWidth>860)closeMobileMenu();});
+</script>
+
+</body>
+</html>
