@@ -1,0 +1,75 @@
+<svg width="760" height="260" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Gradient version designed for dark blue backgrounds -->
+
+<defs>
+
+  <!-- node gradients (lighter palette) -->
+  <radialGradient id="gradTop" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#A9F1F4"/>
+    <stop offset="100%" stop-color="#3EC1C9"/>
+  </radialGradient>
+
+  <radialGradient id="gradLeft" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#8BE5EA"/>
+    <stop offset="100%" stop-color="#5FCFD4"/>
+  </radialGradient>
+
+  <radialGradient id="gradRight" cx="35%" cy="35%" r="70%">
+    <stop offset="0%" stop-color="#C5F7FA"/>
+    <stop offset="100%" stop-color="#7FE3E8"/>
+  </radialGradient>
+
+  <!-- connector gradients -->
+  <linearGradient id="connTopLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#3EC1C9"/>
+    <stop offset="100%" stop-color="#7FE3E8"/>
+  </linearGradient>
+
+  <linearGradient id="connTopRight" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#5FCFD4"/>
+    <stop offset="100%" stop-color="#A9F1F4"/>
+  </linearGradient>
+
+  <linearGradient id="connBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#3EC1C9"/>
+    <stop offset="100%" stop-color="#7FE3E8"/>
+  </linearGradient>
+
+</defs>
+
+  <g transform="translate(40,30)">
+
+    <!-- connections -->
+    <line x1="36" y1="92" x2="95" y2="22"
+          stroke="url(#connTopLeft)" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="95" y1="22" x2="148" y2="104"
+          stroke="url(#connTopRight)" stroke-width="10" stroke-linecap="round"/>
+
+    <line x1="36" y1="92" x2="148" y2="104"
+          stroke="url(#connBottom)" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- nodes -->
+    <circle cx="95" cy="22" r="24" fill="url(#gradTop)"/>
+    <circle cx="36" cy="92" r="24" fill="url(#gradLeft)"/>
+    <circle cx="148" cy="104" r="24" fill="url(#gradRight)"/>
+
+    <!-- Text -->
+    <g transform="translate(175,0)">
+      <text x="0" y="70"
+        font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif"
+        font-size="42"
+        font-weight="600"
+        fill="#A9F1F4">Human–AI</text>
+
+      <text x="38" y="108"
+        font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif"
+        font-size="34"
+        font-weight="400"
+        fill="#C7DAEA">Systems</text>
+    </g>
+
+  </g>
+
+</svg>
