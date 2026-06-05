@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | AI Adoption | Human–AI Systems</title>
+    <meta name="description" content="Book a 30-minute conversation about AI adoption. A direct discussion of your situation and whether there’s a fit. Most engagements begin here.">
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .brand-text-fallback {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .brand-text-fallback .aqua { color: var(--aqua); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px; height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 16ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; }
+        .soft { background: var(--soft); }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; }
+
+        p.lead { font-size: 1.18rem; color: var(--steel); margin: 0 0 24px; line-height: 1.55; }
+        p { margin: 0 0 14px; font-size: 1.05rem; }
+
+        /* ── Start layout ── */
+        .start-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        /* ── Contact options ── */
+        .contact-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            transition: transform 240ms ease, box-shadow 240ms ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(31, 58, 95, 0.10);
+        }
+
+        .contact-card:last-child { margin-bottom: 0; }
+
+        .contact-card .card-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--teal);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 { color: var(--blue); font-size: 1.3rem; margin-bottom: 12px; }
+        .contact-card p { color: var(--steel); font-size: 1rem; margin: 0 0 22px; line-height: 1.55; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease, color 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover { background: var(--teal); }
+
+        .btn-ghost {
+            background: var(--white);
+            color: var(--blue);
+            border: var(--border);
+        }
+
+        .btn-ghost:hover { background: var(--soft); }
+
+        /* ── What to expect ── */
+        .expect-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .expect-list li {
+            padding: 18px 0 18px 32px;
+            position: relative;
+            border-bottom: var(--border);
+            font-size: 1.02rem;
+            color: var(--graphite);
+            line-height: 1.5;
+        }
+
+        .expect-list li:last-child { border-bottom: none; }
+
+        .expect-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            position: sticky;
+            top: 112px;
+        }
+
+        .sidebar-panel {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-panel:last-child { margin-bottom: 0; }
+
+        .sidebar-panel h4 {
+            color: var(--blue);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 14px;
+        }
+
+        .sidebar-panel p {
+            color: var(--steel);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .sidebar-panel .mini-links {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-panel .mini-links a {
+            color: var(--teal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sidebar-panel .mini-links a::after { content: "→"; }
+        .sidebar-panel .mini-links a:hover { color: var(--blue); }
+
+        .engagement-types {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .engagement-types li {
+            padding: 10px 0;
+            border-bottom: var(--border);
+            font-size: 0.95rem;
+            color: var(--graphite);
+        }
+
+        .engagement-types li:last-child { border-bottom: none; }
+
+        .engagement-types li strong {
+            display: block;
+            color: var(--blue);
+            margin-bottom: 2px;
+            font-size: 0.95rem;
+        }
+
+        .engagement-types li span {
+            color: var(--steel);
+            font-size: 0.88rem;
+        }
+
+        /* ── FAQ ── */
+        .faq-item {
+            border-bottom: var(--border);
+            padding: 28px 0;
+        }
+
+        .faq-item:first-child { padding-top: 0; }
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-item h4 {
+            color: var(--blue);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+
+        .faq-item p { color: var(--steel); font-size: 1rem; margin: 0; }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+
+            .start-grid { grid-template-columns: 1fr; gap: 40px; }
+            .sidebar { position: static; }
+
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: 290px; }
+        }
+    </style>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Book a Consultation | AI Adoption | Human–AI Systems">
+    <meta property="og:description" content="Book a 30-minute conversation about AI adoption. A direct discussion of your situation and whether there’s a fit. Most engagements begin here.">
+    <meta property="og:url" content="https://human-ai-systems.com/start.html">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book a Consultation | AI Adoption | Human–AI Systems">
+    <meta name="twitter:description" content="Book a 30-minute conversation about AI adoption. A direct discussion of your situation and whether there’s a fit. Most engagements begin here.">
+    <link rel="canonical" href="https://human-ai-systems.com/start.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="index.html" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="index.html#approach">Approach</a>
+                    <a href="services.html">Services</a>
+                    <a href="sectors.html">Sectors</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="about.html">About</a>
+                    <a href="start.html" class="nav-cta active">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="index.html#approach">Approach</a>
+                    <a href="services.html">Services</a>
+                    <a href="sectors.html">Sectors</a>
+                    <a href="insights.html">Insights</a>
+                    <a href="about.html">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </div>
+                    <a href="start.html" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Start</div>
+                <h1>Start with a conversation.</h1>
+                <p class="lead">If you're thinking about AI adoption — whether you're at the very beginning or already running programmes that aren't quite landing — a focused 30-minute conversation is the right place to start.</p>
+            </div>
+        </section>
+
+
+        <!-- Main content -->
+        <section>
+            <div class="container">
+                <div class="start-grid">
+
+                    <!-- Left: contact options + what to expect -->
+                    <div>
+
+                        <div class="contact-card reveal">
+                            <div class="card-eyebrow">Preferred</div>
+                            <h3>Book a 30-minute call</h3>
+                            <p>The most useful first step. A direct conversation about your situation — where you are with AI, what you're trying to achieve, and whether there's a genuine fit with how Human–AI Systems works. If there is, we'll talk about what a sensible starting point looks like. If there isn't, that'll be clear too.</p>
+                            <a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ0pkgP8aKQ_0aCI6hAyXjV3gq4O0lCV6hsSq4I=" class="btn btn-primary">Book a time →</a>
+                        </div>
+
+                        <div class="contact-card reveal">
+                            <div class="card-eyebrow">Or</div>
+                            <h3>Drop an email</h3>
+                            <p>If you'd prefer to set out your situation in writing first, or have a specific question before booking a call, email directly. You'll get a response from Mike, not a team.</p>
+                            <a href="mailto:mike.mckeown@human-ai-systems.com?subject=Enquiry%20from%20human-ai-systems.com" class="btn btn-ghost">Email Mike</a>
+                        </div>
+
+                        <div style="margin-top: 48px;" class="reveal">
+                            <h3 style="margin-bottom: 20px;">What to expect from the call</h3>
+                            <ul class="expect-list">
+                                <li>It's a working conversation, not a sales call. The goal is to understand your situation clearly enough to give you a useful answer about whether and how we might work together.</li>
+                                <li>You don't need to have a fully formed brief. Many people come to this call with a general sense that AI matters and a question about where to start. That's a perfectly good starting point.</li>
+                                <li>If the fit is there, the conversation will naturally move towards what a first engagement might look like — almost always a Radar to create a clear, evidence-based starting point.</li>
+                                <li>If the fit isn't there, you'll leave with a clearer picture of your situation and, if relevant, a better sense of what kind of support would actually help.</li>
+                                <li>30 minutes is enough time to have a genuinely useful conversation. It won't be rushed.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: sidebar -->
+                    <div class="sidebar">
+
+                        <div class="sidebar-panel reveal">
+                            <h4>What kind of engagement?</h4>
+                            <p>Engagements vary considerably in scope and duration. The most common starting point is a Radar, but the right entry point depends on where you are.</p>
+                            <ul class="engagement-types">
+                                <li>
+                                    <strong>AI Adoption Radar</strong>
+                                    <span>2–4 weeks · First engagement for most organisations</span>
+                                </li>
+                                <li>
+                                    <strong>Pilot Programme</strong>
+                                    <span>6–12 weeks · For organisations ready to test a specific opportunity</span>
+                                </li>
+                                <li>
+                                    <strong>Scale &amp; Operating Model</strong>
+                                    <span>3–6 months · For organisations moving beyond pilots</span>
+                                </li>
+                                <li>
+                                    <strong>Fractional AI Leadership</strong>
+                                    <span>Retained · For ongoing senior oversight</span>
+                                </li>
+                            </ul>
+                            <div class="mini-links">
+                                <a href="services.html">Full services detail</a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-panel reveal">
+                            <h4>Other ways to connect</h4>
+                            <div class="mini-links">
+                                <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                                <a href="https://wa.me/447785362573">WhatsApp</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="soft">
+            <div class="container">
+                <div style="max-width: 760px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 8px;">Common questions</h2>
+                    <p class="lead">Things people often want to know before getting in touch.</p>
+
+                    <div class="faq-item reveal">
+                        <h4>We're still very early with AI — is it too soon to talk?</h4>
+                        <p>No. Being early is often the best time to have this conversation — before decisions have been made, before tools have been bought, and before the wrong starting point has been set. A Radar engagement is specifically designed for organisations that are at the beginning and want to start with evidence rather than enthusiasm.</p>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <h4>We've already started — can you help with a programme that's already in progress?</h4>
+                        <p>Yes. Many engagements begin with an organisation that has already done some work — run pilots, adopted tools, started governance conversations — but has reached a point where it isn't progressing the way it should. That's a common and very workable starting point.</p>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <h4>We're in local government. Is your experience relevant?</h4>
+                        <p>Directly. The AI adoption and governance work at Cotswold District Council — including the AI Policy and the Microsoft Copilot rollout to around 250 officers and elected members — was done in an environment with all the constraints that apply to local government: scrutiny, political accountability, constrained resources, and a workforce with a very wide range of starting points. That experience is different from commercial settings, and it matters.</p>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <h4>What size of organisation do you work with?</h4>
+                        <p>The work is suited to organisations large enough to have real operational complexity — typically teams of 50 or more, though the right fit is less about headcount and more about whether AI adoption is genuinely on the leadership agenda. The questions that come up in a 200-person professional services firm are often structurally similar to those in a 2,000-person local authority.</p>
+                    </div>
+
+                    <div class="faq-item reveal">
+                        <h4>Do you work with organisations outside the UK?</h4>
+                        <p>The primary focus is UK-based organisations, but the governance frameworks and operating model work are not UK-specific. If you're outside the UK and the work looks like a good fit, it's worth a conversation.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="index.html" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <nav class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </nav>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 18px;">
+                <a href="index.html#approach">Approach</a>
+                <a href="services.html">Services</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="insights.html">Insights</a>
+                <a href="about.html">About</a>
+                <a href="start.html">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="privacy.html">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why most AI pilots fail to scale — Human–AI Systems</title>
+    <meta name="description" content="Most AI pilots succeed. Most don't scale. The difference is not the AI — it's workflow design, operating discipline and governance.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --header-bg: #36527A;
+        }
+
+        body {
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--graphite);
+            background: var(--white);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-mark {
+            height: 50px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        nav a.active {
+            color: var(--aqua);
+        }
+
+        .nav-cta {
+            background: var(--aqua);
+            color: var(--graphite) !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #34b0b8;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+            color: var(--white);
+            padding: 60px 24px;
+            text-align: left;
+        }
+
+        .article-header-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .article-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+        }
+
+        .article-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .article-meta {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 28px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            gap: 4px;
+        }
+
+        .article-lead {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+        }
+
+        .article-body {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .article-body h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--blue);
+        }
+
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .article-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: var(--teal);
+        }
+
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 24px 24px;
+            margin: 40px 0;
+            background: var(--soft);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--blue);
+            font-style: italic;
+        }
+
+        .related-section {
+            background: var(--soft);
+            padding: 60px 24px;
+            margin-top: 60px;
+        }
+
+        .related-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .related-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: var(--blue);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .related-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 4px;
+            border: 1px solid rgba(31, 58, 95, 0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--aqua);
+            margin-bottom: 12px;
+        }
+
+        .related-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--blue);
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            font-size: 14px;
+            color: var(--steel);
+            line-height: 1.6;
+        }
+
+        .cta-band {
+            background: var(--blue);
+            color: var(--white);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .cta-band-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-band p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--aqua);
+            color: var(--graphite);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #34b0b8;
+        }
+
+        footer {
+            background: var(--header-bg);
+            color: var(--white);
+            padding: 40px 24px;
+            margin-top: 0;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-mark {
+            height: 40px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 18px;
+            font-size: 13px;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .article-header h1 {
+                font-size: 28px;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .article-lead {
+                font-size: 16px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                <g transform="translate(40,30)">
+                    <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                    <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                    <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                    <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                    <g transform="translate(175,0)">
+                        <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                        <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+                    </g>
+                </g>
+            </svg>
+            <nav>
+                <a href="index.html#approach">Approach</a>
+                <a href="services.html">Services</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="insights.html" class="active">Insights</a>
+                <a href="about.html">About</a>
+                <a href="start.html" class="nav-cta">Start</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="article-header">
+        <div class="article-header-inner">
+            <div class="article-eyebrow">Insight</div>
+            <h1>Why most AI pilots fail to scale</h1>
+            <div class="article-meta">
+                <span>Author: Mike McKeown</span>
+                <span>March 2026</span>
+                <span>6 min read</span>
+            </div>
+            <p class="article-lead">Most AI pilots succeed. Time saved, tasks completed faster, people impressed. Then nothing changes. The pilot ends, work reverts, or the tool stays at the margins. The difference between pilots that scale and those that don't is not the AI — it's workflow design, operating discipline and governance.</p>
+        </div>
+    </div>
+
+    <div class="article-body">
+        <h2>The gap between proving and scaling</h2>
+
+        <p>Most organisations running AI pilots report early success. The metrics look good. Pilots tend to work for two reasons: they attract the most engaged users, and they operate outside standard processes. The problem arrives later. When a pilot ends, the question becomes: does this now change how the organisation operates? The answer, in most cases, is no.</p>
+
+        <p>The reason is often misdiagnosed. People blame the technology. "We ran a pilot and it didn't work at scale." But that's usually not what happened. What happened is that the pilot was designed to prove the technology works, and it did. A different thing was never tested: whether the organisation can adopt it.</p>
+
+        <div class="pull-quote">Most organisations are designed to absorb new tools into existing workflows, not to redesign workflows around new capability. Pilots exploit that. Scaling gets stopped by it.</div>
+
+        <p>These are different questions. Proving technology works is a technical question. Testing whether an organisation can adopt it is an operating model question. Most pilots answer the first. Almost none answer the second.</p>
+
+        <h2>The workflow design problem</h2>
+
+        <p>The standard pilot tests AI in isolation. People use it alongside existing processes, not instead of them. A team starts using Copilot to generate summaries. They still go through the same approval chains. The same person still has to sign off. Nothing about the workflow changes.</p>
+
+        <p>The workflow is the sequence of tasks, decisions, approvals, and handoffs that move work forward. Most organisations are designed to absorb new tools into existing workflows, not to redesign workflows around new capability. Pilots exploit that. Scaling gets stopped by it.</p>
+
+        <p>Here's what usually happens next: the organisation tries to scale the pilot. They roll out the tool more widely. But the workflow hasn't changed. More people are using it, but they're using it inside a process that was designed for people, not for people plus AI. The tool accelerates things to a bottleneck. The bottleneck gets more stressed. People lose faith in the tool.</p>
+
+        <h2>When governance arrives too late</h2>
+
+        <p>Organisations typically build governance frameworks after a pilot succeeds. By then, the pattern of use is already set — and often ungovernable. People have learned to use the tool in a certain way. If that way turns out to be risky, changing it is harder than designing it right in the first place.</p>
+
+        <p>Good governance doesn't slow scaling. Bad governance, or late governance, does. The difference is when it's built into the design. If you know from the start what kinds of decisions AI can inform, who is accountable when it gets something wrong, and what happens if it fails in production, then scaling becomes possible. If you don't, then every use case becomes a risk conversation.</p>
+
+        <h2>The accountability gap</h2>
+
+        <p>When AI produces an output and a human signs off without checking it carefully, who is accountable if the output is wrong? This is the question that usually kills scaling. Most pilots don't answer it. They happen at a scale where checking is still possible — or people are checking because they still don't trust the output.</p>
+
+        <p>When you try to scale beyond that, something breaks. Either the human checking becomes the bottleneck — in which case you haven't actually changed anything. Or the human stops checking — in which case you have new risk exposure. Most organisations hit this point and scaling stops. The governance conversation should have happened during the pilot. Most of the time it doesn't.</p>
+
+        <h2>Leadership attention</h2>
+
+        <p>Pilots get executive sponsorship. Someone senior says "we're trying this." That creates permission for people to experiment, to spend time on it, to surface problems without it being treated as a failure. Scaling requires something different: operational management. Consistency. Discipline. These are different skills.</p>
+
+        <p>Many pilots fail at scale because the executive sponsor moves on to something else. Or because scaling requires changing how work is organised, and that's a conversation between operating layer managers, not executives. The attention needs to shift. Most organisations don't make that shift deliberately. The pilot just gradually becomes less visible, less prioritised, and eventually stops.</p>
+
+        <h2>What the successful ones have in common</h2>
+
+        <p>The pilots that do scale share four things:</p>
+
+        <p><strong>Designed for scale from day one.</strong> The question isn't "how do we run this for 20 people?" It's "if this worked for 20 people, what would need to change for it to work for 200? And are we ready for that now, or should we acknowledge that this pilot is only testing technology, not adoption?"</p>
+
+        <p><strong>Governance built into the blueprint.</strong> Before the pilot starts, someone has answered: what types of decisions can AI inform? Where must it not be used? When does a human have to stay in the loop? When can it run autonomously? These answers don't change much. Once set, they stay set.</p>
+
+        <p><strong>Workflow redesign, not addition.</strong> The successful ones don't ask "where can we plug AI in?" They ask "if we had this capability, how would we do this work differently?" And then they actually change how it gets done — not just add a tool to existing processes.</p>
+
+        <p><strong>Success measures that go beyond usage.</strong> "People are using it" is a baseline, not a success measure. The real question is: has this changed what we can do? Has it freed up capacity for higher-value work? Has it changed our timeline? Has it changed who we can serve? Those are harder to measure. But they're why the work matters.</p>
+
+        <h2>The diagnosis and the path forward</h2>
+
+        <p>The diagnosis isn't harsh. Most organisations are genuinely trying. They see value in their pilots. They want to scale. The problem is that the standard pilot model was designed for technology adoption — testing whether a tool works. AI adoption is an operating model question. The frameworks need to catch up.</p>
+
+        <p>If your organisation is running a pilot now, ask yourself: are we testing technology, or are we testing adoption? If it's the first, that's fine — but be honest about it. Acknowledge that the real work of scaling hasn't happened yet. If it's the second, make sure you're doing the three hard things: designing workflows that are genuinely different, building governance from the start, and making sure that operational leaders are in the room alongside the technology leaders. That's not more work. It's different work. But it's the work that actually leads somewhere.</p>
+    </div>
+
+    <div class="related-section">
+        <div class="related-inner">
+            <h2>Related insights</h2>
+            <div class="related-grid">
+                <a href="insight-tool-assistant-worker.html" class="related-card">
+                    <div class="related-card-tag">Framework</div>
+                    <h3>Tool → Assistant → Worker: understanding AI capability maturity</h3>
+                    <p>A practical framework for understanding how AI capability matures inside organisations — and what leadership has to change at each stage.</p>
+                </a>
+                <a href="insight-governance.html" class="related-card">
+                    <div class="related-card-tag">Leadership</div>
+                    <h3>Governance is not a throttle; governance is a permission structure</h3>
+                    <p>The choice isn't between moving fast and governing well. Governance, done right, is what makes scaling possible at all.</p>
+                </a>
+                <a href="insight-hybrid-workflows.html" class="related-card">
+                    <div class="related-card-tag">Insight</div>
+                    <h3>Hybrid workflows: designing work for both human and AI</h3>
+                    <p>When you integrate AI into an existing workflow, the question isn't just 'where can AI help?' It's 'what is the workflow supposed to do?'</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-band">
+        <div class="cta-band-inner">
+            <p>Ready to apply this in your organisation? Book 30 minutes to discuss how we can help you move from pilots that prove to scaling that matters.</p>
+            <a href="start.html" class="cta-button">Start a conversation</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <svg class="footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                <g transform="translate(40,30)">
+                    <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                    <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                    <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                    <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                    <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                    <g transform="translate(175,0)">
+                        <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                        <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+                    </g>
+                </g>
+            </svg>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 20px;">Human–AI Systems. Transforming how organisations work with artificial intelligence.</p>
+            <nav class="footer-nav">
+                <a href="index.html#approach">Approach</a>
+                <a href="services.html">Services</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="insights.html">Insights</a>
+                <a href="about.html">About</a>
+                <a href="start.html">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="privacy.html">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
