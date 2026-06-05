@@ -88,6 +88,7 @@ Primary nav: **Approach** (`/approach/`) · **Services** (`/services/`) · **Sec
 |---|---|
 | `sectors/financial-services/` | `/sectors/financial-services/` |
 | `sectors/local-government/` | `/sectors/local-government/` |
+| `sectors/private-equity/` | `/sectors/private-equity/` |
 | `sectors/professional-services/` | `/sectors/professional-services/` |
 | `sectors/public-sector/` | `/sectors/public-sector/` |
 | `sectors/sme/` | `/sectors/sme/` |

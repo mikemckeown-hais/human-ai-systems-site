@@ -51,6 +51,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://human-ai-systems.com/sectors/private-equity/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://human-ai-systems.com/sectors/sme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
