@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinar feedback: Stop Prompting, Start Directing | Human–AI Systems</title>
+    <meta name="description" content="Two minutes of feedback on the Stop Prompting, Start Directing webinar. It genuinely shapes the next one.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <noscript>
+        <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --error: #B3261E;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif; color: var(--graphite); background: var(--white); line-height: 1.45; }
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+        .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+        /* Header */
+        .site-header { position: sticky; top: 0; z-index: 100; background: #36527A; border-bottom: 1px solid rgba(255,255,255,0.10); box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        .brand-mark { width: 188px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+        .nav { display: flex; align-items: center; gap: 24px; }
+        .nav a:not(.nav-cta) { color: rgba(255,255,255,0.86); font-weight: 500; opacity: 0.92; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+        .nav-cta { padding: 12px 20px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18); margin-left: 6px; }
+        .menu-toggle { display: none; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); color: var(--white); cursor: pointer; flex: 0 0 auto; }
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+        .menu-toggle-line { width: 20px; height: 2px; background: currentColor; border-radius: 999px; position: relative; transition: transform 220ms ease, opacity 220ms ease; }
+        .menu-toggle-line::before, .menu-toggle-line::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; border-radius: 999px; transition: transform 220ms ease, top 220ms ease, bottom 220ms ease; }
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+        .mobile-menu { display: none; }
+
+        /* Page header */
+        .page-header { background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); padding: 64px 0 72px; color: white; }
+        .page-header .eyebrow { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--aqua); font-weight: 600; margin-bottom: 18px; }
+        .page-header h1 { font-size: clamp(2.1rem, 4vw, 3rem); max-width: 20ch; color: white; line-height: 1.1; margin: 0 0 22px; }
+        .page-header .lead { font-size: 1.15rem; color: rgba(255,255,255,0.86); max-width: 46rem; margin: 0; line-height: 1.55; }
+
+        section { padding: 64px 0; position: relative; }
+        h2 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+
+        /* Form */
+        .form-wrap { max-width: 760px; margin: 0 auto; background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px; }
+        .form-intro { max-width: 760px; margin: 0 auto 30px; }
+        .form-intro p { font-size: 1.08rem; color: var(--steel); line-height: 1.6; margin: 0; }
+        .field { margin-bottom: 26px; }
+        .field > label.q { display: block; font-weight: 600; color: var(--blue); margin-bottom: 6px; font-size: 1.02rem; }
+        .req { color: var(--teal); }
+        .help { font-size: 0.92rem; color: var(--steel); margin: 0 0 8px; line-height: 1.5; }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%; padding: 12px 14px; border: 1px solid rgba(31,58,95,0.18); border-radius: 10px;
+            font-family: inherit; font-size: 1rem; color: var(--graphite); background: #fff;
+        }
+        textarea { min-height: 96px; resize: vertical; }
+        input:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,111,116,0.12); }
+
+        .radio-group { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+        .radio-row { display: flex; align-items: center; gap: 10px; font-size: 1rem; color: var(--graphite); cursor: pointer; }
+        .radio-row input { width: 18px; height: 18px; accent-color: var(--teal); flex: 0 0 auto; }
+
+        /* Rating scale */
+        .scale { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+        .scale label { position: relative; display: inline-flex; cursor: pointer; }
+        .scale input { position: absolute; opacity: 0; width: 0; height: 0; }
+        .scale .opt { display: inline-flex; align-items: center; justify-content: center; min-width: 46px; height: 46px; padding: 0 12px; border: 1px solid rgba(31,58,95,0.18); border-radius: 10px; font-weight: 600; color: var(--graphite); background: #fff; transition: background 120ms ease, color 120ms ease, border-color 120ms ease; }
+        .scale label:hover .opt { border-color: var(--teal); }
+        .scale input:checked + .opt { background: var(--teal); color: #fff; border-color: var(--teal); }
+        .scale input:focus-visible + .opt { box-shadow: 0 0 0 3px rgba(42,111,116,0.30); }
+        .scale-ends { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--steel); margin-top: 8px; max-width: 520px; }
+
+        .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .field-error { color: var(--error); font-size: 0.88rem; margin-top: 6px; display: none; }
+        .field.invalid .field-error { display: block; }
+        .field.invalid input, .field.invalid textarea { border-color: var(--error); }
+        .field.invalid .scale .opt { border-color: var(--error); }
+        .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+        .nudge { background: var(--soft); border: var(--border); border-radius: 10px; padding: 18px 20px; margin: 6px 0 26px; font-size: 0.98rem; color: var(--graphite); line-height: 1.55; }
+        .nudge a { color: var(--teal); font-weight: 600; }
+        .fine { font-size: 0.88rem; color: var(--steel); margin: 18px 0 0; line-height: 1.55; }
+        .fine a { color: var(--teal); font-weight: 600; }
+        .form-status { display: none; margin-top: 16px; padding: 14px 16px; border-radius: 10px; font-size: 0.98rem; }
+        .form-status.error { display: block; background: rgba(179,38,30,0.08); color: var(--error); border: 1px solid rgba(179,38,30,0.3); }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: inherit; font-size: 1rem; font-weight: 600; padding: 14px 26px; border-radius: 999px; cursor: pointer; border: none; }
+        .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 10px 28px rgba(31, 58, 95, 0.22); }
+        .btn-primary:hover { background: #253f63; }
+        .btn-primary:disabled { opacity: 0.6; cursor: default; }
+        .btn-block { width: 100%; }
+
+        .success-panel { display: none; max-width: 760px; margin: 0 auto; background: var(--white); border: 2px solid var(--teal); border-radius: var(--radius); box-shadow: var(--shadow); padding: 44px; text-align: center; }
+        .success-panel.show { display: block; }
+        .success-panel .tick { width: 64px; height: 64px; border-radius: 50%; background: rgba(42,111,116,0.12); color: var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .success-panel .tick svg { width: 32px; height: 32px; }
+        .success-panel h2 { margin-bottom: 12px; }
+        .success-panel p { font-size: 1.05rem; color: var(--steel); margin: 0 auto 18px; max-width: 48ch; line-height: 1.6; }
+
+        .site-footer { padding: 36px 0 48px; background: #1c2632; color: rgba(255,255,255,0.82); }
+        .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 600ms ease, transform 600ms ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+            .mobile-menu { display: block; max-height: 0; overflow: hidden; transition: max-height 260ms ease; border-top: 1px solid rgba(255,255,255,0.10); }
+            .mobile-menu.is-open { max-height: 480px; }
+            .mobile-menu-inner { padding: 14px 0 18px; display: grid; gap: 10px; }
+            .mobile-menu a { color: #ffffff; padding: 10px 0; font-size: 1rem; font-weight: 500; }
+            .mobile-menu .mobile-start { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 12px 18px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; }
+            .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
+            .form-wrap { padding: 28px 22px; }
+            .twocol { grid-template-columns: 1fr; }
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-grid > div:last-child { text-align: center; }
+            .footer-nav { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Webinar feedback</div>
+                <h1>Tell us how it went</h1>
+                <p class="lead">Thanks for joining us for Stop Prompting, Start Directing, whether live or on the recording. A few quick questions to help us make the next one better. It takes about two minutes, and you can stay anonymous.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <form id="feedback-form" class="form-wrap reveal" novalidate>
+                    <div class="honeypot" aria-hidden="true">
+                        <label for="company_website">Company website</label>
+                        <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="field" id="f-joined">
+                        <label class="q">Did you join us live, or watch the recording? <span class="req">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-row"><input type="radio" name="joined" value="Joined live"> Joined live</label>
+                            <label class="radio-row"><input type="radio" name="joined" value="Watched the recording"> Watched the recording</label>
+                            <label class="radio-row"><input type="radio" name="joined" value="A bit of both"> A bit of both</label>
+                        </div>
+                        <div class="field-error">Please pick one.</div>
+                    </div>
+
+                    <div class="field" id="f-overall">
+                        <label class="q">Overall, how would you rate the session? <span class="req">*</span></label>
+                        <div class="scale">
+                            <label><input type="radio" name="overall" value="1"><span class="opt">1</span></label>
+                            <label><input type="radio" name="overall" value="2"><span class="opt">2</span></label>
+                            <label><input type="radio" name="overall" value="3"><span class="opt">3</span></label>
+                            <label><input type="radio" name="overall" value="4"><span class="opt">4</span></label>
+                            <label><input type="radio" name="overall" value="5"><span class="opt">5</span></label>
+                        </div>
+                        <div class="scale-ends"><span>1, not for me</span><span>5, excellent</span></div>
+                        <div class="field-error">Please choose a rating.</div>
+                    </div>
+
+                    <div class="field" id="f-nps">
+                        <label class="q">How likely would you be to recommend a session like this to a colleague? <span class="req">*</span></label>
+                        <div class="scale">
+                            <label><input type="radio" name="recommend" value="0"><span class="opt">0</span></label>
+                            <label><input type="radio" name="recommend" value="1"><span class="opt">1</span></label>
+                            <label><input type="radio" name="recommend" value="2"><span class="opt">2</span></label>
+                            <label><input type="radio" name="recommend" value="3"><span class="opt">3</span></label>
+                            <label><input type="radio" name="recommend" value="4"><span class="opt">4</span></label>
+                            <label><input type="radio" name="recommend" value="5"><span class="opt">5</span></label>
+                            <label><input type="radio" name="recommend" value="6"><span class="opt">6</span></label>
+                            <label><input type="radio" name="recommend" value="7"><span class="opt">7</span></label>
+                            <label><input type="radio" name="recommend" value="8"><span class="opt">8</span></label>
+                            <label><input type="radio" name="recommend" value="9"><span class="opt">9</span></label>
+                            <label><input type="radio" name="recommend" value="10"><span class="opt">10</span></label>
+                        </div>
+                        <div class="scale-ends"><span>0, not at all likely</span><span>10, extremely likely</span></div>
+                        <div class="field-error">Please choose a number.</div>
+                    </div>
+
+                    <div class="field">
+                        <label class="q" for="useful">What was most useful or valuable for you?</label>
+                        <textarea id="useful" name="useful"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label class="q" for="better">What would have made it better, or what did you want more of?</label>
+                        <p class="help">Be honest, this is the most useful box for us. Pace, depth, the live demos, time for questions, anything that was missing.</p>
+                        <textarea id="better" name="better"></textarea>
+                    </div>
+
+                    <div class="field" id="f-level">
+                        <label class="q">How was the level pitched for you? <span class="req">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-row"><input type="radio" name="level" value="Too basic"> Too basic</label>
+                            <label class="radio-row"><input type="radio" name="level" value="About right"> About right</label>
+                            <label class="radio-row"><input type="radio" name="level" value="A little advanced"> A little advanced</label>
+                            <label class="radio-row"><input type="radio" name="level" value="Too advanced"> Too advanced</label>
+                        </div>
+                        <div class="field-error">Please pick one.</div>
+                    </div>
+
+                    <div class="field">
+                        <label class="q">The session ran as a conversation with live demos and no slides. Did that format work for you?</label>
+                        <div class="radio-group">
+                            <label class="radio-row"><input type="radio" name="format" value="Loved it"> Loved it</label>
+                            <label class="radio-row"><input type="radio" name="format" value="Worked well"> Worked well</label>
+                            <label class="radio-row"><input type="radio" name="format" value="No strong view"> No strong view</label>
+                            <label class="radio-row"><input type="radio" name="format" value="Prefer a structured, slide-based session"> I would prefer a more structured, slide-based session</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="q" for="future">What would you most like a future session to cover?</label>
+                        <textarea id="future" name="future"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label class="q">How did you hear about the webinar?</label>
+                        <div class="radio-group">
+                            <label class="radio-row"><input type="radio" name="source" value="Mike or Human-AI Systems"> Mike or Human–AI Systems</label>
+                            <label class="radio-row"><input type="radio" name="source" value="John or Third Circle"> John or Third Circle</label>
+                            <label class="radio-row"><input type="radio" name="source" value="LinkedIn"> LinkedIn</label>
+                            <label class="radio-row"><input type="radio" name="source" value="A friend or colleague"> A friend or colleague</label>
+                            <label class="radio-row"><input type="radio" name="source" value="Other"> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="q">Your name and email (optional)</label>
+                        <p class="help">Only if you are happy for us to follow up on your feedback. Leave blank to stay anonymous.</p>
+                        <div class="twocol">
+                            <input type="text" id="name" name="name" placeholder="Name" autocomplete="name">
+                            <input type="email" id="email" name="email" placeholder="Email" autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="nudge">
+                        Interested in the programme itself? You can <a href="/from-prompt-to-autopilot/register/">register your interest here</a>, and we will send you the full details and pricing.
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send my feedback</button>
+                    <div class="form-status" id="form-status"></div>
+                    <p class="fine">See our <a href="/privacy/">privacy notice</a>. Any details you give are used only to follow up on your feedback.</p>
+                </form>
+
+                <div class="success-panel" id="success-panel">
+                    <div class="tick">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h2>Thank you</h2>
+                    <p>Your feedback genuinely shapes the next session. We appreciate it.</p>
+                    <a class="btn btn-primary" href="/from-prompt-to-autopilot/register/">Register your interest in the programme</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <div class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 18px;">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) { closeMobileMenu(); }
+            else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+
+        // Form handling
+        const form = document.getElementById('feedback-form');
+        const statusBox = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+        const successPanel = document.getElementById('success-panel');
+
+        function checkRadio(name, fieldId) {
+            const field = document.getElementById(fieldId);
+            const chosen = form.querySelector('input[name="' + name + '"]:checked');
+            const bad = !chosen;
+            field.classList.toggle('invalid', bad);
+            return !bad;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusBox.className = 'form-status';
+            statusBox.textContent = '';
+
+            let ok = true;
+            let firstBad = null;
+            [['joined','f-joined'], ['overall','f-overall'], ['recommend','f-nps'], ['level','f-level']].forEach(([name, id]) => {
+                const valid = checkRadio(name, id);
+                if (!valid) { ok = false; if (!firstBad) firstBad = document.getElementById(id); }
+            });
+            if (!ok) {
+                firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            if (document.getElementById('company_website').value) {
+                form.style.display = 'none';
+                successPanel.classList.add('show');
+                return;
+            }
+
+            const val = (n) => { const el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+            const payload = {
+                form: 'feedback',
+                submitted_at: new Date().toISOString(),
+                joined: val('joined'),
+                overall: val('overall'),
+                recommend: val('recommend'),
+                useful: form.useful.value.trim(),
+                better: form.better.value.trim(),
+                level: val('level'),
+                format: val('format'),
+                future: form.future.value.trim(),
+                source: val('source'),
+                name: form.name.value.trim(),
+                email: form.email.value.trim()
+            };
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error('Bad response');
+                form.style.display = 'none';
+                successPanel.classList.add('show');
+                successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send my feedback';
+                statusBox.className = 'form-status error';
+                statusBox.innerHTML = 'Sorry, something went wrong sending that. Please try again, or email <a href="mailto:mike.mckeown@human-ai-systems.com" style="color:var(--error);font-weight:600;">Mike</a> directly.';
+            }
+        });
+    </script>
+</body>
+</html>

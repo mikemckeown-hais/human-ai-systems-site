@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Prompting, Start Directing: Webinar Resources | Human–AI Systems</title>
+    <meta name="description" content="Your resources from the Stop Prompting, Start Directing webinar: the recording, the setup guides, and how to register interest in From Prompt to Autopilot.">
+    <!-- Unlisted page: keep it out of search and the sitemap -->
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <noscript>
+        <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky; top: 0; z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+        .brand-mark { width: 188px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: 360px; }
+
+        .nav { display: flex; align-items: center; gap: 24px; }
+        .nav a:not(.nav-cta) { color: rgba(255,255,255,0.86); font-weight: 500; opacity: 0.92; }
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+        .nav-cta {
+            padding: 12px 20px; border-radius: 999px; background: var(--white);
+            color: var(--blue); font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18); margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none; align-items: center; justify-content: center;
+            width: 46px; height: 46px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08);
+            color: var(--white); cursor: pointer; flex: 0 0 auto;
+        }
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+        .menu-toggle-line { width: 20px; height: 2px; background: currentColor; border-radius: 999px; position: relative; transition: transform 220ms ease, opacity 220ms ease; }
+        .menu-toggle-line::before, .menu-toggle-line::after { content: ""; position: absolute; left: 0; width: 20px; height: 2px; background: currentColor; border-radius: 999px; transition: transform 220ms ease, top 220ms ease, bottom 220ms ease; }
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header { background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); padding: 72px 0 84px; color: white; }
+        .page-header .eyebrow { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--aqua); font-weight: 600; margin-bottom: 18px; }
+        .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); max-width: 22ch; color: white; line-height: 1.1; margin: 0 0 22px; }
+        .page-header .lead { font-size: 1.18rem; color: rgba(255,255,255,0.82); max-width: 42rem; margin: 0; line-height: 1.55; }
+        .page-header .cobrand { margin-top: 28px; display: inline-flex; align-items: center; gap: 14px; font-size: 0.95rem; color: rgba(255,255,255,0.72); font-weight: 500; }
+        .page-header .cobrand .tc-on-dark { background: #fff; border-radius: 8px; padding: 7px 12px; display: inline-flex; align-items: center; }
+        .page-header .cobrand .tc-on-dark img { height: 22px; width: auto; display: block; }
+
+        /* ── General ── */
+        section { padding: 80px 0; position: relative; }
+        .soft { background: var(--soft); }
+        .eyebrow { font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 16px; }
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+        p.lead { font-size: 1.18rem; color: var(--steel); margin: 0 0 24px; line-height: 1.55; }
+        p { margin: 0 0 14px; font-size: 1.05rem; }
+        .center-intro { max-width: 760px; margin: 0 auto 52px; text-align: center; }
+        .center-intro h2, .center-intro p, .center-intro .lead { text-align: center; margin-left: auto; margin-right: auto; }
+
+        /* ── Hosts ── */
+        .hosts { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+        .host-card { display: flex; align-items: center; gap: 22px; background: var(--white); border: var(--border); border-radius: var(--radius); padding: 26px 28px; box-shadow: var(--shadow); }
+        .host-card img.avatar { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; box-shadow: 0 6px 18px rgba(31,58,95,0.16); }
+        .host-card h3 { font-size: 1.25rem; color: var(--blue); margin: 0 0 4px; }
+        .host-card .role { font-size: 0.98rem; color: var(--graphite); margin: 0 0 8px; line-height: 1.4; }
+        .host-card .org { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--teal); }
+        .host-card .org .tc-logo { height: 18px; width: auto; }
+
+        /* ── Video ── */
+        .video-wrap { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #0E1B2B; max-width: 880px; margin: 0 auto; }
+        .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .video-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: rgba(255,255,255,0.9); background: linear-gradient(150deg, #16314f, #2A6F74); text-align: center; padding: 24px; }
+        .video-placeholder .play { width: 76px; height: 76px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.55); display: flex; align-items: center; justify-content: center; }
+        .video-placeholder .play svg { width: 30px; height: 30px; margin-left: 4px; }
+        .video-placeholder .label { font-weight: 600; font-size: 1.05rem; }
+        .video-placeholder .sub { font-size: 0.9rem; color: rgba(255,255,255,0.7); max-width: 30ch; }
+
+        /* ── Resources ── */
+        .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+        .resource-card { display: flex; flex-direction: column; background: var(--white); border: var(--border); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+        .resource-card .doc-icon { width: 46px; height: 46px; border-radius: 10px; background: rgba(42,111,116,0.10); color: var(--teal); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+        .resource-card .doc-icon svg { width: 24px; height: 24px; }
+        .resource-card h3 { font-size: 1.2rem; color: var(--blue); margin-bottom: 8px; }
+        .resource-card p { font-size: 0.98rem; color: var(--steel); line-height: 1.55; margin: 0 0 22px; flex: 1 1 auto; }
+        .resource-card .btn { align-self: flex-start; }
+
+        /* ── Programme ── */
+        .programme-block { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+        .programme-block .badge { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; background: rgba(62,193,201,0.14); color: var(--teal); margin-bottom: 18px; }
+        .programme-block ul { list-style: none; padding: 0; margin: 0 0 26px; }
+        .programme-block li { font-size: 1.02rem; padding: 9px 0 9px 26px; position: relative; color: var(--graphite); }
+        .programme-block li::before { content: "\2192"; position: absolute; left: 0; color: var(--aqua); font-weight: 700; }
+        .programme-cta { background: var(--white); border: 2px solid var(--teal); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); text-align: center; }
+        .programme-cta h3 { color: var(--blue); font-size: 1.3rem; margin-bottom: 10px; }
+        .programme-cta p { font-size: 0.98rem; color: var(--steel); margin-bottom: 22px; }
+        .programme-cta .fine { font-size: 0.85rem; color: var(--steel); margin: 14px 0 0; }
+
+        /* ── Buttons ── */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: inherit; font-size: 1rem; font-weight: 600; padding: 14px 26px; border-radius: 999px; cursor: pointer; border: none; }
+        .btn svg { width: 18px; height: 18px; }
+        .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 10px 28px rgba(31, 58, 95, 0.22); }
+        .btn-primary:hover { background: #253f63; }
+        .btn-teal { background: var(--teal); color: var(--white); box-shadow: 0 10px 28px rgba(42, 111, 116, 0.24); }
+        .btn-teal:hover { background: #235b5f; }
+        .btn-secondary { background: var(--white); color: var(--blue); border: 2px solid rgba(31, 58, 95, 0.18); }
+        .btn-secondary:hover { border-color: var(--blue); }
+        .btn-block { width: 100%; }
+
+        /* ── Host LinkedIn + org foot ── */
+        .host-foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .li-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--teal); }
+        .li-link svg { width: 16px; height: 16px; }
+        .li-link:hover { color: var(--blue); }
+
+        /* ── Demo videos ── */
+        .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+        .demo-card { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+        .demo-card.key { border: 2px solid var(--teal); position: relative; }
+        .demo-card .step { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 12px; }
+        .demo-card .video-wrap { max-width: none; margin: 0 0 16px; border-radius: 10px; }
+        .demo-card h3 { font-size: 1.12rem; color: var(--blue); margin-bottom: 8px; }
+        .demo-card p { font-size: 0.95rem; color: var(--steel); line-height: 1.5; margin: 0; }
+        .demo-badge { position: absolute; top: -13px; left: 22px; background: var(--teal); color: #fff; font-size: 0.74rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; padding: 4px 13px; border-radius: 999px; }
+        .demo-card .video-placeholder .play { width: 56px; height: 56px; }
+        .demo-card .video-placeholder .play svg { width: 22px; height: 22px; }
+        .demo-card .video-placeholder .label { font-size: 0.9rem; }
+
+        /* ── CTA band ── */
+        .cta-band { background: var(--soft); padding: 68px 0; }
+        .cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+        .cta-inner h2 { margin-bottom: 16px; }
+        .cta-inner .lead { margin-bottom: 30px; }
+        .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ── Footer ── */
+        .site-footer { padding: 36px 0 48px; background: #1c2632; color: rgba(255,255,255,0.82); }
+        .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.82); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        /* ── Reveal ── */
+        .reveal { opacity: 0; transform: translateY(22px); transition: opacity 600ms ease, transform 600ms ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+            .mobile-menu { display: block; max-height: 0; overflow: hidden; transition: max-height 260ms ease; border-top: 1px solid rgba(255,255,255,0.10); }
+            .mobile-menu.is-open { max-height: 480px; }
+            .mobile-menu-inner { padding: 14px 0 18px; display: grid; gap: 10px; }
+            .mobile-menu a { color: #ffffff; padding: 10px 0; font-size: 1rem; font-weight: 500; }
+            .mobile-menu .mobile-start { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 12px 18px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; }
+            .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
+            .hosts { grid-template-columns: 1fr; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .demo-grid { grid-template-columns: 1fr; }
+            .programme-block { grid-template-columns: 1fr; gap: 32px; }
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-grid > div:last-child { text-align: center; }
+            .footer-nav { justify-content: center; }
+        }
+        @media (max-width: 520px) {
+            .host-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/approach/">Approach</a>
+                    <a href="/services/">Services</a>
+                    <a href="/training/">Training</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Webinar resources</div>
+                <h1>Stop Prompting, Start Directing</h1>
+                <p class="lead">This is the home for everything from our webinar, Stop Prompting, Start Directing: a practical look at how to work with AI like a leader rather than a user. Whether you joined us live, registered and could not make it, or have just come across it, you are in the right place. Watch the session, take the setup guides, and see how to go further with From Prompt to Autopilot.</p>
+                <div class="cobrand">
+                    <span>Human–AI Systems, with</span>
+                    <span class="tc-on-dark"><img src="assets/third-circle-logo.svg" alt="Third Circle"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hosts -->
+        <section>
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Your hosts</div>
+                    <h2>Two practitioners, one conversation</h2>
+                    <p class="lead">The session paired business change with hands-on AI implementation. Here is who took you through it.</p>
+                </div>
+                <div class="hosts">
+                    <div class="host-card reveal">
+                        <img class="avatar" src="assets/mike.jpg" alt="Mike McKeown">
+                        <div>
+                            <h3>Mike McKeown</h3>
+                            <p class="role">Founder &amp; Managing Director, Human–AI Systems. AI transformation, from strategy to working systems.</p>
+                            <div class="host-foot">
+                                <span class="org">Human–AI Systems</span>
+                                <a class="li-link" href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="host-card reveal">
+                        <img class="avatar" src="assets/john.jpg" alt="John Clifton">
+                        <div>
+                            <h3>John Clifton</h3>
+                            <p class="role">Founder, Third Circle. Business strategy, growth and the change-management side of AI adoption.</p>
+                            <div class="host-foot">
+                                <span class="org">Third Circle</span>
+                                <a class="li-link" href="https://www.linkedin.com/in/johnbenjaminclifton/" target="_blank" rel="noopener noreferrer" aria-label="John Clifton on LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recording -->
+        <section class="soft">
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Watch again</div>
+                    <h2>The full recording</h2>
+                    <p class="lead">The complete 45-minute session, including all three live demos walking from a simple prompt up to a working AI worker.</p>
+                </div>
+                <div class="video-wrap reveal">
+                    <!-- TO GO LIVE: replace the placeholder below with the YouTube embed.
+                         <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Stop Prompting, Start Directing"
+                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                 allowfullscreen></iframe>
+                    -->
+                    <div class="video-placeholder">
+                        <div class="play">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="label">Recording embed goes here</div>
+                        <div class="sub">Paste the YouTube video link and I will wire in the embed before this goes live.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The demos on their own -->
+        <section>
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">The demos, on their own</div>
+                    <h2>Three steps, from a prompt to a working AI</h2>
+                    <p class="lead">Short of time? Each demo stands alone. Step three is the one to watch: the full solution running the whole job by itself.</p>
+                </div>
+                <div class="demo-grid">
+                    <div class="demo-card reveal">
+                        <span class="step">Step 1</span>
+                        <div class="video-wrap">
+                            <!-- TO GO LIVE: replace this placeholder with the YouTube iframe for demo 1 -->
+                            <div class="video-placeholder">
+                                <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                <div class="label">Demo 1 link goes here</div>
+                            </div>
+                        </div>
+                        <h3>AI as a Tool</h3>
+                        <p>A single, well-formed prompt. Genuinely useful, but you do the thinking each time.</p>
+                    </div>
+                    <div class="demo-card reveal">
+                        <span class="step">Step 2</span>
+                        <div class="video-wrap">
+                            <!-- TO GO LIVE: replace this placeholder with the YouTube iframe for demo 2 -->
+                            <div class="video-placeholder">
+                                <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                <div class="label">Demo 2 link goes here</div>
+                            </div>
+                        </div>
+                        <h3>AI as an Assistant</h3>
+                        <p>A context-aware setup that already knows the account and the role, so the answer comes back ready to use.</p>
+                    </div>
+                    <div class="demo-card key reveal">
+                        <span class="demo-badge">The full solution</span>
+                        <span class="step">Step 3</span>
+                        <div class="video-wrap">
+                            <!-- TO GO LIVE: replace this placeholder with the YouTube iframe for demo 3 (the key one) -->
+                            <div class="video-placeholder">
+                                <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+                                <div class="label">Demo 3 link goes here</div>
+                            </div>
+                        </div>
+                        <h3>AI as a Worker</h3>
+                        <p>The reusable worker running the whole job, research to proposal, in about the time it takes to make a coffee. This is where it comes together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloads -->
+        <section class="soft">
+            <div class="container">
+                <div class="center-intro reveal">
+                    <div class="eyebrow">Take it with you</div>
+                    <h2>Your setup guides</h2>
+                    <p class="lead">Two short guides to turn what you saw into something working on your own desk this week.</p>
+                </div>
+                <div class="resource-grid">
+                    <div class="resource-card reveal">
+                        <div class="doc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                        </div>
+                        <h3>Setting up Projects in ChatGPT and Claude</h3>
+                        <p>The step-by-step guide to building your first context-aware assistant: where your documents go, how to write the instructions, and how to get a reliable result back.</p>
+                        <a class="btn btn-primary" href="downloads/Setting-Up-Projects-in-ChatGPT-and-Claude-Guide.pdf" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download the guide (PDF)
+                        </a>
+                    </div>
+                    <div class="resource-card reveal">
+                        <div class="doc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <h3>Your questions, answered</h3>
+                        <p>We had more questions than time. This covers the lot: cost and tokens, Claude versus ChatGPT versus Copilot, agents versus projects, keeping a knowledge base current, and the pitfalls to avoid.</p>
+                        <a class="btn btn-primary" href="downloads/Stop-Prompting-Start-Directing-FAQs.pdf" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download the FAQs (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programme -->
+        <section>
+            <div class="container">
+                <div class="programme-block">
+                    <div class="reveal">
+                        <span class="badge">The programme</span>
+                        <h2>From Prompt to Autopilot</h2>
+                        <p class="lead">This is not a training course you walk away from with a page of notes. We build your own AI Operating System with you, then teach you to run it and keep extending it yourself.</p>
+                        <p>A setup that knows your business and your role, and that runs real work for you. Built around Claude first, with Microsoft Copilot and ChatGPT versions to follow. The promise is leverage and time back, not a robot you switch on and forget.</p>
+                        <ul>
+                            <li>We build the core for you: a knowledge base of your company and role, a set of role-specific AI skills, a daily brief and task list, and your connectors</li>
+                            <li>Then we teach you to run it, correct it and keep adding to it</li>
+                            <li>Most providers either build it for you or teach you. We do both, and leave you owning it</li>
+                            <li>Cohort-based, and deliberately small for the first intake</li>
+                        </ul>
+                        <p>Registering your interest is not a commitment. It means you hear first, get the full details and pricing, and help shape the dates.</p>
+                    </div>
+                    <div class="programme-cta reveal">
+                        <h3>Register your interest</h3>
+                        <p>Tell us a little about you and we will be in touch with the full details and pricing. You do not need to have attended the webinar.</p>
+                        <a class="btn btn-primary btn-block" href="/from-prompt-to-autopilot/register/">Register your interest</a>
+                        <p class="fine">Keen to move now? Email <a href="mailto:mike.mckeown@human-ai-systems.com" style="color:var(--teal);font-weight:600;">Mike</a> or <a href="mailto:john@thirdcirclepartners.com" style="color:var(--teal);font-weight:600;">John</a> directly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback (webinar attendees) -->
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner reveal">
+                    <div class="eyebrow">Were you there?</div>
+                    <h2>Tell us how it went</h2>
+                    <p class="lead">If you joined the webinar live or watched the recording, two minutes of honest feedback genuinely shapes the next one. What worked, what you wanted more of, anything that was missing.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="/webinar/stop-prompting/feedback/">Share your feedback</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book a call -->
+        <section>
+            <div class="container">
+                <div class="cta-inner reveal">
+                    <div class="eyebrow">Talk to us</div>
+                    <h2>Rather just talk it through?</h2>
+                    <p class="lead">Book a short call with Mike to ask anything about the programme, or about getting AI doing real work in your organisation.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" target="_blank" rel="noopener noreferrer">Book an appointment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+                <div style="text-align: right;">
+                    <div style="margin-bottom: 12px; font-weight: 500; color: rgba(255,255,255,0.82);">Operational AI adoption for organisations</div>
+                    <div class="footer-nav">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <nav class="footer-nav" style="margin-top: 28px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 18px;">
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) { closeMobileMenu(); }
+            else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
+    </script>
+</body>
+</html>
