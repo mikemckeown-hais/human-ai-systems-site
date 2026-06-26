@@ -561,5 +561,27 @@
         });
         mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
     </script>
+
+    <!-- Email click recorder. Reads ?e=CODE on load, quietly logs the visit, then
+         tidies the tracking params out of the address bar. Email links point
+         straight here (no redirect), so Gmail's checker never shows a warning. -->
+    <script>
+        (function () {
+            try {
+                var p = new URLSearchParams(location.search);
+                var code = p.get('e');
+                if (!code) return;
+                var body = JSON.stringify({ code: code, page: location.pathname, campaign: p.get('c') || '' });
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }));
+                } else {
+                    fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
+                }
+                p.delete('e'); p.delete('c');
+                var qs = p.toString();
+                history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+            } catch (e) {}
+        })();
+    </script>
 </body>
 </html>
