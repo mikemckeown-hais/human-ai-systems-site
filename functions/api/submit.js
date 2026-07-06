@@ -3,7 +3,8 @@
 // Endpoint: POST /api/submit
 //
 // Handles two forms, distinguished by the `form` field in the JSON body:
-//   "interest" — Register Your Interest  (/from-prompt-to-autopilot/register/)
+//   "interest"   — Register Your Interest  (/from-prompt-to-autopilot/register/)
+//   "newsletter" — Field-notes subscription  (insights pages)
 //   "feedback" — Webinar Feedback        (/webinar/stop-prompting/feedback/)
 //
 // Configuration (Cloudflare Pages → Settings → Environment variables):
@@ -25,10 +26,10 @@ export async function onRequestPost(context) {
 
   // Basic validation
   const form = (data.form || '').toLowerCase();
-  if (form !== 'interest' && form !== 'feedback') {
+  if (form !== 'interest' && form !== 'feedback' && form !== 'newsletter') {
     return json({ ok: false, error: 'Unknown form type' }, 400);
   }
-  if (form === 'interest') {
+  if (form === 'interest' || form === 'newsletter') {
     const email = (data.email || '').trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return json({ ok: false, error: 'A valid email is required' }, 400);
