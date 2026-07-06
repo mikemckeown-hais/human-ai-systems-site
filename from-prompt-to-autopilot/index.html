@@ -127,7 +127,10 @@
         .facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
         .facts span { background: var(--white); border: var(--border); border-radius: 999px; padding: 9px 18px; font-size: 0.95rem; font-weight: 500; color: var(--blue); }
 
+        .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .split .split-img img { width: 100%; height: auto; display: block; border-radius: var(--radius); box-shadow: var(--shadow); }
         .people { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; }
+        .person .avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; display: block; margin-bottom: 16px; border: 3px solid rgba(62,193,201,0.35); }
         .person { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; }
         .person .role { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
         .person p { margin: 0; color: var(--steel); }
@@ -168,7 +171,8 @@
             .mobile-menu a { color: #ffffff; padding: 10px 0; font-size: 1rem; font-weight: 500; }
             .mobile-menu .mobile-start { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 12px 18px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; }
             .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
-            .grid-2, .people { grid-template-columns: 1fr; }
+            .grid-2, .people, .split { grid-template-columns: 1fr; }
+            .split { gap: 28px; }
             .footer-grid { flex-direction: column; text-align: center; }
             .footer-grid > div:last-child { text-align: center; }
             .footer-nav { justify-content: center; }
@@ -249,11 +253,19 @@
 
         <section>
             <div class="container">
-                <div class="narrow reveal">
-                    <div class="eyebrow">The problem</div>
-                    <h2>Stop briefing a blank box.</h2>
-                    <p>Most leaders use AI the same way: a chat window, briefed from scratch, every single time. Useful for answers. No use at all for running your role. The barrier is not skill and it is not the technology. It is time. Nobody with a business or a function to run has spare hours to turn a chat tool into a working system.</p>
-                    <p>So that is the part we do for you.</p>
+                <div class="split">
+                    <div class="reveal">
+                        <div class="eyebrow">The problem</div>
+                        <h2>Stop briefing a blank box.</h2>
+                        <p>Most leaders use AI the same way: a chat window, briefed from scratch, every single time. Useful for answers. No use at all for running your role. The barrier is not skill and it is not the technology. It is time. Nobody with a business or a function to run has spare hours to turn a chat tool into a working system.</p>
+                        <p>So that is the part we do for you.</p>
+                    </div>
+                    <div class="split-img reveal">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Exec with tablet.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="/images/hero/HAIS Exec with tablet.png" alt="A senior executive reviewing an AI insights overview on a tablet">
+                        </picture>
+                    </div>
                 </div>
             </div>
         </section>
@@ -290,11 +302,19 @@
 
         <section>
             <div class="container">
-                <div class="narrow reveal">
-                    <div class="eyebrow">Who it is for</div>
-                    <h2>Business owners, functional leaders, and their teams.</h2>
-                    <p>The programme is built for people who run something: a business, a function, a team, a practice. If your week is spent on work a well-directed system could carry, this is aimed at you.</p>
-                    <p>It works hardest when a function does it together. The company knowledge base is built once and shared, each person gets their own role-specific system, and the team starts operating differently rather than one person getting faster. If you lead a sales, operations, delivery or leadership team, ask us about the team route.</p>
+                <div class="split" style="margin-bottom:34px;">
+                    <div class="split-img reveal">
+                        <picture>
+                            <source srcset="/images/hero/webp/HAIS Modern Workspace.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="/images/hero/HAIS Modern Workspace.png" alt="Senior professionals working together around a meeting table with analytics on a laptop">
+                        </picture>
+                    </div>
+                    <div class="reveal">
+                        <div class="eyebrow">Who it is for</div>
+                        <h2>Business owners, functional leaders, and their teams.</h2>
+                        <p>The programme is built for people who run something: a business, a function, a team, a practice. If your week is spent on work a well-directed system could carry, this is aimed at you.</p>
+                        <p>It works hardest when a function does it together. The company knowledge base is built once and shared, each person gets their own role-specific system, and the team starts operating differently rather than one person getting faster. If you lead a sales, operations, delivery or leadership team, ask us about the team route.</p>
+                    </div>
                 </div>
                 <div class="facts reveal">
                     <span>Online, spaced sessions</span>
@@ -324,11 +344,13 @@
                 </div>
                 <div class="people">
                     <div class="person reveal">
+                        <img class="avatar" loading="lazy" decoding="async" src="/webinar/stop-prompting/assets/mike.jpg" alt="Mike McKeown">
                         <div class="role">Human–AI Systems</div>
                         <h3>Mike McKeown</h3>
                         <p>Led enterprise-wide AI transformation at a listed global SaaS business, advises organisations from councils to financial services, and runs his own consultancy on the system this programme teaches. Mike leads the build and the AI implementation.</p>
                     </div>
                     <div class="person reveal">
+                        <img class="avatar" loading="lazy" decoding="async" src="/webinar/stop-prompting/assets/john.jpg" alt="John Clifton">
                         <div class="role">Third Circle</div>
                         <h3>John Clifton</h3>
                         <p>Works with founders and leadership teams on business value and growth. John leads the business assessment side: what your time is worth, where it actually goes, and which work to hand to the system first.</p>
