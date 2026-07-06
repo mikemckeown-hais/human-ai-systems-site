@@ -1,0 +1,22 @@
+# Human–AI Systems
+
+> UK AI adoption consultancy founded and led by Mike McKeown. Helps organisations move from AI experimentation to disciplined, value-creating operational adoption: workflow redesign, governance and hybrid human-AI operating models. Also runs From Prompt to Autopilot, a cohort programme (with Third Circle) that builds business owners and functional leaders their own AI Operating System and teaches them to run it.
+
+Key frameworks: Tool → Assistant → Worker (capability maturity); Radar → Pilot → Scale (adoption methodology); Hybrid Workforce Leadership.
+
+Sectors: local government, financial services, professional services, SaaS and technology, small and mid-market organisations.
+
+## Pages
+
+- [Home](https://human-ai-systems.com/): what Human–AI Systems does
+- [Approach](https://human-ai-systems.com/approach/): the full methodology
+- [Services](https://human-ai-systems.com/services/): Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
+- [Training](https://human-ai-systems.com/training/): practical AI workshops for teams
+- [From Prompt to Autopilot](https://human-ai-systems.com/from-prompt-to-autopilot/): the AI Operating System cohort programme
+- [Webinars](https://human-ai-systems.com/webinar/): free monthly live sessions
+- [Sectors](https://human-ai-systems.com/sectors/): sector-specific pages
+- [Insights](https://human-ai-systems.com/insights/): articles and frameworks
+- [About](https://human-ai-systems.com/about/): Mike McKeown's background
+- [Start](https://human-ai-systems.com/start/): book a conversation
+
+Contact: mike.mckeown@human-ai-systems.com

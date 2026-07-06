@@ -18,6 +18,10 @@
 
 const CAMPAIGNS = {
   'JUN-WEBINAR': 'https://human-ai-systems.com/webinar/stop-prompting/',
+  // From Prompt to Autopilot programme site (John/Third Circle build).
+  // Currently the Replit URL; when John moves to the custom domain, update
+  // this one line and every HAS link, email and post keeps working.
+  'FPA': 'https://prompt-autopilot.replit.app/?utm_source=human-ai-systems&utm_medium=referral&utm_campaign=fpa',
 };
 
 const FALLBACK = 'https://human-ai-systems.com/';

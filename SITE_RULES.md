@@ -65,22 +65,46 @@ Same as above, but nest the folder inside the hub folder. Example for a new sect
 
 | Folder | URL | Purpose |
 |---|---|---|
-| `index.html` (root) | `/` | Home — who Mike is, what HAS does, primary CTA |
-| `approach/` | `/approach/` | Full approach page — Radar/Pilot/Scale, Tool/Assistant/Worker, Hybrid Workforce |
+| `index.html` (root) | `/` | Home: who Mike is, what HAS does, primary CTA |
+| `approach/` | `/approach/` | Full approach page: Radar/Pilot/Scale, Tool/Assistant/Worker, Hybrid Workforce |
 | `about/` | `/about/` | Mike's background, credentials, and track record |
-| `services/` | `/services/` | Offer architecture — Assess → Pilot → Scale → Lead |
-| `sectors/` | `/sectors/` | Sector hub — links to all sector sub-pages |
-| `insights/` | `/insights/` | Insights hub — links to all article sub-pages |
-| `training/` | `/training/` | AI training workshops — sector-tailored, three tiers |
+| `services/` | `/services/` | Offer architecture: Assess → Pilot → Scale → Lead |
+| `sectors/` | `/sectors/` | Sector hub, links to all sector sub-pages |
+| `insights/` | `/insights/` | Insights hub, links to all article sub-pages |
+| `training/` | `/training/` | AI training workshops: sector-tailored, three tiers |
+| `from-prompt-to-autopilot/` | `/from-prompt-to-autopilot/` | FPA programme bridge page (indexed). Enrolment lives on the external programme site (John/Third Circle); until its custom domain exists, HAS CTAs point at the register form |
+| `from-prompt-to-autopilot/register/` | `/from-prompt-to-autopilot/register/` | FPA interest form → `/api/submit` → Google Sheet |
+| `webinar/` | `/webinar/` | Evergreen webinar series hub (indexed). Update monthly with the next session |
+| `webinar/stop-prompting/` | `/webinar/stop-prompting/` | June 2026 webinar resources (noindexed) + `feedback/` form |
 | `team/` | `/team/` | AI team and Mike's virtual workforce |
 | `start/` | `/start/` | Get started / contact CTA page |
 | `privacy/` | `/privacy/` | Privacy & legal |
+| `mike/` | `/mike/` | Mike's CV page for recruiters (noindexed) |
+| `dashboard/` | `/dashboard/` | Ops dashboard (noindexed, behind Cloudflare Access, robots-disallowed) |
+| `legal/` | `/legal/` | MSA PDFs |
 
-### Navigation note — Approach
+### Navigation
 
-**Approach is now a dedicated page** at `/approach/`. The home page retains an `id="approach"` anchor on the summary section for backward compatibility with any existing links.
+Primary nav: **Approach** (`/approach/`) · **Services** (`/services/`) · **Training** (`/training/`) · **Sectors** (`/sectors/`) · **Insights** (`/insights/`) · **About** (`/about/`) · **Start** (`/start/`, CTA button)
 
-Primary nav: **Approach** (`/approach/`) · **Services** (`/services/`) · **Sectors** (`/sectors/`) · **Insights** (`/insights/`) · **About** (`/about/`) · **Start** (`/start/` — CTA button)
+The home page retains an `id="approach"` anchor for backward compatibility. `/from-prompt-to-autopilot/` is deliberately not in the primary nav: it is surfaced by the site-wide announcement bar (the `fpa-banner` div at the top of `<body>` on every public page except the FPA page, `/mike/` and `/dashboard/`), a homepage spotlight section, callouts on Services and Training, and the footer nav. Remove the announcement bar when the founding cohort closes. Footer nav includes From Prompt to Autopilot on all pages.
+
+### Platform files (repo root)
+
+- `robots.txt`: allows all, disallows `/dashboard/`, references the sitemap
+- `404.html`: branded not-found page, picked up automatically by Cloudflare Pages
+- `_headers`: security headers site-wide, long cache for `/images/` and `/audio/`
+- `llms.txt`: short site description for AI crawlers
+- `sitemap.xml`: keep updated when pages are added; entries carry `lastmod`
+
+### Cloudflare Pages Functions (`functions/`)
+
+- `api/submit.js`: POST endpoint for the site forms. Accepts `form: "interest" | "feedback" | "newsletter"` and forwards to a Google Apps Script web app that appends to a Google Sheet
+- `api/track.js`, `api/analytics.js`: click/email beacons
+- `r/[campaign]/[code].js`: campaign redirect + click log. Campaign `FPA` points at the From Prompt to Autopilot programme site; when John moves it to the custom domain, update that one line
+- `s/[[path]].js`: social-post click-tracking doorman
+
+Env vars (Cloudflare Pages → Settings → Environment variables): `FORMS_WEBHOOK_URL` (required, the Apps Script /exec URL), `FORMS_SHARED_SECRET` (optional). If `FORMS_WEBHOOK_URL` is missing the forms return 503 rather than silently dropping leads.
 
 ### Sector sub-pages (under `sectors/`)
 
@@ -175,6 +199,8 @@ Consult `06 Marketing/Brand/image-library.md` in the workspace before selecting 
 - **Standard workflow:** push to `dev` first → check preview → sync to `main` for production
 - **Always keep branches in sync.** Dev should always be at least as far ahead as main. Use `git_push.py sync-to-main` to fast-forward main to dev.
 - **Use the git helper script** for all git operations — never raw `git` commands. Script: `06 Marketing/Website/git_push.py`.
-- **How the script works:** Uses the **GitHub REST API directly** — no local git subprocess calls. This bypasses all EPERM/index.lock issues on the Google Drive mounted filesystem. Local git state (`.git/`) is read-only (for the token only); it is never written to.
-- **Available commands:** `status`, `add`, `commit`, `push`, `full` (atomic add+commit+push), `sync-to-main`, `log`
-- **Preferred command is `full`** — it detects all locally-changed files automatically, uploads them as blobs, creates a single commit, and updates the branch ref atomically. No risk of partial state.
+- **How the script works:** Uses the **GitHub REST API directly**, no local git subprocess calls. This bypasses all EPERM/index.lock issues on the Google Drive mounted filesystem. Local git state (`.git/`) is read-only (for the token only); it is never written to.
+- **Available commands:** `status`, `add`, `commit`, `push`, `full` (atomic add+commit+push), `sync-to-main`, `log [branch] [n]`
+- **Preferred command is `full`**: it detects all locally-changed files automatically (including deletions, which are removed from GitHub), uploads them as blobs, creates a single commit, and updates the branch ref atomically. No risk of partial state.
+- **Zero-byte guard:** `full`/`commit` skip zero-byte files with a warning, protecting against Google Drive virtual-filesystem placeholders being pushed as empty files. To push a genuinely empty file, check it on disk first and use explicit `add` + `commit`.
+- **Changelog is automated:** `sync-to-main` appends a dated entry to `CHANGELOG.md` listing the commits being released, pushes it to `dev`, then fast-forwards `main`. Do not hand-edit release entries.
