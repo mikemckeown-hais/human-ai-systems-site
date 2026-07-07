@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Meet Lumen · From Prompt to Autopilot</title>
+<meta name="description" content="Lumen is a whole company running on an AI operating system, built with the same programme we install for clients. Meet the people. See the system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE; --paper-light:#FBFAF5; --parchment:#EFEBE1;
+    --ink:#1B1E1C; --slate:#5B635C; --mist:#8C948D;
+    --forest:#2E5D4B; --signal:#1F8A5B; --sage:#8FC98A;
+    --amber:#BE8416; --amber-deep:#A8730F; --cocoa:#241803;
+    --font-display:'Sora',sans-serif; --font-body:'Inter',sans-serif; --font-mono:'JetBrains Mono',monospace;
+    --radius:14px; --border:1px solid rgba(46,93,75,.12);
+    --shadow:0 1px 2px rgba(27,30,28,.04),0 10px 30px rgba(27,30,28,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--font-display);color:var(--ink);letter-spacing:-.015em;line-height:1.1;margin:0}
+  p{margin:0 0 16px}
+  a{color:var(--forest);text-decoration:none}
+  .kicker{font-family:var(--font-mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-deep);margin:0 0 16px;display:inline-block}
+  .kicker.green{color:var(--forest)}
+  .kicker.slate{color:var(--mist)}
+  .btn{display:inline-block;font-family:var(--font-body);font-weight:600;font-size:16px;border-radius:10px;padding:14px 24px;cursor:pointer;border:0;transition:transform .12s ease,box-shadow .12s ease}
+  .btn-primary{background:linear-gradient(180deg,var(--amber),var(--amber-deep));color:#fff;box-shadow:0 6px 16px rgba(168,115,15,.28)}
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(27,30,28,.18)}
+  .btn-ghost:hover{border-color:var(--forest);color:var(--forest)}
+  section{padding:84px 0;border-bottom:1px solid rgba(46,93,75,.08)}
+  .arrow{color:var(--signal);font-weight:800}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,93,75,.1)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:19px}
+  .brand .mark{width:34px;height:34px;border:2px solid var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--amber-deep);font-weight:800;font-size:17px}
+  .brand span{color:var(--forest)}
+  .navlinks{display:flex;gap:26px;align-items:center;font-size:15px;color:var(--slate)}
+  .navlinks a{color:var(--slate);font-weight:500}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks .btn{padding:9px 17px;font-size:14px}
+  @media(max-width:860px){.navlinks a:not(.btn){display:none}}
+
+  /* HERO */
+  .hero{padding:96px 0 84px;background:radial-gradient(1100px 500px at 72% -10%,rgba(46,93,75,.09),transparent 60%),radial-gradient(700px 400px at 0% 0%,rgba(190,132,22,.06),transparent 55%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+  .hero h1{font-size:66px;font-weight:800;margin-bottom:22px}
+  @media(max-width:900px){.hero h1{font-size:46px}}
+  .hero .lede{font-size:21px;color:var(--slate);max-width:36ch;margin-bottom:14px}
+  .hero .analogy{font-size:17px;color:var(--ink);max-width:40ch;margin-bottom:26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:rgba(46,93,75,.08);border:1px solid rgba(46,93,75,.14);border-radius:999px;padding:7px 14px;margin-bottom:26px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(31,138,91,.2)}
+
+  /* HERO MOCK (command centre) */
+  .mock{background:#14201B;border-radius:18px;box-shadow:0 24px 60px rgba(20,32,27,.28);overflow:hidden;color:#EAF1EC;font-size:15px}
+  .mock .mtop{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#0F1813;border-bottom:1px solid rgba(255,255,255,.06)}
+  .mock .mtop .who{font-family:var(--font-mono);font-size:12px;color:#9FB4A6;letter-spacing:.06em}
+  .mock .mtop .live{font-family:var(--font-mono);font-size:11px;color:var(--sage);display:flex;align-items:center;gap:7px}
+  .mock .mtop .live .d{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 3px rgba(143,201,138,.18)}
+  .mock .mbody{padding:20px 20px 22px}
+  .mlabel{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7E958A;margin:0 0 8px}
+  .mbrief{font-family:var(--font-display);font-weight:700;font-size:18px;color:#fff;margin:0 0 6px}
+  .mbrief-sub{color:#B9C9BE;font-size:14px;margin:0 0 18px}
+  .mrow{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-top:1px solid rgba(255,255,255,.07);font-size:14px}
+  .mstatus{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  .s-done{color:#0F1813;background:var(--sage)}
+  .s-run{color:#14201B;background:#E9C46A}
+  .s-queue{color:#B9C9BE;border:1px solid rgba(255,255,255,.18)}
+
+  /* GENERIC BLOCKS */
+  .lead-h2{font-size:42px;font-weight:700;max-width:20ch}
+  @media(max-width:900px){.lead-h2{font-size:32px}}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  @media(max-width:860px){.two{grid-template-columns:1fr;gap:28px}}
+  .muted{color:var(--slate)}
+  .stack-note{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
+
+  /* CONTRAST (before/after) */
+  .contrast{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+  @media(max-width:860px){.contrast{grid-template-columns:1fr}}
+  .card{background:var(--paper-light);border:var(--border);border-radius:var(--radius);padding:26px 26px;box-shadow:var(--shadow)}
+  .card .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
+  .card.after{border-color:rgba(31,138,91,.3);background:linear-gradient(180deg,rgba(31,138,91,.05),var(--paper-light))}
+  .card.after .tag{color:var(--signal)}
+  .card h3{font-size:22px;margin-bottom:10px}
+
+  /* PERSONA CHOOSER */
+  .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+  @media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}}
+  .tile{background:var(--paper-light);border:var(--border);border-radius:12px;padding:18px 14px 16px;cursor:pointer;text-align:center;transition:border-color .12s,transform .12s,box-shadow .12s;font-family:var(--font-body)}
+  .tile:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:rgba(46,93,75,.3)}
+  .tile.active{border-color:var(--forest);box-shadow:0 0 0 2px rgba(46,93,75,.15),var(--shadow);background:#fff}
+  .tile .av{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin:0 auto 11px;border:2px solid rgba(46,93,75,.15)}
+  .tile.active .av{border-color:var(--forest)}
+  .tile .nm{font-family:var(--font-display);font-weight:700;font-size:15px;margin-bottom:2px;display:block}
+  .tile .rl{font-size:12.5px;color:var(--slate);line-height:1.35;display:block}
+  .tile .seg{font-family:var(--font-mono);font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--mist);margin-top:9px;display:block}
+  .tile .rdy{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--signal);margin-top:6px;display:inline-block}
+
+  /* PERSONA PANEL */
+  #persona-panel{margin-top:40px}
+  .persona-intro{display:flex;gap:28px;align-items:flex-start;margin-bottom:30px}
+  .persona-intro .portrait{width:140px;height:172px;border-radius:14px;object-fit:cover;object-position:center top;flex:none;box-shadow:var(--shadow);border:var(--border)}
+  @media(max-width:640px){.persona-intro{flex-direction:column;gap:18px} .persona-intro .portrait{width:120px;height:146px}}
+  .panel-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+  .panel-head h3{font-size:30px;font-weight:800}
+  .panel-head .role{color:var(--slate);font-size:17px}
+  .panel-world{color:var(--slate);max-width:64ch;margin:0}
+  /* company photo */
+  .company-figure{margin-top:30px}
+  .company-photo{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);border:var(--border);display:block}
+  .company-cap{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);margin-top:10px}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:860px){.ba-grid{grid-template-columns:1fr}}
+  .ba-grid ul{margin:12px 0 0;padding:0;list-style:none}
+  .ba-grid li{position:relative;padding:8px 0 8px 22px;font-size:16px;border-top:1px solid rgba(46,93,75,.08)}
+  .ba-grid li:before{content:"";position:absolute;left:2px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--mist)}
+  .card.after li:before{background:var(--signal)}
+
+  .dash{margin-top:34px}
+  .dash-cap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+  .dash-cap .lab{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
+  .dash-frame{border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#EAEFF6}
+  .dash-frame .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#14201B}
+  .dash-frame .bar .dot{width:11px;height:11px;border-radius:50%}
+  .dash-frame .bar .u{width:11px;height:11px;border-radius:50%;background:#E7645B}.dash-frame .bar .u2{background:#E9C46A}.dash-frame .bar .u3{background:#8FC98A}
+  .dash-frame .bar .lbl{margin-left:8px;font-family:var(--font-mono);font-size:11px;color:#9FB4A6;letter-spacing:.05em}
+  .dash-frame iframe{width:100%;height:760px;border:0;display:block;background:#EAEFF6}
+  @media(max-width:860px){.dash-frame iframe{height:620px}}
+
+  .result{margin-top:34px;background:linear-gradient(180deg,rgba(31,138,91,.06),var(--paper-light));border:1px solid rgba(31,138,91,.25);border-radius:var(--radius);padding:28px 30px}
+  .result .rk{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-bottom:14px}
+  .result .rquote{font-family:var(--font-display);font-weight:700;font-size:23px;line-height:1.3;margin-bottom:20px;max-width:30ch}
+  .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:860px){.result-grid{grid-template-columns:repeat(2,1fr)}}
+  .rstat .v{font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--forest);line-height:1}
+  .rstat .l{font-size:14px;color:var(--slate);margin-top:6px}
+  .illus{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mist);margin-top:18px}
+
+  .madeof{margin-top:30px}
+  .chips{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:14px}
+  @media(max-width:900px){.chips{grid-template-columns:repeat(2,1fr)}}
+  .chip5{background:var(--paper-light);border:var(--border);border-radius:12px;padding:15px 16px}
+  .chip5 .ct{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);margin-bottom:7px}
+  .chip5 .cd{font-size:13.5px;color:var(--slate);line-height:1.4}
+
+  .placeholder{margin-top:40px;border:1.5px dashed rgba(46,93,75,.3);border-radius:var(--radius);padding:40px;text-align:center;color:var(--slate)}
+  .placeholder .pn{font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:8px}
+
+  /* ANATOMY */
+  .anat{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
+  @media(max-width:980px){.anat{grid-template-columns:repeat(2,1fr)}}
+  .anat .a{background:var(--paper-light);border:var(--border);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow)}
+  .anat .a .n{font-family:var(--font-mono);font-size:12px;color:var(--amber-deep);margin-bottom:10px}
+  .anat .a h3{font-size:18px;margin-bottom:8px}
+  .anat .a p{font-size:14.5px;color:var(--slate);margin:0}
+
+  /* BENEFITS */
+  .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+  @media(max-width:980px){.benefits{grid-template-columns:repeat(2,1fr)}}
+  .ben{padding:24px 22px;border-radius:var(--radius);border:var(--border);background:var(--paper-light)}
+  .ben.c1{background:#fff}
+  .ben h3{font-size:16px;margin-bottom:10px;color:var(--forest)}
+  .ben p{font-size:14.5px;color:var(--slate);margin:0}
+
+  /* DIFFERENTIATOR / CTA */
+  .diff{background:var(--forest);color:#EAF1EC;border-radius:22px;padding:56px 48px;margin-top:20px;text-align:center}
+  .diff .kicker{color:var(--sage)}
+  .diff h2{color:#fff;font-size:38px;max-width:22ch;margin:0 auto 18px}
+  .diff p{color:#CFE0D6;max-width:52ch;margin:0 auto 30px;font-size:18px}
+  .diff .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .diff .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+  .diff .btn-ghost:hover{border-color:#fff;color:#fff}
+
+  footer{padding:44px 0;background:var(--paper);text-align:center;color:var(--mist);font-size:14px}
+  footer .bx{font-family:var(--font-display);font-weight:700;color:var(--slate);margin-bottom:6px}
+  .note{font-family:var(--font-mono);font-size:11px;letter-spacing:.05em;color:var(--mist);margin-top:10px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav"><div class="wrap">
+  <div class="brand"><span class="mark">&rarr;</span>Prompt <span>&rarr;</span> Autopilot</div>
+  <nav class="navlinks">
+    <a href="#meet">Meet Lumen</a>
+    <a href="#people">The people</a>
+    <a href="#anatomy">What it is</a>
+    <a href="#difference">The difference</a>
+    <a href="#join" class="btn btn-primary">Join the next group</a>
+  </nav>
+</div></header>
+
+<!-- HERO -->
+<section class="hero" style="border-bottom:0">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>Meet Lumen &middot; a company running on an AIOS</span>
+      <h1>Do your best work.</h1>
+      <p class="lede">An AI operating system that takes the busywork off your desk, so your time goes to the work only you can do.</p>
+      <p class="analogy">It is like having a chief of staff, a researcher, an analyst and a writer who all already know your business.</p>
+      <div class="cta">
+        <a href="#people" class="btn btn-primary">Explore Lumen</a>
+        <a href="#join" class="btn btn-ghost">Join the next group</a>
+      </div>
+    </div>
+
+    <div class="mock" aria-hidden="true">
+      <div class="mtop">
+        <span class="who">erin &middot; Lumen &middot; Claude Cowork</span>
+        <span class="live"><span class="d"></span>ran overnight</span>
+      </div>
+      <div class="mbody">
+        <p class="mlabel">Daily brief &middot; 07:00</p>
+        <p class="mbrief">Good morning. Here is today.</p>
+        <p class="mbrief-sub">Three objectives Amber, none Red. One cross-functional signal worth your attention first.</p>
+        <p class="mlabel">Your agents right now</p>
+        <div class="mrow"><span>Overnight leadership brief assembled</span><span class="mstatus s-done">done</span></div>
+        <div class="mrow"><span>Monday meeting written up to decision log</span><span class="mstatus s-done">done</span></div>
+        <div class="mrow"><span>Board pack narrative &middot; this quarter</span><span class="mstatus s-run">drafting</span></div>
+        <div class="mrow"><span>Reply to Caldera on SOC 2 timing</span><span class="mstatus s-queue">needs your OK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 THE BEFORE -->
+<section id="before">
+  <div class="wrap">
+    <span class="kicker">01 &middot; The before</span>
+    <h2 class="lead-h2">You are the memory. Every single time.</h2>
+    <div class="two" style="margin-top:26px">
+      <p class="muted" style="font-size:19px">Context scattered across inboxes and drives. Days lost to work that does not need you. Always one step behind your own business.</p>
+      <p class="muted" style="font-size:19px">It is not that AI cannot help. It is that nothing you own actually knows your world, so you brief it from scratch every time and correct half of what comes back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE REFERENCE COMPANY -->
+<section id="meet" style="background:var(--parchment)">
+  <div class="wrap">
+    <span class="kicker green">02 &middot; The reference company</span>
+    <h2 class="lead-h2">This is not a feature tour. It is a whole company.</h2>
+    <div class="two" style="margin-top:26px">
+      <p class="muted" style="font-size:19px">Lumen is a mid-market software company. Every leader, every function, running on an AIOS we built with the same programme, engine and system we install for our clients.</p>
+      <p class="muted" style="font-size:19px">The company and the people are invented. Everything else, the knowledge base, the skills, the dashboards, the connectors, is the real thing, running. We built it with synthetic data so we can open every door without exposing a real client. Nothing here is cherry-picked.</p>
+    </div>
+    <figure class="company-figure">
+      <img class="company-photo" src="assets/company/leadership-team.jpg" alt="The Lumen leadership team">
+      <figcaption class="company-cap">The Lumen leadership team &middot; a fictional reference company</figcaption>
+    </figure>
+    <p class="stack-note" style="margin-top:24px">Synthetic company &middot; real system &middot; the actual programme output</p>
+  </div>
+</section>
+
+<!-- 03 FIND YOUR PERSON -->
+<section id="people">
+  <div class="wrap">
+    <span class="kicker">03 &middot; Find your person</span>
+    <h2 class="lead-h2">Whose job is closest to yours?</h2>
+    <p class="muted" style="margin-top:18px;max-width:60ch">Pick the leader who does what you do. See their working week before and after, and the system that changed it. Start with Erin, the founder, for the whole-company view.</p>
+
+    <div class="tiles" id="tiles">
+      <button class="tile active" data-p="erin">
+        <img class="av" src="assets/headshots/erin.jpg" alt="Erin Whitfield">
+        <span class="nm">Erin Whitfield</span>
+        <span class="rl">Founder &amp; MD</span>
+        <span class="seg">Founders &amp; owners</span>
+      </button>
+      <button class="tile" data-p="marcus"><img class="av" src="assets/headshots/marcus.jpg" alt="Marcus Bell"><span class="nm">Marcus Bell</span><span class="rl">Sales Director</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="sam"><img class="av" src="assets/headshots/sam.jpg" alt="Sam Doyle"><span class="nm">Sam Doyle</span><span class="rl">Account Executive</span><span class="seg">Sales team</span></button>
+      <button class="tile" data-p="nadia"><img class="av" src="assets/headshots/nadia.jpg" alt="Nadia Hassan"><span class="nm">Nadia Hassan</span><span class="rl">CTO, Engineering</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="olu"><img class="av" src="assets/headshots/olu.jpg" alt="Olu Adeyemi"><span class="nm">Olu Adeyemi</span><span class="rl">Head of Product</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="priya"><img class="av" src="assets/headshots/priya.jpg" alt="Priya Nandra"><span class="nm">Priya Nandra</span><span class="rl">Marketing Director</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="tom"><img class="av" src="assets/headshots/tom.jpg" alt="Tom Achebe"><span class="nm">Tom Achebe</span><span class="rl">VP Customer</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="geoff"><img class="av" src="assets/headshots/geoff.jpg" alt="Geoff Holloway"><span class="nm">Geoff Holloway</span><span class="rl">Finance &amp; Operations</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="sadie"><img class="av" src="assets/headshots/sadie.jpg" alt="Sadie Klein"><span class="nm">Sadie Klein</span><span class="rl">Head of People</span><span class="seg">Leaders &amp; teams</span></button>
+      <button class="tile" data-p="fiona"><img class="av" src="assets/headshots/fiona.jpg" alt="Fiona Carmichael"><span class="nm">Fiona Carmichael</span><span class="rl">General Counsel</span><span class="seg">Professionals</span></button>
+      <button class="tile" data-p="owen"><img class="av" src="assets/headshots/owen.jpg" alt="Owen Pryce"><span class="nm">Owen Pryce</span><span class="rl">Head of IT</span><span class="seg">Professionals</span></button>
+    </div>
+
+    <!-- PERSONA PANEL: ERIN -->
+    <div id="persona-panel">
+      <div id="panel-erin">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/erin.jpg" alt="Erin Whitfield, Founder and Managing Director of Lumen">
+          <div>
+            <div class="panel-head">
+              <h3>Erin Whitfield</h3>
+              <span class="role">Founder &amp; Managing Director &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Erin runs a 140-person software company with eight leaders reporting to her. She owns the whole scorecard, from ARR growth to the board relationship, and she is the person who has to hold the entire picture in her head.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Half a picture, assembled by hand</h3>
+            <p class="muted">Monday morning, seven inboxes deep, building a view of the company to carry into the leadership meeting. She walks in knowing about half of what is happening across functions, the rest pieced together at the table.</p>
+            <ul>
+              <li>The cross-functional connections are real, but she has to make them herself, after the fact, when she happens to notice.</li>
+              <li>The board pack is two weeks of evenings at quarter end, a picture she already carries, extracted from eight sources under pressure.</li>
+              <li>A general AI assistant helped with the writing but knew nothing about Lumen, so every task started cold.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>The whole company, read in five minutes</h3>
+            <p class="muted">She opens one thing, the Founder Strategic view, and reads the brief the system produced overnight. OKR exceptions, the cross-functional picture, and the two or three calls that need her this week.</p>
+            <ul>
+              <li>This week it flags one signal early: the Manchester SDR pipeline and Professional Services capacity straining on the same accounts, spotted across two functions at once.</li>
+              <li>The Monday meeting writes itself up to the decision log, drafted for her approval. She fixes two things and approves the rest.</li>
+              <li>The board pack is shaped across the quarter, a first draft ready three weeks out. She still makes every call. The system removes the assembly, not the judgement.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Her dashboard, live</span>
+            <span class="lab">Lumen &middot; Founder Strategic view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; founder-strategic.html</span></div>
+            <iframe src="dashboards/founder-strategic.html" title="Lumen Founder Strategic dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;Every Monday, she reads the whole company in five minutes. Then she decides.&rdquo;</p>
+          <div class="result-grid">
+            <div class="rstat"><div class="v">~2 hrs</div><div class="l">a week back from assembly work</div></div>
+            <div class="rstat"><div class="v">2 hrs</div><div class="l">to finish the board pack, not two weeks of evenings</div></div>
+            <div class="rstat"><div class="v">&lt;24 hrs</div><div class="l">decision log current after every meeting</div></div>
+            <div class="rstat"><div class="v">1 signal</div><div class="l">cross-functional risk caught early each quarter</div></div>
+          </div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Erin's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">Strategy, OKRs, the decision log and every function's context, in one place the AI reads.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Founder brief, meeting intelligence, board-pack drafting, cross-functional synthesis.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">The Founder Strategic view: exceptions and the calls that need her, not a wall of numbers.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">The weekday brief, the Monday write-up, the board-pack assembly, all running on schedule.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">Each function's data, the calendar, email, and the meeting recordings, drawn together.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OTHER PERSONA PANELS -->
+      <div id="panel-marcus" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/marcus.jpg" alt="Marcus Bell, Sales Director">
+          <div>
+            <div class="panel-head">
+              <h3>Marcus Bell</h3>
+              <span class="role">Sales Director &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Marcus Bell runs sales at Lumen. He owns the revenue engine, a £6.5M new-ARR target, four teams of about 28 people and every key account.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>The number lives in his head</h3>
+            <p class="muted">He starts each morning trying to answer one question he cannot yet answer, are we going to hit the quarter.</p>
+            <ul>
+              <li>The pipeline is never quite current, so a deal goes quiet for eleven days and nobody flags it.</li>
+              <li>The forecast gets rebuilt by hand from a pipeline he does not fully trust, part arithmetic, part gut.</li>
+              <li>He was in three of twenty meetings, so coaching is guesswork and he takes the rep's sunny word for the rest.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>One screen, a current picture</h3>
+            <p class="muted">He opens the Command Centre, reads the brief written overnight, and starts the day knowing where the quarter stands.</p>
+            <ul>
+              <li>The stalled Verda deal is surfaced at day eleven as the biggest risk, with a follow-up already drafted for his review.</li>
+              <li>The forecast rolls up into Commit, Best Case and Pipeline, informed by what was said in the room, not by optimism.</li>
+              <li>Every meeting writes itself up against the playbook and MEDDPICC, so he can coach from evidence he can see.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Marcus's dashboard, live</span>
+            <span class="lab">Lumen &middot; Sales Command Centre &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; pipeline.html</span></div>
+            <iframe src="dashboards/pipeline.html" title="Lumen Sales Command Centre dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;You carry the number in your head, and your head is tired by Thursday.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">~5 hrs</div><div class="l">a week back for coaching and customers</div></div><div class="rstat"><div class="v">1-2 hrs</div><div class="l">weekly assembly, was 6 to 8</div></div><div class="rstat"><div class="v">day 11</div><div class="l">stalled deal caught, not quarter end</div></div><div class="rstat"><div class="v">£6.5M</div><div class="l">annual new-ARR target he owns</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Marcus's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The sales playbook, MEDDPICC, competitive battlecards, deal-desk rules, product information and Marcus's own voice samples.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Keep the pipeline true, research accounts, draft quotes, roll up the forecast, write up meetings, coach reps.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Pipeline by stage, forecast in three categories, key-account progress, and at-risk or stalled deals as the exception view.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">A weekday morning brief, an email pass drafting into review, a weekly forecast roll-up, knowledge-base lint.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The CRM, the knowledge base, recorded meeting transcripts and the pending-review folder where every outbound draft waits.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-nadia" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/nadia.jpg" alt="Nadia Hassan, CTO">
+          <div>
+            <div class="panel-head">
+              <h3>Nadia Hassan</h3>
+              <span class="role">CTO &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Nadia Hassan is CTO at Lumen, owning an engineering organisation of about 44 people across delivery squads, platform reliability, security and data, plus six product-embedded vendor relationships.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>The connective tissue is her memory</h3>
+            <p class="muted">Her morning starts with overnight Slack threads and ninety minutes assembling a picture she does not quite have yet.</p>
+            <ul>
+              <li>A vendor incident has to be reconstructed from a Slack thread, and a leadership question takes forty minutes of contract archaeology.</li>
+              <li>Delivery status is triangulated from squad-lead updates against a release plan last touched four days ago.</li>
+              <li>Six vendor relationships live in her head, and she cannot name the payments renewal date without checking.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>Fifteen minutes of reading</h3>
+            <p class="muted">She opens the engineering brief built overnight and knows what she needs in two minutes, not ninety.</p>
+            <ul>
+              <li>The overnight incident is summarised with cause, resolution and SLA impact, and vendor-health answers Erin's question before she asks.</li>
+              <li>A delivery view reads the filed squad updates, so she sees what shipped, what is in progress and what is blocked without every standup.</li>
+              <li>The vendor register surfaces the payments renewal three weeks early, with contract date, terms and the squad's flagged API dependency.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Nadia's dashboard, live</span>
+            <span class="lab">Lumen &middot; Engineering view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; engineering.html</span></div>
+            <iframe src="dashboards/engineering.html" title="Lumen Engineering view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;She knew the platform uptime. The system knew it the moment the incident closed.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">~90 min</div><div class="l">a day back for architecture and hiring</div></div><div class="rstat"><div class="v">30-45 min</div><div class="l">daily assembly, was 2 to 3 hrs</div></div><div class="rstat"><div class="v">99.94%</div><div class="l">uptime against a 99.9% target</div></div><div class="rstat"><div class="v">6 vendors</div><div class="l">dependencies tracked with renewals</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Nadia's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The platform architecture overview, squad charter and release plan, vendor-dependency register, incident log and security controls summary.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Assemble the engineering brief, surface delivery across squads, maintain vendor health, prepare the board section, structure post-mortems.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Delivery flow by squad, release status, uptime and incidents, and vendor-dependency health as the distinctive exception panel.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">A weekday morning brief, a weekly vendor-health check, knowledge-base lint, and post-mortem prompts when an incident closes unfiled.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The knowledge base, monitoring and uptime data, vendor SLA and contract records, the incident log, and recorded vendor and post-mortem calls.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-olu" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/olu.jpg" alt="Olu Adeyemi, Head of Product">
+          <div>
+            <div class="panel-head">
+              <h3>Olu Adeyemi</h3>
+              <span class="role">Head of Product &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Olu Adeyemi is Head of Product at Lumen, owning the roadmap, prioritisation and the definition of what gets built. He runs about nine people and is the thread through the Assets 2.0 launch.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Synthesis done from memory at night</h3>
+            <p class="muted">He loves the discovery calls, but everything that follows, the write-ups and the synthesis, piles up unfinished.</p>
+            <ul>
+              <li>He cannot say whether five customers or fifteen raised a theme, because the notes sit in three formats in three places.</li>
+              <li>A spec decision waits forty minutes while he hunts for the customer quote that settles it, then argues from memory instead.</li>
+              <li>The monthly themes summary takes a full day of his best thinking, mostly spent collating rather than reasoning.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>A running synthesis, always current</h3>
+            <p class="muted">Each recorded call writes itself up against the roadmap and the themes to date, so the picture assembles itself.</p>
+            <ul>
+              <li>When Erin asks how many customers raised the SLA reporting gap, he answers exactly, seven in three weeks, five of them commercial FM.</li>
+              <li>Spec reviews run from cited customer evidence rather than reconstructed reasoning, so decisions are better and faster.</li>
+              <li>The Assets 2.0 launch checklist updates as actions complete, so he reviews the exceptions instead of chasing the whole list.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Olu's dashboard, live</span>
+            <span class="lab">Lumen &middot; Product view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; product.html</span></div>
+            <iframe src="dashboards/product.html" title="Lumen Product view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;Forty conversations in the synthesis, not the fifteen he managed to write up himself.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">1 hr</div><div class="l">monthly synthesis, was a full day</div></div><div class="rstat"><div class="v">All</div><div class="l">customer calls in view, was 40%</div></div><div class="rstat"><div class="v">7 calls</div><div class="l">SLA theme surfaced with evidence</div></div><div class="rstat"><div class="v">2-3 hrs</div><div class="l">weekly launch overhead removed</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Olu's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The roadmap context, Assets 2.0 brief, discovery process and templates, the beta programme spec and the running discovery synthesis.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Maintain the roadmap and launch tracker, synthesise discovery calls, draft specs and beta summaries, surface launch exceptions.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Roadmap status, the Assets 2.0 launch checklist, discovery themes with supporting call counts, and beta cohort status.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">A weekday morning brief, a weekly product-review brief assembling themes, knowledge-base lint, discovery write-ups run on the call.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The product knowledge base, roadmap register, recorded discovery-call transcripts, the decision log and the pending-review folder.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-priya" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/priya.jpg" alt="Priya Nandra, Marketing Director">
+          <div>
+            <div class="panel-head">
+              <h3>Priya Nandra</h3>
+              <span class="role">Marketing Director &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Priya Nandra is Marketing Director at Lumen. She owns the whole marketing function, brand, demand generation, content, product marketing and events, and runs a team of eleven to twelve.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Four tools, none of them agree</h3>
+            <p class="muted">The campaign picture lives in scattered systems that never reconcile, so most of the week goes on assembly rather than judgement.</p>
+            <ul>
+              <li>Checking campaign status means opening the email platform, the tracker, a spreadsheet and the project tool, and finding the discrepancy just before the ten o'clock.</li>
+              <li>Two ad variants perform very differently but nothing ties them back to pipeline, so the renewal decision gets made on half the picture.</li>
+              <li>An off-brand AI tool produced fluent text that sounded nothing like Lumen, so every draft needed a full rewrite and the team dropped it within a month.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>One view, drafts that sound like Lumen</h3>
+            <p class="muted">The system removes the assembly and drafts in the real brand voice, so Priya reviews and decides instead of rebuilding.</p>
+            <ul>
+              <li>The morning brief shows what has gone, what is queued and what is at risk, with demand-gen numbers ready and the AI-referral share broken out.</li>
+              <li>Ad and LinkedIn variants come back resolved with the winner shown on click-through and downstream pipeline, and a fresh variant already drafted.</li>
+              <li>A GEO panel shows whether Lumen is cited when buyers ask ChatGPT or Perplexity about field-service software, and recommends citable content.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Priya's dashboard, live</span>
+            <span class="lab">Lumen &middot; Campaigns view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; campaigns.html</span></div>
+            <iframe src="dashboards/campaigns.html" title="Lumen Campaigns view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;It drafts in your brand voice because it read your actual voice corpus, not a generic marketing template.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">3-4 hrs</div><div class="l">a week back from assembly</div></div><div class="rstat"><div class="v">1-2 hrs</div><div class="l">weekly assembly, was 4 to 6</div></div><div class="rstat"><div class="v">1 day</div><div class="l">A/B test resolved, not left to renewal</div></div><div class="rstat"><div class="v">4 to 1</div><div class="l">launch tools cut to one view</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Priya's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">Brand and positioning, messaging framework, campaign calendar, content strategy, demand-gen channels, launch playbook, SEO and GEO trackers.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Unified campaign calendar, brand-voice drafting, A/B tested creative, GEO monitoring, demand-gen reporting, content repurposing and competitor watch.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Campaign calendar, demand-gen funnel with AI-referral line, content pipeline, launch tracker, website, SEO and GEO visibility, A/B performance.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief, email pass drafting to pending review, weekly campaign-performance summary, and a periodic website, SEO and GEO scan.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">Email platform, ad and LinkedIn channels, website and SEO data, AI search engines, the Sales knowledge base and meeting transcripts.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-tom" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/tom.jpg" alt="Tom Achebe, VP Customer">
+          <div>
+            <div class="panel-head">
+              <h3>Tom Achebe</h3>
+              <span class="role">VP Customer &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Tom Achebe is VP Customer at Lumen, accountable for retention, the company's priority metric. He runs three teams, Customer Success, Support and Professional Services, about twenty-eight people in total.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Account health lives in people's heads</h3>
+            <p class="muted">Tom reconstructs the customer picture from Slack, spreadsheets and a stale CRM, and learns about at-risk accounts too late to act.</p>
+            <ul>
+              <li>His first act each Monday is to Slack Hannah and ask how the week looks, because he has no way to see account risk without asking.</li>
+              <li>A customer drifts as usage drops, a ticket sits and a champion leaves, but nobody joins the signals up until it is mentioned weeks later.</li>
+              <li>An AI note-taker captured meetings but its summaries were generic and disconnected from account context, so CSMs wrote up their own anyway.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>The picture surfaced, not assembled</h3>
+            <p class="muted">The system joins the signals and surfaces the account picture, so Tom forms his own view and catches risk with runway to act.</p>
+            <ul>
+              <li>The Monday brief flags the three accounts that warrant attention, cross-referencing CSM concern against support patterns to rate churn risk.</li>
+              <li>Onboarding slippage shows up when it happens, so Halcyon is five days behind at day four rather than discovered at day thirty-four.</li>
+              <li>Meeting write-ups generate in context against account history and renewal timeline, so CSMs stay present and Tom reads what was said.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Tom's dashboard, live</span>
+            <span class="lab">Lumen &middot; Customer Health view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; customer-health.html</span></div>
+            <iframe src="dashboards/customer-health.html" title="Lumen Customer Health view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;The signals were always there. The system joins them up six weeks before renewal, while there is still runway to act.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">1-2 hrs</div><div class="l">monthly report, was most of a Friday</div></div><div class="rstat"><div class="v">6 weeks</div><div class="l">early warning before renewal</div></div><div class="rstat"><div class="v">Day 4</div><div class="l">onboarding slip caught, not day 34</div></div><div class="rstat"><div class="v">1 saved</div><div class="l">account renewed and expanded</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Tom's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">CS playbook, support SLA model, implementation process, account health methodology, the account register, renewal calendar and implementation tracker.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Surface at-risk accounts, flag onboarding slippage, prepare renewal briefs, track support patterns, assemble retention reporting, coach from real calls.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Onboarding and implementation status, support queue and SLA summary, health scores and at-risk accounts, renewal pipeline, a coaching view.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief refreshing the health view, an email pass drafting to pending review, a weekly retention summary and dashboard refresh.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">Support ticket queue, the CRM, the implementation tracker, renewal calendar, meeting transcripts, and Sales for shared account health.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-geoff" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/geoff.jpg" alt="Geoff Holloway, Finance &amp; Operations Director">
+          <div>
+            <div class="panel-head">
+              <h3>Geoff Holloway</h3>
+              <span class="role">Finance &amp; Operations Director &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Geoff Holloway is Finance and Operations Director at Lumen, owning the numbers, the metric definitions, board reporting and a vendor base of thirty to forty suppliers. He runs a team of about nine.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>The numbers live in three places</h3>
+            <p class="muted">Metrics disagree across systems, renewals slip through unnoticed, and board prep is a fortnight of assembly compressed into a scramble.</p>
+            <ul>
+              <li>ARR is right in two systems and wrong in a third, and none agree on NRR because one runs calendar-month and another trailing twelve months.</li>
+              <li>A vendor auto-renewed on legacy terms rather than the renegotiated rate because the notice went to an engineer who had since left.</li>
+              <li>Board prep pulls from four or five sources, so Geoff writes the narrative twice, once when he thinks the numbers are final and once when they change.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>Prepared, not improvising</h3>
+            <p class="muted">The system assembles the pack and the renewal picture from agreed definitions, so Geoff shapes the narrative and walks in prepared.</p>
+            <ul>
+              <li>The morning brief gives one gross margin figure from the agreed definitions, cross-checked against the close, the same whichever system you open.</li>
+              <li>The renewal calendar no longer leaks, flagging anything in the next thirty days with usage and benchmark data pulled before the window closes.</li>
+              <li>Vendor and board commitments are captured at the time from the write-up, so Geoff walks into the next session knowing what he promised.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Geoff's dashboard, live</span>
+            <span class="lab">Lumen &middot; Finance and Operations view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; finance-ops.html</span></div>
+            <iframe src="dashboards/finance-ops.html" title="Lumen Finance and Operations view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;The system prepares the pack. Geoff shapes the narrative. Nothing renews on legacy terms because nothing slips through unnoticed.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">4-5 hrs</div><div class="l">a week back from assembly</div></div><div class="rstat"><div class="v">83%</div><div class="l">gross margin, one agreed figure</div></div><div class="rstat"><div class="v">30 days</div><div class="l">renewal window flagged ahead</div></div><div class="rstat"><div class="v">22 months</div><div class="l">cash runway, live from the model</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Geoff's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">Metric definitions for ARR, MRR, NRR, margin, CAC and payback, board reporting format, vendor register model and procurement process.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Track metrics from agreed definitions, flag cashflow deviations, surface vendor renewals, draft invoice chases, assemble the board pack, track commitments.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">ARR and MRR movements, NRR and margin trend, cashflow bridge and runway, board metrics in OKR format, vendor renewal register as an exception view.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief with metric position and renewal calendar, email pass drafting chases to pending review, weekly metric refresh and update.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">Accounting system, the FP&amp;amp;A cashflow model, the vendor register, board pack format, meeting transcripts, and shared metric definitions.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-sadie" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/sadie.jpg" alt="Sadie Klein, Head of People">
+          <div>
+            <div class="panel-head">
+              <h3>Sadie Klein</h3>
+              <span class="role">Head of People &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Sadie Klein is Head of People at Lumen, on the executive team, running a team of four to five and owning hiring, onboarding, appraisals, 1:1s, training and culture across a growing headcount.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Running the people function by memory</h3>
+            <p class="muted">The information she needs is scattered across a spreadsheet, an HR system and email, so she assembles it by hand.</p>
+            <ul>
+              <li>The hiring pipeline is a forty-row spreadsheet updated only when people remember, so she chases hiring managers for feedback twice a week.</li>
+              <li>A new starter joins Monday and she cannot confirm the IT equipment was requested, then rebuilds the onboarding schedule from a stale template.</li>
+              <li>Overdue appraisals are carried in her head, so she cannot tell Erin honestly how the cycle is going without pulling and formatting HR data.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>Assembly and chasing gone, judgement kept</h3>
+            <p class="muted">The system surfaces stalls, drafts the chasing and prepares the papers, while Sadie still makes every call about a person.</p>
+            <ul>
+              <li>The overnight brief flags roles with no action logged in a week and drafts a chase to each hiring manager, waiting in her review folder.</li>
+              <li>The training report is already built, eight people incomplete with names and managers and a draft chase each, cleared in eight minutes not forty.</li>
+              <li>Interviews are recorded with prior consent and returned as a factual debrief with no score, rating or recommendation, for the human panel to decide.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Sadie's dashboard, live</span>
+            <span class="lab">Lumen &middot; People view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; people.html</span></div>
+            <iframe src="dashboards/people.html" title="Lumen People view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;The system did not solve the people problems. It gave her the time to solve them herself.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">2-3 hrs</div><div class="l">admin a week, now ~30 min review</div></div><div class="rstat"><div class="v">Same-day</div><div class="l">hiring-manager chase cycle</div></div><div class="rstat"><div class="v">8 mins</div><div class="l">training chase, was 40 minutes</div></div><div class="rstat"><div class="v">Zero</div><div class="l">scores or rankings on any person</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Sadie's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The hiring process and role briefs, onboarding steps, the appraisal and 1:1 cycle, training register and interview competency frameworks.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Keeps the pipeline current, surfaces onboarding items early, tracks appraisal compliance, drafts chases, runs consent-first interview and 1:1 write-ups.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Hiring pipeline by stage with days-at-stage, onboarding amber and red items, appraisals due and overdue, training compliance by function.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief refreshing pipeline, onboarding and appraisals, a daily chasing-message pass to review, weekly compliance refresh, lint.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The HR system, the hiring pipeline, calendar, inbox and, with consent, recorded interviews and 1:1s in a bounded people area.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-fiona" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/fiona.jpg" alt="Fiona Carmichael, General Counsel">
+          <div>
+            <div class="panel-head">
+              <h3>Fiona Carmichael</h3>
+              <span class="role">General Counsel &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Fiona Carmichael is General Counsel at Lumen, running a four-person function across Commercial Legal and Compliance, with a direct line to the board and ownership of the SOC 2 audit that unblocks the upmarket move.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Records that never quite talk</h3>
+            <p class="muted">Legal and compliance records are spread across a document store, spreadsheets and personal notes that never connect, so everything is assembled on demand.</p>
+            <ul>
+              <li>The contract register is a spreadsheet she trusts only roughly, current enough for the five things she carries in her head and no further.</li>
+              <li>A new cloud vendor has been live three weeks with its risk assessment pending and its DPA unsigned, the gap an enterprise buyer's legal team finds.</li>
+              <li>A master tracker built six months earlier worked for five weeks, then went stale because maintaining it was itself a job that lost to the actual work.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>Registers current, judgement still hers</h3>
+            <p class="muted">The dashboard builds the picture from the register, surfaces the at-risk items and drafts the outbound, while Fiona makes every legal judgement.</p>
+            <ul>
+              <li>The sub-processor gap surfaces before the prospect call rather than because of it, with drafts to Aileen and Geoff already waiting in her review folder.</li>
+              <li>Each SOC 2 evidence request maps to a control and its documents, so Aileen reviews in a day what used to take three to find.</li>
+              <li>Negotiation meetings are written up against the contract and risk register, with commitments flagged for her sign-off and nothing recorded without it.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Fiona's dashboard, live</span>
+            <span class="lab">Lumen &middot; Legal and Compliance view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; legal-compliance.html</span></div>
+            <iframe src="dashboards/legal-compliance.html" title="Lumen Legal and Compliance view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;Not a policy document. The actual controls, demonstrated.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">4-5 hrs</div><div class="l">a week back, now ~1 hr review</div></div><div class="rstat"><div class="v">~50%</div><div class="l">less time finding SOC 2 evidence</div></div><div class="rstat"><div class="v">3-4 days</div><div class="l">new-vendor DPA gap, was weeks</div></div><div class="rstat"><div class="v">Within hrs</div><div class="l">counterparty follow-up, was next day</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Fiona's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The contract templates, the standard positions on key clauses, the sub-processor list, risk register, certification status and processing-basis register.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Keeps the contract register current, flags new vendors needing a DPA, drafts language and deviations, prepares renewal briefings and audit reports.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">Contract pipeline with at-risk and overdue items, renewals in eight weeks, sub-processor status, risk register by severity, certification progress.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief on at-risk contracts and certification, an email pass drafting nudges to review, a weekly register refresh, knowledge-base lint.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The document store, contract and risk registers, sub-processor list, inbox and calendar, plus consent-recorded negotiation and audit meetings.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-owen" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/owen.jpg" alt="Owen Pryce, Head of IT">
+          <div>
+            <div class="panel-head">
+              <h3>Owen Pryce</h3>
+              <span class="role">Head of IT &middot; Lumen</span>
+            </div>
+            <p class="panel-world">Owen Pryce is Head of IT at Lumen, running a three-person team that owns the service desk for roughly 140 staff, identity and access, devices, a 60-plus SaaS estate, and the safe rollout of new tools including AI.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Accountable for AI he cannot see</h3>
+            <p class="muted">He is answerable for a tool estate and an access picture he cannot show cleanly on demand, while the ticket queue always wins the day.</p>
+            <ul>
+              <li>The queue opens with thirty-one items, mostly the same four or five problems, and he works them himself because his two juniors are stretched.</li>
+              <li>A Manchester SDR starts using a free AI note-taker he has never heard of, the third shadow-AI entry that month, with no idea what it does with the audio.</li>
+              <li>A leaver left nine days ago and he is only fairly sure her CRM access was revoked, which is not the answer he wants to give an auditor.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>Governance he can see and test</h3>
+            <p class="muted">The system sorts the queue, prepares the access requests and runs a real sanctioned-versus-shadow register, while Owen makes every security decision.</p>
+            <ul>
+              <li>The overnight brief has drafted ticket responses, resolved routine ones via self-service, and flagged the few that need him with the reason.</li>
+              <li>The shadow-AI note-taker surfaces in the usage register from a new domain in expense and traffic patterns, with a warm draft offering the sanctioned alternative.</li>
+              <li>He tried hard to find the gap where the system would act on its own or skip the human check, could not, and moved from reviewer to advocate.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Owen's dashboard, live</span>
+            <span class="lab">Lumen &middot; IT Service view &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; it-service.html</span></div>
+            <iframe src="dashboards/it-service.html" title="Lumen IT Service view dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;Not fewer people using AI. More people using AI Owen actually knows about.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">4 mins</div><div class="l">to review a new tool, was 40</div></div><div class="rstat"><div class="v">Day one</div><div class="l">joiner access ready, not day three</div></div><div class="rstat"><div class="v">~140</div><div class="l">staff served by a three-person team</div></div><div class="rstat"><div class="v">Export</div><div class="l">compliance evidence, not a week's rebuild</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Owen's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The IT service model and SLAs, the joiner, mover and leaver process, the device and app-estate approach, and the AI-tool review and sanctioning process.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">Triages tickets, serves self-service answers, prepares access requests, tracks the estate, maintains the shadow-AI register and supports the AIOS rollout.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">The ticket queue and SLA, the asset and identity register, access and security exceptions, and the sanctioned-versus-shadow AI-adoption view.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">Weekday morning brief, a ticket-triage and self-service pass, a joiner-mover-leaver chase, a periodic access-review nudge, AI-usage refresh, lint.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">The service desk, SSO and MFA identity, device records, expense and traffic signals, the connector approvals, and consent-recorded IT meetings.</div></div>
+          </div>
+        </div>
+      </div>
+      <div id="panel-sam" style="display:none">
+        <div class="persona-intro">
+          <img class="portrait" src="assets/headshots/sam.jpg" alt="Sam Doyle, Account Executive">
+          <div>
+            <div class="panel-head">
+              <h3>Sam Doyle</h3>
+              <span class="role">Account Executive &middot; Lumen &middot; a rep on Marcus's team</span>
+            </div>
+            <p class="panel-world">Sam Doyle is an Account Executive at Lumen, one of Marcus Bell's reps working the Core SMB end of the pipeline. He carries a personal quota of about £240k of new ARR a year and runs four live deals end to end.</p>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="card">
+            <div class="tag">Before &middot; you do the work</div>
+            <h3>Admin eating the selling hours</h3>
+            <p class="muted">Sam sells all week, then loses the evenings to writing it all up.</p>
+            <ul>
+              <li>Yesterday's call goes soft before he types three thin lines into the CRM and moves on.</li>
+              <li>Harlow has gone quiet on price and he has no clean signal for how urgent it really is.</li>
+              <li>He builds the Dale Valley demo from memory and a skim of their website in the car.</li>
+            </ul>
+          </div>
+          <div class="card after">
+            <div class="tag">After &middot; it works for you</div>
+            <h3>The rep who stopped taking notes</h3>
+            <p class="muted">The same week, with the admin around the deal lifted off him.</p>
+            <ul>
+              <li>Calls write themselves up against the playbook and MEDDPICC, filed to the CRM with tasks created, before he is back at his desk.</li>
+              <li>Harlow surfaces first, one customer across two systems, the Amber deal and the Red account joined as one thing that needs him today.</li>
+              <li>He walks into every meeting present and listening, having read a prepared brief instead of a website in the car.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dash">
+          <div class="dash-cap">
+            <span class="kicker green" style="margin:0">Sam's dashboard, live</span>
+            <span class="lab">Lumen &middot; My Sales Desk &middot; illustrative data</span>
+          </div>
+          <div class="dash-frame">
+            <div class="bar"><span class="u"></span><span class="u2"></span><span class="u3"></span><span class="lbl">lumen-aios &middot; sales-rep.html</span></div>
+            <iframe src="dashboards/sales-rep.html" title="Lumen My Sales Desk dashboard" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="rk">Illustrative result</div>
+          <p class="rquote">&ldquo;Nothing here is technically hard. What changes is who is left holding the admin, and it is not him.&rdquo;</p>
+          <div class="result-grid"><div class="rstat"><div class="v">6-7 hrs</div><div class="l">a week lost to admin</div></div><div class="rstat"><div class="v">~1 hr</div><div class="l">a week reviewing and editing</div></div><div class="rstat"><div class="v">Same day</div><div class="l">follow-ups out, not days late</div></div><div class="rstat"><div class="v">£240k</div><div class="l">personal new-ARR quota</div></div></div>
+          <p class="illus">Illustrative figures for a synthetic company. Real before-and-after numbers come from the programme measurement spine, captured from actual participants.</p>
+        </div>
+
+        <div class="madeof">
+          <span class="kicker slate" style="margin:0">What Sam's AIOS is made of</span>
+          <div class="chips">
+            <div class="chip5"><div class="ct">Knowledge base</div><div class="cd">The one shared Sales knowledge base, the playbook, MEDDPICC, battlecards and deal-desk rules, read at rep scale.</div></div>
+            <div class="chip5"><div class="ct">Skills</div><div class="cd">The lumen-sales-rep sub-skill, a role variant that researches accounts, keeps his own MEDDPICC true and drafts quotes.</div></div>
+            <div class="chip5"><div class="ct">Dashboard</div><div class="cd">My Sales Desk, his own deals against quota, MEDDPICC gaps, customer health and a personal coaching view.</div></div>
+            <div class="chip5"><div class="ct">Tasks</div><div class="cd">The same morning brief and email pass as the team, scoped to Sam's own deals and inbox.</div></div>
+            <div class="chip5"><div class="ct">Connections</div><div class="cd">Meeting intelligence records and transcribes his calls, routing write-ups to the CRM and drafts to Pending Review.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ANATOMY -->
+<section id="anatomy" style="background:var(--parchment)">
+  <div class="wrap">
+    <span class="kicker">04 &middot; What an AIOS is made of</span>
+    <h2 class="lead-h2">Five parts. One system.</h2>
+    <div class="anat">
+      <div class="a"><div class="n">01</div><h3>A living knowledge base</h3><p>Everything about your company, products, people, policies and methods, in one place the AI actually reads. It stops being your job to remember everything.</p></div>
+      <div class="a"><div class="n">02</div><h3>Skills</h3><p>Role-specific AI workers that do real tasks: research, drafting, analysis, coaching, the repetitive work. Built for how you actually work.</p></div>
+      <div class="a"><div class="n">03</div><h3>Dashboards</h3><p>Not just numbers. Here is what it means and what to do next. Analysis, not reporting.</p></div>
+      <div class="a"><div class="n">04</div><h3>Task management</h3><p>Keeps you organised, and keeps the AIOS itself on track, so nothing falls through.</p></div>
+      <div class="a"><div class="n">05</div><h3>Connections</h3><p>Plugs into the systems you already run: CRM, ERP, case management, email, calendar, files. It works where your work already lives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BENEFITS -->
+<section id="benefits">
+  <div class="wrap">
+    <span class="kicker">05 &middot; What changes</span>
+    <h2 class="lead-h2">Better for everyone it touches.</h2>
+    <div class="benefits">
+      <div class="ben c1"><h3>For you</h3><p>Hours back. Sharper decisions. Less reactive, and more of the work that only you can do.</p></div>
+      <div class="ben"><h3>For your team</h3><p>Shared knowledge, consistent quality, and less bottlenecked on any one person.</p></div>
+      <div class="ben"><h3>For the company</h3><p>Faster and more capable, compounding as the system learns your business.</p></div>
+      <div class="ben"><h3>For your customers</h3><p>Quicker responses, better-prepared people, and fewer things dropped.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 DIFFERENCE + CTA -->
+<section id="difference" style="border-bottom:0">
+  <div class="wrap">
+    <div class="diff" id="join">
+      <span class="kicker">06 &middot; The difference</span>
+      <h2>We build it with you. Then we teach you to run it.</h2>
+      <p>Most people will either build you something and leave, or teach you and hand you a blank page. We do both. Lumen is what "built for you" looks like. The programme is how you get your own, and how you learn to keep extending it.</p>
+      <div class="cta">
+        <a href="#join" class="btn btn-primary">Join the next group</a>
+        <a href="#anatomy" class="btn btn-ghost">See how the programme works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="bx">Human-AI Systems &times; Third Circle</div>
+    <div>From Prompt to Autopilot &middot; built with you, yours to keep</div>
+    <div class="note">Lumen is a fictional reference company built by Human-AI Systems to demonstrate the programme. Company and people are synthetic; the system is real. Figures shown are illustrative.</div>
+  </div>
+</footer>
+
+<script>
+  var PKEYS = ["erin", "marcus", "sam", "nadia", "olu", "priya", "tom", "geoff", "sadie", "fiona", "owen"];
+  function selectPersona(p){
+    document.querySelectorAll('.tile').forEach(function(t){ t.classList.toggle('active', t.dataset.p===p); });
+    PKEYS.forEach(function(k){ var el=document.getElementById('panel-'+k); if(el){ el.style.display = (k===p ? 'block' : 'none'); } });
+    document.getElementById('persona-panel').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  document.querySelectorAll('.tile').forEach(function(t){
+    t.addEventListener('click', function(){ selectPersona(t.dataset.p); });
+  });
+</script>
+</body>
+</html>

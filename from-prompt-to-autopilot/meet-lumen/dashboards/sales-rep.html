@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen My Sales Desk</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-primary:#1C5FB0; --brand-primary-dark:#1F3A5F; --brand-accent:#F2A33C;
+    --brand-ink:#15243A; --brand-slate:#5B6B7F; --brand-mist:#E8EDF3; --brand-surface:#F5F8FC; --brand-white:#fff;
+    --status-green:#2E9E6B; --status-amber:#E8A13A; --status-red:#D1495B;
+    --font:'Source Sans 3','Source Sans Pro',Calibri,Arial,sans-serif;
+    --radius:12px; --shadow:0 1px 3px rgba(21,36,58,.08),0 6px 18px rgba(21,36,58,.07);--amber-ink:#7A5310;--amber-strong:#B9791A;--amber-tint:#FBE7C4;--cream-accent:#9A6A14;--cream-border:#F0D9AE;--cream-ink:#3A3326;--cream-tint:#FBF1DF;--green-bright:#7CE0A6;--green-tint:#BFE6CF;--head-ink-muted:#B9C6D6;--head-ink-soft:#CFE0F3;--head-ink-softer:#DCE9F6;--mist:#EAEFF6;--white:#FFF;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--mist);color:var(--brand-ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.5;font-size:18px;padding:0 0 60px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header.top{background:var(--brand-primary);color:var(--white);padding:22px 0;margin-bottom:26px;box-shadow:var(--shadow)}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:40px;height:40px}
+  .logo .wm{font-size:28px;font-weight:700;letter-spacing:-.01em;color:var(--white)}
+  .logo .wm span{color:var(--brand-accent)}
+  .view{font-size:16px;color:var(--head-ink-soft);font-weight:600}
+  .stamp{text-align:right;font-size:15px;color:var(--head-ink-softer)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--green-tint);margin-top:3px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green-bright);display:inline-block;box-shadow:0 0 0 3px rgba(124,224,166,.25)}
+  h1.title{font-size:30px;margin:0 0 2px;letter-spacing:-.01em}
+  .sub{font-size:16px;color:var(--head-ink-soft)}
+  .summary{background:var(--white);border:1px solid var(--brand-mist);border-left:5px solid var(--brand-primary);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .summary .k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-slate);margin:0 0 8px}
+  .summary p{margin:0;font-size:20px;color:var(--brand-ink)}
+  .summary b{color:var(--brand-primary-dark)}
+  .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:22px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--white);border:1px solid var(--brand-mist);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+  .panel h2{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-slate);margin:0 0 14px}
+  .panel .note{font-size:14px;color:var(--brand-slate);margin:14px 0 0}
+  .task{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--brand-mist)}
+  .task:last-child{border-bottom:0}
+  .box{width:18px;height:18px;border:2px solid var(--head-ink-muted);border-radius:5px;margin-top:3px;flex:none}
+  .task .t{font-size:17px}
+  .task .why{display:block;font-size:14px;color:var(--brand-slate);margin-top:2px}
+  .chip{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap;align-self:flex-start;flex:none;margin-top:2px}
+  .chip.red{color:var(--white);background:var(--status-red)} .chip.amber{color:var(--amber-ink);background:var(--amber-tint)} .chip.green{color:var(--white);background:var(--status-green)} .chip.blue{color:var(--white);background:var(--brand-primary)}
+  .row-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;width:100%}
+  .focus{background:var(--cream-tint);border:1px solid var(--cream-border);border-left:5px solid var(--brand-accent);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px}
+  .focus .k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-accent);margin:0 0 6px}
+  .focus p{margin:0;font-size:19px;color:var(--cream-ink)}
+  .focus b{color:var(--brand-ink)}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+  @media(max-width:820px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .metric{background:var(--white);border:1px solid var(--brand-mist);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+  .metric .l{font-size:14px;color:var(--brand-slate);font-weight:600;margin:0 0 6px}
+  .metric .v{font-size:34px;font-weight:700;color:var(--brand-primary-dark);line-height:1}
+  .metric .d{font-size:14px;margin-top:6px}
+  .metric .d.g{color:var(--status-green)} .metric .d.a{color:var(--amber-strong)} .metric .d.r{color:var(--status-red)}
+  .rev{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--brand-mist);font-size:16px}
+  .rev:last-child{border-bottom:0}
+  .rev .who{color:var(--brand-slate);font-size:14px;margin-top:2px}
+  .rev .val{font-weight:700;color:var(--brand-primary-dark);white-space:nowrap}
+  .foot{font-size:14px;color:var(--brand-slate);margin-top:26px;text-align:center}
+  .bar-row{margin:12px 0}
+  .bar-row .lbl{display:flex;justify-content:space-between;font-size:15px;margin-bottom:5px}
+  .bar-row .lbl b{color:var(--brand-primary-dark)}
+  .bar-track{position:relative;background:var(--brand-mist);border-radius:6px;height:16px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:6px;background:var(--brand-primary)}
+  .bar-fill.amber{background:var(--brand-accent)}
+  .pace{position:absolute;top:-3px;bottom:-3px;width:3px;background:var(--brand-primary-dark);border-radius:2px}
+  .med{padding:12px 0;border-bottom:1px solid var(--brand-mist)}
+  .med:last-child{border-bottom:0}
+  .med .h{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .med .h .nm{font-size:16px;font-weight:600}
+  .med .h .gp{font-size:13px;font-weight:700;color:var(--status-red);text-transform:uppercase;letter-spacing:.03em}
+  .med .h .gp.ok{color:var(--status-green)}
+  .med p{margin:3px 0 0;font-size:14px;color:var(--brand-slate)}
+  .wk{list-style:none;padding:0;margin:0}
+  .wk li{padding:9px 0;border-bottom:1px solid var(--brand-mist);font-size:16px}
+  .wk li:last-child{border-bottom:0}
+  .wk li b{color:var(--brand-ink)}
+  .wk .tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--brand-primary);margin-right:8px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:700px){.split{grid-template-columns:1fr}}
+  .coach h3{font-size:14px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px}
+  .coach h3.good{color:var(--status-green)} .coach h3.grow{color:var(--amber-strong)}
+  .coach p{margin:0;font-size:16px;color:var(--brand-ink)}
+</style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div>
+      <div class="logo"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="#fff" stroke-width="5"/><path d="M24 7 A17 17 0 0 1 41 24" fill="none" stroke="#F2A33C" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="24" r="5.5" fill="#F2A33C"/></svg><span class="wm">Lumen<span>.</span></span></div>
+      <div class="view">Sam's view · My Sales Desk</div>
+    </div>
+    <div class="stamp">Account Executive, New Business · Monday 07:00<span class="live"><span class="dot"></span> refreshed this morning</span></div>
+  </div></header>
+
+  <div class="wrap">
+    <h1 class="title">My deals, my customers, my week</h1>
+    <div class="sub">Sam's view · your own patch, not the team's. What needs you today, which customers to get ahead of, and the number. Nothing here was sent; every draft waits for you.</div>
+
+    <div class="summary" style="margin-top:20px">
+      <p class="k">Your morning brief</p>
+      <p>Morning, Sam. Two deals need you today. <b>Stonegate (£14k)</b> is a signature away, chase procurement before it drifts. <b>Harlow (£9.8k)</b> is the one to protect: FieldPro is undercutting on price and the same account has gone Red on the customer side, so the deal and the relationship are the same fire. You're at <b>£44.8k of the £60k quarter</b> once Commit lands, with <b>£47.8k of open pipeline</b> behind it. Re-opening Keston is your cleanest way to close the gap.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><p class="l">Quarter, committed</p><div class="v">£44.8k</div><div class="d a">of £60k quota · 75%, needs £15.2k</div></div>
+      <div class="metric"><p class="l">Annual to quota</p><div class="v">59%</div><div class="d a">£142k of £240k · behind £149k pace</div></div>
+      <div class="metric"><p class="l">My open pipeline</p><div class="v">£47.8k</div><div class="d g">4 live deals · 3.1× the quarter gap</div></div>
+      <div class="metric"><p class="l">Need you today</p><div class="v">2</div><div class="d r">Harlow (FieldPro + Red account), Stonegate</div></div>
+    </div>
+
+    <div class="panel" style="margin-bottom:22px">
+      <h2>My number</h2>
+      <div class="bar-row">
+        <div class="lbl"><span>This quarter</span><span><b>£44.8k</b> committed of £60k · <b>75%</b></span></div>
+        <div class="bar-track"><div class="bar-fill amber" style="width:75%"></div><div class="pace" style="left:83%" title="pace to date"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="lbl"><span>This year</span><span><b>£142k</b> of £240k · <b>59%</b></span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:59%"></div><div class="pace" style="left:62%" title="pace to date"></div></div>
+      </div>
+      <p class="note">Committed = closed this quarter (£21k) plus Commit-category deals (Stonegate £14k, Harlow £9.8k). The marker is where the pace line sits today. Best Case (Dale Valley £12.5k) and Pipeline (Meridian £11.5k) sit behind the gap.</p>
+    </div>
+
+    <div class="focus">
+      <p class="k">Surfaced first: the deal that is also a customer at risk</p>
+      <p><b>Harlow Plumbing Group (L-2029, £9,800) is Commit but Amber, and the account is Red.</b> FieldPro is undercutting on price on the deal, and on the CS side Harlow has raised explicit dissatisfaction on pricing with a renewal roughly two weeks out and no expansion open. Same customer, two systems, one problem. Lead with onboarding speed, hold your discount inside the 10% deal-desk ceiling, and loop Jamal Osei on the renewal today.</p>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>My deals</h2>
+        <div class="rev"><div>Stonegate Electrical · L-2031<div class="who">Core SMB · Negotiation · Commit · annual prepay agreed, awaiting signature</div></div><div style="text-align:right"><div class="val">£14.0k</div><span class="chip green">Green</span></div></div>
+        <div class="rev"><div>Harlow Plumbing Group · L-2029<div class="who">Core SMB · Negotiation · Commit · FieldPro undercutting, selling on onboarding speed</div></div><div style="text-align:right"><div class="val">£9.8k</div><span class="chip amber">Amber</span></div></div>
+        <div class="rev"><div>Dale Valley Maintenance · L-2057<div class="who">Core SMB · Demo · Best Case · demo held, proposal drafting</div></div><div style="text-align:right"><div class="val">£12.5k</div><span class="chip green">Green</span></div></div>
+        <div class="rev"><div>Meridian Cooling · L-2058<div class="who">Core SMB · Discovery · Pipeline · qualifying budget and buyer</div></div><div style="text-align:right"><div class="val">£11.5k</div><span class="chip green">Green</span></div></div>
+        <p class="note">£47.8k open across four deals. Values are new ARR per year, straight from the shared pipeline register.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Deal risk and next best actions</h2>
+        <div class="task"><div class="box"></div><div class="row-top"><div><span class="t">Protect Harlow, deal and account</span><span class="why">Don't chase the discount. Onboarding-speed battlecard vs FieldPro, and flag the Red renewal to Jamal Osei (CSM) today.</span></div><span class="chip red">Act today</span></div></div>
+        <div class="task"><div class="box"></div><div class="row-top"><div><span class="t">Close Stonegate</span><span class="why">Prepay and 10% already agreed; only the signature is open. Chase procurement before a verbal yes drifts past its date.</span></div><span class="chip amber">This week</span></div></div>
+        <div class="task"><div class="box"></div><div class="row-top"><div><span class="t">Re-open Keston Building Services</span><span class="why">Not a live deal, your quietest account. Churn-through-neglect risk and your cleanest expansion lever to close the quarter gap.</span></div><span class="chip blue">Lever</span></div></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>My customers · get ahead of it</h2>
+        <div class="rev"><div>Harlow Plumbing Group<div class="who">Explicit dissatisfaction on price vs FieldPro · renewal ~2 weeks · no expansion open</div></div><span class="chip red">Red</span></div>
+        <div class="rev"><div>Keston Building Services<div class="who">Low engagement, usage flat, single contact · churn-through-neglect, no complaint yet</div></div><span class="chip amber">Amber</span></div>
+        <div class="rev"><div>Stonegate Electrical<div class="who">Stable, engaged, recently renewed on annual prepay · expansion candidate</div></div><span class="chip green">Green</span></div>
+        <div class="rev"><div>Dale Valley Maintenance<div class="who">Low support volume, straightforward account · on track</div></div><span class="chip green">Green</span></div>
+        <p class="note">Pulled from CS health scores and support tickets, so you hear it before your customer tells you. CSM on these accounts: Jamal Osei.</p>
+      </div>
+
+      <div class="panel">
+        <h2>MEDDPICC · what's missing per deal</h2>
+        <div class="med"><div class="h"><span class="nm">Stonegate Electrical</span><span class="gp">Paper process</span></div><p>Everything else confirmed. Signature is the one open step, and the one that quietly slips a verbal yes.</p></div>
+        <div class="med"><div class="h"><span class="nm">Harlow Plumbing Group</span><span class="gp">Competition · Criteria</span></div><p>FieldPro live and the buyer is anchored on price. Reframe decision criteria onto onboarding speed and total cost, not headline rate.</p></div>
+        <div class="med"><div class="h"><span class="nm">Dale Valley Maintenance</span><span class="gp">Decision process</span></div><p>Demo landed, proposal drafting. Confirm who signs, in what order, and a close plan with a date.</p></div>
+        <div class="med"><div class="h"><span class="nm">Meridian Cooling</span><span class="gp">Metrics · Economic buyer</span></div><p>Early discovery. Quantify the pain and confirm budget and the signer before it moves past Discovery.</p></div>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="panel">
+        <h2>The week ahead</h2>
+        <div class="split">
+          <ul class="wk">
+            <li><span class="tag">Today</span><b>Two deals.</b> Stonegate signature chase and Harlow (FieldPro + Red renewal).</li>
+            <li><span class="tag">This week</span>Close Stonegate, protect Harlow, send Dale Valley proposal, progress Meridian discovery, re-open Keston.</li>
+            <li><span class="tag">Prepped</span>Harlow price call: FieldPro battlecard and full account history ready. Meridian discovery: ICP fit and qualifying questions drafted.</li>
+          </ul>
+          <ul class="wk">
+            <li><span class="tag">Inbox</span>Two things worth your eyes: the Harlow dissatisfaction thread and Stonegate's procurement reply. Both summarised, nothing answered on your behalf.</li>
+            <li><span class="tag">Calendar</span>Three customer calls booked: Harlow, Dale Valley proposal walkthrough, Meridian discovery.</li>
+            <li><span class="tag">Cadence</span>This week: 4 customer calls, 1 proposal out, 1 signature expected, 1 discovery to book. Tracking to your activity plan.</li>
+          </ul>
+        </div>
+        <p class="note">Assembled overnight from your email, calendar, tasks, pipeline and your customers' CS and support signals. The brief prepares the day; you run it.</p>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr">
+      <div class="panel coach">
+        <h2>Coaching · from your recent calls</h2>
+        <div class="split">
+          <div>
+            <h3 class="good">What's working</h3>
+            <p>You're fully present in calls now the write-ups happen automatically, so you're listening rather than scribbling. Proposals go out fast, rapport is warm, and your onboarding-speed value story is genuinely strong, the right ground to fight FieldPro on.</p>
+          </div>
+          <div>
+            <h3 class="grow">Where to sharpen</h3>
+            <p>On the Harlow call the FieldPro price comment went unchallenged and the conversation drifted onto rate rather than value, the exact segment pattern Marcus is coaching. You also tend to advance Core deals before budget and the economic buyer are confirmed; Meridian is the live example. A 1:1 with Marcus on reframing price to value is booked.</p>
+          </div>
+        </div>
+        <p class="note">Drawn from meeting intelligence across your recent calls. Coaching, not scoring: it points at the next call, not the last one.</p>
+      </div>
+    </div>
+
+    <p class="foot">Lumen AIOS · My Sales Desk (rep view) · fictional reference company built by Human-AI Systems. The system prepares; you make every call.</p>
+  </div>
+</body>
+</html>

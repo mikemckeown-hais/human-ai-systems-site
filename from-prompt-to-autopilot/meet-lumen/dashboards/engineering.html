@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen Engineering and Reliability</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-primary:#1C5FB0; --brand-primary-dark:#1F3A5F; --brand-accent:#F2A33C;
+    --brand-ink:#15243A; --brand-slate:#5B6B7F; --brand-mist:#E8EDF3; --brand-surface:#F5F8FC; --brand-white:#fff;
+    --status-green:#2E9E6B; --status-amber:#E8A13A; --status-red:#D1495B;
+    --font:'Source Sans 3','Source Sans Pro',Calibri,Arial,sans-serif;
+    --radius:12px; --shadow:0 1px 3px rgba(21,36,58,.08),0 6px 18px rgba(21,36,58,.07);--amber-ink:#7A5310;--amber-strong:#B9791A;--amber-tint:#FBE7C4;--blue-chip-ink:#1C5FB0;--blue-chip-tint:#DCE9F8;--cream-accent:#9A6A14;--cream-border:#F0D9AE;--cream-ink:#3A3326;--cream-tint:#FBF1DF;--green-bright:#7CE0A6;--green-chip-ink:#1E7A51;--green-chip-tint:#DDF2E7;--green-tint:#BFE6CF;--head-ink-muted:#B9C6D6;--head-ink-soft:#CFE0F3;--head-ink-softer:#DCE9F6;--mist:#EAEFF6;--red-chip-ink:#9C1F37;--red-chip-tint:#F8DCE1;--white:#FFF;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--mist);color:var(--brand-ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.5;font-size:18px;padding:0 0 60px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header.top{background:var(--brand-primary);color:var(--white);padding:22px 0;margin-bottom:26px;box-shadow:var(--shadow)}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo svg{width:40px;height:40px}
+  .logo .wm{font-size:28px;font-weight:700;letter-spacing:-.01em;color:var(--white)}
+  .logo .wm span{color:var(--brand-accent)}
+  .view{font-size:16px;color:var(--head-ink-soft);font-weight:600}
+  .stamp{text-align:right;font-size:15px;color:var(--head-ink-softer)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--green-tint);margin-top:3px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green-bright);display:inline-block;box-shadow:0 0 0 3px rgba(124,224,166,.25)}
+  h1.title{font-size:30px;margin:0 0 2px;letter-spacing:-.01em}
+  .sub{font-size:16px;color:var(--head-ink-soft)}
+  .summary{background:var(--white);border:1px solid var(--brand-mist);border-left:5px solid var(--brand-primary);border-radius:var(--radius);padding:20px 24px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .summary .k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-slate);margin:0 0 8px}
+  .summary p{margin:0;font-size:20px;color:var(--brand-ink)}
+  .summary b{color:var(--brand-primary-dark)}
+  .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-bottom:22px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--white);border:1px solid var(--brand-mist);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+  .panel h2{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-slate);margin:0 0 14px}
+  .task{display:flex;gap:13px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--brand-mist)}
+  .task:last-child{border-bottom:0}
+  .box{width:18px;height:18px;border:2px solid var(--head-ink-muted);border-radius:5px;margin-top:3px;flex:none}
+  .task .t{font-size:18px}
+  .task .why{display:block;font-size:15px;color:var(--brand-slate);margin-top:2px}
+  .chip{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap;align-self:flex-start;flex:none;margin-top:2px}
+  .chip.red{color:var(--white);background:var(--status-red)} .chip.amber{color:var(--amber-ink);background:var(--amber-tint)} .chip.green{color:var(--white);background:var(--status-green)} .chip.blue{color:var(--white);background:var(--brand-primary)}
+  .row-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;width:100%}
+  .focus{background:var(--cream-tint);border:1px solid var(--cream-border);border-left:5px solid var(--brand-accent);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px}
+  .focus .k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-accent);margin:0 0 6px}
+  .focus p{margin:0;font-size:19px;color:var(--cream-ink)}
+  .focus b{color:var(--brand-ink)}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+  @media(max-width:820px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .metric{background:var(--white);border:1px solid var(--brand-mist);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+  .metric .l{font-size:14px;color:var(--brand-slate);font-weight:600;margin:0 0 6px}
+  .metric .v{font-size:34px;font-weight:700;color:var(--brand-primary-dark);line-height:1}
+  .metric .d{font-size:14px;margin-top:6px}
+  .metric .d.g{color:var(--status-green)} .metric .d.a{color:var(--amber-strong)} .metric .d.r{color:var(--status-red)}
+  .rev{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--brand-mist);font-size:16px}
+  .rev:last-child{border-bottom:0}
+  .rev .who{color:var(--brand-slate);font-size:14px}
+  .foot{font-size:14px;color:var(--brand-slate);margin-top:26px;text-align:center}
+  .squad{margin-bottom:16px}
+  .squad:last-child{margin-bottom:0}
+  .squad h3{font-size:15px;margin:0 0 6px;color:var(--brand-ink)}
+  .squad .items{font-size:15px;color:var(--brand-slate)}
+  .squad .items span.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 7px;border-radius:6px;margin-right:6px}
+  .tag.green{background:var(--green-chip-tint);color:var(--green-chip-ink)}
+  .tag.amber{background:var(--amber-tint);color:var(--amber-ink)}
+  .tag.red{background:var(--red-chip-tint);color:var(--red-chip-ink)}
+  .tag.blue{background:var(--blue-chip-tint);color:var(--blue-chip-ink)}
+</style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <div>
+      <div class="logo"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="#fff" stroke-width="5"/><path d="M24 7 A17 17 0 0 1 41 24" fill="none" stroke="#F2A33C" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="24" r="5.5" fill="#F2A33C"/></svg><span class="wm">Lumen<span>.</span></span></div>
+      <div class="view">Nadia's view · Engineering and Reliability</div>
+    </div>
+    <div class="stamp">Engineering and Reliability · Monday 07:00<span class="live"><span class="dot"></span> refreshed this morning</span></div>
+  </div></header>
+
+  <div class="wrap">
+    <h1 class="title">Delivery flow, incidents and vendor health</h1>
+    <div class="sub">Nadia's view · what's in flight across squads, what's blocked, and where reliability risk sits. Nothing here was sent; drafts wait for you.</div>
+
+    <div class="summary" style="margin-top:20px">
+      <p class="k">AI summary</p>
+      <p>Good morning. Uptime is <b>99.94%</b>, above the 99.9% OKR target. Twelve items in flight or recently shipped across three squads and platform. The one item needing you today: the <b>mapping API version dependency (ENG-204/ENG-104)</b> blocking both Mobile and Assets squads, cross-squad and time-sensitive. One post-mortem (INC-010) was never filed, flagged for closure. Two vendors are At-risk on SLA position.</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><p class="l">Platform uptime</p><div class="v">99.94%</div><div class="d g">above 99.9% OKR target</div></div>
+      <div class="metric"><p class="l">Items in flight</p><div class="v">12</div><div class="d a">4 shipped last week, 3 in review, 2 blocked</div></div>
+      <div class="metric"><p class="l">Open incidents</p><div class="v">1</div><div class="d a">INC-010 post-mortem not yet filed</div></div>
+      <div class="metric"><p class="l">At-risk vendors</p><div class="v">2</div><div class="d r">RouteCast, Settlo on SLA watch</div></div>
+    </div>
+
+    <div class="focus">
+      <p class="k">Blocked, needs you this week</p>
+      <p><b>ENG-104 (Assets squad) is blocked on ENG-204 (Mobile squad), both waiting on RouteCast Mapping to confirm API backward compatibility.</b> The single largest delivery risk in flight: if the vendor doesn't confirm within the fortnight, it threatens the Assets 2.0 GA milestone.</p>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>Delivery flow by squad</h2>
+        <div class="squad">
+          <h3>Assets squad (Piotr Nowak)</h3>
+          <div class="items"><span class="tag green">Shipped</span>ENG-101 core data model migration<br><span class="tag amber">Review</span>ENG-102 invoicing module, pending vendor-risk check<br><span class="tag green">On track</span>ENG-103 multi-site asset hierarchy<br><span class="tag red">Blocked</span>ENG-104 mobile client sync, mapping API dependency<br><span class="tag green">On track</span>ENG-105 parts and catalogue refresh</div>
+        </div>
+        <div class="squad">
+          <h3>Mobile squad (Isla McKinnon)</h3>
+          <div class="items"><span class="tag green">Shipped</span>ENG-201 payment capture reliability fix<br><span class="tag green">On track</span>ENG-202 ETA and routing UI refresh<br><span class="tag amber">Review</span>ENG-203 offline mode job sign-off<br><span class="tag red">Blocked</span>ENG-204 mapping API version upgrade<br><span class="tag green">Shipped</span>ENG-205 photo upload compression</div>
+        </div>
+        <div class="squad">
+          <h3>Back Office squad (Dev Okoye)</h3>
+          <div class="items"><span class="tag amber">Review</span>ENG-301 scheduling performance fix<br><span class="tag green">On track</span>ENG-302 customer portal SLA-tracking view<br><span class="tag green">Shipped</span>ENG-303 accounting-integration sync<br><span class="tag green">On track</span>ENG-304 quoting: multi-year pricing</div>
+        </div>
+        <div class="squad">
+          <h3>Platform and Reliability (Kofi Mensah)</h3>
+          <div class="items"><span class="tag green">Shipped</span>ENG-401 staged-rollout pipeline improvement<br><span class="tag green">On track</span>ENG-402 mapping-vendor latency monitoring<br><span class="tag green">Shipped</span>ENG-403 on-call rota rebalance</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Incidents and vendor health</h2>
+        <div class="rev"><div>INC-010, brief API outage during deployment<div class="who">Post-mortem not yet filed, flagged for Kofi</div></div><span class="chip amber">Gap</span></div>
+        <div class="rev"><div>INC-014, mapping-vendor latency spike<div class="who">Filed by Kofi, one open action (ENG-402)</div></div><span class="chip green">Filed</span></div>
+        <div class="rev"><div>INC-013, payment-processor timeout<div class="who">Filed, vendor root cause still unconfirmed</div></div><span class="chip amber">Open action</span></div>
+        <div class="rev"><div>RouteCast Mapping, SLA position<div class="who">At-risk · API upgrade pending vendor confirmation</div></div><span class="chip red">At-risk</span></div>
+        <div class="rev"><div>Settlo Payments, SLA position<div class="who">At-risk · invoicing timeout root cause unacknowledged</div></div><span class="chip red">At-risk</span></div>
+        <div class="rev"><div>Four other vendors<div class="who">NotiFlow, SignChain, LedgerLink, PartsGrid</div></div><span class="chip green">Met</span></div>
+      </div>
+    </div>
+
+    <p class="foot">Lumen AIOS · Engineering and Reliability · fictional reference company built by Human-AI Systems. The system prepares; the leader decides.</p>
+  </div>
+</body>
+</html>
