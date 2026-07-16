@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="W A Chump &amp; Sons logo">
+  <defs>
+    <path id="wac-star" d="M0,-50 L14.7,-15.5 L47.6,-15.5 L20.6,6.1 L29.4,38.0 L0,19 L-29.4,38.0 L-20.6,6.1 L-47.6,-15.5 L-14.7,-15.5 Z" fill="#ECE4D5"/>
+  </defs>
+
+  <!-- Badge body (rounded elongated hexagon) -->
+  <polygon points="180,96 820,96 958,320 820,544 180,544 42,320"
+           fill="#DD4F2B" stroke="#DD4F2B" stroke-width="48" stroke-linejoin="round"/>
+
+  <!-- Inner cream keyline -->
+  <polygon points="210,134 790,134 902,320 790,506 210,506 98,320"
+           fill="none" stroke="#ECE4D5" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Top star arc -->
+  <use href="#wac-star" transform="translate(360,214) scale(0.52)"/>
+  <use href="#wac-star" transform="translate(432,196) scale(0.74)"/>
+  <use href="#wac-star" transform="translate(500,182) scale(1.02)"/>
+  <use href="#wac-star" transform="translate(568,196) scale(0.74)"/>
+  <use href="#wac-star" transform="translate(640,214) scale(0.52)"/>
+
+  <!-- Wordmark -->
+  <text x="500" y="360" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-weight="700"
+        font-size="64" letter-spacing="2" fill="#ECE4D5">WA Chump &amp; Sons</text>
+
+  <!-- Bottom star arc -->
+  <use href="#wac-star" transform="translate(360,432) scale(0.52)"/>
+  <use href="#wac-star" transform="translate(432,448) scale(0.74)"/>
+  <use href="#wac-star" transform="translate(500,462) scale(1.02) rotate(8)"/>
+  <use href="#wac-star" transform="translate(568,448) scale(0.74)"/>
+  <use href="#wac-star" transform="translate(640,432) scale(0.52)"/>
+</svg>
