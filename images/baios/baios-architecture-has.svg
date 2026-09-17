@@ -1,0 +1,118 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" font-family="'Source Sans 3','Source Sans Pro','Source Sans',Arial,sans-serif">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="60" y="52" font-size="31" font-weight="700" fill="#1F3A5F">The Business AI Operating System</text>
+  <text x="60" y="80" font-size="16" fill="#6B7C8F">How the system fits together</text>
+
+  <!-- ===== Access layer: people and app ===== -->
+  <rect x="60" y="104" width="1160" height="54" rx="10" fill="#1F3A5F"/>
+  <text x="90" y="139" font-size="22" font-weight="700" fill="#FFFFFF">You and your team</text>
+  <!-- desktop glyph -->
+  <rect x="960" y="119" width="28" height="19" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="974" y1="138" x2="974" y2="143" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="966" y1="144" x2="982" y2="144" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- mobile glyph -->
+  <rect x="1000" y="117" width="14" height="27" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="1004" y1="140" x2="1010" y2="140" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="1028" y="138" font-size="15" fill="#FFFFFF" opacity="0.92">one app, desktop and mobile</text>
+
+  <!-- ===== Platform layer ===== -->
+  <rect x="60" y="170" width="1160" height="54" rx="10" fill="#2A6F74"/>
+  <text x="640" y="204" font-size="20" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI platform: Claude Cowork, ChatGPT for Work or Microsoft Copilot 365</text>
+
+  <line x1="640" y1="224" x2="640" y2="238" stroke="#6B7C8F" stroke-width="3"/>
+  <polygon points="640,246 633,234 647,234" fill="#6B7C8F"/>
+
+  <!-- ================= COLUMN 1: KNOWLEDGE BASE ================= -->
+  <rect x="60" y="248" width="275" height="318" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+  <rect x="60" y="248" width="275" height="42" rx="10" fill="#1F3A5F"/>
+  <rect x="60" y="268" width="275" height="22" fill="#1F3A5F"/>
+  <text x="198" y="276" font-size="18.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1. Knowledge base</text>
+  <text x="198" y="308" font-size="13.5" fill="#6B7C8F" text-anchor="middle">what the system holds</text>
+
+  <rect x="74" y="316" width="247" height="112" rx="8" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="86" y="339" font-size="15" font-weight="700" fill="#2A6F74">What it knows</text>
+  <text x="86" y="364" font-size="14" fill="#2B2B2B">Your company and market</text>
+  <text x="86" y="386" font-size="14" fill="#2B2B2B">Your team, roles and processes</text>
+  <text x="86" y="408" font-size="14" fill="#2B2B2B">You: your style and priorities</text>
+
+  <rect x="74" y="440" width="247" height="112" rx="8" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="86" y="463" font-size="15" font-weight="700" fill="#2A6F74">What it records</text>
+  <text x="86" y="488" font-size="14" fill="#2B2B2B">Meetings and decisions</text>
+  <text x="86" y="510" font-size="14" fill="#2B2B2B">Proposals, plans, campaigns</text>
+  <text x="86" y="532" font-size="14" fill="#2B2B2B">Customers, tasks, progress</text>
+
+  <!-- ================= COLUMN 2: SKILLS / AGENTS ================= -->
+  <rect x="355" y="248" width="275" height="318" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+  <rect x="355" y="248" width="275" height="42" rx="10" fill="#1F3A5F"/>
+  <rect x="355" y="268" width="275" height="22" fill="#1F3A5F"/>
+  <text x="493" y="276" font-size="18.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2. Skills / Agents</text>
+  <text x="493" y="308" font-size="13.5" fill="#6B7C8F" text-anchor="middle">what the system does</text>
+
+  <rect x="369" y="316" width="247" height="112" rx="8" fill="#F3F5F7" stroke="#6B7C8F" stroke-width="1"/>
+  <text x="381" y="339" font-size="15" font-weight="700" fill="#2A6F74">Standard set</text>
+  <text x="381" y="364" font-size="14" fill="#2B2B2B">Knowledge management</text>
+  <text x="381" y="386" font-size="14" fill="#2B2B2B">Meeting write-ups</text>
+  <text x="381" y="408" font-size="14" fill="#2B2B2B">Daily brief and task list</text>
+
+  <rect x="369" y="440" width="247" height="112" rx="8" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="381" y="463" font-size="15" font-weight="700" fill="#2A6F74">Built around your role</text>
+  <text x="381" y="488" font-size="14" fill="#2B2B2B">The work only you do</text>
+  <text x="381" y="510" font-size="14" fill="#2B2B2B">Yours, or shared with the team</text>
+  <text x="381" y="532" font-size="14" fill="#2B2B2B">Extended as you learn</text>
+
+  <!-- ================= COLUMN 3: DASHBOARDS ================= -->
+  <rect x="650" y="248" width="275" height="318" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+  <rect x="650" y="248" width="275" height="42" rx="10" fill="#1F3A5F"/>
+  <rect x="650" y="268" width="275" height="22" fill="#1F3A5F"/>
+  <text x="788" y="276" font-size="18.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3. Dashboards</text>
+  <text x="788" y="308" font-size="13.5" fill="#6B7C8F" text-anchor="middle">what the system shows</text>
+
+  <rect x="664" y="316" width="247" height="112" rx="8" fill="#F3F5F7" stroke="#6B7C8F" stroke-width="1"/>
+  <text x="676" y="339" font-size="15" font-weight="700" fill="#2A6F74">Standard set</text>
+  <text x="676" y="364" font-size="14" fill="#2B2B2B">Morning brief</text>
+  <text x="676" y="386" font-size="14" fill="#2B2B2B">Work in progress</text>
+  <text x="676" y="408" font-size="14" fill="#2B2B2B">System health</text>
+
+  <rect x="664" y="440" width="247" height="112" rx="8" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="676" y="463" font-size="15" font-weight="700" fill="#2A6F74">Built for your function</text>
+  <text x="676" y="488" font-size="14" fill="#2B2B2B">The numbers you run on</text>
+  <text x="676" y="510" font-size="14" fill="#2B2B2B">With the AI's read on them</text>
+  <text x="676" y="532" font-size="14" fill="#2B2B2B">and what to do next</text>
+
+  <!-- ================= COLUMN 4: CONNECTORS ================= -->
+  <rect x="945" y="248" width="275" height="318" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+  <rect x="945" y="248" width="275" height="42" rx="10" fill="#1F3A5F"/>
+  <rect x="945" y="268" width="275" height="22" fill="#1F3A5F"/>
+  <text x="1083" y="276" font-size="18.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">4. Connectors</text>
+  <text x="1083" y="308" font-size="13.5" fill="#6B7C8F" text-anchor="middle">what the system reaches</text>
+
+  <rect x="959" y="316" width="247" height="112" rx="8" fill="#F3F5F7" stroke="#6B7C8F" stroke-width="1"/>
+  <text x="971" y="339" font-size="15" font-weight="700" fill="#2A6F74">Set up in every build</text>
+  <text x="971" y="364" font-size="14" fill="#2B2B2B">Your files</text>
+  <text x="971" y="386" font-size="14" fill="#2B2B2B">Email</text>
+  <text x="971" y="408" font-size="14" fill="#2B2B2B">Calendar</text>
+
+  <rect x="959" y="440" width="247" height="112" rx="8" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="971" y="463" font-size="15" font-weight="700" fill="#2A6F74">Added when you need them</text>
+  <text x="971" y="488" font-size="14" fill="#2B2B2B">CRM, finance, project tools</text>
+  <text x="971" y="510" font-size="14" fill="#2B2B2B">Set up with you, or</text>
+  <text x="971" y="532" font-size="14" fill="#2B2B2B">added by you once trained</text>
+
+  <!-- ===== Automation band ===== -->
+  <rect x="60" y="580" width="1160" height="44" rx="10" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2"/>
+  <path d="M 280,593 A 9,9 0 1 1 272.2,597.5" fill="none" stroke="#3EC1C9" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="286.5,593 279,589.3 279,596.7" fill="#3EC1C9"/>
+  <text x="659" y="608" font-size="16" font-weight="600" fill="#1F3A5F" text-anchor="middle">Autopilot: skills run on a schedule and write what they produce back into the knowledge base</text>
+
+  <!-- ===== Foundation ===== -->
+  <rect x="60" y="638" width="1160" height="40" rx="8" fill="#2B2B2B"/>
+  <text x="640" y="664" font-size="15.5" fill="#FFFFFF" text-anchor="middle">Your files stay on your own cloud drive. Nothing passes through Human-AI Systems.</text>
+
+  <!-- ===== Legend ===== -->
+  <rect x="60" y="692" width="18" height="13" rx="2" fill="#F3F5F7" stroke="#6B7C8F" stroke-width="1"/>
+  <text x="86" y="703" font-size="13" fill="#6B7C8F">Standard in every build</text>
+  <rect x="250" y="692" width="18" height="13" rx="2" fill="#FFFFFF" stroke="#3EC1C9" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="276" y="703" font-size="13" fill="#6B7C8F">Yours: built around you, or added by you</text>
+</svg>

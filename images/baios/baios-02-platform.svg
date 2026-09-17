@@ -1,0 +1,75 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <g transform="translate(0,18)">
+
+  <!-- Kicker and title -->
+  <line x1="60" y1="70" x2="80" y2="70" stroke="#3EC1C9" stroke-width="1.5"/>
+  <text x="90" y="74" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12.5" font-weight="500" letter-spacing="1.6" fill="#6B7C8F">THE PLATFORM</text>
+  <text x="60" y="116" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="700" fill="#1F3A5F">Built on the AI you already use</text>
+
+  <!-- ===== Access layer ===== -->
+  <rect x="60" y="148" width="1160" height="64" rx="16" fill="#2A6F74"/>
+  <text x="88" y="188" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">You and your team</text>
+  <rect x="922" y="169" width="28" height="19" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="936" y1="188" x2="936" y2="193" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="928" y1="194" x2="944" y2="194" stroke="#FFFFFF" stroke-width="2"/>
+  <rect x="962" y="167" width="14" height="27" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="966" y1="190" x2="972" y2="190" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="990" y="186" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14.5" fill="#FFFFFF" opacity="0.9">one app, desktop and mobile</text>
+
+  <!-- ===== Platform layer: in focus ===== -->
+  <rect x="60" y="236" width="1160" height="60" rx="16" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.5"/>
+  <text x="88" y="273" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F">AI platform</text>
+
+  <rect x="738" y="250" width="119" height="32" rx="16" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+  <text x="797.5" y="271" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" font-weight="500" fill="#2B2B2B" text-anchor="middle">Claude Cowork</text>
+
+  <rect x="867" y="250" width="140" height="32" rx="16" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+  <text x="937" y="271" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" font-weight="500" fill="#2B2B2B" text-anchor="middle">ChatGPT for Work</text>
+
+  <rect x="1017" y="250" width="175" height="32" rx="16" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+  <text x="1104.5" y="271" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" font-weight="500" fill="#2B2B2B" text-anchor="middle">Microsoft Copilot 365</text>
+
+  <!-- ================= COLUMN 1 ================= -->
+  <rect x="60" y="320" width="275" height="288" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="80" y="340" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="97" y="355" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">01</text>
+  <text x="124" y="357" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="700" fill="#1F3A5F">Knowledge base</text>
+  <rect x="76" y="392" width="243" height="200" rx="12" fill="#F3F5F7"/>
+  <text x="196" y="466" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">WHAT THE</text>
+  <text x="196" y="500" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">SYSTEM</text>
+  <text x="196" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">HOLDS</text>
+
+  <!-- ================= COLUMN 2 ================= -->
+  <rect x="355" y="320" width="275" height="288" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="375" y="340" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="392" y="355" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">02</text>
+  <text x="419" y="357" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="700" fill="#1F3A5F">Skills / Agents</text>
+  <rect x="371" y="392" width="243" height="200" rx="12" fill="#F3F5F7"/>
+  <text x="491" y="466" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">WHAT THE</text>
+  <text x="491" y="500" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">SYSTEM</text>
+  <text x="491" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">DOES</text>
+
+  <!-- ================= COLUMN 3 ================= -->
+  <rect x="650" y="320" width="275" height="288" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="670" y="340" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="687" y="355" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">03</text>
+  <text x="714" y="357" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="700" fill="#1F3A5F">Dashboards</text>
+  <rect x="666" y="392" width="243" height="200" rx="12" fill="#F3F5F7"/>
+  <text x="786" y="466" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">WHAT THE</text>
+  <text x="786" y="500" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">SYSTEM</text>
+  <text x="786" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">SHOWS</text>
+
+  <!-- ================= COLUMN 4 ================= -->
+  <rect x="945" y="320" width="275" height="288" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="965" y="340" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="982" y="355" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">04</text>
+  <text x="1009" y="357" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="700" fill="#1F3A5F">Connectors</text>
+  <rect x="961" y="392" width="243" height="200" rx="12" fill="#F3F5F7"/>
+  <text x="1081" y="466" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">WHAT THE</text>
+  <text x="1081" y="500" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">SYSTEM</text>
+  <text x="1081" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">REACHES</text>
+
+  </g>
+</svg>

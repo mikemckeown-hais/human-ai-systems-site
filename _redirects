@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects. Static files still serve, so each retired page also
+# carries a meta-refresh stub as a fallback.
+/from-prompt-to-autopilot/register    /from-prompt-to-autopilot/    301
+/from-prompt-to-autopilot/register/   /from-prompt-to-autopilot/    301
+/webinar                              /from-prompt-to-autopilot/    301
+/webinar/                             /from-prompt-to-autopilot/    301

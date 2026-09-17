@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+
+  <!-- Kicker and title -->
+  <line x1="60" y1="72" x2="80" y2="72" stroke="#3EC1C9" stroke-width="1.5"/>
+  <text x="90" y="76" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12.5" font-weight="500" letter-spacing="1.6" fill="#6B7C8F">WHAT YOU GET</text>
+  <text x="60" y="124" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="36" font-weight="700" fill="#1F3A5F">Built with you. Yours to keep.</text>
+  <text x="60" y="162" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="18" fill="#6B7C8F">One system that knows your business, does the work, and shows you what matters.</text>
+
+  <!-- ================= BENEFIT 1 ================= -->
+  <rect x="60" y="200" width="275" height="252" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="80" y="224" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="97" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">01</text>
+  <text x="124" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2" fill="#6B7C8F">KNOWLEDGE BASE</text>
+  <text x="197" y="349" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">Never start</text>
+  <text x="197" y="381" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">from cold again</text>
+
+  <!-- ================= BENEFIT 2 ================= -->
+  <rect x="355" y="200" width="275" height="252" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="375" y="224" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="392" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">02</text>
+  <text x="419" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2" fill="#6B7C8F">SKILLS AND AGENTS</text>
+  <text x="492" y="349" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">The routine work</text>
+  <text x="492" y="381" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">already done</text>
+
+  <!-- ================= BENEFIT 3 ================= -->
+  <rect x="650" y="200" width="275" height="252" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="670" y="224" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="687" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">03</text>
+  <text x="714" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2" fill="#6B7C8F">DASHBOARDS</text>
+  <text x="787" y="349" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">Know what</text>
+  <text x="787" y="381" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">needs you today</text>
+
+  <!-- ================= BENEFIT 4 ================= -->
+  <rect x="945" y="200" width="275" height="252" rx="16" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+  <rect x="965" y="224" width="34" height="22" rx="6" fill="#3EC1C9" fill-opacity="0.16"/>
+  <text x="982" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0.6" fill="#2A6F74" text-anchor="middle">04</text>
+  <text x="1009" y="239" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.2" fill="#6B7C8F">CONNECTORS</text>
+  <text x="1082" y="349" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">It works where</text>
+  <text x="1082" y="381" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="20" font-weight="700" fill="#1F3A5F" text-anchor="middle">you already work</text>
+
+  <!-- ===== Running underneath ===== -->
+  <rect x="60" y="472" width="1160" height="44" rx="16" fill="#3EC1C9" fill-opacity="0.14" stroke="#3EC1C9" stroke-opacity="0.4" stroke-width="1.2"/>
+  <g transform="translate(-325,0)"><path d="M 419,485 A 8,8 0 1 1 412,489" fill="none" stroke="#3EC1C9" stroke-width="2" stroke-linecap="round"/><polygon points="425.5,485 418,481.8 418,488.2" fill="#3EC1C9"/></g>
+  <text x="655" y="500" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#2B2B2B" text-anchor="middle">Running on a schedule, so some of it is done before you start</text>
+
+  <!-- ===== Programme and URL ===== -->
+  <rect x="60" y="540" width="1160" height="110" rx="16" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.5"/>
+  <text x="104" y="588" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F3A5F">Prompt</text>
+  <line x1="232" y1="578" x2="258" y2="578" stroke="#3EC1C9" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="269,578 257,571.5 257,584.5" fill="#2A6F74"/>
+  <text x="284" y="588" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="30" font-weight="700" fill="#1F3A5F">Autopilot</text>
+  <text x="104" y="622" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="600" fill="#2A6F74">prompt-autopilot.com</text>
+  <text x="1176" y="580" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">We build it with you, then teach you to run it.</text>
+  <text x="1176" y="610" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">A few weeks from start to finish.</text>
+</svg>

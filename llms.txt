@@ -1,6 +1,6 @@
 # Human–AI Systems
 
-> UK AI adoption consultancy founded and led by Mike McKeown. Helps organisations move from AI experimentation to disciplined, value-creating operational adoption: workflow redesign, governance and hybrid human-AI operating models. Also runs From Prompt to Autopilot, a cohort programme (with Third Circle) that builds business owners and functional leaders their own AI Operating System and teaches them to run it.
+> UK AI adoption consultancy founded and led by Mike McKeown. Helps organisations move from AI experimentation to disciplined, value-creating operational adoption: workflow redesign, governance and hybrid human-AI operating models. Also runs From Prompt to Autopilot, a programme (with Third Circle) that builds functional leaders, business owners and their teams their own AI Operating System and teaches them to run and extend it. Run as a private team programme, an individual seat, or a company-wide rollout.
 
 Key frameworks: Tool → Assistant → Worker (capability maturity); Radar → Pilot → Scale (adoption methodology); Hybrid Workforce Leadership.
 
@@ -12,8 +12,8 @@ Sectors: local government, financial services, professional services, SaaS and t
 - [Approach](https://human-ai-systems.com/approach/): the full methodology
 - [Services](https://human-ai-systems.com/services/): Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
 - [Training](https://human-ai-systems.com/training/): practical AI workshops for teams
-- [From Prompt to Autopilot](https://human-ai-systems.com/from-prompt-to-autopilot/): the AI Operating System cohort programme
-- [Webinars](https://human-ai-systems.com/webinar/): free monthly live sessions
+- [From Prompt to Autopilot](https://human-ai-systems.com/from-prompt-to-autopilot/): the AI Operating System programme, for a team, an individual or a whole company. Full detail and pricing at https://www.prompt-autopilot.com
+- [Meet Lumen](https://human-ai-systems.com/from-prompt-to-autopilot/meet-lumen/): a synthetic reference company running entirely on an AI Operating System, with eleven role dashboards and a before-and-after working week for each leader
 - [Sectors](https://human-ai-systems.com/sectors/): sector-specific pages
 - [Insights](https://human-ai-systems.com/insights/): articles and frameworks
 - [About](https://human-ai-systems.com/about/): Mike McKeown's background

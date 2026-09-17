@@ -3,49 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://human-ai-systems.com/from-prompt-to-autopilot/meet-lumen/">
 <title>Meet Lumen · From Prompt to Autopilot</title>
 <meta name="description" content="Lumen is a whole company running on an AI operating system, built with the same programme we install for clients. Meet the people. See the system.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F6F4EE; --paper-light:#FBFAF5; --parchment:#EFEBE1;
-    --ink:#1B1E1C; --slate:#5B635C; --mist:#8C948D;
-    --forest:#2E5D4B; --signal:#1F8A5B; --sage:#8FC98A;
-    --amber:#BE8416; --amber-deep:#A8730F; --cocoa:#241803;
-    --font-display:'Sora',sans-serif; --font-body:'Inter',sans-serif; --font-mono:'JetBrains Mono',monospace;
-    --radius:14px; --border:1px solid rgba(46,93,75,.12);
-    --shadow:0 1px 2px rgba(27,30,28,.04),0 10px 30px rgba(27,30,28,.06);
+    /* Human-AI Systems visual brand. Reskinned from the P2A programme palette 17 Sep 2026;
+       variable names kept so the rest of the stylesheet is untouched. */
+    --paper:#FFFFFF; --paper-light:#FFFFFF; --parchment:#F3F5F7;
+    --ink:#2B2B2B; --blue:#1F3A5F; --slate:#6B7C8F; --mist:#9AA8B5;
+    --forest:#2A6F74; --signal:#3EC1C9; --sage:#7FD4D9;
+    --amber:#3EC1C9; --amber-deep:#2A6F74; --cocoa:#1F3A5F;
+    --font-display:'Source Sans 3','Source Sans Pro',Calibri,Arial,sans-serif;
+    --font-body:'Source Sans 3','Source Sans Pro',Calibri,Arial,sans-serif;
+    --font-mono:'Source Sans 3','Source Sans Pro',Calibri,Arial,sans-serif;
+    --radius:14px; --border:1px solid rgba(31,58,95,.12);
+    --shadow:0 1px 2px rgba(31,58,95,.04),0 10px 30px rgba(31,58,95,.08);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  h1,h2,h3{font-family:var(--font-display);color:var(--ink);letter-spacing:-.015em;line-height:1.1;margin:0}
+  h1,h2,h3{font-family:var(--font-display);color:var(--blue);letter-spacing:-.015em;line-height:1.1;margin:0}
   p{margin:0 0 16px}
   a{color:var(--forest);text-decoration:none}
   .kicker{font-family:var(--font-mono);font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-deep);margin:0 0 16px;display:inline-block}
   .kicker.green{color:var(--forest)}
   .kicker.slate{color:var(--mist)}
   .btn{display:inline-block;font-family:var(--font-body);font-weight:600;font-size:16px;border-radius:10px;padding:14px 24px;cursor:pointer;border:0;transition:transform .12s ease,box-shadow .12s ease}
-  .btn-primary{background:linear-gradient(180deg,var(--amber),var(--amber-deep));color:#fff;box-shadow:0 6px 16px rgba(168,115,15,.28)}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 16px rgba(31,58,95,.24)}
   .btn-primary:hover{transform:translateY(-1px)}
-  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(27,30,28,.18)}
+  .btn-ghost{background:transparent;color:var(--blue);border:1.5px solid rgba(31,58,95,.22)}
   .btn-ghost:hover{border-color:var(--forest);color:var(--forest)}
   section{padding:84px 0;border-bottom:1px solid rgba(46,93,75,.08)}
   .arrow{color:var(--signal);font-weight:800}
 
   /* NAV */
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(46,93,75,.1)}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.90);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,58,95,.10)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:19px}
-  .brand .mark{width:34px;height:34px;border:2px solid var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--amber-deep);font-weight:800;font-size:17px}
+  .brand{color:var(--blue);text-decoration:none;display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:19px}
+  .brand .mark{width:34px;height:34px;border:2px solid var(--forest);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--forest);font-weight:700;font-size:17px}
   .brand span{color:var(--forest)}
   .navlinks{display:flex;gap:26px;align-items:center;font-size:15px;color:var(--slate)}
   .navlinks a{color:var(--slate);font-weight:500}
-  .navlinks a:hover{color:var(--ink)}
+  .navlinks a:hover{color:var(--blue)}
   .navlinks .btn{padding:9px 17px;font-size:14px}
   @media(max-width:860px){.navlinks a:not(.btn){display:none}}
 
@@ -53,7 +58,7 @@
   .hero{padding:96px 0 84px;background:radial-gradient(1100px 500px at 72% -10%,rgba(46,93,75,.09),transparent 60%),radial-gradient(700px 400px at 0% 0%,rgba(190,132,22,.06),transparent 55%)}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-  .hero h1{font-size:66px;font-weight:800;margin-bottom:22px}
+  .hero h1{font-size:66px;font-weight:700;margin-bottom:22px}
   @media(max-width:900px){.hero h1{font-size:46px}}
   .hero .lede{font-size:21px;color:var(--slate);max-width:36ch;margin-bottom:14px}
   .hero .analogy{font-size:17px;color:var(--ink);max-width:40ch;margin-bottom:26px}
@@ -191,13 +196,14 @@
 
 <!-- NAV -->
 <header class="nav"><div class="wrap">
-  <div class="brand"><span class="mark">&rarr;</span>Prompt <span>&rarr;</span> Autopilot</div>
+  <a class="brand" href="/from-prompt-to-autopilot/" aria-label="From Prompt to Autopilot"><span class="mark">&rarr;</span>Prompt <span>&rarr;</span> Autopilot</a>
   <nav class="navlinks">
     <a href="#meet">Meet Lumen</a>
     <a href="#people">The people</a>
     <a href="#anatomy">What it is</a>
     <a href="#difference">The difference</a>
-    <a href="#join" class="btn btn-primary">Join the next group</a>
+    <a href="/from-prompt-to-autopilot/">The programme</a>
+    <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-primary">Book a conversation</a>
   </nav>
 </div></header>
 
@@ -211,7 +217,7 @@
       <p class="analogy">It is like having a chief of staff, a researcher, an analyst and a writer who all already know your business.</p>
       <div class="cta">
         <a href="#people" class="btn btn-primary">Explore Lumen</a>
-        <a href="#join" class="btn btn-ghost">Join the next group</a>
+        <a href="/from-prompt-to-autopilot/" class="btn btn-ghost">How the programme works</a>
       </div>
     </div>
 
@@ -1051,8 +1057,8 @@
       <h2>We build it with you. Then we teach you to run it.</h2>
       <p>Most people will either build you something and leave, or teach you and hand you a blank page. We do both. Lumen is what "built for you" looks like. The programme is how you get your own, and how you learn to keep extending it.</p>
       <div class="cta">
-        <a href="#join" class="btn btn-primary">Join the next group</a>
-        <a href="#anatomy" class="btn btn-ghost">See how the programme works</a>
+        <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-primary">Book a conversation</a>
+        <a href="mailto:mike.mckeown@human-ai-systems.com?subject=Prompt%20-%20Autopilot%20-%20more%20information%20please!" class="btn btn-ghost">Email Mike</a>
       </div>
     </div>
   </div>
@@ -1061,7 +1067,7 @@
 <footer>
   <div class="wrap">
     <div class="bx">Human-AI Systems &times; Third Circle</div>
-    <div>From Prompt to Autopilot &middot; built with you, yours to keep</div>
+    <div><a href="/from-prompt-to-autopilot/" style="color:inherit;text-decoration:underline;">From Prompt to Autopilot</a> &middot; built with you, yours to keep &middot; <a href="/" style="color:inherit;text-decoration:underline;">human-ai-systems.com</a></div>
     <div class="note">Lumen is a fictional reference company built by Human-AI Systems to demonstrate the programme. Company and people are synthetic; the system is real. Figures shown are illustrative.</div>
   </div>
 </footer>
