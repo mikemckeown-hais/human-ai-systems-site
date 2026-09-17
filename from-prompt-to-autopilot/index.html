@@ -162,7 +162,9 @@
         /* BAIOS explainer: all panels visible without JS, stepped when JS is on */
         .bx { margin-top: 30px; }
         .bx-panel { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 18px 22px; margin: 0 0 20px; }
+        .bx-media { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
         .bx-panel svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+        .bx-hint { display: none; }
         .bx-panel figcaption { margin-top: 16px; padding: 0 6px; color: var(--graphite); font-size: 1.02rem; line-height: 1.6; }
         .bx-panel figcaption b { color: var(--blue); }
         .bx-controls { display: none; }
@@ -220,6 +222,10 @@
             .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
             .grid-2, .people, .split, .routes { grid-template-columns: 1fr; }
             .bx.is-stepped .bx-controls { justify-content: center; }
+            /* below this width the diagram pans inside its own container instead of
+               shrinking to the point of being unreadable */
+            .bx-panel svg { min-width: 660px; }
+            .bx-hint { display: block; margin-top: 10px; padding: 0 6px; font-size: 0.88rem; color: var(--steel); }
             .split { gap: 28px; }
             .footer-grid { flex-direction: column; text-align: center; }
             .footer-grid > div:last-child { text-align: center; }
@@ -329,7 +335,7 @@
 
                 <div class="bx reveal" id="baios">
                     <figure class="bx-panel is-active">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="The Business AI Operating System: four components sitting on an AI platform, with you and your team above it" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The Business AI Operating System: four components sitting on an AI platform, with you and your team above it" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -394,11 +400,12 @@
   <text x="1081" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The shape of it.</b> Four parts, one platform, one foundation. Everything below is built around you.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="The platform layer: mainstream AI platforms that host the operating system" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The platform layer: mainstream AI platforms that host the operating system" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -472,11 +479,12 @@
   <text x="1081" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The platform.</b> It runs on mainstream AI you already pay for, not something we invented and not something proprietary. Nothing holds you in.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="The knowledge base: what the system knows about your company, team and you, and what it records" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The knowledge base: what the system knows about your company, team and you, and what it records" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -549,11 +557,12 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The knowledge base.</b> Your company, your role, your goals, your way of working. This is the part that stops you re-explaining yourself, and it is what turns a chat tool into a system.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="Skills and agents: the part of the system that does the work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Skills and agents: the part of the system that does the work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -626,11 +635,12 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The skills and agents.</b> Each one a capable colleague for a slice of your job. We build two or three around your biggest time-sinks, plus a daily brief, a knowledge keeper, a support assistant and a meeting assistant as standard.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="Dashboards: what the system shows, with a plain-language read and recommended actions" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Dashboards: what the system shows, with a plain-language read and recommended actions" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -703,11 +713,12 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The dashboards.</b> Not charts. A plain-English read of what your numbers are saying this week, and two or three things worth doing about it. What a good analyst would tell you if you had one.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="Connectors: how the system reaches your files, email and calendar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Connectors: how the system reaches your files, email and calendar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -780,11 +791,12 @@
   <text x="965" y="578" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13.5" fill="#2B2B2B">Or added by you, once trained</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The connectors.</b> Your own files from day one. Email and calendar when you are ready, and where your IT allows. Nothing goes out into the world without a human seeing it first.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="Autopilot: skills running on a schedule and writing results back into the knowledge base" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Autopilot: skills running on a schedule and writing results back into the knowledge base" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -854,11 +866,12 @@
   <text x="656" y="658" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" font-weight="600" fill="#2B2B2B" text-anchor="middle">Skills run on a schedule and write what they produce back into the knowledge base</text>
 
   </g>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>Autopilot.</b> The work that runs on a schedule, before you ask, and writes what it produces back into the knowledge base. This is the part the programme is named after.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <svg viewBox="0 0 1280 720" role="img" aria-label="What you get: never start from cold, routine work already done, know what needs you today, and it works where you already work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="What you get: never start from cold, routine work already done, know what needs you today, and it works where you already work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <!-- Kicker and title -->
@@ -913,7 +926,8 @@
   <text x="104" y="622" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="600" fill="#2A6F74">prompt-autopilot.com</text>
   <text x="1176" y="580" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">We build it with you, then teach you to run it.</text>
   <text x="1176" y="610" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">A few weeks from start to finish.</text>
-</svg>
+</svg></div>
+                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>All of it, yours.</b> Built on your platform, in your own file store, under your own account. When the programme ends you keep the system and the ability to run it.</figcaption>
                     </figure>
 
