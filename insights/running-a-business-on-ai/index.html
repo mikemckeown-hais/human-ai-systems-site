@@ -60,7 +60,7 @@
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;min-height:84px}
     .brand{display:flex;align-items:center;padding-top:6px;flex:0 0 auto}
     .brand-mark{width:274px;height:auto;display:block}
-    .brand-mark.footer-mark{width:360px;height:auto}
+    .brand-mark.footer-mark{width:min(360px,100%);height:auto}
     .nav{display:flex;align-items:center;justify-content:flex-end;gap:18px;flex:1 1 auto;color:#fff;font-size:1rem;font-weight:500;white-space:nowrap}
     .nav a:not(.nav-cta){color:#fff!important;opacity:0.98;display:inline-flex;align-items:center;padding:4px 2px}
     .nav a.active{opacity:1;border-bottom:2px solid var(--aqua);padding-bottom:2px}
@@ -147,7 +147,7 @@
       .mobile-menu .mobile-start{margin-top:6px;display:inline-flex;align-items:center;justify-content:center;width:fit-content;padding:12px 18px;border-radius:999px;background:var(--white);color:var(--blue);font-weight:600}
       .mobile-contact-row{display:flex;gap:14px;flex-wrap:wrap;padding-top:8px;color:rgba(255,255,255,0.82);font-size:0.92rem}
       .brand-mark{width:220px}
-      .brand-mark.footer-mark{width:290px}
+      .brand-mark.footer-mark{width:min(290px,100%)}
       .related-grid{grid-template-columns:1fr}
     }
     @media(max-width:760px){
