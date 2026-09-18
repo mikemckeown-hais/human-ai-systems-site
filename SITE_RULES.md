@@ -76,6 +76,7 @@ Same as above, but nest the folder inside the hub folder. Example for a new sect
 | `from-prompt-to-autopilot/register/` | `/from-prompt-to-autopilot/register/` | FPA interest form → `/api/submit` → Google Sheet |
 | `webinar/` | `/webinar/` | Evergreen webinar series hub (indexed). Update monthly with the next session |
 | `webinar/stop-prompting/` | `/webinar/stop-prompting/` | June 2026 webinar resources (noindexed) + `feedback/` form |
+| `how-has-runs/` | `/how-has-runs/` | How HAS runs on its own Business AI Operating System (indexed). Real small-business case study; serves P2A and consulting. Not in primary nav |
 | `team/` | `/team/` | AI team and Mike's virtual workforce |
 | `start/` | `/start/` | Get started / contact CTA page |
 | `privacy/` | `/privacy/` | Privacy & legal |
