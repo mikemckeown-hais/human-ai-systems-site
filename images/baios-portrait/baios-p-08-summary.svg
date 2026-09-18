@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">WHAT YOU GET</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Built with you. Yours to keep.</text>
+<text x="60" y="214" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="21" fill="#6B7C8F">One system that knows your business, does the work, and shows you what matters.</text>
+<rect x="60" y="262" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="288" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">KNOWLEDGE BASE</text>
+<text x="292.5" y="438" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">Never start</text>
+<text x="292.5" y="478" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">from cold again</text>
+<rect x="555" y="262" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="288" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">SKILLS AND AGENTS</text>
+<text x="787.5" y="438" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">The routine work</text>
+<text x="787.5" y="478" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">already done</text>
+<rect x="60" y="606" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="632" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">DASHBOARDS</text>
+<text x="292.5" y="782" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">Know what</text>
+<text x="292.5" y="822" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">needs you today</text>
+<rect x="555" y="606" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="632" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">CONNECTORS</text>
+<text x="787.5" y="782" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">It works where</text>
+<text x="787.5" y="822" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">you already work</text>
+<rect x="60" y="944" width="960" height="62" rx="20" fill="#3EC1C9" fill-opacity="0.14" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.6"/>
+<g transform="translate(-178.85,0)"><path d="M 278.84999999999997,965.0 A 10,10 0 1 1 270.15,970.0" fill="none" stroke="#3EC1C9" stroke-width="2.4" stroke-linecap="round"/><polygon points="286.15,965.0 277.84999999999997,960.9 277.84999999999997,969.1" fill="#3EC1C9"/></g>
+<text x="558.0" y="981.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="16" fill="#2B2B2B" font-weight="600" text-anchor="middle">Running on a schedule, so some of it is done before you start</text>
+<rect x="60" y="1046" width="960" height="180" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<text x="104" y="1116" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="38" fill="#1F3A5F" font-weight="700">Prompt</text>
+<line x1="272" y1="1103" x2="306" y2="1103" stroke="#3EC1C9" stroke-width="3.6" stroke-linecap="round"/>
+<polygon points="320,1103 305,1095 305,1111" fill="#2A6F74"/>
+<text x="338" y="1116" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="38" fill="#1F3A5F" font-weight="700">Autopilot</text>
+<text x="104" y="1160" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="23" fill="#2A6F74" font-weight="600">prompt-autopilot.com</text>
+<text x="104" y="1200" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="18" fill="#6B7C8F">We build it with you, then teach you to run it. A few weeks from start to finish.</text>
+</svg>

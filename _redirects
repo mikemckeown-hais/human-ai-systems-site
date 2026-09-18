@@ -4,3 +4,10 @@
 /from-prompt-to-autopilot/register/   /from-prompt-to-autopilot/    301
 /webinar                              /from-prompt-to-autopilot/    301
 /webinar/                             /from-prompt-to-autopilot/    301
+
+# MSA canonical addresses. Every contracting document, including the MSA's own
+# clause 2.5 and footer, cites the extensionless form. These make it resolve.
+/legal/msa-v1.1                       /legal/HAS-MSA-v1.1.pdf       301
+/legal/msa-v1.1/                      /legal/HAS-MSA-v1.1.pdf       301
+/legal/msa-v1.0                       /legal/HAS-MSA-v1.0.pdf       301
+/legal/msa-v1.0/                      /legal/HAS-MSA-v1.0.pdf       301

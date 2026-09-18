@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Prompt to Autopilot: Your Own AI Operating System | Human–AI Systems</title>
-    <meta name="description" content="A programme that builds business owners, functional leaders and their teams their own AI Operating System, then teaches them to run and extend it. Delivered by Human–AI Systems with Third Circle.">
+    <title>From Prompt to Autopilot: Your Own Business AI Operating System | Human–AI Systems</title>
+    <meta name="description" content="A programme that builds business owners, functional leaders and their teams their own Business AI Operating System, then teaches them to run and extend it. Delivered by Human–AI Systems with Third Circle.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://human-ai-systems.com/from-prompt-to-autopilot/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="Human–AI Systems">
-    <meta property="og:title" content="From Prompt to Autopilot: Your Own AI Operating System">
-    <meta property="og:description" content="We build you a personalised AI Operating System and teach you to run and extend it. For business owners, functional leaders and their teams.">
+    <meta property="og:title" content="From Prompt to Autopilot: Your Own Business AI Operating System">
+    <meta property="og:description" content="We build you a personalised Business AI Operating System and teach you to run and extend it. For business owners, functional leaders and their teams.">
     <meta property="og:url" content="https://human-ai-systems.com/from-prompt-to-autopilot/">
     <meta property="og:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og-v2.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="From Prompt to Autopilot: Your Own AI Operating System">
-    <meta name="twitter:description" content="We build you a personalised AI Operating System and teach you to run and extend it.">
+    <meta name="twitter:title" content="From Prompt to Autopilot: Your Own Business AI Operating System">
+    <meta name="twitter:description" content="We build you a personalised Business AI Operating System and teach you to run and extend it.">
     <meta name="twitter:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og-v2.jpg">
     <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
 
@@ -31,7 +31,7 @@
       "@context": "https://schema.org",
       "@type": "Course",
       "name": "From Prompt to Autopilot",
-      "description": "A programme that gives business owners and functional leaders their own personalised AI Operating System: a knowledge base of their company and role, role-specific AI skills, a daily brief and task list, and connectors. Built for the participant, then taught, so they leave running and extending it themselves.",
+      "description": "A programme that gives business owners and functional leaders their own personalised Business AI Operating System: a knowledge base of their company and role, role-specific AI skills, a daily brief and task list, and connectors. Built for the participant, then taught, so they leave running and extending it themselves.",
       "url": "https://human-ai-systems.com/from-prompt-to-autopilot/",
       "provider": [
         {
@@ -159,27 +159,38 @@
         .footer-nav a:hover { color: #ffffff; }
 
 
-        /* BAIOS explainer: all panels visible without JS, stepped when JS is on */
+        /* BAIOS explainer. Without JS every panel renders stacked, which is the fallback.
+           With JS the panels overlay in one grid cell, so the box is the height of the
+           tallest slide and never jumps as you step through. */
         .bx { margin-top: 30px; }
+        .bx-stage { position: relative; }
         .bx-panel { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 18px 22px; margin: 0 0 20px; }
-        .bx-media { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
+        .bx-media { display: block; }
         .bx-panel svg { width: 100%; height: auto; display: block; border-radius: 8px; }
-        .bx-hint { display: none; }
+        .bx-panel svg.bx-tall { display: none; }
         .bx-panel figcaption { margin-top: 16px; padding: 0 6px; color: var(--graphite); font-size: 1.02rem; line-height: 1.6; }
         .bx-panel figcaption b { color: var(--blue); }
-        .bx-controls { display: none; }
-        .bx.is-stepped .bx-panel { display: none; margin-bottom: 0; }
-        .bx.is-stepped .bx-panel.is-active { display: block; }
-        .bx.is-stepped .bx-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
+        .bx-controls, .bx-arrow { display: none; }
+
+        .bx.is-stepped .bx-stage { display: grid; }
+        .bx.is-stepped .bx-panel { grid-area: 1 / 1; margin-bottom: 0; opacity: 0; visibility: hidden; transition: opacity 260ms ease; }
+        .bx.is-stepped .bx-panel.is-active { opacity: 1; visibility: visible; }
+        .bx.is-stepped .bx-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
+        .bx.is-stepped .bx-arrow { display: inline-flex; }
+
+        .bx-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 46px; height: 46px; padding: 0; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(31,58,95,0.14); background: var(--white); color: var(--blue); cursor: pointer; box-shadow: 0 6px 20px rgba(31,58,95,0.16); transition: color 160ms ease, border-color 160ms ease, opacity 160ms ease; }
+        .bx-arrow svg { width: 22px; height: 22px; display: block; }
+        .bx-arrow:hover:not(:disabled) { color: var(--teal); border-color: var(--teal); }
+        .bx-arrow:disabled { opacity: 0.32; cursor: default; box-shadow: none; }
+        .bx-arrow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+        .bx-prev { left: -23px; }
+        .bx-next { right: -23px; }
+
         .bx-dots { display: flex; gap: 9px; flex-wrap: wrap; }
         .bx-dot { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(31,58,95,0.18); background: var(--white); color: var(--steel); font-family: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; padding: 0; }
         .bx-dot[aria-current="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
         .bx-dot:hover { border-color: var(--teal); color: var(--teal); }
         .bx-dot[aria-current="true"]:hover { color: #fff; }
-        .bx-arrows { display: flex; gap: 10px; }
-        .bx-arrow { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; border-radius: 999px; border: 1px solid rgba(31,58,95,0.18); background: var(--white); color: var(--blue); font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
-        .bx-arrow:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
-        .bx-arrow:disabled { opacity: 0.4; cursor: default; }
         .bx-step { font-size: 0.92rem; color: var(--steel); font-weight: 600; }
 
         /* Lumen handover */
@@ -222,10 +233,14 @@
             .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
             .grid-2, .people, .split, .routes { grid-template-columns: 1fr; }
             .bx.is-stepped .bx-controls { justify-content: center; }
-            /* below this width the diagram pans inside its own container instead of
-               shrinking to the point of being unreadable */
-            .bx-panel svg { min-width: 660px; }
-            .bx-hint { display: block; margin-top: 10px; padding: 0 6px; font-size: 0.88rem; color: var(--steel); }
+            /* portrait art below this width: a 16:9 diagram in a phone column is
+               unreadable, the 4:5 version is not. Both always fit; neither pans. */
+            .bx-panel svg.bx-wide { display: none; }
+            .bx-panel svg.bx-tall { display: block; }
+            .bx-panel { padding: 14px 14px 18px; }
+            .bx-prev { left: 4px; }
+            .bx-next { right: 4px; }
+            .bx-arrow { width: 40px; height: 40px; background: rgba(255,255,255,0.94); }
             .split { gap: 28px; }
             .footer-grid { flex-direction: column; text-align: center; }
             .footer-grid > div:last-child { text-align: center; }
@@ -292,7 +307,7 @@
             <div class="container">
                 <div class="eyebrow">Programme, with Third Circle</div>
                 <h1>From Prompt to Autopilot</h1>
-                <p class="lead">A programme that gives you your own AI Operating System: a system that knows your business and your role, runs real work for you every day, and that you learn to run and extend yourself. We build it with you. You leave owning it.</p>
+                <p class="lead">A programme that gives you your own Business AI Operating System: a system that knows your business and your role, runs real work for you every day, and that you learn to run and extend yourself. We build it with you. You leave owning it.</p>
                 <span class="cohort-badge">Built for you, then handed over. Yours to keep.</span>
                 <div class="actions">
                     <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-light">Book a conversation</a>
@@ -329,13 +344,14 @@
             <div class="container">
                 <div class="narrow reveal">
                     <div class="eyebrow">What you actually get</div>
-                    <h2>An AI Operating System has four parts.</h2>
+                    <h2>A Business AI Operating System has four parts.</h2>
                     <p>Each one is only worth having because of the one before it. That is why assembling this alone tends to stall halfway: people build a knowledge base and never get to the agents, or buy agents that know nothing about them.</p>
                 </div>
 
                 <div class="bx reveal" id="baios">
+                    <div class="bx-stage">
                     <figure class="bx-panel is-active">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The Business AI Operating System: four components sitting on an AI platform, with you and your team above it" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="The Business AI Operating System: four components sitting on an AI platform, with you and your team above it" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -400,12 +416,58 @@
   <text x="1081" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="The Business AI Operating System: four components sitting on an AI platform, with you and your team above it" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">HOW IT FITS TOGETHER</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">The Business AI Operating System</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The shape of it.</b> Four parts, one platform, one foundation. Everything below is built around you.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The platform layer: mainstream AI platforms that host the operating system" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="The platform layer: mainstream AI platforms that host the operating system" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -479,12 +541,64 @@
   <text x="1081" y="534" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="The platform layer: mainstream AI platforms that host the operating system" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">THE PLATFORM</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Built on the AI you already use</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<text x="94" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700">AI platform</text>
+<rect x="462" y="350.0" width="146" height="40" rx="20" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+<text x="535.0" y="376.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B" font-weight="500" text-anchor="middle">Claude Cowork</text>
+<rect x="622" y="350.0" width="172" height="40" rx="20" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+<text x="708.0" y="376.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B" font-weight="500" text-anchor="middle">ChatGPT for Work</text>
+<rect x="808" y="350.0" width="212" height="40" rx="20" fill="#FFFFFF" stroke="#1F3A5F" stroke-opacity="0.14" stroke-width="1"/>
+<text x="914.0" y="376.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B" font-weight="500" text-anchor="middle">Microsoft Copilot 365</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The platform.</b> It runs on mainstream AI you already pay for, not something we invented and not something proprietary. Nothing holds you in.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="The knowledge base: what the system knows about your company, team and you, and what it records" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="The knowledge base: what the system knows about your company, team and you, and what it records" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -557,12 +671,63 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="The knowledge base: what the system knows about your company, team and you, and what it records" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">01 · KNOWLEDGE BASE</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">It already knows your world</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#2A6F74"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<text x="86" y="550" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">WHAT IT KNOWS</text>
+<text x="86" y="582" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Your company and market</text>
+<text x="86" y="610" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Your team, roles and processes</text>
+<text x="86" y="638" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">You: your style and priorities</text>
+<line x1="86" y1="662" x2="499" y2="662" stroke="#3EC1C9" stroke-opacity="0.5" stroke-width="1"/>
+<text x="86" y="690" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">WHAT IT RECORDS</text>
+<text x="86" y="722" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Meetings and decisions</text>
+<text x="86" y="750" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Proposals, plans, campaigns</text>
+<text x="86" y="778" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Customers, tasks, progress</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The knowledge base.</b> Your company, your role, your goals, your way of working. This is the part that stops you re-explaining yourself, and it is what turns a chat tool into a system.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Skills and agents: the part of the system that does the work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="Skills and agents: the part of the system that does the work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -635,12 +800,63 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="Skills and agents: the part of the system that does the work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">02 · SKILLS AND AGENTS</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Agents built for your role</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#2A6F74"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<text x="581" y="550" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">STANDARD SET</text>
+<text x="581" y="582" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Knowledge management</text>
+<text x="581" y="610" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Meeting write-ups</text>
+<text x="581" y="638" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Daily brief and task list</text>
+<line x1="581" y1="662" x2="994" y2="662" stroke="#3EC1C9" stroke-opacity="0.5" stroke-width="1"/>
+<text x="581" y="690" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">BUILT AROUND YOUR ROLE</text>
+<text x="581" y="722" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">The work only you do</text>
+<text x="581" y="750" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Yours, or shared with the team</text>
+<text x="581" y="778" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Extended as you learn</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The skills and agents.</b> Each one a capable colleague for a slice of your job. We build two or three around your biggest time-sinks, plus a daily brief, a knowledge keeper, a support assistant and a meeting assistant as standard.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Dashboards: what the system shows, with a plain-language read and recommended actions" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="Dashboards: what the system shows, with a plain-language read and recommended actions" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -713,12 +929,63 @@
   <text x="1081" y="522" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6" fill="#6B7C8F" text-anchor="middle">REACHES</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="Dashboards: what the system shows, with a plain-language read and recommended actions" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">03 · DASHBOARDS</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">See where things stand</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#2A6F74"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<text x="86" y="934" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">STANDARD SET</text>
+<text x="86" y="966" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Morning brief</text>
+<text x="86" y="994" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Work in progress</text>
+<text x="86" y="1022" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">System health</text>
+<line x1="86" y1="1046" x2="499" y2="1046" stroke="#3EC1C9" stroke-opacity="0.5" stroke-width="1"/>
+<text x="86" y="1074" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">BUILT FOR YOUR FUNCTION</text>
+<text x="86" y="1106" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">The numbers you run on</text>
+<text x="86" y="1134" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">The AI's read on them</text>
+<text x="86" y="1162" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">And what to do next</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The dashboards.</b> Not charts. A plain-English read of what your numbers are saying this week, and two or three things worth doing about it. What a good analyst would tell you if you had one.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Connectors: how the system reaches your files, email and calendar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="Connectors: how the system reaches your files, email and calendar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -791,12 +1058,63 @@
   <text x="965" y="578" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13.5" fill="#2B2B2B">Or added by you, once trained</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="Connectors: how the system reaches your files, email and calendar" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">04 · CONNECTORS</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Plugged into the systems you run on</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="620.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="658.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="696.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="834" width="465" height="360" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="860" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="910" width="425" height="264" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="1004.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="1042.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1080.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="834" width="465" height="360" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<rect x="579" y="860" width="40" height="26" rx="7" fill="#2A6F74"/>
+<text x="599" y="879" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#FFFFFF" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="880" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<text x="581" y="934" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">SET UP IN EVERY BUILD</text>
+<text x="581" y="966" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Your files</text>
+<text x="581" y="994" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Email</text>
+<text x="581" y="1022" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Calendar</text>
+<line x1="581" y1="1046" x2="994" y2="1046" stroke="#3EC1C9" stroke-opacity="0.5" stroke-width="1"/>
+<text x="581" y="1074" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#2A6F74" font-weight="600" letter-spacing="1.4">ADDED WHEN YOU NEED THEM</text>
+<text x="581" y="1106" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">CRM, finance, project tools</text>
+<text x="581" y="1134" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Set up with you</text>
+<text x="581" y="1162" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#2B2B2B">Or added by you, once trained</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>The connectors.</b> Your own files from day one. Email and calendar when you are ready, and where your IT allows. Nothing goes out into the world without a human seeing it first.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="Autopilot: skills running on a schedule and writing results back into the knowledge base" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="Autopilot: skills running on a schedule and writing results back into the knowledge base" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <g transform="translate(0,18)">
@@ -866,12 +1184,61 @@
   <text x="656" y="658" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" font-weight="600" fill="#2B2B2B" text-anchor="middle">Skills run on a schedule and write what they produce back into the knowledge base</text>
 
   </g>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="Autopilot: skills running on a schedule and writing results back into the knowledge base" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">AUTOPILOT</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Wake up to work already done</text>
+<rect x="60" y="220" width="960" height="86" rx="20" fill="#2A6F74"/>
+<text x="94" y="273.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="28" fill="#FFFFFF" font-weight="700">You and your team</text>
+<rect x="640" y="250.0" width="34" height="24" rx="3" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="657" y1="274.0" x2="657" y2="281.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="646" y1="282.0" x2="668" y2="282.0" stroke="#FFFFFF" stroke-width="2.4"/>
+<rect x="700" y="247.0" width="17" height="33" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
+<line x1="704" y1="275.0" x2="713" y2="275.0" stroke="#FFFFFF" stroke-width="1.8"/>
+<text x="986" y="270.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="end" opacity="0.9">one app, desktop and mobile</text>
+<rect x="60" y="330" width="960" height="80" rx="20" fill="#F3F5F7" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<text x="540.0" y="379.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">AI platform</text>
+<rect x="60" y="450" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Knowledge base</text>
+<rect x="80" y="526" width="425" height="224" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="600.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="638.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="676.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">HOLDS</text>
+<rect x="555" y="450" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="476" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="495" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="496" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Skills / Agents</text>
+<rect x="575" y="526" width="425" height="224" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="600.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="638.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="676.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">DOES</text>
+<rect x="60" y="794" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="820" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="839" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="840" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Dashboards</text>
+<rect x="80" y="870" width="425" height="224" rx="14" fill="#F3F5F7"/>
+<text x="292.5" y="944.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="292.5" y="982.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="292.5" y="1020.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SHOWS</text>
+<rect x="555" y="794" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="820" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="839" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="840" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="22" fill="#1F3A5F" font-weight="700">Connectors</text>
+<rect x="575" y="870" width="425" height="224" rx="14" fill="#F3F5F7"/>
+<text x="787.5" y="944.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">WHAT THE</text>
+<text x="787.5" y="982.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">SYSTEM</text>
+<text x="787.5" y="1020.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="24" fill="#6B7C8F" font-weight="500" text-anchor="middle" letter-spacing="2">REACHES</text>
+<rect x="60" y="1200" width="960" height="66" rx="20" fill="#3EC1C9" fill-opacity="0.14" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.6"/>
+<g transform="translate(-95.85,0)"><path d="M 195.84999999999997,1223.0 A 10,10 0 1 1 187.14999999999998,1228.0" fill="none" stroke="#3EC1C9" stroke-width="2.4" stroke-linecap="round"/><polygon points="203.14999999999998,1223.0 194.84999999999997,1218.9 194.84999999999997,1227.1" fill="#3EC1C9"/></g>
+<text x="558.0" y="1239.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="16" fill="#2B2B2B" font-weight="600" text-anchor="middle">Skills run on a schedule and write what they produce back into the knowledge base</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>Autopilot.</b> The work that runs on a schedule, before you ask, and writes what it produces back into the knowledge base. This is the part the programme is named after.</figcaption>
                     </figure>
                     <figure class="bx-panel">
-                        <div class="bx-media"><svg viewBox="0 0 1280 720" role="img" aria-label="What you get: never start from cold, routine work already done, know what needs you today, and it works where you already work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                        <div class="bx-media"><svg viewBox="0 0 1280 720" class="bx-wide" role="img" aria-label="What you get: never start from cold, routine work already done, know what needs you today, and it works where you already work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
   <rect width="1280" height="720" fill="#FFFFFF"/>
 
   <!-- Kicker and title -->
@@ -926,18 +1293,61 @@
   <text x="104" y="622" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="19" font-weight="600" fill="#2A6F74">prompt-autopilot.com</text>
   <text x="1176" y="580" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">We build it with you, then teach you to run it.</text>
   <text x="1176" y="610" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="17" fill="#6B7C8F" text-anchor="end">A few weeks from start to finish.</text>
+</svg><svg viewBox="0 0 1080 1350" class="bx-tall" role="img" aria-label="What you get: never start from cold, routine work already done, know what needs you today, and it works where you already work" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<rect width="1080" height="1350" fill="#FFFFFF"/>
+<line x1="60" y1="104" x2="86" y2="104" stroke="#3EC1C9" stroke-width="2"/>
+<text x="98" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="15" fill="#6B7C8F" font-weight="500" letter-spacing="2">WHAT YOU GET</text>
+<text x="60" y="170" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" fill="#1F3A5F" font-weight="700">Built with you. Yours to keep.</text>
+<text x="60" y="214" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="21" fill="#6B7C8F">One system that knows your business, does the work, and shows you what matters.</text>
+<rect x="60" y="262" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="288" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">01</text>
+<text x="140" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">KNOWLEDGE BASE</text>
+<text x="292.5" y="438" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">Never start</text>
+<text x="292.5" y="478" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">from cold again</text>
+<rect x="555" y="262" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="288" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">02</text>
+<text x="635" y="307" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">SKILLS AND AGENTS</text>
+<text x="787.5" y="438" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">The routine work</text>
+<text x="787.5" y="478" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">already done</text>
+<rect x="60" y="606" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="84" y="632" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="104" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">03</text>
+<text x="140" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">DASHBOARDS</text>
+<text x="292.5" y="782" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">Know what</text>
+<text x="292.5" y="822" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">needs you today</text>
+<rect x="555" y="606" width="465" height="320" rx="20" fill="none" stroke="#1F3A5F" stroke-opacity="0.12" stroke-width="1"/>
+<rect x="579" y="632" width="40" height="26" rx="7" fill="#3EC1C9" fill-opacity="0.16"/>
+<text x="599" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="14" fill="#2A6F74" font-weight="600" text-anchor="middle" letter-spacing="0.6">04</text>
+<text x="635" y="651" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="13" fill="#6B7C8F" font-weight="600" letter-spacing="1.4">CONNECTORS</text>
+<text x="787.5" y="782" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">It works where</text>
+<text x="787.5" y="822" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="26" fill="#1F3A5F" font-weight="700" text-anchor="middle">you already work</text>
+<rect x="60" y="944" width="960" height="62" rx="20" fill="#3EC1C9" fill-opacity="0.14" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.6"/>
+<g transform="translate(-178.85,0)"><path d="M 278.84999999999997,965.0 A 10,10 0 1 1 270.15,970.0" fill="none" stroke="#3EC1C9" stroke-width="2.4" stroke-linecap="round"/><polygon points="286.15,965.0 277.84999999999997,960.9 277.84999999999997,969.1" fill="#3EC1C9"/></g>
+<text x="558.0" y="981.0" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="16" fill="#2B2B2B" font-weight="600" text-anchor="middle">Running on a schedule, so some of it is done before you start</text>
+<rect x="60" y="1046" width="960" height="180" rx="20" fill="#3EC1C9" fill-opacity="0.16" stroke="#3EC1C9" stroke-opacity="0.75" stroke-width="1.8"/>
+<text x="104" y="1116" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="38" fill="#1F3A5F" font-weight="700">Prompt</text>
+<line x1="272" y1="1103" x2="306" y2="1103" stroke="#3EC1C9" stroke-width="3.6" stroke-linecap="round"/>
+<polygon points="320,1103 305,1095 305,1111" fill="#2A6F74"/>
+<text x="338" y="1116" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="38" fill="#1F3A5F" font-weight="700">Autopilot</text>
+<text x="104" y="1160" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="23" fill="#2A6F74" font-weight="600">prompt-autopilot.com</text>
+<text x="104" y="1200" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="18" fill="#6B7C8F">We build it with you, then teach you to run it. A few weeks from start to finish.</text>
 </svg></div>
-                        <p class="bx-hint">Swipe the diagram sideways to read it.</p>
                         <figcaption><b>All of it, yours.</b> Built on your platform, in your own file store, under your own account. When the programme ends you keep the system and the ability to run it.</figcaption>
                     </figure>
 
+
+                        <button type="button" class="bx-arrow bx-prev" data-bx="prev" aria-label="Previous component">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <button type="button" class="bx-arrow bx-next" data-bx="next" aria-label="Next component">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
                     <div class="bx-controls">
                         <div class="bx-dots" role="tablist" aria-label="Operating system components"></div>
-                        <div class="bx-arrows">
-                            <span class="bx-step" aria-live="polite"></span>
-                            <button type="button" class="bx-arrow" data-bx="prev">&larr; Back</button>
-                            <button type="button" class="bx-arrow" data-bx="next">Next &rarr;</button>
-                        </div>
+                        <span class="bx-step" aria-live="polite"></span>
                     </div>
                 </div>
 
@@ -954,7 +1364,7 @@
                         <div class="eyebrow">See it running</div>
                         <span class="synthetic">A synthetic reference company</span>
                         <h2>A whole company running on one.</h2>
-                        <p>Lumen is a mid-market software company where every leader and every function runs on an AI Operating System, built with the same programme, the same engine and the same system we install for clients.</p>
+                        <p>Lumen is a mid-market software company where every leader and every function runs on a Business AI Operating System, built with the same programme, the same engine and the same system we install for clients.</p>
                         <p>The company and the people are invented. The knowledge base, the skills, the dashboards and the connectors are the real thing, running, on synthetic data so we can open every door without exposing a real client.</p>
                         <p>Find the leader whose job is closest to yours, and see their working week before and after.</p>
                         <div class="actions">
@@ -962,7 +1372,7 @@
                         </div>
                     </div>
                     <div class="split-img reveal">
-                        <img loading="lazy" decoding="async" src="/from-prompt-to-autopilot/meet-lumen/assets/company/leadership-team.jpg" alt="The Lumen leadership team, a fictional reference company built on an AI Operating System">
+                        <img loading="lazy" decoding="async" src="/from-prompt-to-autopilot/meet-lumen/assets/company/leadership-team.jpg" alt="The Lumen leadership team, a fictional reference company built on a Business AI Operating System">
                     </div>
                 </div>
             </div>
@@ -1173,7 +1583,8 @@
         });
         mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
 
-        // BAIOS explainer stepper. Without JS every panel stays visible, which is the fallback.
+        // BAIOS explainer stepper. Without JS every panel renders stacked, which is the
+        // fallback; is-stepped is only ever added from here.
         (function () {
             const bx = document.getElementById('baios');
             if (!bx) return;
@@ -1181,8 +1592,8 @@
             if (panels.length < 2) return;
             const dots = bx.querySelector('.bx-dots');
             const step = bx.querySelector('.bx-step');
-            const prev = bx.querySelector('[data-bx="prev"]');
-            const next = bx.querySelector('[data-bx="next"]');
+            const prev = bx.querySelector('.bx-prev');
+            const next = bx.querySelector('.bx-next');
             let i = 0;
 
             panels.forEach((p, n) => {
@@ -1198,7 +1609,11 @@
 
             function show(n) {
                 i = Math.max(0, Math.min(panels.length - 1, n));
-                panels.forEach((p, k) => p.classList.toggle('is-active', k === i));
+                panels.forEach((p, k) => {
+                    const on = k === i;
+                    p.classList.toggle('is-active', on);
+                    p.setAttribute('aria-hidden', on ? 'false' : 'true');
+                });
                 dotEls.forEach((d, k) => d.setAttribute('aria-current', k === i ? 'true' : 'false'));
                 step.textContent = (i + 1) + ' of ' + panels.length;
                 prev.disabled = i === 0;
@@ -1211,6 +1626,18 @@
                 if (e.key === 'ArrowLeft') { show(i - 1); }
                 else if (e.key === 'ArrowRight') { show(i + 1); }
             });
+
+            // swipe, since the arrows are small on a phone
+            let x0 = null;
+            const stage = bx.querySelector('.bx-stage');
+            stage.addEventListener('touchstart', (e) => { x0 = e.changedTouches[0].clientX; }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                if (x0 === null) return;
+                const dx = e.changedTouches[0].clientX - x0;
+                if (Math.abs(dx) > 45) { show(dx < 0 ? i + 1 : i - 1); }
+                x0 = null;
+            }, { passive: true });
+
             bx.setAttribute('tabindex', '-1');
             bx.classList.add('is-stepped');
             show(0);
