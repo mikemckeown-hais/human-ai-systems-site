@@ -277,6 +277,19 @@
         .rule-col.rule-wait { border-top-color: var(--blue); }
         .rule-col h3 { font-weight: 600; }
         .rule-col ul { margin: 0; padding-left: 20px; color: var(--graphite); display: grid; gap: 8px; }
+        .tide { margin: 22px 0 18px; padding: 18px 22px; border-radius: var(--radius); background: linear-gradient(120deg, rgba(62,193,201,0.12), rgba(42,111,116,0.06)); border: 1px solid rgba(62,193,201,0.35); }
+        .tide p { margin: 0; }
+        .dash { margin-top: 30px; }
+        .dash-tabs { display: none; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+        .dash-tabs button { font-family: inherit; font-size: 0.98rem; font-weight: 600; padding: 9px 18px; border-radius: 999px; border: 1px solid rgba(31,58,95,0.18); background: var(--white); color: var(--blue); cursor: pointer; }
+        .dash-tabs button[aria-selected="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+        .dash-panel { margin: 0 0 28px; }
+        .dash-panel img { width: 100%; height: auto; display: block; border-radius: 12px; }
+        .dash-panel figcaption { margin-top: 14px; color: var(--graphite); font-size: 1.02rem; line-height: 1.6; max-width: 820px; }
+        .dash-panel figcaption b { color: var(--blue); }
+        .dash.is-tabbed .dash-tabs { display: flex; }
+        .dash.is-tabbed .dash-panel { display: none; margin: 0; }
+        .dash.is-tabbed .dash-panel.is-active { display: block; }
         .bx-panel figcaption a { color: var(--teal); font-weight: 600; }
         h3 { font-weight: 600; }
 
@@ -354,8 +367,8 @@
             <div class="container hr-hero">
                 <div>
                     <div class="eyebrow">How Human&ndash;AI Systems runs</div>
-                    <h1>One founder. A whole company&rsquo;s workload.</h1>
-                    <p class="lead">Human&ndash;AI Systems runs on its own Business AI Operating System. A named AI team handles marketing, sales, operations, finance, technology and delivery, around thirty routines run every day without being asked, and one person stays in charge of the decisions that matter. This page shows what that looks like in practice.</p>
+                    <h1>One founder. A whole team at work.</h1>
+                    <p class="lead">Human&ndash;AI Systems runs on its own Business AI Operating System. A named AI team handles marketing, sales, operations, finance, technology and delivery, around thirty routines run every day without being asked, and a human stays in charge of the decisions that matter. This page shows what that looks like in practice.</p>
                     <div class="actions">
                         <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-light">Book a conversation</a>
                         <a href="#system" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5);">See how it fits together</a>
@@ -388,11 +401,15 @@
             <div class="container">
                 <div class="split">
                     <div class="reveal">
-                        <div class="eyebrow">Why this example</div>
-                        <h2>This one is real, and it is small.</h2>
-                        <p>Running a small business means doing every job yourself. Sales, marketing, delivery, finance, admin and IT all land on the same desk, and the first things to slip are the records, the follow-ups and the consistency.</p>
-                        <p>Human&ndash;AI Systems is one person. Everything on this page is in daily use, built by me and extended most weeks. It is not a demonstration of what could be done. It is the system the business actually runs on, at a scale most owner-managers will recognise.</p>
-                        <p class="muted">Our reference company, <a href="/from-prompt-to-autopilot/meet-lumen/" style="color:var(--teal);font-weight:600;">Lumen</a>, shows the same idea across a 400-person organisation. This is the other end of the scale.</p>
+                        <div class="eyebrow">Building the team</div>
+                        <h2>Every founder&rsquo;s real job is building a strong team.</h2>
+                        <p>Anyone who has built a business learns it early: you are only as good as the team around you. Mine is an AI team that I lead, working alongside human partners who bring skills, relationships and judgement of their own.</p>
+                        <p>Each AI team member has a defined role, knows the business in depth, and works to the same standards and the same brand. I set the direction, own the client relationships and make the decisions that matter. It is the model we help clients adopt: human leadership, AI workers in defined roles, and governance built in from the start.</p>
+                        <div class="tide">
+                            <div class="tag">A rising tide</div>
+                            <p>This team gets better without being replaced. Every time the underlying AI models improve, every member of the team improves with them. On top of that, the operating system itself improves every week, as corrections are folded back into the skills and new knowledge compounds. Continuous improvement is built into how the team works.</p>
+                        </div>
+                        <p class="muted">Our reference company, <a href="/from-prompt-to-autopilot/meet-lumen/" style="color:var(--teal);font-weight:600;">Lumen</a>, shows the same idea across a 400-person organisation.</p>
                     </div>
                     <div class="split-img reveal">
                         <picture>
@@ -408,7 +425,7 @@
             <div class="container">
                 <div class="narrow reveal">
                     <div class="eyebrow">How it fits together</div>
-                    <h2>Four parts, one platform, one person in charge.</h2>
+                    <h2>Four parts, one platform, a human in charge.</h2>
                     <p>Every Business AI Operating System has the same four parts. Here is what each one holds at Human&ndash;AI Systems. Step through it.</p>
                 </div>
 
@@ -1396,7 +1413,7 @@
 <text x="104" y="1160" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="23" fill="#2A6F74" font-weight="600">human-ai-systems.com</text>
 <text x="104" y="1200" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="18" fill="#6B7C8F">The same system we build for clients and teach through From Prompt to Autopilot.</text>
 </svg></div>
-                        <figcaption><b>What it adds up to.</b> A one-person business with the reach of a small team, running inside written rules on what waits for a human. It is the same system we build for clients and teach through From Prompt to Autopilot.</figcaption>
+                        <figcaption><b>What it adds up to.</b> A founder-led business with the capacity of a much larger team, running inside written rules on what waits for a human. It is the same system we build for clients and teach through From Prompt to Autopilot.</figcaption>
                     </figure>
                         <button type="button" class="bx-arrow bx-prev" data-bx="prev" aria-label="Previous component">
                             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1447,6 +1464,35 @@
 
         <section class="soft">
             <div class="container">
+                <div class="narrow reveal">
+                    <div class="eyebrow">What it looks like</div>
+                    <h2>One screen for the whole business.</h2>
+                    <p>The dashboards are live pages the AI team keeps current from the workspace: what needs me today, where the pipeline stands, the money, and whether the system itself is healthy. Each one comes with the team&rsquo;s own read of what the numbers mean. These are recreations with illustrative data, not our real figures.</p>
+                </div>
+                <div class="dash reveal" id="dash">
+                    <div class="dash-tabs" role="tablist" aria-label="Dashboards"></div>
+                    <figure class="dash-panel is-active" data-tab="Today">
+                        <a href="/how-has-runs/images/dash-today.webp" target="_blank" rel="noopener" aria-label="Open the Today dashboard full size"><img loading="lazy" decoding="async" src="/how-has-runs/images/dash-today.webp" alt="Today dashboard from the HAS Command Centre, shown with illustrative data" width="1836"></a>
+                        <figcaption><b>What needs me today.</b> The morning view: the one thing that matters most, the actions behind it with drafts ready, the headline numbers, today&rsquo;s diary and what the team did overnight.</figcaption>
+                    </figure>
+                    <figure class="dash-panel" data-tab="Pipeline">
+                        <a href="/how-has-runs/images/dash-pipeline.webp" target="_blank" rel="noopener" aria-label="Open the Pipeline dashboard full size"><img loading="lazy" decoding="async" src="/how-has-runs/images/dash-pipeline.webp" alt="Pipeline dashboard from the HAS Command Centre, shown with illustrative data" width="1836"></a>
+                        <figcaption><b>Where every deal stands.</b> Kept current from meeting write-ups, email and outreach, with Vint&rsquo;s read on what has changed and where the risk sits.</figcaption>
+                    </figure>
+                    <figure class="dash-panel" data-tab="Money">
+                        <a href="/how-has-runs/images/dash-money.webp" target="_blank" rel="noopener" aria-label="Open the Money dashboard full size"><img loading="lazy" decoding="async" src="/how-has-runs/images/dash-money.webp" alt="Money dashboard from the HAS Command Centre, shown with illustrative data" width="1836"></a>
+                        <figcaption><b>Invoices, payments and cash.</b> Blaise raises and chases the invoices and matches payments against a read-only bank feed, then says plainly whether anything needs attention.</figcaption>
+                    </figure>
+                    <figure class="dash-panel" data-tab="System">
+                        <a href="/how-has-runs/images/dash-system.webp" target="_blank" rel="noopener" aria-label="Open the System dashboard full size"><img loading="lazy" decoding="async" src="/how-has-runs/images/dash-system.webp" alt="System dashboard from the HAS Command Centre, shown with illustrative data" width="1836"></a>
+                        <figcaption><b>Is the system healthy?.</b> Every scheduled routine and when it last ran, what the team changed on its own this week, and what is waiting for my approval.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
                 <div class="split">
                     <div class="reveal">
                         <div class="eyebrow">Skills, explained as people</div>
@@ -1470,7 +1516,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="soft">
             <div class="container">
                 <div class="narrow reveal">
                     <div class="eyebrow">What it does, area by area</div>
@@ -1601,7 +1647,7 @@
                     </div>
                 </div>
                 <div class="callout reveal">
-                    <p><strong style="color:var(--blue);">Permissions are keys, not prompts.</strong> Where something must not happen, the preferred control is that the AI cannot do it, such as draft-only access, rather than an instruction asking it nicely. Trust is earned: a clean month on a task is the test for loosening a restriction. It is the same governance thinking we bring to clients, at the scale of one person.</p>
+                    <p><strong style="color:var(--blue);">Permissions are keys, not prompts.</strong> Where something must not happen, the preferred control is that the AI cannot do it, such as draft-only access, rather than an instruction asking it nicely. Trust is earned: a clean month on a task is the test for loosening a restriction. It is the same governance thinking we bring to clients, applied to our own business.</p>
                 </div>
             </div>
         </section>
@@ -1809,6 +1855,16 @@
             bx.setAttribute('tabindex', '-1');
             bx.classList.add('is-stepped');
             show(0);
+        })();
+
+        // Dashboard gallery. Without JS all four stack; tabs are added from here.
+        (function () {
+            const d = document.getElementById('dash'); if (!d) return;
+            const panels = Array.from(d.querySelectorAll('.dash-panel')); const bar = d.querySelector('.dash-tabs');
+            panels.forEach((p, n) => { const b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = p.dataset.tab;
+                b.addEventListener('click', () => { panels.forEach((q, k) => q.classList.toggle('is-active', k === n)); Array.from(bar.children).forEach((c, k) => c.setAttribute('aria-selected', k === n ? 'true' : 'false')); });
+                bar.appendChild(b); });
+            bar.children[0].setAttribute('aria-selected', 'true'); d.classList.add('is-tabbed');
         })();
     </script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
