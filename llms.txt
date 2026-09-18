@@ -13,6 +13,7 @@ Sectors: local government, financial services, professional services, SaaS and t
 - [Services](https://human-ai-systems.com/services/): Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
 - [Training](https://human-ai-systems.com/training/): practical AI workshops for teams
 - [From Prompt to Autopilot](https://human-ai-systems.com/from-prompt-to-autopilot/): the Business AI Operating System programme, for a team, an individual or a whole company. Full detail and pricing at https://www.prompt-autopilot.com
+- [How Human-AI Systems runs](https://human-ai-systems.com/how-has-runs/): a real, one-person consultancy running on a Business AI Operating System, with a named AI team, around thirty scheduled routines, the dashboards, and written rules on what waits for a human
 - [Meet Lumen](https://human-ai-systems.com/from-prompt-to-autopilot/meet-lumen/): a synthetic reference company running entirely on a Business AI Operating System, with eleven role dashboards and a before-and-after working week for each leader
 - [Sectors](https://human-ai-systems.com/sectors/): sector-specific pages
 - [Insights](https://human-ai-systems.com/insights/): articles and frameworks

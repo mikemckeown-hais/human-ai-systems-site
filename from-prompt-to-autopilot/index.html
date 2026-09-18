@@ -201,6 +201,19 @@
         .lumen .split-img img { border-radius: var(--radius); box-shadow: 0 18px 44px rgba(9,16,28,0.34); }
         .lumen .synthetic { display: inline-block; margin-bottom: 18px; padding: 7px 15px; border-radius: 999px; background: rgba(62,193,201,0.16); border: 1px solid rgba(62,193,201,0.45); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em; }
         .lumen .actions { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; }
+        .examples { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; }
+        .example { display: flex; flex-direction: column; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius); overflow: hidden; transition: background 180ms ease, border-color 180ms ease, transform 180ms ease; }
+        .example:hover { background: rgba(255,255,255,0.12); border-color: rgba(62,193,201,0.55); transform: translateY(-3px); }
+        .example-img { aspect-ratio: 16 / 9; overflow: hidden; background: rgba(0,0,0,0.18); }
+        .example-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+        .example-body { padding: 24px 26px 26px; }
+        .example-body h3 { color: #fff; margin: 0 0 10px; font-size: 1.22rem; }
+        .example-body p { margin: 0; color: rgba(255,255,255,0.78); font-size: 0.99rem; }
+        .example .tag { display: inline-block; margin-bottom: 12px; padding: 5px 13px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        .tag-real { background: rgba(62,193,201,0.2); border: 1px solid rgba(62,193,201,0.55); color: #d7f6f8; }
+        .tag-ref { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.28); color: rgba(255,255,255,0.86); }
+        .example-go { display: inline-block; margin-top: 18px; color: var(--aqua); font-weight: 600; font-size: 0.99rem; }
+        .examples-note { max-width: 760px; margin: 30px auto 0; text-align: center; font-size: 0.99rem; }
 
         /* Routes */
         .routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 30px; }
@@ -231,7 +244,7 @@
             .mobile-menu a { color: #ffffff; padding: 10px 0; font-size: 1rem; font-weight: 500; }
             .mobile-menu .mobile-start { margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; width: fit-content; padding: 12px 18px; border-radius: 999px; background: var(--white); color: var(--blue); font-weight: 600; }
             .mobile-contact-row { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 8px; }
-            .grid-2, .people, .split, .routes { grid-template-columns: 1fr; }
+            .grid-2, .people, .split, .routes, .examples { grid-template-columns: 1fr; }
             .bx.is-stepped .bx-controls { justify-content: center; }
             /* portrait art below this width: a 16:9 diagram in a phone column is
                unreadable, the 4:5 version is not. Both always fit; neither pans. */
@@ -1359,22 +1372,36 @@
 
         <section class="lumen">
             <div class="container">
-                <div class="split">
-                    <div class="reveal">
-                        <div class="eyebrow">See it running</div>
-                        <span class="synthetic">A synthetic reference company</span>
-                        <h2>A whole company running on one.</h2>
-                        <p>Lumen is a mid-market software company where every leader and every function runs on a Business AI Operating System, built with the same programme, the same engine and the same system we install for clients.</p>
-                        <p>The company and the people are invented. The knowledge base, the skills, the dashboards and the connectors are the real thing, running, on synthetic data so we can open every door without exposing a real client.</p>
-                        <p>Find the leader whose job is closest to yours, and see their working week before and after.</p>
-                        <div class="actions">
-                            <a href="/from-prompt-to-autopilot/meet-lumen/" class="btn btn-light">Meet Lumen &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="split-img reveal">
-                        <img loading="lazy" decoding="async" src="/from-prompt-to-autopilot/meet-lumen/assets/company/leadership-team.jpg" alt="The Lumen leadership team, a fictional reference company built on a Business AI Operating System">
-                    </div>
+                <div class="narrow reveal">
+                    <div class="eyebrow">See it running</div>
+                    <h2>Two of them, running right now.</h2>
+                    <p>One is ours, and it is real: this consultancy is run on the system the programme builds. The other is a reference company we built so you can walk through a whole organisation without us exposing a client.</p>
                 </div>
+                <div class="examples">
+                    <a class="example reveal" href="/how-has-runs/">
+                        <div class="example-img">
+                            <img loading="lazy" decoding="async" src="/how-has-runs/images/dash-today.webp" alt="The Human–AI Systems morning dashboard: what needs attention today, with drafts ready">
+                        </div>
+                        <div class="example-body">
+                            <span class="tag tag-real">Real, and ours</span>
+                            <h3>How Human&ndash;AI Systems runs</h3>
+                            <p>One founder, a named AI team across marketing, sales, operations, finance and delivery, and around thirty routines that run every day without being asked. The dashboards, the rules on what waits for a human, and what it actually does, area by area.</p>
+                            <span class="example-go">How we run &rarr;</span>
+                        </div>
+                    </a>
+                    <a class="example reveal" href="/from-prompt-to-autopilot/meet-lumen/">
+                        <div class="example-img">
+                            <img loading="lazy" decoding="async" src="/from-prompt-to-autopilot/meet-lumen/assets/company/leadership-team.jpg" alt="The Lumen leadership team, a fictional reference company built on a Business AI Operating System">
+                        </div>
+                        <div class="example-body">
+                            <span class="tag tag-ref">A reference company</span>
+                            <h3>Meet Lumen</h3>
+                            <p>A mid-market software company where every leader and every function runs on one. The company and the people are invented; the knowledge base, agents, dashboards and connectors are the real thing, on synthetic data. Find the leader whose job is closest to yours.</p>
+                            <span class="example-go">Meet Lumen &rarr;</span>
+                        </div>
+                    </a>
+                </div>
+                <p class="examples-note reveal">One shows you it works at the scale of a person. The other shows you it works at the scale of a company.</p>
             </div>
         </section>
 

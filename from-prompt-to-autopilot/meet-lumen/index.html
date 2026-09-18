@@ -213,6 +213,10 @@
   /* HAS site footer */
   .site-footer{padding:36px 0 48px;background:#1c2632;color:rgba(255,255,255,.82);font-size:16px;line-height:1.45}
   .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .real-example{margin-top:34px;padding:28px 30px;border-radius:var(--radius);background:var(--parchment);border:var(--border);display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .real-example-h{margin:0 0 10px;font-size:22px;color:var(--blue)}
+  .real-example .btn{flex:0 0 auto}
+  @media(max-width:760px){.real-example{flex-direction:column;align-items:flex-start;padding:24px}}
   .footer-nav{display:flex;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,.72)}
   .footer-nav a{color:rgba(255,255,255,.82)}
   .footer-nav a:hover{color:#fff}
@@ -334,6 +338,15 @@
       <figcaption class="company-cap">The Lumen leadership team &middot; a fictional reference company</figcaption>
     </figure>
     <p class="stack-note" style="margin-top:24px">Synthetic company &middot; real system &middot; the actual programme output</p>
+
+    <aside class="real-example">
+      <div>
+        <span class="kicker" style="margin-bottom:10px">Prefer a real one?</span>
+        <h3 class="real-example-h">Human&ndash;AI Systems runs on one too, and that business is real.</h3>
+        <p class="muted" style="margin:0">One founder, a named AI team across marketing, sales, operations, finance and delivery, and around thirty routines running every day. Same four parts, same platform, at the scale of a person rather than a company.</p>
+      </div>
+      <a class="btn btn-primary" href="/how-has-runs/">How Human&ndash;AI Systems runs &rarr;</a>
+    </aside>
   </div>
 </section>
 
