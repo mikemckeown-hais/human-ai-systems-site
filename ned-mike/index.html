@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike McKeown | Non-Executive Director Profile</title>
+    <meta name="description" content="Mike McKeown: non-executive director and charity trustee. Commercial and public-service leadership, with deep experience of technology and AI.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://human-ai-systems.com/ned-mike/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Mike McKeown | Non-Executive Director Profile">
+    <meta property="og:description" content="Commercial and public-service leadership, with deep experience of technology and AI.">
+    <meta property="og:url" content="https://human-ai-systems.com/ned-mike/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 72px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: min(360px, 100%); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 20ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 16px; font-size: 1.05rem; }
+
+        /* ── Intro layout ── */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.55fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .portrait {
+            position: sticky;
+            top: 112px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: #dbe4ee;
+            aspect-ratio: 3/4;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ── Impact cards ── */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .impact-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--blue);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .impact-label {
+            font-size: 0.92rem;
+            color: var(--steel);
+            line-height: 1.4;
+        }
+
+        /* ── Experience blocks ── */
+        .experience-block {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: var(--border);
+        }
+
+        .experience-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .experience-block .eyebrow { margin-bottom: 12px; }
+
+        .evidence-card {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--teal);
+        }
+
+        .evidence-card h4 {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .evidence-card p { margin: 0; font-size: 0.98rem; color: var(--graphite); }
+
+        .evidence-stat {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        /* ── How I work section ── */
+        .work-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .work-option {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow);
+        }
+
+        .work-option h3 {
+            color: var(--blue);
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .work-option p {
+            font-size: 1rem;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .work-option ul {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+
+        .work-option li {
+            padding: 6px 0;
+            font-size: 0.98rem;
+            color: var(--graphite);
+            border-bottom: 1px solid rgba(31, 58, 95, 0.06);
+        }
+
+        .work-option li:last-child { border-bottom: none; }
+
+        .work-option li::before {
+            content: "→ ";
+            color: var(--aqua);
+            font-weight: 600;
+        }
+
+        /* ── Capability pills ── */
+        .capability-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .capability-pill {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-size: 0.92rem;
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        /* ── Pull quote ── */
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 18px 24px;
+            margin: 28px 0;
+            background: var(--soft);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.14rem;
+            color: var(--blue);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary { background: var(--white); color: var(--blue); box-shadow: var(--shadow); }
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+        .btn-teal { background: var(--teal); color: var(--white); box-shadow: var(--shadow); }
+        .btn-teal:hover { background: #24616a; }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.72); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 320ms ease;
+                background: #36527A;
+            }
+
+            .mobile-menu.is-open {
+                max-height: 500px;
+            }
+
+            .mobile-menu-inner {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 0 22px;
+            }
+
+            .mobile-menu-inner a {
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 500;
+                padding: 6px 0;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 18px;
+                padding-top: 10px;
+                border-top: 1px solid rgba(255,255,255,0.12);
+                margin-top: 6px;
+            }
+
+            .mobile-contact-row a { font-size: 0.95rem; opacity: 0.82; }
+
+            .mobile-start {
+                display: inline-block;
+                text-align: center;
+                background: var(--white);
+                color: var(--blue) !important;
+                font-weight: 600;
+                padding: 12px 0;
+                border-radius: 999px;
+                margin-top: 4px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .portrait {
+                position: static;
+                max-width: 320px;
+                order: -1;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .work-options {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-nav { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .brand-name { color: #ffffff; font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1; }
+        .header-contact { display: inline-flex; align-items: center; white-space: nowrap; }
+        @media (max-width: 480px) {
+            .brand-name { font-size: 1.35rem; }
+            .header-contact { padding: 10px 16px; }
+        }
+        .pull-quote .quote-by { margin-top: 10px; font-size: 0.92rem; color: var(--steel); font-style: normal; }
+        section.soft .pull-quote { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand"><span class="brand-name">Mike McKeown</span></div>
+                <a href="mailto:mike.mckeown@human-ai-systems.com" class="nav-cta header-contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="eyebrow">Non-executive director profile</div>
+                <h1>Commercial and public-service leadership, with deep experience of technology and AI.</h1>
+                <p class="lead">I'm a non-executive director and charity trustee, a Cabinet Member at Cotswold District Council, and the founder of Human-AI Systems. Over 25 years I have run commercial businesses, taken decisions in public, and helped boards oversee change, including the technology and AI that now sit behind most of it.</p>
+                <div class="actions" style="margin-top:24px; justify-content:flex-start;">
+                    <a href="/ned-mike/mike-mckeown-board-cv.pdf" class="btn btn-primary" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download board CV (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Intro + Portrait -->
+        <section>
+            <div class="container">
+                <div class="intro-grid">
+
+                    <div>
+                        <div class="experience-block reveal">
+                            <div class="eyebrow">In short</div>
+                            <h2>What I bring to a board</h2>
+                            <p><strong>Strategy, deals and commercial judgement.</strong> I ran and grew an EMEA public sector business at Cisco, worked on the due diligence and integration of two multi-billion-pound acquisitions, helped create Synamedia through a private equity carve-out, and advise a US start-up on raising venture capital. I read a plan through its numbers, its risks and its people.</p>
+                            <p><strong>Governance and constructive challenge.</strong> I sit on a charity board, chair the council's AI Board and co-founded a community benefit society. I test proposals hard while leaving ownership with the executive.</p>
+                            <p><strong>Public accountability.</strong> As an elected Cabinet Member I take decisions in public, answer to scrutiny, work with partners across the county and live within statutory duties and a fixed budget.</p>
+                            <p><strong>Technology and AI, in business terms.</strong> This is my specialism. I help a board see what a technology investment will cost, what could go wrong and what value it should deliver, so it can decide with confidence.</p>
+                            <p><strong>People and culture.</strong> I have led international teams across Europe and Asia, and I mentor emerging leaders on the Stepping Up programme.</p>
+                        </div>
+                    </div>
+
+                    <!-- Portrait -->
+                    <div>
+                        <div class="portrait">
+                            <picture>
+                                <source srcset="/images/headshots/webp/Mike%20McKeown%20-%20Professional.webp" type="image/webp">
+                                <img src="/images/headshots/Mike%20McKeown%20-%20Professional.png" alt="Mike McKeown" loading="lazy">
+                            </picture>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Roles -->
+        <section class="soft">
+            <div class="container">
+                <div style="max-width: 720px; margin: 0 auto 8px; text-align: center;">
+                    <div class="eyebrow">Roles</div>
+                    <h2>Board, governance and executive experience</h2>
+                </div>
+
+                <div class="work-options">
+                    <div class="work-option reveal">
+                        <h3>Board and governance</h3>
+                        <ul>
+                            <li><strong>Trustee and Non-Executive Director</strong>, Gloucestershire Rural Community Council (since 2026)</li>
+                            <li><strong>Cabinet Member for Digital and Climate</strong>, Cotswold District Council, and chair of the council's AI Board (since 2023)</li>
+                            <li><strong>Co-Founder and Director</strong>, Thames Head Community Energy, a community benefit society (since 2022)</li>
+                            <li><strong>Advisory Board Member</strong>, Gravitas Tech and Solutions, a US AI start-up, advising on strategy and fundraising (since 2026)</li>
+                            <li><strong>Chair</strong>, Climate Leadership Gloucestershire, the county's public sector climate partnership (previously)</li>
+                            <li><strong>Committee member since 2000, and former Chair</strong>, Lower Mill Estate Homeowners Association</li>
+                            <li><strong>Adviser and shareholder</strong>, GSM, an innovation and venture development company (2021 to 2024)</li>
+                            <li><strong>Parish Councillor</strong>, Somerford Keynes (2007 to 2019)</li>
+                        </ul>
+                    </div>
+                    <div class="work-option reveal">
+                        <h3>Executive career</h3>
+                        <ul>
+                            <li><strong>Founder and Managing Director</strong>, Human-AI Systems, an AI transformation consultancy (since 2026)</li>
+                            <li><strong>Senior Director, AI Transformation and Sales Enablement</strong>, Verimatrix, an EU-listed cybersecurity company, appointed by the CEO to lead AI transformation and working with the executive committee and board (2022 to 2026)</li>
+                            <li><strong>Senior Director, Sales Enablement</strong>, Kaltura (2022)</li>
+                            <li><strong>Founder and Managing Director</strong>, Somerford Tech, my own consultancy, advising technology companies on go-to-market and digital transformation (2020 to 2022)</li>
+                            <li><strong>Senior Director, Business Development and Operations</strong>, Synamedia, following its private equity carve-out from Cisco (2018 to 2020)</li>
+                            <li><strong>Senior leadership roles</strong>, Cisco, including an EMEA public sector business, some of the company's largest strategic accounts, and the Tandberg and NDS acquisitions (1994 to 2018)</li>
+                            <li><strong>Project manager and network architect</strong>, GCHQ, at the start of my career</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Board in practice -->
+        <section>
+            <div class="container" style="max-width: 800px;">
+                <div class="eyebrow">Board work in practice</div>
+                <h2>Examples</h2>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Gloucestershire Rural Community Council, trustee and director</div>
+                    <h2>Strengthening a major investment decision</h2>
+                    <p>Soon after I joined the board, trustees considered a proposal for a new digital platform to bring together the charity's volunteer, activity and impact data. It was a significant investment for a small charity. The board asked for more work before deciding, and I joined a working group with the chief executive, the head of finance, the project sponsor and a fellow trustee to strengthen it.</p>
+                    <div class="evidence-card">
+                        <h4>What the revised proposal gained</h4>
+                        <p>A clearer, itemised budget and business case.</p>
+                        <p style="margin-top: 8px;">Data protection, security and oversight of AI designed in from the start, including independent security testing before launch.</p>
+                        <p style="margin-top: 8px;">Documentation and version control, so the platform does not depend on any one person.</p>
+                        <p style="margin-top: 8px;">Integration with the charity's existing systems, so staff record information once.</p>
+                    </div>
+                    <p>I then set out the further conditions to meet before live personal data goes onto the platform. My role was to help the board ask the right questions and to give the executive team a clear set of requirements. The team owned the proposal and did the work.</p>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Cotswold District Council, Cabinet Member for Digital and Climate</div>
+                    <h2>Cabinet leadership and chairing the AI Board</h2>
+                    <p>With the council's Chief Information Officer, I co-authored the Responsible AI Policy and the AI Strategy, both adopted by Cabinet. I pressed for an AI Board to oversee them, and I chair it. It meets quarterly and works much like a board committee: it scrutinises proposals to use AI, reviews progress against the strategy and keeps adoption responsible. It also set up an AI Champions programme, which now drives adoption across the council.</p>
+                    <div class="evidence-card">
+                        <h4>Results</h4>
+                        <p><span class="evidence-stat">40%+</span> faster decisions on planning applications, using an AI planning system that supports planning officers</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">~8 weeks</span> of officer time saved analysing Local Plan consultation responses</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">~250</span> officers and members using Microsoft Copilot under the policy</p>
+                    </div>
+                    <p>Beyond digital, I lead the council's climate programme. The council has moved more than 60 places up the national Climate Action Scorecard, and I chaired Climate Leadership Gloucestershire, bringing the county's public sector partners together on net zero.</p>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Cisco and Synamedia</div>
+                    <h2>Acquisitions, a carve-out and growth</h2>
+                    <p>At Cisco I ran an EMEA public sector business of over £300M and grew it by 20 per cent. I was also part of the teams that carried out due diligence on, and then integrated, two multi-billion-pound acquisitions: Tandberg, the Norwegian video communications company, and NDS, the pay-TV technology company based in the UK and Israel.</p>
+                    <p>In 2018 I was part of the team that handled the sale of Cisco's service provider video business to Permira, creating Synamedia, a newly independent company of 3,500 people. I then helped separate it from Cisco and set it up to stand on its own.</p>
+                    <div class="evidence-card">
+                        <h4>What I led at Synamedia</h4>
+                        <p>The commercial and operational processes of the new company.</p>
+                        <p style="margin-top: 8px;">The new company's own CRM, as business lead. We moved off Cisco's systems early, saving millions in charges for using them.</p>
+                        <p style="margin-top: 8px;">The move of a substantial part of engineering and support to India. It was a difficult change for the people affected. It cut annual costs by millions while keeping service to customers running.</p>
+                    </div>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Gravitas Tech and Solutions, US AI start-up, advisory board</div>
+                    <h2>Advising founders on raising venture capital</h2>
+                    <p>I advise the founders on strategy and fundraising. That has covered investor readiness for a friends-and-family round and a planned seed round, funding strategy, valuation and dilution, and the choice between SAFEs and priced equity, with a later Series A in mind.</p>
+                    <p>I helped shape an investor-grade financial model covering revenue scenarios, pricing, operating and AI infrastructure costs, customer acquisition cost, cash burn and runway. I also challenged the assumptions on capital efficiency, and linked each funding step to product, user-growth and commercial milestones.</p>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Verimatrix, EU-listed cybersecurity company</div>
+                    <h2>Board-approved AI governance that paid its way</h2>
+                    <p>The CEO asked me to lead AI transformation across a nine-country business. I wrote the Responsible AI framework, aligned to the EU AI Act, GDPR and DORA, and took it to the board for approval. A steering group reported progress to the executive committee, and the results were measured in business terms.</p>
+                    <div class="evidence-card">
+                        <h4>Results</h4>
+                        <p><span class="evidence-stat">~10%</span> better win rates in the SaaS business</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">~1 hour</span> a day back for every engineer</p>
+                        <p style="margin-top: 8px;"><span class="evidence-stat">~30%</span> fewer routine support tickets</p>
+                    </div>
+                </div>
+
+                <div class="experience-block reveal">
+                    <div class="eyebrow">Thames Head Community Energy</div>
+                    <h2>Founding a governed community enterprise</h2>
+                    <p>I co-founded a community benefit society with a board of seven directors to develop community-owned solar in the Cotswolds. We raised £18,000 through community crowdfunding and secured £40,000 of feasibility funding from the South West Net Zero Hub for a 5 to 10 MW scheme.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- What colleagues say -->
+        <section class="soft">
+            <div class="container" style="max-width: 800px;">
+                <div class="eyebrow">In others' words</div>
+                <h2>What colleagues say</h2>
+
+                <div class="pull-quote reveal">
+                    <p>"Mike is a business and solutions driven individual who can be relied upon to handle complex cross functional challenges and drive them to closure."</p>
+                    <div class="quote-by">Ismat Levin, EVP and General Counsel, Synamedia, and Non-Executive Director, LXi REIT plc</div>
+                </div>
+
+                <div class="pull-quote reveal">
+                    <p>"He builds trust quickly, challenges constructively, and has a genuine ability to bring different functions together around a common goal."</p>
+                    <div class="quote-by">Sami Urtti, product and business leader, Verimatrix</div>
+                </div>
+
+                <div class="pull-quote reveal">
+                    <p>"Mike had built a great team of BDs across EMEA and APAC, where he instilled a good culture of innovation, trust and ownership."</p>
+                    <div class="quote-by">Efrat Weiss, member of Mike's team at Cisco</div>
+                </div>
+
+                <div class="pull-quote reveal">
+                    <p>"That which distinguishes Mike from other execs is the clarity of vision that he possesses, his clear communication style, and his ability to drive for results while simultaneously maintaining a calming influence."</p>
+                    <div class="quote-by">Rob Kissell, member of Mike's team for over a decade</div>
+                </div>
+
+                <div class="pull-quote reveal">
+                    <p>"He is very likeable and strong in building relationships both within and outside Cisco and excellent in cross-functional work."</p>
+                    <div class="quote-by">360-degree feedback, Cisco Accelerated Development Programme</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Committees and conflicts -->
+        <section>
+            <div class="container">
+                <div class="work-options">
+                    <div class="work-option reveal">
+                        <h3>Committees I can contribute to</h3>
+                        <ul>
+                            <li>Audit and risk, including technology, cyber and data risk</li>
+                            <li>Digital, technology or transformation</li>
+                            <li>Quality and performance</li>
+                            <li>People and remuneration</li>
+                        </ul>
+                    </div>
+                    <div class="work-option reveal">
+                        <h3>How I handle conflicts</h3>
+                        <p>I declare my interests at every board. I run an AI consultancy, and I never sell its services to a board I sit on. As an elected councillor, I do not take board roles where the organisation's business comes before my council.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Background -->
+        <section class="soft">
+            <div class="container" style="max-width: 800px;">
+                <div class="eyebrow">Background</div>
+                <h2>Education</h2>
+                <p>BSc (Hons) Computer Science, Economics and Psychology, Swansea University. Mini-MBA, INSEAD. Cisco Accelerated Development Programme.</p>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-band">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>Talk to me about a board role</h2>
+                    <p class="lead">I'm interested in a small number of non-executive and trustee roles, particularly with technology companies, mid-sized or family-owned businesses, and NHS, housing and charity boards. I can give each two to three days a month and am based in the Cotswolds.</p>
+                    <div class="actions">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            Email Mike
+                        </a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            Connect on LinkedIn
+                        </a>
+                        <a href="/ned-mike/mike-mckeown-board-cv.pdf" class="btn btn-secondary" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download board CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div style="color:rgba(255,255,255,0.82);">Mike McKeown &middot; Board profile</div>
+            <nav class="footer-nav">
+                <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email
+                    </a>
+                <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
