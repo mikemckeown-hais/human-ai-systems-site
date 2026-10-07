@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-10-07
 
+- Board profile: AI Oversight Board and Climate Change Board details; CV refresh
+
+## 2026-10-07
+
 - Add unlisted NED profile page (noindex)
 - Rebalance NED profile page: broader board positioning, roles split, planning AI result, colleague quotes
 - NED profile: add M&A, carve-out and venture capital experience; two more colleague quotes
