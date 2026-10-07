@@ -6,6 +6,22 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-10-07
+
+- Add unlisted NED profile page (noindex)
+- Rebalance NED profile page: broader board positioning, roles split, planning AI result, colleague quotes
+- NED profile: add M&A, carve-out and venture capital experience; two more colleague quotes
+- NED profile: tighten people and culture line
+- NED profile: critical pass fixes (Kaltura date, Verimatrix wording, roles, CTA interests and time commitment)
+- NED profile: add technology boards; minimal header and footer
+- NED profile: acquisitions in pounds
+- NED profile: name in header instead of HAS logo
+- NED profile: board CV download
+- NED profile: align CV button
+- NED profile: add Somerford Tech, roles in date order, updated CV
+- NED profile: remove years-of-experience figure; CV updated
+- Board profile: digital, AI and cyber positioning; international and investor sections; board CV v2
+
 ## 2026-09-18
 
 - Rework From Prompt to Autopilot for the launch
