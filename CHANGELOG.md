@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-10-13
 
+- NED profile: broader role interests, Stepping Up dates, education, CV link cache-busting
+
+## 2026-10-13
+
 - Board CV: Stepping Up mentoring dated from January 2023
 
 ## 2026-10-07
