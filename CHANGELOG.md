@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-10-13
+
+- Board CV: Stepping Up mentoring dated from January 2023
+
 ## 2026-10-07
 
 - Board profile: AI Oversight Board and Climate Change Board details; CV refresh
