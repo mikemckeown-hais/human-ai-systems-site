@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-10-14
+
+- Board page renamed Board and Advisory profile; board CV v3 with profile link; new unlisted operating partner page and CV
+
 ## 2026-10-13
 
 - NED profile: broader role interests, Stepping Up dates, education, CV link cache-busting
