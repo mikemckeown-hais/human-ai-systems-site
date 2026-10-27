@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-10-27
 
+- SITE_RULES: drop the retired /dashboard/ page from the page map
+
+## 2026-10-27
+
 - Remove the internal operations dashboard page (superseded by the private Command Centre)
 
 ## 2026-10-14
