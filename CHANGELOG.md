@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-10-27
+
+- Remove the internal operations dashboard page (superseded by the private Command Centre)
+
 ## 2026-10-14
 
 - Board page renamed Board and Advisory profile; board CV v3 with profile link; new unlisted operating partner page and CV
