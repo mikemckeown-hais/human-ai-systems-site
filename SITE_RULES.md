@@ -81,7 +81,6 @@ Same as above, but nest the folder inside the hub folder. Example for a new sect
 | `start/` | `/start/` | Get started / contact CTA page |
 | `privacy/` | `/privacy/` | Privacy & legal |
 | `mike/` | `/mike/` | Mike's CV page for recruiters (noindexed) |
-| `dashboard/` | `/dashboard/` | Ops dashboard (noindexed, behind Cloudflare Access, robots-disallowed) |
 | `legal/` | `/legal/` | MSA PDFs |
 
 ### Navigation
