@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-10-29
 
+- Partners page: add Integrate as fourth model
+
+## 2026-10-29
+
 - Partners page: founder section, fuller offer, commercial terms line
 
 ## 2026-10-29
