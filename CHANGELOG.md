@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-10-29
+
+- Add partners page (unlinked, for review)
+
 ## 2026-10-27
 
 - SITE_RULES: drop the retired /dashboard/ page from the page map
