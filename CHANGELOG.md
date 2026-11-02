@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-02
 
+- Business AIOS page: captions hint and made-by-our-AIOS note
+
+## 2026-11-02
+
 - Add Business AIOS explorer page (unlinked, noindex, for review)
 - Business AIOS page: fit explorer below header, phone card, embed mode
 - Business AIOS page: one button on phones
