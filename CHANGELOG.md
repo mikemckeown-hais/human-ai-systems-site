@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-03
 
+- Business AIOS page: add video 3
+
+## 2026-11-03
+
 - Business AIOS page: own video thumbnails, two per row, captions off
 - Business AIOS page: use the thumbnail's own play button
 
