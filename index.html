@@ -989,7 +989,11 @@
     }
 
     /* Business AIOS sections */
-    .see-split { align-items: center; }
+    .see-split { align-items: center; text-align: left; }
+    .see-split h2 { max-width: none; }
+    .icon { width: auto; min-width: 44px; padding: 0 12px; }
+    .btn-outline { background: #ffffff; color: var(--blue); border: 2px solid rgba(31,58,95,0.35); box-shadow: var(--shadow); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
     .two-ways { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
     .two-ways .card { display: flex; flex-direction: column; }
     .two-ways .card .actions { margin-top: auto !important; padding-top: 20px; }
@@ -1143,7 +1147,7 @@
           <p class="lead">The first of three short videos follows a sales leader through an ordinary day and shows where the hours go back. Sales is just the example. The same approach works in any function, at any size, and in the public sector as well as business.</p>
           <div class="actions" style="margin-bottom:0;">
             <a class="btn btn-primary" href="/business-aios/#videos">Watch all three videos</a>
-            <a class="btn btn-secondary" href="/business-aios/#explorer">Explore it yourself</a>
+            <a class="btn btn-outline" href="/business-aios/#explorer">Explore it yourself</a>
           </div>
         </div>
       </div>
@@ -1185,16 +1189,16 @@
         </div>
         <div class="two-ways">
           <div class="card reveal">
-            <div class="icon">Fully bespoke</div>
+            <div class="icon">Bespoke</div>
             <h3>Built around you, by Human–AI Systems</h3>
             <p class="muted">Designed for your organisation, your teams and your systems, with as much customisation as you need. Start with one team and its leadership, or go across the whole organisation.</p>
             <div class="actions" style="margin:20px 0 0;"><a class="btn btn-primary" href="/start/">Book a conversation</a></div>
           </div>
           <div class="card reveal">
-            <div class="icon">Fixed price and scope</div>
+            <div class="icon">Packaged</div>
             <h3>From Prompt to Autopilot</h3>
             <p class="muted">A packaged programme delivered by Human–AI Systems with John Clifton of Third Circle, for a team, an individual or a whole company. For those who prefer a set scope and a fixed price.</p>
-            <div class="actions" style="margin:20px 0 0;"><a class="btn btn-secondary" href="/from-prompt-to-autopilot/">How the programme works</a></div>
+            <div class="actions" style="margin:20px 0 0;"><a class="btn btn-outline" href="/from-prompt-to-autopilot/">How the programme works</a></div>
           </div>
         </div>
         <p class="muted reveal" style="text-align:center;margin-top:22px;font-size:0.98rem;">Or see one running: <a href="/how-has-runs/" style="color:var(--teal);font-weight:600;">how this consultancy works</a>, and <a href="/from-prompt-to-autopilot/meet-lumen/" style="color:var(--teal);font-weight:600;">a whole company on one</a>.</p>
@@ -1236,7 +1240,7 @@
 
         <div class="actions reveal" style="justify-content:center; margin-top:26px;">
           <a class="btn btn-primary" href="/approach/">Explore our approach</a>
-          <a class="btn btn-secondary" href="/services/">View all services</a>
+          <a class="btn btn-outline" href="/services/">View all services</a>
         </div>
       </div>
     </section>
