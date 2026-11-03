@@ -8,6 +8,18 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-03
 
+- Make the Business AI Operating System the lead offer across the site (proposal: `06 Marketing/Website/business-aios-site-integration-proposal-v1-2026-11-03.md`)
+- Navigation: add Business AIOS as first item, order Services before Approach, move Training out of the top nav (still in footer and on Services)
+- Banner now points to `/business-aios/`; Business AIOS and From Prompt to Autopilot added to every footer
+- Home page rebuilt: new hero, video 1, what changes, two ways to get yours, merged frameworks section, "we run on ours"
+- Services: new Business AI Operating System service first, Radar repositioned, training anchor
+- Approach: new "Where the Business AI Operating System fits" section
+- Cross-links from How HAS runs, P2A, Training, About and all sector pages
+- New insight: What is a Business AI Operating System?
+- Sitemap and llms.txt updated
+
+## 2026-11-03
+
 - Business AIOS page: add video 3
 
 ## 2026-11-03

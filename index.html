@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Adoption Consultancy | Human–AI Systems</title>
-  <meta name="description" content="Human–AI Systems helps organisations move from AI experimentation to real operational adoption through structured programmes, governance and workflow design." />
+  <title>Business AI Operating Systems and AI Adoption | Human–AI Systems</title>
+  <meta name="description" content="Human–AI Systems builds organisations their own Business AI Operating System, on the AI platform they already use, and helps their people lead the change that comes with it." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://human-ai-systems.com/" />
   <link rel="icon" type="image/svg+xml" href="images/Logo%20Mark.svg" />
@@ -12,8 +12,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:site_name" content="Human–AI Systems" />
-  <meta property="og:title" content="AI Adoption Consultancy | Human–AI Systems" />
-  <meta property="og:description" content="Human–AI Systems helps organisations move from AI experimentation to real operational adoption through structured programmes, governance and workflow design." />
+  <meta property="og:title" content="Business AI Operating Systems and AI Adoption | Human–AI Systems" />
+  <meta property="og:description" content="Human–AI Systems builds organisations their own Business AI Operating System, on the AI platform they already use, and helps their people lead the change that comes with it." />
   <meta property="og:url" content="https://human-ai-systems.com/" />
   <meta property="og:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og-v2.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -21,8 +21,8 @@
   <meta property="og:image:type" content="image/jpeg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Adoption Consultancy | Human–AI Systems" />
-  <meta name="twitter:description" content="Human–AI Systems helps organisations move from AI experimentation to real operational adoption through structured programmes, governance and workflow design." />
+  <meta name="twitter:title" content="Business AI Operating Systems and AI Adoption | Human–AI Systems" />
+  <meta name="twitter:description" content="Human–AI Systems builds organisations their own Business AI Operating System, on the AI platform they already use, and helps their people lead the change that comes with it." />
   <meta name="twitter:image" content="https://human-ai-systems.com/images/og/human-ai-systems-og-v2.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@
       "@type": "ProfessionalService",
       "name": "Human–AI Systems",
       "url": "https://human-ai-systems.com/",
-      "description": "AI adoption consultancy helping organisations move from experimentation to operational adoption through structured programmes, governance and workflow design.",
+      "description": "AI adoption consultancy that builds organisations their own Business AI Operating System and helps their people lead the change that comes with it.",
       "founder": {
         "@type": "Person",
         "name": "Mike McKeown",
@@ -987,10 +987,27 @@
         flex: 0 0 100%;
       }
     }
+
+    /* Business AIOS sections */
+    .see-split { align-items: center; }
+    .two-ways { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+    .two-ways .card { display: flex; flex-direction: column; }
+    .two-ways .card .actions { margin-top: auto !important; padding-top: 20px; }
+    .vframe { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
+    .vframe .vhost, .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .vsoon { color: rgba(255,255,255,0.9); font-weight: 600; display: grid; justify-items: center; gap: 10px; text-decoration: none; }
+    .vsoon i { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.75); display: grid; place-items: center; }
+    .vsoon i::after { content: ""; border-left: 15px solid rgba(255,255,255,0.9); border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+    .vplay { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #0A0F1A center / cover no-repeat; }
+    .vplay::after { content: ""; position: absolute; inset: 0; background: rgba(10,15,26,0); transition: background-color 200ms ease; }
+    .vplay:hover::after { background: rgba(10,15,26,0.12); }
+    .vplay:focus-visible { outline: 3px solid var(--aqua); outline-offset: -3px; }
+    .vplay span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    @media (max-width: 860px) { .two-ways { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <div class="fpa-banner"><a href="/from-prompt-to-autopilot/" style="display:block;background:#2A6F74;color:#ffffff;text-align:center;padding:9px 18px;font-size:0.95rem;font-weight:600;line-height:1.4;">Your own Business AI Operating System: From Prompt to Autopilot &rarr;</a></div>
+  <div class="fpa-banner"><a href="/business-aios/" style="display:block;background:#2A6F74;color:#ffffff;text-align:center;padding:9px 18px;font-size:0.95rem;font-weight:600;line-height:1.4;">New: see a Business AI Operating System at work, in three short videos &rarr;</a></div>
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Human–AI Systems home">
@@ -1010,9 +1027,9 @@
         </svg>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="/approach/">Approach</a>
+        <a href="/business-aios/">Business AIOS</a>
         <a href="/services/">Services</a>
-        <a href="/training/">Training</a>
+        <a href="/approach/">Approach</a>
         <a href="/sectors/">Sectors</a>
         <a href="/insights/">Insights</a>
         <a href="/about/">About</a>
@@ -1024,9 +1041,9 @@
     </div>
     <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <div class="container mobile-menu-inner">
-      <a href="/approach/">Approach</a>
+      <a href="/business-aios/">Business AIOS</a>
       <a href="/services/">Services</a>
-      <a href="/training/">Training</a>
+      <a href="/approach/">Approach</a>
       <a href="/sectors/">Sectors</a>
       <a href="/insights/">Insights</a>
       <a href="/about/">About</a>
@@ -1044,62 +1061,62 @@
     <section class="hero-section">
       <div class="container hero-grid">
         <div class="hero-copy reveal visible">
-          <div class="eyebrow">Operational AI adoption</div>
-          <h1>Most organisations are experimenting with AI. Far fewer are redesigning how work actually happens.</h1>
-          <p class="lead">The gap isn’t technology. It’s operational adoption: workflows, governance and how teams actually work with AI day to day.</p>
+          <div class="eyebrow">Business AI Operating Systems</div>
+          <h1>Most organisations are experimenting with AI. Far fewer have it doing real work.</h1>
+          <p class="lead">Human–AI Systems builds you a Business AI Operating System: the knowledge, skills and routines that let the AI you already pay for take on real work for your teams. We design it with you, build it on your platform and train your people to run it, with governance in place from the start.</p>
 
           <div class="hero-sub">
-            <span class="pill">Radar → Pilot → Scale</span>
-            <span class="pill">Tool → Assistant → Worker</span>
+            <span class="pill">On the platform you already use</span>
+            <span class="pill">One team or the whole organisation</span>
             <span class="pill">Human-centred, governance-led</span>
           </div>
 
           <div class="actions">
-            <a class="btn btn-primary" href="/start/">Book an AI Adoption Radar Session</a>
-            <a class="btn btn-secondary" href="/approach/">Explore our approach</a>
+            <a class="btn btn-primary" href="/business-aios/">See one working</a>
+            <a class="btn btn-secondary" href="/start/">Book a conversation</a>
           </div>
 
-          <p class="hero-note">Human–AI Systems helps organisations move from isolated pilots to real, embedded AI workflows.</p>
+          <p class="hero-note">Built on enterprise AI transformation experience, and run every day on our own.</p>
         </div>
 
         <div class="hero-visual reveal visible">
           <div class="panel">
-            <div class="panel-title">Human–AI Systems framework</div>
+            <div class="panel-title">A Business AI Operating System</div>
             <div class="framework">
               <div class="node">
                 <div>
-                  <strong>Radar</strong>
-                  <small>Identify workflow opportunities, governance boundaries and practical starting points.</small>
+                  <strong>Knowledge base</strong>
+                  <small>What your organisation knows, held in one place the AI works from.</small>
                 </div>
                 <div class="step">1</div>
               </div>
               <div class="node">
                 <div>
-                  <strong>Pilot</strong>
-                  <small>Test AI inside real operational processes and learn how work changes in practice.</small>
+                  <strong>Skills and agents</strong>
+                  <small>Defined jobs done the same way every time, with people checking the results.</small>
                 </div>
                 <div class="step">2</div>
               </div>
               <div class="node">
                 <div>
-                  <strong>Scale</strong>
-                  <small>Embed successful approaches into workflows, governance and leadership routines.</small>
+                  <strong>Dashboards and connectors</strong>
+                  <small>Your existing systems joined up, and a clear view of what needs a decision.</small>
                 </div>
                 <div class="step">3</div>
               </div>
             </div>
             <div class="stats">
               <div class="stat">
-                <b>Adoption</b>
-                <span>Structured around real workflows</span>
+                <b>Platform</b>
+                <span>The one you already pay for</span>
               </div>
               <div class="stat">
-                <b>Governance</b>
-                <span>Built in from the start</span>
+                <b>Data</b>
+                <span>Stays in your own accounts</span>
               </div>
               <div class="stat">
-                <b>Scale</b>
-                <span>Designed for operational use</span>
+                <b>People</b>
+                <span>Trained to run and extend it</span>
               </div>
             </div>
           </div>
@@ -1113,74 +1130,48 @@
       </div>
     </section>
 
-    <section id="approach">
-      <div class="container">
-        <div class="center-intro reveal">
-          <div class="eyebrow">Approach</div>
-          <h2>A structured pathway from experimentation to operational adoption.</h2>
-          <p class="lead" style="margin-left:auto;margin-right:auto;">Most organisations stop at tools. Value is created when AI becomes part of how work is actually done. Human–AI Systems uses a three-stage methodology to identify opportunities, test them in context, and scale what works.</p>
-        </div>
-
-        <div class="framework-row">
-          <div class="framework-stage reveal">
-            <span class="stage-tag">Stage 1</span>
-            <h3>Radar</h3>
-            <p class="muted">Review workflows, surface opportunities, assess risks and prioritise realistic pilot candidates.</p>
-            <div class="stage-arrow"></div>
-          </div>
-          <div class="framework-stage reveal">
-            <span class="stage-tag">Stage 2</span>
-            <h3>Pilot</h3>
-            <p class="muted">Introduce AI into real processes, define success measures and learn how workflow design needs to change.</p>
-            <div class="stage-arrow"></div>
-          </div>
-          <div class="framework-stage reveal">
-            <span class="stage-tag">Stage 3</span>
-            <h3>Scale</h3>
-            <p class="muted">Embed successful patterns into operating model, governance, capability building and leadership routines.</p>
-            <div class="stage-arrow"></div>
+    <section id="see-it" class="soft">
+      <div class="container split see-split">
+        <div class="reveal">
+          <div class="vframe" data-youtube="5Yixb2gGqWw" data-title="What a Business AI Operating System does for you">
+            <a class="vsoon" href="/business-aios/#videos"><i></i>Watch the video</a>
           </div>
         </div>
-
-        <div class="actions reveal" style="justify-content:center; margin-top:34px;">
-          <a class="btn btn-primary" href="/approach/">Explore the full approach</a>
+        <div class="reveal">
+          <div class="eyebrow">See one working</div>
+          <h2>A working day, with and without it.</h2>
+          <p class="lead">The first of three short videos follows a sales leader through an ordinary day and shows where the hours go back. Sales is just the example. The same approach works in any function, at any size, and in the public sector as well as business.</p>
+          <div class="actions" style="margin-bottom:0;">
+            <a class="btn btn-primary" href="/business-aios/#videos">Watch all three videos</a>
+            <a class="btn btn-secondary" href="/business-aios/#explorer">Explore it yourself</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="services">
+    <section id="outcomes">
       <div class="container">
         <div class="center-intro reveal">
-          <div class="eyebrow">Services</div>
-          <h2>Moving AI from tool to workforce.</h2>
-          <p class="lead" style="margin-left:auto;margin-right:auto;">Most organisations use AI as a tool. Real value comes when it operates as part of the workforce: doing defined work, inside governed workflows, with human oversight. We help you make that shift.</p>
+          <div class="eyebrow">What changes</div>
+          <h2>More than a faster way to write emails.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">Most people use AI from a blank chat window, briefed from scratch every time. A Business AI Operating System knows your organisation, does defined work for you and shows you what needs attention.</p>
         </div>
-
-        <div class="four-col">
-          <a href="/services/#radar" class="card reveal" style="text-decoration:none; color:inherit;">
-            <div class="icon">Tool</div>
-            <h3>AI as enhancement</h3>
-            <p class="muted">Writing assistance, summarisation and suggestions inside existing software. Useful, but it doesn't change how work happens.</p>
-          </a>
-          <a href="/services/#pilot-programmes" class="card reveal" style="text-decoration:none; color:inherit;">
-            <div class="icon">Assistant</div>
-            <h3>AI performing tasks</h3>
-            <p class="muted">Drafting reports, analysing data, supporting decisions. Humans direct and review. Where most organisations are today.</p>
-          </a>
-          <a href="/services/#scale" class="card reveal" style="text-decoration:none; color:inherit;">
-            <div class="icon">Worker</div>
-            <h3>AI inside workflows</h3>
-            <p class="muted">AI operates within defined processes with human oversight, not constant direction. This is where operating model change begins.</p>
-          </a>
-          <a href="/services/#fractional-leadership" class="card reveal" style="text-decoration:none; color:inherit;">
-            <div class="icon">Lead</div>
-            <h3>Fractional AI leadership</h3>
-            <p class="muted">Senior oversight, board-level advisory and governance discipline to guide the transition at every stage.</p>
-          </a>
-        </div>
-
-        <div class="actions reveal" style="justify-content:center; margin-top:34px;">
-          <a class="btn btn-primary" href="/services/">View all services</a>
+        <div class="three-col">
+          <div class="card reveal">
+            <div class="icon">Time</div>
+            <h3>Hours back every week</h3>
+            <p class="muted">The gathering, chasing and first drafts are done for you, so the time goes on decisions and on customers.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">Quality</div>
+            <h3>A team working from the same picture</h3>
+            <p class="muted">Everyone draws on the same knowledge of the organisation, so the work is more consistent and of a higher standard.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon">Control</div>
+            <h3>AI use you can see and control</h3>
+            <p class="muted">It runs in your own accounts, with your files in your own cloud storage, and people check anything that leaves the business.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1188,20 +1179,70 @@
     <section id="programme" class="soft">
       <div class="container">
         <div class="center-intro reveal">
-          <div class="eyebrow">For leaders, teams and business owners</div>
-          <h2>From Prompt to Autopilot: your own Business AI Operating System.</h2>
-          <p class="lead" style="margin-left:auto;margin-right:auto;">Most people use AI from a blank chat window, briefed from scratch every time. The programme builds you the alternative: a system that holds your context, a small set of agents that do real work, and dashboards that tell you what to do about it. Then we teach you to run and extend it yourself. Run it as a team, as an individual, or across the organisation. Built with Third Circle.</p>
+          <div class="eyebrow">Two ways to get yours</div>
+          <h2>Built around you, or a packaged programme.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">Either way it is built with you, on the platform you already use, and your team learns to run it in short weekly sessions rather than one long training day.</p>
         </div>
-        <div class="actions reveal" style="justify-content:center; margin-top:26px;">
-          <a class="btn btn-primary" href="/from-prompt-to-autopilot/">How the programme works</a>
-          <a class="btn" href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" style="background:#ffffff;color:var(--blue);border:2px solid rgba(31,58,95,0.35);box-shadow:var(--shadow);">Book a conversation</a>
+        <div class="two-ways">
+          <div class="card reveal">
+            <div class="icon">Fully bespoke</div>
+            <h3>Built around you, by Human–AI Systems</h3>
+            <p class="muted">Designed for your organisation, your teams and your systems, with as much customisation as you need. Start with one team and its leadership, or go across the whole organisation.</p>
+            <div class="actions" style="margin:20px 0 0;"><a class="btn btn-primary" href="/start/">Book a conversation</a></div>
+          </div>
+          <div class="card reveal">
+            <div class="icon">Fixed price and scope</div>
+            <h3>From Prompt to Autopilot</h3>
+            <p class="muted">A packaged programme delivered by Human–AI Systems with John Clifton of Third Circle, for a team, an individual or a whole company. For those who prefer a set scope and a fixed price.</p>
+            <div class="actions" style="margin:20px 0 0;"><a class="btn btn-secondary" href="/from-prompt-to-autopilot/">How the programme works</a></div>
+          </div>
         </div>
-        <p class="muted reveal" style="text-align:center;margin-top:18px;font-size:0.98rem;">Or see one running: <a href="/how-has-runs/" style="color:var(--teal);font-weight:600;">how this consultancy works</a>, and <a href="/from-prompt-to-autopilot/meet-lumen/" style="color:var(--teal);font-weight:600;">a whole company on one</a>.</p>
+        <p class="muted reveal" style="text-align:center;margin-top:22px;font-size:0.98rem;">Or see one running: <a href="/how-has-runs/" style="color:var(--teal);font-weight:600;">how this consultancy works</a>, and <a href="/from-prompt-to-autopilot/meet-lumen/" style="color:var(--teal);font-weight:600;">a whole company on one</a>.</p>
       </div>
     </section>
 
-    <!-- ── Stories carousel ── -->
-    <section id="stories">
+    <section id="approach">
+      <div class="container">
+        <div class="center-intro reveal">
+          <div class="eyebrow">How we get you there</div>
+          <h2>AI that does real work, introduced with care.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">AI adoption is an organisational change, not a technology project. The system is the visible part. Most of the work is in how your people, workflows and governance change around it.</p>
+        </div>
+
+        <div class="four-col">
+          <a href="/approach/#tool-assistant-worker" class="card reveal" style="text-decoration:none; color:inherit;">
+            <div class="icon">Tool</div>
+            <h3>AI as enhancement</h3>
+            <p class="muted">Writing help and summaries inside existing software. Useful, but the work still happens the same way.</p>
+          </a>
+          <a href="/approach/#tool-assistant-worker" class="card reveal" style="text-decoration:none; color:inherit;">
+            <div class="icon">Assistant</div>
+            <h3>AI performing tasks</h3>
+            <p class="muted">Drafting, analysis and research, briefed from scratch each time. Where most organisations are today.</p>
+          </a>
+          <a href="/business-aios/" class="card reveal" style="text-decoration:none; color:inherit;">
+            <div class="icon">Worker</div>
+            <h3>AI inside workflows</h3>
+            <p class="muted">Defined work done the same way every time, with people checking what leaves the business. A Business AI Operating System makes this practical.</p>
+          </a>
+          <a href="/services/#fractional-leadership" class="card reveal" style="text-decoration:none; color:inherit;">
+            <div class="icon">Lead</div>
+            <h3>Leadership and governance</h3>
+            <p class="muted">Fractional AI leadership, board advisory and Responsible AI governance to guide the change at every stage.</p>
+          </a>
+        </div>
+
+        <p class="lead reveal" style="text-align:center;margin:34px auto 0;max-width:46rem;">For larger organisations we follow <strong>Radar → Pilot → Scale</strong>: a discovery to find where it will pay off, one team first to prove it, then out across the organisation.</p>
+
+        <div class="actions reveal" style="justify-content:center; margin-top:26px;">
+          <a class="btn btn-primary" href="/approach/">Explore our approach</a>
+          <a class="btn btn-secondary" href="/services/">View all services</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="stories" class="soft">
       <div class="container">
         <div class="center-intro reveal">
           <div class="eyebrow">What it looks like</div>
@@ -1286,7 +1327,7 @@
       </div>
     </section>
 
-    <section id="sectors" class="soft">
+    <section id="sectors">
       <div class="container">
         <div class="center-intro reveal">
           <div class="eyebrow">Sectors</div>
@@ -1327,7 +1368,7 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="soft">
       <div class="container split">
         <div class="portrait reveal">
           <picture>
@@ -1341,6 +1382,7 @@
           <p>Human–AI Systems is led by Mike McKeown, a senior technology and transformation leader with experience across enterprise SaaS, cybersecurity and public sector digital leadership.</p>
           <p class="muted">His work includes delivering AI-driven productivity improvements in engineering teams, establishing board-level AI governance in a publicly listed company, and leading digital and climate strategy as a Cabinet Member in local government.</p>
           <p class="muted">That combination of commercial, operational and public-sector experience shapes a practical approach to AI adoption focused on how organisations actually work, not just what technology can do.</p>
+          <p class="muted">We run Human–AI Systems on its own Business AI Operating System, so what we build for clients is what we use every day. <a href="/how-has-runs/" style="color:var(--teal);font-weight:600;">See how we run on ours</a>.</p>
           <div class="actions" style="margin-top:24px; margin-bottom:0;">
             <a class="btn btn-primary" href="/about/">About Mike McKeown</a>
             <a class="btn btn-secondary" href="/team/">Meet the team</a>
@@ -1349,7 +1391,7 @@
       </div>
     </section>
 
-    <section id="insights" class="soft">
+    <section id="insights">
       <div class="container">
         <div class="center-intro reveal">
           <div class="eyebrow">Insights</div>
@@ -1453,6 +1495,7 @@
         </div>
       </div>
       <nav class="footer-nav">
+        <a href="/business-aios/">Business AIOS</a>
         <a href="/approach/">Approach</a>
         <a href="/services/">Services</a>
         <a href="/training/">Training</a>
@@ -1640,6 +1683,47 @@
       buildDots();
       goTo(0);
       startAuto();
+    })();
+  </script>
+  <script>
+    (function () {
+      // Video: our own thumbnail first, YouTube player loads on click, captions off (burnt in).
+      var ytQueue = [], ytLoading = false;
+      function withYT(fn) {
+        if (window.YT && YT.Player) return fn();
+        ytQueue.push(fn);
+        if (ytLoading) return;
+        ytLoading = true;
+        var prev = window.onYouTubeIframeAPIReady;
+        window.onYouTubeIframeAPIReady = function () { if (prev) prev(); while (ytQueue.length) ytQueue.shift()(); };
+        var t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+      }
+      function noCaptions(p) { try { p.unloadModule('captions'); p.unloadModule('cc'); } catch (e) {} }
+      document.querySelectorAll('.vframe[data-youtube]').forEach(function (el) {
+        var id = el.getAttribute('data-youtube'), title = el.getAttribute('data-title') || 'Video';
+        var btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'vplay';
+        btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg)';
+        btn.innerHTML = '<span>Play: ' + title + '</span>';
+        el.innerHTML = ''; el.appendChild(btn);
+        btn.addEventListener('click', function () {
+          var host = document.createElement('div'); host.className = 'vhost'; el.appendChild(host);
+          withYT(function () {
+            new YT.Player(host, {
+              host: 'https://www.youtube-nocookie.com', videoId: id,
+              playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, iv_load_policy: 3, modestbranding: 1 },
+              events: {
+                onReady: function (e) {
+                  var f = e.target.getIframe(); f.title = title; f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen'); f.setAttribute('allowfullscreen', '');
+                  noCaptions(e.target); e.target.playVideo(); btn.remove();
+                },
+                onApiChange: function (e) { noCaptions(e.target); },
+                onStateChange: function (e) { if (e.data === 1) noCaptions(e.target); }
+              }
+            });
+          });
+        });
+      });
     })();
   </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->

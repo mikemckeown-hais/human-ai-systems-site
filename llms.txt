@@ -1,16 +1,19 @@
 # Human–AI Systems
 
-> UK AI adoption consultancy founded and led by Mike McKeown. Helps organisations move from AI experimentation to disciplined, value-creating operational adoption: workflow redesign, governance and hybrid human-AI operating models. Also runs From Prompt to Autopilot, a programme (with Third Circle) that builds functional leaders, business owners and their teams their own Business AI Operating System and teaches them to run and extend it. Run as a private team programme, an individual seat, or a company-wide rollout.
+> UK AI adoption consultancy founded and led by Mike McKeown. Its central offer is the Business AI Operating System: the AI platform an organisation already pays for, set up with a knowledge base, skills and agents, dashboards and connectors so it does real work for teams, with people checking anything that leaves the business. Human-AI Systems designs it with the client, builds it, trains their people in weekly learn-by-doing sessions and supports it afterwards, for one team or a whole organisation. Two routes: a bespoke build, or From Prompt to Autopilot, a fixed-price programme delivered with Third Circle. Around it sit discovery (Radar), pilots, scaling, governance and fractional AI leadership for larger organisations.
 
-Key frameworks: Tool → Assistant → Worker (capability maturity); Radar → Pilot → Scale (adoption methodology); Hybrid Workforce Leadership.
+Key frameworks: Tool → Assistant → Worker (capability maturity; a Business AI Operating System is what makes the Worker stage practical); Radar → Pilot → Scale (the rollout route for larger organisations); Hybrid Workforce Leadership (leading teams where some work is done by AI).
 
 Sectors: local government, financial services, professional services, SaaS and technology, small and mid-market organisations.
 
 ## Pages
 
 - [Home](https://human-ai-systems.com/): what Human–AI Systems does
+- [Business AI Operating System](https://human-ai-systems.com/business-aios/): what a Business AI Operating System does, what it is and how to get one, with three short videos and an interactive 3D explorer
+- [Business AIOS Explorer](https://human-ai-systems.com/business-aios/explorer/): narrated interactive model of a Business AI Operating System
+- [What is a Business AI Operating System?](https://human-ai-systems.com/insights/what-is-a-business-ai-operating-system/): plain-English explainer
 - [Approach](https://human-ai-systems.com/approach/): the full methodology
-- [Services](https://human-ai-systems.com/services/): Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
+- [Services](https://human-ai-systems.com/services/): Business AI Operating System builds, Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
 - [Training](https://human-ai-systems.com/training/): practical AI workshops for teams
 - [From Prompt to Autopilot](https://human-ai-systems.com/from-prompt-to-autopilot/): the Business AI Operating System programme, for a team, an individual or a whole company. Full detail and pricing at https://www.prompt-autopilot.com
 - [How Human-AI Systems runs](https://human-ai-systems.com/how-has-runs/): a real, one-person consultancy running on a Business AI Operating System, with a named AI team, around thirty scheduled routines, the dashboards, and written rules on what waits for a human
