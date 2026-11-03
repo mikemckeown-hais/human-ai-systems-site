@@ -6,6 +6,11 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-03
+
+- Business AIOS page: videos first, any-team context, two-route CTA
+- Business AIOS page: left-align route cards
+
 ## 2026-11-02
 
 - Business AIOS page: captions hint and made-by-our-AIOS note
