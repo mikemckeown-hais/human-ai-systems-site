@@ -670,7 +670,14 @@
         .xmobile { display: none; width: calc(100% - 28px); margin: 0 auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(160deg, #131B2B 0%, #1F3A5F 70%, #2A6F74 100%); padding: 28px 22px; text-align: center; }
         .xmobile h3 { color: #EEF3FA; font-size: 1.25rem; margin: 0 0 10px; }
         .xmobile p { color: #C7D2E4; margin: 0 0 18px; }
-        .vgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+        .vgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 40px; max-width: 1080px; margin-left: auto; margin-right: auto; }
+        .vgrid .vcard { grid-column: span 2; }
+        .vgrid .vcard:last-child:nth-child(odd) { grid-column: 2 / span 2; }
+        .vplay { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #0A0F1A center / cover no-repeat; }
+        .vplay::after { content: ""; position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; background: rgba(10,15,26,0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center / 34px no-repeat; border: 2px solid rgba(255,255,255,0.85); transition: transform 200ms ease, background-color 200ms ease; }
+        .vplay:hover::after, .vplay:focus-visible::after { transform: scale(1.08); background-color: rgba(42,111,116,0.9); }
+        .vplay span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+        .vframe .vhost { position: absolute; inset: 0; }
         .vcard { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
         .vframe { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
         .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -683,6 +690,7 @@
         .vbody p { color: var(--steel); margin: 0; font-size: 0.98rem; }
         @media (max-width: 860px) {
             .vgrid { grid-template-columns: 1fr; }
+            .vgrid .vcard, .vgrid .vcard:last-child:nth-child(odd) { grid-column: auto; }
             .xframe, .xactions { display: none; }
             .xmobile { display: block; }
         }
@@ -1013,10 +1021,50 @@
                 try { frame.contentWindow.postMessage({ aios: 'play', lens: 'benefits', chain: true }, location.origin); } catch (e) {}
             });
             // Videos: set data-youtube="VIDEO_ID" on a card to show it.
+            // Our own thumbnail and play button first (no YouTube title bar), then the player
+            // loads on click with captions off, as the videos have captions burnt in.
+            var ytQueue = [], ytLoading = false;
+            function withYT(fn) {
+                if (window.YT && YT.Player) return fn();
+                ytQueue.push(fn);
+                if (ytLoading) return;
+                ytLoading = true;
+                var prev = window.onYouTubeIframeAPIReady;
+                window.onYouTubeIframeAPIReady = function () { if (prev) prev(); while (ytQueue.length) ytQueue.shift()(); };
+                var t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+            }
+            function noCaptions(p) { try { p.unloadModule('captions'); p.unloadModule('cc'); } catch (e) {} }
             document.querySelectorAll('.vframe[data-youtube]').forEach(function (el) {
                 var id = el.getAttribute('data-youtube');
                 if (!id) return;
-                el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?rel=0" title="' + (el.getAttribute('data-title') || 'Video') + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+                var title = el.getAttribute('data-title') || 'Video';
+                var btn = document.createElement('button');
+                btn.type = 'button'; btn.className = 'vplay';
+                btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg)';
+                btn.innerHTML = '<span>Play: ' + title + '</span>';
+                el.innerHTML = ''; el.appendChild(btn);
+                btn.addEventListener('click', function () {
+                    var host = document.createElement('div'); host.className = 'vhost';
+                    el.appendChild(host);
+                    withYT(function () {
+                        new YT.Player(host, {
+                            host: 'https://www.youtube-nocookie.com',
+                            videoId: id,
+                            playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, iv_load_policy: 3, modestbranding: 1 },
+                            events: {
+                                onReady: function (e) {
+                                    var f = e.target.getIframe(); f.title = title; f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen'); f.setAttribute('allowfullscreen', '');
+                                    noCaptions(e.target);
+                                    try { e.target.setPlaybackQualityRange('hd1080'); } catch (x) {}
+                                    e.target.playVideo();
+                                    btn.remove();
+                                },
+                                onApiChange: function (e) { noCaptions(e.target); },
+                                onStateChange: function (e) { if (e.data === 1) noCaptions(e.target); }
+                            }
+                        });
+                    });
+                });
             });
         })();
     </script>
