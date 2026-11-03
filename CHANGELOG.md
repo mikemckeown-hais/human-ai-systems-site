@@ -8,6 +8,11 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-03
 
+- Make Business AI Operating System the lead offer: nav, banner, home, services, approach, cross-links, new insight
+- Rework Business AIOS page: lead with the concept and benefits, sales example as framing
+
+## 2026-11-03
+
 - Make the Business AI Operating System the lead offer across the site (proposal: `06 Marketing/Website/business-aios-site-integration-proposal-v1-2026-11-03.md`)
 - Navigation: add Business AIOS as first item, order Services before Approach, move Training out of the top nav (still in footer and on Services)
 - Banner now points to `/business-aios/`; Business AIOS and From Prompt to Autopilot added to every footer
