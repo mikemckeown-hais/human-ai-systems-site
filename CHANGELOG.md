@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-04
+
+- Business AIOS page approved by Mike: switched from noindex to index (already in sitemap and nav). Explorer embed stays noindex.
+
 ## 2026-11-03
 
 - Make Business AI Operating System the lead offer: nav, banner, home, services, approach, cross-links, new insight
