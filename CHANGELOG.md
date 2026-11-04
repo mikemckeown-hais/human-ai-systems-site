@@ -8,6 +8,13 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-04
 
+- Services: show full Business AIOS diagram
+- Home: compact card labels, left-align video eyebrow
+- Home: left-align video heading
+- Business AIOS page: allow indexing (approved by Mike)
+
+## 2026-11-04
+
 - Business AIOS page approved by Mike: switched from noindex to index (already in sitemap and nav). Explorer embed stays noindex.
 
 ## 2026-11-03
