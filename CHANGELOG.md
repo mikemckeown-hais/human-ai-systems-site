@@ -8,6 +8,7 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-04
 
+- Time-saved range added to the "Hours back every week" benefit on the home and Business AIOS pages (hours a week, up to a full day; Verimatrix hour a day on the AIOS page). Approved by Mike.
 - Services: show full Business AIOS diagram
 - Home: compact card labels, left-align video eyebrow
 - Home: left-align video heading
