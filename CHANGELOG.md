@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-05
 
+- Sales AIOS page: How you get one aligned to the six Business AIOS stages, kickoff made optional
+
+## 2026-11-05
+
 - Add missing og-default.png so pages using it show a link preview image
 - Compress og-default.png for WhatsApp preview size limit
 
