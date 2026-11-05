@@ -305,6 +305,19 @@
             .day { grid-template-columns: 1fr; }
             .crew { padding: 20px; }
         }
+        /* AI Week talk video */
+        .talk { border-top: var(--border); }
+        .talk-wrap { max-width: 880px; margin: 0 auto; }
+        .talk-wrap .vframe { position: relative; aspect-ratio: 16 / 9; background: #0A0F1A; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-top: 28px; }
+        .talk-wrap .vplay { position: absolute; inset: 0; display: block; background: #0A0F1A center / cover no-repeat; cursor: pointer; border: 0; padding: 0; }
+        .talk-wrap .vplay::before { content: ""; position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: rgba(31,58,95,0.82); border: 2px solid rgba(255,255,255,0.85); transition: background-color 200ms ease; }
+        .talk-wrap .vplay::after { content: ""; position: absolute; left: 50%; top: 50%; margin: -11px 0 0 -6px; border-left: 20px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+        .talk-wrap .vplay:hover::before { background: rgba(42,111,116,0.92); }
+        .talk-wrap .vplay:focus-visible { outline: 3px solid var(--aqua); outline-offset: -3px; }
+        .talk-wrap .vplay span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+        .talk-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .talk-note { margin: 14px 0 0; font-size: 0.95rem; color: var(--steel); }
+        .talk-note a { color: var(--teal); font-weight: 600; }
     </style>
 </head>
 <body>
@@ -418,6 +431,20 @@
                             <img loading="lazy" decoding="async" src="/images/hero/HAIS Human + AI collaboration workstation.png" alt="A professional working alongside an AI system at a modern workstation">
                         </picture>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="talk" id="talk">
+            <div class="container">
+                <div class="talk-wrap reveal">
+                    <div class="eyebrow">Watch the talk</div>
+                    <h2>Hear it from the founder.</h2>
+                    <p>This is my presentation at AI Week, on how I run Human&ndash;AI Systems with a team of AI staff, including what works and what does not. It covers the same ground as this page, in my own words.</p>
+                    <div class="vframe" id="talk-video" data-youtube="ImJxu_5umik" data-title="I Run My Company with a Team of AI Staff: What Works and What Doesn&rsquo;t">
+                        <a class="vplay" href="https://youtu.be/ImJxu_5umik" target="_blank" rel="noopener noreferrer" style="background-image:url(https://i.ytimg.com/vi/ImJxu_5umik/maxresdefault.jpg);"><span>Play: I Run My Company with a Team of AI Staff, What Works and What Doesn&rsquo;t</span></a>
+                    </div>
+                    <p class="talk-note">Prefer YouTube? <a href="https://youtu.be/ImJxu_5umik" target="_blank" rel="noopener noreferrer">Watch it on the Human&ndash;AI Systems channel</a>.</p>
                 </div>
             </div>
         </section>
@@ -1868,6 +1895,24 @@
                 bar.appendChild(b); });
             bar.children[0].setAttribute('aria-selected', 'true'); d.classList.add('is-tabbed');
         })();
+    </script>
+    <script>
+    (function () {
+        var el = document.getElementById('talk-video');
+        if (!el) return;
+        var link = el.querySelector('.vplay');
+        if (!link) return;
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var f = document.createElement('iframe');
+            f.src = 'https://www.youtube-nocookie.com/embed/' + el.getAttribute('data-youtube') + '?autoplay=1&rel=0&playsinline=1';
+            f.title = el.getAttribute('data-title');
+            f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+            f.setAttribute('allowfullscreen', '');
+            el.innerHTML = '';
+            el.appendChild(f);
+        });
+    })();
     </script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
