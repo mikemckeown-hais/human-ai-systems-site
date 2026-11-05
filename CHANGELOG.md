@@ -8,6 +8,11 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-05
 
+- Add missing og-default.png so pages using it show a link preview image
+- Compress og-default.png for WhatsApp preview size limit
+
+## 2026-11-05
+
 - Sales AIOS page v3: three-level structure, connections section, new FAQs, proposal mock with presenter and solution explorer
 
 ## 2026-11-05
