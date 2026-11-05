@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-05
+
+- Add Sales AIOS page (noindex, preview for review)
+
 ## 2026-11-04
 
 - Add time-saved range to Hours back benefit (home, Business AIOS)
