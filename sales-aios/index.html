@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales AI Operating System: more selling time for your team | Human–AI Systems</title>
-    <meta name="description" content="A Sales AI Operating System sets up the AI your sales team already has to do the meeting prep, CRM updates and first-draft proposals, in your sales method. Built, piloted and launched with you.">
+    <title>Sales AI Operating System: win more sales with the team you have | Human–AI Systems</title>
+    <meta name="description" content="A Sales AI Operating System sets up the AI your company already has for your sales team: meeting prep, CRM updates, proposals and pipeline reviews in your sales method. No new software to buy.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://human-ai-systems.com/sales-aios/">
     <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
@@ -12,13 +12,13 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="Human–AI Systems">
-    <meta property="og:title" content="Sales AI Operating System: more selling time for your team | Human–AI Systems">
-    <meta property="og:description" content="A Sales AI Operating System sets up the AI your sales team already has to do the meeting prep, CRM updates and first-draft proposals, in your sales method. Built, piloted and launched with you.">
+    <meta property="og:title" content="Sales AI Operating System: win more sales with the team you have | Human–AI Systems">
+    <meta property="og:description" content="A Sales AI Operating System sets up the AI your company already has for your sales team: meeting prep, CRM updates, proposals and pipeline reviews in your sales method. No new software to buy.">
     <meta property="og:url" content="https://human-ai-systems.com/sales-aios/">
     <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sales AI Operating System: more selling time for your team | Human–AI Systems">
-    <meta name="twitter:description" content="A Sales AI Operating System sets up the AI your sales team already has to do the meeting prep, CRM updates and first-draft proposals, in your sales method. Built, piloted and launched with you.">
+    <meta name="twitter:title" content="Sales AI Operating System: win more sales with the team you have | Human–AI Systems">
+    <meta name="twitter:description" content="A Sales AI Operating System sets up the AI your company already has for your sales team: meeting prep, CRM updates, proposals and pipeline reviews in your sales method. No new software to buy.">
 
     <script type="application/ld+json">
     {
@@ -703,6 +703,11 @@
         }
 
         /* ── Sales AIOS page ── */
+        .page-header h1 { max-width: 18ch; }
+        .hero-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; }
+        .hero-pills li { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 6px 14px; font-size: 0.95rem; color: #fff; background: rgba(255,255,255,0.08); }
+        .hero-pills li::before { content: "\2713\00a0"; color: var(--aqua); font-weight: 700; }
+
         .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 40px; }
         .faq { margin-top: 32px; display: grid; gap: 12px; }
         .faq details { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 18px 22px; }
@@ -711,10 +716,179 @@
         .faq summary::after { content: "+"; position: absolute; right: 0; top: -2px; font-size: 1.4rem; color: var(--teal); }
         .faq details[open] summary::after { content: "\2013"; }
         .faq details p { margin: 14px 0 0; color: var(--graphite); }
-        .fit-copy p a { color: var(--teal); font-weight: 600; }
+        .fit-copy p a, #video .fit-copy a { color: var(--teal); font-weight: 600; }
+
+        /* Clickable day cards */
+        .day-card { font: inherit; text-align: left; cursor: pointer; width: 100%; color: inherit; display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+        .day-card:hover, .day-card:focus-visible { transform: translateY(-3px); border-color: var(--teal); box-shadow: 0 18px 40px rgba(31,58,95,0.12); outline: none; }
+        .day-card h3 { margin-bottom: 10px; }
+        .day-time { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+        .day-card .more { margin-top: auto; padding-top: 14px; color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+        .whole-note { display: flex; gap: 14px; align-items: center; max-width: 900px; margin: 32px auto 0; background: var(--white); border: var(--border); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; }
+        .whole-note p { margin: 0; font-size: 1rem; }
+        .whole-note svg { flex: none; }
+
+        /* Clickable role chips */
+        .chip-buttons li { padding: 0; border: 0; background: none; }
+        .chip-buttons button { font: inherit; font-size: 0.92rem; background: var(--white); border: 1px solid rgba(31,58,95,0.18); border-radius: 999px; padding: 6px 14px; cursor: pointer; color: var(--graphite); transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+        .chip-buttons button::after { content: "\00a0+"; color: var(--teal); font-weight: 700; }
+        .chip-buttons button:hover, .chip-buttons button:focus-visible { background: var(--teal); border-color: var(--teal); color: #fff; outline: none; }
+        .chip-buttons button:hover::after, .chip-buttons button:focus-visible::after { color: #fff; }
+        .tap-hint { color: var(--teal); font-weight: 600; }
+
+        /* Example mock-up gallery */
+        .mock-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+        .mock-card { font: inherit; color: inherit; text-align: left; padding: 0; cursor: pointer; background: var(--white); border: var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
+        .mock-card:hover, .mock-card:focus-visible { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(31,58,95,0.14); outline: none; }
+        .mock-thumb { display: block; height: 250px; overflow: hidden; position: relative; background: #E6ECF3; border-bottom: var(--border); }
+        .thumb-inner { position: absolute; top: 14px; left: 14px; width: 900px; transform-origin: top left; pointer-events: none; }
+        .mock-thumb::after { content: "Open full size"; position: absolute; right: 14px; bottom: 14px; background: var(--blue); color: #fff; font-size: 0.85rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+        .mock-label { display: block; padding: 18px 22px 22px; }
+        .mock-label strong { display: block; color: var(--blue); font-size: 1.15rem; margin-bottom: 4px; }
+        .mock-label span { color: var(--steel); font-size: 0.97rem; }
+
+        /* Platform advantage */
+        .hub { max-width: 520px; width: 100%; margin: 0 auto; }
+        .hub svg { width: 100%; height: auto; display: block; }
+        .prompt-box { max-width: 900px; margin: 48px auto 8px; background: #0F1C2E; color: #E6EEF8; border-radius: 18px; padding: 26px 30px; }
+        .prompt-label { color: var(--aqua); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+        .prompt-text { font-size: 1.22rem; line-height: 1.5; margin: 0 0 18px; color: #fff; }
+        .prompt-link { background: var(--aqua); color: #08131c; border: 0; border-radius: 999px; padding: 10px 20px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; cursor: pointer; }
+        .prompt-link:hover { background: #72D0D5; }
+        #platform .philosophy-grid { margin-top: 32px; }
+        .own-example { max-width: 900px; margin: 32px auto 0; background: var(--soft); border-radius: 16px; padding: 22px 26px; border-left: 4px solid var(--teal); }
+        .own-example p { margin: 0; }
+        .own-example a { color: var(--teal); font-weight: 600; }
+
+        /* Proof and founder */
+        .proof-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
+        .founder { display: flex; gap: 16px; align-items: center; margin-top: 26px; padding-top: 22px; border-top: var(--border); }
+        .founder img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); flex: none; }
+        .founder strong { display: block; color: var(--blue); font-size: 1.1rem; }
+        .founder span { display: block; color: var(--steel); font-size: 0.95rem; margin-bottom: 2px; }
+        .founder a { color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+
+        /* Library: pop-up content, listed in full only without JavaScript */
+        .lib { display: none; }
+
+        /* Pop-up */
+        .detail-dialog { width: min(980px, calc(100% - 24px)); max-height: calc(100vh - 40px); border: 0; border-radius: 18px; padding: 0; box-shadow: 0 30px 80px rgba(10,20,35,0.35); overflow: auto; }
+        .detail-dialog.is-entry { width: min(760px, calc(100% - 24px)); }
+        .detail-dialog::backdrop { background: rgba(12,22,36,0.62); }
+        .dlg-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 18px 12px 26px; background: var(--white); border-bottom: 1px solid #E6ECF2; }
+        .dlg-tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); }
+        .dlg-close { font-size: 26px; line-height: 1; border: 0; background: var(--soft); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--blue); flex: none; }
+        .dlg-close:hover { background: #E3E9F0; }
+        .dlg-body { padding: 22px 26px 28px; container-type: inline-size; container-name: dlg; }
+        .dlg-body > h3, .dlg-body .entry h3 { font-size: 1.6rem; color: var(--blue); margin: 0 0 6px; }
+        .dlg-body h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--teal); margin: 20px 0 6px; }
+        .dlg-body .entry p { margin: 0; }
+        .dlg-body .entry ul:not(.connects) { margin: 0; padding-left: 20px; }
+        .dlg-body .entry ul:not(.connects) li { margin: 4px 0; }
+        .connects { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 4px 0 0; }
+        .connects li { background: #E8F1F8; color: var(--blue); border-radius: 999px; padding: 5px 12px; font-size: 0.9rem; font-weight: 600; }
+        .dlg-whole { margin-top: 22px; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 10px; padding: 12px 16px; font-size: 0.97rem; }
+        .dlg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .dlg-actions button { border: 0; cursor: pointer; font-family: inherit; }
+        .dlg-body .mock-src > .mk { box-shadow: 0 6px 24px rgba(31,58,95,0.10); }
+
+        /* Mock-ups */
+        .mk { background: #fff; border-radius: 12px; padding: 22px; font-size: 15px; line-height: 1.4; text-align: left; color: #2B2B2B; border: 1px solid #E1E7EE; }
+        .mk-dash { background: #F6F8FB; }
+        .mk-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 16px; flex-wrap: wrap; }
+        .mk-kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #2A6F74; font-weight: 700; }
+        .mk-h { font-size: 26px; font-weight: 700; color: #1F3A5F; margin: 4px 0; line-height: 1.15; }
+        .mk-sub { color: #6B7C8F; font-size: 14px; }
+        .mk-kpis { display: flex; gap: 10px; }
+        .mk-kpis div { background: #1F3A5F; color: #fff; border-radius: 10px; padding: 10px 14px; min-width: 112px; }
+        .mk-kpis b { display: block; font-size: 20px; }
+        .mk-kpis span { font-size: 12px; opacity: 0.8; }
+        .mk-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .mk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .mk-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .mk-card { background: #fff; border: 1px solid #E1E7EE; border-radius: 10px; padding: 14px 16px; }
+        .mk-card h5 { margin: 0 0 10px; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #1F3A5F; }
+        .mk-row { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid #EEF2F6; font-size: 14px; }
+        .mk-card h5 + .mk-row { border-top: 0; padding-top: 0; }
+        .mk-row > span:not(.mk-time):not(.mk-pill) { flex: 1; }
+        .mk-row small { color: #6B7C8F; font-size: 12.5px; }
+        .mk-time { font-weight: 700; color: #1F3A5F; width: 44px; flex: none; }
+        .mk-pill { flex: none; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #E8F1F8; color: #1F3A5F; white-space: nowrap; }
+        .mk-pill.ok { background: #DDF3EF; color: #1E6B5C; }
+        .mk-muted { color: #6B7C8F; }
+        .mk-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .mk-table th { text-align: left; color: #6B7C8F; font-weight: 600; padding: 4px 6px; border-bottom: 1px solid #E1E7EE; }
+        .mk-table td { padding: 6px; border-bottom: 1px solid #F0F3F6; vertical-align: top; }
+        .mk-table .warn { color: #B4532A; font-weight: 600; }
+        .mk-task { display: flex; gap: 10px; align-items: center; padding: 6px 0; font-size: 14px; }
+        .mk-task i { width: 14px; height: 14px; border: 2px solid #9DB3C9; border-radius: 4px; flex: none; }
+        .mk-task.done { color: #6B7C8F; text-decoration: line-through; }
+        .mk-task.done i { background: #2A6F74; border-color: #2A6F74; }
+        .mk-foot { margin-top: 14px; font-size: 12.5px; color: #6B7C8F; text-align: right; }
+        .mk-instr { background: #0F1C2E; color: #E6EEF8; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; font-size: 15px; font-style: italic; }
+        .mk-instr span { display: block; font-style: normal; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #3EC1C9; margin-bottom: 6px; font-weight: 700; }
+        .mk-p { font-size: 15px; margin: 10px 0 14px; }
+        .mk-dl { display: grid; grid-template-columns: 96px 1fr; gap: 6px 10px; margin: 0; font-size: 14px; }
+        .mk-dl dt { font-weight: 700; color: #1F3A5F; }
+        .mk-dl dd { margin: 0; }
+        .mk-done { font-size: 14px; padding: 4px 0 4px 24px; position: relative; }
+        .mk-done::before { content: "\2713"; position: absolute; left: 0; color: #2A6F74; font-weight: 700; }
+        .mk-email p { font-size: 14px; color: #3a4654; margin: 0; }
+        .mk-web { padding: 0; overflow: hidden; }
+        .mk-browser { display: flex; gap: 6px; align-items: center; background: #EEF2F6; padding: 10px 14px; }
+        .mk-browser i { width: 10px; height: 10px; border-radius: 50%; background: #C9D3DE; }
+        .mk-browser span { margin-left: 10px; background: #fff; border-radius: 6px; padding: 3px 12px; font-size: 12.5px; color: #6B7C8F; }
+        .mk-hero { background: linear-gradient(135deg, #1F3A5F, #2A6F74); padding: 26px 22px; }
+        .mk-audio { display: flex; align-items: center; gap: 12px; margin-top: 14px; color: #D6F2F3; font-size: 13px; }
+        .mk-play { width: 30px; height: 30px; border-radius: 50%; background: #3EC1C9; position: relative; flex: none; display: inline-block; }
+        .mk-play::after { content: ""; position: absolute; left: 11px; top: 8px; border-left: 11px solid #0F1C2E; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+        .mk-play.big { width: 58px; height: 58px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.92); }
+        .mk-play.big::after { left: 22px; top: 17px; border-left-width: 18px; border-top-width: 12px; border-bottom-width: 12px; border-left-color: #1F3A5F; }
+        .mk-wave { display: flex; gap: 3px; align-items: center; }
+        .mk-wave i { width: 3px; height: 8px; background: #9fe3e7; border-radius: 2px; }
+        .mk-wave i:nth-child(3n) { height: 18px; } .mk-wave i:nth-child(4n+1) { height: 12px; } .mk-wave i:nth-child(5n) { height: 22px; }
+        .mk-video { position: relative; border-radius: 10px; overflow: hidden; background: linear-gradient(160deg, #2A4468, #2A6F74); min-height: 190px; }
+        .mk-avatar { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 140px; height: 150px; }
+        .mk-avatar::before { content: ""; position: absolute; left: 42px; top: 8px; width: 56px; height: 62px; border-radius: 50%; background: #C9D6E3; }
+        .mk-avatar::after { content: ""; position: absolute; left: 6px; bottom: 0; width: 128px; height: 74px; border-radius: 64px 64px 0 0; background: #1B2D46; }
+        .mk-cap { position: absolute; left: 12px; bottom: 10px; color: #fff; font-size: 12.5px; background: rgba(0,0,0,0.38); padding: 3px 8px; border-radius: 6px; z-index: 1; }
+        .mk-ol { margin: 0; padding-left: 20px; font-size: 14px; }
+        .mk-ol li { margin: 6px 0; }
+        .mk-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+        .mk-flow span { border: 1px solid #C9D6E3; border-radius: 8px; padding: 6px 10px; background: #F6F8FB; }
+        .mk-flow span.hl { background: #DDF3EF; border-color: #2A6F74; color: #1E6B5C; font-weight: 700; }
+        .mk-flow b { width: 18px; height: 2px; background: #9DB3C9; }
+        .mk-tile { background: #F3F5F7; border-radius: 10px; padding: 12px 14px; }
+        .mk-tile b { display: block; font-size: 22px; color: #1F3A5F; }
+        .mk-tile span { font-size: 12.5px; color: #6B7C8F; }
+        .mk-cta { padding: 0 18px 20px; }
+        .mk-cta span { display: inline-block; background: #2A6F74; color: #fff; font-weight: 700; border-radius: 999px; padding: 10px 20px; font-size: 14px; }
+        .mk-bars div { display: grid; grid-template-columns: 96px 1fr 44px; align-items: center; gap: 8px; font-size: 13px; margin: 9px 0; }
+        .mk-bars em { background: #EEF2F6; height: 12px; border-radius: 6px; overflow: hidden; display: block; }
+        .mk-bars i { display: block; height: 100%; background: #2A6F74; border-radius: 6px; }
+        .mk-bars b { text-align: right; color: #1F3A5F; }
+        .mk-ul { margin: 0; padding-left: 18px; font-size: 14px; }
+        .mk-ul li { margin: 5px 0; }
+        @container dlg (max-width: 640px) {
+            .mk:not(.mk-web) { padding: 16px; }
+            .mk-grid2, .mk-grid3 { grid-template-columns: 1fr; }
+            .mk-grid4 { grid-template-columns: 1fr 1fr; }
+            .mk-top { flex-direction: column; align-items: flex-start; }
+            .mk-kpis { flex-wrap: wrap; }
+            .mk-h { font-size: 22px; }
+        }
+
         @media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; } #proof .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; } }
+        @media (max-width: 760px) {
+            .steps-grid, .mock-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; gap: 32px; }
+            .mock-thumb { height: 200px; }
+            .prompt-box { padding: 22px; }
+            .prompt-text { font-size: 1.08rem; }
+            .dlg-body { padding: 18px 18px 24px; }
+        }
     </style>
+    <noscript><style>.lib { display: block; padding: 40px 0; } .lib .entry, .lib .mock-src { margin-bottom: 32px; } .mock-grid, .chip-buttons button::after, .day-card .more { display: none; }</style></noscript>
 </head>
 <body>
   <div class="fpa-banner"><a href="/from-prompt-to-autopilot/" style="display:block;background:#2A6F74;color:#ffffff;text-align:center;padding:9px 18px;font-size:0.95rem;font-weight:600;line-height:1.4;">Your own Business AI Operating System: From Prompt to Autopilot &rarr;</a></div>
@@ -781,10 +955,16 @@
         <section class="page-header">
             <div class="container">
                 <div class="eyebrow">Sales AI Operating System</div>
-                <h1>More selling time for your whole sales team</h1>
-                <p class="lead">Your number goes up every year. Your team usually doesn&rsquo;t. A Sales AI Operating System sets up the AI you already pay for to do the preparation, admin and first drafts your reps do by hand today. It works in your sales method, from your products and templates, connected to your email, calendar and CRM.</p>
+                <h1>Win more sales with the team you already have</h1>
+                <p class="lead">Your number goes up every year. Your team usually doesn&rsquo;t. A Sales AI Operating System gives every rep more time to sell and better preparation for every deal, so they win more of them.</p>
+                <p class="lead" style="margin-top: 14px;">There&rsquo;s no new software to buy. We set up the AI platform your company already has, such as Microsoft Copilot, Claude or ChatGPT, for your sales team: your products, your sales method and your templates, connected to your email, calendar and CRM.</p>
+                <ul class="hero-pills">
+                    <li>No new software</li>
+                    <li>Runs on the AI you already have</li>
+                    <li>Built and launched in weeks</li>
+                </ul>
                 <div class="hero-actions">
-                    <a href="#a-reps-day" class="btn btn-primary">See a rep&rsquo;s day</a>
+                    <a href="#a-reps-day" class="btn btn-primary">See what it does</a>
                     <a href="#get-yours" class="btn btn-ghost">Book a conversation</a>
                 </div>
             </div>
@@ -805,7 +985,7 @@
                     <div class="fit-panels">
                         <div class="fit-panel reveal">
                             <h3>A bigger target, the same team</h3>
-                            <p>New business targets rise and headcount doesn&rsquo;t, so the time has to come from somewhere.</p>
+                            <p>New business targets rise and headcount doesn&rsquo;t, so the time and the extra wins have to come from somewhere.</p>
                         </div>
                         <div class="fit-panel reveal">
                             <h3>Tools built for oversight</h3>
@@ -827,33 +1007,49 @@
                 <div style="max-width: 720px; margin: 0 auto; text-align: center;">
                     <div class="eyebrow">A rep&rsquo;s day</div>
                     <h2>What it does, from first meeting to Friday review</h2>
-                    <p class="lead" style="text-align: center; max-width: 38rem; margin: 0 auto;">Every rep walks into every meeting prepared the way your best rep is, and spends less of the day on admin.</p>
+                    <p class="lead" style="text-align: center; max-width: 40rem; margin: 0 auto;">Every rep walks into every meeting prepared the way your best rep is, and spends less of the day on admin. Click any step to see how it works.</p>
                 </div>
-                <div class="philosophy-grid">
-                    <div class="philosophy-item reveal">
-                        <h3>Before the day starts</h3>
-                        <p>A morning brief is waiting: today&rsquo;s meetings, what needs a reply, deals that have gone quiet and what is due. It runs overnight without anyone asking.</p>
-                    </div>
-                    <div class="philosophy-item reveal">
-                        <h3>Before each meeting</h3>
-                        <p>A one-page brief on the account: who is in the room, what was said last time, recent news, likely priorities, the products to lead with and the questions to ask.</p>
-                    </div>
-                    <div class="philosophy-item reveal">
-                        <h3>Straight after the call</h3>
-                        <p>A short voice note becomes the meeting notes, the next steps and the CRM update, in your stages and qualification fields, ready for the rep to check.</p>
-                    </div>
-                    <div class="philosophy-item reveal">
+                <div class="philosophy-grid day-grid">
+                    <button type="button" class="philosophy-item day-card reveal" data-open="brief">
+                        <span class="day-time">Before the day starts</span>
+                        <h3>The morning brief</h3>
+                        <p>Today&rsquo;s meetings with briefs, replies already drafted, deals that have gone quiet and what is due. Ready before the rep is.</p>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="meetprep">
+                        <span class="day-time">Before each meeting</span>
+                        <h3>Meeting preparation</h3>
+                        <p>A one-page brief: who is in the room, what was said last time, recent news, what to lead with and the questions to ask.</p>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="writeup">
+                        <span class="day-time">Straight after the meeting</span>
+                        <h3>Write-up, actions and CRM</h3>
+                        <p>From a recording, a voice note or rough notes: the write-up, the actions, the follow-up draft and the CRM update, ready to check.</p>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="proposals">
+                        <span class="day-time">When it&rsquo;s time to propose</span>
                         <h3>Proposals and RFPs</h3>
-                        <p>A first draft in your format, from your templates, past proposals and approved answers, quoting what the customer said. Your experts check it rather than write it.</p>
-                    </div>
-                    <div class="philosophy-item reveal">
+                        <p>A first draft in your format, from your templates, past proposals and approved answers, quoting what the customer said.</p>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="followup">
+                        <span class="day-time">To keep deals moving</span>
                         <h3>Follow-ups and account plans</h3>
                         <p>Follow-up emails in your voice, and account plans for key customers built from the full history rather than memory.</p>
-                    </div>
-                    <div class="philosophy-item reveal">
-                        <h3>Friday pipeline review</h3>
-                        <p>For the sales leader, a review that reads the whole picture, not just the stage totals: where the risk is, what has slipped, and what to do about it.</p>
-                    </div>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="pipeline">
+                        <span class="day-time">For the sales leader</span>
+                        <h3>The Friday pipeline review</h3>
+                        <p>A review that reads the whole picture, not just the stage totals: where the risk is, what has slipped, and what to do about it.</p>
+                        <span class="more">How it works <span aria-hidden="true">&rarr;</span></span>
+                    </button>
+                </div>
+                <div class="whole-note reveal">
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#2A6F74"/><circle cx="12" cy="12" r="9.5" fill="none" stroke="#3EC1C9" stroke-width="1.6" stroke-dasharray="3 3"/></svg>
+                    <p><strong>All one system, not separate tools.</strong> Every step draws on the same knowledge base and connected systems, and updates them. The write-up feeds the CRM, the CRM feeds tomorrow&rsquo;s brief, and every proposal makes the next one better.</p>
                 </div>
             </div>
         </section>
@@ -866,27 +1062,146 @@
                     <div class="fit-copy">
                         <div class="eyebrow">Set up for each role</div>
                         <h2>One system, with the right skills for each part of the team</h2>
-                        <p>Everyone shares the same knowledge of your products, customers and sales method. Each role then gets the skills that fit its work, so an SDR, an account manager and a sales engineer each get help with the jobs they do.</p>
+                        <p>Everyone shares the same knowledge of your products, customers and sales method. Each role then gets the skills that fit its work.</p>
                         <p>It suits complex B2B sales with proposals and solution design, high-volume new business, field and account-led selling, and channel sales through partners.</p>
+                        <p class="tap-hint"><span aria-hidden="true">&#9758;</span> Click anything that interests you to see what it is, what it does for you and how it works.</p>
                     </div>
                     <div class="fit-panels">
                         <div class="fit-panel reveal">
                             <h3>SDRs and new business</h3>
-                            <ul class="chips"><li>Account research</li><li>Personalised first emails</li><li>Call preparation</li><li>Qualification notes</li></ul>
+                            <ul class="chips chip-buttons">
+                                <li><button type="button" data-open="research">Account research</button></li>
+                                <li><button type="button" data-open="outreach">Personalised outreach</button></li>
+                                <li><button type="button" data-open="meetprep">Call and meeting preparation</button></li>
+                                <li><button type="button" data-open="qualify">Lead qualification</button></li>
+                                <li><button type="button" data-open="events">Event follow-up</button></li>
+                            </ul>
                         </div>
                         <div class="fit-panel reveal">
                             <h3>Account executives and account managers</h3>
-                            <ul class="chips"><li>Meeting briefs</li><li>CRM updates by voice</li><li>Proposals</li><li>Renewals and account plans</li></ul>
+                            <ul class="chips chip-buttons">
+                                <li><button type="button" data-open="writeup">Meeting write-ups and CRM updates</button></li>
+                                <li><button type="button" data-open="proposals">Proposals and quotes</button></li>
+                                <li><button type="button" data-open="content">Rich proposal pages</button></li>
+                                <li><button type="button" data-open="followup">Follow-up emails</button></li>
+                                <li><button type="button" data-open="accountplan">Renewals and account plans</button></li>
+                            </ul>
                         </div>
                         <div class="fit-panel reveal">
                             <h3>Sales engineers and presales</h3>
-                            <ul class="chips"><li>Discovery questions</li><li>Solution sketches</li><li>Technical RFP sections</li><li>Hand-offs from the rep</li></ul>
+                            <ul class="chips chip-buttons">
+                                <li><button type="button" data-open="discovery">Discovery questions</button></li>
+                                <li><button type="button" data-open="solution">Solution sketches</button></li>
+                                <li><button type="button" data-open="rfp">Technical RFP answers</button></li>
+                                <li><button type="button" data-open="handoff">Working with the rep</button></li>
+                            </ul>
                         </div>
                         <div class="fit-panel reveal">
                             <h3>Sales leaders</h3>
-                            <ul class="chips"><li>Pipeline reviews</li><li>Deal risk</li><li>Coaching preparation</li><li>Board and leadership updates</li></ul>
+                            <ul class="chips chip-buttons">
+                                <li><button type="button" data-open="pipeline">Pipeline reviews</button></li>
+                                <li><button type="button" data-open="risk">Deal risk</button></li>
+                                <li><button type="button" data-open="coaching">Coaching preparation</button></li>
+                                <li><button type="button" data-open="boardupdate">Board and leadership updates</button></li>
+                            </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Examples -->
+        <section class="soft" id="examples">
+            <div class="container">
+                <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+                    <div class="eyebrow">See what your team would get</div>
+                    <h2>Four examples, as your team would see them</h2>
+                    <p class="lead" style="text-align: center; max-width: 40rem; margin: 0 auto;">Click any example to open it full size. The company and figures are made up, but the format is what a Sales AI Operating System produces.</p>
+                </div>
+                <div class="mock-grid">
+                    <button type="button" class="mock-card reveal" data-mock="brief">
+                        <span class="mock-thumb" data-thumb="brief"></span>
+                        <span class="mock-label"><strong>The morning brief</strong><span>Meetings, replies, deals and tasks, ready before the day starts</span></span>
+                    </button>
+                    <button type="button" class="mock-card reveal" data-mock="writeup">
+                        <span class="mock-thumb" data-thumb="writeup"></span>
+                        <span class="mock-label"><strong>A meeting write-up</strong><span>One instruction after the meeting, and everything that comes back</span></span>
+                    </button>
+                    <button type="button" class="mock-card reveal" data-mock="proposal">
+                        <span class="mock-thumb" data-thumb="proposal"></span>
+                        <span class="mock-label"><strong>A proposal page</strong><span>Video, narration and an interactive solution, not just a document</span></span>
+                    </button>
+                    <button type="button" class="mock-card reveal" data-mock="board">
+                        <span class="mock-thumb" data-thumb="board"></span>
+                        <span class="mock-label"><strong>A leadership update</strong><span>The monthly sales update, drafted from live data</span></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Platform advantage -->
+        <section id="platform">
+            <div class="container">
+                <div class="fit-grid" style="align-items: center;">
+                    <div class="fit-copy">
+                        <div class="eyebrow">The platform advantage</div>
+                        <h2>One place to work, with everything else connected</h2>
+                        <p>Most sales teams use a long list of platforms: CRM, call recording, outbound, sales intelligence, quoting, content and a good few spreadsheets. Each one takes time to learn, people use them differently, and few get the full value from any of them.</p>
+                        <p>With a Sales AI Operating System the AI sits at the centre and connects to the rest. Reps can still go into any platform when they want to. Most of the time they don&rsquo;t need to. They tell the AI what happened and what they want, and it does the updating.</p>
+                    </div>
+                    <div class="hub reveal">
+                        <svg viewBox="0 0 520 440" role="img" aria-label="The Sales AI Operating System at the centre, connected to CRM, email and calendar, meeting recordings, outbound tools, LinkedIn and Sales Navigator, files and knowledge, your product, and dashboards">
+                            <g stroke="#9DB3C9" stroke-width="2" stroke-dasharray="4 5">
+                                <line x1="260" y1="220" x2="260" y2="48"/><line x1="260" y1="220" x2="398" y2="94"/>
+                                <line x1="260" y1="220" x2="443" y2="220"/><line x1="260" y1="220" x2="398" y2="346"/>
+                                <line x1="260" y1="220" x2="260" y2="392"/><line x1="260" y1="220" x2="122" y2="346"/>
+                                <line x1="260" y1="220" x2="70" y2="220"/><line x1="260" y1="220" x2="122" y2="94"/>
+                            </g>
+                            <circle cx="260" cy="220" r="78" fill="#2A6F74"/>
+                            <circle cx="260" cy="220" r="90" fill="none" stroke="#3EC1C9" stroke-width="2"/>
+                            <text x="260" y="212" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Source Sans 3, Arial, sans-serif">Sales AIOS</text>
+                            <text x="260" y="236" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">on the AI you</text>
+                            <text x="260" y="254" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">already have</text>
+                            <g font-family="Source Sans 3, Arial, sans-serif" font-size="13" font-weight="600" fill="#1F3A5F" text-anchor="middle">
+                                <rect x="195" y="26" width="130" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="53">CRM</text>
+                                <rect x="324" y="72" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="99">Email and calendar</text>
+                                <rect x="370" y="198" width="146" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="443" y="225">Meeting recordings</text>
+                                <rect x="330" y="324" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="351">Outbound tools</text>
+                                <rect x="172" y="370" width="176" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="397">LinkedIn and Sales Nav</text>
+                                <rect x="48" y="324" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="351">Files and knowledge</text>
+                                <rect x="4" y="198" width="132" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="70" y="225">Your product</text>
+                                <rect x="54" y="72" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="99">Dashboards</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="prompt-box reveal">
+                    <div class="prompt-label">One instruction after a customer meeting</div>
+                    <p class="prompt-text">&ldquo;Write up this customer meeting, capture the actions, draft the follow-up email, update the CRM and the knowledge base, and start a proposal. I think it has moved to qualification, and I&rsquo;d put it at 80% to close this quarter.&rdquo;</p>
+                    <button type="button" class="prompt-link" data-mock="writeup">See what comes back <span aria-hidden="true">&rarr;</span></button>
+                </div>
+
+                <div class="philosophy-grid">
+                    <div class="philosophy-item reveal">
+                        <h3>One way of working to learn</h3>
+                        <p>New starters learn one way of working instead of eight tools. The other platforms become systems of record that the AI keeps up to date, so the data in them is better too.</p>
+                    </div>
+                    <div class="philosophy-item reveal">
+                        <h3>Often, less spent on software</h3>
+                        <p>Most meeting platforms already record and transcribe, and in person a phone&rsquo;s voice memo app does the job, so a separate AI note-taker may not be needed. Premium tiers bought for their AI features may not be either. Some teams move to a lower-cost platform, with the AI helping set it up and move the data.</p>
+                    </div>
+                    <div class="philosophy-item reveal">
+                        <h3>More from the platforms you keep</h3>
+                        <p>The AI uses each platform more fully than most people have time to, and joins up information that today sits in separate tools.</p>
+                    </div>
+                </div>
+
+                <div class="own-example reveal">
+                    <div class="eyebrow" style="margin-bottom: 8px;">How we run</div>
+                    <p>Human&#8209;AI&nbsp;Systems has platforms for CRM, outbound email, video and voice generation, our website, and Google Workspace for files, email and calendar. Day to day, we don&rsquo;t log in to any of them. Our own AI operating system runs them all. <a href="/how-has-runs/">See how we run on ours</a>.</p>
                 </div>
             </div>
         </section>
@@ -903,21 +1218,21 @@
                         <p>Customer data stays in your own systems. The AI reaches it through your own connections when a rep runs a task, under your platform&rsquo;s data terms, and people stay in charge of anything that goes to a customer.</p>
                         <div class="fit-panel" style="margin-top: 22px; background: var(--white);">
                             <h3>Works with</h3>
-                            <ul class="chips"><li>Microsoft Copilot</li><li>Claude</li><li>ChatGPT</li><li>Salesforce</li><li>HubSpot</li><li>Outlook and Gmail</li><li>SharePoint and Google Drive</li><li>Call recording tools</li></ul>
+                            <ul class="chips"><li>Microsoft Copilot</li><li>Claude</li><li>ChatGPT</li><li>Salesforce</li><li>HubSpot</li><li>Dynamics</li><li>Outlook and Gmail</li><li>SharePoint and Google Drive</li><li>Teams, Zoom and Meet</li><li>Gong and call recording</li><li>Outbound tools</li><li>LinkedIn Sales Navigator</li></ul>
                         </div>
                     </div>
                     <div class="fit-panels">
                         <div class="fit-panel reveal" style="background: var(--white);">
                             <h3>Sales knowledge</h3>
-                            <p>Your products, positioning, pricing rules, proposal templates, approved RFP answers, battlecards and case studies, in one place the AI draws on.</p>
+                            <p>Your products, positioning, pricing rules, proposal templates, approved RFP answers, battlecards and case studies, in one place the AI draws on and keeps up to date.</p>
                         </div>
                         <div class="fit-panel reveal" style="background: var(--white);">
                             <h3>Your sales method</h3>
-                            <p>Your stages, qualification method, probability rules, proposal approach and house style, written down so the AI follows them every time.</p>
+                            <p>Your stages, qualification method, probability rules, proposal approach and house style, written down as skills so the AI follows them every time.</p>
                         </div>
                         <div class="fit-panel reveal" style="background: var(--white);">
                             <h3>Routines and dashboards</h3>
-                            <p>The overnight brief, event and trade show research, weekly pipeline reviews, with the results where people can see them.</p>
+                            <p>The overnight brief, event research and weekly pipeline reviews run on a schedule, with the results on dashboards people can see.</p>
                         </div>
                         <div class="fit-panel reveal" style="background: var(--white);">
                             <h3>Connections</h3>
@@ -932,12 +1247,20 @@
         <!-- Proof -->
         <section id="proof">
             <div class="container">
-                <div class="about-grid" style="grid-template-columns: 1fr 1fr; gap: 56px;">
+                <div class="about-grid proof-grid">
                     <div>
                         <div class="eyebrow">Why Human&#8209;AI&nbsp;Systems</div>
                         <h2>Built by people who have run sales teams</h2>
                         <p>Setting AI up well for sales takes knowing how sales teams work: how deals move, where reps lose time, what a good proposal needs and what a sales leader needs to see. Our founder has led large sales businesses, including a $430M sales P&amp;L at Cisco that grew 20%, and went on to lead enterprise-wide AI adoption at Verimatrix, a global SaaS business.</p>
-                        <p>We also run Human&#8209;AI&nbsp;Systems on our own AI operating system every day, from the morning brief to proposals and the pipeline. <a href="/how-has-runs/" style="color: var(--teal); font-weight: 600;">See how we run on ours</a>.</p>
+                        <p>We also run Human&#8209;AI&nbsp;Systems on our own AI operating system every day, from the morning brief to proposals and the pipeline.</p>
+                        <div class="founder">
+                            <img src="/images/headshots/mike-mckeown-round.jpg" alt="Mike McKeown" width="96" height="96">
+                            <div>
+                                <strong>Mike McKeown</strong>
+                                <span>Founder and Managing Director, Human&#8209;AI&nbsp;Systems</span>
+                                <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <div class="evidence-card reveal">
@@ -1001,10 +1324,10 @@
                         <div class="eyebrow">See it in action</div>
                         <h2>A sales leader&rsquo;s day, with and without it</h2>
                         <p>This short video follows a sales leader through a working day and shows the hours a Business AI Operating System gives back.</p>
-                        <p><a href="/business-aios/#explorer">Explore the interactive version</a>, or <a href="/business-aios/#videos">watch the full series</a>.</p>
+                        <p><a href="/business-aios/#videos">Watch the full series</a> on what it is and how you get one.</p>
                     </div>
                     <article class="vcard reveal">
-                        <div class="vframe" data-youtube="5Yixb2gGqWw" data-title="What a Business AI Operating System does for you"><div class="vsoon"><i></i>Video coming soon</div></div>
+                        <div class="vframe" data-youtube="5Yixb2gGqWw" data-title="What a Business AI Operating System does for you"><div class="vsoon"><i></i>Video loading</div></div>
                         <div class="vbody">
                             <div class="eyebrow">A day in the life</div>
                             <h3>What it does for you</h3>
@@ -1013,6 +1336,30 @@
                     </article>
                 </div>
             </div>
+        </section>
+
+
+        <!-- Interactive explorer -->
+        <section class="xband" id="explorer">
+            <div class="container intro">
+                <div class="eyebrow">Interactive explorer</div>
+                <h2>Explore it for yourself</h2>
+                <p><strong>What it does for you</strong> follows a sales leader&rsquo;s day, then opens out across the business. <strong>What it is</strong> opens up the parts. <strong>How you get one</strong> walks through building it with you. Press play for a narrated tour, or click anything to explore.</p>
+            </div>
+            <div class="xframe">
+                <iframe id="explorerFrame" src="/business-aios/explorer/?embed=1" title="Business AI Operating System interactive explorer" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <div class="xmobile">
+                <h3>Best opened full screen on a phone</h3>
+                <p>Follow a leader&rsquo;s day, open up the parts, and see how it is built. Narrated, with captions.</p>
+                <a class="xbtn primary" href="/business-aios/explorer/"><span class="tri" aria-hidden="true"></span>Open the explorer</a>
+            </div>
+            <noscript><p class="xnote">The explorer needs JavaScript. The video above covers the same ground.</p></noscript>
+            <div class="xactions">
+                <button class="xbtn primary" type="button" id="playTour"><span class="tri" aria-hidden="true"></span>Play the narrated tour</button>
+                <a class="xbtn" href="/business-aios/explorer/" target="_blank" rel="noopener">Open full screen</a>
+            </div>
+            <p class="xnote">The narration uses an AI version of the voice of Mike McKeown, our founder. This explorer and its narration were made by our own Business AI Operating System, the same way your team could make rich proposal pages for customers.</p>
         </section>
 
 
@@ -1025,13 +1372,17 @@
                 </div>
                 <div class="faq">
                     <details class="reveal">
+                        <summary>Is this more software we have to buy?</summary>
+                        <p>No. It runs on the AI platform your company already pays for, such as Microsoft Copilot, Claude or ChatGPT, and connects to the systems you already have. What you pay for is setting it up for your sales team, training them and, if you want it, ongoing support.</p>
+                    </details>
+                    <details class="reveal">
                         <summary>Our IT team looks after AI. Isn&rsquo;t this their job?</summary>
                         <p>IT looks after the tool: which AI platform you use, security, access and which connections are approved. We work with them and within those decisions, using the AI they have already approved. If you haven&rsquo;t chosen a platform yet, we can suggest one and help your IT team through their assessment.</p>
                         <p>Setting the tool up for sales is a different job. Think of Excel. IT provides it, but the finance team builds the models, the pivot tables and the macros, because only finance knows how the numbers need to work. A Sales AI Operating System is the sales team&rsquo;s version of that, and it needs people who know how sales works. One governed setup for the whole team is also easier for IT to approve and support than everyone building their own.</p>
                     </details>
                     <details class="reveal">
                         <summary>We already have a CRM and a call recording tool. Why add this?</summary>
-                        <p>It doesn&rsquo;t replace them. It builds on them. Your CRM and call recording tools show you what is happening in the pipeline. This does the rep&rsquo;s preparation, follow-up and drafting work, using the same information, and keeps the CRM more up to date as a result.</p>
+                        <p>It builds on them rather than replacing them. Your CRM and call recording tools show you what is happening in the pipeline. This does the rep&rsquo;s preparation, follow-up and drafting work, using the same information, and keeps the CRM more up to date as a result.</p>
                     </details>
                     <details class="reveal">
                         <summary>Could we build it ourselves?</summary>
@@ -1047,7 +1398,7 @@
                     </details>
                     <details class="reveal">
                         <summary>How will we know it has worked?</summary>
-                        <p>Before launch we time two or three tasks your reps do often, such as meeting preparation or a first-draft proposal. We time them again a few weeks after launch. Alongside that you can see adoption across the team and proposal turnaround.</p>
+                        <p>Before launch we time two or three tasks your reps do often, such as meeting preparation or a first-draft proposal. We time them again a few weeks after launch. Alongside that you can see adoption across the team, proposal turnaround and, over time, win rates.</p>
                     </details>
                 </div>
             </div>
@@ -1079,7 +1430,494 @@
             </div>
         </section>
 
+        <!-- Detail library: shown in a pop-up when an item is clicked; listed in full when JavaScript is off -->
+        <section class="lib" id="lib" aria-label="How each part works">
+            <div class="container">
+
+            <article class="entry" id="d-brief" data-tag="Every rep, every morning" data-mock="brief">
+                <h3>The morning brief</h3>
+                <h4>What it is</h4>
+                <p>A short briefing waiting for each rep before the day starts, put together overnight from their email, calendar, CRM and tasks.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>The day starts on the things that move deals forward, not on the inbox.</li>
+                    <li>Replies that need sending are already drafted in your voice, ready to check and send.</li>
+                    <li>Nothing slips. Quiet deals, overdue follow-ups and tasks due are flagged every day.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task runs overnight. It reads the rep&rsquo;s inbox and calendar, checks the CRM for deals that have gone quiet or have close dates coming up, and pulls in the task list. It prepares a brief for each meeting and drafts a reply to each important email. It uses your sales method from the knowledge base to decide what matters most, and shows the result as a simple dashboard.</p>
+                <ul class="connects"><li>Outlook or Gmail</li><li>Calendar</li><li>Salesforce, HubSpot or Dynamics</li><li>Task list</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-meetprep" data-tag="Before every meeting or call">
+                <h3>Meeting and call preparation</h3>
+                <h4>What it is</h4>
+                <p>A one-page brief for every external meeting or call: who is attending, what has happened on the account, what they are likely to care about, what to lead with and what to ask.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Every rep walks in as well prepared as your best rep.</li>
+                    <li>The hours spent researching each week come back.</li>
+                    <li>Better questions mean better discovery, and better discovery wins more deals.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Before each meeting the AI gathers the account&rsquo;s history from the CRM, previous emails, meeting write-ups and proposals. For new contacts it researches the company and recent news, and reads the person&rsquo;s LinkedIn profile if the rep adds it. It checks your products and case studies in the knowledge base to suggest what to lead with, and your playbook for the questions to ask. If you record calls with Gong or a similar tool, it adds what the customer said last time.</p>
+                <ul class="connects"><li>CRM</li><li>Email and calendar</li><li>Web research</li><li>LinkedIn profiles</li><li>Gong, Teams or Zoom recordings</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-writeup" data-tag="Straight after the meeting" data-mock="writeup">
+                <h3>Meeting write-up, actions and CRM update</h3>
+                <h4>What it is</h4>
+                <p>The meeting turned into notes, decisions, actions and updates within minutes, whether it was a video call, a phone call or a meeting in person.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>No more evenings writing up notes and updating the CRM.</li>
+                    <li>The CRM stays accurate, because keeping it up to date takes seconds.</li>
+                    <li>Every commitment made to a customer is captured and tracked, so it gets done.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The rep gives it whatever they have: a recording or transcript from Teams, Zoom or Google Meet, a voice memo recorded on the way out of a customer&rsquo;s office, or a few rough notes. The AI writes it up in your format, fills in your qualification fields, lists the actions, drafts the follow-up email and updates the CRM, adding the rep&rsquo;s own judgement, such as &ldquo;move this to qualification, 80% likely to close this quarter&rdquo;. Anything worth keeping about the account goes into the knowledge base, so the next brief is better.</p>
+                <ul class="connects"><li>Teams, Zoom or Meet transcripts</li><li>Phone voice memos</li><li>CRM</li><li>Email</li><li>Task list</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-proposals" data-tag="When it&rsquo;s time to propose" data-mock="proposal">
+                <h3>Proposals, quotes and RFPs</h3>
+                <h4>What it is</h4>
+                <p>First drafts of proposals and RFP responses in your format, built from your templates, approved answers and the customer&rsquo;s own words.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Days of drafting become hours of checking. At Verimatrix, proposal workload and turnaround fell by 50 to 60%.</li>
+                    <li>Every proposal uses your best material and current product information.</li>
+                    <li>Faster, better tailored proposals win more often.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI starts from the meeting write-ups and the customer&rsquo;s stated priorities, then draws on the knowledge base: templates, past winning proposals, product descriptions, pricing rules and the approved RFP answer library. It follows your proposal method and house style, and files the draft where your team keeps them. Your experts review it and decide. Quotes follow once your CRM or quoting tool is connected. The same material can also become a rich proposal page with video and narration.</p>
+                <ul class="connects"><li>Knowledge base</li><li>Meeting write-ups</li><li>CRM</li><li>SharePoint or Google Drive</li><li>Quoting tools</li></ul>
+            </article>
+
+            <article class="entry" id="d-content" data-tag="Stand out from the competition" data-mock="proposal">
+                <h3>Rich proposal pages and presentations</h3>
+                <h4>What it is</h4>
+                <p>Proposals that are more than documents: a private web page for each customer with their priorities, an interactive view of the solution, a short video and narration, alongside decks tailored to the customer.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>You stand out from competitors sending PDFs.</li>
+                    <li>It is easy for your champion to share inside their company, so they can sell for you when you&rsquo;re not in the room.</li>
+                    <li>It takes an afternoon. Until recently this needed a design agency and weeks of work.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI builds the page from the same material as the written proposal, on brand, from simple direction such as &ldquo;lead with their delivery problem and keep it short&rdquo;. Video and voice can be the rep&rsquo;s own recordings, or an AI avatar and an AI clone of the rep&rsquo;s voice made with tools such as HeyGen and ElevenLabs, depending on the rep&rsquo;s preference and time. Decks start from your standard deck, adapted to the customer, with speaker notes.</p>
+                <ul class="connects"><li>Knowledge base and brand guidelines</li><li>Meeting write-ups</li><li>HeyGen, ElevenLabs or your own recordings</li><li>Your website</li></ul>
+            </article>
+
+            <article class="entry" id="d-followup" data-tag="Keeping deals moving">
+                <h3>Follow-ups and account plans</h3>
+                <h4>What it is</h4>
+                <p>Follow-up emails drafted in your voice that pick up exactly what the customer said and what was agreed, plus account plans for key customers.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>The follow-up goes out the same day, every time.</li>
+                    <li>Customers see their own words and priorities reflected back.</li>
+                    <li>The same quality across the whole team.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Each follow-up is drafted from the meeting write-up and the account history, using your email style and approved content from the knowledge base. Drafts sit in the rep&rsquo;s mailbox to check and send. Nothing goes to a customer without a person sending it. Account plans are built the same way, from the full history of the account.</p>
+                <ul class="connects"><li>Email</li><li>Meeting write-ups</li><li>CRM</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-accountplan" data-tag="Account managers">
+                <h3>Renewals and account plans</h3>
+                <h4>What it is</h4>
+                <p>Account plans for key customers and renewal preparation, built from the full history of the account rather than memory.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Expansion opportunities and risks are spotted earlier.</li>
+                    <li>Renewals start on time, with the case for value ready.</li>
+                    <li>Plans follow one format across the team, so handovers are easy.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the account&rsquo;s CRM history, meeting notes, proposals and support issues, plus usage data from your own product if it is connected, and writes the plan in your format: where they are, what they have, opportunities, risks, people and next steps. A scheduled task can flag renewals coming up and prepare the pack in advance.</p>
+                <ul class="connects"><li>CRM</li><li>Your product or usage data</li><li>Support system</li><li>Meeting write-ups</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-pipeline" data-tag="For the sales leader" data-mock="board">
+                <h3>Pipeline reviews</h3>
+                <h4>What it is</h4>
+                <p>A weekly review of the pipeline that reads the whole picture, not just the stage totals.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>You know where the risk is before the forecast call.</li>
+                    <li>Less time in spreadsheets and more time coaching on the deals that matter.</li>
+                    <li>Decisions based on what customers said, not just what was typed into the CRM.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task reads the CRM, recent meeting write-ups, emails and proposals for each open deal, and compares them with your sales method and targets. It produces a short review: coverage against target, deals that have slipped or gone quiet, deals missing key information, and suggested actions, all on a dashboard you can drill into. The same data feeds your monthly leadership update.</p>
+                <ul class="connects"><li>CRM</li><li>Meeting write-ups</li><li>Email</li><li>Targets</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-research" data-tag="SDRs and new business">
+                <h3>Account research</h3>
+                <h4>What it is</h4>
+                <p>A short, useful profile of any target company: what they do, recent news, likely priorities, who to talk to and why your offer fits.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Research that took an hour takes minutes.</li>
+                    <li>Every approach starts from a good reason to talk.</li>
+                    <li>The same standard for every account, whoever does it.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI researches the company on the web, reads its site and news, checks the CRM for any previous contact, and compares what it finds with your ideal customer profile and case studies in the knowledge base. Reps can give it a LinkedIn profile, or a lead list exported from Sales Navigator, to work through.</p>
+                <ul class="connects"><li>Web research</li><li>CRM</li><li>LinkedIn and Sales Navigator lists</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-outreach" data-tag="SDRs and new business">
+                <h3>Personalised outreach</h3>
+                <h4>What it is</h4>
+                <p>First emails and sequences written for each prospect from the research, in your voice, loaded into your outbound tool.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Personal messages at volume, without the generic feel.</li>
+                    <li>More replies, because each message has a relevant reason to talk.</li>
+                    <li>Your rules kept: who can be contacted, how often, and what is said.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Starting from a lead list from Sales Navigator, your CRM or a data provider, the AI researches each contact, writes the message and loads it into your outbound tool. It checks the CRM so nobody already in a conversation is contacted, and follows your rules on suppression and opt-outs. A person approves before anything is sent.</p>
+                <ul class="connects"><li>Sales Navigator lead lists</li><li>Outreach, Salesloft, Apollo or Instantly</li><li>CRM</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-qualify" data-tag="SDRs and new business">
+                <h3>Lead qualification</h3>
+                <h4>What it is</h4>
+                <p>Inbound leads and first calls assessed against your qualification criteria, with a clear hand-off for the rep who takes them on.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Reps spend their time on leads worth having.</li>
+                    <li>Clean hand-offs, so customers don&rsquo;t have to repeat themselves.</li>
+                    <li>Qualification done the same way across the team.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the enquiry, researches the company and applies your qualification method from the knowledge base. After a first call it fills in the qualification fields from the notes or recording, updates the CRM, and writes the hand-off note for the account executive.</p>
+                <ul class="connects"><li>Web forms and inbox</li><li>CRM</li><li>Call recordings</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-events" data-tag="Events and trade shows">
+                <h3>Event follow-up</h3>
+                <h4>What it is</h4>
+                <p>Before an event, a target list with a brief for each account. After it, every lead researched, ranked and followed up within a day.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Your follow-ups arrive while competitors are still travelling home.</li>
+                    <li>The most valuable conversations get the most attention.</li>
+                    <li>Event spend turns into pipeline you can trace.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Load the attendee list or the badge scans. A scheduled task researches each company overnight, ranks them against your ideal customer, adds them to the CRM, and drafts a personal follow-up from the rep&rsquo;s notes or the voice memos they recorded on the stand.</p>
+                <ul class="connects"><li>Lead lists and badge scans</li><li>Web research</li><li>CRM</li><li>Email</li><li>Outbound tools</li></ul>
+            </article>
+
+            <article class="entry" id="d-discovery" data-tag="Sales engineers and presales">
+                <h3>Discovery questions</h3>
+                <h4>What it is</h4>
+                <p>Discovery questions tailored to the customer&rsquo;s industry, situation and what you know so far.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Better discovery means better solutions and fewer surprises late in the deal.</li>
+                    <li>Less experienced people ask the questions your experts would.</li>
+                    <li>Gaps in what you know are spotted early.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI combines the account history and the rep&rsquo;s notes with your discovery playbook and product knowledge, suggests the questions that matter for this customer, and highlights what is still unknown.</p>
+                <ul class="connects"><li>CRM</li><li>Meeting write-ups</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-solution" data-tag="Sales engineers and presales">
+                <h3>Solution sketches</h3>
+                <h4>What it is</h4>
+                <p>First-draft solution designs and diagrams from what the customer has described, ready for the sales engineer to refine.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Sales engineers spend their time on judgement, not drawing.</li>
+                    <li>Customers see a tailored solution sooner.</li>
+                    <li>Each sales engineer can support more deals.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Starting from the discovery notes, the AI draws on your product documentation, reference designs and past solutions in the knowledge base, and proposes a design with a diagram and its assumptions listed. For technology companies it can work directly from your own product documentation and, where it helps, your configuration tools.</p>
+                <ul class="connects"><li>Meeting write-ups</li><li>Product documentation</li><li>Your product</li><li>Files</li></ul>
+            </article>
+
+            <article class="entry" id="d-rfp" data-tag="Sales engineers and presales">
+                <h3>Technical RFP answers</h3>
+                <h4>What it is</h4>
+                <p>First drafts of the technical and compliance sections of RFPs, from your approved answer library.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Experts check answers instead of writing them. At Verimatrix, first drafts were 80 to 90% technically accurate.</li>
+                    <li>Approved, consistent answers every time.</li>
+                    <li>More bids answered by the same team.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI matches each question to the approved answer library and product documentation, drafts the response, and flags anything new for an expert. Newly approved answers go back into the library, so it improves with every bid.</p>
+                <ul class="connects"><li>Answer library</li><li>Product documentation</li><li>Certifications</li><li>Files</li></ul>
+            </article>
+
+            <article class="entry" id="d-handoff" data-tag="Sales engineers and presales">
+                <h3>Working with the rep</h3>
+                <h4>What it is</h4>
+                <p>A shared workspace for each key account, so the rep and the sales engineer work from the same picture.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Less chasing between rep and sales engineer.</li>
+                    <li>Sales engineers shared across many reps can pick up any account quickly.</li>
+                    <li>Clear actions and owners on every deal.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Each strategic account gets a shared project holding its notes, documents and actions. Meeting write-ups and actions flow into it automatically, and either person can ask it &ldquo;what&rsquo;s outstanding on this account?&rdquo;</p>
+                <ul class="connects"><li>Shared projects</li><li>Meeting write-ups</li><li>CRM</li><li>Task list</li><li>Files</li></ul>
+            </article>
+
+            <article class="entry" id="d-risk" data-tag="For the sales leader">
+                <h3>Deal risk</h3>
+                <h4>What it is</h4>
+                <p>Early warning on deals at risk, with the reason and a suggested action.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>You can step in while there is still time.</li>
+                    <li>Fewer surprises at the end of the quarter.</li>
+                    <li>Coaching focused on the deals that matter.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI looks for the patterns that usually come before a lost deal: no recent contact, no access to the decision maker, close dates that keep moving, a competitor mentioned. It reads the CRM, emails, call recordings and meeting write-ups to find them, and can learn from your own won and lost deals. At Verimatrix, three years of win and loss analysis was combined with the live pipeline to flag deals for the CRO.</p>
+                <ul class="connects"><li>CRM</li><li>Meeting write-ups</li><li>Call recordings</li><li>Email</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-coaching" data-tag="For the sales leader">
+                <h3>Coaching preparation</h3>
+                <h4>What it is</h4>
+                <p>Before a one-to-one, a short summary of the rep&rsquo;s deals, activity and recent calls, with suggested coaching points.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>One-to-ones spent on what will help, not status updates.</li>
+                    <li>Patterns across the team spotted early.</li>
+                    <li>New reps get up to speed faster.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the rep&rsquo;s pipeline, activity and recent call recordings or write-ups, compares them with your sales method, and suggests two or three things to work on. Reps can also rehearse a difficult meeting against a simulated sceptical buyer before it happens.</p>
+                <ul class="connects"><li>CRM</li><li>Gong, Teams or Zoom recordings</li><li>Meeting write-ups</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-boardupdate" data-tag="For the sales leader" data-mock="board">
+                <h3>Board and leadership updates</h3>
+                <h4>What it is</h4>
+                <p>The monthly or quarterly sales update, drafted in your usual format from live data.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Days of pulling numbers together become an hour of review.</li>
+                    <li>The same format each time, so trends are easy to see.</li>
+                    <li>Commentary based on what is happening in the deals, not just the numbers.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI learns your format and what was presented last time, connects to the CRM and your targets, and writes the first draft with charts, commentary, risks and the decisions needed. It runs on demand or on a schedule. People own every number that goes to a board.</p>
+                <ul class="connects"><li>CRM</li><li>Targets and finance data</li><li>Meeting write-ups</li><li>Files</li><li>Dashboard</li></ul>
+            </article>
+
+            </div>
+        </section>
+
+        <!-- Example mock-ups: opened in the pop-up and shown as thumbnails; listed in full when JavaScript is off -->
+        <section class="lib" aria-label="Examples">
+            <div class="container">
+
+            <div class="mock-src" id="m-brief" data-title="Example: the morning brief" data-tag="Illustrative example, fictional company and data">
+              <div class="mk mk-dash">
+                <div class="mk-top">
+                    <div>
+                        <div class="mk-kicker">Morning brief &middot; 12 November</div>
+                        <div class="mk-h">Good morning, Sam</div>
+                        <div class="mk-sub">3 meetings with briefs ready &middot; 4 replies drafted &middot; 2 deals need attention</div>
+                    </div>
+                    <div class="mk-kpis">
+                        <div><b>&pound;1.24m</b><span>Pipeline this quarter</span></div>
+                        <div><b>&pound;410k</b><span>Commit</span></div>
+                        <div><b>79%</b><span>Of target</span></div>
+                    </div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Today&rsquo;s meetings</h5>
+                        <div class="mk-row"><span class="mk-time">09:30</span><span><b>Tallis Freight</b> &middot; discovery call<br><small>James Holt, Operations Director. Lead with on-time delivery.</small></span><span class="mk-pill ok">Brief ready</span></div>
+                        <div class="mk-row"><span class="mk-time">11:00</span><span><b>Orrin Foods</b> &middot; proposal review<br><small>Priya asked about pricing twice. Bring the revised options.</small></span><span class="mk-pill ok">Brief ready</span></div>
+                        <div class="mk-row"><span class="mk-time">14:30</span><span><b>Vellum Group</b> &middot; renewal<br><small>Renewal pack and usage summary attached.</small></span><span class="mk-pill ok">Brief ready</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Emails that need you</h5>
+                        <div class="mk-row"><span><b>Priya Shah, Orrin Foods</b><br><small>&ldquo;Could you send the revised pricing before we meet?&rdquo;</small></span><span class="mk-pill">Draft ready</span></div>
+                        <div class="mk-row"><span><b>James Holt, Tallis Freight</b><br><small>&ldquo;Agenda for today&rsquo;s call&rdquo;</small></span><span class="mk-pill">Draft ready</span></div>
+                        <div class="mk-row"><span><b>Legal, Vellum Group</b><br><small>Comments on the order form: two changes to payment terms.</small></span><span class="mk-pill">Summary and reply</span></div>
+                        <div class="mk-row mk-muted"><span>23 others filed. Nothing else urgent.</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Deals to watch</h5>
+                        <table class="mk-table">
+                            <tr><th>Deal</th><th>Stage</th><th>Value</th><th>Why</th></tr>
+                            <tr><td>Orrin Foods</td><td>Proposal</td><td>&pound;180k</td><td class="warn">Close date moved twice</td></tr>
+                            <tr><td>Kerran Health</td><td>Qualification</td><td>&pound;95k</td><td class="warn">No contact for 16 days</td></tr>
+                            <tr><td>Vellum Group</td><td>Renewal</td><td>&pound;220k</td><td>Renews in 45 days</td></tr>
+                        </table>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Tasks due</h5>
+                        <div class="mk-task"><i></i>Send Tallis Freight the logistics case study (promised last week)</div>
+                        <div class="mk-task"><i></i>Update the forecast before Friday&rsquo;s review</div>
+                        <div class="mk-task"><i></i>Book a sales engineer for the Orrin Foods demo</div>
+                        <div class="mk-task done"><i></i>Vellum renewal pack prepared overnight</div>
+                    </div>
+                </div>
+                <div class="mk-foot">Prepared overnight from your email, calendar, CRM and task list</div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-writeup" data-title="Example: a meeting write-up" data-tag="Illustrative example, fictional company and data">
+              <div class="mk mk-doc">
+                <div class="mk-instr"><span>Sam&rsquo;s instruction, by voice after the meeting</span>&ldquo;Write up the Tallis call, capture the actions, draft the follow-up, update the CRM and the knowledge base, and start a proposal. Move it to qualification, I&rsquo;d say 80% to close this quarter.&rdquo;</div>
+                <div class="mk-kicker">Meeting write-up</div>
+                <div class="mk-h">Tallis Freight &middot; discovery call</div>
+                <div class="mk-sub">45 minutes, video call &middot; James Holt (Operations Director), Ana Ruiz (IT Manager), Sam Carter</div>
+                <p class="mk-p">Tallis is losing money to late deliveries and wants a fix live before its March peak. James owns the decision; anything over &pound;100k also needs the CFO. Ana&rsquo;s main concern is integration with their existing dispatch system.</p>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>What we learned</h5>
+                        <dl class="mk-dl">
+                            <dt>Pain</dt><dd>Late-delivery penalties of about &pound;40k a month</dd>
+                            <dt>Measure</dt><dd>On-time rate 87% today, target 95%</dd>
+                            <dt>Decision</dt><dd>James decides; CFO signs above &pound;100k</dd>
+                            <dt>Timing</dt><dd>Live before peak season in March</dd>
+                            <dt>Competition</dt><dd>One other supplier being considered</dd>
+                        </dl>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Updated for you</h5>
+                        <div class="mk-done">CRM stage: Discovery &rarr; Qualification</div>
+                        <div class="mk-done">Probability 80%, close this quarter (your call)</div>
+                        <div class="mk-done">Ana Ruiz added as a contact</div>
+                        <div class="mk-done">Account notes added to the knowledge base</div>
+                        <div class="mk-done">Follow-up email drafted in your inbox</div>
+                        <div class="mk-done">Proposal first draft started</div>
+                    </div>
+                </div>
+                <div class="mk-card" style="margin-top: 14px;">
+                    <h5>Actions</h5>
+                    <table class="mk-table">
+                        <tr><th>Action</th><th>Owner</th><th>Due</th></tr>
+                        <tr><td>Send the logistics case study and integration overview</td><td>Sam</td><td>Tomorrow</td></tr>
+                        <tr><td>Technical call with Ana on the dispatch integration</td><td>Sales engineer</td><td>Next week</td></tr>
+                        <tr><td>Share last quarter&rsquo;s delivery data</td><td>James (Tallis)</td><td>Next week</td></tr>
+                        <tr><td>Proposal to James, with the CFO summary</td><td>Sam</td><td>In two weeks</td></tr>
+                    </table>
+                </div>
+                <div class="mk-card mk-email" style="margin-top: 14px;">
+                    <h5>Follow-up draft</h5>
+                    <p>Hi James, thanks for the time today. You said late deliveries are costing around &pound;40k a month and you want to be at 95% on time before March. Here&rsquo;s the case study I mentioned, and an overview of how we&rsquo;d connect to your dispatch system, which I know is Ana&rsquo;s first question&hellip;</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-proposal" data-title="Example: a proposal page" data-tag="Illustrative example, fictional company and data">
+              <div class="mk mk-web">
+                <div class="mk-browser"><i></i><i></i><i></i><span>proposals.yourcompany.com/tallis-freight</span></div>
+                <div class="mk-hero">
+                    <div class="mk-kicker" style="color:#9fe3e7;">Proposal for Tallis Freight</div>
+                    <div class="mk-h" style="color:#fff;">On time, every time, before your March peak</div>
+                    <div class="mk-audio"><span class="mk-play"></span><span class="mk-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>Listen to this page &middot; 4 min</span></div>
+                </div>
+                <div class="mk-grid2" style="padding: 18px;">
+                    <div class="mk-video">
+                        <div class="mk-avatar"><i></i></div>
+                        <span class="mk-play big"></span>
+                        <div class="mk-cap">A two-minute welcome from Sam</div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Your priorities, in your order</h5>
+                        <ol class="mk-ol">
+                            <li>Cut late-delivery penalties, now about &pound;40k a month</li>
+                            <li>Reach 95% on time before March</li>
+                            <li>Work with your existing dispatch system</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="mk-card" style="margin: 0 18px;">
+                    <h5>How it would work <small style="font-weight:400; color:#6B7C8F;">&middot; click any step to explore</small></h5>
+                    <div class="mk-flow">
+                        <span>Orders</span><b></b><span class="hl">Route planning</span><b></b><span>Your dispatch system</span><b></b><span>Drivers</span><b></b><span class="hl">Live delivery tracking</span>
+                    </div>
+                </div>
+                <div class="mk-grid3" style="padding: 18px;">
+                    <div class="mk-tile"><b>6 weeks</b><span>To go live</span></div>
+                    <div class="mk-tile"><b>95%</b><span>On-time target</span></div>
+                    <div class="mk-tile"><b>&pound;96k</b><span>Annual investment</span></div>
+                </div>
+                <div class="mk-cta"><span>Book the next step</span></div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-board" data-title="Example: a leadership update" data-tag="Illustrative example, fictional company and data">
+              <div class="mk mk-doc">
+                <div class="mk-kicker">Sales update &middot; November &middot; for the leadership team</div>
+                <div class="mk-h">Q4 on track, with two deals to watch</div>
+                <div class="mk-grid4">
+                    <div class="mk-tile"><b>&pound;3.9m</b><span>Bookings to date &middot; 87% of target</span></div>
+                    <div class="mk-tile"><b>3.1&times;</b><span>Pipeline coverage</span></div>
+                    <div class="mk-tile"><b>31%</b><span>Win rate &middot; up 4 points</span></div>
+                    <div class="mk-tile"><b>&pound;4.4m</b><span>Forecast &middot; 98% of target</span></div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Bookings against target by region</h5>
+                        <div class="mk-bars">
+                            <div><span>North</span><em><i style="width:94%"></i></em><b>94%</b></div>
+                            <div><span>South</span><em><i style="width:82%"></i></em><b>82%</b></div>
+                            <div><span>International</span><em><i style="width:71%"></i></em><b>71%</b></div>
+                            <div><span>Partners</span><em><i style="width:103%; max-width:100%"></i></em><b>103%</b></div>
+                        </div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>What changed this month</h5>
+                        <ul class="mk-ul">
+                            <li>Two new logos in logistics, both from the October event</li>
+                            <li>Average proposal turnaround down from 6 days to 2</li>
+                            <li>International slipped: one large deal moved to Q1</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Risks</h5>
+                        <ul class="mk-ul">
+                            <li>Orrin Foods (&pound;180k): close date moved twice, pricing concern</li>
+                            <li>Kerran Health (&pound;95k): no contact for 16 days</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Decisions we need</h5>
+                        <ul class="mk-ul">
+                            <li>Approve a 5% discount band for multi-year renewals</li>
+                            <li>Agree budget for the spring trade show</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mk-foot">First draft from the CRM, targets and deal notes. Numbers to be confirmed by Finance before it goes out.</div>
+              </div>
+            </div>
+
+            </div>
+        </section>
+
+
     </main>
+
+    <dialog id="detail" class="detail-dialog" aria-labelledby="detail-title">
+        <div class="dlg-head">
+            <span class="dlg-tag" id="detail-tag"></span>
+            <button type="button" class="dlg-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="dlg-body" id="detail-body"></div>
+    </dialog>
 
 
     <footer class="site-footer">
@@ -1231,6 +2069,94 @@
                     });
                 });
             });
+        })();
+    </script>
+    <script>
+        // Pop-ups for the clickable steps, role chips and example mock-ups.
+        (function () {
+            var dlg = document.getElementById('detail');
+            if (!dlg || typeof dlg.showModal !== 'function') return;
+            var body = document.getElementById('detail-body');
+            var tag = document.getElementById('detail-tag');
+            var lastFocus = null;
+
+            function show() {
+                if (!dlg.open) { lastFocus = document.activeElement; dlg.showModal(); }
+                dlg.scrollTop = 0;
+            }
+
+            function openEntry(id) {
+                var src = document.getElementById('d-' + id);
+                if (!src) return;
+                var art = src.cloneNode(true);
+                art.removeAttribute('id');
+                var con = art.querySelector('.connects');
+                if (con) { var h = document.createElement('h4'); h.textContent = 'Connects to'; con.parentNode.insertBefore(h, con); }
+                body.innerHTML = '';
+                body.appendChild(art);
+                var note = document.createElement('p');
+                note.className = 'dlg-whole';
+                note.innerHTML = '<strong>Part of the whole.</strong> This draws on your shared knowledge base and connected systems, and updates them, so everything else in your Sales AI Operating System gets better too.';
+                body.appendChild(note);
+                var actions = document.createElement('div');
+                actions.className = 'dlg-actions';
+                var mock = src.getAttribute('data-mock');
+                if (mock) actions.innerHTML += '<button type="button" class="btn-teal" data-mock="' + mock + '">See an example &rarr;</button>';
+                actions.innerHTML += '<a class="btn-teal" style="background:var(--blue)" href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" target="_blank" rel="noopener noreferrer">Talk to us about this</a>';
+                body.appendChild(actions);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.add('is-entry');
+                dlg.setAttribute('aria-label', art.querySelector('h3').textContent);
+                show();
+            }
+
+            function openMock(id) {
+                var src = document.getElementById('m-' + id);
+                if (!src) return;
+                body.innerHTML = '';
+                var h = document.createElement('h3');
+                h.textContent = src.getAttribute('data-title');
+                h.style.marginBottom = '16px';
+                body.appendChild(h);
+                var wrap = document.createElement('div');
+                wrap.className = 'mock-src';
+                wrap.innerHTML = src.innerHTML;
+                body.appendChild(wrap);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.remove('is-entry');
+                dlg.setAttribute('aria-label', h.textContent);
+                show();
+            }
+
+            document.addEventListener('click', function (e) {
+                var b = e.target.closest('button[data-open], button[data-mock]');
+                if (!b) return;
+                if (b.hasAttribute('data-open')) openEntry(b.getAttribute('data-open'));
+                else openMock(b.getAttribute('data-mock'));
+            });
+            dlg.querySelector('.dlg-close').addEventListener('click', function () { dlg.close(); });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+            dlg.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); });
+
+            // Thumbnails: a scaled-down copy of each example.
+            var thumbs = document.querySelectorAll('[data-thumb]');
+            thumbs.forEach(function (t) {
+                var src = document.getElementById('m-' + t.getAttribute('data-thumb'));
+                if (!src) return;
+                var inner = document.createElement('span');
+                inner.className = 'thumb-inner';
+                inner.setAttribute('aria-hidden', 'true');
+                inner.innerHTML = src.innerHTML;
+                t.appendChild(inner);
+            });
+            function scaleThumbs() {
+                thumbs.forEach(function (t) {
+                    var inner = t.querySelector('.thumb-inner');
+                    if (inner) inner.style.transform = 'scale(' + ((t.clientWidth - 28) / 900) + ')';
+                });
+            }
+            scaleThumbs();
+            window.addEventListener('resize', scaleThumbs);
         })();
     </script>
 </body>
