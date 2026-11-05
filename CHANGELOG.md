@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-05
 
+- Sales AIOS page v3: three-level structure, connections section, new FAQs, proposal mock with presenter and solution explorer
+
+## 2026-11-05
+
 - Add AI Week talk video to How HAS Runs page
 
 ## 2026-11-05
