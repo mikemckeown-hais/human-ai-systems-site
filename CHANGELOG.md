@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-05
 
+- Add AI Week talk video to How HAS Runs page
+
+## 2026-11-05
+
 - Sales AIOS page v2: clickable detail, examples, platform advantage, explorer, founder photo
 
 ## 2026-11-05
