@@ -997,6 +997,13 @@
             .prompt-text { font-size: 1.08rem; }
             .dlg-body { padding: 18px 18px 24px; }
         }
+        .timeline.six { grid-template-columns: repeat(6, 1fr); }
+        .timeline li.opt::before { background: var(--white); color: var(--teal); border: 2px dashed var(--teal); }
+        .opt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); background: rgba(42,111,116,0.1); border-radius: 999px; padding: 2px 8px; vertical-align: middle; margin-left: 4px; }
+        .kickoff-note { max-width: 820px; margin: 32px auto 0; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; font-size: 1rem; }
+        .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 1000px) { .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 760px) { .stage-grid, .timeline.six { grid-template-columns: 1fr; } }
     </style>
     <noscript><style>.lib { display: block; padding: 40px 0; } .lib .entry, .lib .mock-src { margin-bottom: 32px; } .mock-grid, .chip-buttons button::after, .day-card .more, .more-wrap { display: none; }</style></noscript>
 </head>
@@ -1388,27 +1395,32 @@
             <div class="container">
                 <div class="ov-head center">
                     <div class="eyebrow">How you get one</div>
-                    <h2>Build it, test it, launch it at your kickoff</h2>
-                    <p class="ov-lead">Training on its own fades within weeks. People change how they work when they leave with something already working on their own accounts. So we build first, then train.</p>
+                    <h2>Built with your sales team in a few weeks</h2>
+                    <p class="ov-lead">The same six stages we use for any Business AI Operating System, adapted for sales. For a larger team we start with a pilot group, and smaller teams go in one step.</p>
                 </div>
-                <ol class="timeline">
-                    <li><b>Discover</b><span>Your team, your material, a baseline</span></li>
-                    <li><b>Build</b><span>Knowledge, skills, routines, one plugin</span></li>
-                    <li><b>Pilot</b><span>Four or five reps, two weeks</span></li>
-                    <li><b>Launch</b><span>At your kickoff, hands-on by role</span></li>
-                    <li><b>Embed and measure</b><span>Follow-ups, next skills, results</span></li>
+                <ol class="timeline six">
+                    <li><b>Discovery</b><span>We learn how your sales team works</span></li>
+                    <li><b>Build</b><span>Your knowledge, sales method and role skills</span></li>
+                    <li><b>Implement</b><span>Switched on, with a pilot group first if it helps</span></li>
+                    <li><b>Train</b><span>Your team learns by doing, role by role</span></li>
+                    <li class="opt"><b>Extend</b><span>Optional, when you&rsquo;re ready</span></li>
+                    <li><b>Support</b><span>It supports itself and your people</span></li>
                 </ol>
-                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-how">More on each step</button></div>
+                <div class="kickoff-note reveal">
+                    <strong>Got a sales kickoff coming up?</strong> It can be a good moment to launch, with everyone switching it on together, or we can run a dedicated AI sales kickoff. Otherwise it runs on its own timetable.
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-how">More on each stage</button></div>
                 <div class="sec-more" id="more-how">
                     <div class="more-inner">
-                        <div class="steps-grid">
-                            <div class="philosophy-item"><h3>1 &middot; Discover</h3><p>Time with you, two of your best people and your IT or AI lead. We gather your templates and material, and time two or three tasks to measure against.</p></div>
-                            <div class="philosophy-item"><h3>2 &middot; Build</h3><p>We build the knowledge, sales method, role skills and routines, and package them as one plugin for your platform.</p></div>
-                            <div class="philosophy-item"><h3>3 &middot; Pilot</h3><p>Four or five reps use it on live accounts for two weeks. We fix what needs fixing before the whole team sees it.</p></div>
-                            <div class="philosophy-item"><h3>4 &middot; Launch</h3><p>At your sales kickoff or a team session, everyone switches it on with their own accounts, in hands-on tracks for each role.</p></div>
-                            <div class="philosophy-item"><h3>5 &middot; Embed and measure</h3><p>Short follow-up sessions, the next skills, and the same tasks timed again, the way you would measure any sales tool.</p></div>
+                        <div class="stage-grid">
+                            <div class="philosophy-item"><h3>1 &middot; Discovery</h3><p>We learn how your sales team works: the roles, your sales method, the work that fills the week and the systems you use. We spend time with you, two or three of your best people and your IT or AI lead, review the material you already have, and agree what to build first. We also time two or three everyday tasks, so there is a baseline to measure against.</p></div>
+                            <div class="philosophy-item"><h3>2 &middot; Build</h3><p>We build your Sales AI Operating System on the AI platform you already use: the knowledge base from your products, templates, proposals and battlecards; the standard sales skills tuned to your sales method; skills for each role, from SDR to sales leader; and your dashboards, such as the morning brief and pipeline review. You review drafts and try the skills on real deals.</p></div>
+                            <div class="philosophy-item"><h3>3 &middot; Implement</h3><p>We package it as a plugin for your AI platform, and either hand it over for your IT team to install or install it for you. We connect email, calendar, files and CRM as they are approved. For a larger team, a pilot group of four or five reps uses it on live accounts first and we refine it before everyone gets it. For a smaller team, everyone starts together.</p></div>
+                            <div class="philosophy-item"><h3>4 &middot; Train</h3><p>Your team learns by doing, on their own accounts, in sessions of 60 to 90 minutes once a week for a few weeks, on site or online. Training follows the roles, so SDRs, account managers, sales engineers and leaders each practise the skills they will use. With a pilot, the pilot group goes first and becomes the champions for everyone else.</p></div>
+                            <div class="philosophy-item"><h3>5 &middot; Extend <span class="opt-tag">Optional</span></h3><p>When you&rsquo;re ready, we take it further: more systems connected, such as call recording, outbound or quoting tools; more complex workflows, such as RFP responses or partner proposals; and other teams, such as marketing or customer success, building on the same foundation.</p></div>
+                            <div class="philosophy-item"><h3>6 &middot; Support</h3><p>When the programme ends, the system supports itself and your people. It has its own support skill and knowledge, so it helps reps use it, brings new starters up to speed, and helps fix issues, such as changes needed after an update to your AI platform. Optional support packages are there if you want us on hand.</p></div>
                         </div>
-                        <p class="how-more">Typically a few weeks from start to launch. Built-in support then helps new starters and keeps it working as things change.</p>
+                        <p class="how-more">We measure as we go: the same everyday tasks timed again after launch, alongside how many people use it each week.</p>
                     </div>
                 </div>
             </div>
@@ -1486,7 +1498,7 @@
                     </details>
                     <details>
                         <summary>Will the reps use it?</summary>
-                        <p>That is what the pilot and the launch are for. Four or five reps test it first and become its champions. The launch is hands-on, on people&rsquo;s own accounts, with skills for each role. Then we track how many people use it each week, and what is getting used.</p>
+                        <p>That is what the way we implement and train is designed for. In a larger team, a pilot group tests it first and becomes its champions. Training is hands-on, on people&rsquo;s own accounts, with skills for each role. Then we track how many people use it each week, and what is getting used.</p>
                     </details>
                     <details>
                         <summary>How will we know it has worked?</summary>
@@ -1518,7 +1530,7 @@
                         <a href="mailto:mike.mckeown@human-ai-systems.com?subject=Sample%20meeting%20brief" class="btn btn-primary">Ask for a sample</a>
                     </div>
                 </div>
-                <p class="routes-note">Planning a sales kickoff? It is the natural moment to launch it. For a small team that prefers a fixed price and scope, see <a href="https://www.prompt-autopilot.com/" target="_blank" rel="noopener noreferrer">From Prompt to Autopilot</a>.</p>
+                <p class="routes-note">Planning a sales kickoff? It can be a good moment to launch, or we can run a dedicated AI sales kickoff. For a small team that prefers a fixed price and scope, see <a href="https://www.prompt-autopilot.com/" target="_blank" rel="noopener noreferrer">From Prompt to Autopilot</a>.</p>
             </div>
         </section>
 
