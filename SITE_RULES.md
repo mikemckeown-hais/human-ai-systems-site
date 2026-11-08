@@ -76,6 +76,7 @@ Same as above, but nest the folder inside the hub folder. Example for a new sect
 | `from-prompt-to-autopilot/register/` | `/from-prompt-to-autopilot/register/` | FPA interest form → `/api/submit` → Google Sheet |
 | `webinar/` | `/webinar/` | Evergreen webinar series hub (indexed). Update monthly with the next session |
 | `webinar/stop-prompting/` | `/webinar/stop-prompting/` | June 2026 webinar resources (noindexed) + `feedback/` form |
+| `partners/simply-ai/` | `/partners/simply-ai/` | Simply AI partnership page (indexed, not in nav). Public facts about Simply AI only; does not name SimplyAIOS until Simply AI does. Enquiries route to Simply AI (lead decision, 8 Nov 2026). Voice is described as an optional further connection, never a standard AIOS part |
 | `how-has-runs/` | `/how-has-runs/` | How HAS runs on its own Business AI Operating System (indexed). Real small-business case study; serves P2A and consulting. Not in primary nav |
 | `team/` | `/team/` | AI team and Mike's virtual workforce |
 | `start/` | `/start/` | Get started / contact CTA page |
