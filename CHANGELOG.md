@@ -8,12 +8,6 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-08
 
-- Add optional voice and messaging (Conversations) as a further connection on Business AIOS, Services and SME and professional services pages
-- Add Simply AI partnership page, link from Partners and Business AIOS, two-column grid for Going further
-- Hold partnership page back from production; keep generic voice and messaging copy
-
-## 2026-11-08
-
 - Business AIOS: Going further section, with voice and messaging (Conversations) as an optional further connection
 - Services, SME and professional services pages: voice and messaging described as an optional addition
 - Sitemap: add Partners page
