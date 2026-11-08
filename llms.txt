@@ -13,7 +13,6 @@ Sectors: local government, financial services, professional services, SaaS and t
 - [Business AIOS Explorer](https://human-ai-systems.com/business-aios/explorer/): narrated interactive model of a Business AI Operating System
 - [What is a Business AI Operating System?](https://human-ai-systems.com/insights/what-is-a-business-ai-operating-system/): plain-English explainer
 - [Partners](https://human-ai-systems.com/partners/): how Human–AI Systems works with consultants, advisers and firms
-- [Simply AI partnership](https://human-ai-systems.com/partners/simply-ai/): Simply AI voice agents connected to a Business AI Operating System, an optional addition sold by Simply AI and its partners
 - [Approach](https://human-ai-systems.com/approach/): the full methodology
 - [Services](https://human-ai-systems.com/services/): Business AI Operating System builds, Radar diagnostics, pilot programmes, scale and operating model work, fractional AI leadership
 - [Training](https://human-ai-systems.com/training/): practical AI workshops for teams
