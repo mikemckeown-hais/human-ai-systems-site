@@ -6,6 +6,12 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-08
+
+- Business AIOS: Going further section, with voice and messaging (Conversations) as an optional further connection
+- Services, SME and professional services pages: voice and messaging described as an optional addition
+- Sitemap: add Partners page
+
 ## 2026-11-05
 
 - Sales AIOS page: How you get one aligned to the six Business AIOS stages, kickoff made optional
