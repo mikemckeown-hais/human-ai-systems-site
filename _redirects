@@ -7,7 +7,13 @@
 
 # MSA canonical addresses. Every contracting document, including the MSA's own
 # clause 2.5 and footer, cites the extensionless form. These make it resolve.
+/legal/msa-v1.2                       /legal/HAS-MSA-v1.2.pdf       301
+/legal/msa-v1.2/                      /legal/HAS-MSA-v1.2.pdf       301
 /legal/msa-v1.1                       /legal/HAS-MSA-v1.1.pdf       301
 /legal/msa-v1.1/                      /legal/HAS-MSA-v1.1.pdf       301
 /legal/msa-v1.0                       /legal/HAS-MSA-v1.0.pdf       301
 /legal/msa-v1.0/                      /legal/HAS-MSA-v1.0.pdf       301
+
+# AIOS End User Licence Terms, cited by MSA v1.2 clause 3 ("End User Licence Terms").
+/legal/eult-v1.0                      /legal/HAS-EULT-v1.0.pdf      301
+/legal/eult-v1.0/                     /legal/HAS-EULT-v1.0.pdf      301

@@ -81,7 +81,7 @@ Same as above, but nest the folder inside the hub folder. Example for a new sect
 | `start/` | `/start/` | Get started / contact CTA page |
 | `privacy/` | `/privacy/` | Privacy & legal |
 | `mike/` | `/mike/` | Mike's CV page for recruiters (noindexed) |
-| `legal/` | `/legal/` | MSA PDFs |
+| `legal/` | `/legal/` | MSA PDFs (v1.0, v1.1, v1.2) and AIOS End User Licence Terms (v1.0); short addresses in `_redirects` |
 
 ### Navigation
 
