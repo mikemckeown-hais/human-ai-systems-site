@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-09
 
+- Analytics function: read the Cloudflare token from the CF_ANALYTICS_TOKEN secret, never from code
+
+## 2026-11-09
+
 - Site rules: GitHub token location and local history sync
 
 ## 2026-11-09
