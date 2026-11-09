@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-09
+
+- Legal: publish MSA v1.2 and AIOS End User Licence Terms v1.0, with short addresses /legal/msa-v1.2 and /legal/eult-v1.0
+
 ## 2026-11-08
 
 - Business AIOS: Going further section, with voice and messaging (Conversations) as an optional further connection
