@@ -1,13 +1,22 @@
 // Cloudflare Pages Function — proxies analytics requests to Cloudflare GraphQL API
 // Endpoint: /api/analytics?days=7
-// Keeps API token server-side (no CORS issues, no token exposure)
+// Keeps the API token server-side (no CORS issues, no token exposure).
+// The token is the Cloudflare Pages secret CF_ANALYTICS_TOKEN (Account Analytics: Read only).
+// Never put a token in this file: the repo is public.
 
-const CF_TOKEN   = 'cfat_Mw5vMBQ0NLB2g0mbgMVFSXMBlSEIaYsV0sptwrM6ebbe1e97';
 const ACCOUNT_ID = '3614369217d7b85560ee32bbf8437012';
 // No siteTag filter — account has one domain, capture all RUM data
 const GQL_URL    = 'https://api.cloudflare.com/client/v4/graphql';
 
 export async function onRequestGet(context) {
+  const CF_TOKEN = context.env && context.env.CF_ANALYTICS_TOKEN;
+  if (!CF_TOKEN) {
+    return new Response(JSON.stringify({ error: 'CF_ANALYTICS_TOKEN is not set for this environment' }), {
+      status: 503,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
   const url = new URL(context.request.url);
   const days = parseInt(url.searchParams.get('days') || '7');
 
