@@ -71,3 +71,44 @@ textarea:focus-visible,
    and the width and height attributes give the browser the aspect ratio without forcing the height. */
 picture.ph { display: contents; }
 :where(picture.ph) img { height: auto; }
+
+/* ── Framework diagrams ────────────────────────────────────────── */
+
+.fw-ico { display: block; width: 104px; height: auto; aspect-ratio: 120 / 72; margin: 0 0 14px; overflow: visible; }
+.fw-ico .nd { transform-box: fill-box; transform-origin: center; }
+.fw-ico .ln { stroke-dasharray: 1; }
+
+@keyframes fw-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes fw-pop { from { transform: scale(0.35); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Diagrams draw in as they scroll into view. CSS only: browsers without scroll-driven
+   animation, and anyone who prefers reduced motion, see the finished diagram. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .fw-ico .ln { animation: fw-draw linear both; animation-timeline: view(); animation-range: entry 20% cover 32%; }
+    .fw-ico .nd { animation: fw-pop linear both; animation-timeline: view(); animation-range: entry 0% cover 24%; }
+  }
+}
+
+/* Engagement pathway strip (Services) */
+.pathway { background: #FFFFFF; border-bottom: 1px solid rgba(31, 58, 95, 0.08); padding: 28px 0; }
+.pathway ol { list-style: none; margin: 0 auto; padding: 0; width: min(1200px, calc(100% - 48px)); display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.pathway li { position: relative; }
+.pathway li:not(:last-child)::after { content: ""; position: absolute; right: -12px; top: 50%; width: 8px; height: 8px; border-top: 2px solid #3EC1C9; border-right: 2px solid #3EC1C9; transform: translateY(-50%) rotate(45deg); z-index: 1; }
+.pathway a { display: block; height: 100%; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(31, 58, 95, 0.10); background: #F3F5F7; transition: border-color 200ms ease, background 200ms ease, transform 200ms ease; }
+.pathway a:hover { border-color: #2A6F74; background: #FFFFFF; transform: translateY(-2px); }
+.pathway .fw-ico { width: 84px; margin-bottom: 10px; }
+.pathway-step { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2A6F74; }
+.pathway-name { display: block; margin: 2px 0 4px; font-size: 1.08rem; font-weight: 600; color: #1F3A5F; line-height: 1.25; }
+.pathway-line { display: block; font-size: 0.94rem; color: var(--steel); }
+@media (max-width: 860px) {
+  .pathway ol { grid-template-columns: 1fr 1fr; }
+  .pathway li::after { display: none; }
+}
+
+/* ── Insights illustrations ────────────────────────────────────── */
+
+.article-figure { margin: 0 0 40px; }
+.article-figure img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.article-figure figcaption { margin-top: 10px; font-size: 0.94rem; line-height: 1.45; color: var(--steel); }
+.insight-art { display: block; width: 100%; height: auto; border-radius: 10px; margin: 0 0 20px; }
