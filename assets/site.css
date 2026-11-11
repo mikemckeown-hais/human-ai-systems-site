@@ -157,3 +157,15 @@ details.more.more-faq { margin-top: 10px; }
     details.more[open]::details-content { height: auto; }
   }
 }
+
+/* ── Home: photo tiles and illustrated cards ───────────────────── */
+
+.card-photo { display: block; width: calc(100% + 56px); max-width: none; margin: -28px -28px 20px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 13px 13px 0 0; }
+.card-art { display: block; width: 100%; height: auto; margin: 0 0 18px; border-radius: 10px; }
+@media (max-width: 860px) {
+  .sector-tiles { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+  .sector-tiles .card { padding: 14px; }
+  .sector-tiles .card-photo { width: calc(100% + 28px); margin: -14px -14px 12px; aspect-ratio: 3 / 2; }
+  .sector-tiles .card h3 { font-size: 1.02rem; margin-bottom: 0; }
+  .sector-tiles .card p { display: none; }
+}
