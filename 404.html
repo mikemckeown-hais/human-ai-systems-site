@@ -135,8 +135,10 @@
             .footer-nav { justify-content: center; }
         }
     </style>
+  <link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
@@ -165,7 +167,7 @@
                     <a href="/sectors/">Sectors</a>
                     <a href="/insights/">Insights</a>
                     <a href="/about/">About</a>
-                    <a href="/start/" class="nav-cta">Start</a>
+                    <a href="/start/" class="nav-cta">Start<span class="sr-only"> a conversation</span></a>
                 </nav>
                 <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
                     <span class="menu-toggle-line"></span>
@@ -184,13 +186,13 @@
                         <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
-                    <a href="/start/" class="mobile-start">Start</a>
+                    <a href="/start/" class="mobile-start">Start<span class="sr-only"> a conversation</span></a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="page-header">
             <div class="container">
                 <div class="eyebrow">404</div>
@@ -253,7 +255,7 @@
                 <a href="/sectors/">Sectors</a>
                 <a href="/insights/">Insights</a>
                 <a href="/about/">About</a>
-                <a href="/start/">Start</a>
+                <a href="/start/">Start<span class="sr-only"> a conversation</span></a>
                 <span style="color:rgba(255,255,255,0.3)">|</span>
                 <a href="/privacy/">Privacy &amp; Legal</a>
             </nav>

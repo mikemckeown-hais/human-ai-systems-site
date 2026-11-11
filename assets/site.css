@@ -1,0 +1,66 @@
+/* Human-AI Systems shared stylesheet.
+   Loaded on every page after the page's own inline styles, so rules here win on equal specificity.
+   Holds site-wide accessibility fixes and the shared patterns added in the November 2026 redesign.
+   See SITE_RULES.md, "Shared stylesheet". */
+
+:root {
+  /* Steel Grey darkened for text so it passes WCAG AA (5.5:1 on white, 5.0:1 on Soft Grey).
+     The brand Steel Grey #6B7C8F stays in use for lines, icons and diagram connectors. */
+  --steel: #5A6B7E;
+  --steel-line: #6B7C8F;
+}
+
+/* ── Accessibility ─────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -80px;
+  z-index: 1000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #1F3A5F;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(16, 28, 46, 0.25);
+}
+.skip-link:focus { top: 12px; }
+
+/* Two-tone focus ring: blue reads on light backgrounds, aqua on dark ones. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #3EC1C9;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #1F3A5F;
+  border-radius: 4px;
+}
+
+/* The closed mobile menu must not take keyboard focus. */
+@media (max-width: 860px) {
+  .mobile-menu { visibility: hidden; transition: max-height 260ms ease, visibility 0s linear 260ms; }
+  .mobile-menu.is-open { visibility: visible; transition: max-height 260ms ease, visibility 0s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .reveal, .node { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
