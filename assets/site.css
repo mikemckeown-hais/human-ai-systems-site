@@ -64,3 +64,10 @@ textarea:focus-visible,
   .reveal, .node { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+/* ── Images ────────────────────────────────────────────────────── */
+
+/* Responsive photographs (see SITE_RULES.md, "Image Assets"). The picture element takes no part in layout,
+   and the width and height attributes give the browser the aspect ratio without forcing the height. */
+picture.ph { display: contents; }
+:where(picture.ph) img { height: auto; }
