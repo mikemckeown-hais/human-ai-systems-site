@@ -112,3 +112,48 @@ picture.ph { display: contents; }
 .article-figure img { display: block; width: 100%; height: auto; border-radius: 14px; }
 .article-figure figcaption { margin-top: 10px; font-size: 0.94rem; line-height: 1.45; color: var(--steel); }
 .insight-art { display: block; width: 100%; height: auto; border-radius: 10px; margin: 0 0 20px; }
+
+/* ── Expandable sections ───────────────────────────────────────────
+   Native <details>/<summary>: content is in the page for search engines and works without JavaScript.
+   Pages lead with the essentials; depth sits behind these. See SITE_RULES.md, "Expandable sections". */
+
+details.more { margin: 16px 0 0; border: 1px solid rgba(31, 58, 95, 0.12); border-radius: 12px; background: #FFFFFF; }
+details.more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 12px; font-size: 1rem; font-weight: 600; line-height: 1.35; color: #1F3A5F; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::after { content: ""; flex: 0 0 auto; margin-left: auto; margin-right: 4px; width: 9px; height: 9px; border-right: 2px solid #2A6F74; border-bottom: 2px solid #2A6F74; transform: translateY(-2px) rotate(45deg); transition: transform 200ms ease; }
+details.more[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+details.more > summary:hover { background: #F3F5F7; }
+details.more[open] > summary { border-bottom: 1px solid rgba(31, 58, 95, 0.08); border-radius: 12px 12px 0 0; }
+details.more > summary h3 { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.35; color: inherit; text-transform: none; letter-spacing: 0; }
+.more-hint { margin-left: auto; font-size: 0.88rem; font-weight: 400; color: var(--steel); white-space: nowrap; }
+details.more > summary .more-hint + * { margin-left: 0; }
+details.more > summary:has(.more-hint)::after { margin-left: 0; }
+.more-kicker { flex: 0 0 auto; padding: 2px 9px; border-radius: 999px; background: rgba(62, 193, 201, 0.16); color: #1D5A5E; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.more-body { padding: 16px; }
+.more-body > :first-child { margin-top: 0; }
+.more-body > :last-child { margin-bottom: 0; }
+.more-body.unbox { margin: 0; padding: 16px; border: 0; border-radius: 0; background: none; box-shadow: none; }
+.more-body > .unbox-inner { margin: 0; }
+
+/* Plain variant: a quiet text disclosure, for prose that continues a section */
+details.more.more-plain { border: 0; background: none; }
+details.more.more-plain > summary { display: inline-flex; padding: 6px 0; color: #2A6F74; border-radius: 6px; }
+details.more.more-plain > summary::after { margin-left: 2px; }
+details.more.more-plain > summary:hover { background: none; text-decoration: underline; }
+details.more.more-plain[open] > summary { border-bottom: 0; }
+details.more.more-plain > .more-body { padding: 8px 0 0; }
+
+/* Group variant: a heading and one-line summary that opens to a set of cards */
+details.more.more-group { margin-top: 14px; background: #FFFFFF; }
+.more-head { display: block; }
+.more-head h3 { margin: 0 0 2px; font-size: 1.15rem; }
+.more-head p { margin: 0; font-size: 0.96rem; font-weight: 400; color: var(--steel); }
+details.more.more-faq { margin-top: 10px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) {
+    :root { interpolate-size: allow-keywords; }
+    details.more::details-content { height: 0; overflow: clip; transition: height 240ms ease, content-visibility 240ms allow-discrete; }
+    details.more[open]::details-content { height: auto; }
+  }
+}
