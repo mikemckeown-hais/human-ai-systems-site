@@ -152,6 +152,8 @@ details.more.more-plain > summary::after { margin-left: 2px; }
 details.more.more-plain > summary:hover { background: none; text-decoration: underline; }
 details.more.more-plain[open] > summary { border-bottom: 0; }
 details.more.more-plain > .more-body { padding: 8px 0 0; }
+details.more.more-center { text-align: center; }
+details.more.more-center > .more-body { text-align: left; padding-top: 18px; }
 
 /* Group variant: a heading and one-line summary that opens to a set of cards */
 details.more.more-group { margin-top: 14px; background: #FFFFFF; }
