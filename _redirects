@@ -17,3 +17,12 @@
 # AIOS End User Licence Terms, cited by MSA v1.2 clause 3 ("End User Licence Terms").
 /legal/eult-v1.0                      /legal/HAS-EULT-v1.0.pdf      301
 /legal/eult-v1.0/                     /legal/HAS-EULT-v1.0.pdf      301
+
+# Moving pointer to the current AIOS End User Licence Terms (302: changes with each version).
+# Agreements cite a numbered version, never this.
+/legal/eult-latest                    /legal/HAS-EULT-v1.0.pdf      302
+/legal/eult-latest/                   /legal/HAS-EULT-v1.0.pdf      302
+
+# Data Processing Annex, cited by MSA version history and the DPA footer.
+/legal/dpa-v1.0                       /legal/HAS-DPA-Annex-v1.0.pdf 301
+/legal/dpa-v1.0/                      /legal/HAS-DPA-Annex-v1.0.pdf 301
