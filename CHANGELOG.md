@@ -6,6 +6,21 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-12
+
+- Site foundations: shared stylesheet, accessibility fixes, shorter titles and descriptions, breadcrumb and FAQ markup
+- Add photographic set, part 1 (people, places and details, responsive WebP)
+- Add photographic set, part 2
+- New imagery across the site: unique heroes, responsive WebP with sizes, per-page social images
+- Framework diagrams, engagement pathway strip on Services, concept illustrations for Insights, scroll-driven draw-in
+- Shorter pages: expandable sections on Services, sector pages, Approach and Start; filler adverbs trimmed; site rules and sitemap updated
+- Home: photo tiles for sectors and illustrated insight cards; smaller headshot files on Team, Home and How HAS runs
+- Self-host Source Sans 3 with a metric-matched fallback, fix layout shift, load the brand font on five pages that had no font link
+- About: fold the three repeated stories behind an expandable
+- Trim two titles to 60 characters; site rules point to the illustration script
+- Legal: add /legal/ index, publish DPA Annex v1.0, add eult-latest redirect
+- Privacy: name Human-AI Systems Limited as data controller
+
 ## 2026-11-09
 
 - Analytics function: read the Cloudflare token from the CF_ANALYTICS_TOKEN secret, never from code
