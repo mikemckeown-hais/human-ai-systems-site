@@ -235,6 +235,9 @@ Framework icons (`svg.fw-ico`) are inline SVG built from the node motif: blue fo
 ## Technical Constraints
 
 - No external fonts beyond those approved in visual-brand.md
+- Source Sans 3 is self-hosted at `/assets/fonts/` (variable font, weights 400 to 700) and declared in `site.css`. Do not add a Google Fonts link. Each page preloads the latin file: `<link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />`
+- Font stacks read `"Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif`. The fallback is Arial scaled to match, so text wraps the same before and after the font loads
+- Set heading and paragraph widths in `em`, never `ch`. A `ch` changes with the font on screen and caused a 0.68 layout shift on sector pages
 - External scripts loaded from cdnjs.cloudflare.com only (if needed at all)
 - No localStorage or sessionStorage usage
 - Core content must be accessible without JavaScript

@@ -54,7 +54,7 @@
 
         body {
             margin: 0;
-            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            font-family: "Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif;
             color: var(--graphite);
             background: var(--white);
             line-height: 1.45;
@@ -199,7 +199,7 @@
 
         .page-header h1 {
             font-size: clamp(2.2rem, 4vw, 3.2rem);
-            max-width: 16ch;
+            max-width: 8.21em;
             color: white;
             line-height: 1.1;
             margin: 0 0 22px;
@@ -665,7 +665,7 @@
         .xframe { width: min(1400px, calc(100% - 28px)); margin: 0 auto; height: min(860px, calc(100vh - 120px)); min-height: 560px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: #0A0F1A; }
         .xframe iframe { width: 100%; height: 100%; border: 0; display: block; }
         .xactions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 22px 0 0; }
-        .xbtn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #EEF3FA; cursor: pointer; text-decoration: none; }
+        .xbtn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; font: 600 1rem "Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #EEF3FA; cursor: pointer; text-decoration: none; }
         .xbtn:hover { background: rgba(255,255,255,0.08); }
         .xbtn.primary { background: var(--aqua); border-color: var(--aqua); color: #08131c; }
         .xbtn.primary:hover { background: #72D0D5; }
@@ -702,6 +702,7 @@
             .xmobile { display: block; }
         }
     </style>
+  <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/site.css" />
   <script type="application/ld+json">
 {

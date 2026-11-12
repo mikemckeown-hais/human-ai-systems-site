@@ -13,9 +13,7 @@
 <title>Meet Lumen · From Prompt to Autopilot | Human–AI Systems</title>
 <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
 <meta name="description" content="Lumen is a whole company running on a Business AI Operating System, built with the same programme we install for clients. Meet the people. See the system.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
   :root{
     /* Human-AI Systems visual brand. Reskinned from the P2A palette 17 Sep 2026, header,
@@ -86,8 +84,8 @@
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
   .hero h1{font-size:62px;font-weight:600;margin-bottom:22px}
   @media(max-width:900px){.hero h1{font-size:46px}}
-  .hero .lede{font-size:21px;color:var(--slate);max-width:36ch;margin-bottom:14px}
-  .hero .analogy{font-size:17px;color:var(--ink);max-width:40ch;margin-bottom:26px}
+  .hero .lede{font-size:21px;color:var(--slate);max-width:17.89em;margin-bottom:14px}
+  .hero .analogy{font-size:17px;color:var(--ink);max-width:19.88em;margin-bottom:26px}
   .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
   .pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:rgba(31,58,95,.08);border:1px solid rgba(31,58,95,.14);border-radius:999px;padding:7px 14px;margin-bottom:26px}
   .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(62,193,201,.2)}
@@ -109,7 +107,7 @@
   .s-queue{color:#B9C6D6;border:1px solid rgba(255,255,255,.18)}
 
   /* GENERIC BLOCKS */
-  .lead-h2{font-size:40px;font-weight:600;max-width:20ch}
+  .lead-h2{font-size:40px;font-weight:600;max-width:10.26em}
   @media(max-width:900px){.lead-h2{font-size:32px}}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
   @media(max-width:860px){.two{grid-template-columns:1fr;gap:28px}}
@@ -146,7 +144,7 @@
   .panel-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:10px}
   .panel-head h3{font-size:30px;font-weight:600}
   .panel-head .role{color:var(--slate);font-size:17px}
-  .panel-world{color:var(--slate);max-width:64ch;margin:0}
+  .panel-world{color:var(--slate);max-width:31.81em;margin:0}
   /* company photo */
   .company-figure{margin-top:30px}
   .company-photo{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);border:var(--border);display:block}
@@ -171,7 +169,7 @@
 
   .result{margin-top:34px;background:linear-gradient(180deg,rgba(62,193,201,.06),var(--paper-light));border:1px solid rgba(62,193,201,.25);border-radius:var(--radius);padding:28px 30px}
   .result .rk{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-bottom:14px}
-  .result .rquote{font-family:var(--font-display);font-weight:700;font-size:23px;line-height:1.3;margin-bottom:20px;max-width:30ch}
+  .result .rquote{font-family:var(--font-display);font-weight:700;font-size:23px;line-height:1.3;margin-bottom:20px;max-width:14.91em}
   .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   @media(max-width:860px){.result-grid{grid-template-columns:repeat(2,1fr)}}
   .rstat .v{font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--forest);line-height:1}
@@ -209,8 +207,8 @@
   .diff .kicker{color:var(--signal)}
   .diff .btn-primary{background:#fff;color:var(--blue);box-shadow:0 10px 26px rgba(15,25,40,.18)}
   .diff .btn-primary:hover{background:#F3F5F7}
-  .diff h2{color:#fff;font-size:38px;max-width:22ch;margin:0 auto 18px}
-  .diff p{color:#CFE0F3;max-width:52ch;margin:0 auto 30px;font-size:18px}
+  .diff h2{color:#fff;font-size:38px;max-width:11.29em;margin:0 auto 18px}
+  .diff p{color:#CFE0F3;max-width:25.84em;margin:0 auto 30px;font-size:18px}
   .diff .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .diff .btn-ghost{color:#fff;border-color:rgba(255,255,255,.35)}
   .diff .btn-ghost:hover{border-color:#fff;color:#fff}
@@ -225,7 +223,7 @@
   .footer-nav{display:flex;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,.72)}
   .footer-nav a{color:rgba(255,255,255,.82)}
   .footer-nav a:hover{color:#fff}
-  .lumen-note{margin-top:18px;font-size:13px;color:rgba(255,255,255,.55);max-width:80ch}
+  .lumen-note{margin-top:18px;font-size:13px;color:rgba(255,255,255,.55);max-width:39.76em}
   @media(max-width:860px){.footer-grid{flex-direction:column;text-align:center}.footer-grid > div:last-child{text-align:center !important}.footer-nav{justify-content:center}.lumen-note{text-align:center;margin-left:auto;margin-right:auto}}
 </style>
   <link rel="stylesheet" href="/assets/site.css" />
@@ -389,7 +387,7 @@
   <div class="wrap">
     <span class="kicker">03 &middot; Find your person</span>
     <h2 class="lead-h2">Whose job is closest to yours?</h2>
-    <p class="muted" style="margin-top:18px;max-width:60ch">Pick the leader who does what you do. See their working week before and after, and the system that changed it. Start with Erin, the founder, for the whole-company view.</p>
+    <p class="muted" style="margin-top:18px;max-width:29.82em">Pick the leader who does what you do. See their working week before and after, and the system that changed it. Start with Erin, the founder, for the whole-company view.</p>
 
     <div class="tiles" id="tiles">
       <button class="tile active" data-p="erin">

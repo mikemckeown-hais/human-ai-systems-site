@@ -21,9 +21,7 @@
     <meta name="twitter:title" content="Our Approach to AI Adoption | Human–AI Systems">
     <meta name="twitter:description" content="How Human–AI Systems approaches AI adoption: Radar, Pilot, Scale, with governance and workflow redesign built in from the start.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <script type="application/ld+json">
     {
@@ -68,7 +66,7 @@
 
         body {
             margin: 0;
-            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            font-family: "Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif;
             color: var(--graphite);
             background: var(--white);
             line-height: 1.45;
@@ -207,7 +205,7 @@
 
         .page-header h1 {
             font-size: clamp(2.2rem, 4vw, 3.2rem);
-            max-width: 20ch;
+            max-width: 10.26em;
             color: white;
             line-height: 1.1;
             margin: 0 0 22px;
@@ -473,7 +471,7 @@
             text-align: center;
         }
 
-        .cta-band h2 { color: white; text-align: center; margin: 0 auto 18px; max-width: 18ch; }
+        .cta-band h2 { color: white; text-align: center; margin: 0 auto 18px; max-width: 9.23em; }
         .cta-band .lead { color: rgba(255,255,255,0.82); text-align: center; margin: 0 auto 28px; max-width: 36rem; }
 
         .actions {

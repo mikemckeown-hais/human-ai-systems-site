@@ -3,6 +3,16 @@
    Holds site-wide accessibility fixes and the shared patterns added in the November 2026 redesign.
    See SITE_RULES.md, "Shared stylesheet". */
 
+/* ── Typeface ──────────────────────────────────────────────────────
+   Source Sans 3 is served from this site (variable font, weights 400 to 700) rather than Google Fonts:
+   one fewer round of connections, and the latin file is preloaded so text rarely shows in the fallback first. */
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/assets/fonts/source-sans-3-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("/assets/fonts/source-sans-3-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Metric-matched fallback: Arial scaled to the width of Source Sans 3, so lines wrap the same way before and
+   after the web font arrives and the page does not shift. */
+@font-face { font-family: "Source Sans 3 Fallback"; src: local("Arial"), local("Liberation Sans"), local("Helvetica Neue"), local("Helvetica"); size-adjust: 90.5%; ascent-override: 113%; descent-override: 44%; line-gap-override: 0%; }
+body { font-family: "Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif; }
+
 :root {
   /* Steel Grey darkened for text so it passes WCAG AA (5.5:1 on white, 5.0:1 on Soft Grey).
      The brand Steel Grey #6B7C8F stays in use for lines, icons and diagram connectors. */
@@ -169,3 +179,6 @@ details.more.more-faq { margin-top: 10px; }
   .sector-tiles .card h3 { font-size: 1.02rem; margin-bottom: 0; }
   .sector-tiles .card p { display: none; }
 }
+
+/* Heading widths are set in em, not ch. A ch is the width of "0" in whichever font is showing, so a ch-based
+   max-width changed when Source Sans 3 replaced the fallback font and shifted the whole page (CLS 0.68 on sector pages). */
