@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <script>document.documentElement.className+=' js';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Firm AI Operating System: more time for clients, safely | Human–AI Systems</title>
+    <meta name="description" content="A Law Firm AI Operating System gives solicitors a safe, supervised way to use AI: attendance notes, first drafts from your precedents, file chasing and a supervision record, on Claude inside your Microsoft 365.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://human-ai-systems.com/law-firm-aios/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Law Firm AI Operating System: more time for clients, safely | Human–AI Systems">
+    <meta property="og:description" content="A Law Firm AI Operating System gives solicitors a safe, supervised way to use AI: attendance notes, first drafts from your precedents, file chasing and a supervision record, on Claude inside your Microsoft 365.">
+    <meta property="og:url" content="https://human-ai-systems.com/law-firm-aios/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Law Firm AI Operating System: more time for clients, safely | Human–AI Systems">
+    <meta name="twitter:description" content="A Law Firm AI Operating System gives solicitors a safe, supervised way to use AI: attendance notes, first drafts from your precedents, file chasing and a supervision record, on Claude inside your Microsoft 365.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Law Firm AI Operating System",
+        "url": "https://human-ai-systems.com/law-firm-aios/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Human–AI Systems",
+            "url": "https://human-ai-systems.com/"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: min(360px, 100%); }
+
+        .brand-text-fallback {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .brand-text-fallback .aqua { color: var(--aqua); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 16ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 16px; font-size: 1.05rem; }
+
+        /* ── About layout ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .portrait {
+            position: sticky;
+            top: 112px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: #dbe4ee;
+            aspect-ratio: 3/4;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portrait::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31,58,95,0.04), rgba(31,58,95,0.14));
+            pointer-events: none;
+        }
+
+        /* ── Story sections ── */
+        .story-block {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: var(--border);
+        }
+
+        .story-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .story-block .eyebrow { margin-bottom: 12px; }
+
+        /* ── Evidence cards ── */
+        .evidence-card {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--teal);
+        }
+
+        .evidence-card h4 {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .evidence-card p { margin: 0; font-size: 0.98rem; color: var(--graphite); }
+
+        .evidence-stat {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        /* ── Pull quote ── */
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 18px 24px;
+            margin: 28px 0;
+            background: var(--soft);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.14rem;
+            color: var(--blue);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── Story cards ── */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .story-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 32px 28px 28px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            min-height: 340px;
+            transition: transform 240ms ease, box-shadow 240ms ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 48px rgba(31,58,95,0.12);
+        }
+
+        .story-sector {
+            display: inline-block;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(42,111,116,0.08);
+            color: var(--teal);
+            margin-bottom: 16px;
+        }
+
+        .story-card h3 {
+            font-size: 1.18rem;
+            line-height: 1.3;
+            color: var(--blue);
+            margin: 0 0 14px;
+            font-weight: 600;
+        }
+
+        .story-card p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .story-result {
+            margin-top: auto !important;
+            padding-top: 14px;
+            border-top: 1px solid rgba(31,58,95,0.07);
+            font-size: 0.95rem !important;
+            color: var(--graphite) !important;
+            font-weight: 500;
+        }
+
+        .story-close {
+            font-size: 0.92rem !important;
+            font-style: italic;
+            color: var(--teal) !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── Philosophy section ── */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .philosophy-item {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .philosophy-item h3 {
+            font-size: 1.1rem;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .philosophy-item p {
+            font-size: 0.98rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        /* ── Training & Speaking ── */
+        .training-speaking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .ts-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .ts-card .eyebrow { margin-bottom: 8px; }
+
+        .ts-card h3 {
+            color: var(--blue);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .ts-card p {
+            color: var(--steel);
+            font-size: 0.98rem;
+            margin-bottom: 12px;
+        }
+
+        .ts-card p:last-of-type { margin-bottom: 20px; }
+
+        .btn-teal {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: var(--teal);
+            color: var(--white);
+            transition: transform 200ms, background 200ms;
+        }
+
+        .btn-teal:hover { transform: translateY(-1px); background: #24616a; }
+
+        @media (max-width: 700px) {
+            .training-speaking-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary { background: var(--white); color: var(--blue); box-shadow: var(--shadow); }
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+
+        /* ── One example, any team ── */
+        .fit-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+        .fit-copy h2 { margin-bottom: 18px; }
+        .fit-copy p { margin-bottom: 14px; }
+        .fit-copy a { color: var(--teal); font-weight: 600; }
+        .fit-panels { display: grid; gap: 16px; }
+        .fit-panel { background: var(--soft); border-radius: 16px; padding: 20px 22px; }
+        .fit-panel h3 { font-size: 1rem; margin-bottom: 10px; color: var(--blue); }
+        .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+        .chips li { background: var(--white); border: 1px solid rgba(31,58,95,0.14); border-radius: 999px; padding: 6px 14px; font-size: 0.92rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+        .fit-panel p { margin: 0; font-size: 0.97rem; line-height: 1.5; }
+        .how-more { text-align: center; margin-top: 32px; }
+        .how-more a { color: var(--teal); font-weight: 600; }
+        @media (max-width: 860px) { .fit-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+        /* ── CTA routes ── */
+        .routes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 920px; margin: 36px auto 0; }
+        .route { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+        .route .route-tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9fe3e7; margin-bottom: 8px; }
+        .route h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 10px; }
+        .cta-band .route p { text-align: left; color: rgba(255,255,255,0.85); margin-bottom: 22px; flex: 1; }
+        .routes-note { text-align: center; color: rgba(255,255,255,0.82); margin-top: 28px; }
+        .routes-note a { color: var(--white); text-decoration: underline; }
+        @media (max-width: 760px) { .routes { grid-template-columns: 1fr; } }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.72); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .portrait { position: static; aspect-ratio: 4/3; order: -1; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .stories-grid { grid-template-columns: 1fr; }
+
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: min(290px, 100%); }
+        }
+    
+        /* ── Business AIOS page ── */
+        .xband { background: #0A0F1A; color: #C7D2E4; padding: 64px 0 72px; }
+        .xband h2 { color: #EEF3FA; }
+        .xband .eyebrow { color: var(--aqua); }
+        .xband .intro { max-width: 720px; margin: 0 auto 28px; text-align: center; }
+        .xband .intro p { color: #C7D2E4; font-size: 1.1rem; margin: 0; }
+        .xframe { width: min(1400px, calc(100% - 28px)); margin: 0 auto; height: min(860px, calc(100vh - 120px)); min-height: 560px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: #0A0F1A; }
+        .xframe iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .xactions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 22px 0 0; }
+        .xbtn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #EEF3FA; cursor: pointer; text-decoration: none; }
+        .xbtn:hover { background: rgba(255,255,255,0.08); }
+        .xbtn.primary { background: var(--aqua); border-color: var(--aqua); color: #08131c; }
+        .xbtn.primary:hover { background: #72D0D5; }
+        .xbtn .tri { width: 0; height: 0; border-left: 9px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+        .xnote { text-align: center; color: #93A7C6; font-size: 0.95rem; margin: 14px auto 0; max-width: 680px; }
+        .xnote strong { color: #EEF3FA; }
+        .xphone { display: none; }
+        .xmobile { display: none; width: calc(100% - 28px); margin: 0 auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(160deg, #131B2B 0%, #1F3A5F 70%, #2A6F74 100%); padding: 28px 22px; text-align: center; }
+        .xmobile h3 { color: #EEF3FA; font-size: 1.25rem; margin: 0 0 10px; }
+        .xmobile p { color: #C7D2E4; margin: 0 0 18px; }
+        .vgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 40px; max-width: 1080px; margin-left: auto; margin-right: auto; }
+        .vgrid .vcard { grid-column: span 2; }
+        .vgrid .vcard:last-child:nth-child(odd) { grid-column: 2 / span 2; }
+        .vplay { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #0A0F1A center / cover no-repeat; }
+        .vplay::after { content: ""; position: absolute; inset: 0; background: rgba(10,15,26,0); transition: background-color 200ms ease; }
+        .vplay:hover::after { background: rgba(10,15,26,0.12); }
+        .vplay:focus-visible { outline: 3px solid var(--aqua); outline-offset: -3px; }
+        .vplay span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+        .vframe .vhost { position: absolute; inset: 0; }
+        .vcard { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+        .vframe { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
+        .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .vsoon { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.95rem; display: grid; justify-items: center; gap: 10px; }
+        .vsoon i { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7); display: grid; place-items: center; }
+        .vsoon i::after { content: ""; border-left: 14px solid rgba(255,255,255,0.85); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+        .vbody { padding: 22px 24px 26px; }
+        .vbody .eyebrow { margin-bottom: 6px; font-size: 0.9rem; }
+        .vbody h3 { color: var(--blue); font-size: 1.2rem; margin-bottom: 8px; }
+        .vbody p { color: var(--steel); margin: 0; font-size: 0.98rem; }
+        @media (max-width: 860px) {
+            .vgrid { grid-template-columns: 1fr; }
+            .vgrid .vcard, .vgrid .vcard:last-child:nth-child(odd) { grid-column: auto; }
+            .xframe, .xactions { display: none; }
+            .xmobile { display: block; }
+        }
+
+        /* ── Sales AIOS page ── */
+        .page-header h1 { max-width: 18ch; }
+        .hero-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; }
+        .hero-pills li { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 6px 14px; font-size: 0.95rem; color: #fff; background: rgba(255,255,255,0.08); }
+        .hero-pills li::before { content: "\2713\00a0"; color: var(--aqua); font-weight: 700; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 40px; }
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 18px 22px; }
+        .faq summary { cursor: pointer; font-weight: 600; color: var(--blue); font-size: 1.08rem; list-style: none; position: relative; padding-right: 28px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: "+"; position: absolute; right: 0; top: -2px; font-size: 1.4rem; color: var(--teal); }
+        .faq details[open] summary::after { content: "\2013"; }
+        .faq details p { margin: 14px 0 0; color: var(--graphite); }
+        .fit-copy p a, #video .fit-copy a { color: var(--teal); font-weight: 600; }
+
+        /* Clickable day cards */
+        .day-card { font: inherit; text-align: left; cursor: pointer; width: 100%; color: inherit; display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+        .day-card:hover, .day-card:focus-visible { transform: translateY(-3px); border-color: var(--teal); box-shadow: 0 18px 40px rgba(31,58,95,0.12); outline: none; }
+        .day-card h3 { margin-bottom: 10px; }
+        .day-time { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+        .day-card .more { margin-top: auto; padding-top: 14px; color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+        .whole-note { display: flex; gap: 14px; align-items: center; max-width: 900px; margin: 32px auto 0; background: var(--white); border: var(--border); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; }
+        .whole-note p { margin: 0; font-size: 1rem; }
+        .whole-note svg { flex: none; }
+
+        /* Clickable role chips */
+        .chip-buttons li { padding: 0; border: 0; background: none; }
+        .chip-buttons button { font: inherit; font-size: 0.92rem; text-align: left; background: var(--white); border: 1px solid rgba(31,58,95,0.18); border-radius: 16px; padding: 6px 14px; cursor: pointer; color: var(--graphite); transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+        .chip-buttons button::after { content: "\00a0+"; color: var(--teal); font-weight: 700; }
+        .chip-buttons button:hover, .chip-buttons button:focus-visible { background: var(--teal); border-color: var(--teal); color: #fff; outline: none; }
+        .chip-buttons button:hover::after, .chip-buttons button:focus-visible::after { color: #fff; }
+        .tap-hint { color: var(--teal); font-weight: 600; }
+
+        /* Example mock-up gallery */
+        .mock-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+        .mock-card { font: inherit; color: inherit; text-align: left; padding: 0; cursor: pointer; background: var(--white); border: var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
+        .mock-card:hover, .mock-card:focus-visible { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(31,58,95,0.14); outline: none; }
+        .mock-thumb { display: block; height: 250px; overflow: hidden; position: relative; background: #E6ECF3; border-bottom: var(--border); }
+        .thumb-inner { position: absolute; top: 14px; left: 14px; width: 900px; transform-origin: top left; pointer-events: none; }
+        .mock-label { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px 22px; }
+        .mock-text { display: block; }
+        .open-btn { flex: none; background: var(--blue); color: #fff !important; font-size: 0.9rem !important; font-weight: 600; padding: 9px 16px; border-radius: 999px; white-space: nowrap; }
+        .mock-card:hover .open-btn { background: var(--teal); }
+        .mock-label strong { display: block; color: var(--blue); font-size: 1.15rem; margin-bottom: 4px; }
+        .mock-label span { color: var(--steel); font-size: 0.97rem; }
+
+        /* Platform advantage */
+        .hub { max-width: 520px; width: 100%; margin: 0 auto; }
+        .hub svg { width: 100%; height: auto; display: block; }
+        .prompt-box { max-width: 900px; margin: 48px auto 8px; background: #0F1C2E; color: #E6EEF8; border-radius: 18px; padding: 26px 30px; }
+        .prompt-label { color: var(--aqua); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+        .prompt-text { font-size: 1.22rem; line-height: 1.5; margin: 0 0 18px; color: #fff; }
+        .prompt-link { background: var(--aqua); color: #08131c; border: 0; border-radius: 999px; padding: 10px 20px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; cursor: pointer; }
+        .prompt-link:hover { background: #72D0D5; }
+        #platform .philosophy-grid { margin-top: 32px; }
+        .own-example { max-width: 900px; margin: 32px auto 0; background: var(--soft); border-radius: 16px; padding: 22px 26px; border-left: 4px solid var(--teal); }
+        .own-example p { margin: 0; }
+        .own-example a { color: var(--teal); font-weight: 600; }
+
+        /* Proof and founder */
+        .proof-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
+        .founder { display: flex; gap: 16px; align-items: center; margin-top: 26px; padding-top: 22px; border-top: var(--border); }
+        .founder img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); flex: none; }
+        .founder strong { display: block; color: var(--blue); font-size: 1.1rem; }
+        .founder span { display: block; color: var(--steel); font-size: 0.95rem; margin-bottom: 2px; }
+        .founder a { color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+
+        /* Library: pop-up content, listed in full only without JavaScript */
+        .lib { display: none; }
+
+        /* Pop-up */
+        .detail-dialog { width: min(980px, calc(100% - 24px)); max-height: calc(100vh - 40px); border: 0; border-radius: 18px; padding: 0; box-shadow: 0 30px 80px rgba(10,20,35,0.35); overflow: auto; }
+        .detail-dialog.is-entry { width: min(760px, calc(100% - 24px)); }
+        .detail-dialog::backdrop { background: rgba(12,22,36,0.62); }
+        .dlg-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 18px 12px 26px; background: var(--white); border-bottom: 1px solid #E6ECF2; }
+        .dlg-tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); }
+        .dlg-close { font-size: 26px; line-height: 1; border: 0; background: var(--soft); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--blue); flex: none; }
+        .dlg-close:hover { background: #E3E9F0; }
+        .dlg-body { padding: 22px 26px 28px; container-type: inline-size; container-name: dlg; }
+        .dlg-body > h3, .dlg-body .entry h3 { font-size: 1.6rem; color: var(--blue); margin: 0 0 6px; }
+        .dlg-body h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--teal); margin: 20px 0 6px; }
+        .dlg-body .entry p { margin: 0; }
+        .dlg-body .entry ul:not(.connects) { margin: 0; padding-left: 20px; }
+        .dlg-body .entry ul:not(.connects) li { margin: 4px 0; }
+        .connects { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 4px 0 0; }
+        .connects li { background: #E8F1F8; color: var(--blue); border-radius: 999px; padding: 5px 12px; font-size: 0.9rem; font-weight: 600; }
+        .dlg-whole { margin-top: 22px; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 10px; padding: 12px 16px; font-size: 0.97rem; }
+        .dlg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .dlg-actions button { border: 0; cursor: pointer; font-family: inherit; }
+        .dlg-body .mock-src > .mk { box-shadow: 0 6px 24px rgba(31,58,95,0.10); }
+
+        /* Mock-ups */
+        .mk { background: #fff; border-radius: 12px; padding: 22px; font-size: 15px; line-height: 1.4; text-align: left; color: #2B2B2B; border: 1px solid #E1E7EE; }
+        .mk-dash { background: #F6F8FB; }
+        .mk-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 16px; flex-wrap: wrap; }
+        .mk-kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #2A6F74; font-weight: 700; }
+        .mk-h { font-size: 26px; font-weight: 700; color: #1F3A5F; margin: 4px 0; line-height: 1.15; }
+        .mk-sub { color: #6B7C8F; font-size: 14px; }
+        .mk-kpis { display: flex; gap: 10px; }
+        .mk-kpis div { background: #1F3A5F; color: #fff; border-radius: 10px; padding: 10px 14px; min-width: 112px; }
+        .mk-kpis b { display: block; font-size: 20px; }
+        .mk-kpis span { font-size: 12px; opacity: 0.8; }
+        .mk-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .mk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .mk-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .mk-card { background: #fff; border: 1px solid #E1E7EE; border-radius: 10px; padding: 14px 16px; }
+        .mk-card h5 { margin: 0 0 10px; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #1F3A5F; }
+        .mk-row { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid #EEF2F6; font-size: 14px; }
+        .mk-card h5 + .mk-row { border-top: 0; padding-top: 0; }
+        .mk-row > span:not(.mk-time):not(.mk-pill) { flex: 1; }
+        .mk-row small { color: #6B7C8F; font-size: 12.5px; }
+        .mk-time { font-weight: 700; color: #1F3A5F; width: 44px; flex: none; }
+        .mk-pill { flex: none; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #E8F1F8; color: #1F3A5F; white-space: nowrap; }
+        .mk-pill.ok { background: #DDF3EF; color: #1E6B5C; }
+        .mk-muted { color: #6B7C8F; }
+        .mk-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .mk-table th { text-align: left; color: #6B7C8F; font-weight: 600; padding: 4px 6px; border-bottom: 1px solid #E1E7EE; }
+        .mk-table td { padding: 6px; border-bottom: 1px solid #F0F3F6; vertical-align: top; }
+        .mk-table .warn { color: #B4532A; font-weight: 600; }
+        .mk-task { display: flex; gap: 10px; align-items: center; padding: 6px 0; font-size: 14px; }
+        .mk-task i { width: 14px; height: 14px; border: 2px solid #9DB3C9; border-radius: 4px; flex: none; }
+        .mk-task.done { color: #6B7C8F; text-decoration: line-through; }
+        .mk-task.done i { background: #2A6F74; border-color: #2A6F74; }
+        .mk-foot { margin-top: 14px; font-size: 12.5px; color: #6B7C8F; text-align: right; }
+        .mk-instr { background: #0F1C2E; color: #E6EEF8; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; font-size: 15px; font-style: italic; }
+        .mk-instr span { display: block; font-style: normal; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #3EC1C9; margin-bottom: 6px; font-weight: 700; }
+        .mk-p { font-size: 15px; margin: 10px 0 14px; }
+        .mk-dl { display: grid; grid-template-columns: 96px 1fr; gap: 6px 10px; margin: 0; font-size: 14px; }
+        .mk-dl dt { font-weight: 700; color: #1F3A5F; }
+        .mk-dl dd { margin: 0; }
+        .mk-done { font-size: 14px; padding: 4px 0 4px 24px; position: relative; }
+        .mk-done::before { content: "\2713"; position: absolute; left: 0; color: #2A6F74; font-weight: 700; }
+        .mk-email p { font-size: 14px; color: #3a4654; margin: 0; }
+        .mk-web { padding: 0; overflow: hidden; }
+        .mk-browser { display: flex; gap: 6px; align-items: center; background: #EEF2F6; padding: 10px 14px; }
+        .mk-browser i { width: 10px; height: 10px; border-radius: 50%; background: #C9D3DE; }
+        .mk-browser span { margin-left: 10px; background: #fff; border-radius: 6px; padding: 3px 12px; font-size: 12.5px; color: #6B7C8F; }
+        .mk-hero { background: linear-gradient(135deg, #1F3A5F, #2A6F74); padding: 26px 22px; }
+        .mk-audio { display: flex; align-items: center; gap: 12px; margin-top: 14px; color: #D6F2F3; font-size: 13px; }
+        .mk-play { width: 30px; height: 30px; border-radius: 50%; background: #3EC1C9; position: relative; flex: none; display: inline-block; }
+        .mk-play::after { content: ""; position: absolute; left: 11px; top: 8px; border-left: 11px solid #0F1C2E; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+        .mk-play.big { width: 58px; height: 58px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.92); }
+        .mk-play.big::after { left: 22px; top: 17px; border-left-width: 18px; border-top-width: 12px; border-bottom-width: 12px; border-left-color: #1F3A5F; }
+        .mk-wave { display: flex; gap: 3px; align-items: center; }
+        .mk-wave i { width: 3px; height: 8px; background: #9fe3e7; border-radius: 2px; }
+        .mk-wave i:nth-child(3n) { height: 18px; } .mk-wave i:nth-child(4n+1) { height: 12px; } .mk-wave i:nth-child(5n) { height: 22px; }
+        .mk-ol { margin: 0; padding-left: 20px; font-size: 14px; }
+        .mk-ol li { margin: 6px 0; }
+        .mk-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+        .mk-flow span { border: 1px solid #C9D6E3; border-radius: 8px; padding: 6px 10px; background: #F6F8FB; }
+        .mk-flow span.hl { background: #DDF3EF; border-color: #2A6F74; color: #1E6B5C; font-weight: 700; }
+        .mk-flow b { width: 18px; height: 2px; background: #9DB3C9; }
+        .mk-tile { background: #F3F5F7; border-radius: 10px; padding: 12px 14px; }
+        .mk-tile b { display: block; font-size: 22px; color: #1F3A5F; }
+        .mk-tile span { font-size: 12.5px; color: #6B7C8F; }
+        .mk-cta { padding: 0 18px 20px; }
+        .mk-bars div { display: grid; grid-template-columns: 96px 1fr 44px; align-items: center; gap: 8px; font-size: 13px; margin: 9px 0; }
+        .mk-bars em { background: #EEF2F6; height: 12px; border-radius: 6px; overflow: hidden; display: block; }
+        .mk-bars i { display: block; height: 100%; background: #2A6F74; border-radius: 6px; }
+        .mk-bars b { text-align: right; color: #1F3A5F; }
+        .mk-ul { margin: 0; padding-left: 18px; font-size: 14px; }
+        .mk-ul li { margin: 5px 0; }
+
+        /* ── v3: page structure ── */
+        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+        .hero-video { box-shadow: 0 24px 60px rgba(5,12,24,0.35); border: 0; }
+        .hero-video .vbody { padding: 16px 20px 18px; }
+        .hero-video h3 { margin: 0; font-size: 1.1rem; }
+        .page-guide { position: sticky; top: 84px; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: var(--border); backdrop-filter: blur(6px); }
+        .page-guide .container { display: flex; gap: 6px 22px; overflow-x: auto; padding: 12px 0; white-space: nowrap; scrollbar-width: none; }
+        .page-guide a { color: var(--blue); font-weight: 600; font-size: 0.95rem; opacity: 0.85; }
+        .page-guide a:hover { color: var(--teal); opacity: 1; }
+        section.ov { padding: 72px 0; scroll-margin-top: 140px; }
+        .xband, #questions, #get-yours { scroll-margin-top: 140px; }
+        .ov-head { max-width: 760px; margin-bottom: 32px; }
+        .ov-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .ov-head h2 { margin-bottom: 12px; }
+        .ov-lead { font-size: 1.15rem; color: var(--steel); line-height: 1.55; margin: 0; }
+        .ov-lead a, .more-inner a { color: var(--teal); font-weight: 600; }
+        .ov-foot { text-align: center; color: var(--steel); margin: 24px auto 0; max-width: 720px; }
+        .philosophy-grid.tight { margin-top: 0; }
+        .philosophy-grid.tight .philosophy-item { padding: 22px 24px; }
+        .day-grid { margin-top: 0; }
+        .more-wrap { text-align: center; margin-top: 28px; }
+        .more-btn { font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; color: var(--teal); background: transparent; border: 1.5px solid rgba(42,111,116,0.45); border-radius: 999px; padding: 10px 22px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+        .more-btn::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 200ms ease; }
+        .more-btn[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-2px); }
+        .more-btn:hover { background: rgba(42,111,116,0.08); }
+        .js .sec-more { display: none; }
+        .js .sec-more.open { display: block; animation: secIn 260ms ease; }
+        @keyframes secIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+        .more-inner { margin-top: 28px; }
+        .more-inner.narrow, .narrow { max-width: 780px; margin-left: auto; margin-right: auto; }
+        .more-inner .philosophy-grid { margin-top: 20px; }
+        .role-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .role-card { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+        .role-card h3 { font-size: 1.05rem; color: var(--blue); margin-bottom: 14px; }
+        .sys-grid { list-style: none; padding: 0; margin: 0 auto; max-width: 1000px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .sys-grid li { background: var(--white); border: var(--border); border-radius: 12px; padding: 14px 16px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 10px; }
+        .sys-grid li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--aqua); box-shadow: 0 0 0 4px rgba(62,193,201,0.18); flex: none; }
+        .sys-table { width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); font-size: 0.97rem; }
+        .sys-table th { text-align: left; background: var(--blue); color: #fff; padding: 12px 16px; font-weight: 600; }
+        .sys-table td { padding: 11px 16px; border-top: 1px solid #E6ECF2; vertical-align: top; }
+        .sys-table td:first-child { font-weight: 600; color: var(--blue); white-space: nowrap; }
+        .sys-note { max-width: 1000px; margin: 16px auto 0; color: var(--steel); }
+        .four-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .four-grid .philosophy-item { padding: 22px; }
+        .proof-top { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; max-width: 1000px; margin: 0 auto 28px; }
+        .proof-top .founder { flex-direction: column; text-align: center; border: 0; margin: 0; padding: 0; gap: 10px; }
+        .proof-top .founder img { width: 120px; height: 120px; }
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1000px; margin: 0 auto; }
+        .stat-row .evidence-card { margin: 0; }
+        .timeline { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); counter-reset: step; }
+        .timeline li { counter-increment: step; text-align: center; padding: 56px 10px 0; position: relative; }
+        .timeline li::before { content: counter(step); position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; display: grid; place-items: center; z-index: 1; }
+        .timeline li::after { content: ""; position: absolute; top: 19px; left: 50%; width: 100%; height: 2px; background: rgba(42,111,116,0.3); }
+        .timeline li:last-child::after { display: none; }
+        .timeline b { display: block; color: var(--blue); font-size: 1.1rem; margin-bottom: 4px; }
+        .timeline span { color: var(--steel); font-size: 0.97rem; }
+        .faq details p + p { margin-top: 10px; }
+
+        /* ── v3: proposal mock ── */
+        .mk-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+        .mk-hero-row .mk-audio { margin-top: 0; }
+        .mk-dl-btn { background: #fff; color: #1F3A5F; font-weight: 700; font-size: 13px; border-radius: 999px; padding: 8px 16px; }
+        .mk-video { position: relative; border-radius: 10px; overflow: hidden; background: #1F3A5F; min-height: 200px; }
+        .mk-video img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
+        .mk-vplay { position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 8px; background: rgba(10,15,26,0.62); color: #fff; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 12px 5px 5px; }
+        .mk-vplay .mk-play { width: 28px; height: 28px; background: #3EC1C9; }
+        .mk-vplay .mk-play::after { left: 10px; top: 7px; }
+        .mk-cap { position: absolute; left: 14px; bottom: 12px; color: #fff; font-size: 12.5px; background: rgba(10,15,26,0.62); padding: 6px 10px; border-radius: 8px; line-height: 1.3; }
+        .mk-cap b { display: block; font-size: 14px; }
+        .mk-note { font-size: 13px; color: #6B7C8F; margin: 14px 0 0; padding-top: 10px; border-top: 1px solid #EEF2F6; }
+        .mk-xp { margin: 0 18px; border-radius: 12px; overflow: hidden; background: #0A0F1A; border: 1px solid #1E2B42; }
+        .mk-xp-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid #1E2B42; flex-wrap: wrap; }
+        .mk-xp-title { color: #EEF3FA; font-weight: 700; font-size: 14px; }
+        .mk-tabs { display: inline-flex; background: #131D2E; border-radius: 999px; padding: 3px; gap: 2px; }
+        .mk-tabs span { color: #93A7C6; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; }
+        .mk-tabs span.on { background: #2A4468; color: #fff; font-weight: 600; }
+        .mk-xp-body { display: grid; grid-template-columns: 1fr 230px; }
+        .mk-xp-map { position: relative; }
+        .mk-xsvg { display: block; width: 100%; height: auto; }
+        .mk-xp-hint { position: absolute; left: 10px; top: 10px; font-size: 11.5px; color: #93A7C6; background: #131D2E; border-radius: 999px; padding: 3px 10px; }
+        .mk-xp-panel { background: #111A2B; border-left: 1px solid #1E2B42; padding: 16px; color: #C7D2E4; font-size: 13px; }
+        .mk-xp-big { font-size: 34px; font-weight: 700; color: #fff; margin: 6px 0 10px; line-height: 1; }
+        .mk-xp-big span { display: block; font-size: 12.5px; font-weight: 400; color: #93A7C6; margin-top: 4px; }
+        .mk-xp-row { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px solid #1E2B42; }
+        .mk-xp-row b { color: #fff; }
+        .mk-xp-row b.amber { color: #F6D79A; }
+        .mk-xp-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; background: #2A4468; color: #fff; font-weight: 600; border-radius: 999px; padding: 5px 14px 5px 5px; }
+        .mk-xp-btn .mk-play { width: 24px; height: 24px; }
+        .mk-xp-btn .mk-play::after { left: 9px; top: 6px; border-left-width: 9px; border-top-width: 6px; border-bottom-width: 6px; }
+        .mk-cta { padding: 0 18px 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .mk-cta span { display: inline-block; background: #2A6F74; color: #fff; font-weight: 700; border-radius: 999px; padding: 10px 20px; font-size: 14px; }
+        .mk-cta span.ghost { background: #fff; color: #1F3A5F; border: 1.5px solid #C9D6E3; }
+        @container dlg (max-width: 640px) {
+            .mk-xp-body { grid-template-columns: 1fr; }
+            .mk-xp-panel { border-left: 0; border-top: 1px solid #1E2B42; }
+            .mk { padding: 16px; }
+            .mk-grid2, .mk-grid3 { grid-template-columns: 1fr; }
+            .mk-grid4 { grid-template-columns: 1fr 1fr; }
+            .mk-top { flex-direction: column; align-items: flex-start; }
+            .mk-kpis { flex-wrap: wrap; }
+            .mk-h { font-size: 22px; }
+        }
+
+        @media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1100px) { .role-grid, .sys-grid, .four-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .hero-video { max-width: 560px; } }
+        @media (max-width: 860px) { .page-guide { top: 72px; } }
+        @media (max-width: 760px) {
+            .role-grid, .sys-grid, .four-grid, .stat-row { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: 1fr; }
+            .timeline li { text-align: left; padding: 0 0 18px 56px; }
+            .timeline li::before { left: 0; transform: none; }
+            .timeline li::after { top: 40px; left: 19px; width: 2px; height: calc(100% - 40px); }
+            .proof-top { grid-template-columns: 1fr; text-align: center; }
+            .sys-table { font-size: 0.92rem; }
+            .sys-table thead { display: none; }
+            .sys-table tr { display: block; padding: 12px 14px; border-top: 1px solid #E6ECF2; }
+            .sys-table td { display: block; border: 0; padding: 2px 0; white-space: normal !important; }
+            .mock-label { flex-direction: column; align-items: flex-start; }
+            section.ov { padding: 56px 0; }
+        }
+
+        @media (max-width: 760px) {
+            .steps-grid, .mock-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; gap: 32px; }
+            .mock-thumb { height: 200px; }
+            .prompt-box { padding: 22px; }
+            .prompt-text { font-size: 1.08rem; }
+            .dlg-body { padding: 18px 18px 24px; }
+        }
+        .timeline.six { grid-template-columns: repeat(6, 1fr); }
+        .timeline li.opt::before { background: var(--white); color: var(--teal); border: 2px dashed var(--teal); }
+        .opt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); background: rgba(42,111,116,0.1); border-radius: 999px; padding: 2px 8px; vertical-align: middle; margin-left: 4px; }
+        .kickoff-note { max-width: 820px; margin: 32px auto 0; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; font-size: 1rem; }
+        .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 1000px) { .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 760px) { .stage-grid, .timeline.six { grid-template-columns: 1fr; } }
+    </style>
+    <noscript><style>.lib { display: block; padding: 40px 0; } .lib .entry, .lib .mock-src { margin-bottom: 32px; } .mock-grid, .chip-buttons button::after, .day-card .more, .more-wrap { display: none; }</style></noscript>
+</head>
+<body>
+  <div class="fpa-banner"><a href="/from-prompt-to-autopilot/" style="display:block;background:#2A6F74;color:#ffffff;text-align:center;padding:9px 18px;font-size:0.95rem;font-weight:600;line-height:1.4;">Your own Business AI Operating System: From Prompt to Autopilot &rarr;</a></div>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/business-aios/">Business AIOS</a>
+                    <a href="/services/">Services</a>
+                    <a href="/approach/">Approach</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/business-aios/">Business AIOS</a>
+                    <a href="/services/">Services</a>
+                    <a href="/approach/">Approach</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section class="page-header">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">Law Firm AI Operating System</div>
+                    <h1>Give your fee earners back a day a week, safely</h1>
+                    <p class="lead">Most solicitors already use AI, usually on their own and without a firm policy. A Law Firm AI Operating System turns that into one supervised way of working, built around your precedents, your procedures and the way your firm runs files.</p>
+                    <p class="lead" style="margin-top: 14px;">It runs on Claude, working inside the Microsoft 365 your firm already uses. It sits alongside your case management system rather than replacing it, and a solicitor reviews everything that goes to a client.</p>
+                    <ul class="hero-pills">
+                        <li>Works inside your Microsoft 365</li>
+                        <li>Built on your own precedents</li>
+                        <li>A supervision record you can show</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="#a-day" class="btn btn-primary">See what it does</a>
+                        <a href="#get-yours" class="btn btn-ghost">Book a conversation</a>
+                    </div>
+                </div>
+                <article class="vcard hero-video">
+                    <div class="vframe" data-title="What a Law Firm AI Operating System does for you"><div class="vsoon"><i></i>Video coming soon</div></div>
+                    <div class="vbody">
+                        <div class="eyebrow">Watch &middot; a few minutes</div>
+                        <h3>A partner&rsquo;s day, with and without it</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Page guide -->
+        <nav class="page-guide" aria-label="On this page">
+            <div class="container">
+                <a href="#a-day">What it does</a>
+                <a href="#examples">Examples</a>
+                <a href="#roles">By department</a>
+                <a href="#safe">Safe by design</a>
+                <a href="#connections">Connections</a>
+                <a href="#how">How you get one</a>
+                <a href="#questions">Questions</a>
+            </div>
+        </nav>
+
+
+        <!-- The problem -->
+        <section class="ov" id="problem">
+            <div class="container">
+                <div class="ov-head">
+                    <div class="eyebrow">Sound familiar?</div>
+                    <h2>AI in the firm, without the safety net</h2>
+                    <p class="ov-lead">Most lawyers use generative AI at work now. Very few firms have built it into how they work, trained their people or written a policy they can follow.</p>
+                </div>
+                <div class="philosophy-grid tight">
+                    <div class="philosophy-item reveal"><h3>Everyone doing it their own way</h3><p>Different tools, different prompts, and client details pasted into who knows what.</p></div>
+                    <div class="philosophy-item reveal"><h3>Accountable for all of it</h3><p>The SRA has been clear that the firm answers for AI-assisted work, whoever or whatever drafted it.</p></div>
+                    <div class="philosophy-item reveal"><h3>The non-billable hours</h3><p>File notes, chasing, first drafts and supervision still fill the week.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-problem">More on the problem</button></div>
+                <div class="sec-more" id="more-problem">
+                    <div class="more-inner narrow">
+                        <p>In LexisNexis research from August 2025, 61% of UK legal professionals said they used generative AI at work, but only 17% said it was built into how their firm operates. Only 28% had an AI policy that was easy to follow, and 24% said they had been given the right training.</p>
+                        <p>In August 2026 the SRA published a warning notice on the misuse of AI. Firms stay accountable for all their work, AI-assisted or not, and free or consumer AI tools may not give the safeguards client confidentiality and privilege need. Its updated supervision guidance asks firms to show how authorised solicitors supervise others&rsquo; work, and that AI output gets proper human review.</p>
+                        <p>A Law Firm AI Operating System closes that gap. It gives everyone the same safe, supervised way of using AI, set up for your firm&rsquo;s precedents, departments and clients, and it keeps the record that shows how the work was checked.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- A day -->
+        <section class="ov soft" id="a-day">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">What it does</div>
+                    <h2>A fee earner&rsquo;s day, from the morning brief to the files at six</h2>
+                    <p class="ov-lead">Less time on the work around legal work, and every file kept the way your best fee earner keeps theirs. Click any step to see how it works.</p>
+                </div>
+                <div class="philosophy-grid day-grid">
+                    <button type="button" class="philosophy-item day-card reveal" data-open="brief"><span class="day-time">Before the day starts</span><h3>The morning brief</h3><p>Appointments prepared, deadlines flagged, routine replies drafted.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="notes"><span class="day-time">Straight after the meeting</span><h3>Attendance notes</h3><p>From a voice note or recording, filed to the matter.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="drafting"><span class="day-time">When it&rsquo;s time to draft</span><h3>First drafts from your precedents</h3><p>Letters, wills and schedules in the firm&rsquo;s own style.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="progression"><span class="day-time">To keep files moving</span><h3>Chasing and client updates</h3><p>Stalled files flagged, chasers and updates drafted.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="supervision"><span class="day-time">For supervisors</span><h3>Supervision, prepared</h3><p>AI-assisted work logged, files sampled for review.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="partners"><span class="day-time">For the partners</span><h3>The firm at a glance</h3><p>Work in progress, lock-up and matters at risk.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                </div>
+                <div class="whole-note reveal">
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#2A6F74"/><circle cx="12" cy="12" r="9.5" fill="none" stroke="#3EC1C9" stroke-width="1.6" stroke-dasharray="3 3"/></svg>
+                    <p><strong>All one system, not separate tools.</strong> Every step draws on the same knowledge base of precedents and procedures, and files its work back into it. The attendance note feeds tomorrow&rsquo;s brief, the brief feeds the chase list, and the supervision record builds itself as the work gets done.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Examples -->
+        <section class="ov" id="examples">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">See what your firm would get</div>
+                    <h2>Four examples, as your fee earners would see them</h2>
+                    <p class="ov-lead">The firm, people and matters are made up. The format is what a Law Firm AI Operating System produces.</p>
+                </div>
+                <div class="mock-grid">
+                    <button type="button" class="mock-card reveal" data-mock="brief"><span class="mock-thumb" data-thumb="brief"></span><span class="mock-label"><span class="mock-text"><strong>The morning brief</strong><span>Appointments, deadlines, replies and stalled files, ready before the day starts</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="note"><span class="mock-thumb" data-thumb="note"></span><span class="mock-label"><span class="mock-text"><strong>An attendance note</strong><span>One voice note after a will meeting, and everything that comes back</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="chase"><span class="mock-thumb" data-thumb="chase"></span><span class="mock-label"><span class="mock-text"><strong>A conveyancing chase list</strong><span>Every open file, the stalled ones flagged, the chasers drafted</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="supervision"><span class="mock-thumb" data-thumb="supervision"></span><span class="mock-label"><span class="mock-text"><strong>A supervision record</strong><span>The week&rsquo;s AI-assisted work, sampled and ready for review</span></span><span class="open-btn">Open full size</span></span></button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- By role -->
+        <section class="ov soft" id="roles">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Set up for each department</div>
+                    <h2>One system, with the right skills for each part of the firm</h2>
+                    <p class="ov-lead">Everyone shares the same precedents, procedures and client knowledge. Each department gets the skills that fit its work. Click anything that interests you.</p>
+                </div>
+                <div class="role-grid">
+                    <div class="role-card reveal">
+                        <h3>Private client and property</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="wills">Wills from instructions</button></li>
+                            <li><button type="button" data-open="probate">Probate administration</button></li>
+                            <li><button type="button" data-open="lpa">Lasting powers of attorney</button></li>
+                            <li><button type="button" data-open="progression">Conveyancing chasing</button></li>
+                            <li><button type="button" data-open="reports">Title and search reports</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Family, commercial and agriculture</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="disclosure">Financial disclosure review</button></li>
+                            <li><button type="button" data-open="chronology">Chronologies</button></li>
+                            <li><button type="button" data-open="contracts">Contract and lease review</button></li>
+                            <li><button type="button" data-open="drafting">First drafts from precedents</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Reception, support and compliance</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="intake">New enquiries and onboarding</button></li>
+                            <li><button type="button" data-open="phone">Out-of-hours enquiries</button></li>
+                            <li><button type="button" data-open="aml">AML file checks</button></li>
+                            <li><button type="button" data-open="supervision">Supervision record</button></li>
+                            <li><button type="button" data-open="policy">AI policy and guidance</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Partners</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="partners">The firm at a glance</button></li>
+                            <li><button type="button" data-open="wip">Work in progress and lock-up</button></li>
+                            <li><button type="button" data-open="monthly">Monthly management report</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ov-foot">It suits independent general practice firms of roughly 10 to 80 people: private client, residential property, family, and commercial or agricultural work.</p>
+            </div>
+        </section>
+
+
+        <!-- Safe by design -->
+        <section class="ov" id="safe">
+            <div class="container">
+                <div class="fit-grid" style="align-items: center;">
+                    <div class="fit-copy">
+                        <div class="eyebrow">Safe by design</div>
+                        <h2>One supervised way to use AI, connected to the systems you have</h2>
+                        <p class="ov-lead">Instead of each person using their own AI tool, everyone works through one system the firm controls. It reads from the places work already happens, files back into them, and keeps a record of what was AI-assisted and who approved it.</p>
+                    </div>
+                    <div class="hub reveal">
+                        <svg viewBox="0 0 520 440" role="img" aria-label="The Law Firm AI Operating System at the centre, connected to Outlook and calendar, case management, documents, e-signature, ID and AML checks, legal research, accounts and the phone">
+                            <g stroke="#9DB3C9" stroke-width="2" stroke-dasharray="4 5">
+                                <line x1="260" y1="220" x2="260" y2="48"/><line x1="260" y1="220" x2="398" y2="94"/>
+                                <line x1="260" y1="220" x2="443" y2="220"/><line x1="260" y1="220" x2="398" y2="346"/>
+                                <line x1="260" y1="220" x2="260" y2="392"/><line x1="260" y1="220" x2="122" y2="346"/>
+                                <line x1="260" y1="220" x2="70" y2="220"/><line x1="260" y1="220" x2="122" y2="94"/>
+                            </g>
+                            <circle cx="260" cy="220" r="78" fill="#2A6F74"/>
+                            <circle cx="260" cy="220" r="90" fill="none" stroke="#3EC1C9" stroke-width="2"/>
+                            <text x="260" y="212" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Source Sans 3, Arial, sans-serif">Law Firm AIOS</text>
+                            <text x="260" y="236" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">on Claude, inside</text>
+                            <text x="260" y="254" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">your Microsoft 365</text>
+                            <g font-family="Source Sans 3, Arial, sans-serif" font-size="13" font-weight="600" fill="#1F3A5F" text-anchor="middle">
+                                <rect x="180" y="26" width="160" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="53">Case management</text>
+                                <rect x="324" y="72" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="99">Outlook and calendar</text>
+                                <rect x="370" y="198" width="146" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="443" y="225">Documents</text>
+                                <rect x="330" y="324" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="351">E-signature</text>
+                                <rect x="180" y="370" width="160" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="397">ID and AML checks</text>
+                                <rect x="48" y="324" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="351">Legal research</text>
+                                <rect x="4" y="198" width="132" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="70" y="225">Accounts</text>
+                                <rect x="54" y="72" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="99">Phone</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="prompt-box reveal">
+                    <div class="prompt-label">One instruction after a will meeting</div>
+                    <p class="prompt-text">&ldquo;Write up this meeting with Mrs Carter as an attendance note, check the instructions against our will checklist, draft the follow-up letter and the client care letter, and add the time to my list. She wants the cottage left to her son.&rdquo;</p>
+                    <button type="button" class="prompt-link" data-mock="note">See what comes back <span aria-hidden="true">&rarr;</span></button>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-safe">More on how it keeps the firm safe</button></div>
+                <div class="sec-more" id="more-safe">
+                    <div class="more-inner">
+                        <div class="philosophy-grid">
+                            <div class="philosophy-item"><h3>Client confidentiality</h3><p>It runs on a business Claude plan with a data processing agreement, and Anthropic doesn&rsquo;t train its models on your data. Client files stay in your own SharePoint and systems. We agree with you what the AI may and may not see.</p></div>
+                            <div class="philosophy-item"><h3>Solicitors stay in charge</h3><p>The system prepares, drafts, summarises and flags. It doesn&rsquo;t give legal advice. Anything that goes to a client or the other side is checked and sent by a person, as the SRA expects.</p></div>
+                            <div class="philosophy-item"><h3>A record you can show</h3><p>AI-assisted work is logged with who approved it, and a sample of files is prepared for review each week. That gives supervisors evidence, not just good intentions.</p></div>
+                        </div>
+                        <div class="own-example">
+                            <div class="eyebrow" style="margin-bottom: 8px;">Legal AI products</div>
+                            <p>Tools such as Lexis+&nbsp;AI or CoCounsel bring legal research built on their own content, and big-firm platforms like Harvey and Legora are aimed at large firms. A Law Firm AI Operating System is the operating layer for the whole firm. It can connect to a research subscription you already have, and it leaves legal research and advice to your solicitors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Connections -->
+        <section class="ov soft" id="connections">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Connecting your systems</div>
+                    <h2>Works with the systems your firm already uses</h2>
+                    <p class="ov-lead">Microsoft 365 and many legal systems now have standard AI connectors, so connecting them is set-up rather than development. Case management systems vary, and where one can&rsquo;t connect, the system works from your documents and email.</p>
+                </div>
+                <ul class="sys-grid">
+                    <li>Outlook and calendar</li><li>SharePoint and OneDrive</li><li>Case and practice management</li><li>Document management</li>
+                    <li>E-signature</li><li>ID and AML checks</li><li>Legal research</li><li>Accounts</li>
+                    <li>Teams</li><li>Phone and reception</li><li>Word and Excel</li><li>Reporting</li>
+                </ul>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-connections">See common systems we connect</button></div>
+                <div class="sec-more" id="more-connections">
+                    <div class="more-inner">
+                        <table class="sys-table">
+                            <thead><tr><th>Type of system</th><th>Common examples</th><th>What the AI does with it</th></tr></thead>
+                            <tbody>
+                                <tr><td>AI platform</td><td>Claude Team or Enterprise; Microsoft Copilot if the firm has standardised on it</td><td>The platform the Law Firm AI Operating System runs on</td></tr>
+                                <tr><td>Email, calendar and files</td><td>Microsoft 365 (Outlook, SharePoint, OneDrive, Teams), with add-ins in Word and Excel</td><td>Morning brief, attendance notes, drafting, filing and the knowledge base</td></tr>
+                                <tr><td>Case and practice management</td><td>Clio, LEAP, Actionstep, Proclaim, Osprey, Smokeball</td><td>Reads matters, contacts and key dates where the system allows; otherwise works from documents and email</td></tr>
+                                <tr><td>Document management</td><td>iManage, NetDocuments, SharePoint</td><td>Precedents, matter documents and filing</td></tr>
+                                <tr><td>E-signature</td><td>DocuSign</td><td>Sends documents for signature once a solicitor approves them, and tracks status</td></tr>
+                                <tr><td>ID and AML checks</td><td>Thirdfort, InfoTrack</td><td>Checks files for missing ID, risk assessments and source of funds</td></tr>
+                                <tr><td>Legal research</td><td>CoCounsel, Practical Law, Lexis, vLex</td><td>Connects to the firm&rsquo;s existing subscription, so research comes from an authoritative source</td></tr>
+                                <tr><td>Accounts</td><td>Legal accounts within case management, Xero</td><td>Work in progress, unbilled time and lock-up reporting</td></tr>
+                                <tr><td>Phone and reception</td><td>Your phone system, plus an AI voice agent through our partner</td><td>Out-of-hours enquiries answered and appointments booked</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="sys-note">Connections are added one at a time, as the firm and its IT provider approve them. Each person&rsquo;s AI uses their own access, so it can only see what they already can, and ethical walls still hold. It is useful from day one with Outlook and SharePoint alone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- What's in it -->
+        <section class="ov" id="what-it-is">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">What&rsquo;s in it</div>
+                    <h2>Your precedents and your procedures, built in</h2>
+                    <p class="ov-lead">A Law Firm AI Operating System is a <a href="/business-aios/">Business AI Operating System</a> set up for a law firm, installed once as a single plugin for everyone.</p>
+                </div>
+                <div class="four-grid">
+                    <div class="philosophy-item reveal"><h3>Firm knowledge</h3><p>Precedents, procedures, client care terms, checklists and the office manual.</p></div>
+                    <div class="philosophy-item reveal"><h3>Legal skills</h3><p>Attendance notes, drafting, chasing and supervision, written the way your firm works.</p></div>
+                    <div class="philosophy-item reveal"><h3>Routines and dashboards</h3><p>Morning briefs, chase lists and supervision samples that run on a schedule.</p></div>
+                    <div class="philosophy-item reveal"><h3>Connections</h3><p>Outlook, SharePoint, case management and more, added as they&rsquo;re approved.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-what">More on what&rsquo;s in it</button></div>
+                <div class="sec-more" id="more-what">
+                    <div class="more-inner narrow">
+                        <p><strong>Firm knowledge.</strong> Your precedents, procedures, client care letter, terms of business, checklists and office manual, in one place the AI draws on. If they&rsquo;re already well organised we connect to them; if they&rsquo;re scattered across personal drives, organising them is part of the set-up, and the AI does much of that work.</p>
+                        <p><strong>Legal skills.</strong> Each skill is a written set of instructions for one job: how your firm writes an attendance note, which precedent to start from, how you chase on a conveyancing file, what a file review checks. Anthropic&rsquo;s own legal skills, such as contract review, sit alongside them.</p>
+                        <p><strong>Routines and dashboards.</strong> The morning brief, the weekly chase list and the supervision sample run on a schedule, with the results on dashboards for fee earners and partners.</p>
+                        <p><strong>Connections.</strong> Outlook, calendar and SharePoint from day one, then case management, document management, e-signature and ID checks as they&rsquo;re approved. Client data stays in your own systems, and solicitors stay in charge of anything that goes out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Proof -->
+        <section class="ov soft" id="proof">
+            <div class="container">
+                <div class="proof-top">
+                    <div class="founder">
+                        <img src="/images/headshots/mike-mckeown-round.jpg" alt="Mike McKeown" width="96" height="96">
+                        <div>
+                            <strong>Mike McKeown</strong>
+                            <span>Founder and Managing Director, Human&#8209;AI&nbsp;Systems</span>
+                            <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="eyebrow">Why Human&#8209;AI&nbsp;Systems</div>
+                        <h2>AI adoption, done with governance from the start</h2>
+                        <p class="ov-lead" style="margin: 0;">Our founder led enterprise-wide AI adoption at Verimatrix, a global software business, under board-approved responsible AI governance. We now build AI operating systems for organisations in regulated sectors, where people stay in charge of every decision.</p>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="evidence-card reveal"><h4>Governance first</h4><p><span class="evidence-stat">Board</span>approved responsible AI governance at Verimatrix.</p></div>
+                    <div class="evidence-card reveal"><h4>Time back</h4><p><span class="evidence-stat">~1 hour</span>a day saved per engineer at Verimatrix.</p></div>
+                    <div class="evidence-card reveal"><h4>Drafting</h4><p><span class="evidence-stat">50&ndash;60%</span>less workload and turnaround on proposals.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-proof">More on why us</button></div>
+                <div class="sec-more" id="more-proof">
+                    <div class="more-inner narrow">
+                        <p>Setting AI up well in a law firm means knowing where the risk sits as well as where the time goes. Our approach starts with a policy, a safe set-up and a clear rule that people decide, then builds the time savings on top. In regulated work, such as recruitment for a care provider, our systems prepare everything and leave every decision with a named person.</p>
+                        <p>We also run Human&#8209;AI&nbsp;Systems on our own AI operating system every day, from the morning brief to proposals. <a href="/how-has-runs/">See how we run on ours</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- How you get one -->
+        <section class="ov" id="how">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">How you get one</div>
+                    <h2>Built with your firm in a few weeks</h2>
+                    <p class="ov-lead">The same six stages we use for any Business AI Operating System, adapted for a law firm. We usually start with one department and roll out from there.</p>
+                </div>
+                <ol class="timeline six">
+                    <li><b>Discovery</b><span>How your firm works, and how AI is used today</span></li>
+                    <li><b>Build</b><span>Your precedents, legal skills and AI policy</span></li>
+                    <li><b>Implement</b><span>Switched on with one department first</span></li>
+                    <li><b>Train</b><span>Your people learn on their own matters</span></li>
+                    <li class="opt"><b>Extend</b><span>Optional, when you&rsquo;re ready</span></li>
+                    <li><b>Support</b><span>It supports itself and your people</span></li>
+                </ol>
+                <div class="kickoff-note reveal">
+                    <strong>Want to start small?</strong> Many firms begin with a safe AI set-up and policy plus one workflow, such as attendance notes or conveyancing chasing, and measure the result before going further.
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-how">More on each stage</button></div>
+                <div class="sec-more" id="more-how">
+                    <div class="more-inner">
+                        <div class="stage-grid">
+                            <div class="philosophy-item"><h3>1 &middot; Discovery</h3><p>We learn how your firm works: departments, precedents, systems, how you supervise and where the non-billable time goes. We also look at how people are using AI today and where the risks are. We time two or three everyday tasks, such as an attendance note or a first draft, so there is a baseline to measure against.</p></div>
+                            <div class="philosophy-item"><h3>2 &middot; Build</h3><p>We build your Law Firm AI Operating System: the knowledge base from your precedents and procedures, the legal skills written for your firm, the morning brief and dashboards, and an AI policy and staff guidance for you to adopt. Your fee earners review drafts and try the skills on real matters.</p></div>
+                            <div class="philosophy-item"><h3>3 &middot; Implement</h3><p>We set up Claude for the firm and connect it to Microsoft 365, working with your IT provider. The firm&rsquo;s plugin is installed for one department first, which uses it on live matters for a week or two while we refine it. Then the schedules go on and the rest of the firm follows.</p></div>
+                            <div class="philosophy-item"><h3>4 &middot; Train</h3><p>Your people learn by doing, on their own matters, in sessions of 60 to 90 minutes once a week for a few weeks, on site or online. Training covers what is safe as well as what is possible: what the AI may see, how work is reviewed and how the supervision record works.</p></div>
+                            <div class="philosophy-item"><h3>5 &middot; Extend <span class="opt-tag">Optional</span></h3><p>When you&rsquo;re ready, we take it further: your case management system connected where it allows, ID and AML checks, an AI voice agent for out-of-hours enquiries, and more departments on the same foundation.</p></div>
+                            <div class="philosophy-item"><h3>6 &middot; Support</h3><p>When the programme ends, the system supports itself and your people. It has its own support skill and knowledge, so it helps fee earners use it, brings new trainees up to speed, and helps fix issues after a platform update. Optional support packages are there if you want us on hand.</p></div>
+                        </div>
+                        <p class="how-more">We measure as we go: the same everyday tasks timed again after launch, alongside how many people use it each week.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Interactive explorer -->
+        <section class="xband" id="explorer">
+            <div class="container intro">
+                <div class="eyebrow">Interactive explorer</div>
+                <h2>Explore it for yourself</h2>
+                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built with you. Press play for a guided tour with captions, or click anything to explore.</p>
+            </div>
+            <div class="xframe">
+                <iframe id="explorerFrame" src="/law-firm-aios/explorer/?embed=1" title="Law Firm AI Operating System interactive explorer" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <div class="xmobile">
+                <h3>Best opened full screen on a phone</h3>
+                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built. With captions.</p>
+                <a class="xbtn primary" href="/law-firm-aios/explorer/"><span class="tri" aria-hidden="true"></span>Open the explorer</a>
+            </div>
+            <noscript><p class="xnote">The explorer needs JavaScript. The sections above cover the same ground.</p></noscript>
+            <div class="xactions">
+                <button class="xbtn primary" type="button" id="playTour"><span class="tri" aria-hidden="true"></span>Play the guided tour</button>
+                <a class="xbtn" href="/law-firm-aios/explorer/" target="_blank" rel="noopener">Open full screen</a>
+            </div>
+            <p class="xnote">This explorer was made by our own Business AI Operating System.</p>
+        </section>
+
+
+        <!-- FAQs -->
+        <section class="soft" id="questions">
+            <div class="container" style="max-width: 880px;">
+                <div style="text-align: center;">
+                    <div class="eyebrow">Common questions</div>
+                    <h2>What partners usually ask</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Does it give legal advice?</summary>
+                        <p>No. It prepares, drafts, summarises and flags. A solicitor reviews the work and decides what goes to the client, which is what the SRA expects. Where the system isn&rsquo;t sure of something, it is set up to flag it rather than guess.</p>
+                    </details>
+                    <details>
+                        <summary>What about client confidentiality and privilege?</summary>
+                        <p>The system runs on a business Claude plan with a data processing agreement, and Anthropic doesn&rsquo;t train its models on your inputs or outputs. Client files stay in your own SharePoint and systems, and reach the AI only through approved connections when someone runs a task. This is very different from staff pasting client details into a free AI tool, which is the risk the SRA warned about.</p>
+                        <p>Each person&rsquo;s AI works with that person&rsquo;s own access, so it sees only what they can already see, and ethical walls still hold. In discovery we agree what the AI may and may not see, and write that into your AI policy.</p>
+                    </details>
+                    <details>
+                        <summary>Where is our data held?</summary>
+                        <p>Claude&rsquo;s business plans store data in the US, under the data processing agreement. For most firms the requirement is a lawful international transfer under UK GDPR rather than UK-only storage, but some insurers and clients do insist on UK hosting. If yours do, tell us early and we&rsquo;ll set out the options, including building on Microsoft Copilot instead.</p>
+                    </details>
+                    <details>
+                        <summary>How does this fit with the SRA&rsquo;s expectations on AI and supervision?</summary>
+                        <p>The SRA&rsquo;s position is that firms stay accountable for AI-assisted work, that AI output needs proper human review by an authorised person, and that firms should be able to evidence how they supervise. The system is built around that: solicitors approve what goes out, AI-assisted work is logged with who approved it, and a sample of files is prepared for review each week.</p>
+                        <p>We help you put an AI policy and staff guidance in place as part of the set-up. This is practical guidance on how the system works, not legal or regulatory advice, and your COLP stays responsible for your firm&rsquo;s compliance.</p>
+                    </details>
+                    <details>
+                        <summary>We use Microsoft 365. Why Claude rather than Copilot?</summary>
+                        <p>Claude works inside Microsoft 365. It connects to Outlook, SharePoint, OneDrive and Teams, and has add-ins for Word and Excel, so your people keep working where they already do. Several of the best-known legal AI products are built on Claude or connect to it, and Microsoft itself now offers Claude models within Copilot.</p>
+                        <p>If your firm has already standardised on Copilot, or needs UK-only data storage, we can build on Copilot instead. It takes a little more set-up, and we&rsquo;ll be clear about any difference in what it can do.</p>
+                    </details>
+                    <details>
+                        <summary>Our case management system already has AI features. Why add this?</summary>
+                        <p>Those features work inside one system. A Law Firm AI Operating System works across the firm: email, documents, case management, the phone and your precedents, and it knows how your firm does things. Your case management system stays the record of matters, time and client money, and the AI reads from it where it can.</p>
+                    </details>
+                    <details>
+                        <summary>Do we need a legal AI product such as Lexis+ AI or Harvey as well?</summary>
+                        <p>Not to start. Most of the time a high street firm loses goes on the work around legal work: notes, drafts from precedents, chasing and supervision. That is what this system does. For authoritative legal research, connect a subscription you already have, such as Practical Law, Lexis or CoCounsel. Without one, the system flags research questions for a solicitor rather than answering them.</p>
+                    </details>
+                    <details>
+                        <summary>Do we need our precedents in order first?</summary>
+                        <p>No. If they are well organised, the system connects to them and follows your filing rules. If they are scattered across personal drives and old matters, the set-up includes agreeing a structure and gathering the current versions, and the AI does much of that work. Most firms have been meaning to do it for years.</p>
+                    </details>
+                    <details>
+                        <summary>Could we build it ourselves?</summary>
+                        <p>Yes. Doing it well takes well over 100 hours, plus the know-how to make it complete, safe and easy to keep working. We have a proven, repeatable method, so your people spend their time on the knowledge only they have, and the firm gets the benefit in weeks.</p>
+                    </details>
+                    <details>
+                        <summary>We&rsquo;re a small firm. Is this for us?</summary>
+                        <p>It suits firms from around ten people upwards, and a smaller start works well: a safe set-up and AI policy, plus one workflow such as attendance notes or probate letters. You see the result before deciding on more.</p>
+                    </details>
+                    <details>
+                        <summary>How will we know it has worked?</summary>
+                        <p>Before launch we time two or three tasks your fee earners do often, such as an attendance note or a first-draft letter. We time them again a few weeks after launch. Alongside that you can see how many people use it each week and, over time, the effect on unbilled time and lock-up.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-band" id="get-yours">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>See whether it would work for your firm</h2>
+                    <p class="lead">A 30-minute conversation is usually enough to see where the time goes, how AI is being used today and what a first version would include. No obligation.</p>
+                </div>
+                <div class="routes">
+                    <div class="route">
+                        <div class="route-tag">Talk it through</div>
+                        <h3>Book a conversation</h3>
+                        <p>Tell us about your firm, your departments and how your people use AI now, and we&rsquo;ll tell you honestly whether this is worth doing and what it would take.</p>
+                        <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a conversation</a>
+                    </div>
+                    <div class="route">
+                        <div class="route-tag">Start with safety</div>
+                        <h3>Ask about an AI readiness review</h3>
+                        <p>A short review of how AI is used across the firm today, the risks under the SRA&rsquo;s expectations, and two or three places it would save the most time.</p>
+                        <a href="mailto:mike.mckeown@human-ai-systems.com?subject=Law%20firm%20AI%20readiness%20review" class="btn btn-primary">Ask about a review</a>
+                    </div>
+                </div>
+                <p class="routes-note">For a small team that prefers a fixed price and scope, see <a href="https://www.prompt-autopilot.com/" target="_blank" rel="noopener noreferrer">From Prompt to Autopilot</a>.</p>
+            </div>
+        </section>
+
+        <!-- Detail library: shown in a pop-up when an item is clicked; listed in full when JavaScript is off -->
+        <section class="lib" id="lib" aria-label="How each part works">
+            <div class="container">
+            <article class="entry" id="d-brief" data-tag="Every fee earner, every morning" data-mock="brief">
+                <h3>The morning brief</h3>
+                <h4>What it is</h4>
+                <p>A short briefing waiting for each fee earner before the day starts, put together overnight from their email, diary, matters and tasks.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>The day starts on client work, not on the inbox.</li>
+                    <li>Deadlines and key dates are flagged before they become a problem.</li>
+                    <li>Routine replies are already drafted, ready to check and send.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task runs early each morning. It reads the fee earner&rsquo;s inbox and diary, checks key dates and stalled files on their matters, and pulls in the task list. It prepares a short brief for each appointment and drafts replies to routine emails. It uses the firm&rsquo;s procedures to decide what matters most, and shows the result as a simple dashboard.</p>
+                <ul class="connects"><li>Outlook</li><li>Calendar</li><li>Case management, where connected</li><li>Task list</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-notes" data-tag="Straight after the meeting" data-mock="note">
+                <h3>Attendance notes</h3>
+                <h4>What it is</h4>
+                <p>A proper attendance note for every meeting or call, from a voice note, a recording or rough notes, filed to the right matter.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Every file has a note, even on the busiest days.</li>
+                    <li>Instructions are checked against the firm&rsquo;s checklist while the client is still fresh in mind.</li>
+                    <li>Follow-up letters are drafted and time is captured for billing.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The fee earner gives it whatever they have: a Teams recording, a voice memo on the phone, or a few lines typed after the call. The AI writes the note in the firm&rsquo;s format, sets out the instructions and advice given, lists actions, notes the time spent and drafts the follow-up letter. Anything worth keeping about the client goes into the knowledge base. The fee earner checks and approves it.</p>
+                <ul class="connects"><li>Teams recordings</li><li>Phone voice memos</li><li>Outlook</li><li>Case management, where connected</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-drafting" data-tag="When it&rsquo;s time to draft">
+                <h3>First drafts from your precedents</h3>
+                <h4>What it is</h4>
+                <p>First drafts of letters, wills, schedules and agreements, built from the firm&rsquo;s own precedents and the information on the file.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Hours of drafting become minutes of checking.</li>
+                    <li>Every draft starts from the current, approved precedent.</li>
+                    <li>Gaps and uncertain points are flagged rather than guessed.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI finds the right precedent in the knowledge base, fills it from the attendance notes and documents on the matter, and follows the firm&rsquo;s style guide. It works inside Word, so the fee earner edits in the normal way. Anything it can&rsquo;t confirm from the file is highlighted for the solicitor. Nothing is sent without a person approving it.</p>
+                <ul class="connects"><li>Knowledge base of precedents</li><li>Word</li><li>Matter documents</li><li>Attendance notes</li></ul>
+            </article>
+
+            <article class="entry" id="d-progression" data-tag="To keep files moving" data-mock="chase">
+                <h3>Chasing and client updates</h3>
+                <h4>What it is</h4>
+                <p>A current list of every open file with where it stands, the stalled ones flagged, and chasers and client updates drafted.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Fewer calls from clients asking where things are.</li>
+                    <li>Stalled files are spotted while there&rsquo;s time to act.</li>
+                    <li>Chasing takes minutes, not an afternoon on the phone.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task reads the case management system where it can, plus the emails on each matter, and works out what each file is waiting for: searches, a mortgage offer, replies to enquiries, a completion date. It drafts chasers to agents, lenders and the other side, and short updates for clients, in the firm&rsquo;s tone. The fee earner checks and sends.</p>
+                <ul class="connects"><li>Case management, where connected</li><li>Outlook</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-supervision" data-tag="For supervisors and the COLP" data-mock="supervision">
+                <h3>Supervision record</h3>
+                <h4>What it is</h4>
+                <p>A weekly record of AI-assisted work, who approved it, and a sample of files prepared for review against the firm&rsquo;s checklist.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Evidence of supervision, the kind the SRA&rsquo;s guidance asks for.</li>
+                    <li>File reviews that happen every week, not when there&rsquo;s time.</li>
+                    <li>Problems found early, such as a missing attendance note.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Each skill logs when it produced something and who approved it. A scheduled task samples files each week, checks them against the firm&rsquo;s file review checklist and prepares a short report for the supervisor. The supervisor makes the judgement and signs it off. The record is kept in the knowledge base.</p>
+                <ul class="connects"><li>Knowledge base</li><li>Matter documents</li><li>Case management, where connected</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-partners" data-tag="For the partners">
+                <h3>The firm at a glance</h3>
+                <h4>What it is</h4>
+                <p>A dashboard for the partners showing work in progress, unbilled time, lock-up, matters at risk and how AI is being used across the firm.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Decisions based on current figures, not last quarter&rsquo;s.</li>
+                    <li>Matters at risk seen before they become complaints.</li>
+                    <li>A clear view of adoption and the time it is saving.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The dashboard draws on the case management and accounts systems where connected, and on what the knowledge base records. Because the AI builds it, it can explain what has changed and suggest what to look at first.</p>
+                <ul class="connects"><li>Case management, where connected</li><li>Accounts</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+
+            <article class="entry" id="d-wills" data-tag="Private client" data-mock="note">
+                <h3>Wills from instructions</h3>
+                <h4>What it is</h4>
+                <p>A first draft will from the attendance note and the firm&rsquo;s precedent, with gaps in the instructions flagged.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Faster turnaround from meeting to draft.</li>
+                    <li>Consistent drafting across the department.</li>
+                    <li>Questions for the client listed before the draft goes out.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI takes the instructions from the attendance note, checks them against the firm&rsquo;s will checklist, chooses the right precedent and clauses, and drafts the will and covering letter. It lists anything missing or unclear. The solicitor reviews and finalises.</p>
+                <ul class="connects"><li>Attendance notes</li><li>Knowledge base of precedents</li><li>Word</li></ul>
+            </article>
+
+            <article class="entry" id="d-probate" data-tag="Private client">
+                <h3>Probate administration</h3>
+                <h4>What it is</h4>
+                <p>Letters to banks and asset holders, the estate schedule and progress updates, drafted from the file and kept up to date.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Hours saved on letters that follow the same pattern.</li>
+                    <li>An estate schedule that stays current as replies arrive.</li>
+                    <li>Beneficiaries kept informed without extra effort.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the documents on the matter, drafts letters to each asset holder from the firm&rsquo;s precedents, and builds the estate schedule. As replies come in by email, it updates the schedule and drafts the next steps. Anything that needs judgement, such as tax or a disputed asset, is flagged for the solicitor.</p>
+                <ul class="connects"><li>Outlook</li><li>Matter documents</li><li>Knowledge base of precedents</li><li>Word and Excel</li></ul>
+            </article>
+
+            <article class="entry" id="d-lpa" data-tag="Private client">
+                <h3>Lasting powers of attorney</h3>
+                <h4>What it is</h4>
+                <p>LPA forms and covering letters prepared from the meeting notes, ready for the solicitor to check.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Less time on form-filling.</li>
+                    <li>Fewer errors and rejected applications.</li>
+                    <li>Clients get their documents sooner.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI takes the details from the attendance note and the client record, prepares the forms and letters, and checks them against the firm&rsquo;s checklist. The solicitor checks capacity and instructions as usual, and approves everything.</p>
+                <ul class="connects"><li>Attendance notes</li><li>Knowledge base</li><li>Word</li></ul>
+            </article>
+
+            <article class="entry" id="d-reports" data-tag="Residential property">
+                <h3>Title and search reports</h3>
+                <h4>What it is</h4>
+                <p>First drafts of reports to clients on title and searches, in plain English and the firm&rsquo;s format.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Reports out faster.</li>
+                    <li>Consistent quality across the team.</li>
+                    <li>More time for the points that need judgement.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the title documents and search results on the matter, follows the firm&rsquo;s report template and highlights anything unusual for the fee earner. The fee earner reviews, adds their advice and sends.</p>
+                <ul class="connects"><li>Matter documents</li><li>Knowledge base</li><li>Word</li></ul>
+            </article>
+
+            <article class="entry" id="d-disclosure" data-tag="Family">
+                <h3>Financial disclosure review</h3>
+                <h4>What it is</h4>
+                <p>Financial disclosure summarised, with gaps, inconsistencies and points to raise listed.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Less time reading every page before getting to the issues.</li>
+                    <li>Gaps spotted early.</li>
+                    <li>Clearer advice to clients, sooner.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the disclosure documents on the matter, summarises assets, income and liabilities, and compares them with what the other side has said. It lists gaps and questions for the solicitor, who decides what to raise.</p>
+                <ul class="connects"><li>Matter documents</li><li>Knowledge base</li><li>Word and Excel</li></ul>
+            </article>
+
+            <article class="entry" id="d-chronology" data-tag="Family and disputes">
+                <h3>Chronologies</h3>
+                <h4>What it is</h4>
+                <p>A chronology built from the correspondence and documents on the file, kept up to date as the matter moves.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Hours of work done in minutes.</li>
+                    <li>Always current, ready for counsel or a hearing.</li>
+                    <li>Sources linked, so every entry can be checked.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the emails, letters and documents on the matter and builds a dated chronology, with each entry pointing back to its source. It updates as new correspondence arrives. The fee earner checks it before it is relied on.</p>
+                <ul class="connects"><li>Outlook</li><li>Matter documents</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-contracts" data-tag="Commercial and agriculture">
+                <h3>Contract and lease review</h3>
+                <h4>What it is</h4>
+                <p>Contracts and leases checked against the firm&rsquo;s playbook, with the issues listed and suggested changes drafted.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Routine review done faster.</li>
+                    <li>The firm&rsquo;s standard positions applied every time.</li>
+                    <li>Key terms summarised for the client.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI uses Anthropic&rsquo;s legal skills together with the firm&rsquo;s own playbook and precedents. It lists the clauses that differ from the firm&rsquo;s position, drafts suggested changes and a short summary for the client, including farm business tenancies and agricultural leases. The solicitor decides.</p>
+                <ul class="connects"><li>Matter documents</li><li>Knowledge base</li><li>Word</li><li>DocuSign</li></ul>
+            </article>
+
+            <article class="entry" id="d-intake" data-tag="Reception and new matters">
+                <h3>New enquiries and onboarding</h3>
+                <h4>What it is</h4>
+                <p>New enquiries summarised and routed, with prompts for the conflict check, and client care letters and ID requests drafted.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Every enquiry answered promptly.</li>
+                    <li>Conflict checks and ID requests never missed.</li>
+                    <li>New clients onboarded the same way every time.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads new enquiries from the website, email or phone notes, summarises them, suggests the right department and prompts the conflict check. Once a matter is opened, it drafts the client care letter and ID request from the firm&rsquo;s templates. People check and send.</p>
+                <ul class="connects"><li>Outlook</li><li>Case management, where connected</li><li>ID checks, where connected</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-phone" data-tag="Reception">
+                <h3>Out-of-hours enquiries</h3>
+                <h4>What it is</h4>
+                <p>An AI voice agent that answers enquiries when the office is closed, books appointments and leaves a summary for the morning.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Fewer enquiries lost to voicemail.</li>
+                    <li>A professional first response at any hour.</li>
+                    <li>A summary in the morning brief, ready to follow up.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Through our voice partner, an AI agent answers calls out of hours, takes the details, books an initial appointment where appropriate and never gives legal advice. A summary lands in the morning brief for a person to pick up.</p>
+                <ul class="connects"><li>Phone system</li><li>Calendar</li><li>Morning brief</li></ul>
+            </article>
+
+            <article class="entry" id="d-aml" data-tag="Compliance">
+                <h3>AML file checks</h3>
+                <h4>What it is</h4>
+                <p>Files checked for missing ID, risk assessments and source of funds evidence, before an audit finds the gaps.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Gaps found and fixed early.</li>
+                    <li>A consistent standard across departments.</li>
+                    <li>Less stress before an inspection.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task checks open matters against the firm&rsquo;s AML procedure, using the documents on file and the ID checking system where connected. It lists what is missing and drafts the requests. The MLRO decides on anything that needs judgement.</p>
+                <ul class="connects"><li>Matter documents</li><li>ID and AML checks, where connected</li><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-policy" data-tag="Compliance">
+                <h3>AI policy and guidance</h3>
+                <h4>What it is</h4>
+                <p>A clear AI policy and staff guidance for your firm: what AI may be used for, what it may see, and how its work is reviewed.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Answers the SRA&rsquo;s expectations directly.</li>
+                    <li>Everyone knows the rules.</li>
+                    <li>Unofficial use of consumer AI tools replaced by a safe route.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>We draft the policy and guidance with you as part of the set-up, based on how the system is configured. It sits in the knowledge base, so the system can answer staff questions about it. Your COLP owns it.</p>
+                <ul class="connects"><li>Knowledge base</li></ul>
+            </article>
+
+            <article class="entry" id="d-wip" data-tag="For the partners">
+                <h3>Work in progress and lock-up</h3>
+                <h4>What it is</h4>
+                <p>Unbilled time, slow-paying matters and bills that are due, with bill narratives drafted from the file.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Shorter lock-up.</li>
+                    <li>Bills that explain the work clearly.</li>
+                    <li>Less time chasing figures at month end.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the time and accounts data where connected, lists matters with unbilled time or overdue bills, and drafts bill narratives from the attendance notes. Partners decide what to bill and when.</p>
+                <ul class="connects"><li>Case management, where connected</li><li>Accounts</li><li>Attendance notes</li></ul>
+            </article>
+
+            <article class="entry" id="d-monthly" data-tag="For the partners">
+                <h3>Monthly management report</h3>
+                <h4>What it is</h4>
+                <p>The month&rsquo;s figures and commentary drafted for the partners&rsquo; meeting, in your usual format.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Days of pulling numbers together become an hour of review.</li>
+                    <li>The same format each month, so trends are easy to see.</li>
+                    <li>Commentary based on what is happening on the files.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI learns your report format, connects to the case management and accounts systems, and drafts the report with charts, risks and the decisions needed. Partners own every number.</p>
+                <ul class="connects"><li>Case management, where connected</li><li>Accounts</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+
+            </div>
+        </section>
+
+        <!-- Example mock-ups: opened in the pop-up and shown as thumbnails; listed in full when JavaScript is off -->
+        <section class="lib" aria-label="Examples">
+            <div class="container">
+            <div class="mock-src" id="m-brief" data-title="Example: the morning brief" data-tag="Illustrative example, fictional firm, people and matters">
+              <div class="mk mk-dash">
+                <div class="mk-top">
+                    <div>
+                        <div class="mk-kicker">Morning brief &middot; 12 November</div>
+                        <div class="mk-h">Good morning, Helen</div>
+                        <div class="mk-sub">3 appointments prepared &middot; 5 replies drafted &middot; 2 files need attention</div>
+                    </div>
+                    <div class="mk-kpis">
+                        <div><b>34</b><span>Open matters</span></div>
+                        <div><b>2</b><span>Key dates this week</span></div>
+                        <div><b>11.5h</b><span>Unbilled time</span></div>
+                    </div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Today&rsquo;s appointments</h5>
+                        <div class="mk-row"><span class="mk-time">10:00</span><span><b>Mrs E. Carter</b> &middot; will instructions<br><small>Widowed, two children, owns a holiday cottage. Ask about the cottage and guardianship.</small></span><span class="mk-pill ok">Prep ready</span></div>
+                        <div class="mk-row"><span class="mk-time">12:00</span><span><b>Estate of R. Hughes</b> &middot; call with executor<br><small>Four of six asset replies in. Schedule updated overnight.</small></span><span class="mk-pill ok">Prep ready</span></div>
+                        <div class="mk-row"><span class="mk-time">15:30</span><span><b>Fairfield Farm</b> &middot; tenancy renewal<br><small>Lease review against our playbook attached.</small></span><span class="mk-pill ok">Prep ready</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Emails that need you</h5>
+                        <div class="mk-row"><span><b>Halden Bank, bereavement team</b><br><small>Account balance for the Hughes estate, with a form to sign.</small></span><span class="mk-pill">Schedule updated</span></div>
+                        <div class="mk-row"><span><b>Mr D. Price</b><br><small>&ldquo;Any news on the searches?&rdquo;</small></span><span class="mk-pill">Draft ready</span></div>
+                        <div class="mk-row"><span><b>Other side, 14 Mill Lane</b><br><small>Replies to enquiries, two points still open.</small></span><span class="mk-pill">Summary and reply</span></div>
+                        <div class="mk-row mk-muted"><span>19 others filed to their matters. Nothing else urgent.</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Files to watch</h5>
+                        <table class="mk-table">
+                            <tr><th>Matter</th><th>Type</th><th>Why</th></tr>
+                            <tr><td>14 Mill Lane</td><td>Purchase</td><td class="warn">Completion in 8 days, local search outstanding</td></tr>
+                            <tr><td>Estate of J. Moss</td><td>Probate</td><td class="warn">No update to beneficiaries for 6 weeks</td></tr>
+                            <tr><td>Price, sale</td><td>Sale</td><td>Client asked for an update</td></tr>
+                        </table>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Tasks due</h5>
+                        <div class="mk-task"><i></i>Approve the Hughes letters to the two remaining banks</div>
+                        <div class="mk-task"><i></i>Sign off last week&rsquo;s supervision sample</div>
+                        <div class="mk-task"><i></i>Record yesterday&rsquo;s time (list prepared)</div>
+                        <div class="mk-task done"><i></i>Moss beneficiary update drafted overnight</div>
+                    </div>
+                </div>
+                <div class="mk-foot">Prepared overnight from Outlook, the diary, the matters and the task list</div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-note" data-title="Example: an attendance note" data-tag="Illustrative example, fictional firm, people and matters">
+              <div class="mk mk-doc">
+                <div class="mk-instr"><span>Helen&rsquo;s instruction, by voice after the meeting</span>&ldquo;Write up this meeting with Mrs Carter as an attendance note, check the instructions against our will checklist, draft the follow-up letter and the client care letter, and add the time to my list. She wants the cottage left to her son.&rdquo;</div>
+                <div class="mk-kicker">Attendance note</div>
+                <div class="mk-h">Mrs E. Carter &middot; will instructions</div>
+                <div class="mk-sub">In person, 55 minutes &middot; Mrs Eleanor Carter, Helen Wright (Partner)</div>
+                <p class="mk-p">Mrs Carter wants a new will following her husband&rsquo;s death last year. Her main concern is that the holiday cottage passes to her son Tom, who manages it, with the rest of the estate shared equally between Tom and her daughter Anna.</p>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Instructions, against our checklist</h5>
+                        <dl class="mk-dl">
+                            <dt>Executors</dt><dd>Tom and Anna jointly</dd>
+                            <dt>Specific gift</dt><dd>Holiday cottage to Tom</dd>
+                            <dt>Residue</dt><dd>Equally to Tom and Anna</dd>
+                            <dt>Funeral</dt><dd>Wishes noted, not binding</dd>
+                            <dt>To confirm</dt><dd class="warn">Whether the cottage gift should bear its own inheritance tax</dd>
+                            <dt>To confirm</dt><dd class="warn">Substitute gift if Tom dies first</dd>
+                        </dl>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Prepared for you</h5>
+                        <div class="mk-done">Attendance note filed to the matter</div>
+                        <div class="mk-done">Two open points flagged for you to raise</div>
+                        <div class="mk-done">Follow-up letter drafted in Outlook</div>
+                        <div class="mk-done">Client care letter drafted from our template</div>
+                        <div class="mk-done">ID request drafted</div>
+                        <div class="mk-done">55 minutes added to your time list</div>
+                    </div>
+                </div>
+                <div class="mk-card" style="margin-top: 14px;">
+                    <h5>Actions</h5>
+                    <table class="mk-table">
+                        <tr><th>Action</th><th>Owner</th><th>Due</th></tr>
+                        <tr><td>Confirm the two open points with Mrs Carter</td><td>Helen</td><td>This week</td></tr>
+                        <tr><td>Send ID request and client care letter</td><td>Helen, once approved</td><td>Today</td></tr>
+                        <tr><td>Provide the cottage title deeds</td><td>Mrs Carter</td><td>Next week</td></tr>
+                        <tr><td>First draft will</td><td>Helen</td><td>When the points are confirmed</td></tr>
+                    </table>
+                </div>
+                <div class="mk-card mk-email" style="margin-top: 14px;">
+                    <h5>Follow-up letter draft</h5>
+                    <p>Dear Mrs Carter, thank you for coming in today. As we discussed, you would like your holiday cottage to pass to Tom, with the rest of your estate shared equally between Tom and Anna. Before I prepare the draft, there are two points I would like to confirm with you&hellip;</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-chase" data-title="Example: a conveyancing chase list" data-tag="Illustrative example, fictional firm, people and matters">
+              <div class="mk mk-doc">
+                <div class="mk-kicker">Conveyancing &middot; weekly chase list &middot; Monday 16 November</div>
+                <div class="mk-h">22 open files, 4 need a push</div>
+                <div class="mk-grid4">
+                    <div class="mk-tile"><b>22</b><span>Open files</span></div>
+                    <div class="mk-tile"><b>4</b><span>Stalled over 10 days</span></div>
+                    <div class="mk-tile"><b>3</b><span>Completions this month</span></div>
+                    <div class="mk-tile"><b>11</b><span>Chasers drafted</span></div>
+                </div>
+                <div class="mk-card">
+                    <h5>Files needing action</h5>
+                    <table class="mk-table">
+                        <tr><th>Matter</th><th>Waiting for</th><th>Since</th><th>Drafted</th></tr>
+                        <tr><td>14 Mill Lane, purchase</td><td class="warn">Local search</td><td>19 days</td><td>Chaser to search provider; update to client</td></tr>
+                        <tr><td>Price, sale</td><td class="warn">Replies to enquiries</td><td>12 days</td><td>Chaser to buyer&rsquo;s solicitor; update to Mr Price</td></tr>
+                        <tr><td>3 Orchard Close, purchase</td><td class="warn">Mortgage offer</td><td>11 days</td><td>Chaser to broker</td></tr>
+                        <tr><td>Flat 2, Station Road, sale</td><td class="warn">Management pack</td><td>10 days</td><td>Chaser to managing agent</td></tr>
+                    </table>
+                </div>
+                <div class="mk-grid2" style="margin-top: 14px;">
+                    <div class="mk-card">
+                        <h5>Completions this month</h5>
+                        <ul class="mk-ul">
+                            <li>14 Mill Lane, 24 November: search still outstanding</li>
+                            <li>Hawthorn Cottage, 27 November: on track</li>
+                            <li>9 Kings Row, 30 November: on track</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card mk-email">
+                        <h5>Client update draft</h5>
+                        <p>Dear Mr Price, a quick update on your sale. We&rsquo;re still waiting for the buyer&rsquo;s solicitors to come back on two points, and I&rsquo;ve chased them again today. I&rsquo;ll let you know as soon as I hear&hellip;</p>
+                    </div>
+                </div>
+                <div class="mk-foot">Built from the case management system and the emails on each file. Every chaser is checked and sent by the fee earner.</div>
+              </div>
+            </div>
+
+            <div class="mock-src" id="m-supervision" data-title="Example: a supervision record" data-tag="Illustrative example, fictional firm, people and matters">
+              <div class="mk mk-doc">
+                <div class="mk-kicker">Supervision &middot; week ending 13 November &middot; for Helen Wright, supervising partner</div>
+                <div class="mk-h">AI-assisted work this week, and the file sample</div>
+                <div class="mk-grid4">
+                    <div class="mk-tile"><b>146</b><span>AI-assisted items</span></div>
+                    <div class="mk-tile"><b>100%</b><span>Approved by a person</span></div>
+                    <div class="mk-tile"><b>12</b><span>Files sampled</span></div>
+                    <div class="mk-tile"><b>2</b><span>Need your review</span></div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>AI-assisted work by type</h5>
+                        <div class="mk-bars">
+                            <div><span>Attendance notes</span><em><i style="width:88%"></i></em><b>52</b></div>
+                            <div><span>Letters and emails</span><em><i style="width:70%"></i></em><b>41</b></div>
+                            <div><span>Chasers</span><em><i style="width:52%"></i></em><b>31</b></div>
+                            <div><span>Document drafts</span><em><i style="width:37%"></i></em><b>22</b></div>
+                        </div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>File sample, against our checklist</h5>
+                        <table class="mk-table">
+                            <tr><th>File</th><th>Finding</th></tr>
+                            <tr><td>Estate of J. Moss</td><td class="warn">No beneficiary update for 6 weeks</td></tr>
+                            <tr><td>Purchase, 3 Orchard Close</td><td class="warn">Attendance note missing for a client call</td></tr>
+                            <tr><td>10 other files</td><td>No issues found</td></tr>
+                        </table>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Approvals by fee earner</h5>
+                        <ul class="mk-ul">
+                            <li>Helen Wright: 38 items approved</li>
+                            <li>James Okafor: 44 items approved</li>
+                            <li>Priya Nair (trainee): 64 items, all countersigned by Helen</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>For your sign-off</h5>
+                        <ul class="mk-ul">
+                            <li>Review the two flagged files</li>
+                            <li>Confirm this week&rsquo;s sample as reviewed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mk-foot">Prepared automatically from the system&rsquo;s own log and the file review checklist. The supervisor makes every judgement.</div>
+              </div>
+            </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="detail" class="detail-dialog" aria-labelledby="detail-title">
+        <div class="dlg-head">
+            <span class="dlg-tag" id="detail-tag"></span>
+            <button type="button" class="dlg-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="dlg-body" id="detail-body"></div>
+    </dialog>
+
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+                    <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                        <g transform="translate(40,30)">
+                            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                            <g transform="translate(175,0)">
+                                <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                                <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+                <div class="footer-nav">
+                    <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="/business-aios/">Business AIOS</a>
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/from-prompt-to-autopilot/">From Prompt to Autopilot</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+    <script>
+        // Narrated tour: start the explorer's tour across all three views (same-origin frame).
+        (function () {
+            var frame = document.getElementById('explorerFrame'), btn = document.getElementById('playTour');
+            if (!frame || !btn) return;
+            btn.addEventListener('click', function () {
+                var hdr = document.querySelector('.site-header'), off = (hdr ? hdr.offsetHeight : 0) + 16;
+                window.scrollTo({ top: frame.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
+                try { frame.contentWindow.postMessage({ aios: 'play', lens: 'benefits', chain: true }, location.origin); } catch (e) {}
+            });
+            // Videos: set data-youtube="VIDEO_ID" on a card to show it.
+            // Our own thumbnail and play button first (no YouTube title bar), then the player
+            // loads on click with captions off, as the videos have captions burnt in.
+            var ytQueue = [], ytLoading = false;
+            function withYT(fn) {
+                if (window.YT && YT.Player) return fn();
+                ytQueue.push(fn);
+                if (ytLoading) return;
+                ytLoading = true;
+                var prev = window.onYouTubeIframeAPIReady;
+                window.onYouTubeIframeAPIReady = function () { if (prev) prev(); while (ytQueue.length) ytQueue.shift()(); };
+                var t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+            }
+            function noCaptions(p) { try { p.unloadModule('captions'); p.unloadModule('cc'); } catch (e) {} }
+            document.querySelectorAll('.vframe[data-youtube]').forEach(function (el) {
+                var id = el.getAttribute('data-youtube');
+                if (!id) return;
+                var title = el.getAttribute('data-title') || 'Video';
+                var btn = document.createElement('button');
+                btn.type = 'button'; btn.className = 'vplay';
+                btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg)';
+                btn.innerHTML = '<span>Play: ' + title + '</span>';
+                el.innerHTML = ''; el.appendChild(btn);
+                btn.addEventListener('click', function () {
+                    var host = document.createElement('div'); host.className = 'vhost';
+                    el.appendChild(host);
+                    withYT(function () {
+                        new YT.Player(host, {
+                            host: 'https://www.youtube-nocookie.com',
+                            videoId: id,
+                            playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, iv_load_policy: 3, modestbranding: 1 },
+                            events: {
+                                onReady: function (e) {
+                                    var f = e.target.getIframe(); f.title = title; f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen'); f.setAttribute('allowfullscreen', '');
+                                    noCaptions(e.target);
+                                    try { e.target.setPlaybackQualityRange('hd1080'); } catch (x) {}
+                                    e.target.playVideo();
+                                    btn.remove();
+                                },
+                                onApiChange: function (e) { noCaptions(e.target); },
+                                onStateChange: function (e) { if (e.data === 1) noCaptions(e.target); }
+                            }
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Level 2: expand a section's detail.
+        document.querySelectorAll('.more-btn').forEach(function (b) {
+            var panel = document.getElementById(b.getAttribute('aria-controls'));
+            if (!panel) return;
+            var label = b.textContent;
+            b.addEventListener('click', function () {
+                var open = panel.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Show less' : label;
+            });
+        });
+        // Pop-ups for the clickable steps, role chips and example mock-ups.
+        (function () {
+            var dlg = document.getElementById('detail');
+            if (!dlg || typeof dlg.showModal !== 'function') return;
+            var body = document.getElementById('detail-body');
+            var tag = document.getElementById('detail-tag');
+            var lastFocus = null;
+
+            function show() {
+                if (!dlg.open) { lastFocus = document.activeElement; dlg.showModal(); }
+                dlg.scrollTop = 0;
+            }
+
+            function openEntry(id) {
+                var src = document.getElementById('d-' + id);
+                if (!src) return;
+                var art = src.cloneNode(true);
+                art.removeAttribute('id');
+                var con = art.querySelector('.connects');
+                if (con) { var h = document.createElement('h4'); h.textContent = 'Connects to'; con.parentNode.insertBefore(h, con); }
+                body.innerHTML = '';
+                body.appendChild(art);
+                var note = document.createElement('p');
+                note.className = 'dlg-whole';
+                note.innerHTML = '<strong>Part of the whole.</strong> This draws on your shared knowledge base and connected systems, and updates them, so everything else in your Law Firm AI Operating System gets better too.';
+                body.appendChild(note);
+                var actions = document.createElement('div');
+                actions.className = 'dlg-actions';
+                var mock = src.getAttribute('data-mock');
+                if (mock) actions.innerHTML += '<button type="button" class="btn-teal" data-mock="' + mock + '">See an example &rarr;</button>';
+                actions.innerHTML += '<a class="btn-teal" style="background:var(--blue)" href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" target="_blank" rel="noopener noreferrer">Talk to us about this</a>';
+                body.appendChild(actions);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.add('is-entry');
+                dlg.setAttribute('aria-label', art.querySelector('h3').textContent);
+                show();
+            }
+
+            function openMock(id) {
+                var src = document.getElementById('m-' + id);
+                if (!src) return;
+                body.innerHTML = '';
+                var h = document.createElement('h3');
+                h.textContent = src.getAttribute('data-title');
+                h.style.marginBottom = '16px';
+                body.appendChild(h);
+                var wrap = document.createElement('div');
+                wrap.className = 'mock-src';
+                wrap.innerHTML = src.innerHTML;
+                body.appendChild(wrap);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.remove('is-entry');
+                dlg.setAttribute('aria-label', h.textContent);
+                show();
+            }
+
+            document.addEventListener('click', function (e) {
+                var b = e.target.closest('button[data-open], button[data-mock]');
+                if (!b) return;
+                if (b.hasAttribute('data-open')) openEntry(b.getAttribute('data-open'));
+                else openMock(b.getAttribute('data-mock'));
+            });
+            dlg.querySelector('.dlg-close').addEventListener('click', function () { dlg.close(); });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+            dlg.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); });
+
+            // Thumbnails: a scaled-down copy of each example.
+            var thumbs = document.querySelectorAll('[data-thumb]');
+            thumbs.forEach(function (t) {
+                var src = document.getElementById('m-' + t.getAttribute('data-thumb'));
+                if (!src) return;
+                var inner = document.createElement('span');
+                inner.className = 'thumb-inner';
+                inner.setAttribute('aria-hidden', 'true');
+                inner.innerHTML = src.innerHTML;
+                t.appendChild(inner);
+            });
+            function scaleThumbs() {
+                thumbs.forEach(function (t) {
+                    var inner = t.querySelector('.thumb-inner');
+                    if (inner) inner.style.transform = 'scale(' + ((t.clientWidth - 28) / 900) + ')';
+                });
+            }
+            scaleThumbs();
+            window.addEventListener('resize', scaleThumbs);
+        })();
+    </script>
+</body>
+</html>
