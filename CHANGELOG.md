@@ -6,6 +6,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-13
+
+- Legal: publish AIOS End User Licence Terms v1.1; privacy policy covers licence acceptance records
+
 ## 2026-11-12
 
 - Site foundations: shared stylesheet, accessibility fixes, shorter titles and descriptions, breadcrumb and FAQ markup
