@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-13
 
+- Add Dental AI Operating System page (noindex, preview for review) with its own explorer variant and three video placeholders
+
+## 2026-11-13
+
 - Approach: fix the crop on the one-to-one photo so the face is in frame; load the larger file for the full-width slot
 
 ## 2026-11-13

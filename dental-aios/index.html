@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <script>document.documentElement.className+=' js';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental AI Operating System: more patients in the chair, with the team you have | Human–AI Systems</title>
+    <meta name="description" content="A Dental AI Operating System sets AI up for your dental practice: morning reports, treatment plan letters, enquiry replies, plan follow-up and an AI front desk out of hours. Reports first, then messages, then the phone. Developed with a dentist.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://human-ai-systems.com/dental-aios/">
+    <link rel="icon" type="image/svg+xml" href="/images/Logo%20Mark.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="Human–AI Systems">
+    <meta property="og:title" content="Dental AI Operating System: more patients in the chair, with the team you have | Human–AI Systems">
+    <meta property="og:description" content="A Dental AI Operating System sets AI up for your dental practice: morning reports, treatment plan letters, enquiry replies, plan follow-up and an AI front desk out of hours. Reports first, then messages, then the phone. Developed with a dentist.">
+    <meta property="og:url" content="https://human-ai-systems.com/dental-aios/">
+    <meta property="og:image" content="https://human-ai-systems.com/images/og/og-default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dental AI Operating System: more patients in the chair, with the team you have | Human–AI Systems">
+    <meta name="twitter:description" content="A Dental AI Operating System sets AI up for your dental practice: morning reports, treatment plan letters, enquiry replies, plan follow-up and an AI front desk out of hours. Reports first, then messages, then the phone. Developed with a dentist.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Dental AI Operating System",
+        "url": "https://human-ai-systems.com/dental-aios/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Human–AI Systems",
+            "url": "https://human-ai-systems.com/"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --blue: #1F3A5F;
+            --teal: #2A6F74;
+            --aqua: #3EC1C9;
+            --graphite: #2B2B2B;
+            --steel: #6B7C8F;
+            --soft: #F3F5F7;
+            --white: #FFFFFF;
+            --max: 1200px;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(31, 58, 95, 0.08);
+            --border: 1px solid rgba(31, 58, 95, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.45;
+        }
+
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #36527A;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            box-shadow: 0 10px 28px rgba(16, 28, 46, 0.18);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 0;
+            min-height: 84px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            padding-top: 6px;
+            flex: 0 0 auto;
+        }
+
+        .brand-mark { width: 274px; height: auto; display: block; }
+        .brand-mark.footer-mark { width: min(360px, 100%); }
+
+        .brand-text-fallback {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .brand-text-fallback .aqua { color: var(--aqua); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+            flex: 1 1 auto;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .nav a:not(.nav-cta) {
+            color: #ffffff !important;
+            opacity: 0.98;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 2px;
+        }
+
+        .nav a.active { opacity: 1; border-bottom: 2px solid var(--aqua); padding-bottom: 2px; }
+        .nav a:not(.nav-cta):hover { opacity: 1; }
+
+        .nav-cta {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--white);
+            color: var(--blue);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 25, 40, 0.18);
+            margin-left: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+
+        .menu-toggle:hover { background: rgba(255,255,255,0.14); }
+
+        .menu-toggle-line {
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        .menu-toggle-line::before,
+        .menu-toggle-line::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 20px; height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 220ms ease, top 220ms ease, bottom 220ms ease;
+        }
+
+        .menu-toggle-line::before { top: -6px; }
+        .menu-toggle-line::after { bottom: -6px; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line { background: transparent; }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] .menu-toggle-line::after { bottom: 0; transform: rotate(-45deg); }
+
+        .mobile-menu { display: none; }
+
+        /* ── Page header ── */
+        .page-header {
+            background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%);
+            padding: 72px 0 84px;
+            color: white;
+        }
+
+        .page-header .eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--aqua);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            max-width: 16ch;
+            color: white;
+            line-height: 1.1;
+            margin: 0 0 22px;
+        }
+
+        .page-header .lead {
+            font-size: 1.18rem;
+            color: rgba(255,255,255,0.82);
+            max-width: 38rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ── General ── */
+        section { padding: 88px 0; position: relative; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        h2, h3 { margin: 0 0 16px; line-height: 1.1; color: var(--blue); font-weight: 600; }
+        h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
+        h3 { font-size: 1.3rem; color: var(--graphite); }
+
+        p.lead {
+            font-size: 1.18rem;
+            color: var(--steel);
+            margin: 0 0 24px;
+            line-height: 1.55;
+        }
+
+        p { margin: 0 0 16px; font-size: 1.05rem; }
+
+        /* ── About layout ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .portrait {
+            position: sticky;
+            top: 112px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: var(--border);
+            background: #dbe4ee;
+            aspect-ratio: 3/4;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portrait::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31,58,95,0.04), rgba(31,58,95,0.14));
+            pointer-events: none;
+        }
+
+        /* ── Story sections ── */
+        .story-block {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: var(--border);
+        }
+
+        .story-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .story-block .eyebrow { margin-bottom: 12px; }
+
+        /* ── Evidence cards ── */
+        .evidence-card {
+            background: var(--soft);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+            border-left: 4px solid var(--teal);
+        }
+
+        .evidence-card h4 {
+            color: var(--blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .evidence-card p { margin: 0; font-size: 0.98rem; color: var(--graphite); }
+
+        .evidence-stat {
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-right: 8px;
+            line-height: 1;
+        }
+
+        /* ── Pull quote ── */
+        .pull-quote {
+            border-left: 4px solid var(--aqua);
+            padding: 18px 24px;
+            margin: 28px 0;
+            background: var(--soft);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.14rem;
+            color: var(--blue);
+            font-style: italic;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── Story cards ── */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .story-card {
+            background: var(--white);
+            border: var(--border);
+            border-radius: 20px;
+            padding: 32px 28px 28px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            min-height: 340px;
+            transition: transform 240ms ease, box-shadow 240ms ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 48px rgba(31,58,95,0.12);
+        }
+
+        .story-sector {
+            display: inline-block;
+            width: fit-content;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: rgba(42,111,116,0.08);
+            color: var(--teal);
+            margin-bottom: 16px;
+        }
+
+        .story-card h3 {
+            font-size: 1.18rem;
+            line-height: 1.3;
+            color: var(--blue);
+            margin: 0 0 14px;
+            font-weight: 600;
+        }
+
+        .story-card p {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--steel);
+            margin: 0 0 12px;
+        }
+
+        .story-result {
+            margin-top: auto !important;
+            padding-top: 14px;
+            border-top: 1px solid rgba(31,58,95,0.07);
+            font-size: 0.95rem !important;
+            color: var(--graphite) !important;
+            font-weight: 500;
+        }
+
+        .story-close {
+            font-size: 0.92rem !important;
+            font-style: italic;
+            color: var(--teal) !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── Philosophy section ── */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .philosophy-item {
+            background: var(--white);
+            border: var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .philosophy-item h3 {
+            font-size: 1.1rem;
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .philosophy-item p {
+            font-size: 0.98rem;
+            color: var(--steel);
+            margin: 0;
+        }
+
+        /* ── Training & Speaking ── */
+        .training-speaking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .ts-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            border: var(--border);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .ts-card .eyebrow { margin-bottom: 8px; }
+
+        .ts-card h3 {
+            color: var(--blue);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .ts-card p {
+            color: var(--steel);
+            font-size: 0.98rem;
+            margin-bottom: 12px;
+        }
+
+        .ts-card p:last-of-type { margin-bottom: 20px; }
+
+        .btn-teal {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: var(--teal);
+            color: var(--white);
+            transition: transform 200ms, background 200ms;
+        }
+
+        .btn-teal:hover { transform: translateY(-1px); background: #24616a; }
+
+        @media (max-width: 700px) {
+            .training-speaking-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── CTA band ── */
+        .cta-band {
+            background: linear-gradient(135deg, var(--blue), #23466f 52%, var(--teal));
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .cta-band h2, .cta-band p { color: var(--white); text-align: center; }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 { font-size: clamp(1.8rem, 2.5vw, 2.4rem); margin-bottom: 16px; }
+        .cta-inner .lead { color: rgba(255,255,255,0.82); }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 220ms ease, background 220ms ease;
+            border: 1px solid transparent;
+        }
+
+        .btn:hover { transform: translateY(-1px); }
+
+        .btn-primary { background: var(--white); color: var(--blue); box-shadow: var(--shadow); }
+        .btn-primary:hover { background: var(--soft); }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+
+        /* ── One example, any team ── */
+        .fit-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+        .fit-copy h2 { margin-bottom: 18px; }
+        .fit-copy p { margin-bottom: 14px; }
+        .fit-copy a { color: var(--teal); font-weight: 600; }
+        .fit-panels { display: grid; gap: 16px; }
+        .fit-panel { background: var(--soft); border-radius: 16px; padding: 20px 22px; }
+        .fit-panel h3 { font-size: 1rem; margin-bottom: 10px; color: var(--blue); }
+        .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+        .chips li { background: var(--white); border: 1px solid rgba(31,58,95,0.14); border-radius: 999px; padding: 6px 14px; font-size: 0.92rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+        .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+        .fit-panel p { margin: 0; font-size: 0.97rem; line-height: 1.5; }
+        .how-more { text-align: center; margin-top: 32px; }
+        .how-more a { color: var(--teal); font-weight: 600; }
+        @media (max-width: 860px) { .fit-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+        /* ── CTA routes ── */
+        .routes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 920px; margin: 36px auto 0; }
+        .route { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+        .route .route-tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9fe3e7; margin-bottom: 8px; }
+        .route h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 10px; }
+        .cta-band .route p { text-align: left; color: rgba(255,255,255,0.85); margin-bottom: 22px; flex: 1; }
+        .routes-note { text-align: center; color: rgba(255,255,255,0.82); margin-top: 28px; }
+        .routes-note a { color: var(--white); text-decoration: underline; }
+        @media (max-width: 760px) { .routes { grid-template-columns: 1fr; } }
+
+        /* ── Footer ── */
+        .site-footer {
+            padding: 36px 0 48px;
+            background: #1c2632;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,0.72); }
+        .footer-nav a { color: rgba(255,255,255,0.72); }
+        .footer-nav a:hover { color: #ffffff; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 600ms ease, transform 600ms ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .nav { display: none; }
+            .menu-toggle { display: inline-flex; }
+
+            .mobile-menu {
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 260ms ease;
+                border-top: 1px solid rgba(255,255,255,0.10);
+            }
+
+            .mobile-menu.is-open { max-height: 480px; }
+
+            .mobile-menu-inner {
+                padding: 14px 0 18px;
+                display: grid;
+                gap: 10px;
+            }
+
+            .mobile-menu a {
+                color: #ffffff;
+                padding: 10px 0;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .mobile-menu .mobile-start {
+                margin-top: 6px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+                padding: 12px 18px;
+                border-radius: 999px;
+                background: var(--white);
+                color: var(--blue);
+                font-weight: 600;
+            }
+
+            .mobile-contact-row {
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                padding-top: 8px;
+                color: rgba(255,255,255,0.82);
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            section { padding: 64px 0; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .portrait { position: static; aspect-ratio: 4/3; order: -1; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .stories-grid { grid-template-columns: 1fr; }
+
+            .brand-mark { width: 220px; }
+            .brand-mark.footer-mark { width: min(290px, 100%); }
+        }
+    
+        /* ── Business AIOS page ── */
+        .xband { background: #0A0F1A; color: #C7D2E4; padding: 64px 0 72px; }
+        .xband h2 { color: #EEF3FA; }
+        .xband .eyebrow { color: var(--aqua); }
+        .xband .intro { max-width: 720px; margin: 0 auto 28px; text-align: center; }
+        .xband .intro p { color: #C7D2E4; font-size: 1.1rem; margin: 0; }
+        .xframe { width: min(1400px, calc(100% - 28px)); margin: 0 auto; height: min(860px, calc(100vh - 120px)); min-height: 560px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: #0A0F1A; }
+        .xframe iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .xactions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 22px 0 0; }
+        .xbtn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 999px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #EEF3FA; cursor: pointer; text-decoration: none; }
+        .xbtn:hover { background: rgba(255,255,255,0.08); }
+        .xbtn.primary { background: var(--aqua); border-color: var(--aqua); color: #08131c; }
+        .xbtn.primary:hover { background: #72D0D5; }
+        .xbtn .tri { width: 0; height: 0; border-left: 9px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+        .xnote { text-align: center; color: #93A7C6; font-size: 0.95rem; margin: 14px auto 0; max-width: 680px; }
+        .xnote strong { color: #EEF3FA; }
+        .xphone { display: none; }
+        .xmobile { display: none; width: calc(100% - 28px); margin: 0 auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(160deg, #131B2B 0%, #1F3A5F 70%, #2A6F74 100%); padding: 28px 22px; text-align: center; }
+        .xmobile h3 { color: #EEF3FA; font-size: 1.25rem; margin: 0 0 10px; }
+        .xmobile p { color: #C7D2E4; margin: 0 0 18px; }
+        .vgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 40px; max-width: 1080px; margin-left: auto; margin-right: auto; }
+        .vgrid .vcard { grid-column: span 2; }
+        .vgrid .vcard:last-child:nth-child(odd) { grid-column: 2 / span 2; }
+        .vplay { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #0A0F1A center / cover no-repeat; }
+        .vplay::after { content: ""; position: absolute; inset: 0; background: rgba(10,15,26,0); transition: background-color 200ms ease; }
+        .vplay:hover::after { background: rgba(10,15,26,0.12); }
+        .vplay:focus-visible { outline: 3px solid var(--aqua); outline-offset: -3px; }
+        .vplay span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+        .vframe .vhost { position: absolute; inset: 0; }
+        .vcard { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+        .vframe { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
+        .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .vsoon { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.95rem; display: grid; justify-items: center; gap: 10px; }
+        .vsoon i { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7); display: grid; place-items: center; }
+        .vsoon i::after { content: ""; border-left: 14px solid rgba(255,255,255,0.85); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+        .vbody { padding: 22px 24px 26px; }
+        .vbody .eyebrow { margin-bottom: 6px; font-size: 0.9rem; }
+        .vbody h3 { color: var(--blue); font-size: 1.2rem; margin-bottom: 8px; }
+        .vbody p { color: var(--steel); margin: 0; font-size: 0.98rem; }
+        @media (max-width: 860px) {
+            .vgrid { grid-template-columns: 1fr; }
+            .vgrid .vcard, .vgrid .vcard:last-child:nth-child(odd) { grid-column: auto; }
+            .xframe, .xactions { display: none; }
+            .xmobile { display: block; }
+        }
+
+        /* ── Sales AIOS page ── */
+        .page-header h1 { max-width: 18ch; }
+        .hero-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; }
+        .hero-pills li { border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 6px 14px; font-size: 0.95rem; color: #fff; background: rgba(255,255,255,0.08); }
+        .hero-pills li::before { content: "\2713\00a0"; color: var(--aqua); font-weight: 700; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 40px; }
+        .faq { margin-top: 32px; display: grid; gap: 12px; }
+        .faq details { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 18px 22px; }
+        .faq summary { cursor: pointer; font-weight: 600; color: var(--blue); font-size: 1.08rem; list-style: none; position: relative; padding-right: 28px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: "+"; position: absolute; right: 0; top: -2px; font-size: 1.4rem; color: var(--teal); }
+        .faq details[open] summary::after { content: "\2013"; }
+        .faq details p { margin: 14px 0 0; color: var(--graphite); }
+        .fit-copy p a, #video .fit-copy a { color: var(--teal); font-weight: 600; }
+
+        /* Clickable day cards */
+        .day-card { font: inherit; text-align: left; cursor: pointer; width: 100%; color: inherit; display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+        .day-card:hover, .day-card:focus-visible { transform: translateY(-3px); border-color: var(--teal); box-shadow: 0 18px 40px rgba(31,58,95,0.12); outline: none; }
+        .day-card h3 { margin-bottom: 10px; }
+        .day-time { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+        .day-card .more { margin-top: auto; padding-top: 14px; color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+        .whole-note { display: flex; gap: 14px; align-items: center; max-width: 900px; margin: 32px auto 0; background: var(--white); border: var(--border); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; }
+        .whole-note p { margin: 0; font-size: 1rem; }
+        .whole-note svg { flex: none; }
+
+        /* Clickable role chips */
+        .chip-buttons li { padding: 0; border: 0; background: none; }
+        .chip-buttons button { font: inherit; font-size: 0.92rem; text-align: left; background: var(--white); border: 1px solid rgba(31,58,95,0.18); border-radius: 16px; padding: 6px 14px; cursor: pointer; color: var(--graphite); transition: background 160ms ease, color 160ms ease, border-color 160ms ease; }
+        .chip-buttons button::after { content: "\00a0+"; color: var(--teal); font-weight: 700; }
+        .chip-buttons button:hover, .chip-buttons button:focus-visible { background: var(--teal); border-color: var(--teal); color: #fff; outline: none; }
+        .chip-buttons button:hover::after, .chip-buttons button:focus-visible::after { color: #fff; }
+        .tap-hint { color: var(--teal); font-weight: 600; }
+
+        /* Example mock-up gallery */
+        .mock-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
+        .mock-card { font: inherit; color: inherit; text-align: left; padding: 0; cursor: pointer; background: var(--white); border: var(--border); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
+        .mock-card:hover, .mock-card:focus-visible { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(31,58,95,0.14); outline: none; }
+        .mock-thumb { display: block; height: 250px; overflow: hidden; position: relative; background: #E6ECF3; border-bottom: var(--border); }
+        .thumb-inner { position: absolute; top: 14px; left: 14px; width: 900px; transform-origin: top left; pointer-events: none; }
+        .mock-label { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px 22px; }
+        .mock-text { display: block; }
+        .open-btn { flex: none; background: var(--blue); color: #fff !important; font-size: 0.9rem !important; font-weight: 600; padding: 9px 16px; border-radius: 999px; white-space: nowrap; }
+        .mock-card:hover .open-btn { background: var(--teal); }
+        .mock-label strong { display: block; color: var(--blue); font-size: 1.15rem; margin-bottom: 4px; }
+        .mock-label span { color: var(--steel); font-size: 0.97rem; }
+
+        /* Platform advantage */
+        .hub { max-width: 520px; width: 100%; margin: 0 auto; }
+        .hub svg { width: 100%; height: auto; display: block; }
+        .prompt-box { max-width: 900px; margin: 48px auto 8px; background: #0F1C2E; color: #E6EEF8; border-radius: 18px; padding: 26px 30px; }
+        .prompt-label { color: var(--aqua); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+        .prompt-text { font-size: 1.22rem; line-height: 1.5; margin: 0 0 18px; color: #fff; }
+        .prompt-link { background: var(--aqua); color: #08131c; border: 0; border-radius: 999px; padding: 10px 20px; font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; cursor: pointer; }
+        .prompt-link:hover { background: #72D0D5; }
+        #platform .philosophy-grid { margin-top: 32px; }
+        .own-example { max-width: 900px; margin: 32px auto 0; background: var(--soft); border-radius: 16px; padding: 22px 26px; border-left: 4px solid var(--teal); }
+        .own-example p { margin: 0; }
+        .own-example a { color: var(--teal); font-weight: 600; }
+
+        /* Proof and founder */
+        .proof-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
+        .founder { display: flex; gap: 16px; align-items: center; margin-top: 26px; padding-top: 22px; border-top: var(--border); }
+        .founder img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); flex: none; }
+        .founder strong { display: block; color: var(--blue); font-size: 1.1rem; }
+        .founder span { display: block; color: var(--steel); font-size: 0.95rem; margin-bottom: 2px; }
+        .founder a { color: var(--teal); font-weight: 600; font-size: 0.95rem; }
+
+        /* Library: pop-up content, listed in full only without JavaScript */
+        .lib { display: none; }
+
+        /* Pop-up */
+        .detail-dialog { width: min(980px, calc(100% - 24px)); max-height: calc(100vh - 40px); border: 0; border-radius: 18px; padding: 0; box-shadow: 0 30px 80px rgba(10,20,35,0.35); overflow: auto; }
+        .detail-dialog.is-entry { width: min(760px, calc(100% - 24px)); }
+        .detail-dialog::backdrop { background: rgba(12,22,36,0.62); }
+        .dlg-head { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 18px 12px 26px; background: var(--white); border-bottom: 1px solid #E6ECF2; }
+        .dlg-tag { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); }
+        .dlg-close { font-size: 26px; line-height: 1; border: 0; background: var(--soft); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--blue); flex: none; }
+        .dlg-close:hover { background: #E3E9F0; }
+        .dlg-body { padding: 22px 26px 28px; container-type: inline-size; container-name: dlg; }
+        .dlg-body > h3, .dlg-body .entry h3 { font-size: 1.6rem; color: var(--blue); margin: 0 0 6px; }
+        .dlg-body h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--teal); margin: 20px 0 6px; }
+        .dlg-body .entry p { margin: 0; }
+        .dlg-body .entry ul:not(.connects) { margin: 0; padding-left: 20px; }
+        .dlg-body .entry ul:not(.connects) li { margin: 4px 0; }
+        .connects { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 4px 0 0; }
+        .connects li { background: #E8F1F8; color: var(--blue); border-radius: 999px; padding: 5px 12px; font-size: 0.9rem; font-weight: 600; }
+        .dlg-whole { margin-top: 22px; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 10px; padding: 12px 16px; font-size: 0.97rem; }
+        .dlg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .dlg-actions button { border: 0; cursor: pointer; font-family: inherit; }
+        .dlg-body .mock-src > .mk { box-shadow: 0 6px 24px rgba(31,58,95,0.10); }
+
+        /* Mock-ups */
+        .mk { background: #fff; border-radius: 12px; padding: 22px; font-size: 15px; line-height: 1.4; text-align: left; color: #2B2B2B; border: 1px solid #E1E7EE; }
+        .mk-dash { background: #F6F8FB; }
+        .mk-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 16px; flex-wrap: wrap; }
+        .mk-kicker { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #2A6F74; font-weight: 700; }
+        .mk-h { font-size: 26px; font-weight: 700; color: #1F3A5F; margin: 4px 0; line-height: 1.15; }
+        .mk-sub { color: #6B7C8F; font-size: 14px; }
+        .mk-kpis { display: flex; gap: 10px; }
+        .mk-kpis div { background: #1F3A5F; color: #fff; border-radius: 10px; padding: 10px 14px; min-width: 112px; }
+        .mk-kpis b { display: block; font-size: 20px; }
+        .mk-kpis span { font-size: 12px; opacity: 0.8; }
+        .mk-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .mk-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .mk-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+        .mk-card { background: #fff; border: 1px solid #E1E7EE; border-radius: 10px; padding: 14px 16px; }
+        .mk-card h5 { margin: 0 0 10px; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.05em; color: #1F3A5F; }
+        .mk-row { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid #EEF2F6; font-size: 14px; }
+        .mk-card h5 + .mk-row { border-top: 0; padding-top: 0; }
+        .mk-row > span:not(.mk-time):not(.mk-pill) { flex: 1; }
+        .mk-row small { color: #6B7C8F; font-size: 12.5px; }
+        .mk-time { font-weight: 700; color: #1F3A5F; width: 44px; flex: none; }
+        .mk-pill { flex: none; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #E8F1F8; color: #1F3A5F; white-space: nowrap; }
+        .mk-pill.ok { background: #DDF3EF; color: #1E6B5C; }
+        .mk-muted { color: #6B7C8F; }
+        .mk-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+        .mk-table th { text-align: left; color: #6B7C8F; font-weight: 600; padding: 4px 6px; border-bottom: 1px solid #E1E7EE; }
+        .mk-table td { padding: 6px; border-bottom: 1px solid #F0F3F6; vertical-align: top; }
+        .mk-table .warn { color: #B4532A; font-weight: 600; }
+        .mk-task { display: flex; gap: 10px; align-items: center; padding: 6px 0; font-size: 14px; }
+        .mk-task i { width: 14px; height: 14px; border: 2px solid #9DB3C9; border-radius: 4px; flex: none; }
+        .mk-task.done { color: #6B7C8F; text-decoration: line-through; }
+        .mk-task.done i { background: #2A6F74; border-color: #2A6F74; }
+        .mk-foot { margin-top: 14px; font-size: 12.5px; color: #6B7C8F; text-align: right; }
+        .mk-instr { background: #0F1C2E; color: #E6EEF8; border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; font-size: 15px; font-style: italic; }
+        .mk-instr span { display: block; font-style: normal; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: #3EC1C9; margin-bottom: 6px; font-weight: 700; }
+        .mk-p { font-size: 15px; margin: 10px 0 14px; }
+        .mk-dl { display: grid; grid-template-columns: 96px 1fr; gap: 6px 10px; margin: 0; font-size: 14px; }
+        .mk-dl dt { font-weight: 700; color: #1F3A5F; }
+        .mk-dl dd { margin: 0; }
+        .mk-done { font-size: 14px; padding: 4px 0 4px 24px; position: relative; }
+        .mk-done::before { content: "\2713"; position: absolute; left: 0; color: #2A6F74; font-weight: 700; }
+        .mk-email p { font-size: 14px; color: #3a4654; margin: 0; }
+        .mk-web { padding: 0; overflow: hidden; }
+        .mk-browser { display: flex; gap: 6px; align-items: center; background: #EEF2F6; padding: 10px 14px; }
+        .mk-browser i { width: 10px; height: 10px; border-radius: 50%; background: #C9D3DE; }
+        .mk-browser span { margin-left: 10px; background: #fff; border-radius: 6px; padding: 3px 12px; font-size: 12.5px; color: #6B7C8F; }
+        .mk-hero { background: linear-gradient(135deg, #1F3A5F, #2A6F74); padding: 26px 22px; }
+        .mk-audio { display: flex; align-items: center; gap: 12px; margin-top: 14px; color: #D6F2F3; font-size: 13px; }
+        .mk-play { width: 30px; height: 30px; border-radius: 50%; background: #3EC1C9; position: relative; flex: none; display: inline-block; }
+        .mk-play::after { content: ""; position: absolute; left: 11px; top: 8px; border-left: 11px solid #0F1C2E; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+        .mk-play.big { width: 58px; height: 58px; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.92); }
+        .mk-play.big::after { left: 22px; top: 17px; border-left-width: 18px; border-top-width: 12px; border-bottom-width: 12px; border-left-color: #1F3A5F; }
+        .mk-wave { display: flex; gap: 3px; align-items: center; }
+        .mk-wave i { width: 3px; height: 8px; background: #9fe3e7; border-radius: 2px; }
+        .mk-wave i:nth-child(3n) { height: 18px; } .mk-wave i:nth-child(4n+1) { height: 12px; } .mk-wave i:nth-child(5n) { height: 22px; }
+        .mk-ol { margin: 0; padding-left: 20px; font-size: 14px; }
+        .mk-ol li { margin: 6px 0; }
+        .mk-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+        .mk-flow span { border: 1px solid #C9D6E3; border-radius: 8px; padding: 6px 10px; background: #F6F8FB; }
+        .mk-flow span.hl { background: #DDF3EF; border-color: #2A6F74; color: #1E6B5C; font-weight: 700; }
+        .mk-flow b { width: 18px; height: 2px; background: #9DB3C9; }
+        .mk-tile { background: #F3F5F7; border-radius: 10px; padding: 12px 14px; }
+        .mk-tile b { display: block; font-size: 22px; color: #1F3A5F; }
+        .mk-tile span { font-size: 12.5px; color: #6B7C8F; }
+        .mk-cta { padding: 0 18px 20px; }
+        .mk-bars div { display: grid; grid-template-columns: 96px 1fr 44px; align-items: center; gap: 8px; font-size: 13px; margin: 9px 0; }
+        .mk-bars em { background: #EEF2F6; height: 12px; border-radius: 6px; overflow: hidden; display: block; }
+        .mk-bars i { display: block; height: 100%; background: #2A6F74; border-radius: 6px; }
+        .mk-bars b { text-align: right; color: #1F3A5F; }
+        .mk-ul { margin: 0; padding-left: 18px; font-size: 14px; }
+        .mk-ul li { margin: 5px 0; }
+
+        /* ── v3: page structure ── */
+        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+        .hero-video { box-shadow: 0 24px 60px rgba(5,12,24,0.35); border: 0; }
+        .hero-video .vbody { padding: 16px 20px 18px; }
+        .hero-video h3 { margin: 0; font-size: 1.1rem; }
+        .page-guide { position: sticky; top: 84px; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: var(--border); backdrop-filter: blur(6px); }
+        .page-guide .container { display: flex; gap: 6px 22px; overflow-x: auto; padding: 12px 0; white-space: nowrap; scrollbar-width: none; }
+        .page-guide a { color: var(--blue); font-weight: 600; font-size: 0.95rem; opacity: 0.85; }
+        .page-guide a:hover { color: var(--teal); opacity: 1; }
+        section.ov { padding: 72px 0; scroll-margin-top: 140px; }
+        .xband, #questions, #get-yours { scroll-margin-top: 140px; }
+        .ov-head { max-width: 760px; margin-bottom: 32px; }
+        .ov-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .ov-head h2 { margin-bottom: 12px; }
+        .ov-lead { font-size: 1.15rem; color: var(--steel); line-height: 1.55; margin: 0; }
+        .ov-lead a, .more-inner a { color: var(--teal); font-weight: 600; }
+        .ov-foot { text-align: center; color: var(--steel); margin: 24px auto 0; max-width: 720px; }
+        .philosophy-grid.tight { margin-top: 0; }
+        .philosophy-grid.tight .philosophy-item { padding: 22px 24px; }
+        .day-grid { margin-top: 0; }
+        .more-wrap { text-align: center; margin-top: 28px; }
+        .more-btn { font: 600 1rem "Source Sans 3", "Segoe UI", Arial, sans-serif; color: var(--teal); background: transparent; border: 1.5px solid rgba(42,111,116,0.45); border-radius: 999px; padding: 10px 22px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+        .more-btn::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 200ms ease; }
+        .more-btn[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-2px); }
+        .more-btn:hover { background: rgba(42,111,116,0.08); }
+        .js .sec-more { display: none; }
+        .js .sec-more.open { display: block; animation: secIn 260ms ease; }
+        @keyframes secIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+        .more-inner { margin-top: 28px; }
+        .more-inner.narrow, .narrow { max-width: 780px; margin-left: auto; margin-right: auto; }
+        .more-inner .philosophy-grid { margin-top: 20px; }
+        .role-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .role-card { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+        .role-card h3 { font-size: 1.05rem; color: var(--blue); margin-bottom: 14px; }
+        .sys-grid { list-style: none; padding: 0; margin: 0 auto; max-width: 1000px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .sys-grid li { background: var(--white); border: var(--border); border-radius: 12px; padding: 14px 16px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 10px; }
+        .sys-grid li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--aqua); box-shadow: 0 0 0 4px rgba(62,193,201,0.18); flex: none; }
+        .sys-table { width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); font-size: 0.97rem; }
+        .sys-table th { text-align: left; background: var(--blue); color: #fff; padding: 12px 16px; font-weight: 600; }
+        .sys-table td { padding: 11px 16px; border-top: 1px solid #E6ECF2; vertical-align: top; }
+        .sys-table td:first-child { font-weight: 600; color: var(--blue); white-space: nowrap; }
+        .sys-note { max-width: 1000px; margin: 16px auto 0; color: var(--steel); }
+        .four-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        .four-grid .philosophy-item { padding: 22px; }
+        .proof-top { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; max-width: 1000px; margin: 0 auto 28px; }
+        .proof-top .founder { flex-direction: column; text-align: center; border: 0; margin: 0; padding: 0; gap: 10px; }
+        .proof-top .founder img { width: 120px; height: 120px; }
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1000px; margin: 0 auto; }
+        .stat-row .evidence-card { margin: 0; }
+        .timeline { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); counter-reset: step; }
+        .timeline li { counter-increment: step; text-align: center; padding: 56px 10px 0; position: relative; }
+        .timeline li::before { content: counter(step); position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; display: grid; place-items: center; z-index: 1; }
+        .timeline li::after { content: ""; position: absolute; top: 19px; left: 50%; width: 100%; height: 2px; background: rgba(42,111,116,0.3); }
+        .timeline li:last-child::after { display: none; }
+        .timeline b { display: block; color: var(--blue); font-size: 1.1rem; margin-bottom: 4px; }
+        .timeline span { color: var(--steel); font-size: 0.97rem; }
+        .faq details p + p { margin-top: 10px; }
+
+        /* ── v3: proposal mock ── */
+        .mk-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+        .mk-hero-row .mk-audio { margin-top: 0; }
+        .mk-dl-btn { background: #fff; color: #1F3A5F; font-weight: 700; font-size: 13px; border-radius: 999px; padding: 8px 16px; }
+        .mk-video { position: relative; border-radius: 10px; overflow: hidden; background: #1F3A5F; min-height: 200px; }
+        .mk-video img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
+        .mk-vplay { position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 8px; background: rgba(10,15,26,0.62); color: #fff; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 12px 5px 5px; }
+        .mk-vplay .mk-play { width: 28px; height: 28px; background: #3EC1C9; }
+        .mk-vplay .mk-play::after { left: 10px; top: 7px; }
+        .mk-cap { position: absolute; left: 14px; bottom: 12px; color: #fff; font-size: 12.5px; background: rgba(10,15,26,0.62); padding: 6px 10px; border-radius: 8px; line-height: 1.3; }
+        .mk-cap b { display: block; font-size: 14px; }
+        .mk-note { font-size: 13px; color: #6B7C8F; margin: 14px 0 0; padding-top: 10px; border-top: 1px solid #EEF2F6; }
+        .mk-xp { margin: 0 18px; border-radius: 12px; overflow: hidden; background: #0A0F1A; border: 1px solid #1E2B42; }
+        .mk-xp-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid #1E2B42; flex-wrap: wrap; }
+        .mk-xp-title { color: #EEF3FA; font-weight: 700; font-size: 14px; }
+        .mk-tabs { display: inline-flex; background: #131D2E; border-radius: 999px; padding: 3px; gap: 2px; }
+        .mk-tabs span { color: #93A7C6; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; }
+        .mk-tabs span.on { background: #2A4468; color: #fff; font-weight: 600; }
+        .mk-xp-body { display: grid; grid-template-columns: 1fr 230px; }
+        .mk-xp-map { position: relative; }
+        .mk-xsvg { display: block; width: 100%; height: auto; }
+        .mk-xp-hint { position: absolute; left: 10px; top: 10px; font-size: 11.5px; color: #93A7C6; background: #131D2E; border-radius: 999px; padding: 3px 10px; }
+        .mk-xp-panel { background: #111A2B; border-left: 1px solid #1E2B42; padding: 16px; color: #C7D2E4; font-size: 13px; }
+        .mk-xp-big { font-size: 34px; font-weight: 700; color: #fff; margin: 6px 0 10px; line-height: 1; }
+        .mk-xp-big span { display: block; font-size: 12.5px; font-weight: 400; color: #93A7C6; margin-top: 4px; }
+        .mk-xp-row { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px solid #1E2B42; }
+        .mk-xp-row b { color: #fff; }
+        .mk-xp-row b.amber { color: #F6D79A; }
+        .mk-xp-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; background: #2A4468; color: #fff; font-weight: 600; border-radius: 999px; padding: 5px 14px 5px 5px; }
+        .mk-xp-btn .mk-play { width: 24px; height: 24px; }
+        .mk-xp-btn .mk-play::after { left: 9px; top: 6px; border-left-width: 9px; border-top-width: 6px; border-bottom-width: 6px; }
+        .mk-cta { padding: 0 18px 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .mk-cta span { display: inline-block; background: #2A6F74; color: #fff; font-weight: 700; border-radius: 999px; padding: 10px 20px; font-size: 14px; }
+        .mk-cta span.ghost { background: #fff; color: #1F3A5F; border: 1.5px solid #C9D6E3; }
+        @container dlg (max-width: 640px) {
+            .mk-xp-body { grid-template-columns: 1fr; }
+            .mk-xp-panel { border-left: 0; border-top: 1px solid #1E2B42; }
+            .mk { padding: 16px; }
+            .mk-grid2, .mk-grid3 { grid-template-columns: 1fr; }
+            .mk-grid4 { grid-template-columns: 1fr 1fr; }
+            .mk-top { flex-direction: column; align-items: flex-start; }
+            .mk-kpis { flex-wrap: wrap; }
+            .mk-h { font-size: 22px; }
+        }
+
+        @media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1100px) { .role-grid, .sys-grid, .four-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .hero-video { max-width: 560px; } }
+        @media (max-width: 860px) { .page-guide { top: 72px; } }
+        @media (max-width: 760px) {
+            .role-grid, .sys-grid, .four-grid, .stat-row { grid-template-columns: 1fr; }
+            .timeline { grid-template-columns: 1fr; }
+            .timeline li { text-align: left; padding: 0 0 18px 56px; }
+            .timeline li::before { left: 0; transform: none; }
+            .timeline li::after { top: 40px; left: 19px; width: 2px; height: calc(100% - 40px); }
+            .proof-top { grid-template-columns: 1fr; text-align: center; }
+            .sys-table { font-size: 0.92rem; }
+            .sys-table thead { display: none; }
+            .sys-table tr { display: block; padding: 12px 14px; border-top: 1px solid #E6ECF2; }
+            .sys-table td { display: block; border: 0; padding: 2px 0; white-space: normal !important; }
+            .mock-label { flex-direction: column; align-items: flex-start; }
+            section.ov { padding: 56px 0; }
+        }
+
+        @media (max-width: 760px) {
+            .steps-grid, .mock-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; gap: 32px; }
+            .mock-thumb { height: 200px; }
+            .prompt-box { padding: 22px; }
+            .prompt-text { font-size: 1.08rem; }
+            .dlg-body { padding: 18px 18px 24px; }
+        }
+        .timeline.six { grid-template-columns: repeat(6, 1fr); }
+        .timeline li.opt::before { background: var(--white); color: var(--teal); border: 2px dashed var(--teal); }
+        .opt-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); background: rgba(42,111,116,0.1); border-radius: 999px; padding: 2px 8px; vertical-align: middle; margin-left: 4px; }
+        .kickoff-note { max-width: 820px; margin: 32px auto 0; background: var(--soft); border-left: 4px solid var(--aqua); border-radius: 12px; padding: 16px 20px; font-size: 1rem; }
+        .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 1000px) { .stage-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 760px) { .stage-grid, .timeline.six { grid-template-columns: 1fr; } }
+    
+        /* Dental page additions */
+        .vgrid.three { grid-template-columns: repeat(3, 1fr); max-width: 1160px; }
+        .vgrid.three .vcard, .vgrid.three .vcard:last-child:nth-child(odd) { grid-column: auto; }
+        .pair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 1000px; margin: 0 auto 28px; }
+        .pair-card { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px 26px; }
+        .pair-card .founder { margin: 0 0 14px; padding: 0; border: 0; }
+        .pair-card p { margin: 0; color: var(--graphite); }
+        .initials { width: 96px; height: 96px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; font-size: 1.8rem; display: grid; place-items: center; flex: none; box-shadow: var(--shadow); }
+        #steps .day-time { display: block; margin-bottom: 6px; }
+        @media (max-width: 860px) { .vgrid.three, .pair-grid { grid-template-columns: 1fr; } }
+    </style>
+    <noscript><style>.lib { display: block; padding: 40px 0; } .lib .entry, .lib .mock-src { margin-bottom: 32px; } .mock-grid, .chip-buttons button::after, .day-card .more, .more-wrap { display: none; }</style></noscript>
+</head>
+<body>
+  <div class="fpa-banner"><a href="/from-prompt-to-autopilot/" style="display:block;background:#2A6F74;color:#ffffff;text-align:center;padding:9px 18px;font-size:0.95rem;font-weight:600;line-height:1.4;">Your own Business AI Operating System: From Prompt to Autopilot &rarr;</a></div>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="brand">
+                    <a href="/" aria-label="Human–AI Systems – home">
+                        <svg class="brand-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+          <g transform="translate(40,30)">
+            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+            <g transform="translate(175,0)">
+              <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+              <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.80)">Systems</text>
+            </g>
+          </g>
+        </svg>
+                    </a>
+                </div>
+
+                <nav class="nav">
+                    <a href="/business-aios/">Business AIOS</a>
+                    <a href="/services/">Services</a>
+                    <a href="/approach/">Approach</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <a href="/start/" class="nav-cta">Start</a>
+                </nav>
+
+                <button class="menu-toggle" aria-expanded="false" aria-label="Open menu">
+                    <span class="menu-toggle-line"></span>
+                </button>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu" aria-hidden="true">
+                <div class="mobile-menu-inner">
+                    <a href="/business-aios/">Business AIOS</a>
+                    <a href="/services/">Services</a>
+                    <a href="/approach/">Approach</a>
+                    <a href="/sectors/">Sectors</a>
+                    <a href="/insights/">Insights</a>
+                    <a href="/about/">About</a>
+                    <div class="mobile-contact-row">
+                        <a href="mailto:mike.mckeown@human-ai-systems.com">Email</a>
+                        <a href="https://www.linkedin.com/in/mikesmckeown/">LinkedIn</a>
+                        <a href="https://wa.me/447785362573">WhatsApp</a>
+                    </div>
+                    <a href="/start/" class="mobile-start">Start</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+        <main>
+        <!-- Hero -->
+        <section class="page-header">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">Dental AI Operating System</div>
+                    <h1>More patients in the chair, with the team you already have</h1>
+                    <p class="lead">Calls go to voicemail after six. Treatment plans drift. The practice software holds the numbers, but getting them out takes an afternoon. A Dental AI Operating System takes on the admin around your patients, so your team spends its time on them.</p>
+                    <p class="lead" style="margin-top: 14px;">It&rsquo;s AI set up for your practice: your treatments, fees and policies, your way of talking to patients, connected to your email, your practice software and, when you&rsquo;re ready, your phones. It starts with reports, so nothing changes for patients until you choose.</p>
+                    <ul class="hero-pills">
+                        <li>Reports first, nothing taken over</li>
+                        <li>Works with your practice software</li>
+                        <li>Never gives clinical advice</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="#a-practice-day" class="btn btn-primary">See what it does</a>
+                        <a href="#get-yours" class="btn btn-ghost">Book a conversation</a>
+                    </div>
+                </div>
+                <article class="vcard hero-video">
+                    <div class="vframe" data-title="What a Dental AI Operating System does for your practice"><div class="vsoon"><i></i>Video coming soon</div></div>
+                    <div class="vbody">
+                        <div class="eyebrow">Watch &middot; a few minutes</div>
+                        <h3>A practice&rsquo;s day, with and without it</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Page guide -->
+        <nav class="page-guide" aria-label="On this page">
+            <div class="container">
+                <a href="#a-practice-day">What it does</a>
+                <a href="#examples">Examples</a>
+                <a href="#roles">By role</a>
+                <a href="#steps">Three steps</a>
+                <a href="#front-desk">AI front desk</a>
+                <a href="#how">How you get one</a>
+                <a href="#questions">Questions</a>
+            </div>
+        </nav>
+        <!-- The problem -->
+        <section class="ov" id="problem">
+            <div class="container">
+                <div class="ov-head">
+                    <div class="eyebrow">Sound familiar?</div>
+                    <h2>A phone that never stops, and numbers nobody quite trusts</h2>
+                    <p class="ov-lead">Most practices aren&rsquo;t short of patients who want to come in. They&rsquo;re short of hours at the front desk, and of a clear view of what&rsquo;s happening.</p>
+                </div>
+                <div class="philosophy-grid tight">
+                    <div class="philosophy-item reveal"><h3>Calls lost after six</h3><p>The evening and weekend calls are often the urgent ones and the new patients. Many go to voicemail, and some ring the next practice.</p></div>
+                    <div class="philosophy-item reveal"><h3>A front desk stretched thin</h3><p>Reception answers the phone, books, chases plans, takes payments and calms nervous patients, all at once.</p></div>
+                    <div class="philosophy-item reveal"><h3>Reports that take an afternoon</h3><p>The practice software has the data. Turning it into figures the owner trusts is another job.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-problem">More on the problem</button></div>
+                <div class="sec-more" id="more-problem">
+                    <div class="more-inner narrow">
+                        <p>Recruiting and keeping staff is the top concern for most UK practices. Dentist vacancy rates sit in the mid to high teens, and rises in employer National Insurance and the minimum wage have pushed up the cost of every front desk hour.</p>
+                        <p>At the same time, more of a practice&rsquo;s income now depends on private work, where one missed evening enquiry can be a course of treatment worth thousands. And price transparency matters more: the Competition and Markets Authority is studying private dentistry pricing, with its final report due in early 2027.</p>
+                        <p>Many practices have tried an AI receptionist. They answer the phone, but they know little about the practice behind it, and they don&rsquo;t touch the rest of the admin. A Dental AI Operating System starts from the practice&rsquo;s own knowledge and works across the whole day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- A practice's day -->
+        <section class="ov soft" id="a-practice-day">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">What it does</div>
+                    <h2>A practice&rsquo;s day, from the morning report to out of hours</h2>
+                    <p class="ov-lead">Every enquiry answered, every plan followed up, and the numbers ready when you want them. Click any step to see how it works.</p>
+                </div>
+                <div class="philosophy-grid day-grid">
+                    <button type="button" class="philosophy-item day-card reveal" data-open="report"><span class="day-time">Before the practice opens</span><h3>The morning report</h3><p>Overnight calls, today&rsquo;s diary, gaps and plans to chase.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="letters"><span class="day-time">After a consultation</span><h3>Treatment plan letters</h3><p>Drafted from the dentist&rsquo;s voice note, for the dentist to check.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="enquiries"><span class="day-time">Through the day</span><h3>Every enquiry answered</h3><p>New patients and treatment enquiries, with times to book.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="followup"><span class="day-time">To keep plans moving</span><h3>Plans followed up</h3><p>Every unbooked treatment plan on one list, with messages drafted.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="gaps"><span class="day-time">When someone cancels</span><h3>Gaps filled</h3><p>Cancellations matched to patients who wanted an earlier slot.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                    <button type="button" class="philosophy-item day-card reveal" data-open="frontdesk"><span class="day-time">After six and at weekends</span><h3>Out of hours, still answered</h3><p>Routine calls booked, urgent ones passed to the on-call dentist.</p><span class="more">How it works <span aria-hidden="true">&rarr;</span></span></button>
+                </div>
+                <div class="whole-note reveal">
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#2A6F74"/><circle cx="12" cy="12" r="9.5" fill="none" stroke="#3EC1C9" stroke-width="1.6" stroke-dasharray="3 3"/></svg>
+                    <p><strong>All one system, not separate tools.</strong> Every step draws on the same knowledge of your practice, and adds to it. Last night&rsquo;s calls feed this morning&rsquo;s report, the report feeds the follow-up list, and every conversation makes the next answer better.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Examples -->
+        <section class="ov" id="examples">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">See what your team would get</div>
+                    <h2>Four examples, as your team would see them</h2>
+                    <p class="ov-lead">The practice, patients and figures are made up. The format is what a Dental AI Operating System produces.</p>
+                </div>
+                <div class="mock-grid">
+                    <button type="button" class="mock-card reveal" data-mock="report"><span class="mock-thumb" data-thumb="report"></span><span class="mock-label"><span class="mock-text"><strong>The morning report</strong><span>Overnight calls, today&rsquo;s diary and what needs doing, before the doors open</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="calls"><span class="mock-thumb" data-thumb="calls"></span><span class="mock-label"><span class="mock-text"><strong>Out-of-hours calls</strong><span>What the AI front desk did overnight, call by call</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="letter"><span class="mock-thumb" data-thumb="letter"></span><span class="mock-label"><span class="mock-text"><strong>A treatment plan letter</strong><span>From a two-minute voice note to a letter ready for the dentist to check</span></span><span class="open-btn">Open full size</span></span></button>
+                    <button type="button" class="mock-card reveal" data-mock="monthly"><span class="mock-thumb" data-thumb="monthly"></span><span class="mock-label"><span class="mock-text"><strong>The monthly practice report</strong><span>Enquiries, new patients, plans and diary, drafted from live data</span></span><span class="open-btn">Open full size</span></span></button>
+                </div>
+            </div>
+        </section>
+        <!-- By role -->
+        <section class="ov soft" id="roles">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Set up for each role</div>
+                    <h2>One system, with the right skills for each part of the practice</h2>
+                    <p class="ov-lead">Everyone shares the same knowledge of your treatments, fees and policies. Each role gets the skills that fit its work. Click anything that interests you.</p>
+                </div>
+                <div class="role-grid">
+                    <div class="role-card reveal">
+                        <h3>Reception and front desk</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="enquiries">Enquiry replies</button></li>
+                            <li><button type="button" data-open="gaps">Cancellations and gaps</button></li>
+                            <li><button type="button" data-open="frontdesk">Out-of-hours calls</button></li>
+                            <li><button type="button" data-open="messages">Web chat, text and WhatsApp</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Treatment coordinators</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="followup">Treatment plan follow-up</button></li>
+                            <li><button type="button" data-open="finance">Fees and finance explained</button></li>
+                            <li><button type="button" data-open="nervous">Nervous patients</button></li>
+                            <li><button type="button" data-open="letters">Treatment plan letters</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Dentists and the hygiene team</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="letters">Letters from a voice note</button></li>
+                            <li><button type="button" data-open="referrals">Referral letters</button></li>
+                            <li><button type="button" data-open="recalls">Recall lists</button></li>
+                            <li><button type="button" data-open="aftercare">Aftercare information</button></li>
+                        </ul>
+                    </div>
+                    <div class="role-card reveal">
+                        <h3>Practice managers and owners</h3>
+                        <ul class="chips chip-buttons">
+                            <li><button type="button" data-open="report">The morning report</button></li>
+                            <li><button type="button" data-open="monthly">Practice reporting</button></li>
+                            <li><button type="button" data-open="complaints">Complaint replies</button></li>
+                            <li><button type="button" data-open="cqc">CQC evidence and policies</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="ov-foot">It suits independent and mixed practices, private, cosmetic and implant practices where every enquiry matters, and small groups that want one way of working across their sites.</p>
+            </div>
+        </section>
+        <!-- Three steps -->
+        <section class="ov" id="steps">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Built for how practices change</div>
+                    <h2>Reports first, then messages, then the phone</h2>
+                    <p class="ov-lead">Practices are rightly careful about change. One bad patient experience and a new system is out of the door. So it goes in three steps, and each one earns the next.</p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-item reveal"><span class="day-time">Step 1 &middot; Reports</span><h3>See the practice clearly</h3><p>The morning report, the monthly practice report and the follow-up lists. It takes nothing over and patients notice nothing, but the owner finally has numbers they trust.</p></div>
+                    <div class="philosophy-item reveal"><span class="day-time">Step 2 &middot; Messages</span><h3>Answer every enquiry</h3><p>Replies to enquiries, plan follow-ups and gap-filling messages, drafted for the team to check and send. Web chat, text and WhatsApp follow when you&rsquo;re happy.</p></div>
+                    <div class="philosophy-item reveal"><span class="day-time">Step 3 &middot; The phone</span><h3>Never miss a call</h3><p>An AI front desk that answers from what the practice knows. Out of hours first, where there&rsquo;s nothing to disrupt, then busy-line overflow during the day if you want it.</p></div>
+                </div>
+                <div class="whole-note reveal">
+                    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="#2A6F74"/><circle cx="12" cy="12" r="9.5" fill="none" stroke="#3EC1C9" stroke-width="1.6" stroke-dasharray="3 3"/></svg>
+                    <p><strong>Developed with a dentist.</strong> The three-step path comes from Dr Neel Barchha, who built and led an award-winning practice and knows what a practice will and won&rsquo;t put up with.</p>
+                </div>
+            </div>
+        </section>
+        <!-- AI front desk -->
+        <section class="ov soft" id="front-desk">
+            <div class="container">
+                <div class="fit-grid" style="align-items: center;">
+                    <div class="fit-copy">
+                        <div class="eyebrow">The AI front desk</div>
+                        <h2>A front desk that knows your practice</h2>
+                        <p class="ov-lead">Plenty of AI receptionists can answer a phone. This one answers from your practice&rsquo;s own knowledge, and the system behind it reviews every call overnight, so it gets better each week.</p>
+                    </div>
+                    <div class="hub reveal">
+                        <svg viewBox="0 0 520 440" role="img" aria-label="The Dental AI Operating System at the centre, connected to the practice software, phones, web chat and messaging, email and calendar, payments, policies and price list, reviews, and dashboards">
+                            <g stroke="#9DB3C9" stroke-width="2" stroke-dasharray="4 5">
+                                <line x1="260" y1="220" x2="260" y2="48"/><line x1="260" y1="220" x2="398" y2="94"/>
+                                <line x1="260" y1="220" x2="443" y2="220"/><line x1="260" y1="220" x2="398" y2="346"/>
+                                <line x1="260" y1="220" x2="260" y2="392"/><line x1="260" y1="220" x2="122" y2="346"/>
+                                <line x1="260" y1="220" x2="70" y2="220"/><line x1="260" y1="220" x2="122" y2="94"/>
+                            </g>
+                            <circle cx="260" cy="220" r="78" fill="#2A6F74"/>
+                            <circle cx="260" cy="220" r="90" fill="none" stroke="#3EC1C9" stroke-width="2"/>
+                            <text x="260" y="212" text-anchor="middle" fill="#fff" font-size="21" font-weight="700" font-family="Source Sans 3, Arial, sans-serif">Dental AIOS</text>
+                            <text x="260" y="236" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">what your</text>
+                            <text x="260" y="254" text-anchor="middle" fill="#D6F2F3" font-size="14" font-family="Source Sans 3, Arial, sans-serif">practice knows</text>
+                            <g font-family="Source Sans 3, Arial, sans-serif" font-size="13" font-weight="600" fill="#1F3A5F" text-anchor="middle">
+                                <rect x="187" y="26" width="146" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="53">Practice software</text>
+                                <rect x="324" y="72" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="99">Phones</text>
+                                <rect x="370" y="198" width="146" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="443" y="225">Chat and WhatsApp</text>
+                                <rect x="330" y="324" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="398" y="351">Email and diary</text>
+                                <rect x="195" y="370" width="130" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="260" y="397">Payments</text>
+                                <rect x="48" y="324" width="148" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="351">Fees and policies</text>
+                                <rect x="4" y="198" width="132" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="70" y="225">Reviews</text>
+                                <rect x="54" y="72" width="136" height="44" rx="22" fill="#fff" stroke="#C9D6E3"/><text x="122" y="99">Dashboards</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="philosophy-grid" style="margin-top: 36px;">
+                    <div class="philosophy-item reveal"><h3>What it does</h3><p>Answers in a voice you choose, says it&rsquo;s AI, answers questions from your own price list and policies, books routine appointments and takes the details of every new enquiry.</p></div>
+                    <div class="philosophy-item reveal"><h3>What it never does</h3><p>It never gives clinical advice, never diagnoses and never decides what&rsquo;s urgent on its own judgement. It follows rules your dentists sign off, and hands to a person when in doubt.</p></div>
+                    <div class="philosophy-item reveal"><h3>When it&rsquo;s urgent</h3><p>Heavy bleeding, trauma or a knocked-out tooth go straight to the on-call dentist, by the route your practice uses, or to NHS 111, with a summary waiting in the morning report.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-connections">See the systems it works with</button></div>
+                <div class="sec-more" id="more-connections">
+                    <div class="more-inner">
+                        <table class="sys-table">
+                            <thead><tr><th>Type of system</th><th>Common examples</th><th>What the AI does with it</th></tr></thead>
+                            <tbody>
+                                <tr><td>Practice software</td><td>Dentally, Software of Excellence, EXACT, R4, Aerona, Pearl</td><td>Reads the diary and treatment plans for reports and follow-up; books through approved integrations</td></tr>
+                                <tr><td>Phones</td><td>Your existing number and hosted phone system</td><td>The AI front desk answers out of hours or when the line is busy, by divert, with no change of number</td></tr>
+                                <tr><td>Web chat and messaging</td><td>Website chat, text, WhatsApp</td><td>Answers questions and enquiries, offers times, sends reminders</td></tr>
+                                <tr><td>Email and calendar</td><td>Microsoft 365, Google Workspace</td><td>Morning report, enquiry replies, letters and follow-ups</td></tr>
+                                <tr><td>Files and documents</td><td>SharePoint, OneDrive, Google Drive, Dropbox</td><td>The knowledge base: price list, policies, templates and procedures</td></tr>
+                                <tr><td>Payments</td><td>Card payment links, Stripe</td><td>Payment or deposit links sent at the point of booking, where the practice wants them</td></tr>
+                                <tr><td>Reviews</td><td>Google reviews</td><td>Thank-you replies drafted for a person to post</td></tr>
+                                <tr><td>AI platform</td><td>Claude, Microsoft Copilot, ChatGPT</td><td>The platform the Dental AI Operating System runs on</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="sys-note">Practice software connects through the supplier&rsquo;s approved integration routes, so which booking features are available depends on your system. We confirm this in discovery. The AI front desk is provided with a specialist voice partner. Connections are added one at a time, and each person&rsquo;s AI only sees what they already can.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- What's in it -->
+        <section class="ov" id="what-it-is">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">What&rsquo;s in it</div>
+                    <h2>Your practice&rsquo;s knowledge, built in</h2>
+                    <p class="ov-lead">A Dental AI Operating System is a <a href="/business-aios/">Business AI Operating System</a> set up for a dental practice, installed once as a single plugin for the whole team.</p>
+                </div>
+                <div class="four-grid">
+                    <div class="philosophy-item reveal"><h3>Practice knowledge</h3><p>Treatments, fees, finance options, policies, opening hours and emergency rules.</p></div>
+                    <div class="philosophy-item reveal"><h3>Dental skills</h3><p>Enquiries, letters, plan follow-up, recalls and complaints, done your way.</p></div>
+                    <div class="philosophy-item reveal"><h3>Reports and routines</h3><p>The morning report and monthly figures, run on a schedule.</p></div>
+                    <div class="philosophy-item reveal"><h3>Connections</h3><p>Email, files and practice software, then messaging and the phones.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-what">More on what&rsquo;s in it</button></div>
+                <div class="sec-more" id="more-what">
+                    <div class="more-inner narrow">
+                        <p><strong>Practice knowledge.</strong> Your treatments explained in plain English, your price list, finance and membership options, policies, opening hours and the emergency rules your dentists sign off, in one place the AI draws on and keeps up to date. Clinical records stay in your practice software.</p>
+                        <p><strong>Dental skills.</strong> Each job written down the way your practice does it: which appointments can be booked without a person, how to reply to a nervous patient, what goes in a treatment plan letter, how complaints are handled. The AI follows it every time, so patients get the same answer whoever they speak to.</p>
+                        <p><strong>Reports and routines.</strong> The morning report, the overnight call review and the weekly follow-up lists run on a schedule, with the results on dashboards people can see.</p>
+                        <p><strong>Connections.</strong> Email, calendar and files first, then the practice software, then messaging and the AI front desk, each one approved and switched on deliberately. People stay in charge of anything that goes to a patient.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Proof -->
+        <section class="ov soft" id="proof">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Who&rsquo;s behind it</div>
+                    <h2>Built by a dentist and an AI practitioner</h2>
+                    <p class="ov-lead">Dentistry needs people who know how a practice runs. Making AI work day to day needs people who have done it inside real organisations. This is both.</p>
+                </div>
+                <div class="pair-grid">
+                    <div class="pair-card reveal">
+                        <div class="founder">
+                            <div class="initials" aria-hidden="true">NB</div>
+                            <div>
+                                <strong>Dr Neel Barchha</strong>
+                                <span>Dentist and practice founder</span>
+                            </div>
+                        </div>
+                        <p>Neel qualified from the University of Birmingham and built and led an award-winning private practice in the West Midlands, known for implants, sedation and its care of nervous patients. He was shortlisted for Practice Principal at the 2024 Private Dentistry Awards, and his practice for Digital Practice.</p>
+                    </div>
+                    <div class="pair-card reveal">
+                        <div class="founder">
+                            <img src="/images/headshots/mike-mckeown-round.jpg" alt="Mike McKeown" width="96" height="96">
+                            <div>
+                                <strong>Mike McKeown</strong>
+                                <span>Founder, Human&#8209;AI&nbsp;Systems</span>
+                                <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        </div>
+                        <p>Mike led enterprise-wide AI adoption at Verimatrix, a global software business, and before that ran large businesses at Cisco. Human&#8209;AI&nbsp;Systems runs on its own AI operating system every day.</p>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <div class="evidence-card reveal"><h4>Routine requests</h4><p><span class="evidence-stat">~30%</span>fewer low-complexity support tickets at Verimatrix, with AI answering first.</p></div>
+                    <div class="evidence-card reveal"><h4>Time back</h4><p><span class="evidence-stat">~1 hour</span>a day back for engineers, from AI set up for their work.</p></div>
+                    <div class="evidence-card reveal"><h4>Governance</h4><p><span class="evidence-stat">Board</span>approval for Responsible AI governance, put in place alongside the rollout.</p></div>
+                </div>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-proof">More on why us</button></div>
+                <div class="sec-more" id="more-proof">
+                    <div class="more-inner narrow">
+                        <p>Most AI products for dentists are built by software companies looking in from outside. The Dental AI Operating System is shaped by a dentist who has run the front desk problem for real: the evening emergencies, the plans that never get booked, the reports that don&rsquo;t add up.</p>
+                        <p>The AI side comes from Human&#8209;AI&nbsp;Systems, which helps organisations move from trying AI to using it every day, with governance built in from the start. We run our own business on the same kind of system. <a href="/how-has-runs/">See how we run on ours</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How you get one -->
+        <section class="ov" id="how">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">How you get one</div>
+                    <h2>Set up with your practice in a few weeks</h2>
+                    <p class="ov-lead">The same six stages we use for any Business AI Operating System, adapted for a dental practice. Reports go live first, and the phones come last.</p>
+                </div>
+                <ol class="timeline six">
+                    <li><b>Discovery</b><span>We learn how your practice works</span></li>
+                    <li><b>Build</b><span>Your knowledge, reports and dental skills</span></li>
+                    <li><b>Implement</b><span>Reports live first</span></li>
+                    <li><b>Train</b><span>Your team learns by doing, role by role</span></li>
+                    <li class="opt"><b>Extend</b><span>Messages, then the phone</span></li>
+                    <li><b>Support</b><span>Monthly reviews, and it supports itself</span></li>
+                </ol>
+                <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-how">More on each stage</button></div>
+                <div class="sec-more" id="more-how">
+                    <div class="more-inner">
+                        <div class="stage-grid">
+                            <div class="philosophy-item"><h3>1 &middot; Discovery</h3><p>We learn how your practice works: the team, the practice software, the phones, which appointments can be booked without a person, how emergencies are handled and where the time goes. We time two or three everyday tasks and count missed calls, so there&rsquo;s a baseline to measure against.</p></div>
+                            <div class="philosophy-item"><h3>2 &middot; Build</h3><p>We build the knowledge base from your price list, policies and templates, the morning report and practice dashboard, and the first dental skills, such as enquiry replies and treatment plan letters. You review the drafts and tell us what doesn&rsquo;t sound like you.</p></div>
+                            <div class="philosophy-item"><h3>3 &middot; Implement</h3><p>We package it as a plugin, install it, and connect email, files and the practice software as they&rsquo;re approved. Reports go live first, because they take nothing over. A data protection impact assessment and processing agreement are in place before any patient information is involved.</p></div>
+                            <div class="philosophy-item"><h3>4 &middot; Train</h3><p>Short, hands-on sessions on real work, role by role: reception, treatment coordinators, clinicians and management. Everyone leaves using it, and one person is named to own it day to day.</p></div>
+                            <div class="philosophy-item"><h3>5 &middot; Extend <span class="opt-tag">When you&rsquo;re ready</span></h3><p>Messaging next: web chat, text and WhatsApp. Then the AI front desk on the phone, out of hours first, with the emergency rules and what it may and may not say signed off by your dentists before any patient hears it.</p></div>
+                            <div class="philosophy-item"><h3>6 &middot; Support</h3><p>Monthly reviews of calls and messages, so the system improves from real conversations. It also has its own support skill, so it helps the team use it and brings new starters up to speed.</p></div>
+                        </div>
+                        <p class="how-more">We measure as we go: missed calls, enquiries answered, plans followed up and the time the team gets back.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Videos -->
+        <section class="ov soft" id="videos">
+            <div class="container">
+                <div class="ov-head center">
+                    <div class="eyebrow">Watch</div>
+                    <h2>Three short videos</h2>
+                    <p class="ov-lead">What it does for your practice, what it is, and how you get one, presented by Neel and Mike.</p>
+                </div>
+                <div class="vgrid three">
+                    <article class="vcard"><div class="vframe" data-title="What a Dental AI Operating System does for your practice"><div class="vsoon"><i></i>Video coming soon</div></div><div class="vbody"><div class="eyebrow">Video 1</div><h3>What it does for your practice</h3><p>A practice manager&rsquo;s day, with and without it.</p></div></article>
+                    <article class="vcard"><div class="vframe" data-title="What a Dental AI Operating System is"><div class="vsoon"><i></i>Video coming soon</div></div><div class="vbody"><div class="eyebrow">Video 2</div><h3>What it is</h3><p>The knowledge, skills, reports and connections behind it.</p></div></article>
+                    <article class="vcard"><div class="vframe" data-title="How a practice gets a Dental AI Operating System"><div class="vsoon"><i></i>Video coming soon</div></div><div class="vbody"><div class="eyebrow">Video 3</div><h3>How you get one</h3><p>Reports first, then messages, then the phone.</p></div></article>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive explorer -->
+        <section class="xband" id="explorer">
+            <div class="container intro">
+                <div class="eyebrow">Interactive explorer</div>
+                <h2>Explore it for yourself</h2>
+                <p>Follow a practice manager&rsquo;s day, open up the parts, and see how it&rsquo;s set up with you. Press play for a guided tour, or click anything to explore.</p>
+            </div>
+            <div class="xframe">
+                <iframe id="explorerFrame" src="/dental-aios/explorer/?embed=1" title="Dental AI Operating System interactive explorer" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <div class="xmobile">
+                <h3>Best opened full screen on a phone</h3>
+                <p>Follow a practice manager&rsquo;s day, open up the parts, and see how it&rsquo;s set up. With captions.</p>
+                <a class="xbtn primary" href="/dental-aios/explorer/"><span class="tri" aria-hidden="true"></span>Open the explorer</a>
+            </div>
+            <noscript><p class="xnote">The explorer needs JavaScript. The sections above cover the same ground.</p></noscript>
+            <div class="xactions">
+                <button class="xbtn primary" type="button" id="playTour"><span class="tri" aria-hidden="true"></span>Play the guided tour</button>
+                <a class="xbtn" href="/dental-aios/explorer/" target="_blank" rel="noopener">Open full screen</a>
+            </div>
+            <p class="xnote">This explorer was made by our own Business AI Operating System. The practice and the day are illustrative.</p>
+        </section>
+        <!-- FAQs -->
+        <section class="soft" id="questions">
+            <div class="container" style="max-width: 880px;">
+                <div style="text-align: center;">
+                    <div class="eyebrow">Common questions</div>
+                    <h2>What practice owners usually ask</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Is this just another AI receptionist?</summary>
+                        <p>No. An AI receptionist answers the phone. A Dental AI Operating System starts with the practice&rsquo;s own knowledge and works across the whole day: reports, letters, enquiries, follow-up and, when you&rsquo;re ready, the phones. The phone agent answers from what the practice knows, and the system reviews its calls each night so it improves.</p>
+                    </details>
+                    <details>
+                        <summary>Will it give patients clinical advice?</summary>
+                        <p>No, never. It books, answers practical questions from your own price list and policies, and passes anything clinical or urgent to a person, following rules your dentists sign off. Drafts such as treatment plan letters are always checked by the dentist. Tools that support administration for a clinician to check are treated very differently from tools that diagnose, and we keep it firmly on the administration side.</p>
+                    </details>
+                    <details>
+                        <summary>What about patient data and GDPR?</summary>
+                        <p>Health information is special category data, so it&rsquo;s handled with care from the start. Clinical records stay in your practice software. The system runs on a business AI plan with a data processing agreement, and each person&rsquo;s AI only sees what they already can. Before any patient information is involved, we put in place a data protection impact assessment, a processing agreement and an updated privacy notice that covers AI and call recording.</p>
+                    </details>
+                    <details>
+                        <summary>Will patients know they&rsquo;re talking to AI?</summary>
+                        <p>Yes. The AI front desk says so at the start of every call and chat. That&rsquo;s the right thing to do, it&rsquo;s what consumer law and the emerging guidance for health regulators expect, and in our experience patients are fine with it when the answer is quick and accurate.</p>
+                    </details>
+                    <details>
+                        <summary>Which practice software does it work with?</summary>
+                        <p>Reports and follow-up lists can work with any system you can export from. Live booking connects through each supplier&rsquo;s approved integration routes, which differ between Dentally, Software of Excellence, EXACT, R4 and others. We confirm what&rsquo;s possible with yours in discovery, before you commit to anything.</p>
+                    </details>
+                    <details>
+                        <summary>Will it replace our receptionists?</summary>
+                        <p>It takes on the repetitive part of the job: the evening calls, the routine questions, the chasing and the letters. Most practices use that time for the patients in front of them, for treatment coordination, or to cover the hours they can&rsquo;t recruit for. Some choose to run with a smaller front desk. That&rsquo;s your decision, and the system works either way.</p>
+                    </details>
+                    <details>
+                        <summary>We&rsquo;re an NHS or mixed practice. Does it still fit?</summary>
+                        <p>Yes. Urgent care matters more than ever for NHS contracts in England, so how urgent calls are handled on the phone is part of the design, and recall messaging follows your recall intervals. Private, implant and cosmetic work is where a missed enquiry costs most, but the admin it takes on is the same in any practice.</p>
+                    </details>
+                    <details>
+                        <summary>What does it cost?</summary>
+                        <p>A one-off set-up, then a monthly fee for the system, support and, if you add it, the AI front desk. It depends on the size of the practice and which steps you take, so we&rsquo;ll give you a clear figure after a short conversation. We&rsquo;d rather it paid for itself in patients booked than compete on being cheapest.</p>
+                    </details>
+                    <details>
+                        <summary>How will we know it has worked?</summary>
+                        <p>Before launch we count missed calls and time two or three everyday tasks, such as writing a treatment plan letter or putting the monthly figures together. We measure again a few weeks after launch, alongside enquiries answered, plans followed up and new patients booked.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <!-- CTA -->
+        <section class="cta-band" id="get-yours">
+            <div class="container">
+                <div class="cta-inner">
+                    <h2>See whether it would work for your practice</h2>
+                    <p class="lead">A 30-minute conversation is usually enough to tell where the time is going and what a first version would include. No obligation.</p>
+                </div>
+                <div class="routes">
+                    <div class="route">
+                        <div class="route-tag">Talk it through</div>
+                        <h3>Book a conversation</h3>
+                        <p>Tell us about your practice, your team and your software, and we&rsquo;ll tell you honestly whether this is worth doing and what it would take.</p>
+                        <a href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a conversation</a>
+                    </div>
+                    <div class="route">
+                        <div class="route-tag">See a sample</div>
+                        <h3>Get your practice knowledge pack</h3>
+                        <p>Send us your practice website. We&rsquo;ll send back the knowledge pack our system builds from it: treatments, fees and common questions, the starting point an AI front desk answers from.</p>
+                        <a href="mailto:mike.mckeown@human-ai-systems.com?subject=Practice%20knowledge%20pack" class="btn btn-primary">Ask for a sample</a>
+                    </div>
+                </div>
+                <p class="routes-note">Developed by Human&#8209;AI&nbsp;Systems with Dr Neel Barchha.</p>
+            </div>
+        </section>
+        <!-- Detail library: shown in a pop-up when an item is clicked; listed in full when JavaScript is off -->
+        <section class="lib" id="lib" aria-label="How each part works">
+            <div class="container">
+            <article class="entry" id="d-report" data-tag="Every morning, before the doors open" data-mock="report">
+                <h3>The morning report</h3>
+                <h4>What it is</h4>
+                <p>A short report waiting for the practice manager and owner before the practice opens, put together overnight from the calls, messages, diary and treatment plans.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>The day starts on what matters, not on the voicemail.</li>
+                    <li>Overnight emergencies and new patients are at the top, with what was done about them.</li>
+                    <li>Gaps in the diary and plans to chase are listed every day, so nothing slips.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task runs overnight. It reads the inbox, the overnight call and chat summaries, today&rsquo;s diary and, once connected, the practice software. It uses what the knowledge base knows about your practice to decide what matters most, and shows the result as a simple dashboard. It&rsquo;s usually the first thing a practice switches on, because it changes nothing for patients.</p>
+                <ul class="connects"><li>Email</li><li>Call summaries</li><li>Practice software</li><li>Knowledge base</li><li>Dashboard</li></ul>
+            </article>
+            <article class="entry" id="d-letters" data-tag="After a consultation" data-mock="letter">
+                <h3>Treatment plan letters</h3>
+                <h4>What it is</h4>
+                <p>A clear letter for the patient, drafted from the dentist&rsquo;s voice note or notes, with each option explained in plain English and the right fees and finance.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Patients have their plan the same day, while they&rsquo;re still thinking about it.</li>
+                    <li>Fees and finance always match the current price list.</li>
+                    <li>Dentists spend minutes checking rather than an evening writing.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The dentist records a short voice note or adds notes after the consultation. The AI drafts the letter from the practice&rsquo;s templates, explains each option simply, adds fees and finance from the price list, and sets a follow-up reminder for the treatment coordinator. The dentist checks and signs off every letter. The clinical decisions are always theirs.</p>
+                <ul class="connects"><li>Voice notes</li><li>Letter templates</li><li>Price list</li><li>Knowledge base</li><li>Task list</li></ul>
+            </article>
+            <article class="entry" id="d-enquiries" data-tag="Through the day">
+                <h3>Enquiry replies</h3>
+                <h4>What it is</h4>
+                <p>Replies to new patient and treatment enquiries from email, web forms and chat, drafted from what the practice knows, with times to book.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>New patients hear back while they&rsquo;re still choosing a practice.</li>
+                    <li>Every reply is accurate on fees, finance and what happens next.</li>
+                    <li>Reception spends less time typing the same answers.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads each enquiry, works out what the person wants, and drafts a reply in the practice&rsquo;s tone with the right next step: a consultation time, a price, or a call back from a person. It knows which appointments can be offered without a person and which need one. Reception checks and sends, until the practice is happy for some replies to go on their own.</p>
+                <ul class="connects"><li>Email</li><li>Web forms and chat</li><li>Diary</li><li>Knowledge base</li></ul>
+            </article>
+            <article class="entry" id="d-followup" data-tag="To keep plans moving" data-mock="monthly">
+                <h3>Treatment plan follow-up</h3>
+                <h4>What it is</h4>
+                <p>One list of every treatment plan that has been proposed but not booked, with a drafted message for each patient.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>More plans accepted, without anyone having to remember to chase.</li>
+                    <li>Patients get a helpful nudge, not a sales call.</li>
+                    <li>The owner can see the value of plans waiting.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A weekly task reads the open treatment plans from the practice software and the letters sent, and lists those that haven&rsquo;t been booked. For each one it drafts a short, friendly message in the practice&rsquo;s tone, with an easy way to book or ask a question. The treatment coordinator decides who gets what.</p>
+                <ul class="connects"><li>Practice software</li><li>Letters sent</li><li>Email and messaging</li><li>Dashboard</li></ul>
+            </article>
+            <article class="entry" id="d-gaps" data-tag="When someone cancels">
+                <h3>Cancellations and gaps</h3>
+                <h4>What it is</h4>
+                <p>Short-notice gaps in the diary matched to patients who asked for an earlier appointment and recalls that are due.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Fewer empty chairs.</li>
+                    <li>No hour on the phone ringing round.</li>
+                    <li>Patients who wanted an earlier slot get one.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>When a cancellation appears, the AI checks the diary, the list of patients waiting for an earlier slot and recalls that are due, and drafts messages offering the time. Reception sends them, and the first to reply gets the slot.</p>
+                <ul class="connects"><li>Practice software</li><li>Messaging</li><li>Recall list</li></ul>
+            </article>
+            <article class="entry" id="d-frontdesk" data-tag="After six and at weekends" data-mock="calls">
+                <h3>The AI front desk</h3>
+                <h4>What it is</h4>
+                <p>An AI that answers the practice phone and chat when the team isn&rsquo;t there, or when the line is busy, from what the practice knows.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>No call goes to voicemail.</li>
+                    <li>Routine appointments are booked, and new patients are captured.</li>
+                    <li>Emergencies reach the on-call dentist, and the rest is in the morning report.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Calls divert to the AI front desk, provided with a specialist voice partner, so the practice number doesn&rsquo;t change. It says it&rsquo;s AI, answers from the practice&rsquo;s price list and policies, books routine appointments where the practice software allows, and follows the emergency rules your dentists sign off: urgent cases go to the on-call dentist or NHS 111. It never gives clinical advice. Every call is summarised for the morning, and the system reviews the calls each night to improve the answers.</p>
+                <ul class="connects"><li>Phones</li><li>Practice software</li><li>Knowledge base</li><li>On-call route</li><li>Morning report</li></ul>
+            </article>
+            <article class="entry" id="d-messages" data-tag="Reception and front desk">
+                <h3>Web chat, text and WhatsApp</h3>
+                <h4>What it is</h4>
+                <p>The same practice knowledge, answering in the places patients like to ask: the website chat, text and WhatsApp.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Patients get an answer when it suits them.</li>
+                    <li>Reminders and confirmations go out without anyone typing them.</li>
+                    <li>Every conversation is in one place.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Website chat comes first, then text and WhatsApp as the practice is ready. Answers come from the same knowledge base as everything else, so they match what reception and the phone agent say. Anything clinical or sensitive goes to a person.</p>
+                <ul class="connects"><li>Website</li><li>Messaging</li><li>Knowledge base</li><li>Diary</li></ul>
+            </article>
+            <article class="entry" id="d-finance" data-tag="Treatment coordinators">
+                <h3>Fees and finance explained</h3>
+                <h4>What it is</h4>
+                <p>Clear explanations of fees, finance and membership options, always matching the current price list.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Patients understand the cost before they commit.</li>
+                    <li>No out-of-date prices in letters or messages.</li>
+                    <li>Price transparency the practice can stand behind.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The price list, finance options and membership plans live in the knowledge base. Every letter, reply and phone answer draws on them, so when a price changes it changes everywhere at once.</p>
+                <ul class="connects"><li>Price list</li><li>Finance options</li><li>Knowledge base</li></ul>
+            </article>
+            <article class="entry" id="d-nervous" data-tag="Treatment coordinators">
+                <h3>Nervous patients</h3>
+                <h4>What it is</h4>
+                <p>A calm, consistent first reply to anxious patients, in the practice&rsquo;s own words, with the right next step.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Nervous patients feel looked after from the first message.</li>
+                    <li>Sedation and comfort options are explained accurately.</li>
+                    <li>A person always follows up.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The practice&rsquo;s approach to nervous patients is written into the knowledge base: what you offer, how you talk about it, and who should speak to them. The AI drafts the first reply in that tone and flags it for a person to send and follow up. It never gives clinical advice.</p>
+                <ul class="connects"><li>Knowledge base</li><li>Email and chat</li><li>Task list</li></ul>
+            </article>
+            <article class="entry" id="d-referrals" data-tag="Dentists">
+                <h3>Referral letters</h3>
+                <h4>What it is</h4>
+                <p>Referral letters drafted from the dentist&rsquo;s notes, in the right format for each referral route.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Referrals go the same day.</li>
+                    <li>Nothing missing from the letter.</li>
+                    <li>Less typing for the dentist.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The dentist adds notes or a voice note. The AI drafts the letter from the practice&rsquo;s templates for that route and files it. The dentist checks and sends.</p>
+                <ul class="connects"><li>Voice notes</li><li>Templates</li><li>Documents</li></ul>
+            </article>
+            <article class="entry" id="d-recalls" data-tag="Hygiene and therapy">
+                <h3>Recall lists</h3>
+                <h4>What it is</h4>
+                <p>Weekly lists of patients due or overdue for a check-up or hygiene visit, with messages drafted.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Fuller hygiene columns.</li>
+                    <li>Patients reminded at the right interval.</li>
+                    <li>Less time building lists by hand.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A weekly task reads the recall data from the practice software and drafts reminders in the practice&rsquo;s tone, following each patient&rsquo;s recall interval. Reception sends them, or they go automatically once the practice is happy.</p>
+                <ul class="connects"><li>Practice software</li><li>Messaging</li><li>Dashboard</li></ul>
+            </article>
+            <article class="entry" id="d-aftercare" data-tag="Dentists and the hygiene team">
+                <h3>Aftercare information</h3>
+                <h4>What it is</h4>
+                <p>Plain-English aftercare information for common treatments, from the practice&rsquo;s own material.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Patients know what to expect after treatment.</li>
+                    <li>Fewer worried calls the next day.</li>
+                    <li>The same advice whoever treats them.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Aftercare sheets are written once, approved by the clinicians, and kept in the knowledge base. The AI sends or prints the right one, and answers practical aftercare questions from them, passing anything worrying to a person.</p>
+                <ul class="connects"><li>Knowledge base</li><li>Messaging</li></ul>
+            </article>
+            <article class="entry" id="d-monthly" data-tag="For the practice owner" data-mock="monthly">
+                <h3>Practice reporting</h3>
+                <h4>What it is</h4>
+                <p>The practice numbers on one page: enquiries, new patients, treatment plans proposed and accepted, and how full the diary is.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Figures the owner trusts, without an afternoon in spreadsheets.</li>
+                    <li>You can see where new patients come from, and which ones never got booked.</li>
+                    <li>The practice meeting goes on decisions.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>A scheduled task reads the practice software, the enquiry log and the call summaries, and builds the report with the AI&rsquo;s read on what changed. Each figure points back to where it came from. Practice software reporting is often the hardest part for owners, which is why it comes first.</p>
+                <ul class="connects"><li>Practice software</li><li>Enquiry log</li><li>Call summaries</li><li>Dashboard</li></ul>
+            </article>
+            <article class="entry" id="d-complaints" data-tag="Practice managers">
+                <h3>Complaint replies</h3>
+                <h4>What it is</h4>
+                <p>A calm, careful first draft of a reply to a complaint, following the practice&rsquo;s complaints policy.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Complaints acknowledged within the hour.</li>
+                    <li>Replies that are measured, not defensive.</li>
+                    <li>The policy followed every time.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>The AI reads the complaint, checks the complaints policy and any notes, and drafts an acknowledgement and a reply for the practice manager. The practice manager decides what&rsquo;s said and sends it.</p>
+                <ul class="connects"><li>Email</li><li>Complaints policy</li><li>Knowledge base</li></ul>
+            </article>
+            <article class="entry" id="d-cqc" data-tag="Practice managers">
+                <h3>CQC evidence and policies</h3>
+                <h4>What it is</h4>
+                <p>Policies, procedures and evidence kept in order, so the practice is ready before an inspection, not during one.</p>
+                <h4>What it does for you</h4>
+                <ul>
+                    <li>Policies reviewed on time.</li>
+                    <li>Evidence easy to find.</li>
+                    <li>Staff can ask how something is done and get the practice&rsquo;s answer.</li>
+                </ul>
+                <h4>How it works</h4>
+                <p>Policies and procedures live in the knowledge base with review dates. The AI flags reviews due, drafts updates for the practice manager, and answers staff questions from the practice&rsquo;s own procedures.</p>
+                <ul class="connects"><li>Documents</li><li>Knowledge base</li><li>Task list</li></ul>
+            </article>
+            </div>
+        </section>
+        <!-- Example mock-ups: opened in the pop-up and shown as thumbnails; listed in full when JavaScript is off -->
+        <section class="lib" aria-label="Examples">
+            <div class="container">
+            <div class="mock-src" id="m-report" data-title="Example: the morning report" data-tag="Illustrative example, fictional practice and data">
+              <div class="mk mk-dash">
+                <div class="mk-top">
+                    <div>
+                        <div class="mk-kicker">Morning report &middot; Tuesday</div>
+                        <div class="mk-h">Good morning, Claire</div>
+                        <div class="mk-sub">9 overnight calls and chats &middot; 3 new patients booked &middot; 2 urgent calls passed on &middot; 2 gaps today</div>
+                    </div>
+                    <div class="mk-kpis">
+                        <div><b>94%</b><span>Diary full today</span></div>
+                        <div><b>11</b><span>Plans to follow up</span></div>
+                        <div><b>0</b><span>Calls missed</span></div>
+                    </div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Overnight</h5>
+                        <div class="mk-row"><span class="mk-time">19:42</span><span><b>Broken front tooth after a fall</b><br><small>Passed to the on-call dentist. Seen at 08:15 today.</small></span><span class="mk-pill">Urgent</span></div>
+                        <div class="mk-row"><span class="mk-time">21:10</span><span><b>Implant enquiry, web chat</b><br><small>Consultation booked Thursday 16:00. Asked about finance.</small></span><span class="mk-pill ok">Booked</span></div>
+                        <div class="mk-row"><span class="mk-time">Sat</span><span><b>Two new patient check-ups</b><br><small>Both booked for next week.</small></span><span class="mk-pill ok">Booked</span></div>
+                        <div class="mk-row mk-muted"><span>4 others: opening hours, parking, a reschedule, a payment question. All answered.</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Today</h5>
+                        <div class="mk-row"><span class="mk-time">10:20</span><span><b>Gap, 40 minutes, Dr Patel</b><br><small>3 patients waiting for an earlier slot. Messages drafted.</small></span><span class="mk-pill">Draft ready</span></div>
+                        <div class="mk-row"><span class="mk-time">15:00</span><span><b>Gap, hygiene, 30 minutes</b><br><small>5 recalls overdue. Messages drafted.</small></span><span class="mk-pill">Draft ready</span></div>
+                        <div class="mk-row"><span class="mk-time">16:30</span><span><b>Nervous patient, first visit</b><br><small>Prefers a quiet room. Sedation discussed by phone.</small></span><span class="mk-pill ok">Noted</span></div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Plans to follow up</h5>
+                        <table class="mk-table">
+                            <tr><th>Patient</th><th>Plan</th><th>Proposed</th><th>Why</th></tr>
+                            <tr><td>J. Morgan</td><td>Implant</td><td>3 weeks ago</td><td class="warn">Asked about finance, no reply</td></tr>
+                            <tr><td>S. Ahmed</td><td>Aligners</td><td>2 weeks ago</td><td class="warn">Not booked</td></tr>
+                            <tr><td>P. Lewis</td><td>Crown</td><td>10 days ago</td><td>Letter sent, reminder due</td></tr>
+                        </table>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Tasks</h5>
+                        <div class="mk-task"><i></i>Check two treatment plan letters waiting for Dr Patel</div>
+                        <div class="mk-task"><i></i>Reply to a complaint received yesterday (draft ready)</div>
+                        <div class="mk-task"><i></i>Infection control policy due for review this month</div>
+                        <div class="mk-task done"><i></i>Yesterday&rsquo;s enquiries and letters filed</div>
+                    </div>
+                </div>
+                <div class="mk-foot">Prepared overnight from the call summaries, email, diary and practice software</div>
+              </div>
+            </div>
+            <div class="mock-src" id="m-calls" data-title="Example: out-of-hours calls" data-tag="Illustrative example, fictional practice and data">
+              <div class="mk mk-doc">
+                <div class="mk-kicker">AI front desk &middot; Friday 18:00 to Monday 08:00</div>
+                <div class="mk-h">23 calls and chats, none missed</div>
+                <div class="mk-grid4">
+                    <div class="mk-tile"><b>23</b><span>Calls and chats answered</span></div>
+                    <div class="mk-tile"><b>7</b><span>Appointments booked</span></div>
+                    <div class="mk-tile"><b>3</b><span>Urgent, passed to on-call</span></div>
+                    <div class="mk-tile"><b>4</b><span>Need a person today</span></div>
+                </div>
+                <div class="mk-card" style="margin-top: 14px;">
+                    <h5>Call by call</h5>
+                    <table class="mk-table">
+                        <tr><th>When</th><th>Who</th><th>What they wanted</th><th>What happened</th></tr>
+                        <tr><td>Fri 19:05</td><td>Existing patient</td><td>Heavy bleeding after an extraction</td><td class="warn">On-call dentist contacted by WhatsApp, called back in 12 minutes</td></tr>
+                        <tr><td>Fri 20:30</td><td>New patient</td><td>Check-up, moving to the area</td><td>Booked Tuesday 09:00, new patient forms sent</td></tr>
+                        <tr><td>Sat 10:15</td><td>Child, parent calling</td><td>Knocked-out tooth at football</td><td class="warn">On-call dentist contacted, seen Saturday 11:30</td></tr>
+                        <tr><td>Sat 14:40</td><td>New enquiry</td><td>Implant cost and finance</td><td>Prices and finance options explained, consultation booked</td></tr>
+                        <tr><td>Sun 18:20</td><td>Existing patient</td><td>Toothache, asked what to take</td><td>No clinical advice given. Offered first appointment Monday, booked. Told to call 111 if it worsens.</td></tr>
+                        <tr><td>Sun 21:00</td><td>Existing patient</td><td>Unhappy about a bill</td><td>Details taken, flagged for the practice manager</td></tr>
+                    </table>
+                </div>
+                <div class="mk-grid2" style="margin-top: 14px;">
+                    <div class="mk-card"><h5>What the review found</h5><ul class="mk-ul"><li>Two callers asked about parking. Added to the practice information.</li><li>One caller found the finance answer too long. Shorter version suggested for approval.</li></ul></div>
+                    <div class="mk-card"><h5>For a person today</h5><ul class="mk-ul"><li>Billing query (Sun 21:00)</li><li>Sedation question from a nervous patient</li><li>Two callers asked for a dentist to call back</li></ul></div>
+                </div>
+                <div class="mk-foot">Every call starts with the AI saying it&rsquo;s AI. Urgent rules signed off by the practice&rsquo;s dentists.</div>
+              </div>
+            </div>
+            <div class="mock-src" id="m-letter" data-title="Example: a treatment plan letter" data-tag="Illustrative example, fictional practice and data">
+              <div class="mk mk-doc">
+                <div class="mk-instr"><span>Dr Patel&rsquo;s voice note, two minutes after the consultation</span>&ldquo;New patient, Jane Morgan. Missing lower left six, wants a fixed option. Talked through implant versus bridge, she&rsquo;s leaning towards the implant. Healthy gums, hygiene visit first. Send her the options with prices and finance, and book a follow-up call with Sophie.&rdquo;</div>
+                <div class="mk-kicker">Treatment plan letter &middot; draft for Dr Patel to check</div>
+                <div class="mk-h">Your treatment options</div>
+                <p class="mk-p">Dear Jane, thank you for coming in today. As we discussed, there&rsquo;s a gap where a back tooth on the lower left used to be, and you&rsquo;d like a fixed replacement. Here are the two options we talked about, in plain English.</p>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Option 1: a dental implant</h5>
+                        <ul class="mk-ul"><li>A small titanium post that replaces the root, with a crown on top</li><li>Doesn&rsquo;t involve the teeth either side</li><li>Usually three to six months from start to finish</li><li>&pound;2,450 in total, or from &pound;68 a month with finance</li></ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Option 2: a bridge</h5>
+                        <ul class="mk-ul"><li>A false tooth held by crowns on the teeth either side</li><li>Quicker, usually two visits</li><li>The teeth either side need to be shaped</li><li>&pound;1,350 in total</li></ul>
+                    </div>
+                </div>
+                <div class="mk-card" style="margin-top: 14px;">
+                    <h5>Next steps</h5>
+                    <ul class="mk-ul"><li>A hygiene visit first, which we&rsquo;ve suggested for next week</li><li>Sophie, our treatment coordinator, will call you on Thursday to answer any questions</li></ul>
+                </div>
+                <div class="mk-card" style="margin-top: 14px;">
+                    <h5>Also done</h5>
+                    <div class="mk-done">Fees and finance taken from the current price list</div>
+                    <div class="mk-done">Follow-up call with Sophie added for Thursday</div>
+                    <div class="mk-done">Hygiene appointment offered for next week</div>
+                </div>
+                <div class="mk-foot">Draft from the dentist&rsquo;s voice note, the letter template and the price list. Checked and signed off by the dentist before it&rsquo;s sent.</div>
+              </div>
+            </div>
+            <div class="mock-src" id="m-monthly" data-title="Example: the monthly practice report" data-tag="Illustrative example, fictional practice and data">
+              <div class="mk mk-doc">
+                <div class="mk-kicker">Practice report &middot; October &middot; for the owner</div>
+                <div class="mk-h">New patients up, plans waiting</div>
+                <div class="mk-grid4">
+                    <div class="mk-tile"><b>142</b><span>Enquiries &middot; up 18%</span></div>
+                    <div class="mk-tile"><b>61</b><span>New patients booked</span></div>
+                    <div class="mk-tile"><b>58%</b><span>Plans accepted &middot; up 6 points</span></div>
+                    <div class="mk-tile"><b>91%</b><span>Diary utilisation</span></div>
+                </div>
+                <div class="mk-grid2">
+                    <div class="mk-card">
+                        <h5>Where enquiries came from</h5>
+                        <div class="mk-bars">
+                            <div><span>Phone, in hours</span><em><i style="width:62%"></i></em><b>62</b></div>
+                            <div><span>Out of hours</span><em><i style="width:38%"></i></em><b>38</b></div>
+                            <div><span>Web chat</span><em><i style="width:27%"></i></em><b>27</b></div>
+                            <div><span>Referrals</span><em><i style="width:15%"></i></em><b>15</b></div>
+                        </div>
+                    </div>
+                    <div class="mk-card">
+                        <h5>What changed this month</h5>
+                        <ul class="mk-ul">
+                            <li>Out-of-hours calls answered: 38, up from none in September</li>
+                            <li>Treatment plan letters sent the same day: 9 in 10</li>
+                            <li>Hygiene utilisation dipped on Mondays</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Worth a look</h5>
+                        <ul class="mk-ul">
+                            <li>11 plans worth &pound;18,400 proposed but not booked</li>
+                            <li>14 enquiries didn&rsquo;t book. 9 were about price.</li>
+                        </ul>
+                    </div>
+                    <div class="mk-card">
+                        <h5>Decisions for the practice meeting</h5>
+                        <ul class="mk-ul">
+                            <li>Offer Monday hygiene slots to overdue recalls</li>
+                            <li>Publish implant finance examples on the website</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mk-foot">First draft from the practice software, enquiry log and call summaries. Figures to be checked by the practice manager.</div>
+              </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+
+    <dialog id="detail" class="detail-dialog" aria-labelledby="detail-title">
+        <div class="dlg-head">
+            <span class="dlg-tag" id="detail-tag"></span>
+            <button type="button" class="dlg-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="dlg-body" id="detail-body"></div>
+    </dialog>
+
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand" style="color:#fff; margin-bottom:8px; height:auto; padding-top:0;">
+                    <svg class="brand-mark footer-mark" viewBox="0 0 760 175" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Human–AI Systems logo">
+                        <g transform="translate(40,30)">
+                            <line x1="36" y1="92" x2="95" y2="22" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="95" y1="22" x2="148" y2="104" stroke="#3EC1C9" stroke-width="10" stroke-linecap="round"/>
+                            <line x1="36" y1="92" x2="148" y2="104" stroke="#72D0D5" stroke-width="10" stroke-linecap="round"/>
+                            <circle cx="95" cy="22" r="24" fill="#FFFFFF"/>
+                            <circle cx="36" cy="92" r="24" fill="#72D0D5"/>
+                            <circle cx="148" cy="104" r="24" fill="#3EC1C9"/>
+                            <g transform="translate(175,0)">
+                                <text x="0" y="70" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="42" font-weight="600" fill="#FFFFFF">Human–AI</text>
+                                <text x="38" y="108" font-family="Source Sans 3, Source Sans Pro, Arial, sans-serif" font-size="34" font-weight="400" fill="rgba(255,255,255,0.78)">Systems</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div style="color:rgba(255,255,255,0.72); margin-bottom:14px;">Operational AI adoption for organisations</div>
+                <div class="footer-nav">
+                    <a href="mailto:mike.mckeown@human-ai-systems.com" aria-label="Email Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/mikesmckeown/" target="_blank" rel="noopener noreferrer" aria-label="Mike McKeown on LinkedIn" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://wa.me/447785362573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Mike" style="display:inline-flex;align-items:center;gap:7px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <a href="/business-aios/">Business AIOS</a>
+                <a href="/approach/">Approach</a>
+                <a href="/services/">Services</a>
+                <a href="/training/">Training</a>
+                <a href="/from-prompt-to-autopilot/">From Prompt to Autopilot</a>
+                <a href="/sectors/">Sectors</a>
+                <a href="/insights/">Insights</a>
+                <a href="/about/">About</a>
+                <a href="/start/">Start</a>
+                <span style="color:rgba(255,255,255,0.3)">|</span>
+                <a href="/privacy/">Privacy &amp; Legal</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+
+        function closeMobileMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+            mobileMenu.classList.remove('is-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('menu-open');
+        }
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.setAttribute('aria-label', 'Close menu');
+                mobileMenu.classList.add('is-open');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 860) closeMobileMenu();
+        });
+    </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ba48e49bd1aa46fd8ad64700c508b081"}'></script><!-- End Cloudflare Web Analytics -->
+    <script>
+        // Narrated tour: start the explorer's tour across all three views (same-origin frame).
+        (function () {
+            var frame = document.getElementById('explorerFrame'), btn = document.getElementById('playTour');
+            if (!frame || !btn) return;
+            btn.addEventListener('click', function () {
+                var hdr = document.querySelector('.site-header'), off = (hdr ? hdr.offsetHeight : 0) + 16;
+                window.scrollTo({ top: frame.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
+                try { frame.contentWindow.postMessage({ aios: 'play', lens: 'benefits', chain: true }, location.origin); } catch (e) {}
+            });
+            // Videos: set data-youtube="VIDEO_ID" on a card to show it.
+            // Our own thumbnail and play button first (no YouTube title bar), then the player
+            // loads on click with captions off, as the videos have captions burnt in.
+            var ytQueue = [], ytLoading = false;
+            function withYT(fn) {
+                if (window.YT && YT.Player) return fn();
+                ytQueue.push(fn);
+                if (ytLoading) return;
+                ytLoading = true;
+                var prev = window.onYouTubeIframeAPIReady;
+                window.onYouTubeIframeAPIReady = function () { if (prev) prev(); while (ytQueue.length) ytQueue.shift()(); };
+                var t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
+            }
+            function noCaptions(p) { try { p.unloadModule('captions'); p.unloadModule('cc'); } catch (e) {} }
+            document.querySelectorAll('.vframe[data-youtube]').forEach(function (el) {
+                var id = el.getAttribute('data-youtube');
+                if (!id) return;
+                var title = el.getAttribute('data-title') || 'Video';
+                var btn = document.createElement('button');
+                btn.type = 'button'; btn.className = 'vplay';
+                btn.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg)';
+                btn.innerHTML = '<span>Play: ' + title + '</span>';
+                el.innerHTML = ''; el.appendChild(btn);
+                btn.addEventListener('click', function () {
+                    var host = document.createElement('div'); host.className = 'vhost';
+                    el.appendChild(host);
+                    withYT(function () {
+                        new YT.Player(host, {
+                            host: 'https://www.youtube-nocookie.com',
+                            videoId: id,
+                            playerVars: { autoplay: 1, rel: 0, playsinline: 1, cc_load_policy: 0, iv_load_policy: 3, modestbranding: 1 },
+                            events: {
+                                onReady: function (e) {
+                                    var f = e.target.getIframe(); f.title = title; f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen'); f.setAttribute('allowfullscreen', '');
+                                    noCaptions(e.target);
+                                    try { e.target.setPlaybackQualityRange('hd1080'); } catch (x) {}
+                                    e.target.playVideo();
+                                    btn.remove();
+                                },
+                                onApiChange: function (e) { noCaptions(e.target); },
+                                onStateChange: function (e) { if (e.data === 1) noCaptions(e.target); }
+                            }
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+    <script>
+        // Level 2: expand a section's detail.
+        document.querySelectorAll('.more-btn').forEach(function (b) {
+            var panel = document.getElementById(b.getAttribute('aria-controls'));
+            if (!panel) return;
+            var label = b.textContent;
+            b.addEventListener('click', function () {
+                var open = panel.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Show less' : label;
+            });
+        });
+        // Pop-ups for the clickable steps, role chips and example mock-ups.
+        (function () {
+            var dlg = document.getElementById('detail');
+            if (!dlg || typeof dlg.showModal !== 'function') return;
+            var body = document.getElementById('detail-body');
+            var tag = document.getElementById('detail-tag');
+            var lastFocus = null;
+
+            function show() {
+                if (!dlg.open) { lastFocus = document.activeElement; dlg.showModal(); }
+                dlg.scrollTop = 0;
+            }
+
+            function openEntry(id) {
+                var src = document.getElementById('d-' + id);
+                if (!src) return;
+                var art = src.cloneNode(true);
+                art.removeAttribute('id');
+                var con = art.querySelector('.connects');
+                if (con) { var h = document.createElement('h4'); h.textContent = 'Connects to'; con.parentNode.insertBefore(h, con); }
+                body.innerHTML = '';
+                body.appendChild(art);
+                var note = document.createElement('p');
+                note.className = 'dlg-whole';
+                note.innerHTML = '<strong>Part of the whole.</strong> This draws on your shared knowledge base and connected systems, and updates them, so everything else in your Dental AI Operating System gets better too.';
+                body.appendChild(note);
+                var actions = document.createElement('div');
+                actions.className = 'dlg-actions';
+                var mock = src.getAttribute('data-mock');
+                if (mock) actions.innerHTML += '<button type="button" class="btn-teal" data-mock="' + mock + '">See an example &rarr;</button>';
+                actions.innerHTML += '<a class="btn-teal" style="background:var(--blue)" href="https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=Europe/London" target="_blank" rel="noopener noreferrer">Talk to us about this</a>';
+                body.appendChild(actions);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.add('is-entry');
+                dlg.setAttribute('aria-label', art.querySelector('h3').textContent);
+                show();
+            }
+
+            function openMock(id) {
+                var src = document.getElementById('m-' + id);
+                if (!src) return;
+                body.innerHTML = '';
+                var h = document.createElement('h3');
+                h.textContent = src.getAttribute('data-title');
+                h.style.marginBottom = '16px';
+                body.appendChild(h);
+                var wrap = document.createElement('div');
+                wrap.className = 'mock-src';
+                wrap.innerHTML = src.innerHTML;
+                body.appendChild(wrap);
+                tag.textContent = src.getAttribute('data-tag') || '';
+                dlg.classList.remove('is-entry');
+                dlg.setAttribute('aria-label', h.textContent);
+                show();
+            }
+
+            document.addEventListener('click', function (e) {
+                var b = e.target.closest('button[data-open], button[data-mock]');
+                if (!b) return;
+                if (b.hasAttribute('data-open')) openEntry(b.getAttribute('data-open'));
+                else openMock(b.getAttribute('data-mock'));
+            });
+            dlg.querySelector('.dlg-close').addEventListener('click', function () { dlg.close(); });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+            dlg.addEventListener('close', function () { if (lastFocus) lastFocus.focus(); });
+
+            // Thumbnails: a scaled-down copy of each example.
+            var thumbs = document.querySelectorAll('[data-thumb]');
+            thumbs.forEach(function (t) {
+                var src = document.getElementById('m-' + t.getAttribute('data-thumb'));
+                if (!src) return;
+                var inner = document.createElement('span');
+                inner.className = 'thumb-inner';
+                inner.setAttribute('aria-hidden', 'true');
+                inner.innerHTML = src.innerHTML;
+                t.appendChild(inner);
+            });
+            function scaleThumbs() {
+                thumbs.forEach(function (t) {
+                    var inner = t.querySelector('.thumb-inner');
+                    if (inner) inner.style.transform = 'scale(' + ((t.clientWidth - 28) / 900) + ')';
+                });
+            }
+            scaleThumbs();
+            window.addEventListener('resize', scaleThumbs);
+        })();
+    </script>
+</body>
+</html>
