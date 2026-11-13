@@ -8,6 +8,12 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-13
 
+- Add Law Firm AIOS page and explorer (noindex preview)
+- Add Dental AI Operating System page (noindex preview) and explorer
+- Law Firm AIOS: platform-neutral wording
+
+## 2026-11-13
+
 - Add Dental AI Operating System page (noindex, preview for review) with its own explorer variant and three video placeholders
 
 ## 2026-11-13
