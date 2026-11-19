@@ -6,6 +6,13 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-19
+
+- Add Care Home AI Operating System page and explorer (noindex, unlisted)
+- Law Firm AIOS explorer: add narration in Mike's AI voice, with disclosure
+- Dental AIOS explorer: add narration in Mike's AI voice, with disclosure
+- Care Home AIOS explorer: add narration in Mike's AI voice, with disclosure
+
 ## 2026-11-13
 
 - Dental AIOS explorer: platform-neutral wording
