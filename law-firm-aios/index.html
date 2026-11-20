@@ -689,6 +689,9 @@
         .vcard { background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
         .vframe { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
         .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .vframe video { position: absolute; inset: 0; width: 100%; height: 100%; background: #0A0F1A; }
+        .vplay i { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(10,15,26,0.55); border: 2px solid rgba(255,255,255,0.85); z-index: 1; }
+        .vplay i::after { content: ""; position: absolute; left: 50%; top: 50%; margin: -10px 0 0 -5px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
         .vsoon { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.95rem; display: grid; justify-items: center; gap: 10px; }
         .vsoon i { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7); display: grid; place-items: center; }
         .vsoon i::after { content: ""; border-left: 14px solid rgba(255,255,255,0.85); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
@@ -1087,7 +1090,7 @@
                     </div>
                 </div>
                 <article class="vcard hero-video">
-                    <div class="vframe" data-title="What a Law Firm AI Operating System does for you"><div class="vsoon"><i></i>Video coming soon</div></div>
+                    <div class="vframe" data-video="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/video.mp4" data-poster="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/poster.webp" data-title="What a Law Firm AI Operating System does for you"><video controls preload="none" playsinline poster="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/poster.webp" aria-label="What a Law Firm AI Operating System does for you"><source src="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/video.mp4" type="video/mp4"></video></div>
                     <div class="vbody">
                         <div class="eyebrow">Watch &middot; a few minutes</div>
                         <h3>A partner&rsquo;s day, with and without it</h3>
@@ -2139,6 +2142,26 @@
                 var t = document.createElement('script'); t.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(t);
             }
             function noCaptions(p) { try { p.unloadModule('captions'); p.unloadModule('cc'); } catch (e) {} }
+            // Self-hosted videos (Cloudflare R2): data-video="MP4 URL", data-poster="image URL".
+            // Same thumbnail-and-play pattern; the plain <video> inside stays for no-JS visitors.
+            document.querySelectorAll('.vframe[data-video]').forEach(function (el) {
+                var src = el.getAttribute('data-video'), poster = el.getAttribute('data-poster') || '';
+                var title = el.getAttribute('data-title') || 'Video';
+                var btn = document.createElement('button');
+                btn.type = 'button'; btn.className = 'vplay';
+                if (poster) btn.style.backgroundImage = 'url(' + poster + ')';
+                btn.innerHTML = '<i aria-hidden="true"></i><span>Play: ' + title + '</span>';
+                el.innerHTML = ''; el.appendChild(btn);
+                btn.addEventListener('click', function () {
+                    var v = document.createElement('video');
+                    v.controls = true; v.playsInline = true; v.preload = 'auto'; v.src = src;
+                    if (poster) v.poster = poster;
+                    v.setAttribute('aria-label', title);
+                    el.appendChild(v); btn.remove();
+                    var pr = v.play(); if (pr && pr.catch) pr.catch(function () {});
+                    v.focus();
+                });
+            });
             document.querySelectorAll('.vframe[data-youtube]').forEach(function (el) {
                 var id = el.getAttribute('data-youtube');
                 if (!id) return;
