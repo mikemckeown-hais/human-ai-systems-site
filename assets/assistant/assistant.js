@@ -9,7 +9,8 @@
   var host = location.hostname;
   var API = /(^|\.)human-ai-systems\.com$/.test(host) ? "https://assistant.human-ai-systems.com" : "https://assistant-dev.human-ai-systems.com";
   var KEY = "has-assistant";
-  var BOOK = "https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=" + encodeURIComponent((Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/London"));
+  var TZ = (Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/London");
+  var BOOK = "https://calendar.app.google/1QegoWKcVe8CkKUs7?ctz=" + encodeURIComponent(TZ);
   var script = document.currentScript;
   var base = script && script.src ? script.src.replace(/[^/]*$/, "") : "/assets/assistant/";
 
@@ -193,10 +194,10 @@
     addVisitor(text);
     var bubble = addAssistant("");
     bubble.classList.add("hasa-typing");
-    var acc = "", tools = [];
+    var acc = "", tools = [], slotsEv = null;
     ensureSession().then(function () {
       inflight = new AbortController();
-      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title }, signal: inflight.signal });
+      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ }, signal: inflight.signal });
     }).then(function (r) {
       if (r.status !== 200) return r.json().then(function (b) { throw b.error || "error"; });
       var reader = r.body.getReader(), dec = new TextDecoder(), buf = "";
@@ -212,6 +213,7 @@
             var d; try { d = JSON.parse(dm[1]); } catch (e) { continue; }
             if (tm[1] === "delta") { acc += d.text; renderText(bubble, acc); bubble.classList.remove("hasa-typing"); scrollEnd(); }
             else if (tm[1] === "tool") tools.push(d);
+            else if (tm[1] === "slots") slotsEv = d;
           }
           return pump();
         });
@@ -220,6 +222,7 @@
     }).then(function () {
       bubble.classList.remove("hasa-typing");
       if (!acc) renderText(bubble, "Sorry, I lost my thread there. Could you ask again?");
+      if (slotsEv) showSlots(slotsEv.slots);
       tools.forEach(handleTool);
     }).catch(function (err) {
       bubble.classList.remove("hasa-typing");
@@ -248,6 +251,8 @@
 
   function handleTool(t) {
     if (t.name === "show_link") return addLink(t.path, t.label || t.title);
+    if (t.name === "request_verification") return verifyForm(t.purpose, null);
+    if (t.name === "book_meeting") return chooseSlot({ start: t.start, label: fmt(t.start) });
     if (t.name === "navigate") {
       if (t.path === location.pathname) return;
       if (!ui.autoNav.checked) return addLink(t.path, t.title);
@@ -265,6 +270,95 @@
         else tick();
       }, 1000);
     }
+  }
+
+
+  // ---------- booking (R1.7): a booking is made only by the visitor's confirm click ----------
+  function fmt(ms) { try { return new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(ms)); } catch (e) { return new Date(ms).toString(); } }
+  function card(cls) { var c = el("div", { class: "hasa-card " + (cls || "") }); ui.log.appendChild(c); scrollEnd(); return c; }
+  function showSlots(slots) {
+    var c = card("hasa-slots");
+    c.appendChild(el("p", { class: "hasa-card-title", text: "Times for a 30-minute call with Mike" }));
+    slots.forEach(function (sl) { c.appendChild(el("button", { type: "button", class: "hasa-chip", text: sl.label, onclick: function () { chooseSlot(sl); } })); });
+    c.appendChild(el("p", { class: "hasa-small" }, ["None of these? ", el("a", { href: BOOK, target: "_blank", rel: "noopener", text: "See all of Mike's times" })]));
+  }
+  function chooseSlot(sl) { if (state.verified) confirmCard(sl); else verifyForm("booking", sl); }
+  function field(id, label, type, extra) {
+    var wrap = el("div", { class: "hasa-field" });
+    wrap.appendChild(el("label", { for: id, text: label }));
+    var a = { id: id, type: type || "text" }; for (var k in (extra || {})) a[k] = extra[k];
+    wrap.appendChild(el("input", a));
+    return wrap;
+  }
+  function verifyForm(purpose, slot) {
+    var n = Date.now();
+    var c = card("hasa-verify");
+    var msg = el("p", { class: "hasa-small", role: "status" });
+    var f = el("form", { onsubmit: function (e) { e.preventDefault(); start(); } }, [
+      el("p", { class: "hasa-card-title", text: slot ? "Book " + slot.label : "Confirm your email" }),
+      field("hasa-n" + n, "Your name", "text", { autocomplete: "name", required: "", maxlength: "120" }),
+      field("hasa-e" + n, "Work email", "email", { autocomplete: "email", required: "", maxlength: "254" }),
+      field("hasa-o" + n, "Organisation (optional)", "text", { autocomplete: "organization", maxlength: "80" }),
+      el("p", { class: "hasa-small" }, ["We'll email you a six-digit code. We use your details only for this. ", el("a", { href: "/privacy/", text: "Privacy" })]),
+      el("button", { type: "submit", class: "hasa-send", text: "Send code" }),
+      msg,
+    ]);
+    c.appendChild(f);
+    f.querySelector("input").focus();
+    var email, name, org;
+    function start() {
+      name = f.querySelector("#hasa-n" + n).value.trim(); email = f.querySelector("#hasa-e" + n).value.trim(); org = f.querySelector("#hasa-o" + n).value.trim();
+      msg.textContent = "Sending…";
+      api("/v1/verify/start", { method: "POST", body: { sid: state.sid, email: email, name: name, purpose: purpose } }).then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
+        if (x.s !== 200) { msg.textContent = verr(x.b.error); return; }
+        f.remove();
+        codeForm();
+      }).catch(function () { msg.textContent = verr(); });
+    }
+    function codeForm() {
+      var m2 = el("p", { class: "hasa-small", role: "status" });
+      var g = el("form", { onsubmit: function (e) { e.preventDefault(); confirm(); } }, [
+        el("p", { class: "hasa-card-title", text: "Check your email" }),
+        field("hasa-c" + n, "Six-digit code sent to " + email, "text", { inputmode: "numeric", autocomplete: "one-time-code", maxlength: "6", pattern: "[0-9]{6}", required: "" }),
+        el("button", { type: "submit", class: "hasa-send", text: "Confirm" }),
+        m2,
+      ]);
+      c.appendChild(g);
+      g.querySelector("input").focus();
+      function confirm() {
+        var code = g.querySelector("input").value.trim();
+        api("/v1/verify/confirm", { method: "POST", body: { sid: state.sid, email: email, code: code, name: name } }).then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
+          if (x.s !== 200) { m2.textContent = verr(x.b.error, x.b.attempts_left); return; }
+          state.verified = true; saveState();
+          g.remove();
+          c.appendChild(el("p", { class: "hasa-small", text: "Thanks, " + name + ". Your email is confirmed." }));
+          if (slot) confirmCard(slot, org);
+        }).catch(function () { m2.textContent = verr(); });
+      }
+    }
+  }
+  function verr(code, left) {
+    return ({ bad_email: "That email address doesn't look right.", disposable_email: "Please use a work or personal address rather than a temporary one.", verify_address_limit: "That address has had three codes today. Try again tomorrow, or use the booking link.", verify_daily_limit: "I can't send more codes today. The booking link still works.", wrong_code: "That code doesn't match." + (left !== undefined ? " " + left + " tries left." : ""), code_expired: "That code has expired. Ask for a new one.", too_many_attempts: "Too many tries. Ask for a new code.", no_code: "Ask for a code first." })[code] || "Something went wrong. Try again, or use the booking link.";
+  }
+  function confirmCard(slot, org) {
+    var c = card("hasa-confirm");
+    var m = el("p", { class: "hasa-small", role: "status" });
+    var btn = el("button", { type: "button", class: "hasa-send", text: "Confirm booking" });
+    btn.addEventListener("click", function () {
+      btn.disabled = true; m.textContent = "Booking…";
+      api("/v1/bookings", { method: "POST", body: { sid: state.sid, start: slot.start, organisation: org || "", tz: TZ } }).then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
+        if (x.s !== 201) { btn.disabled = false; m.textContent = ({ slot_taken: "That time has just gone. Please pick another.", already_booked: "You already have a call booked with Mike.", daily_cap: "Mike's diary is full for bookings through me today.", not_verified: "Please confirm your email first.", outside_window: "That time can't be booked." })[x.b.error] || "I couldn't book that. The booking link still works."; if (x.b.error !== "slot_taken") m.appendChild(el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "Booking link" })); return; }
+        c.textContent = "";
+        c.appendChild(el("p", { class: "hasa-card-title", text: "Booked: " + x.b.label }));
+        c.appendChild(el("p", { class: "hasa-small", text: "The calendar invitation with a video link is on its way to your inbox." }));
+        btn.remove();
+      }).catch(function () { btn.disabled = false; m.textContent = "I couldn't book that. The booking link still works."; });
+    });
+    c.appendChild(el("p", { class: "hasa-card-title", text: slot.label }));
+    c.appendChild(el("p", { class: "hasa-small", text: "30 minutes with Mike McKeown, by video." }));
+    c.appendChild(btn);
+    c.appendChild(m);
+    btn.focus();
   }
 
   function linkEl(path, label) { return el("a", { class: "hasa-linkbtn", href: path, text: label || path, onclick: function () { state.open = true; saveState(); } }); }

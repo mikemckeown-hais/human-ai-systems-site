@@ -36,6 +36,14 @@
 .hasa-foot a{color:#1F3A5F;text-decoration:underline;text-underline-offset:2px}
 .hasa-toggle{display:flex;align-items:center;gap:6px;margin-bottom:2px;color:#2B2B2B}
 .hasa-note{margin:0}
+.hasa-card{align-self:stretch;background:#fff;border:1px solid #DCE2E8;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.hasa-card form{display:flex;flex-direction:column;gap:8px}
+.hasa-card-title{margin:0;font-weight:700;color:#1F3A5F}
+.hasa-small{margin:0;font-size:14px;color:#3D4B5A}
+.hasa-small a{color:#1F3A5F;text-decoration:underline}
+.hasa-field{display:flex;flex-direction:column;gap:2px;font-size:14px}
+.hasa-field input{padding:8px 10px;border:1px solid #6B7C8F;border-radius:8px;font:inherit}
+.hasa-card .hasa-send{align-self:flex-start}
 .hasa-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (max-width:640px){
   .hasa-launch{right:14px;bottom:14px}
