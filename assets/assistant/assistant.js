@@ -252,6 +252,7 @@
   function handleTool(t) {
     if (t.name === "show_link") return addLink(t.path, t.label || t.title);
     if (t.name === "request_verification") return verifyForm(t.purpose, null);
+    if (t.name === "request_contact") return contactForm(t.topic);
     if (t.name === "book_meeting") return chooseSlot({ start: t.start, label: fmt(t.start) });
     if (t.name === "navigate") {
       if (t.path === location.pathname) return;
@@ -359,6 +360,39 @@
     c.appendChild(btn);
     c.appendChild(m);
     btn.focus();
+  }
+
+
+  // ---------- contact capture (R1.8): consent box unticked, submit only when ticked ----------
+  function contactForm(topic) {
+    var n = Date.now();
+    var c = card("hasa-contact");
+    var msg = el("p", { class: "hasa-small", role: "status" });
+    var box = el("input", { type: "checkbox", id: "hasa-k" + n });
+    var send = el("button", { type: "submit", class: "hasa-send", text: "Send to Mike", disabled: "" });
+    box.addEventListener("change", function () { send.disabled = !box.checked; });
+    var f = el("form", { onsubmit: function (e) { e.preventDefault(); submitContact(); } }, [
+      el("p", { class: "hasa-card-title", text: "Ask Mike to get in touch" }),
+      field("hasa-cn" + n, "Your name", "text", { autocomplete: "name", required: "", maxlength: "120" }),
+      field("hasa-ce" + n, "Email", "email", { autocomplete: "email", required: "", maxlength: "254" }),
+      field("hasa-co" + n, "Organisation (optional)", "text", { autocomplete: "organization", maxlength: "120" }),
+      el("label", { class: "hasa-toggle", for: "hasa-k" + n }, [box, " I'd like Mike to get in touch with me about this."]),
+      el("p", { class: "hasa-small" }, ["Mike will see this conversation. ", el("a", { href: "/privacy/", text: "Privacy" })]),
+      send, msg,
+    ]);
+    c.appendChild(f);
+    f.querySelector("input").focus();
+    function submitContact() {
+      if (!box.checked) return;
+      send.disabled = true; msg.textContent = "Sending…";
+      api("/v1/contacts", { method: "POST", body: { sid: state.sid, name: f.querySelector("#hasa-cn" + n).value, email: f.querySelector("#hasa-ce" + n).value, organisation: f.querySelector("#hasa-co" + n).value, topic: topic || "", contact_requested: true } })
+        .then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
+          if (x.s !== 201) { send.disabled = false; msg.textContent = ({ bad_email: "That email address doesn't look right.", disposable_email: "Please use an address you check.", name_required: "Please add your name.", capture_limit: "I've passed this on already. Mike will be in touch." })[x.b.error] || "That didn't go through. You can also book a call directly."; return; }
+          c.textContent = "";
+          c.appendChild(el("p", { class: "hasa-card-title", text: "Thanks. I've passed this to Mike." }));
+          c.appendChild(el("p", { class: "hasa-small", text: x.b.civic ? "Mike will reply to you personally." : "He'll be in touch, usually within a working day." }));
+        }).catch(function () { send.disabled = false; msg.textContent = "That didn't go through. You can also book a call directly."; });
+    }
   }
 
   function linkEl(path, label) { return el("a", { class: "hasa-linkbtn", href: path, text: label || path, onclick: function () { state.open = true; saveState(); } }); }
