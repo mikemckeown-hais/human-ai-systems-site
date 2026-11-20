@@ -690,8 +690,6 @@
         .vframe { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(160deg, #1F3A5F 0%, #2A4468 60%, #2A6F74 100%); display: grid; place-items: center; }
         .vframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
         .vframe video { position: absolute; inset: 0; width: 100%; height: 100%; background: #0A0F1A; }
-        .vplay i { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(10,15,26,0.55); border: 2px solid rgba(255,255,255,0.85); z-index: 1; }
-        .vplay i::after { content: ""; position: absolute; left: 50%; top: 50%; margin: -10px 0 0 -5px; border-left: 17px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
         .vsoon { color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.95rem; display: grid; justify-items: center; gap: 10px; }
         .vsoon i { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7); display: grid; place-items: center; }
         .vsoon i::after { content: ""; border-left: 14px solid rgba(255,255,255,0.85); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
@@ -2150,7 +2148,7 @@
                 var btn = document.createElement('button');
                 btn.type = 'button'; btn.className = 'vplay';
                 if (poster) btn.style.backgroundImage = 'url(' + poster + ')';
-                btn.innerHTML = '<i aria-hidden="true"></i><span>Play: ' + title + '</span>';
+                btn.innerHTML = '<span>Play: ' + title + '</span>';
                 el.innerHTML = ''; el.appendChild(btn);
                 btn.addEventListener('click', function () {
                     var v = document.createElement('video');
