@@ -238,11 +238,21 @@ Framework icons (`svg.fw-ico`) are inline SVG built from the node motif: blue fo
 - Source Sans 3 is self-hosted at `/assets/fonts/` (variable font, weights 400 to 700) and declared in `site.css`. Do not add a Google Fonts link. Each page preloads the latin file: `<link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin />`
 - Font stacks read `"Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif`. The fallback is Arial scaled to match, so text wraps the same before and after the font loads
 - Set heading and paragraph widths in `em`, never `ch`. A `ch` changes with the font on screen and caused a 0.68 layout shift on sector pages
-- External scripts loaded from cdnjs.cloudflare.com only (if needed at all)
-- No localStorage or sessionStorage usage
+- External scripts loaded from cdnjs.cloudflare.com only (if needed at all), except Turnstile for the website assistant (see Website assistant below)
+- No localStorage or sessionStorage usage, except the website assistant's session token (see Website assistant below)
 - Core content must be accessible without JavaScript
 
 ---
+
+## Website assistant
+
+Alan, the site-wide AI assistant (plan and status: `06 Marketing/Website/website-assistant/`; Worker: `08 Operations/AI Setup/Website Assistant/`). Added 20 Nov 2026.
+
+- **Files:** `assets/assistant/assistant.js` and `assistant.css`, and one loader line before `</body>` on every indexable page: `<script src="/assets/assistant/assistant.js" async></script><!-- has-assistant -->`.
+- **Do not hand-copy the loader.** It is added and removed by `scripts/inject-loader.mjs` in the Worker folder, which works from each page's own `robots` meta and a never list (`/mike/`, `/ned-mike/` and its sub-page, `/wac/`, `/fpa-persona-preview/`, `/webinar/` and its sub-pages, `/from-prompt-to-autopilot/register/`, every explorer, `404.html`, `Archive/`; the noindex sector and sales AIOS pages only when `SECTOR_AIOS_PUBLIC` is on). A new page gets no assistant until the script is re-run. When you copy an existing page as a template, remove the loader line from the copy; the next run adds it back if the page is indexable.
+- **Kill switch: safe on `dev` and if released.** The script draws nothing unless the Worker for that hostname answers `/v1/config` with `enabled: true`. The production Worker (`assistant.human-ai-systems.com`) is not deployed before Mike's approval at gate G4, so a `sync-to-main` by another session shows nothing on production. Never remove the loader or the assistant files to "clean up" a release; tell Mike instead.
+- **Exceptions to the rules above, for the assistant only:** it writes the session token to `sessionStorage`, and loads Turnstile from `challenges.cloudflare.com`, both only after a visitor first opens the chat (strictly necessary under PECR; listed in the privacy page at G4). Nothing loads, and nothing is stored, before that.
+- **`/ai-assessment/`** (Release 2) stays noindex, unlinked and out of the sitemap until gate G5.
 
 ## Commit & Change Discipline
 
