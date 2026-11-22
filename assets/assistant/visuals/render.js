@@ -106,7 +106,7 @@ function flow(ev) {
 function comparison(ev) {
   var sp = ev.spec || {}, t = h("table");
   if (sp.title) t.appendChild(h("caption", { class: "hasv-sr", text: sp.title }));
-  var tr = h("tr"); (sp.columns || []).forEach(function (c) { tr.appendChild(h("th", { scope: "col", text: c })); }); t.appendChild(h("thead", {}, [tr]));
+  var tr = h("tr"); (sp.columns || []).forEach(function (c) { tr.appendChild(c ? h("th", { scope: "col", text: c }) : h("th", { scope: "col" }, [h("span", { class: "hasv-sr", text: "Item" })])); }); t.appendChild(h("thead", {}, [tr]));
   var tb = h("tbody"); (sp.rows || []).forEach(function (r) { var row = h("tr"); r.forEach(function (c, i) { row.appendChild(h(i === 0 ? "th" : "td", i === 0 ? { scope: "row", text: c, style: "background:#F3F5F7;color:#1F3A5F;white-space:normal" } : { text: c })); }); tb.appendChild(row); }); t.appendChild(tb);
   return figure(ev, [sp.title ? h("p", { class: "hasv-title", text: sp.title }) : null, h("div", { class: "hasv-tablewrap", tabindex: "0", role: "region", "aria-label": sp.title || "Comparison table" }, [t])]);
 }
@@ -125,15 +125,15 @@ function pageCard(ev) {
 // ---------- video: nothing loads from YouTube until the visitor presses play ----------
 function video(ev) {
   var sp = ev.spec || {}, frame = h("div", { class: "hasv-video" });
-  var label = "Play: " + (sp.title || "video");
+  var named = function (visible) { return visible + ": " + (sp.title || "video"); };
   if (sp.kind === "file" && /^https:\/\/media\.human-ai-systems\.com\//.test(sp.src || "")) {
     if (sp.poster && /^https:\/\/media\.human-ai-systems\.com\//.test(sp.poster)) frame.appendChild(h("img", { src: sp.poster, alt: "", loading: "lazy" }));
-    frame.appendChild(h("button", { type: "button", class: "hasv-play", "aria-label": label, text: "Play", onclick: function () {
+    frame.appendChild(h("button", { type: "button", class: "hasv-play", "aria-label": named("Play"), text: "Play", onclick: function () {
       while (frame.firstChild) frame.removeChild(frame.firstChild);
       var v = h("video", { src: sp.src, controls: "", autoplay: "", playsinline: "", preload: "auto", title: sp.title || "" }); frame.appendChild(v); try { v.focus(); } catch (e) {}
     } }));
   } else if (sp.kind === "youtube" && /^[A-Za-z0-9_-]{11}$/.test(sp.id || "")) {
-    frame.appendChild(h("button", { type: "button", class: "hasv-play", "aria-label": label, text: "Play video", onclick: function () {
+    frame.appendChild(h("button", { type: "button", class: "hasv-play", "aria-label": named("Play video"), text: "Play video", onclick: function () {
       while (frame.firstChild) frame.removeChild(frame.firstChild);
       frame.appendChild(h("iframe", { src: "https://www.youtube-nocookie.com/embed/" + sp.id + "?autoplay=1&rel=0&playsinline=1&modestbranding=1", title: sp.title || "Video", allow: "autoplay; encrypted-media; picture-in-picture; fullscreen", allowfullscreen: "", loading: "lazy" }));
     } }));
