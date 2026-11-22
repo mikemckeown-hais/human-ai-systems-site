@@ -328,7 +328,7 @@
       field("hasa-n" + n, "Your name", "text", { autocomplete: "name", required: "", maxlength: "120" }),
       field("hasa-e" + n, "Work email", "email", { autocomplete: "email", required: "", maxlength: "254" }),
       field("hasa-o" + n, "Organisation (optional)", "text", { autocomplete: "organization", maxlength: "80" }),
-      el("p", { class: "hasa-small" }, ["We'll email you a six-digit code. We use your details only for this. ", el("a", { href: "/privacy/", text: "Privacy" })]),
+      el("p", { class: "hasa-small" }, ["We'll email you a six-digit code. If you book, Mike gets your name, email and this conversation so he can prepare for the call. ", el("a", { href: "/privacy/", text: "Privacy" })]),
       el("button", { type: "submit", class: "hasa-send", text: "Send code" }),
       msg,
     ]);
