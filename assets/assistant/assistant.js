@@ -148,7 +148,7 @@
       if (!h.messages.length) { greet(); return; }
       h.messages.forEach(function (m) {
         if (m.role === "visitor") addVisitor(m.text);
-        else { addAssistant(m.text || ""); if (m.tool) addLink(m.tool.path, m.tool.title); }
+        else { addAssistant(m.text || ""); (m.tools || (m.tool ? [m.tool] : [])).forEach(restoreTool); }
       });
       scrollEnd();
     }).catch(function () { greet(); });
@@ -243,14 +243,40 @@
       session_turn_limit: "We've reached the end of what I can do in one conversation. Mike would be glad to pick it up with you.",
       session_token_limit: "We've reached the end of what I can do in one conversation. Mike would be glad to pick it up with you.",
       disabled: "I'm not available at the moment. You can still book a call with Mike.",
+      session_closed: "This conversation has ended. You can start a new one by reloading the page, or book a call with Mike.",
       turnstile: "I couldn't confirm the chat is coming from a browser. Refresh the page and try again.",
     }[code] || "Something went wrong on my side. Try again in a moment, or book a call with Mike.";
     renderText(bubble, msg);
     bubble.appendChild(el("p", {}, [el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "Book a call with Mike" }), " ", el("a", { class: "hasa-linkbtn", href: "/start/", text: "Start page" })]));
   }
 
+  // Controls from earlier replies, redrawn after a page load. Forms are not redrawn; links and visuals are.
+  function restoreTool(t) {
+    if (!t) return;
+    if ((t.name === "navigate" || t.name === "show_link") && t.path) return addLink(t.path, t.title);
+    if (t.name === "show_booking_link") return addBookLink();
+    if (t.name === "show_visual") return showVisual(t);
+  }
+  function addBookLink() { var p = el("p", { class: "hasa-links" }, [el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "See Mike's times and book" })]); ui.log.appendChild(p); scrollEnd(); }
+  var visuals = null;
+  function showVisual(t) {
+    var holder = el("div", { class: "hasa-visual" });
+    ui.log.appendChild(holder);
+    (visuals || (visuals = import(base + "visuals/render.js"))).then(function (m) { holder.appendChild(m.render(t, { base: base })); scrollEnd(); })
+      .catch(function () { visuals = null; holder.appendChild(el("p", { class: "hasa-small", text: t.alt || "" })); });
+  }
+  function ended() {
+    var p = el("p", { class: "hasa-nav", role: "status" }, ["This conversation has ended. ", el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "Book a call with Mike" })]);
+    ui.log.appendChild(p); scrollEnd();
+    ui.input.disabled = true; ui.send.disabled = true; ui.input.placeholder = "This conversation has ended";
+    state.sid = state.token = null; state.ended = true; saveState();
+  }
+
   function handleTool(t) {
     if (t.name === "show_link") return addLink(t.path, t.label || t.title);
+    if (t.name === "show_booking_link") return addBookLink();
+    if (t.name === "show_visual") return showVisual(t);
+    if (t.name === "end_conversation") return ended();
     if (t.name === "request_verification") return verifyForm(t.purpose, null);
     if (t.name === "request_contact") return contactForm(t.topic);
     if (t.name === "book_meeting") return chooseSlot({ start: t.start, label: fmt(t.start) });
@@ -275,7 +301,9 @@
 
 
   // ---------- booking (R1.7): a booking is made only by the visitor's confirm click ----------
-  function fmt(ms) { try { return new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(ms)); } catch (e) { return new Date(ms).toString(); } }
+  // Some browsers print "GMT+0" for UK winter time: show GMT, and BST in UK summer time.
+  function tidyZone(x) { x = String(x).replace(/\b(GMT|UTC)[+-]0(:00)?\b/g, "GMT"); return TZ === "Europe/London" ? x.replace(/\bGMT\+1(:00)?\b/g, "BST") : x; }
+  function fmt(ms) { try { return tidyZone(new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(ms))); } catch (e) { return new Date(ms).toString(); } }
   function card(cls) { var c = el("div", { class: "hasa-card " + (cls || "") }); ui.log.appendChild(c); scrollEnd(); return c; }
   function showSlots(slots) {
     var c = card("hasa-slots");
