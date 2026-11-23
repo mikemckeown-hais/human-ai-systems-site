@@ -973,6 +973,22 @@
 
         @media (max-width: 1000px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 1100px) { .role-grid, .sys-grid, .four-grid { grid-template-columns: repeat(2, 1fr); } }
+        /* Hero without video, explorer straight after */
+        .page-header:has(.hero-solo) { padding: 52px 0 48px; }
+        .hero-solo { grid-template-columns: 1fr; gap: 0; max-width: 900px; }
+        .hero-solo h1 { max-width: 24ch; }
+        .hero-solo .lead { max-width: 52rem; }
+        .hero-solo .hero-pills { margin-top: 20px; }
+        .hero-solo .hero-actions { margin-top: 24px; }
+        .xband { padding: 44px 0 56px; }
+        .xband .intro { margin-bottom: 22px; }
+        .xbar { width: min(1400px, calc(100% - 28px)); margin: 0 auto 12px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .xbtn .fs { width: 14px; height: 14px; background:
+            linear-gradient(currentColor,currentColor) 0 0/5px 2px, linear-gradient(currentColor,currentColor) 0 0/2px 5px,
+            linear-gradient(currentColor,currentColor) 100% 0/5px 2px, linear-gradient(currentColor,currentColor) 100% 0/2px 5px,
+            linear-gradient(currentColor,currentColor) 0 100%/5px 2px, linear-gradient(currentColor,currentColor) 0 100%/2px 5px,
+            linear-gradient(currentColor,currentColor) 100% 100%/5px 2px, linear-gradient(currentColor,currentColor) 100% 100%/2px 5px; background-repeat: no-repeat; }
+        @media (max-width: 860px) { .xbar { display: none; } .page-header:has(.hero-solo) { padding: 40px 0 36px; } }
         @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .hero-video { max-width: 560px; } }
         @media (max-width: 860px) { .page-guide { top: 72px; } }
         @media (max-width: 760px) {
@@ -1071,7 +1087,7 @@
 
         <!-- Hero -->
         <section class="page-header">
-            <div class="container hero-grid">
+            <div class="container hero-grid hero-solo">
                 <div>
                     <div class="eyebrow">Law Firm AI Operating System</div>
                     <h1>Give your fee earners back a day a week, safely</h1>
@@ -1087,19 +1103,37 @@
                         <a href="#get-yours" class="btn btn-ghost">Book a conversation</a>
                     </div>
                 </div>
-                <article class="vcard hero-video">
-                    <div class="vframe" data-video="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/video.mp4" data-poster="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/thumbnail.webp" data-title="What a Law Firm AI Operating System does for you"><video controls preload="none" playsinline poster="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/thumbnail.webp" aria-label="What a Law Firm AI Operating System does for you"><source src="https://media.human-ai-systems.com/videos/law-firm-aios-what-it-does/20261120-213659/video.mp4" type="video/mp4"></video></div>
-                    <div class="vbody">
-                        <div class="eyebrow">Watch &middot; a few minutes</div>
-                        <h3>A partner&rsquo;s day, with and without it</h3>
-                    </div>
-                </article>
             </div>
+        </section>
+
+        <!-- Interactive explorer -->
+        <section class="xband" id="explorer">
+            <div class="container intro">
+                <div class="eyebrow">Interactive explorer</div>
+                <h2>Explore it for yourself</h2>
+                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built with you. Press play for a narrated tour with captions, or click anything to explore.</p>
+            </div>
+            <div class="xbar">
+                <button class="xbtn primary" type="button" id="playTour"><span class="tri" aria-hidden="true"></span>Play the narrated tour</button>
+                <a class="xbtn" id="fullTour" href="/law-firm-aios/explorer/" target="_blank" rel="noopener"><span class="fs" aria-hidden="true"></span>Open full screen</a>
+            </div>
+            <div class="xframe">
+                <iframe id="explorerFrame" src="/law-firm-aios/explorer/?embed=1" title="Law Firm AI Operating System interactive explorer" allow="autoplay; fullscreen"></iframe>
+            </div>
+            <div class="xmobile">
+                <h3>Best opened full screen on a phone</h3>
+                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built. Narrated, with captions.</p>
+                <a class="xbtn primary" href="/law-firm-aios/explorer/"><span class="tri" aria-hidden="true"></span>Open the explorer</a>
+            </div>
+            <noscript><p class="xnote">The explorer needs JavaScript. The sections above cover the same ground.</p></noscript>
+            <p class="xnote">The narration uses an AI version of the voice of Mike McKeown, our founder. Press the speaker button to mute it, and the <strong>CC</strong> button to show or hide the captions.</p>
+            <p class="xnote">This explorer was made by our own Business AI Operating System.</p>
         </section>
 
         <!-- Page guide -->
         <nav class="page-guide" aria-label="On this page">
             <div class="container">
+                <a href="#explorer">Explorer</a>
                 <a href="#a-day">What it does</a>
                 <a href="#examples">Examples</a>
                 <a href="#roles">By department</a>
@@ -1423,29 +1457,6 @@
         </section>
 
 
-        <!-- Interactive explorer -->
-        <section class="xband" id="explorer">
-            <div class="container intro">
-                <div class="eyebrow">Interactive explorer</div>
-                <h2>Explore it for yourself</h2>
-                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built with you. Press play for a narrated tour with captions, or click anything to explore.</p>
-            </div>
-            <div class="xframe">
-                <iframe id="explorerFrame" src="/law-firm-aios/explorer/?embed=1" title="Law Firm AI Operating System interactive explorer" allow="autoplay; fullscreen" loading="lazy"></iframe>
-            </div>
-            <div class="xmobile">
-                <h3>Best opened full screen on a phone</h3>
-                <p>Follow a partner&rsquo;s day, open up the parts, and see how it is built. Narrated, with captions.</p>
-                <a class="xbtn primary" href="/law-firm-aios/explorer/"><span class="tri" aria-hidden="true"></span>Open the explorer</a>
-            </div>
-            <noscript><p class="xnote">The explorer needs JavaScript. The sections above cover the same ground.</p></noscript>
-            <div class="xactions">
-                <button class="xbtn primary" type="button" id="playTour"><span class="tri" aria-hidden="true"></span>Play the narrated tour</button>
-                <a class="xbtn" href="/law-firm-aios/explorer/" target="_blank" rel="noopener">Open full screen</a>
-            </div>
-            <p class="xnote">The narration uses an AI version of the voice of Mike McKeown, our founder. Press the speaker button to mute it, and the <strong>CC</strong> button to show or hide the captions.</p>
-            <p class="xnote">This explorer was made by our own Business AI Operating System.</p>
-        </section>
 
 
         <!-- FAQs -->
@@ -2125,6 +2136,14 @@
                 var hdr = document.querySelector('.site-header'), off = (hdr ? hdr.offsetHeight : 0) + 16;
                 window.scrollTo({ top: frame.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
                 try { frame.contentWindow.postMessage({ aios: 'play', lens: 'benefits', chain: true }, location.origin); } catch (e) {}
+            });
+            var full = document.getElementById('fullTour');
+            if (full) full.addEventListener('click', function (e) {
+                var req = frame.requestFullscreen || frame.webkitRequestFullscreen;
+                if (!req) return; // fall back to opening the explorer in a new tab
+                e.preventDefault();
+                try { var r = req.call(frame); if (r && r.catch) r.catch(function () { window.open(full.href, '_blank', 'noopener'); }); }
+                catch (err) { window.open(full.href, '_blank', 'noopener'); }
             });
             // Videos: set data-youtube="VIDEO_ID" on a card to show it.
             // Our own thumbnail and play button first (no YouTube title bar), then the player
