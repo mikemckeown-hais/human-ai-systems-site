@@ -8,6 +8,10 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-23
 
+- Privacy: website assistant section, processors and transfers, profiling wording, complaints route to us, cookie and storage rows
+
+## 2026-11-23
+
 - Business AIOS page: sector chooser under the hero (law firms, dental, care homes, sales)
 - Add noindex media test page for R2 video hosting
 - Add website assistant (Alan) widget and loader on indexable pages; kill switch keeps it off until the Worker enables it
