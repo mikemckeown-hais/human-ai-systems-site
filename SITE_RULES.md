@@ -239,14 +239,13 @@ Framework icons (`svg.fw-ico`) are inline SVG built from the node motif: blue fo
 - Font stacks read `"Source Sans 3", "Source Sans 3 Fallback", "Segoe UI", Arial, sans-serif`. The fallback is Arial scaled to match, so text wraps the same before and after the font loads
 - Set heading and paragraph widths in `em`, never `ch`. A `ch` changes with the font on screen and caused a 0.68 layout shift on sector pages
 - External scripts loaded from cdnjs.cloudflare.com only (if needed at all), except Turnstile for the website assistant (see Website assistant below)
-
-**Live since 23 Nov 2026** (gate G4). The production Worker `assistant.human-ai-systems.com` is enabled; the loader on indexable pages now draws Alan on the live site. Turning him off needs no deploy: admin, settings, kill switch (`https://assistant.human-ai-systems.com/admin/`). Do not remove the loader line from pages, and run the loader injector (`08 Operations/AI Setup/Website Assistant/scripts/inject-loader.mjs`) after adding a new indexable page. The privacy page's "Website assistant" section describes this processing: change it only with Mike's approval.
 - No localStorage or sessionStorage usage, except the website assistant's session token (see Website assistant below)
 - Core content must be accessible without JavaScript
 
 ---
 
 ## Website assistant
+**Live since 23 Nov 2026** (gate G4). The production Worker `assistant.human-ai-systems.com` is enabled; the loader on indexable pages now draws Alan on the live site. Turning him off needs no deploy: admin, settings, kill switch (`https://assistant.human-ai-systems.com/admin/`). Do not remove the loader line from pages, and run the loader injector (`08 Operations/AI Setup/Website Assistant/scripts/inject-loader.mjs`) after adding a new indexable page. The privacy page's "Website assistant" section describes this processing: change it only with Mike's approval.
 
 Alan, the site-wide AI assistant (plan and status: `06 Marketing/Website/website-assistant/`; Worker: `08 Operations/AI Setup/Website Assistant/`). Added 20 Nov 2026.
 
