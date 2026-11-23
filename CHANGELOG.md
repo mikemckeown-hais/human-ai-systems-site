@@ -6,6 +6,24 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-23
+
+- Business AIOS page: sector chooser under the hero (law firms, dental, care homes, sales)
+- Add noindex media test page for R2 video hosting
+- Add website assistant (Alan) widget and loader on indexable pages; kill switch keeps it off until the Worker enables it
+- Media test page: remove captions track (video has burned-in captions)
+- Website assistant: booking flow in the widget (slots, email code, confirm)
+- Remove media test page
+- Law Firm AIOS: hero video self-hosted on R2
+- Website assistant: contact form (consent box unticked by default)
+- Law Firm AIOS: title thumbnail as video poster
+- Law Firm AIOS: drop extra play icon (thumbnail has its own)
+- Website assistant R1.9a: rich outputs (lazy-loaded visuals, framework diagrams), booking link control, end of conversation, GMT labels
+- Website assistant: accurate notice on the verification form (verify-v2)
+- Website assistant visuals: accessible names for play buttons and blank table headers
+- Law Firm AIOS: remove hero video, shorter hero, explorer straight after with play and full-screen bar
+- Law Firm AIOS: law firm photograph beside the hero text
+
 ## 2026-11-19
 
 - Add Care Home AI Operating System page and explorer (noindex, unlisted)
