@@ -38,11 +38,11 @@
 
   // ---------- boot ----------
   // Cookieless page count for the site's own analytics: path, referring site, utm_source. Nothing stored on the device.
-  var UTM = null;
-  try { UTM = new URLSearchParams(location.search).get("utm_source"); } catch (e) { UTM = null; }
+  var UTM = null, CAMPAIGN = null;
+  try { var q = new URLSearchParams(location.search); UTM = q.get("utm_source"); CAMPAIGN = q.get("utm_campaign"); } catch (e) { UTM = null; }
   function countPage() {
     try {
-      var body = JSON.stringify({ p: location.pathname, r: document.referrer || "", u: UTM });
+      var body = JSON.stringify({ p: location.pathname, r: document.referrer || "", u: UTM, c: CAMPAIGN });
       if (navigator.sendBeacon) navigator.sendBeacon(API + "/v1/pv", new Blob([body], { type: "text/plain" }));
     } catch (e) { /* counting is best effort */ }
   }
@@ -185,7 +185,7 @@
   function ensureSession() {
     if (state && state.sid && state.token) return Promise.resolve();
     return turnstileToken().then(function (tok) {
-      return api("/v1/sessions", { method: "POST", body: { turnstile: tok, entry_path: location.pathname, auto_nav: ui.autoNav.checked !== false, referrer: document.referrer || "", utm: UTM } });
+      return api("/v1/sessions", { method: "POST", body: { turnstile: tok, entry_path: location.pathname, auto_nav: ui.autoNav.checked !== false, referrer: document.referrer || "", utm: UTM, utm_campaign: CAMPAIGN } });
     }).then(function (r) {
       return r.json().then(function (b) { if (r.status !== 201) throw b.error || "session"; state.sid = b.sid; state.token = b.token; saveState(); });
     });
