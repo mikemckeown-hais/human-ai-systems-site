@@ -580,15 +580,15 @@
   function renderText(node, text) {
     while (node.firstChild) node.removeChild(node.firstChild);
     var blocks = String(text).split(/\n{2,}/);
+    // Within a block, runs of "- " lines become a list and other lines a paragraph ("Three moves:" then a list).
     blocks.forEach(function (blk) {
-      var lines = blk.split("\n");
-      if (lines.every(function (l) { return /^\s*[-*] /.test(l); })) {
-        var ul = el("ul");
-        lines.forEach(function (l) { var li = el("li"); inline(li, l.replace(/^\s*[-*] /, "")); ul.appendChild(li); });
-        node.appendChild(ul);
-      } else if (blk.trim()) {
-        var p = el("p"); inline(p, lines.join(" ")); node.appendChild(p);
-      }
+      var para = [], ul = null;
+      function flush() { if (para.length) { var p = el("p"); inline(p, para.join(" ")); node.appendChild(p); para = []; } }
+      blk.split("\n").forEach(function (l) {
+        if (/^\s*[-*] /.test(l)) { flush(); if (!ul) { ul = el("ul"); node.appendChild(ul); } var li = el("li"); inline(li, l.replace(/^\s*[-*] /, "")); ul.appendChild(li); }
+        else if (l.trim()) { ul = null; para.push(l.trim()); }
+      });
+      flush();
     });
   }
   function inline(node, s) {
