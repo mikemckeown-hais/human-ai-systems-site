@@ -37,13 +37,32 @@
   }
 
   // ---------- boot ----------
+  // Cookieless page count for the site's own analytics: path, referring site, utm_source. Nothing stored on the device.
+  var UTM = null;
+  try { UTM = new URLSearchParams(location.search).get("utm_source"); } catch (e) { UTM = null; }
+  function countPage() {
+    try {
+      var body = JSON.stringify({ p: location.pathname, r: document.referrer || "", u: UTM });
+      if (navigator.sendBeacon) navigator.sendBeacon(API + "/v1/pv", new Blob([body], { type: "text/plain" }));
+    } catch (e) { /* counting is best effort */ }
+  }
+  // "Ask Alan" blocks on pages stay hidden unless the assistant is switched on.
+  function wireOpeners() {
+    var shows = document.querySelectorAll("[data-hasa-show]");
+    for (var i = 0; i < shows.length; i++) shows[i].hidden = false;
+    var opens = document.querySelectorAll("[data-hasa-open]");
+    for (var j = 0; j < opens.length; j++) opens[j].addEventListener("click", function (e) { e.preventDefault(); open(true); });
+  }
+
   function boot() {
+    countPage();
     fetch(API + "/v1/config", { credentials: "omit" }).then(function (r) { return r.json(); }).then(function (c) {
       if (!c || c.enabled !== true) return;
       cfg = c;
       var link = el("link", { rel: "stylesheet", href: base + "assistant.css" });
       link.onload = function () {
         drawButton();
+        wireOpeners();
         state = readState();
         if (state && state.open) open(false);
       };
@@ -166,7 +185,7 @@
   function ensureSession() {
     if (state && state.sid && state.token) return Promise.resolve();
     return turnstileToken().then(function (tok) {
-      return api("/v1/sessions", { method: "POST", body: { turnstile: tok, entry_path: location.pathname, auto_nav: ui.autoNav.checked !== false } });
+      return api("/v1/sessions", { method: "POST", body: { turnstile: tok, entry_path: location.pathname, auto_nav: ui.autoNav.checked !== false, referrer: document.referrer || "", utm: UTM } });
     }).then(function (r) {
       return r.json().then(function (b) { if (r.status !== 201) throw b.error || "session"; state.sid = b.sid; state.token = b.token; saveState(); });
     });
