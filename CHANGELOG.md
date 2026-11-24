@@ -8,6 +8,14 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ## 2026-11-24
 
+- Website assistant: send utm_campaign so tagged LinkedIn posts can be tracked
+- Add AI Assessment page (noindex, unlinked) and basic assessment in the assistant widget
+- Assistant widget: render a list that follows a lead-in line
+- SITE_RULES: the AI Assessment page embeds Alan; how it goes public at G5
+- Make the AI Assessment page public: index, sitemap, llms.txt, Start page card (gate G5)
+
+## 2026-11-24
+
 - SITE_RULES: website assistant live since 23 Nov 2026
 - SITE_RULES: move the live note under Website assistant
 - Website: Ask Alan on the home page and Start page; cookieless page counting for site analytics; privacy page covers it
