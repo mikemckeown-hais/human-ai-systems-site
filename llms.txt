@@ -22,6 +22,7 @@ Sectors: local government, financial services, professional services, SaaS and t
 - [Sectors](https://human-ai-systems.com/sectors/): sector-specific pages
 - [Insights](https://human-ai-systems.com/insights/): articles and frameworks
 - [About](https://human-ai-systems.com/about/): Mike McKeown's background
+- [AI Assessment](https://human-ai-systems.com/ai-assessment/): a five-minute, anonymous AI maturity snapshot
 - [Start](https://human-ai-systems.com/start/): book a conversation
 
 Contact: mike.mckeown@human-ai-systems.com
