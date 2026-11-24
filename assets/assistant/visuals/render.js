@@ -163,7 +163,37 @@ function explorer(ev) {
   return figure(ev, [h("p", { class: "hasv-title", text: "Business AI Operating System explorer" }), h("div", { class: "hasv-explore" }, [h("p", { text: "An interactive 3D model, opened at " + (names[sp.world] || names.benefits) + "." }), btn])]);
 }
 
-var R = { framework: framework, flow: flow, comparison: comparison, page_card: pageCard, video: video, aios_explorer: explorer };
+
+// ---------- maturity snapshot (R2.2): drawn from the rubric result, never from the model ----------
+function maturity(ev) {
+  var sp = ev.spec || {}, pos = (sp.positions || []).slice(0, 5), idx = Number(sp.index);
+  if (pos.length !== 5 || !(idx >= 0 && idx <= 4)) return null;
+  var W = 360, segW = (W - 8) / 5, top = 8;
+  var svg = s("svg", { viewBox: "0 0 " + W + " 96", role: "img", "aria-hidden": "true", class: "hasv-mat-track" });
+  pos.forEach(function (label, i) {
+    var g = s("g", { class: "seg" + (i === idx ? " on" : i < idx ? " past" : "") });
+    g.appendChild(s("rect", { x: 4 + i * segW + 1, y: top + 10, width: segW - 2, height: 22, rx: 5 }));
+    var parts = String(label).split(", ");
+    g.appendChild(s("text", { x: 4 + i * segW + segW / 2, y: top + 52, "text-anchor": "middle", class: "l1" }, parts[0]));
+    if (parts[1]) g.appendChild(s("text", { x: 4 + i * segW + segW / 2, y: top + 66, "text-anchor": "middle", class: "l2" }, parts[1]));
+    svg.appendChild(g);
+  });
+  var cx = 4 + idx * segW + segW / 2;
+  svg.appendChild(s("path", { d: "M" + (cx - 7) + " " + (top + 1) + " L" + (cx + 7) + " " + (top + 1) + " L" + cx + " " + (top + 9) + " Z", class: "here" }));
+  svg.appendChild(s("text", { x: Math.min(W - 40, Math.max(40, cx)), y: top + 88, "text-anchor": "middle", class: "hasv-here" }, "YOU ARE HERE"));
+  var rows = h("div", { class: "hasv-mat-dims" });
+  (sp.dimensions || []).slice(0, 8).forEach(function (d) {
+    var sc = Math.max(0, Math.min(4, Number(d.score) || 0));
+    var pips = h("span", { class: "pips", "aria-hidden": "true" });
+    for (var k = 0; k < 4; k++) pips.appendChild(h("i", { class: k < sc ? "on" : "" }));
+    rows.appendChild(h("div", { class: "row" + (d.label === sp.gap ? " gap" : "") }, [h("span", { class: "lab", text: d.label }), pips, h("span", { class: "hasv-sr", text: sc + " out of 4" })]));
+  });
+  var kids = [h("p", { class: "hasv-title", text: sp.title || "" }), svg, rows];
+  if (sp.gap) kids.push(h("p", { class: "hasv-cap", text: "Biggest gap: " + sp.gap }));
+  return figure(ev, kids);
+}
+
+var R = { maturity: maturity, framework: framework, flow: flow, comparison: comparison, page_card: pageCard, video: video, aios_explorer: explorer };
 export function render(ev, ctx) {
   ensureCss(ctx.base);
   var fn = R[ev && ev.type];

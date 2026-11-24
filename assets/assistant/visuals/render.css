@@ -47,3 +47,18 @@
 @media (max-width:640px){.hasv-overlay{inset:0;border-radius:0}.hasv-card img{width:72px;height:56px}}
 .hasv-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.hasv *{transition:none!important}}
+
+/* Maturity snapshot (R2.2) */
+.hasv-mat-track .seg rect{fill:#E6EBF0;stroke:#c9d3de}
+.hasv-mat-track .seg.past rect{fill:#9FC9CC;stroke:#9FC9CC}
+.hasv-mat-track .seg.on rect{fill:#1F3A5F;stroke:#1F3A5F}
+.hasv-mat-track text.l1{font:600 12px "Source Sans 3",system-ui,sans-serif;fill:#1F3A5F}
+.hasv-mat-track text.l2{font:12px "Source Sans 3",system-ui,sans-serif;fill:#4a5868}
+.hasv-mat-track .here{fill:#3EC1C9}
+.hasv-mat-dims{display:grid;gap:4px;margin-top:6px}
+.hasv-mat-dims .row{display:flex;align-items:center;gap:8px;font-size:13px;color:#2B2B2B}
+.hasv-mat-dims .lab{flex:1}
+.hasv-mat-dims .pips{display:inline-flex;gap:3px}
+.hasv-mat-dims .pips i{display:inline-block;width:18px;height:8px;border-radius:2px;background:#E6EBF0;border:1px solid #c9d3de}
+.hasv-mat-dims .pips i.on{background:#2A6F74;border-color:#2A6F74}
+.hasv-mat-dims .row.gap .lab{font-weight:600;color:#1F3A5F}

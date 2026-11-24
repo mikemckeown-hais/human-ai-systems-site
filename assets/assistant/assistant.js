@@ -15,6 +15,10 @@
   var base = script && script.src ? script.src.replace(/[^/]*$/, "") : "/assets/assistant/";
 
   var cfg = null, state = null, ui = null, busy = false, inflight = null, navTimer = null, lastFocus = null;
+  // The AI Assessment page carries the chat in the page itself (no corner button).
+  var ASSESS_PATH = "/ai-assessment/";
+  var embedHost = document.querySelector("[data-hasa-embed]");
+  var FINISHED = "I've finished the quick assessment.";
 
   function readState() { try { return JSON.parse(sessionStorage.getItem(KEY) || "null"); } catch (e) { return null; } }
   function saveState() { try { sessionStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage blocked: session lasts this page only */ } }
@@ -61,9 +65,10 @@
       cfg = c;
       var link = el("link", { rel: "stylesheet", href: base + "assistant.css" });
       link.onload = function () {
+        state = readState();
+        if (embedHost) { openEmbedded(); return; }
         drawButton();
         wireOpeners();
-        state = readState();
         if (state && state.open) open(false);
       };
       document.head.appendChild(link);
@@ -78,16 +83,16 @@
   }
 
   // ---------- panel ----------
-  function buildPanel() {
+  function buildPanel(host) {
     var autoNav = el("input", { type: "checkbox", id: "hasa-autonav", checked: "", onchange: function () { setAutoNav(this.checked); } });
-    var panel = el("div", { id: "hasa-panel", class: "hasa-panel", role: "dialog", "aria-modal": "true", "aria-labelledby": "hasa-title", hidden: "" }, [
+    var panel = el("div", host ? { id: "hasa-panel", class: "hasa-panel hasa-embedded", role: "region", "aria-labelledby": "hasa-title" } : { id: "hasa-panel", class: "hasa-panel", role: "dialog", "aria-modal": "true", "aria-labelledby": "hasa-title", hidden: "" }, [
       el("div", { class: "hasa-head" }, [
         el("img", { class: "hasa-avatar", src: "/images/headshots/480/Alan.webp", alt: "", width: "40", height: "40", decoding: "async" }),
         el("div", { class: "hasa-titles" }, [
           el("h2", { id: "hasa-title", class: "hasa-title", text: "Alan" }),
           el("p", { class: "hasa-sub", text: "AI assistant, Human-AI Systems" }),
         ]),
-        el("button", { type: "button", class: "hasa-close", "aria-label": "Close the chat", onclick: close, text: "×" }),
+        host ? null : el("button", { type: "button", class: "hasa-close", "aria-label": "Close the chat", onclick: close, text: "×" }),
       ]),
       el("div", { class: "hasa-log", role: "log", "aria-live": "polite", "aria-relevant": "additions" }),
       el("div", { class: "hasa-ts", "aria-hidden": "true" }),
@@ -101,8 +106,8 @@
         el("p", { class: "hasa-note" }, ["Alan is an AI. Answers can be wrong and are general information, not advice. ", el("a", { href: "/privacy/" , text: "Privacy" })]),
       ]),
     ]);
-    panel.addEventListener("keydown", trapFocus);
-    document.body.appendChild(panel);
+    if (host) { while (host.firstChild) host.removeChild(host.firstChild); host.appendChild(panel); }
+    else { panel.addEventListener("keydown", trapFocus); document.body.appendChild(panel); }
     ui = { panel: panel, log: panel.querySelector(".hasa-log"), input: panel.querySelector("textarea"), send: panel.querySelector(".hasa-send"), ts: panel.querySelector(".hasa-ts"), autoNav: autoNav };
   }
 
@@ -132,8 +137,22 @@
     if (byUser) ui.input.focus();
   }
 
+  // Assessment page: the chat sits in the page, always open; a pending start from another page runs now.
+  function openEmbedded() {
+    buildPanel(embedHost);
+    state = state || { v: 1 };
+    var pending = state.pendingAssessment;
+    state.pendingAssessment = null;
+    saveState();
+    if (state.sid) restore(pending); else { greet(); if (pending) startAssessment(pending); }
+    var starts = document.querySelectorAll("[data-hasa-start]");
+    for (var i = 0; i < starts.length; i++) starts[i].addEventListener("click", function (e) { e.preventDefault(); embedHost.scrollIntoView({ behavior: "smooth", block: "start" }); startAssessment(this.getAttribute("data-hasa-start") || "basic"); });
+    var shows = document.querySelectorAll("[data-hasa-show]");
+    for (var j = 0; j < shows.length; j++) shows[j].hidden = false;
+  }
+
   function close() {
-    if (!ui) return;
+    if (!ui || embedHost) return;
     ui.panel.hidden = true;
     document.documentElement.classList.remove("hasa-open");
     window.__hasaButton && window.__hasaButton.setAttribute("aria-expanded", "false");
@@ -151,25 +170,37 @@
     "/training/": ["Which workshop fits a team new to AI?"],
   };
   function greet() {
+    if (embedHost) {
+      addAssistant("Hello, I'm Alan, an AI member of Mike McKeown's team at Human-AI Systems. The quick assessment takes about five minutes: twelve multiple-choice questions, no names or contact details, and you get a snapshot of where you stand with AI and what to do next.\n\nYou can also just ask me anything about it first.");
+      var box0 = el("div", { class: "hasa-starters" }, [
+        el("button", { type: "button", class: "hasa-chip hasa-chip-primary", text: "Start the quick assessment", onclick: function () { box0.remove(); startAssessment("basic"); } }),
+        el("button", { type: "button", class: "hasa-chip", text: "What will I get at the end?", onclick: function () { box0.remove(); send("What will I get at the end of the quick assessment?"); } }),
+        el("button", { type: "button", class: "hasa-chip", text: "What happens to my answers?", onclick: function () { box0.remove(); send("What happens to my answers?"); } }),
+      ]);
+      ui.log.appendChild(box0);
+      return;
+    }
     addAssistant("Hello, I'm Alan, an AI member of Mike McKeown's team at Human-AI Systems. I can explain what we do, tell you about Mike, walk you through a Business AI Operating System, or help you get a call in the diary.\n\nMike reads these conversations to improve the service, so please don't share anything sensitive.");
     var s = (STARTERS_PAGE[location.pathname] || []).concat(STARTERS_DEFAULT).slice(0, 4);
     var box = el("div", { class: "hasa-starters" }, s.map(function (t) { return el("button", { type: "button", class: "hasa-chip", text: t, onclick: function () { box.remove(); send(t); } }); }));
     ui.log.appendChild(box);
   }
 
-  function restore() {
+  function restore(pending) {
     api("/v1/sessions/" + state.sid).then(function (r) {
       if (r.status === 401 || r.status === 404) { state = { v: 1, open: true }; saveState(); greet(); return null; }
       return r.json();
     }).then(function (h) {
-      if (!h) return;
+      if (!h) { if (pending) startAssessment(pending); return; }
       ui.autoNav.checked = !!h.auto_nav;
-      if (!h.messages.length) { greet(); return; }
+      if (!h.messages.length) { greet(); if (pending) startAssessment(pending); return; }
       h.messages.forEach(function (m) {
-        if (m.role === "visitor") addVisitor(m.text);
+        if (m.role === "visitor") { if (m.text === FINISHED && state.basic) drawSnapshot(state.basic); addVisitor(m.text); }
         else { addAssistant(m.text || ""); (m.tools || (m.tool ? [m.tool] : [])).forEach(restoreTool); }
       });
+      if (state.basic && embedHost) goFurther();
       scrollEnd();
+      if (pending) startAssessment(pending);
     }).catch(function () { greet(); });
   }
 
@@ -207,7 +238,7 @@
     });
   }
 
-  function send(text) {
+  function send(text, extra) {
     busy = true;
     ui.send.disabled = true;
     addVisitor(text);
@@ -216,7 +247,7 @@
     var acc = "", tools = [], slotsEv = null;
     ensureSession().then(function () {
       inflight = new AbortController();
-      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ }, signal: inflight.signal });
+      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ, assessment_id: extra && extra.assessment_id }, signal: inflight.signal });
     }).then(function (r) {
       if (r.status !== 200) return r.json().then(function (b) { throw b.error || "error"; });
       var reader = r.body.getReader(), dec = new TextDecoder(), buf = "";
@@ -243,6 +274,7 @@
       if (!acc) renderText(bubble, "Sorry, I lost my thread there. Could you ask again?");
       if (slotsEv) showSlots(slotsEv.slots);
       tools.forEach(handleTool);
+      if (extra && extra.after) extra.after();
     }).catch(function (err) {
       bubble.classList.remove("hasa-typing");
       if (err && err.name === "AbortError") return;
@@ -296,6 +328,7 @@
     if (t.name === "show_booking_link") return addBookLink();
     if (t.name === "show_visual") return showVisual(t);
     if (t.name === "end_conversation") return ended();
+    if (t.name === "start_assessment") return startAssessment(t.level || "basic", true);
     if (t.name === "request_verification") return verifyForm(t.purpose, null);
     if (t.name === "request_contact") return contactForm(t.topic);
     if (t.name === "book_meeting") return chooseSlot({ start: t.start, label: fmt(t.start) });
@@ -409,6 +442,98 @@
     btn.focus();
   }
 
+
+  // ---------- AI assessment (R2.2): questions as buttons, scored by the Worker, never by the model ----------
+  var questions = null;
+  function progress(step) {
+    // Page-level progress marker: 1 About you, 2 AI today, 3 Priorities, 4 Snapshot, 5 Go further
+    var items = document.querySelectorAll("[data-hasa-progress] [data-step]");
+    for (var i = 0; i < items.length; i++) {
+      var n = Number(items[i].getAttribute("data-step"));
+      if (n === step) items[i].setAttribute("aria-current", "step"); else items[i].removeAttribute("aria-current");
+      items[i].classList.toggle("is-done", n < step);
+    }
+  }
+  function startAssessment(level, fromAlan) {
+    if (level !== "basic") { if (embedHost) goFurther(); return; }
+    if (!embedHost) {
+      // Elsewhere on the site: take the visitor to the assessment page; the session carries over.
+      state.pendingAssessment = level; state.open = true; saveState();
+      if (!ui.autoNav.checked) return addLink(ASSESS_PATH, "Go to the AI Assessment page");
+      return handleTool({ name: "navigate", path: ASSESS_PATH, title: "the AI Assessment page" });
+    }
+    if (busy) return;
+    var c = card("hasa-assess");
+    c.appendChild(el("p", { class: "hasa-small", text: "Loading the questions…" }));
+    var qp = questions ? Promise.resolve(questions) : fetch(API + "/v1/assessments/basic/questions", { credentials: "omit" }).then(function (r) { if (!r.ok) throw "q"; return r.json(); });
+    Promise.all([qp, ensureSession()]).then(function (x) {
+      questions = x[0];
+      api("/v1/events", { method: "POST", body: { sid: state.sid, type: "assessment_basic_started" } }).catch(function () {});
+      runQuestions(c, questions);
+    }).catch(function (e) { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: e === "turnstile" ? "I couldn't confirm the page is running in a browser. Refresh and try again." : "The assessment isn't available just now. Please try again shortly." })); });
+  }
+  function runQuestions(c, qs) {
+    var answers = {}, i = 0, list = qs.questions, groups = {};
+    qs.groups.forEach(function (g, k) { groups[g.id] = { label: g.label, n: k + 1 }; });
+    function draw() {
+      c.textContent = "";
+      var q = list[i], g = groups[q.group];
+      progress(g.n);
+      var bar = el("div", { class: "hasa-qbar", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(list.length), "aria-valuenow": String(i), "aria-label": "Assessment progress" }, [el("span", { style: "width:" + Math.round((i / list.length) * 100) + "%" })]);
+      c.appendChild(el("p", { class: "hasa-qmeta", text: g.label + " · Question " + (i + 1) + " of " + list.length }));
+      c.appendChild(bar);
+      var fs = el("fieldset", { class: "hasa-q" }, [el("legend", { class: "hasa-card-title", text: q.text })]);
+      q.options.forEach(function (o) {
+        var b = el("button", { type: "button", class: "hasa-opt" + (answers[q.id] === o.id ? " is-on" : ""), "aria-pressed": answers[q.id] === o.id ? "true" : "false", text: o.label, onclick: function () { answers[q.id] = o.id; if (i < list.length - 1) { i++; draw(); } else finish(); } });
+        fs.appendChild(b);
+      });
+      c.appendChild(fs);
+      var nav = el("div", { class: "hasa-qnav" });
+      if (i > 0) nav.appendChild(el("button", { type: "button", class: "hasa-linkbtn", text: "Back", onclick: function () { i--; draw(); } }));
+      nav.appendChild(el("button", { type: "button", class: "hasa-linkbtn hasa-quiet", text: "Stop", onclick: function () { api("/v1/events", { method: "POST", body: { sid: state.sid, type: "assessment_basic_abandoned", step: i } }).catch(function () {}); c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: "Stopped. Nothing was saved. You can start again whenever you like." })); progress(0); } }));
+      c.appendChild(nav);
+      var first = fs.querySelector(".is-on") || fs.querySelector("button");
+      first && first.focus();
+      scrollEnd();
+    }
+    function finish() {
+      c.textContent = "";
+      c.appendChild(el("p", { class: "hasa-small", role: "status", text: "Working out your snapshot…" }));
+      api("/v1/assessments/basic", { method: "POST", body: { sid: state.sid, answers: answers } }).then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
+        if (x.s !== 201) { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: x.b.error === "assessment_limit" ? "You've taken the assessment several times in this session. Start a new tab to take it again." : "Something went wrong scoring that. Please try again." })); return; }
+        c.remove();
+        state.basic = { id: x.b.id, visual: x.b.visual, position: x.b.result.position_label, moves: x.b.result.moves.map(function (m) { return m.title; }) };
+        saveState();
+        progress(4);
+        drawSnapshot(state.basic);
+        send(FINISHED, { assessment_id: x.b.id, after: function () { goFurther(); } });
+      }).catch(function () { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: "Something went wrong scoring that. Please try again." })); });
+    }
+    draw();
+  }
+  function drawSnapshot(b) {
+    showVisual(b.visual);
+    var c = card("hasa-snap");
+    c.appendChild(el("p", { class: "hasa-card-title", text: "Your next moves" }));
+    c.appendChild(el("ul", {}, (b.moves || []).map(function (m) { return el("li", { text: m }); })));
+  }
+  function goFurther() {
+    if (ui.log.querySelector(".hasa-further")) return;
+    progress(5);
+    var c = card("hasa-further");
+    c.appendChild(el("p", { class: "hasa-card-title", text: "Go further" }));
+    if (cfg.features && cfg.features.advanced_assessment) {
+      c.appendChild(el("p", { class: "hasa-small", text: "The full assessment researches your organisation, asks about your priorities and systems, and sends you a written report. Your answers here carry forward." }));
+      c.appendChild(el("button", { type: "button", class: "hasa-send", text: "Start the full assessment", onclick: function () { upgradeClicked(); send("I'd like to do the full assessment."); } }));
+    } else {
+      c.appendChild(el("p", { class: "hasa-small", text: "The full assessment, with research into your organisation and a written report, is coming soon. In the meantime Mike will happily talk your snapshot through." }));
+      c.appendChild(el("p", {}, [
+        el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "Book a call with Mike", onclick: upgradeClicked }),
+        el("button", { type: "button", class: "hasa-linkbtn", text: "Ask Mike to get in touch", onclick: function () { upgradeClicked(); contactForm("Quick AI assessment result"); } }),
+      ]));
+    }
+  }
+  function upgradeClicked() { if (state && state.sid) api("/v1/events", { method: "POST", body: { sid: state.sid, type: "assessment_upgrade_clicked" } }).catch(function () {}); }
 
   // ---------- contact capture (R1.8): consent box unticked, submit only when ticked ----------
   function contactForm(topic) {
