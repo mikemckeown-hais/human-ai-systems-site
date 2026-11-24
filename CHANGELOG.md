@@ -6,6 +6,12 @@ Format: date-stamped entries on merge from `dev` → `main`.
 
 ---
 
+## 2026-11-24
+
+- SITE_RULES: website assistant live since 23 Nov 2026
+- SITE_RULES: move the live note under Website assistant
+- Website: Ask Alan on the home page and Start page; cookieless page counting for site analytics; privacy page covers it
+
 ## 2026-11-23
 
 - Privacy: website assistant section, processors and transfers, profiling wording, complaints route to us, cookie and storage rows
