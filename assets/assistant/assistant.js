@@ -280,6 +280,7 @@
       if (slotsEv) showSlots(slotsEv.slots);
       tools.forEach(handleTool);
       if (optsEv) { state.choices = optsEv; saveState(); drawChoices(optsEv); }
+      else ui.input.placeholder = "Ask Alan a question";
       if (snapEv && embedHost) goFurther();
       if (extra && extra.after) extra.after();
     }).catch(function (err) {
