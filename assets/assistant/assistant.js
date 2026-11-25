@@ -194,11 +194,13 @@
       if (!h) { if (pending) startAssessment(pending); return; }
       ui.autoNav.checked = !!h.auto_nav;
       if (!h.messages.length) { greet(); if (pending) startAssessment(pending); return; }
+      var ai = 0;
       h.messages.forEach(function (m) {
-        if (m.role === "visitor") { if (m.text === FINISHED && state.basic) drawSnapshot(state.basic); addVisitor(m.text); }
-        else { addAssistant(m.text || ""); (m.tools || (m.tool ? [m.tool] : [])).forEach(restoreTool); }
+        if (m.role === "visitor") { if (m.text === FINISHED && state.basic && state.basic.at === undefined) drawSnapshot(state.basic); addVisitor(m.text); }
+        else { if (state.basic && state.basic.at === ai) drawSnapshot(state.basic); ai++; addAssistant(m.text || ""); (m.tools || (m.tool ? [m.tool] : [])).forEach(restoreTool); }
       });
-      if (state.basic && embedHost) goFurther();
+      if (state.choices) drawChoices(state.choices);
+      else if (state.basic && embedHost) goFurther();
       scrollEnd();
       if (pending) startAssessment(pending);
     }).catch(function () { greet(); });
@@ -244,10 +246,11 @@
     addVisitor(text);
     var bubble = addAssistant("");
     bubble.classList.add("hasa-typing");
-    var acc = "", tools = [], slotsEv = null;
+    var acc = "", tools = [], slotsEv = null, optsEv = null, snapEv = null;
+    clearChoices();
     ensureSession().then(function () {
       inflight = new AbortController();
-      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ, assessment_id: extra && extra.assessment_id }, signal: inflight.signal });
+      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ, assessment_id: extra && extra.assessment_id, choice: extra && extra.choice, start_assessment: !!(extra && extra.start) }, signal: inflight.signal });
     }).then(function (r) {
       if (r.status !== 200) return r.json().then(function (b) { throw b.error || "error"; });
       var reader = r.body.getReader(), dec = new TextDecoder(), buf = "";
@@ -264,6 +267,8 @@
             if (tm[1] === "delta") { acc += d.text; renderText(bubble, acc); bubble.classList.remove("hasa-typing"); scrollEnd(); }
             else if (tm[1] === "tool") tools.push(d);
             else if (tm[1] === "slots") slotsEv = d;
+            else if (tm[1] === "assessment_options") optsEv = d;
+            else if (tm[1] === "snapshot") { snapEv = d; state.basic = { id: d.assessment_id, visual: d.visual, position: d.position, moves: d.moves, at: ui.log.querySelectorAll(".hasa-alan").length - 1 }; state.choices = null; saveState(); progress(4); drawSnapshot(state.basic, bubble); }
           }
           return pump();
         });
@@ -274,6 +279,8 @@
       if (!acc) renderText(bubble, "Sorry, I lost my thread there. Could you ask again?");
       if (slotsEv) showSlots(slotsEv.slots);
       tools.forEach(handleTool);
+      if (optsEv) { state.choices = optsEv; saveState(); drawChoices(optsEv); }
+      if (snapEv && embedHost) goFurther();
       if (extra && extra.after) extra.after();
     }).catch(function (err) {
       bubble.classList.remove("hasa-typing");
@@ -313,8 +320,10 @@
   function showVisual(t) {
     var holder = el("div", { class: "hasa-visual" });
     ui.log.appendChild(holder);
+    setTimeout(scrollEnd, 0);
     (visuals || (visuals = import(base + "visuals/render.js"))).then(function (m) { holder.appendChild(m.render(t, { base: base })); scrollEnd(); })
       .catch(function () { visuals = null; holder.appendChild(el("p", { class: "hasa-small", text: t.alt || "" })); });
+    return holder;
   }
   function ended() {
     var p = el("p", { class: "hasa-nav", role: "status" }, ["This conversation has ended. ", el("a", { class: "hasa-linkbtn", href: BOOK, target: "_blank", rel: "noopener", text: "Book a call with Mike" })]);
@@ -444,7 +453,6 @@
 
 
   // ---------- AI assessment (R2.2): questions as buttons, scored by the Worker, never by the model ----------
-  var questions = null;
   function progress(step) {
     // Page-level progress marker: 1 About you, 2 AI today, 3 Priorities, 4 Snapshot, 5 Go further
     var items = document.querySelectorAll("[data-hasa-progress] [data-step]");
@@ -454,7 +462,7 @@
       items[i].classList.toggle("is-done", n < step);
     }
   }
-  function startAssessment(level, fromAlan) {
+  function startAssessment(level) {
     if (level !== "basic") { if (embedHost) goFurther(); return; }
     if (!embedHost) {
       // Elsewhere on the site: take the visitor to the assessment page; the session carries over.
@@ -463,57 +471,29 @@
       return handleTool({ name: "navigate", path: ASSESS_PATH, title: "the AI Assessment page" });
     }
     if (busy) return;
-    var c = card("hasa-assess");
-    c.appendChild(el("p", { class: "hasa-small", text: "Loading the questions…" }));
-    var qp = questions ? Promise.resolve(questions) : fetch(API + "/v1/assessments/basic/questions", { credentials: "omit" }).then(function (r) { if (!r.ok) throw "q"; return r.json(); });
-    Promise.all([qp, ensureSession()]).then(function (x) {
-      questions = x[0];
-      api("/v1/events", { method: "POST", body: { sid: state.sid, type: "assessment_basic_started" } }).catch(function () {});
-      runQuestions(c, questions);
-    }).catch(function (e) { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: e === "turnstile" ? "I couldn't confirm the page is running in a browser. Refresh and try again." : "The assessment isn't available just now. Please try again shortly." })); });
+    var old = ui.log.querySelector(".hasa-further"); old && old.remove();
+    progress(1);
+    send("Let's do the quick assessment.", { start: true });
   }
-  function runQuestions(c, qs) {
-    var answers = {}, i = 0, list = qs.questions, groups = {};
-    qs.groups.forEach(function (g, k) { groups[g.id] = { label: g.label, n: k + 1 }; });
-    function draw() {
-      c.textContent = "";
-      var q = list[i], g = groups[q.group];
-      progress(g.n);
-      var bar = el("div", { class: "hasa-qbar", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(list.length), "aria-valuenow": String(i), "aria-label": "Assessment progress" }, [el("span", { style: "width:" + Math.round((i / list.length) * 100) + "%" })]);
-      c.appendChild(el("p", { class: "hasa-qmeta", text: g.label + " · Question " + (i + 1) + " of " + list.length }));
-      c.appendChild(bar);
-      var fs = el("fieldset", { class: "hasa-q" }, [el("legend", { class: "hasa-card-title", text: q.text })]);
-      q.options.forEach(function (o) {
-        var b = el("button", { type: "button", class: "hasa-opt" + (answers[q.id] === o.id ? " is-on" : ""), "aria-pressed": answers[q.id] === o.id ? "true" : "false", text: o.label, onclick: function () { answers[q.id] = o.id; if (i < list.length - 1) { i++; draw(); } else finish(); } });
-        fs.appendChild(b);
-      });
-      c.appendChild(fs);
-      var nav = el("div", { class: "hasa-qnav" });
-      if (i > 0) nav.appendChild(el("button", { type: "button", class: "hasa-linkbtn", text: "Back", onclick: function () { i--; draw(); } }));
-      nav.appendChild(el("button", { type: "button", class: "hasa-linkbtn hasa-quiet", text: "Stop", onclick: function () { api("/v1/events", { method: "POST", body: { sid: state.sid, type: "assessment_basic_abandoned", step: i } }).catch(function () {}); c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: "Stopped. Nothing was saved. You can start again whenever you like." })); progress(0); } }));
-      c.appendChild(nav);
-      var first = fs.querySelector(".is-on") || fs.querySelector("button");
-      first && first.focus();
-      scrollEnd();
-    }
-    function finish() {
-      c.textContent = "";
-      c.appendChild(el("p", { class: "hasa-small", role: "status", text: "Working out your snapshot…" }));
-      api("/v1/assessments/basic", { method: "POST", body: { sid: state.sid, answers: answers } }).then(function (r) { return r.json().then(function (b) { return { s: r.status, b: b }; }); }).then(function (x) {
-        if (x.s !== 201) { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: x.b.error === "assessment_limit" ? "You've taken the assessment several times in this session. Start a new tab to take it again." : "Something went wrong scoring that. Please try again." })); return; }
-        c.remove();
-        state.basic = { id: x.b.id, visual: x.b.visual, position: x.b.result.position_label, moves: x.b.result.moves.map(function (m) { return m.title; }) };
-        saveState();
-        progress(4);
-        drawSnapshot(state.basic);
-        send(FINISHED, { assessment_id: x.b.id, after: function () { goFurther(); } });
-      }).catch(function () { c.textContent = ""; c.appendChild(el("p", { class: "hasa-small", text: "Something went wrong scoring that. Please try again." })); });
-    }
-    draw();
+  // Alan asks each question; its suggested answers are buttons, and the visitor can type instead.
+  function clearChoices() { var c = ui && ui.log.querySelectorAll(".hasa-choices"); if (c) for (var i = 0; i < c.length; i++) c[i].remove(); }
+  function drawChoices(ev) {
+    clearChoices();
+    if (!ev || !ev.options || !ev.options.length) return;
+    if (ev.progress) progress(ev.progress.step);
+    var box = el("div", { class: "hasa-choices", role: "group", "aria-label": "Suggested answers" });
+    if (ev.progress) box.appendChild(el("p", { class: "hasa-qmeta", text: "Question " + (ev.progress.done + 1) + " of " + ev.progress.total + " · click an answer or type your own" }));
+    ev.options.forEach(function (o) {
+      box.appendChild(el("button", { type: "button", class: "hasa-opt", text: o.label, onclick: function () { if (busy) return; state.choices = null; saveState(); send(o.label, { choice: { question: ev.question, option: o.id } }); } }));
+    });
+    ui.log.appendChild(box);
+    ui.input.placeholder = "Click an answer above, or type your own";
+    scrollEnd();
   }
-  function drawSnapshot(b) {
-    showVisual(b.visual);
+  function drawSnapshot(b, before) {
+    var holder = showVisual(b.visual);
     var c = card("hasa-snap");
+    if (before) { ui.log.insertBefore(holder, before); ui.log.insertBefore(c, before); }
     c.appendChild(el("p", { class: "hasa-card-title", text: "Your next moves" }));
     c.appendChild(el("ul", {}, (b.moves || []).map(function (m) { return el("li", { text: m }); })));
   }
