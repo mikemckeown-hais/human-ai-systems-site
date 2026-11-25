@@ -199,7 +199,9 @@
         if (m.role === "visitor") { if (m.text === FINISHED && state.basic && state.basic.at === undefined) drawSnapshot(state.basic); addVisitor(m.text); }
         else { if (state.basic && state.basic.at === ai) drawSnapshot(state.basic); ai++; addAssistant(m.text || ""); (m.tools || (m.tool ? [m.tool] : [])).forEach(restoreTool); }
       });
-      if (state.choices) drawChoices(state.choices);
+      if (state.choices && state.choices.replies) drawReplies(state.choices.replies);
+      else if (state.choices && state.choices.finish) drawFinish();
+      else if (state.choices && state.choices.options) drawChoices(state.choices);
       else if (state.basic && embedHost) goFurther();
       scrollEnd();
       if (pending) startAssessment(pending);
@@ -246,11 +248,13 @@
     addVisitor(text);
     var bubble = addAssistant("");
     bubble.classList.add("hasa-typing");
+    if (extra && extra.finish) { bubble.classList.add("hasa-working"); bubble.setAttribute("data-note", "Alan is putting your snapshot together. This takes up to a minute."); }
+    if (extra && extra.start) state.assessTurns = 0; else if (state.assessTurns !== undefined && state.assessTurns !== null) state.assessTurns++;
     var acc = "", tools = [], slotsEv = null, optsEv = null, snapEv = null;
     clearChoices();
     ensureSession().then(function () {
       inflight = new AbortController();
-      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ, assessment_id: extra && extra.assessment_id, choice: extra && extra.choice, start_assessment: !!(extra && extra.start) }, signal: inflight.signal });
+      return api("/v1/sessions/" + state.sid + "/messages", { method: "POST", body: { message: text, page_path: location.pathname, page_title: document.title, tz: TZ, assessment_id: extra && extra.assessment_id, choice: extra && extra.choice, start_assessment: !!(extra && extra.start), finish_assessment: !!(extra && extra.finish) }, signal: inflight.signal });
     }).then(function (r) {
       if (r.status !== 200) return r.json().then(function (b) { throw b.error || "error"; });
       var reader = r.body.getReader(), dec = new TextDecoder(), buf = "";
@@ -275,12 +279,13 @@
       }
       return pump();
     }).then(function () {
-      bubble.classList.remove("hasa-typing");
+      bubble.classList.remove("hasa-typing", "hasa-working");
+      if (snapEv) state.assessTurns = null;
       if (!acc) renderText(bubble, "Sorry, I lost my thread there. Could you ask again?");
       if (slotsEv) showSlots(slotsEv.slots);
       tools.forEach(handleTool);
       if (optsEv) { state.choices = optsEv; saveState(); drawChoices(optsEv); }
-      else ui.input.placeholder = "Ask Alan a question";
+      else if (!state.choices) ui.input.placeholder = "Ask Alan a question";
       if (snapEv && embedHost) goFurther();
       if (extra && extra.after) extra.after();
     }).catch(function (err) {
@@ -339,6 +344,8 @@
     if (t.name === "show_visual") return showVisual(t);
     if (t.name === "end_conversation") return ended();
     if (t.name === "start_assessment") return startAssessment(t.level || "basic", true);
+    if (t.name === "suggest_replies") { state.choices = { replies: t.replies }; saveState(); return drawReplies(t.replies); }
+    if (t.name === "ready_to_assess") { state.choices = { finish: true }; saveState(); return drawFinish(); }
     if (t.name === "request_verification") return verifyForm(t.purpose, null);
     if (t.name === "request_contact") return contactForm(t.topic);
     if (t.name === "book_meeting") return chooseSlot({ start: t.start, label: fmt(t.start) });
@@ -478,6 +485,29 @@
   }
   // Alan asks each question; its suggested answers are buttons, and the visitor can type instead.
   function clearChoices() { var c = ui && ui.log.querySelectorAll(".hasa-choices"); if (c) for (var i = 0; i < c.length; i++) c[i].remove(); }
+  // Guided conversation: suggested replies (click to send, or type anything) and the snapshot button.
+  function drawReplies(replies) {
+    clearChoices();
+    if (!replies || !replies.length) return;
+    var n = state.assessTurns || 0; progress(n < 3 ? 1 : n < 8 ? 2 : 3);
+    var box = el("div", { class: "hasa-choices", role: "group", "aria-label": "Suggested replies" });
+    box.appendChild(el("p", { class: "hasa-qmeta", text: "Suggested replies · or type your own" }));
+    replies.forEach(function (r) { box.appendChild(el("button", { type: "button", class: "hasa-opt", text: r, onclick: function () { if (busy) return; state.choices = null; saveState(); send(r); } })); });
+    if ((state.assessTurns || 0) >= 5) box.appendChild(el("button", { type: "button", class: "hasa-linkbtn hasa-quiet", text: "That's enough, get my snapshot", onclick: finishAssessment }));
+    ui.log.appendChild(box);
+    ui.input.placeholder = "Type your answer, or click a suggestion";
+    scrollEnd();
+  }
+  function drawFinish() {
+    clearChoices();
+    var box = el("div", { class: "hasa-choices", role: "group", "aria-label": "Get your snapshot" }, [
+      el("button", { type: "button", class: "hasa-send", text: "Get my snapshot", onclick: finishAssessment }),
+      el("p", { class: "hasa-small", text: "Or add anything first by typing below." }),
+    ]);
+    ui.log.appendChild(box);
+    scrollEnd();
+  }
+  function finishAssessment() { if (busy) return; state.choices = null; saveState(); clearChoices(); progress(4); send("Please put my snapshot together.", { finish: true }); }
   function drawChoices(ev) {
     clearChoices();
     if (!ev || !ev.options || !ev.options.length) return;
