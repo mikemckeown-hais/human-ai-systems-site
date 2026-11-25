@@ -287,6 +287,8 @@
       if (optsEv) { state.choices = optsEv; saveState(); drawChoices(optsEv); }
       else if (!state.choices) ui.input.placeholder = "Ask Alan a question";
       if (snapEv && embedHost) goFurther();
+      // Fallback: during an assessment, once there is enough to go on, the snapshot is always one click away.
+      else if (embedHost && state.assessTurns >= 5 && !tools.some(function (t) { return t.name === "suggest_replies" || t.name === "ready_to_assess"; })) { state.choices = { finish: true }; saveState(); drawFinish(); }
       if (extra && extra.after) extra.after();
     }).catch(function (err) {
       bubble.classList.remove("hasa-typing");
